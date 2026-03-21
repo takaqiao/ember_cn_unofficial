@@ -1,226 +1,226 @@
 {
-  "label": "Adversary Options",
+  "label": "对手选项\nAdversary Options",
   "mapping": {
     "name": "name",
     "description": "system.description"
   },
   "folders": {
-    "Fey": "Fey",
-    "Oozes": "Oozes",
-    "Beasts": "Beasts",
-    "Undead": "Undead",
-    "Archetypes": "Archetypes",
-    "Constructs": "Constructs",
-    "Beast": "Beast",
-    "Elementals": "Elementals",
-    "Humanoid": "Humanoid",
-    "Dragon": "Dragon",
-    "Humanoids": "Humanoids",
-    "Taxonomies": "Taxonomies",
-    "Monstrosities": "Monstrosities",
-    "Abyssal": "Abyssal",
-    "Abyssals": "Abyssals",
-    "Celestials": "Celestials",
-    "Talents": "Talents",
-    "Dragons": "Dragons",
-    "Celestial": "Celestial"
+    "Fey": "妖精\nFey",
+    "Oozes": "软泥怪\nOozes",
+    "Beasts": "野兽\nBeasts",
+    "Undead": "不死生物\nUndead",
+    "Archetypes": "原型\nArchetypes",
+    "Constructs": "构装体\nConstructs",
+    "Beast": "野兽\nBeast",
+    "Elementals": "元素生物\nElementals",
+    "Humanoid": "人型生物\nHumanoid",
+    "Dragon": "巨龙\nDragon",
+    "Humanoids": "人型生物\nHumanoids",
+    "Taxonomies": "分类法\nTaxonomies",
+    "Monstrosities": "怪物\nMonstrosities",
+    "Abyssal": "深渊语\nAbyssal",
+    "Abyssals": "深渊裔\nAbyssals",
+    "Celestials": "天界生物\nCelestials",
+    "Talents": "天赋\nTalents",
+    "Dragons": "巨龙\nDragons",
+    "Celestial": "天界的\nCelestial"
   },
   "entries": {
     "Aburyx": {
-      "name": "Aburyx",
-      "description": "<p>Aburyx are sometimes described as soldiers of flame and light, and can be found in several historical and mythical texts across Ember. From the work of scholars on these creatures, it is believed that their role (whether actual or metaphorical) is primarily as ground troops in larger battles on Luxarum, but descriptions of them as aides and messengers suggest that they have some way of elevating themselves in status by distinguishing themselves on and off the battlefield.</p>"
+      "name": "阿布里克斯 Aburyx",
+      "description": "<p>阿布里克斯有时被描述为火焰与光之士兵，并且能在余烬各地的若干历史与神话文本中找到相关记载。根据学者们对这些生物的研究，人们认为它们的角色（无论是实际意义上的还是比喻意义上的）主要是在卢克萨鲁姆更大战役中充当地面部队，但将它们描述为助手和信使的记载则表明，它们有某种方式能够通过在战场内外表现出色来提升自己的地位。</p>\n<p>Aburyx are sometimes described as soldiers of flame and light, and can be found in several historical and mythical texts across Ember. From the work of scholars on these creatures, it is believed that their role (whether actual or metaphorical) is primarily as ground troops in larger battles on Luxarum, but descriptions of them as aides and messengers suggest that they have some way of elevating themselves in status by distinguishing themselves on and off the battlefield.</p>"
     },
     "Abyssal Harbinger": {
-      "name": "Abyssal Harbinger",
-      "description": "<p>Abyssal creatures which specialize in psychic manipulation and mental torment.</p>"
+      "name": "深渊先驱 Abyssal Harbinger",
+      "description": "<p>专精于灵能操控与精神折磨的深渊生物。</p>\n<p>Abyssal creatures which specialize in psychic manipulation and mental torment.</p>"
     },
     "Abyssal Protection": {
-      "name": "Abyssal Protection",
-      "description": "<p>While in an area of dim light or darkness, the @ref[actor.name]{creature} gains a +2 bonus to their <strong>Armor</strong> defense and is @Condition[guarded].</p><p>This is implemented via an <strong>Active Effect</strong> which can easily be toggled to enable or disable the benefit.</p>"
+      "name": "深渊防护 Abyssal Protection",
+      "description": "<p>当处于微光或黑暗区域内时，@ref[actor.name]{生物}的<strong>护甲</strong>防御获得 +2 加值，并处于 @Condition[guarded]。</p><p>这通过一个<strong>激活效果</strong>来实现，可轻松切换以启用或禁用该增益。</p>\n<p>While in an area of dim light or darkness, the @ref[actor.name]{creature} gains a +2 bonus to their <strong>Armor</strong> defense and is @Condition[guarded].</p><p>This is implemented via an <strong>Active Effect</strong> which can easily be toggled to enable or disable the benefit.</p>"
     },
     "Abyssal Remains": {
-      "name": "Abyssal Remains",
-      "description": "<p>Upon death, the @ref[actor.name]{creature} dissolves into a thick liquid often described as a \"melted shadow,\" which spreads in an oozing pour from the place where it died, soaking the area around it in abyssal corruption.</p>"
+      "name": "深渊遗骸 Abyssal Remains",
+      "description": "<p>死亡时，@ref[actor.name]{生物}会溶解成一种常被形容为“融化的阴影”的浓稠液体，并从其死亡之处如黏液般蔓延流出，使周围区域浸染上深渊腐化。</p>\n<p>Upon death, the @ref[actor.name]{creature} dissolves into a thick liquid often described as a \"melted shadow,\" which spreads in an oozing pour from the place where it died, soaking the area around it in abyssal corruption.</p>"
     },
     "Abyssal Whip": {
-      "name": "Abyssal Whip",
-      "description": "<p>A horrifyingly elongated tendril of darkness extends out from the @ref[actor.name]{creature} and strikes a distant target.</p>"
+      "name": "深渊长鞭 Abyssal Whip",
+      "description": "<p>一条可怖地拉长的黑暗触须从@ref[actor.name]{生物}伸出，并打击远处的目标。</p>\n<p>A horrifyingly elongated tendril of darkness extends out from the @ref[actor.name]{creature} and strikes a distant target.</p>"
     },
     "Abyssal Whispers": {
-      "name": "Abyssal Whispers",
-      "description": "<p>The @ref[actor.name]{creature} telepathically intrudes into a creature's mind, and floods it with thoughts and images of the Abyss. It must be able to sense the creature, and not be incapacitated to do this.</p>"
+      "name": "深渊低语 Abyssal Whispers",
+      "description": "<p>@ref[actor.name]{该生物}以心灵感应侵入一个生物的心智，并以深渊的思想与景象将其淹没。它必须能够感知该生物，且未失能，才能这样做。</p>\n<p>The @ref[actor.name]{creature} telepathically intrudes into a creature's mind, and floods it with thoughts and images of the Abyss. It must be able to sense the creature, and not be incapacitated to do this.</p>"
     },
     "Afflicted Pallid Drake": {
-      "name": "Afflicted Pallid Drake",
-      "description": "<p>These creatures have only recently been encountered on Ember, and their origins are wholly unknown. Despite their close resemblance to Vile Dragons, they do not possess the same abilities, and only limited biological similarities. They appear to be a chimerical blend of snake and dragon, perhaps indicating they are of magical origin. This newfound presence has stirred considerable intrigue and concern among researchers and adventurers alike, as these new creatures could indicate a change in the norm, and a rise of new, dangerous, draconic foes.</p>"
+      "name": "受苦的苍白龙兽 Afflicted Pallid Drake",
+      "description": "<p>这些生物直到最近才在灰烬星上被发现，它们的起源完全不明。尽管它们与邪龙极为相似，但并不具备相同的能力，而且在生物材料特征上也只有有限的相似性。它们看起来像是蛇与巨龙的奇美拉式混合体，这或许表明它们具有魔法起源。这一新近出现的现象在研究者和冒险者之间都引发了相当大的兴趣与担忧，因为这些新的生物可能预示着常态正在发生变化，以及新的、危险的龙类敌人的崛起。</p>\n<p>These creatures have only recently been encountered on Ember, and their origins are wholly unknown. Despite their close resemblance to Vile Dragons, they do not possess the same abilities, and only limited biological similarities. They appear to be a chimerical blend of snake and dragon, perhaps indicating they are of magical origin. This newfound presence has stirred considerable intrigue and concern among researchers and adventurers alike, as these new creatures could indicate a change in the norm, and a rise of new, dangerous, draconic foes.</p>"
     },
     "Aedir Sentinel": {
-      "name": "Aedir Sentinel",
-      "description": "<p>Formidable four-armed constructs that served the Aedir as terrible warriors in the vanguard of their imperial armies.</p>"
+      "name": "艾迪尔哨兵 Aedir Sentinel",
+      "description": "<p>这些令人生畏的四臂构装体曾为艾迪尔效命，作为其帝国军队先锋中的可怕战士。</p>\n<p>Formidable four-armed constructs that served the Aedir as terrible warriors in the vanguard of their imperial armies.</p>"
     },
     "Cheliceraeth": {
-      "name": "Cheliceraeth",
-      "description": "<p>An arachnid monstrosity native to Ember’s crystal-laced subterranea that resembles a giant spider made of faceted purple moonstone.</p>"
+      "name": "螯蛛艾斯 Cheliceraeth",
+      "description": "<p>一种原产于余烬水晶密布地下世界的蛛形类畸怪，形似由刻面紫色月长石构成的巨型蜘蛛。</p>\n<p>An arachnid monstrosity native to Ember’s crystal-laced subterranea that resembles a giant spider made of faceted purple moonstone.</p>"
     },
     "Metallic Ooze": {
-      "name": "Metallic Ooze",
-      "description": "<p>Metallic oozes, belonging to the slime family, have a high internal composition of heavy metals.</p>"
+      "name": "金属软泥怪 Metallic Ooze",
+      "description": "<p>金属软泥怪属于史莱姆家族，其内部含有大量重金属成分。</p>\n<p>Metallic oozes, belonging to the slime family, have a high internal composition of heavy metals.</p>"
     },
     "Hydroxol": {
-      "name": "Hydroxol",
-      "description": "<p>Large amphibious beasts native to Ember's watery areas.</p>"
+      "name": "羟氧醇 Hydroxol",
+      "description": "<p>大型两栖野兽，原产于烬境的水域地带。</p>\n<p>Large amphibious beasts native to Ember's watery areas.</p>"
     },
     "Suarrok": {
-      "name": "Suarrok",
-      "description": "<p>Monstrous winged predators that nest in high, rocky crags. Suarrok are exceeding strange creatures, with singular eye, feathers, bat-like wings, two tails, and a long, piercing beak. They are surprisingly agile despite their strange form, and their eyes possess considerable magical power, capable of harming creatures through simple stares alone.</p>"
+      "name": "苏阿罗克 Suarrok",
+      "description": "<p>栖息于高耸岩峭峭壁上的可怖有翼掠食者。苏阿罗克是极其奇异的生物，长有一只独眼、羽毛、蝙蝠般的翅膀、两条尾巴，以及一根细长尖锐、足以刺穿猎物的喙。尽管形态怪异，它们却出奇地敏捷，而它们的眼睛还蕴含着相当强大的魔法力量，仅凭凝视就能伤害生物。</p>\n<p>Monstrous winged predators that nest in high, rocky crags. Suarrok are exceeding strange creatures, with singular eye, feathers, bat-like wings, two tails, and a long, piercing beak. They are surprisingly agile despite their strange form, and their eyes possess considerable magical power, capable of harming creatures through simple stares alone.</p>"
     },
     "Baradom": {
-      "name": "Baradom",
-      "description": "<p>The Baradom is a massive, lethargic lizard, both awe-inspiring and oddly endearing due to its prodigious size and laid-back demeanor. It often lies sprawled out in the darkness of the pathways, its enormous pot-belly rising and falling with each leisurely breath. Its dark, thick scales seem almost impenetrable, each one an armor plate rather than typical reptilian skin.</p>"
+      "name": "巴拉多姆 Baradom",
+      "description": "<p>巴拉多姆是一种体型巨大、行动迟缓的蜥蜴，因其惊人的规模与悠闲懒散的举止，既令人敬畏，又有种奇特的讨喜感。它常常四肢摊开地躺卧在通路的黑暗中，硕大滚圆的肚腹随着每一次悠然的呼吸而起伏。它黑色而厚实的鳞片几乎显得坚不可摧，每一片都更像是一块护甲板，而非寻常的爬行动物皮肤。</p>\n<p>The Baradom is a massive, lethargic lizard, both awe-inspiring and oddly endearing due to its prodigious size and laid-back demeanor. It often lies sprawled out in the darkness of the pathways, its enormous pot-belly rising and falling with each leisurely breath. Its dark, thick scales seem almost impenetrable, each one an armor plate rather than typical reptilian skin.</p>"
     },
     "Bewildering Gaze": {
-      "name": "Bewildering Gaze",
-      "description": "<p>The @ref[actor.name]{creature} is capable of mesmerizing and bewildering its prey with it's gaze.</p>"
+      "name": "惑乱凝视 Bewildering Gaze",
+      "description": "<p>该@ref[actor.name]{生物}能够用其凝视迷惑并蛊惑猎物。</p>\n<p>The @ref[actor.name]{creature} is capable of mesmerizing and bewildering its prey with it's gaze.</p>"
     },
     "Call Skither": {
-      "name": "Call Skither",
-      "description": "<p>The @ref[actor.name]{creature} controls nearby Skither which act as its bound servitors.</p>"
+      "name": "呼唤斯基瑟尔 Call Skither",
+      "description": "<p>该@ref[actor.name]{生物}控制附近的斯基瑟，它们作为其束缚的仆从行动。</p>\n<p>The @ref[actor.name]{creature} controls nearby Skither which act as its bound servitors.</p>"
     },
     "Cindaric Initiate": {
-      "name": "Cindaric Initiate",
-      "description": "<p>Healers and scholars who are members of the Cindaric Sages in Ordain, but not yet themselves full sages.</p>"
+      "name": "辛达里克入门者 Cindaric Initiate",
+      "description": "<p>在奥尔丹，属于辛达里克贤者成员中的治疗者与学者，但他们自身尚未成为正式贤者。</p>\n<p>Healers and scholars who are members of the Cindaric Sages in Ordain, but not yet themselves full sages.</p>"
     },
     "Cindaric Sage": {
-      "name": "Cindaric Sage",
-      "description": "<p>Healers and scholars who are members of the Cindaric Sages in Ordain and who have attained the full rank of Sage within that order.</p>"
+      "name": "辛达里克贤者 Cindaric Sage",
+      "description": "<p>在奥尔丹属于辛达里克贤者成员，并在该教团中已晋升至贤者完整等级的治疗者与学者。</p>\n<p>Healers and scholars who are members of the Cindaric Sages in Ordain and who have attained the full rank of Sage within that order.</p>"
     },
     "Corrupted Cadrithor": {
-      "name": "Corrupted Cadrithor",
-      "description": "<p>Colloquially known as a Dusk Hound, the Corrupted Cadrithor is a vicious spectral predator made of pure shadow. These loathsome, four-eyed creatures bear resemblance to a decayed canine with wicked horns, wreathed in a terrible shroud of black flame.</p>"
+      "name": "腐化的卡德里索尔 Corrupted Cadrithor",
+      "description": "<p>俗称“暮色猎犬”的腐化的卡德里索尔，是一种由纯粹阴影构成的凶残灵体掠食者。这些令人憎恶的四眼生物，形似一只腐朽的犬类，长着邪恶的犄角，周身缠绕着可怕的黑色火焰帷幕。</p>\n<p>Colloquially known as a Dusk Hound, the Corrupted Cadrithor is a vicious spectral predator made of pure shadow. These loathsome, four-eyed creatures bear resemblance to a decayed canine with wicked horns, wreathed in a terrible shroud of black flame.</p>"
     },
     "Crevvet": {
-      "name": "Crevvet",
-      "description": "<section class=\"block readaloud\"><p>This tiny, six-legged rodent is covered in light gray fur and has four beady eyes the color of glittering emeralds. Its front limbs end in rather prodigious claws (especially for its size), which it uses to burrow to and fro through the crumbling earth.</p></section>"
+      "name": "克雷维特 Crevvet",
+      "description": "<section class=\"block readaloud\"><p>这种微小的六足啮齿动物浑身覆盖着浅灰色毛发，长着四只像闪耀祖母绿般颜色的黑亮小眼睛。它的前肢末端生着相当巨大的爪（尤其以它的体型而言），它用这些爪在崩碎的大地中来回掘洞穿行。</p></section>\n<section class=\"block readaloud\"><p>This tiny, six-legged rodent is covered in light gray fur and has four beady eyes the color of glittering emeralds. Its front limbs end in rather prodigious claws (especially for its size), which it uses to burrow to and fro through the crumbling earth.</p></section>"
     },
     "Echo": {
-      "name": "Echo",
-      "description": "<p>Abyssal Echoes are monsters of pure evil, beings of twisted hatred from beyond the world of Ember. They possess a cruel basic intelligence that enables them to seek out and hunt natural creatures of Ember, ambushing them in the darkness and tearing them apart.</p>"
+      "name": "回响 Echo",
+      "description": "<p>深渊回响是纯粹邪恶的怪物，是来自余烬世界之外、怀着扭曲仇恨的存在。它们拥有残酷的基础智能，使其能够搜寻并猎杀余烬世界中的天然生物，在黑暗中伏击它们并将其撕碎。</p>\n<p>Abyssal Echoes are monsters of pure evil, beings of twisted hatred from beyond the world of Ember. They possess a cruel basic intelligence that enables them to seek out and hunt natural creatures of Ember, ambushing them in the darkness and tearing them apart.</p>"
     },
     "Elemental Summoning": {
-      "name": "Elemental Summoning",
-      "description": "<p>The @ref[actor.name]{creature} is able to call forth other lesser elementals to join them as allies.</p>"
+      "name": "元素召唤 Elemental Summoning",
+      "description": "<p>该@ref[actor.name]{生物}能够召唤出其他较弱小的元素生物作为其盟友加入他们。</p>\n<p>The @ref[actor.name]{creature} is able to call forth other lesser elementals to join them as allies.</p>"
     },
     "Extrude Tendril": {
-      "name": "Extrude Tendril",
-      "description": "<p>The @ref[actor.name]{creature} can reach through intervening space and extrude an independent copy of one if its tendrils which separates from the body of its progenitor.</p>"
+      "name": "伸出触须 Extrude Tendril",
+      "description": "<p>该@ref[actor.name]{生物}可以穿过中间的空间进行延伸，并挤出其一条触须的一个独立复制体，使其与其母体的身体分离。</p>\n<p>The @ref[actor.name]{creature} can reach through intervening space and extrude an independent copy of one if its tendrils which separates from the body of its progenitor.</p>"
     },
     "Frenzied Claws": {
-      "name": "Frenzied Claws",
-      "description": "<p>The @ref[actor.name]{creature} attacks rapidly with its claws, dealing multiple raking blows against a single target.</p>"
+      "name": "狂乱之爪 Frenzied Claws",
+      "description": "<p>该@ref[actor.name]{生物}迅速用其爪发起攻击，对单一目标造成多次抓击。</p>\n<p>The @ref[actor.name]{creature} attacks rapidly with its claws, dealing multiple raking blows against a single target.</p>"
     },
     "Grasping Form": {
-      "name": "Grasping Form",
-      "description": "<p>The @ref[actor.name]{creature} causes the ground surrounding it to erupt in countless clinging and coiling tendrils of shadow that trip and slow nearby creatures.</p>"
+      "name": "擒握形态 Grasping Form",
+      "description": "<p>@ref[actor.name]{该生物}使其周围的地面爆发出无数纠缠盘绕的阴影触须，将附近的生物绊倒并减缓其速度。</p>\n<p>The @ref[actor.name]{creature} causes the ground surrounding it to erupt in countless clinging and coiling tendrils of shadow that trip and slow nearby creatures.</p>"
     },
     "Grave Mark": {
-      "name": "Grave Mark",
-      "description": "<p>When the @ref[actor.name]{creature} achieves a Critical Hit with a melee attack, it leaves a baleful Grave Mark upon its target.</p>"
+      "name": "墓之印记 Grave Mark",
+      "description": "<p>当@ref[actor.name]{生物}以一次近战攻击造成重击时，它会在目标身上留下一个不祥的墓之印记。</p>\n<p>When the @ref[actor.name]{creature} achieves a Critical Hit with a melee attack, it leaves a baleful Grave Mark upon its target.</p>"
     },
     "Horrendor": {
-      "name": "Horrendor",
-      "description": "<p>Horrendor, a type of @UUID[Compendium.crucible.taxonomy.Item.ghoul00000000000]{Ghoul}, are cruel undying creatures brought to life by wicked abstruse magic. No mere animated skeleton or shambling zombie, a Horrendor is driven by a ceaseless desire to wreak fearful havoc, and its very existence seems like an affront to life on Ember. Indeed, a Horrendor's malicious words can often be as deadly as its toothy bite or prodigious claws.</p>"
+      "name": "霍伦多尔 Horrendor",
+      "description": "<p>霍伦多尔是一种@UUID[Compendium.crucible.taxonomy.Item.ghoul00000000000]{食尸鬼}，是由邪恶而深奥的魔法赋予生命的残酷不死生物。霍伦多尔并非仅仅是被操纵的骷髅或蹒跚而行的僵尸；它被一种永无止息、只欲造成可怖浩劫的冲动所驱使，而它的存在本身似乎就是对 Ember 上生命的冒犯。确实，霍伦多尔恶毒的话语往往和它满口利齿的啃咬或惊人的爪一样致命。</p>\n<p>Horrendor, a type of @UUID[Compendium.crucible.taxonomy.Item.ghoul00000000000]{Ghoul}, are cruel undying creatures brought to life by wicked abstruse magic. No mere animated skeleton or shambling zombie, a Horrendor is driven by a ceaseless desire to wreak fearful havoc, and its very existence seems like an affront to life on Ember. Indeed, a Horrendor's malicious words can often be as deadly as its toothy bite or prodigious claws.</p>"
     },
     "Inscrutable": {
-      "name": "Inscrutable",
-      "description": "<p>The @ref[actor.name]{creature} is an unknowable abyssal entity. It is immune to any effect or spell that would sense its emotions or read its thoughts. Any skill check to ascertain this creature's intentions is made with +4 <strong>Banes</strong>.</p>"
+      "name": "高深莫测 Inscrutable",
+      "description": "<p>该@ref[actor.name]{生物}是一个不可知的深渊实体。它免疫任何会感知其情绪或读取其思想的效果或法术。任何用于判明该生物意图的技能检定都要承受+4<strong>祸骰</strong>。</p>\n<p>The @ref[actor.name]{creature} is an unknowable abyssal entity. It is immune to any effect or spell that would sense its emotions or read its thoughts. Any skill check to ascertain this creature's intentions is made with +4 <strong>Banes</strong>.</p>"
     },
     "Jurtak": {
-      "name": "Jurtak",
-      "description": "<p>Saurian humanoids that have become horribly warped by abyssal energies. They possess six eyes perfectly attuned to darkness, and their slender bodies are covered in scales that allow them to easily blend into the shadows of their surroundings.</p>"
+      "name": "尤尔塔克 Jurtak",
+      "description": "<p>被深渊能量扭曲得骇人无比的蜥蜴类人型生物。它们拥有六只与黑暗完美适应的眼睛，纤细的身体覆满鳞片，使它们能够轻易融入周遭环境的阴影之中。</p>\n<p>Saurian humanoids that have become horribly warped by abyssal energies. They possess six eyes perfectly attuned to darkness, and their slender bodies are covered in scales that allow them to easily blend into the shadows of their surroundings.</p>"
     },
     "Mutagenic Affliction": {
-      "name": "Mutagenic Affliction",
-      "description": "<p>This @ref[actor.name]{creature} is afflicted by a wasting mutation that makes it  behave erratically. It is stronger and more aggressive but has been rendered @Condition[blinded].</p>"
+      "name": "诱变病症 Mutagenic Affliction",
+      "description": "<p>这个@ref[actor.name]{生物}受到一种使其行为紊乱的衰竭性突变影响。它更强壮，也更具侵略性，但已陷入@Condition[blinded]。</p>\n<p>This @ref[actor.name]{creature} is afflicted by a wasting mutation that makes it  behave erratically. It is stronger and more aggressive but has been rendered @Condition[blinded].</p>"
     },
     "Bewildering Gleam": {
-      "name": "Bewildering Gleam",
-      "description": "<p>The @ref[actor.name]{ooze} spreads itself into a gelatinous sheet that coats every nearby surface.</p>"
+      "name": "惑乱微光 Bewildering Gleam",
+      "description": "<p>这只@ref[actor.name]{软泥怪}将自己摊开成一层胶状薄膜，覆盖附近的每一处地表。</p>\n<p>The @ref[actor.name]{ooze} spreads itself into a gelatinous sheet that coats every nearby surface.</p>"
     },
     "Electrified Pseudopod": {
-      "name": "Electrified Pseudopod",
-      "description": "<p>This @ref[actor.name]{ooze} courses with currents of electricity which it can emanate in a violent blast of electrical force.</p>"
+      "name": "带电拟足 Electrified Pseudopod",
+      "description": "<p>这个@ref[actor.name]{软泥怪}体内涌动着电流，并能将其释放成一阵猛烈的电击爆发。</p>\n<p>This @ref[actor.name]{ooze} courses with currents of electricity which it can emanate in a violent blast of electrical force.</p>"
     },
     "Magnetic Disarm": {
-      "name": "Magnetic Disarm",
-      "description": "<p>The @ref[actor.name]{ooze} uses it's magnetically charged body to disarm an attacker of their metal weapon.</p>"
+      "name": "磁力缴械 Magnetic Disarm",
+      "description": "<p>该@ref[actor.name]{软泥怪}利用其带有磁性的身躯缴械攻击者手中的金属武器。</p>\n<p>The @ref[actor.name]{ooze} uses it's magnetically charged body to disarm an attacker of their metal weapon.</p>"
     },
     "Pallid Drake": {
-      "name": "Pallid Drake",
-      "description": "<p>These creatures have only recently been encountered on Ember, and their origins are wholly unknown. Despite their close resemblance to Vile Dragons, they do not possess the same abilities, and only limited biological similarities. They appear to be a chimerical blend of snake and dragon, perhaps indicating they are of magical origin. This newfound presence has stirred considerable intrigue and concern among researchers and adventurers alike, as these new creatures could indicate a change in the norm, and a rise of new, dangerous, draconic foes.</p>"
+      "name": "苍白龙兽 Pallid Drake",
+      "description": "<p>这些生物直到最近才在恩博尔被发现，其起源完全未知。尽管它们与邪龙极为相似，但并不具备相同的能力，且仅有有限的生物材料相似性。它们看起来像是蛇与巨龙的奇美拉式混合体，这或许表明它们具有魔法起源。这一新近出现的现象已在研究者与冒险者之间引发了相当大的兴趣与担忧，因为这些新的生物可能预示着常态的变化，以及全新、危险的龙类敌人的崛起。</p>\n<p>These creatures have only recently been encountered on Ember, and their origins are wholly unknown. Despite their close resemblance to Vile Dragons, they do not possess the same abilities, and only limited biological similarities. They appear to be a chimerical blend of snake and dragon, perhaps indicating they are of magical origin. This newfound presence has stirred considerable intrigue and concern among researchers and adventurers alike, as these new creatures could indicate a change in the norm, and a rise of new, dangerous, draconic foes.</p>"
     },
     "Pestilent Retch": {
-      "name": "Pestilent Retch",
-      "description": "<p>The @ref[actor.name]{creature} is able to spew corrupting bile at targets in front of it.</p>"
+      "name": "瘟疫呕吐 Pestilent Retch",
+      "description": "<p>该@ref[actor.name]{生物}能够向其前方的目标喷吐腐化胆汁。</p>\n<p>The @ref[actor.name]{creature} is able to spew corrupting bile at targets in front of it.</p>"
     },
     "Primordial Guardian": {
-      "name": "Primordial Guardian",
-      "description": "<p>Protectors of Primordis and servants of the Casia.</p>"
+      "name": "原初守护者 Primordial Guardian",
+      "description": "<p>普里莫迪斯的守护者，以及卡西亚的仆从。</p>\n<p>Protectors of Primordis and servants of the Casia.</p>"
     },
     "Rask": {
-      "name": "Rask",
-      "description": "<p>A lean mammal with features both canine and feline in nature, the large creature is marked by feathery tufts of fur, and appears as strong as it is dexterous. A striped pelt crowns the beast's regal head, and a short fluffy tail sways behind it with graceful intention.</p><p>@ref[name]s are domesticated four-legged mammals who frequent various biomes of the Arctus Plateau. Often used as animal companions and beasts of burden, @ref[name]s are known to be some of the region's most beloved and skillful animal mounts. They're known to be noble beasts, both generous of heart and direct of intention.</p>"
+      "name": "拉斯克 Rask",
+      "description": "<p>这种瘦长的哺乳动物兼具犬科与猫科特征，这种大型生物有着羽毛般成簇的毛发，看起来既强壮又敏捷。条纹皮毛覆盖着这头野兽高贵的头部，一条短而蓬松的尾巴在身后优雅而有意地摆动着。</p><p>@ref[name]是已被驯化的四足哺乳动物，常见于阿克图斯高原的各种生物群系。它们常被用作动物伙伴和驮兽，@ref[name]也被认为是这一地区最受喜爱且最有技巧的动物坐骑之一。它们以高贵的野兽而闻名，既慷慨热诚，又意志坚定。</p>\n<p>A lean mammal with features both canine and feline in nature, the large creature is marked by feathery tufts of fur, and appears as strong as it is dexterous. A striped pelt crowns the beast's regal head, and a short fluffy tail sways behind it with graceful intention.</p><p>@ref[name]s are domesticated four-legged mammals who frequent various biomes of the Arctus Plateau. Often used as animal companions and beasts of burden, @ref[name]s are known to be some of the region's most beloved and skillful animal mounts. They're known to be noble beasts, both generous of heart and direct of intention.</p>"
     },
     "Searing Stare": {
-      "name": "Searing Stare",
-      "description": "<p>The @ref[actor.name] channels the mysterious power of its singular eye into a penetrating beam which damages and temporarily blinds its prey.</p>"
+      "name": "灼热凝视 Searing Stare",
+      "description": "<p>@ref[actor.name]将其独眼中的神秘力量汇聚成一道穿透光束，对猎物造成伤害并使其暂时失明。</p>\n<p>The @ref[actor.name] channels the mysterious power of its singular eye into a penetrating beam which damages and temporarily blinds its prey.</p>"
     },
     "Repelling Kick": {
-      "name": "Repelling Kick",
-      "description": "<p>The @ref[actor.name] unleashes an alchemically fueled kick with ruthless concussive force.</p>"
+      "name": "斥退踢击 Repelling Kick",
+      "description": "<p>@ref[actor.name]使出一记由炼金术驱动的飞踢，带着无情的震荡冲击力。</p>\n<p>The @ref[actor.name] unleashes an alchemically fueled kick with ruthless concussive force.</p>"
     },
     "Alchemical Recharge": {
-      "name": "Alchemical Recharge",
-      "description": "<p>The @ref[actor.name] interfaces with an Alchemical Charging Station to recover its supply of internal alchemical fluid.</p>"
+      "name": "炼金充能 Alchemical Recharge",
+      "description": "<p>@ref[actor.name] 与一台炼金充能站连接，以恢复其内部炼金液体的储备。</p>\n<p>The @ref[actor.name] interfaces with an Alchemical Charging Station to recover its supply of internal alchemical fluid.</p>"
     },
     "Powered Spin": {
-      "name": "Powered Spin",
-      "description": "<p>The @ref[actor.name] unleashes an alchemically fueled spinning attack which strikes all nearby enemies.</p>"
+      "name": "动力旋转 Powered Spin",
+      "description": "<p>@ref[actor.name] 发动了一次由炼金力量驱动的旋转攻击，打击所有附近的敌人。</p>\n<p>The @ref[actor.name] unleashes an alchemically fueled spinning attack which strikes all nearby enemies.</p>"
     },
     "Enhanced Shielding": {
-      "name": "Enhanced Shielding",
-      "description": "<p>The @ref[actor.name] channels alchemical fluid through its shielding plates, temporarily super-heating and reinforcing them against physical damage.</p>"
+      "name": "强化护盾 Enhanced Shielding",
+      "description": "<p>@ref[actor.name]将炼金液体导入其护甲板中，使其暂时过热并得到强化，以抵御物理伤害。</p>\n<p>The @ref[actor.name] channels alchemical fluid through its shielding plates, temporarily super-heating and reinforcing them against physical damage.</p>"
     },
     "Sight Without": {
-      "name": "Sight Without",
-      "description": "<p>The @ref[actor.name]{creature} has no eyes, ears, or mouth. It cannot be @Condition[blinded], @Condition[silenced], or @Condition[deafened]. It has 60ft of blindsight and can speak telepathically to any one or all creatures within 120 feet of it.</p>"
+      "name": "无视觉感知 Sight Without",
+      "description": "<p>该@ref[actor.name]{生物}没有眼睛、耳朵或嘴。它不能处于@Condition[blinded]、@Condition[silenced]或@Condition[deafened]状态。它拥有60ft的盲视，并且可以与120 feet内的任意一个或所有生物进行心灵感应交流。</p>\n<p>The @ref[actor.name]{creature} has no eyes, ears, or mouth. It cannot be @Condition[blinded], @Condition[silenced], or @Condition[deafened]. It has 60ft of blindsight and can speak telepathically to any one or all creatures within 120 feet of it.</p>"
     },
     "Sitherian": {
-      "name": "Sitherian",
-      "description": "<p>A @ref[name] is an arachnid beast descended from their namesake — Sitheera, the Watcher. Heralded by the vibrations of their intricate lattice of webs, Sitherian are capable of injecting a potent venom from their chelicerae fangs, and can extrude silk from spinnerets located at the rear of their immense ovoid abdomens.</p>"
+      "name": "西瑟里安 Sitherian",
+      "description": "<p>一种@ref[name]是蛛形类野兽，源自其同名者——西希拉，注视者。它们以其精巧繁复的蛛网格构所产生的振动为先兆，西瑟里安能够用其螯肢上的尖牙注入强效毒液，并可从其巨大卵形腹部后部的纺器中吐出丝线。</p>\n<p>A @ref[name] is an arachnid beast descended from their namesake — Sitheera, the Watcher. Heralded by the vibrations of their intricate lattice of webs, Sitherian are capable of injecting a potent venom from their chelicerae fangs, and can extrude silk from spinnerets located at the rear of their immense ovoid abdomens.</p>"
     },
     "Skither": {
-      "name": "Skither",
-      "description": "<p>Often used as a particularly destructive breed of messengers among tyraphem, who deploy them to leave burning messages on the property and bodies of their enemies, skithers use their small size and ability to camouflage themselves, putting themselves into positions where their chosen target will not be able to put up a defense. Dedicated to creating carnage where they can for the more powerful creatures they serve, skithers have known to follow a target for miles and will overload their bodies with radiant energy when they believe they have lost a fight, determined to harm the target even if they have to give up their own lives in the process.</p>"
+      "name": "斯基瑟 Skither",
+      "description": "<p>斯基瑟常被提拉斐姆用作一种尤为具破坏性的信使品种，被派去在敌人的财产和身体上留下燃烧的讯息。它们利用自己较小的体型和伪装能力，把自己置于所选目标无法进行防御的位置。斯基瑟致力于为它们所侍奉的更强力的生物尽可能制造屠戮；众所周知，它们会尾随目标数英里，并会在认为自己已输掉战斗时让身体超载辐光能量，决意即使必须付出自己的生命，也要伤害目标。</p>\n<p>Often used as a particularly destructive breed of messengers among tyraphem, who deploy them to leave burning messages on the property and bodies of their enemies, skithers use their small size and ability to camouflage themselves, putting themselves into positions where their chosen target will not be able to put up a defense. Dedicated to creating carnage where they can for the more powerful creatures they serve, skithers have known to follow a target for miles and will overload their bodies with radiant energy when they believe they have lost a fight, determined to harm the target even if they have to give up their own lives in the process.</p>"
     },
     "Swallowed Screams": {
-      "name": "Swallowed Screams",
-      "description": "<p>The @ref[actor.name]{creature} fixates upon a specific target, removing their ability to speak or hear.</p>"
+      "name": "被吞没的尖叫声 Swallowed Screams",
+      "description": "<p>@ref[actor.name]{该生物}专注于一个特定目标，使其失去说话或听见的能力。</p>\n<p>The @ref[actor.name]{creature} fixates upon a specific target, removing their ability to speak or hear.</p>"
     },
     "Tyraphem": {
-      "name": "Tyraphem",
-      "description": "<p>Tyraphem are the powerful beings that reside upon the Inner Realm of Luxarum. Not only are the Tyraphem powerful but they are extremely numerous and combined with an incredibly warlike and martial nature they could become a major threat to the entire Cosmos. Thankfully they have been engaged in a never-ending war with themselves since Creation.</p>"
+      "name": "提拉斐姆 Tyraphem",
+      "description": "<p>提拉斐姆是居住在卢克萨鲁姆内界的强力存在。提拉斐姆不仅强大，而且数量极其庞大，再加上其极度好战、崇尚武力的天性，他们本可能成为整个寰宇的重大威胁。所幸，自创造以来，他们一直陷于一场永无止境的内战之中。</p>\n<p>Tyraphem are the powerful beings that reside upon the Inner Realm of Luxarum. Not only are the Tyraphem powerful but they are extremely numerous and combined with an incredibly warlike and martial nature they could become a major threat to the entire Cosmos. Thankfully they have been engaged in a never-ending war with themselves since Creation.</p>"
     },
     "Vanexis": {
-      "name": "Vanexis",
-      "description": "<p>Offshoots of the Casia of Primordis, these guardians were created to be the ultimate protectors of knowledge. Among the beings of Primordis, they are broadly considered to have the keenest minds, sharpest senses, and most sound of judgement. While less openly inquisitive and prone to flights of fancy as other Casia, they are no less hungry for knowledge, and often learn all they can about whatever place they are asked to protect, becoming an expert in the site's layout and history.</p>"
+      "name": "瓦内克西斯 Vanexis",
+      "description": "<p>作为普里莫迪斯的卡西亚分支，这些守护者被创造出来，作为知识的终极守护者。在普里莫迪斯的诸存在之中，他们普遍被认为拥有最敏锐的头脑、最灵敏的感知，以及最稳健的判断力。虽然与其他卡西亚相比，他们不那么公开地好奇，也不太容易沉溺于异想天开，但他们对知识的渴求丝毫不减，并且常常会尽可能了解自己被要求守护的任何地点，成为该处布局与历史方面的专家。</p>\n<p>Offshoots of the Casia of Primordis, these guardians were created to be the ultimate protectors of knowledge. Among the beings of Primordis, they are broadly considered to have the keenest minds, sharpest senses, and most sound of judgement. While less openly inquisitive and prone to flights of fancy as other Casia, they are no less hungry for knowledge, and often learn all they can about whatever place they are asked to protect, becoming an expert in the site's layout and history.</p>"
     },
     "Vorg": {
-      "name": "Vorg",
-      "description": "<p>Vorg are centipede-like creatures whose metal carapace surrounds an endlessly glowing radiant light. Hot to the touch, and capable of climbing up walls, burrowing into the ground, and pulling themselves along the surface, they are often an unwelcome surprise to those who come across them in caves, caverns, and other subterranean locations.</p>"
+      "name": "沃格 Vorg",
+      "description": "<p>沃格是一种外形类似蜈蚣的生物，其金属甲壳包裹着永无止息地发出辐射光芒的光亮。它们触之灼热，能够爬上墙壁、掘入地下，并沿着地表拖行自己，因此对于那些在洞穴、岩窟及其他地下地点中偶然遇见它们的人来说，往往是不受欢迎的意外。</p>\n<p>Vorg are centipede-like creatures whose metal carapace surrounds an endlessly glowing radiant light. Hot to the touch, and capable of climbing up walls, burrowing into the ground, and pulling themselves along the surface, they are often an unwelcome surprise to those who come across them in caves, caverns, and other subterranean locations.</p>"
     },
     "Whisperer": {
-      "name": "Whisperer",
-      "description": "<p>A swirling mass of living darkness and shadow that slithers and writhes into and around itself with an unsettling impossibility.</p>"
+      "name": "低语者 Whisperer",
+      "description": "<p>一团由活生生的黑暗与阴影构成的漩涡状团块，以一种令人不安、近乎不可能的方式在自身之中及其周围蜿蜒蠕动、翻腾扭曲。</p>\n<p>A swirling mass of living darkness and shadow that slithers and writhes into and around itself with an unsettling impossibility.</p>"
     }
   }
 }
