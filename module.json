@@ -1,0 +1,27 @@
+{
+  "id": "ember_cn_unofficial",
+  "title": "Translation:Ember[Unofficial]",
+  "description": "Taka初版",
+  "authors": [
+    {
+      "name": "Taka"
+    }
+  ],
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": 13,
+    "verified": 13.344
+  },
+  "esmodules": [
+    "register.js"
+  ],
+  "relationships": {
+    "requires": [
+      {
+        "id": "babele",
+        "type": "module",
+        "compatibility": {}
+      }
+    ]
+  }
+}
