@@ -1,0 +1,933 @@
+{
+"TYPES.JournalEntryPage.ember.ancestry": "Ember Ancestry",
+"TYPES.JournalEntryPage.ember.biome": "Ember Biome",
+"TYPES.JournalEntryPage.ember.characterClass": "Ember Character Class",
+"TYPES.JournalEntryPage.ember.culture": "Ember Culture",
+"TYPES.JournalEntryPage.ember.cosmos": "Ember Cosmos",
+"TYPES.JournalEntryPage.ember.deity": "Ember Deity",
+"TYPES.JournalEntryPage.ember.location": "Ember Location",
+"TYPES.JournalEntryPage.ember.lore": "Ember Lore",
+"TYPES.JournalEntryPage.ember.organization": "Ember Organization",
+"TYPES.JournalEntryPage.ember.quest": "Ember Quest Overview",
+"TYPES.JournalEntryPage.ember.questEvent": "Ember Quest Event",
+"TYPES.JournalEntryPage.ember.questFlowchart": "Ember Quest Flowchart",
+"TYPES.JournalEntryPage.ember.standaloneEvent": "Ember Standalone Event",
+
+"TYPES.RegionBehavior.ember.trapTrigger": "Trap Trigger",
+"TYPES.RegionBehavior.ember.areaEffect": "Area Effect",
+"TYPES.RegionBehavior.ember.footstepSurface": "Footstep Surface",
+
+"TABLE.ACTIONS.Draw": "Result",
+
+"ACTOR": {
+  "CONTROLS": {
+    "EmberToken": "Ember Dynamic Token",
+    "EmberFlags": "Ember Actor Flags "
+  }
+},
+
+"EMBER.ACTOR_FLAGS": {
+  "FIELDS": {
+    "discoverable": {
+      "label": "Discoverable",
+      "hint": "Is this Actor discoverable as a Creature or Character in the Ember Codex?",
+      "creature": "Creature",
+      "character": "Character"
+    },
+    "character": {
+      "ancestry": {
+        "label": "Ancestry",
+        "hint": "An Ancestry item ID or Ember ancestry name."
+      },
+      "culture": {
+        "label": "Culture",
+        "hint": "A Culture item ID or Ember culture name."
+      },
+      "path": {
+        "label": "Path",
+        "hint": "A custom string that describes this character's profession or background."
+      },
+      "pronouns": {
+        "label": "Pronouns"
+      }
+    },
+    "portrait": {
+      "width": {
+        "label": "Width"
+      },
+      "height": {
+        "label": "Height"
+      },
+      "anchorX": {
+        "label": "X"
+      },
+      "anchorY": {
+        "label": "Y"
+      },
+      "flip": {
+        "label": "Flip Horizontal",
+        "hint": "Portraits should be either front-facing or left-facing. If a portrait is illustrated in a way that is right-facing, check this box to flip it in Vistas."
+      },
+      "artist": {
+        "label": "Artist Name"
+      }
+    },
+    "pronunciation": {
+      "label": "Pronunciation",
+      "hint": "A phonetic guide for how to pronounce this character's name."
+    },
+    "combatTheme": {
+      "label": "Combat Theme",
+      "hint": "Configure this creature or character to prefer a combat theme that is not standard for their category."
+    }
+  },
+  "SHEET": {
+    "CHARACTER": "Character",
+    "COMBAT": "Combat",
+    "DISCOVERABLE": "Discoverable",
+    "PORTRAIT": "Portrait"
+  }
+},
+
+"EMBER.ADVENTURE": {
+  "WARNINGS": {
+    "IMPORT_REQUIRED": "The Ember module is active, but its content is not yet imported. Import the Ember adventure to continue.",
+    "IMPORT_UNDERWAY": "Ember import in progress, please wait patiently. When complete, the game will automatically reload.",
+    "REIMPORT_REQUIRED": "You must reimport the Ember adventure to include critical updates in Ember version {version}.",
+    "EVENT_ACTIVE": "You must conclude or cancel your currently active Ember game event before importing the adventure."
+  }
+},
+
+"EMBER.ATTUNEMENT": {
+  "Attunement": "Attunement",
+  "Amount": "Amount",
+  "Identifier": "Award Identifier",
+  "IdentifierHint": "A unique string that identifies this specific attunement award.",
+  "Progress": "Progress",
+  "Tab": "Attunements",
+  "Type": "Attunement Type",
+  "Rank": "Rank",
+  "CurrentTooltip": "Attunement points gained",
+  "NextTooltip": "Required for next rank"
+},
+
+"EMBER.CALENDAR": {
+  "ADVANCE": "Advance Time",
+  "REWIND": "Rewind Time",
+  "WORLD": "World Map",
+  "COSMOS": "Cosmos Map",
+  "REGION": "Region Map",
+  "EXPAND": "Expand Calendar",
+  "COLLAPSE": "Collapse Calendar",
+  "PARTY": "Party Sheet",
+  "CODEX": "Codex",
+  "SEASONS": {
+    "STILLING": "Stilling",
+    "SEEDING": "Seeding",
+    "BLOOMING": "Blooming",
+    "STEADING": "Steading",
+    "GLEANING": "Gleaning",
+    "WITHERING": "Withering"
+  }
+},
+
+"EMBER.CODEX": {
+  "TABS": "Codex Tab Navigation",
+  "JOURNAL": "Journal",
+  "QUESTS": "Quest Log",
+  "DISCOVERIES": "Discoveries",
+  "BESTIARY": "Bestiary",
+  "CHARACTERS": "Characters",
+  "DISCOVERED_COUNT": "Discovered Count",
+  "ENCOUNTERED": "{name} was encountered on {time}.",
+  "ENCOUNTERED_LOCATION": "{name} was encountered on {time} in {location}.",
+  "NOT_ENCOUNTERED": "{name} has not yet been encountered.",
+  "DISCOVERY_RECORD": "Record Discovery",
+  "DISCOVERY_RESET": "Reset Discovery"
+},
+
+"EMBER.CONTROLS": {
+  "CycleSlice": "Cycle Elevation Level",
+  "TerrainToggle": "Toggle Terrain Overlay",
+  "WeatherToggle": "Toggle Weather Overlay",
+  "ClockToggle": "Toggle World Clock",
+  "EventsHUD": "Toggle Events HUD",
+  "InteractionToggle": "Interact With Objects",
+  "HexHUD": "Toggle Hex HUD",
+  "SpawnsToggle": "Visualize Spawn Areas",
+  "Teleport": "Teleport Token",
+  "VistaConfig": "Configure Vista",
+  "VistaComposition": "Change Composition"
+},
+
+"EMBER.CREATION": {
+  "TABS": "Character Creation Tab Navigation",
+  "MESSAGES": {
+    "CompleteAddParty": "{userName} has finished character creation of {actorLink}! Add them to the Party?"
+  }
+},
+
+"EMBER.ManagerTitle": "Ember Campaign Manager",
+"EMBER.ManagerTabObjectives": "Objectives",
+"EMBER.ManagerTabDiscoveries": "Discoveries",
+"EMBER.ManagerTabEvents": "Events",
+"EMBER.ManagerTabChoices": "Choices",
+"EMBER.ManagerTabFactions": "Factions",
+
+"EMBER.MovementMiles": "Ember requires group movement speed to be in miles.",
+
+"EMBER.MILESTONE": {
+  "Award": {
+    "NewLevel": "The milestone award has advanced the party to level {level}!",
+    "Warning": "A milestone was already awarded for the identifier '{id}'."
+  },
+  "CanLevel": "This character can level up.",
+  "Dialog": {
+    "Identifier": {
+      "Error": "A unique identifier must be supplied.",
+      "Hint": "A unique string that identifies this milestone event.",
+      "Label": "Identifier",
+      "Placeholder": "uniqueMilestoneIdentifier"
+    },
+    "Legend": "Points",
+    "Points": {
+      "Label": "Award"
+    },
+    "Submit": {
+      "Award": "Award",
+      "Revoke": "Revoke"
+    },
+    "Title": {
+      "Award": "Award Milestones",
+      "Revoke": "Revoke Milestones"
+    }
+  },
+  "Points": {
+    "Label": "Milestone Points"
+  },
+  "Revoke": {
+    "Warning": "Attempted to revoke milestone award for non-existent event '{id}'."
+  }
+},
+
+"EMBER.SoundscapeMoodCalm": "Calm",
+"EMBER.SoundscapeMoodTension": "Tension",
+"EMBER.SoundscapeMoodCombat": "Combat",
+
+"EMBER.EventTagExploration": "Exploration Event",
+"EMBER.EventTagCombat": "Combat Event",
+"EMBER.EventTagSocial": "Social Event",
+"EMBER.EventTagGlobal": "Global Event",
+"EMBER.EventTagUnique": "Unique Event",
+
+"EMBER.EventActionBegin": "Begin Event",
+"EMBER.EventActionCancel": "Cancel Event",
+"EMBER.EventActionDecline": "Decline Event",
+"EMBER.EventActionReroll": "Suggest Alternative",
+"EMBER.EventActionComplete": "Complete Event",
+"EMBER.EventActionDiscoveryComplete": "Complete Discovery",
+"EMBER.EventActionDiscoveryDecline": "Decline Discovery",
+
+"EMBER.EmberStorylineLegend.Title": "Storylines",
+"EMBER.EmberStorylineLegend.StateNone": "Hidden",
+"EMBER.EmberStorylineLegend.StateOpen": "Open Events",
+"EMBER.EmberStorylineLegend.StateAll": "All Events",
+
+"EMBER.EVENTS.Undiscovered": "Not Encountered",
+"EMBER.EVENTS.Available": "Not Started",
+"EMBER.EVENTS.Active": "Active",
+"EMBER.EVENTS.Repeating": "Repeating",
+"EMBER.EVENTS.Completed": "Completed",
+"EMBER.EVENTS.Milestone": "Awards Milestone",
+"EMBER.EVENTS.NoExposition": "No Exposition text is defined for this event!",
+"EMBER.EVENTS.NoOverview": "No Overview text is defined for this event!",
+"EMBER.EVENTS.NoSummary": "No Journal Summary text is defined for this event!",
+"EMBER.EVENTS.QuestEvent": "Quest Event",
+"EMBER.EVENTS.StandaloneEvent": "Standalone Event",
+
+"EMBER.ANCESTRY": {
+  "FIELDS": {
+    "color": {
+      "label": "UI Color",
+      "hint": "A color used as a design element to depict this Ancestry in the character creation UI."
+    },
+    "icon": {
+      "label": "Ancestry Icon",
+      "hint": "An icon used to represent this Ancestry in character creation and elsewhere."
+    },
+    "item": {
+      "label": "Ancestry Race Item",
+      "hint": "The D&D5E game system race item."
+    },
+    "height": {
+      "label": "Height",
+      "hint": "Define the typical height for adults of this Ancestry."
+    },
+    "lifespan": {
+      "label": "Lifespan",
+      "hint": "Define the typical lifespan for this Ancestry."
+    },
+    "origin": {
+      "label": "Ancestry Origin",
+      "hint": "Briefly describe the cosmological origin of the ancestry. For internal notes only."
+    },
+    "portrait": {
+      "label": "Portrait",
+      "hint": "A portrait of an example character of this Ancestry."
+    },
+    "rarity": {
+      "label": "Rarity",
+      "hint": "Define the rarity tier of this Ancestry."
+    }
+  },
+  "SECTIONS": {
+    "gameplay": "Gameplay Traits"
+  }
+},
+
+"EMBER.BIOME": {
+  "SECTIONS": {
+    "basic": "Basic Configuration",
+    "related": "Related Content",
+    "events": "Event Probability",
+    "ambience": "Environment Audio",
+    "music": "Music",
+    "visibility": "Visibility"
+  },
+  "FIELDS": {
+    "biomeId": {
+      "label": "Biome ID",
+      "hint": "A required unique identifier for the biome. This identifier must match exactly the one configured in the backend region data."
+    },
+    "creatures": {
+      "label": "Creatures",
+      "hint": "Configure the creatures which inhabit this biome by entering an Actor UUID or using drag-and-drop."
+    },
+    "events": {
+      "coefficients": {
+        "label": "Event Coefficients",
+        "hint": "Configure coefficients and weights which inform the probability of events occurring in this biome."
+      }
+    },
+    "exposition": {
+      "label": "Setting the Scene",
+      "hint": "Readaloud text which provides exposition when first discovering the Biome. This introductory text is visible to both Gamemaster and Players."
+    },
+    "fillColor": {
+      "label": "Color",
+      "hint": "The color used to represent this Biome on the region map."
+    },
+    "overview": {
+      "label": "Biome Overview",
+      "hint": "A paragraph (or more) of player-facing overview about the Biome."
+    },
+    "regionId": {
+      "label": "Region ID",
+      "hint": "Configure which region of the Ember game world where this location exists."
+    },
+    "scenes": {
+      "area": {
+        "label": "Area Map",
+        "hint": "Designate an Area Map which is used to represent this Biome."
+      },
+      "vista": {
+        "label": "Vista",
+        "hint": "Designate a Vista which is used to represent this Biome."
+      }
+    },
+    "sounds": {
+      "environment": {
+        "soundscape": {
+          "label": "Environment Soundscape",
+          "hint": "Configure the soundscape and arrangements used by default for environmental ambience within this Biome."
+        },
+        "arrangements": {
+          "day": {
+            "label": "Day"
+          },
+          "night": {
+            "label": "Night"
+          }
+        },
+        "surface": {
+          "label": "Surface Substance",
+          "hint": "The surface substance ID used when determining region map travel sound."
+        }
+      },
+      "music": {
+        "soundscape": {
+          "label": "Music Soundscape",
+          "hint": "Configure the soundscape and arrangements used for game music within this Biome."
+        },
+        "arrangements": {
+          "day": {
+            "label": "Day"
+          },
+          "night": {
+            "label": "Night"
+          },
+          "tension": {
+            "label": "Tension"
+          }
+        }
+      }
+    },
+    "terrain": {
+      "label": "Terrain",
+      "hint": "Designate the default terrain type of hexes in this Biome."
+    },
+    "visibility": {
+      "distance": {
+        "label": "Distance"
+      },
+      "limit": {
+        "label": "Limit",
+        "hint": "How does visibility get restricted when encountering hexes of this Biome?"
+      }
+    }
+  }
+},
+
+"EMBER.CHARACTER_CLASS": {
+  "FIELDS": {
+    "color": {
+      "label": "UI Color",
+      "hint": "A color used as a design element to depict this class in the character creation UI."
+    },
+    "icon": {
+      "label": "Class Icon",
+      "hint": "An icon used to represent this class in character creation and elsewhere."
+    },
+    "overview": {
+      "label": "Class Overview",
+      "hint": "A paragraph of summary information about the class which is displayed in character creation."
+    }
+  }
+},
+
+"EMBER.CULTURE": {
+  "FIELDS": {
+    "color": {
+      "label": "UI Color",
+      "hint": "A color used as a design element to depict this Culture in the character creation UI."
+    },
+    "icon": {
+      "label": "Culture Icon",
+      "hint": "An icon used to represent this Culture in character creation and elsewhere."
+    },
+    "item": {
+      "label": "Culture Background Item",
+      "hint": "The D&D5E game system background item."
+    }
+  }
+},
+
+"EMBER.COSMOS": {
+  "FIELDS": {
+    "color": {
+      "label": "UI Color",
+      "hint": "A color used as a design element to depict this Cosmological attunement in the character creation UI."
+    },
+    "icon": {
+      "label": "Icon",
+      "hint": "An icon used to represent this Cosmological attunement in character creation and elsewhere."
+    },
+    "item": {
+      "label": "Background Item",
+      "hint": "The D&D5E game system background item."
+    },
+    "portrait": {
+      "label": "Portrait Image",
+      "hint": "An image used to represent the cosmological element in character creation and elsewhere."
+    }
+  },
+  "SECTIONS": {
+    "gameplay": "Gameplay Integration"
+  }
+},
+
+"EMBER.DEITY": {
+  "SECTIONS": {
+    "magic": "Magic and Metaphysics"
+  },
+  "FIELDS": {
+    "banner": {
+      "label": "Deity Banner",
+      "hint": "A banner image depicting the deity or other reference materials related to the deity."
+    },
+    "caption": {
+      "label": "Banner Caption",
+      "hint": "An optional caption displayed beneath the banner image."
+    },
+    "pronunciation": {
+      "label": "Pronunciation",
+      "hint": "An optional phonetic pronunciation for the name of this Deity."
+    },
+    "category": {
+      "label": "Category",
+      "hint": "Define the sidebar category that this deity entry should be organized under."
+    },
+    "edict": {
+      "label": "Edict",
+      "hint": "Provide a one-sentence edict that summarizes this deity's mandate or goals."
+    },
+    "overview": {
+      "label": "Deity Overview",
+      "hint": "Provide a brief (2-3 sentence) overview of the Deity, their cosmological role, and core tenets."
+    },
+    "organizations": {
+      "label": "Related Organizations",
+      "hint": "Organizations of the world which have a notable relationship with this deity."
+    },
+    "locations": {
+      "label": "Notable Locations",
+      "hint": "Locations in the world which have a notable relationship with this deity."
+    },
+    "followers": {
+      "label": "Notable Followers",
+      "hint": "Associated characters or creatures which are notable followers of this deity."
+    },
+    "clerics": {
+      "label": "Divine Domains",
+      "hint": "Divine Domains which are typically associated with this deity, if any. Clerics who worship this deity usually practice one of these domains."
+    },
+    "warlocks": {
+      "label": "Warlock Pacts",
+      "hint": "Warlock Pacts which are typically associated with this deity, if any. Warlocks who are granted power by this deity adhere to one of these pacts."
+    },
+    "sorcerers": {
+      "label": "Sorcerous Origins",
+      "hint": "Sorcerous Origins which are typically associated with this deity, if any. Sorcerers with these origins of their power may attribute it to this deity."
+    }
+  },
+  "SECTIONS": {
+    "basic": "Basic Configuration",
+    "related": "Related Content"
+  }
+},
+
+"EMBER.DEVELOPMENT": {
+  "FIELDS": {
+    "development": {
+      "status": {
+        "label": "Development Status",
+        "hint": "Record the current development status of this content."
+      },
+      "notes": {
+        "label": "Development Notes",
+        "hint": "Leave short notes that explain the current development status or next steps. URLs are supported."
+      },
+      "secrets": {
+        "label": "Secret Lore",
+        "hint": "Additional world-building or setting compendium information about this topic which is not intended for public (either GM or player) knowledge."
+      }
+    }
+  }
+},
+
+"EMBER.EVENT": {
+  "SECTIONS": {
+    "basic": "Basic Configuration",
+    "location": "Event Location",
+    "probability": "Event Probability",
+    "activation": "Event Activation"
+  },
+  "FIELDS": {
+    "biomes": {
+      "label": "Event Biomes",
+      "hint": "Configure this event to occur in all hexes belonging to a certain set of biomes."
+    },
+    "coefficients": {
+      "label": "Event Coefficients",
+      "hint": "Configure coefficients and weights which inform the probability of this event occurring. This is an advanced configuration and should be done only with caution and understanding of how the event probability engine works."
+    },
+    "eventId": {
+      "label": "Event ID",
+      "hint": "A required unique identifier for the event. By convention this event ID should be alphanumeric, camel-case, and begin with a lowercase letter. For example \"myStandaloneEvent3\"."
+    },
+    "encounter": {
+      "label": "Encounter Configuration",
+      "hint": "Encounter configuration is an advanced feature and should only be done cautiously and in consultation with Andrew."
+    },
+    "global": {
+      "label": "Global",
+      "hint": "Global events may occur in any and every hex in the world."
+    },
+    "hexes": {
+      "label": "Specific Hexes",
+      "hint": "Configure this event to occur in a set of specific hex coordinates."
+    },
+    "type": {
+      "label": "Event Type",
+      "hint": "Indicate the primary gameplay type of this event. Currently, you may only choose one type but in the future you will be able to tag multiple gameplay themes."
+    },
+    "locations": {
+      "label": "Event Locations",
+      "hint": "Configure this event to occur in a specific set of locations."
+    },
+    "milestone": {
+      "label": "Awards Milestone",
+      "hint": "Indicate whether this quest event awards a milestone point upon completion."
+    },
+    "prerequisite": {
+      "label": "Prerequisite",
+      "hint": "Configure the prerequisite state of parent events that is required for this event to be unlocked."
+    },
+    "regionId": {
+      "label": "World Region",
+      "hint": "Configure which region of the world this event takes place in."
+    },
+    "scene": {
+      "label": "Active Scene",
+      "hint": "Configure which Scenes should be used for this event.",
+      "active": {
+        "id": {
+          "label": "Active Scene",
+          "hint": "This Scene becomes active when this Event is started. If blank, the event will take place within the current Scene rather than switching to a different one."
+        },
+        "composition": {
+          "label": "Active Composition"
+        }
+      },
+      "complete": {
+        "id": {
+          "label": "Complete Scene",
+          "hint": "This Scene becomes active when this Event is completed. If blank, the Scene which was previously active before the start of the Event will be activated."
+        },
+        "composition": {
+          "label": "Complete Composition"
+        }
+      }
+    },
+    "unique": {
+      "label": "Unique",
+      "hint": "Unique events will only occur once, otherwise this event may repeat."
+    },
+    "overview": {
+      "label": "At a Glance",
+      "hint": "A brief (1-2 sentence) introduction which is visible only to the Gamemaster that summarizes what gameplay will occur during the event."
+    },
+    "exposition": {
+      "label": "Setting the Scene",
+      "hint": "Readaloud text which provides exposition to the event. This introductory text is visible to both Gamemaster and Players."
+    },
+    "summary": {
+      "label": "Journal Summary",
+      "hint": "Provide a brief (1-3 sentence) log entry that will record this event in the campaign manager after it has been completed. This should be written from the perspective of the party in 1st-person plural, for example \"We encountered a strange traveler on the road ...\""
+    }
+  },
+  "MESSAGES": {
+    "CHANGE_OUTCOME": "<p>Are you sure you want to {action} the <strong>{label}</strong> outcome?</p>",
+    "CHANGE_RESET": "reset",
+    "CHANGE_SELECT": "select"
+  }
+},
+
+"EMBER.LOCATION": {
+  "SECTIONS": {
+    "basic": "Basic Configuration",
+    "related": "Related Content",
+    "events": "Event Probability",
+    "ambience": "Environment Audio",
+    "music": "Music",
+    "visibility": "Visibility"
+  },
+  "FIELDS": {
+    "creatures": {
+      "label": "Creatures",
+      "hint": "Configure the creatures which inhabit this location by entering an Actor UUID or using drag-and-drop."
+    },
+    "events": {
+      "coefficients": {
+        "label": "Event Coefficients",
+        "hint": "Configure coefficients and weights which inform the probability of events occurring in this location."
+      }
+    },
+    "discoveryHexes": {
+      "label": "Discovery Hexes",
+      "hint": "Hexes other than ones where this location exists from which the location will be discovered."
+    },
+    "exposition": {
+      "label": "Setting the Scene",
+      "hint": "Readaloud text which provides exposition when first discovering the Location. This introductory text is visible to both Gamemaster and Players."
+    },
+    "locationId": {
+      "label": "Location ID",
+      "hint": "A required unique identifier for the location. By convention this location ID should be alphanumeric, camel-case, and begin with a lowercase letter. For example \"myCustomLocation4\"."
+    },
+    "overview": {
+      "label": "Location Overview",
+      "hint": "A paragraph (or more) of player-facing overview about the Location."
+    },
+    "regionId": {
+      "label": "Region ID",
+      "hint": "Configure which region of the Ember game world where this location exists."
+    },
+    "hexes": {
+      "label": "Specific Hexes",
+      "hint": "Configure the set of hexes where this location exists."
+    },
+    "scenes": {
+      "area": {
+        "label": "Area Map",
+        "hint": "Designate an Area Map which is used to represent this Location."
+      },
+      "vista": {
+        "label": "Vista",
+        "hint": "Designate a Vista which is used to represent this Location."
+      }
+    },
+    "sounds": {
+      "environment": {
+        "soundscape": {
+          "label": "Environment Soundscape",
+          "hint": "Configure the soundscape and arrangements used by default for environmental ambience within this Location."
+        },
+        "arrangements": {
+          "day": {
+            "label": "Day"
+          },
+          "night": {
+            "label": "Night"
+          }
+        },
+        "neighbors": {
+          "label": "Neighbors",
+          "hint": "When at this location on the region map, include environment layers from neighboring hexes?"
+        }
+      },
+      "music": {
+        "soundscape": {
+          "label": "Music Soundscape",
+          "hint": "Configure the soundscape and arrangements used for game music within this Location."
+        },
+        "arrangements": {
+          "day": {
+            "label": "Day"
+          },
+          "night": {
+            "label": "Night"
+          },
+          "tension": {
+            "label": "Tension"
+          }
+        }
+      }
+    },
+    "terrain": {
+      "label": "Terrain",
+      "hint": "Designate the terrain type of hexes in this Location."
+    },
+    "visibility": {
+      "distance": {
+        "label": "Distance"
+      },
+      "limit": {
+        "label": "Limit",
+        "hint": "How does visibility get restricted for hexes in this Location?"
+      }
+    }
+  }
+},
+
+"EMBER.LORE": {
+  "SECTIONS": {
+    "basic": "Basic Configuration",
+    "related": "Related Content"
+  },
+  "FIELDS": {
+    "banner": {
+      "img": {
+        "label": "Banner Image",
+        "hint": "A banner image displayed at the header of the page for this topic."
+      },
+      "caption": {
+        "label": "Banner Caption",
+        "hint": "An optional caption displayed beneath the banner image."
+      }
+    },
+    "content": {
+      "overview": {
+        "label": "Topic Overview",
+        "hint": "A brief (2-3 sentence) overview of this lore topic that summarizes its content."
+      },
+      "gamemaster": {
+        "label": "Gamemaster-Only Information",
+        "hint": "Additional information about this topic which is only revealed to Gamemaster users."
+      }
+    },
+    "identifier": {
+      "label": "Topic Identifier",
+      "hint": "The unique identifier string used for this Lore topic."
+    },
+    "pronunciation": {
+      "label": "Pronunciation",
+      "hint": "An optional phonetic pronunciation for the name of this topic."
+    },
+    "subtitle": {
+      "label": "Secondary Title",
+      "hint": "A subtitle, secondary title, moniker, or epithet that is used to refer to this topic."
+    },
+    "concepts": {
+      "label": "Related Concepts",
+      "hint": "Related concepts (Journal pages) which are associated with this topic."
+    },
+    "characters": {
+      "label": "Related Characters",
+      "hint": "Related characters (Actors) which are associated with this topic."
+    }
+  }
+},
+
+"EMBER.ORGANIZATION": {
+  "FIELDS": {
+    "banner": {
+      "label": "Banner Image",
+      "hint": "A optional banner image used to depict this Organization."
+    },
+    "caption": {
+      "label": "Banner Caption",
+      "hint": "An optional caption displayed beneath the banner image."
+    },
+    "pronunciation": {
+      "label": "Pronunciation",
+      "hint": "An optional phonetic pronunciation for the name of this Organization."
+    },
+    "color": {
+      "label": "UI Color",
+      "hint": "A color used as a design element to associate with this Organization."
+    },
+    "icon": {
+      "label": "Organization Icon",
+      "hint": "An icon used to represent this Organization."
+    },
+    "locations": {
+      "label": "Locations",
+      "hint": "Related locations (Gazetteer pages) which are associated with this Organization."
+    },
+    "overview": {
+      "label": "Organization Overview",
+      "hint": "Provide a brief (2-3 sentence) overview of the Organization that summarizes its role and background."
+    },
+    "characters": {
+      "label": "Characters",
+      "hint": "Related characters (Actors) which are associated with this Organization."
+    }
+  }
+},
+
+"EMBER.QUEST": {
+  "FIELDS": {
+    "questId": {
+      "label": "Quest ID",
+      "hint": "A required unique identifier for the quest. The quest ID should be alphanumeric, camel-case, and begin with a lowercase letter. For example \"specialQuest3\"."
+    },
+    "regionId": {
+      "label": "Region ID",
+      "hint": "Configure which region of the game world this Quest is primarily associated with."
+    },
+    "color": {
+      "label": "Quest Color",
+      "hint": "Choose a color to represent this quest in the region map legend and campaign manager."
+    },
+    "overview": {
+      "label": "At a Glance",
+      "hint": "A one paragraph overview of the quest which is visible only to the Gamemaster that summarizes the primary gameplay elements and themes of the quest."
+    }
+  },
+  "SECTIONS": {
+    "basic": "Basic Configuration"
+  }
+},
+
+"EMBER.CONST": {
+  "TRAVEL": {
+    "fast": "Fast",
+    "hidden": "Hidden",
+    "normal": "Normal",
+    "reckless": "Reckless",
+    "slow": "Slow"
+  },
+  "VISIBILITY": {
+    "BACK": "Back",
+    "FRONT": "Front",
+    "NONE": "None"
+  }
+},
+
+"EMBER.JournalEventPageSheet": "Ember Narrative Event",
+"EMBER.JournalEventPageSheetContent": "Page Content",
+"EMBER.JournalEventPageSheetConfig": "Event Configuration",
+"EMBER.JournalEventPageSheetOutcomes": "Choice Outcomes",
+
+"EMBER.SHEETS": {
+  "GazetteerSheet": "Ember Gazetteer",
+  "JournalEntrySheet": "Ember Journal Entry",
+  "QuestSheet": "Ember Quest Sheet",
+  "TextSheet": "Ember Text"
+},
+
+"EMBER.JOURNAL_ENTRY_PAGE": {
+  "TABS": {
+    "content": "Content",
+    "secondary": "Secondary",
+    "config": "Configuration",
+    "development": "Development",
+    "hooks": "Hooks",
+    "outcomes": "Outcomes"
+  }
+},
+
+"EMBER.MOON.PHASES": {
+  "NONE": "Dormant",
+  "WAXING": "Waxing",
+  "WANING": "Waning",
+  "FULL": "Full"
+},
+"EMBER.SUN.PHASES": {
+  "NIGHT": "Night",
+  "DAWN": "Dawn",
+  "DAY": "Day",
+  "DUSK": "Dusk"
+},
+
+"EMBER.REGION": {
+  "MOVEMENT": {
+    "Impossible": "Impossible",
+    "Unknown": "Unknown",
+    "Mile": {
+      "one": "Mile",
+      "other": "Miles"
+    }
+  }
+},
+
+"EMBER.VISTA": {
+  "COMPOSITIONS": {
+    "core": "Core Compositions",
+    "custom": "Custom Compositions",
+    "template": "Template Compositions"
+  },
+  "TABS": {
+    "placements": "Assets",
+    "scene": "Scene"
+  }
+},
+
+"EMBER.ThermalVision": "Thermal Vision",
+
+"DND5E": {
+  "ADVANCEMENT": {
+    "EmberKnowledge": {
+      "Configure": "Configure Knowledge",
+      "Hint": "Gain knowledge based on origin.",
+      "Title": "Knowledge"
+    }
+  }
+},
+
+"SPELL.INFLECTIONS": {
+  "Glyphspeak": "Glyphspeak",
+  "GlyphspeakAdj": "Glyphspoken"
+}
+}
