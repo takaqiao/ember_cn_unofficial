@@ -27,9 +27,23 @@ function safeTableResultsCollection(collection, translations) {
 function emberPages(collection, translations) {
   if (!Array.isArray(collection) || !translations) return collection;
 
+  const readTranslated = (obj, key) => {
+    if (!obj) return undefined;
+    if (obj[key] !== undefined) return obj[key];
+
+    const legacyKey = `s${key}`;
+    if (obj[legacyKey] !== undefined) return obj[legacyKey];
+
+    return undefined;
+  };
+
   return collection.map((page) => {
     const t = translations?.[page.name];
     if (!t) return page;
+
+    const overview = readTranslated(t, 'overview');
+    const exposition = readTranslated(t, 'exposition');
+    const summary = readTranslated(t, 'summary');
 
     const patch = {
       name: t.name ?? page.name,
@@ -49,12 +63,12 @@ function emberPages(collection, translations) {
     }
 
     // Custom Crucible fields on page.system
-    if (t.overview !== undefined || t.exposition !== undefined || t.summary !== undefined) {
+    if (overview !== undefined || exposition !== undefined || summary !== undefined) {
       patch.system = {
         ...(page.system ?? {}),
-        ...(t.overview !== undefined ? { overview: t.overview } : {}),
-        ...(t.exposition !== undefined ? { exposition: t.exposition } : {}),
-        ...(t.summary !== undefined ? { summary: t.summary } : {}),
+        ...(overview !== undefined ? { overview } : {}),
+        ...(exposition !== undefined ? { exposition } : {}),
+        ...(summary !== undefined ? { summary } : {}),
       };
     }
 
