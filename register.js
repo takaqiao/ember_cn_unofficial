@@ -3,7 +3,7 @@ const MODULE_ID = 'ember_cn_unofficial';
 // Safe fallback converter for Adventure tables.
 // It translates table name/description and leaves table results untouched.
 function safeTableResultsCollection(collection, translations) {
-  if (!translations) return collection;
+  if (!Array.isArray(collection) || !translations) return collection;
 
   return collection.map((data) => {
     const translation = translations?.[data.name];
@@ -72,13 +72,24 @@ function emberPages(collection, translations) {
       coverview !== undefined ||
       gamemaster !== undefined
     ) {
+      const contentPatch = {
+        ...(coverview !== undefined ? { overview: coverview } : {}),
+        ...(gamemaster !== undefined ? { gamemaster } : {}),
+      };
+
       patch.system = {
         ...(page.system ?? {}),
         ...(overview !== undefined ? { overview } : {}),
         ...(exposition !== undefined ? { exposition } : {}),
         ...(summary !== undefined ? { summary } : {}),
-        ...(coverview !== undefined ? { coverview } : {}),
-        ...(gamemaster !== undefined ? { gamemaster } : {}),
+        ...(Object.keys(contentPatch).length
+          ? {
+              content: {
+                ...(page.system?.content ?? {}),
+                ...contentPatch,
+              },
+            }
+          : {}),
       };
     }
 
@@ -114,20 +125,46 @@ function emberAdventureJournals(collection, translations) {
 Hooks.once('babele.init', (babele) => {
   // Guard against malformed RollTable result translations that can crash
   // Babele's internal _tableResults converter on some adventure entries.
-  const internalConverters = babele?.converters;
-  const originalTableResults = internalConverters?._tableResults;
-  if (typeof originalTableResults === 'function') {
-    internalConverters._tableResults = function patchedTableResults(collection, translations, ...args) {
+  const patchTableResults = (target, label) => {
+    if (!target || typeof target._tableResults !== 'function') return false;
+    if (target._tableResults.__emberSafePatched) return true;
+
+    const original = target._tableResults;
+    const patched = function patchedTableResults(collection, translations, ...args) {
       try {
-        return originalTableResults.call(this, collection, translations, ...args);
+        return original.call(this, collection, translations, ...args);
       } catch (error) {
-        console.warn(`${MODULE_ID} | Falling back from Babele _tableResults converter`, error);
-        return collection;
+        console.warn(`${MODULE_ID} | Falling back from Babele _tableResults converter (${label})`, error);
+        return safeTableResultsCollection(collection, translations);
       }
     };
-  }
+
+    patched.__emberSafePatched = true;
+    target._tableResults = patched;
+    return true;
+  };
+
+  const internalConverters = babele?.converters;
+  const constructorPrototype = babele?.Converters?.prototype;
+  const globalPrototype = globalThis?.Babele?.Converters?.prototype;
+
+  patchTableResults(internalConverters, 'instance');
+  patchTableResults(constructorPrototype, 'babele.Converters.prototype');
+  patchTableResults(globalPrototype, 'globalThis.Babele.Converters.prototype');
 
   babele.registerConverters({
+    // Extra safety: override converter name used by internal mappings when possible.
+    _tableResults: function safeRegisteredTableResults(collection, translations, ...args) {
+      try {
+        if (internalConverters && typeof internalConverters._tableResults === 'function') {
+          return internalConverters._tableResults.call(this, collection, translations, ...args);
+        }
+      } catch (error) {
+        console.warn(`${MODULE_ID} | Registered _tableResults fallback`, error);
+      }
+
+      return safeTableResultsCollection(collection, translations);
+    },
     safeTableResultsCollection,
     emberPages,
     emberAdventureJournals,
