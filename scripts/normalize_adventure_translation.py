@@ -9,7 +9,7 @@ DELETE = object()
 def should_keep_bilingual(path: tuple[str, ...], key: str) -> bool:
     if key in {"name", "prototypeToken"}:
         return True
-    return "notes" in path
+    return ("notes" in path) or ("folders" in path)
 
 
 def normalize_spaces(text: str) -> str:
@@ -105,7 +105,7 @@ def process_node(cn_node, en_node, path: tuple[str, ...]):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Normalize Ember adventure CN translation with EN reference.")
+    parser = argparse.ArgumentParser(description="Normalize Ember CN translation with EN reference.")
     parser.add_argument("--cn", required=True, help="Path to translated json file")
     parser.add_argument("--en", required=True, help="Path to English reference json file")
     args = parser.parse_args()
@@ -120,14 +120,14 @@ def main():
         en_data = json.load(f)
 
     updated = dict(cn_data)
-    cn_entries = cn_data.get("entries") if isinstance(cn_data, dict) else None
-    en_entries = en_data.get("entries") if isinstance(en_data, dict) else None
-
-    if isinstance(cn_entries, dict) and isinstance(en_entries, dict):
-        updated_entries, changed = process_node(cn_entries, en_entries, ("entries",))
-        updated["entries"] = updated_entries
-    else:
-        changed = False
+    changed = False
+    for section in ("entries", "folders"):
+        cn_section = cn_data.get(section) if isinstance(cn_data, dict) else None
+        en_section = en_data.get(section) if isinstance(en_data, dict) else None
+        if isinstance(cn_section, dict) and isinstance(en_section, dict):
+            updated_section, section_changed = process_node(cn_section, en_section, (section,))
+            updated[section] = updated_section
+            changed = changed or section_changed
 
     if not changed:
         print("No changes needed.")
