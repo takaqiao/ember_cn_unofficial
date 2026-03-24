@@ -84,11 +84,11 @@ function emberPages(collection, translations) {
         ...(summary !== undefined ? { summary } : {}),
         ...(Object.keys(contentPatch).length
           ? {
-              content: {
-                ...(page.system?.content ?? {}),
-                ...contentPatch,
-              },
-            }
+            content: {
+              ...(page.system?.content ?? {}),
+              ...contentPatch,
+            },
+          }
           : {}),
       };
     }
