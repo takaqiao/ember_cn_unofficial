@@ -19,7 +19,7 @@ function safeTableResultsCollection(collection, translations) {
 
 /**
  * Translate Journal pages including custom page.system fields:
- * overview / exposition / summary
+ * overview / exposition / summary / coverview / gamemaster
  *
  * collection: original pages array
  * translations: entry.pages object from translation json
@@ -44,6 +44,8 @@ function emberPages(collection, translations) {
     const overview = readTranslated(t, 'overview');
     const exposition = readTranslated(t, 'exposition');
     const summary = readTranslated(t, 'summary');
+    const coverview = readTranslated(t, 'coverview');
+    const gamemaster = readTranslated(t, 'gamemaster');
 
     const patch = {
       name: t.name ?? page.name,
@@ -63,12 +65,20 @@ function emberPages(collection, translations) {
     }
 
     // Custom Crucible fields on page.system
-    if (overview !== undefined || exposition !== undefined || summary !== undefined) {
+    if (
+      overview !== undefined ||
+      exposition !== undefined ||
+      summary !== undefined ||
+      coverview !== undefined ||
+      gamemaster !== undefined
+    ) {
       patch.system = {
         ...(page.system ?? {}),
         ...(overview !== undefined ? { overview } : {}),
         ...(exposition !== undefined ? { exposition } : {}),
         ...(summary !== undefined ? { summary } : {}),
+        ...(coverview !== undefined ? { coverview } : {}),
+        ...(gamemaster !== undefined ? { gamemaster } : {}),
       };
     }
 
