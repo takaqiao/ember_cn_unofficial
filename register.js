@@ -122,6 +122,49 @@ function emberAdventureJournals(collection, translations) {
   });
 }
 
+function toArray(value) {
+  if (value === undefined || value === null) return [];
+  return Array.isArray(value) ? value : [value];
+}
+
+/**
+ * Translate Crucible item actions using legacy flat translation fields:
+ * actionname / actiondesc / actioneffectname
+ */
+function emberActions(actions, _translation, _data, _tc, allTranslations) {
+  if (!Array.isArray(actions)) return actions;
+
+  const names = toArray(allTranslations?.actionname);
+  const descriptions = toArray(allTranslations?.actiondesc);
+  const effectNames = toArray(allTranslations?.actioneffectname);
+
+  let effectCursor = 0;
+
+  return actions.map((action, actionIndex) => {
+    const patch = {
+      ...(names[actionIndex] !== undefined ? { name: names[actionIndex] } : {}),
+      ...(descriptions[actionIndex] !== undefined ? { description: descriptions[actionIndex] } : {}),
+    };
+
+    if (Array.isArray(action?.effects) && action.effects.length) {
+      patch.effects = action.effects.map((effect) => {
+        if (effectNames[effectCursor] === undefined) {
+          return effect;
+        }
+
+        const translatedEffect = foundry.utils.mergeObject(effect, {
+          name: effectNames[effectCursor],
+        });
+
+        effectCursor += 1;
+        return translatedEffect;
+      });
+    }
+
+    return foundry.utils.mergeObject(action, patch);
+  });
+}
+
 Hooks.once('babele.init', (babele) => {
   // Guard against malformed RollTable result translations that can crash
   // Babele's internal _tableResults converter on some adventure entries.
@@ -168,6 +211,7 @@ Hooks.once('babele.init', (babele) => {
     safeTableResultsCollection,
     emberPages,
     emberAdventureJournals,
+    emberActions,
   });
 
   babele.register({

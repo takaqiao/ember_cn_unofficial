@@ -2,7 +2,11 @@
   "label": "角色选项\nCharacter Options",
   "mapping": {
     "name": "name",
-    "description": "system.description"
+    "description": "system.description",
+    "actionname": {
+      "path": "system.actions",
+      "converter": "emberActions"
+    }
   },
   "folders": {
     "Ancestries": "祖裔\nAncestries",
@@ -53,7 +57,10 @@
     },
     "Altyra Lineage": {
       "name": "阿尔提拉血统 Altyra Lineage",
-      "description": "<p>你免疫<strong>染病</strong>状态；该状态原本会阻止你恢复<strong>生命值</strong>。</p>"
+      "description": "<p>你免疫<strong>染病</strong>状态；该状态原本会阻止你恢复<strong>生命值</strong>。</p>",
+      "actionname": "泰拉菲克变形\nTyraphic Transformation",
+      "actiondesc": "<p>你可以让自己暂时获得提拉斐姆的形貌与能力，呈现出异界般的外貌。变形期间，你获得以下收益。</p><ul><li><p>你获得对<strong>光耀</strong>伤害的抗性，数值等于你等级的2倍。</p></li><li><p>你的攻击额外造成<strong>光耀</strong>伤害，数值等于你<strong>威仪</strong>的一半。</p></li><li><p>你在使用<strong>威吓</strong>技能时获得<strong>+2 恩惠</strong>。</p></li></ul><p>你可以在自己的回合中于其完整持续时间结束前终止此次变形，无需任何代价。</p>",
+      "actioneffectname": "泰拉菲克变形"
     },
     "Altyra": {
       "name": "阿尔提拉 Altyra",
@@ -241,7 +248,9 @@
     },
     "Constructed Companion": {
       "name": "构装同伴 Constructed Companion",
-      "description": "<p>你可以花费1小时，用一种来自地面或生长于地面的天然材料制作一个微型的@UUID[Actor.oLu6qs3AYUu8eitR]，例如黏土、石头、木头或稻草。构装同伴是一种被赋予生命的构装体，会成为一个受你控制的生物，持续存在8小时，或直到其生命值或士气降至0。</p><p>当构装同伴被赋予生命时，你可以向它下达基本的口头指示，以发出简单的命令，例如“拿一把钥匙来”、“站岗”或“把一些书堆起来”。如果你没有下达任何命令，构装同伴除了在面对敌对生物时保护自己之外，什么也不会做，并会在适当时执行防御动作。一旦被下达命令，同伴会持续遵从该命令，直到任务完成或你给予替代指示。</p><p>你同一时间只能有一个构装同伴处于激活状态；创造第二个同伴会使赋予你先前构装同伴生命的魔法立即消散。</p>"
+      "description": "<p>你可以花费1小时，用一种来自地面或生长于地面的天然材料制作一个微型的@UUID[Actor.oLu6qs3AYUu8eitR]，例如黏土、石头、木头或稻草。构装同伴是一种被赋予生命的构装体，会成为一个受你控制的生物，持续存在8小时，或直到其生命值或士气降至0。</p><p>当构装同伴被赋予生命时，你可以向它下达基本的口头指示，以发出简单的命令，例如“拿一把钥匙来”、“站岗”或“把一些书堆起来”。如果你没有下达任何命令，构装同伴除了在面对敌对生物时保护自己之外，什么也不会做，并会在适当时执行防御动作。一旦被下达命令，同伴会持续遵从该命令，直到任务完成或你给予替代指示。</p><p>你同一时间只能有一个构装同伴处于激活状态；创造第二个同伴会使赋予你先前构装同伴生命的魔法立即消散。</p>",
+      "actionname": "构装体伙伴\nConstruct Companion",
+      "actiondesc": "<p>你花费1小时制造一个构装同伴，它会遵循你的基本口头指令。</p>"
     },
     "Cora Attunement": {
       "name": "科拉调谐 Cora Attunement",
@@ -249,7 +258,10 @@
     },
     "Cor'ak Lineage": {
       "name": "科拉克血统 Cor'ak Lineage",
-      "description": "<p>你厚实且部分金属化的外皮为你提供了抵御打击的天然保护。当你处于<strong>无甲</strong>状态时，你获得等同于你的<strong>坚韧 </strong>属性值的<strong>护甲</strong>加值。</p>"
+      "description": "<p>你厚实且部分金属化的外皮为你提供了抵御打击的天然保护。当你处于<strong>无甲</strong>状态时，你获得等同于你的<strong>坚韧 </strong>属性值的<strong>护甲</strong>加值。</p>",
+      "actionname": "结晶化创伤\nCrystalize Wounds",
+      "actiondesc": "<p>当你变为<strong>虚弱</strong>，或在<strong>虚弱</strong>状态下受到伤害时，一层水晶甲壳会覆盖你的身体。在短时间内，你获得等同于你的<strong>坚韧</strong>调整值的对<strong>钝击</strong>、<strong>穿刺</strong>和<strong>挥砍</strong>伤害的抗性。你还会立即获得等同于你<strong>等级</strong>两倍的<strong>生命值</strong>。</p>",
+      "actioneffectname": "结晶化创伤"
     },
     "Personalized Crafting": {
       "name": "个性化制作 Personalized Crafting",
@@ -257,7 +269,9 @@
     },
     "Drakon Lineage": {
       "name": "龙裔血统 Drakon Lineage",
-      "description": "<p>你对死灵术和死亡魔法的影响有着异乎寻常的抗性。使用<strong>死亡符文</strong>的法术对你进行法术攻击检定时具有<strong>+2 祸骰</strong>。</p><p>你本能地知晓<strong>火焰符文</strong>，并且可以将其用于基础施法。</p>"
+      "description": "<p>你对死灵术和死亡魔法的影响有着异乎寻常的抗性。使用<strong>死亡符文</strong>的法术对你进行法术攻击检定时具有<strong>+2 祸骰</strong>。</p><p>你本能地知晓<strong>火焰符文</strong>，并且可以将其用于基础施法。</p>",
+      "actionname": "龙焰\nDrakonfire",
+      "actiondesc": "<p>在承受巨大压力的时刻，你可以利用这种力量，在锥形范围内喷吐火焰，灼烧路径上的所有生物。你在一个圆锥区域内喷吐龙类火焰。</p><p>此次<strong>致命</strong>攻击使用你的<strong>坚韧</strong>进行成长，并以受影响生物的<strong>反射</strong><strong>防御</strong>为目标。此<strong>动作</strong>视为一种<strong>天生</strong>武器，而龙裔至少已熟练掌握它。</p>"
     },
     "Explosives Training": {
       "name": "爆炸物训练 Explosives Training",
@@ -265,7 +279,16 @@
     },
     "Fej Lineage": {
       "name": "费伊杰血统 Fej Lineage",
-      "description": "<p>你的血统对<strong>火元素</strong>伤害的抗性会进一步提高，提高值等于你的角色<strong>等级</strong>。如果你在水中浸没超过6秒，或在你的回合开始时处于水中浸没状态，你必须使用<strong>畏水</strong>动作来检定你的意志。</p>"
+      "description": "<p>你的血统对<strong>火元素</strong>伤害的抗性会进一步提高，提高值等于你的角色<strong>等级</strong>。如果你在水中浸没超过6秒，或在你的回合开始时处于水中浸没状态，你必须使用<strong>畏水</strong>动作来检定你的意志。</p>",
+      "actionname": [
+        "极端代谢\nExtreme Metabolism",
+        "畏水\nWater Aversion"
+      ],
+      "actiondesc": [
+        "<p>你激发体内炽热的代谢，进入一阵超自然的高速状态。</p><ul><li><p>你的<strong>移动</strong>增加 +2。</p></li><li><p>你获得等同于你<strong>敏捷</strong>一半的<strong>闪避</strong>加值。</p></li><li><p>你的当前和最大<strong>动作</strong>都获得 +1。</p></li></ul>",
+        "<p>当浸没在水中超过 6 秒，或当你在浸没于水中时开始你的回合，你必须考验自己的决心。</p><p><strong>ALPHA ONE</strong>：这个动作还需要进一步平衡。</p>"
+      ],
+      "actioneffectname": "极端代谢"
     },
     "Heart Attunement": {
       "name": "心之调谐 Heart Attunement",
@@ -277,11 +300,16 @@
     },
     "Hulg'run Lineage": {
       "name": "Hulg'run血统 Hulg'run Lineage",
-      "description": "<p>你免疫<strong>睡眠</strong>状态。</p><p>当你<strong>休息</strong>时，你可以与余烬的本质问道自然。若你在坚实地面上休息，则不需要睡眠，并可保持清醒。为了获得休息的收益，你不得进行任何剧烈活动。</p>"
+      "description": "<p>你免疫<strong>睡眠</strong>状态。</p><p>当你<strong>休息</strong>时，你可以与余烬的本质问道自然。若你在坚实地面上休息，则不需要睡眠，并可保持清醒。为了获得休息的收益，你不得进行任何剧烈活动。</p>",
+      "actionname": "活石\nLiving Stone",
+      "actiondesc": "<p>你的身体暂时钙化，获得对物理打击的强化保护。</p><ul><li><p>你获得对<strong>钝击</strong>、<strong>穿刺</strong>和<strong>挥砍</strong>伤害的抗性，数值等于你的<strong>等级 + 1</strong>。</p></li><li><p>你的<strong>步幅</strong>减少 -2。</p></li><li><p>你免疫<strong>倒地</strong>状态，且无法被强制移动。</p></li></ul>",
+      "actioneffectname": "活石"
     },
     "Human Lineage": {
       "name": "人类血统 Human Lineage",
-      "description": "<p>当你执行一个涉及<strong>专注</strong>消耗的<strong>反应</strong>时，你在任何相关检定上获得<strong>+1 恩惠</strong>。</p>"
+      "description": "<p>当你执行一个涉及<strong>专注</strong>消耗的<strong>反应</strong>时，你在任何相关检定上获得<strong>+1 恩惠</strong>。</p>",
+      "actionname": "余烬烈焰\nEmber Blaze",
+      "actiondesc": "<p>当你陷入<strong>虚弱 </strong>状态，或在<strong>虚弱</strong>状态下受到伤害时，你可以激发一阵名为 Blaze 的超常肾上腺素爆发。你立刻将你的<strong>动作</strong>池和<strong>专注</strong>池恢复至其最大值。</p>"
     },
     "Impassioned Revelry": {
       "name": "热情狂欢 Impassioned Revelry",
@@ -297,15 +325,22 @@
     },
     "Keth Lineage": {
       "name": "凯思血统 Keth Lineage",
-      "description": "<p>你在不可预测中如鱼得水，并且擅长把糟糕的局面转变为有利的局面。</p><ul><li><p>如果你使用<strong>技能</strong><strong>动作</strong>失败，则直到你的下个<strong>回合</strong>开始前，你的下一个动作获得<strong>+1 恩惠</strong>的增益。</p></li><li><p>如果你的<strong>攻击</strong><strong>动作</strong>未命中，则直到你的下个<strong>回合</strong>开始前，你的下一个动作获得<strong>+1 恩惠</strong>的增益。</p></li></ul>"
+      "description": "<p>你在不可预测中如鱼得水，并且擅长把糟糕的局面转变为有利的局面。</p><ul><li><p>如果你使用<strong>技能</strong><strong>动作</strong>失败，则直到你的下个<strong>回合</strong>开始前，你的下一个动作获得<strong>+1 恩惠</strong>的增益。</p></li><li><p>如果你的<strong>攻击</strong><strong>动作</strong>未命中，则直到你的下个<strong>回合</strong>开始前，你的下一个动作获得<strong>+1 恩惠</strong>的增益。</p></li></ul>",
+      "actionname": "猝然撕咬\nSudden Bite",
+      "actiondesc": "<p>在非常或危急的情况下，你可以用你锋利的牙齿发动一次凶狠的攻击。你用布满利齿的伸展下颚凶狠地啃咬，进行一次具有<strong>致命</strong>属性的<strong>天然</strong>武器攻击，造成<strong>穿刺</strong>伤害。</p>"
     },
     "Kiska Lineage": {
       "name": "基斯卡血统 Kiska Lineage",
-      "description": "<p>你毫不费力地融入黑暗之中。当你站在微光或黑暗中时，任何使用<strong>潜行</strong>技能的检定都会获得<strong>+2 恩惠</strong>。</p><p>你本能地知晓<strong>幻象符文</strong>，并可以将其用于施法。</p>"
+      "description": "<p>你毫不费力地融入黑暗之中。当你站在微光或黑暗中时，任何使用<strong>潜行</strong>技能的检定都会获得<strong>+2 恩惠</strong>。</p><p>你本能地知晓<strong>幻象符文</strong>，并可以将其用于施法。</p>",
+      "actionname": "灵巧跃击\nNimble Leap",
+      "actiondesc": "<p>你调动有限的能量储备，做出一次壮观的腾跃。你可以立即<strong>跳跃</strong>，距离最多为你<strong>步幅</strong>的三倍。以这种方式进行的移动极其突然，不会给予<strong>脱离接战</strong>攻击的机会。</p>"
     },
     "Kivahr Lineage": {
       "name": "基瓦赫血统 Kivahr Lineage",
-      "description": "<p>你的身体因巨人的血统而得到强化。你的心智与身体和谐协作，以解决问题并承受肉体上的压力。</p><p>你的<strong>坚韧</strong>和<strong>意志</strong><strong>防御</strong>获得等同于你的<strong>等级</strong>除以4的加值。</p><p></p><p></p><p></p>"
+      "description": "<p>你的身体因巨人的血统而得到强化。你的心智与身体和谐协作，以解决问题并承受肉体上的压力。</p><p>你的<strong>坚韧</strong>和<strong>意志</strong><strong>防御</strong>获得等同于你的<strong>等级</strong>除以4的加值。</p><p></p><p></p><p></p>",
+      "actionname": "规整节律\nRegulated Rhythm",
+      "actiondesc": "<p>你运用超自然能力来调和身心。你进入一种恍惚般的状态，并在你的<strong>回合</strong>开始时获得以下益处。</p><ul><li><p>你获得 +1 <strong>专注</strong>。</p></li><li><p>如果你的士气高于生命值，你转移至多等同于你的<strong>感召 </strong>属性值的数值，减少<strong>士气</strong>并获得<strong>生命值</strong>。</p></li><li><p>如果你的生命值高于士气，你转移至多等同于你的<strong>坚韧 </strong>属性值的数值，减少<strong>生命值</strong>并获得<strong>士气</strong>。</p></li></ul><p>这些转移不会使任何资源超过其最大值。</p>",
+      "actioneffectname": "规整节律"
     },
     "Lunar Tattoos": {
       "name": "月纹身 Lunar Tattoos",
@@ -325,7 +360,9 @@
     },
     "Nir'ae Lineage": {
       "name": "尼尔艾血统 Nir'ae Lineage",
-      "description": "<p>你知晓<strong>照明符文</strong>，并可将其用于施法。</p><p>你那虹彩般的胎记赋予你非凡的能力，使你能够闪避或凭本能将敌意魔法引开。针对你的法术攻击承受<strong>+2 祸骰</strong>。</p>"
+      "description": "<p>你知晓<strong>照明符文</strong>，并可将其用于施法。</p><p>你那虹彩般的胎记赋予你非凡的能力，使你能够闪避或凭本能将敌意魔法引开。针对你的法术攻击承受<strong>+2 祸骰</strong>。</p>",
+      "actionname": "先见之映像\nPrescient Reflection",
+      "actiondesc": "<p>当一个直接以你为目标的法术被抵抗且结果为严重失败时，你可以本能地重定向该法术的能量，使其改为消散，或影响法术射程内除其原始施法者之外的另一个目标。</p><p>该替代目标必须改为对该法术进行防御，且该法术的任何效果都改为施加于该目标。如果未选择替代目标，则该法术的能量会无害地消散。</p>"
     },
     "Orbis Attunement": {
       "name": "奥比斯调谐 Orbis Attunement",
@@ -377,7 +414,10 @@
     },
     "Thornling Lineage": {
       "name": "荆棘裔血统 Thornling Lineage",
-      "description": "<p>荆芽灵的纤维状生物学结构极其坚韧，提供以下好处：</p><ul><li><p>无论你穿着何种类型的装备，你的<strong>护甲</strong>防御都不会低于 6。</p></li><li><p>来自<strong>坠落</strong>的伤害在应用其他抗性之前减半。</p></li></ul>"
+      "description": "<p>荆芽灵的纤维状生物学结构极其坚韧，提供以下好处：</p><ul><li><p>无论你穿着何种类型的装备，你的<strong>护甲</strong>防御都不会低于 6。</p></li><li><p>来自<strong>坠落</strong>的伤害在应用其他抗性之前减半。</p></li></ul>",
+      "actionname": "刺棘树皮\nThornbark",
+      "actiondesc": "<p>当你成为一次近战攻击的目标时，你可以使带刺的倒钩从身体中突生而出。持续一分钟内，你获得以下增益。</p><ul><li><p>对你造成<strong>命中</strong>或<strong>擦中</strong>的近战攻击会伤及进行报复的攻击者，其受到等同于你<strong>坚韧</strong>属性值的伤害。</p></li><li><p>试图对你进行<strong>擒抱</strong>或<strong>推撞</strong>时会承受<strong>+2 祸骰</strong>。</p></li></ul><p>此动作的效果适用于触发该反应的那次攻击。</p><p><strong>ALPHA ONE</strong>：刺棘树皮的效果尚未完全自动化。</p>",
+      "actioneffectname": "刺棘树皮"
     },
     "Undaunted Warrior": {
       "name": "无畏战士 Undaunted Warrior",
@@ -389,15 +429,36 @@
     },
     "Vrjnhar Lineage": {
       "name": "Vrjnhar 血统 Vrjnhar Lineage",
-      "description": "<p>当对你进行的一次攻击结果为<strong>掠过</strong>时，你用自己华丽的胡须承受这一击，从而保护自己，使你完全免受原本由掠过一击造成的伤害。</p>"
+      "description": "<p>当对你进行的一次攻击结果为<strong>掠过</strong>时，你用自己华丽的胡须承受这一击，从而保护自己，使你完全免受原本由掠过一击造成的伤害。</p>",
+      "actionname": "强健耐力\nFormidable Stamina",
+      "actiondesc": "<p>你调动惊人的能量储备，使自己即使到了力竭的地步仍能继续战斗。在一段时间内，每当你耗尽自己的<strong>动作</strong>点池时，你都有 25% 的几率立刻恢复 1 点<strong>动作 </strong>点。</p>",
+      "actioneffectname": "强健耐力"
     },
     "Wirrun Lineage": {
       "name": "维伦血统 Wirrun Lineage",
-      "description": "<p>你免疫极寒的影响。你的视野不会因雾、薄雾、雪或其他大气效果而受阻。</p><p><strong>Alpha One：</strong>此视觉效果尚未自动化。</p>"
+      "description": "<p>你免疫极寒的影响。你的视野不会因雾、薄雾、雪或其他大气效果而受阻。</p><p><strong>Alpha One：</strong>此视觉效果尚未自动化。</p>",
+      "actionname": "无情猎手\nImplacable Hunter",
+      "actiondesc": "<p>你将一个你能看见的生物指定为你的猎物。</p><ul><li><p>你在任何与辨认其位置相关的<strong>察觉</strong>或<strong>荒野</strong>检定中获得<strong>+2恩惠</strong>。</p></li><li><p>当你在自己的<strong>回合</strong>中向你的猎物<strong>移动</strong>并靠近时，你在同一<strong>回合</strong>内对你的猎物进行的下一次<strong>攻击检定</strong>获得<strong>+2恩惠</strong>。</p></li></ul>",
+      "actioneffectname": "无情猎手"
     },
     "Zeph Lineage": {
       "name": "泽夫血统 Zeph Lineage",
-      "description": "<p>你知晓<strong>闪电符文</strong>，并能够用它来编织施法。</p><p>泽夫的面具具备有限程度的超自然可塑性。你可以稍微改变你的面具，以便进行日常沟通并表达情绪。当你死亡时，留下的只有你的面具。对于以已死亡生物为目标的法术或魔法效果而言，你的面具视为你的物理遗骸。</p><p>你的面具高深莫测的本质使他人难以看穿你的意图。在社交挑战中，用于洞悉你动机的<strong>察觉</strong>检定承受<strong>+2祸骰</strong>。</p>"
+      "description": "<p>你知晓<strong>闪电符文</strong>，并能够用它来编织施法。</p><p>泽夫的面具具备有限程度的超自然可塑性。你可以稍微改变你的面具，以便进行日常沟通并表达情绪。当你死亡时，留下的只有你的面具。对于以已死亡生物为目标的法术或魔法效果而言，你的面具视为你的物理遗骸。</p><p>你的面具高深莫测的本质使他人难以看穿你的意图。在社交挑战中，用于洞悉你动机的<strong>察觉</strong>检定承受<strong>+2祸骰</strong>。</p>",
+      "actionname": [
+        "高深莫测的面容\nInscrutable Visage",
+        "狰狞面容\nMenacing Visage",
+        "魅惑容颜\nBeguiling Visage"
+      ],
+      "actiondesc": [
+        "<p>你的面具呈现出高深莫测的表情。</p><ul><li><p>你在所有使用<strong>欺瞒</strong>技能的检定中获得<strong>+2 恩惠</strong>。</p></li><li><p>你的<strong>反射</strong>防御增加 +2。</p></li></ul><p>在任意给定时间，你只能有一种生效中的面具表情。</p>",
+        "<p>你的面具呈现出威吓的表情。</p><ul><li><p>你在所有<strong>威吓</strong>技能的<strong>使用</strong>中获得<strong>+2 恩惠</strong>。</p></li><li><p>你的<strong>坚韧</strong><strong>防御</strong>提高+2。</p></li></ul><p>在任一给定时间，你只能有一种生效中的面具表情。</p>",
+        "<p>你的面具呈现出一个迷人的表情。</p><ul><li><p>你在所有<strong>Persuasion</strong>技能的使用中获得<strong>+2 恩惠</strong>。</p></li><li><p>你的<strong>意志</strong>防御提高 +2。</p></li></ul><p>你在任意时刻只能有一种生效中的面具表情。</p>"
+      ],
+      "actioneffectname": [
+        "高深莫测的面容",
+        "狰狞面容",
+        "魅惑容颜"
+      ]
     },
     "Flameguard Militia": {
       "name": "焰卫民兵 Flameguard Militia",
