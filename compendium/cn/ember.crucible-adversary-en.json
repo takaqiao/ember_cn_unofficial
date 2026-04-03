@@ -2,7 +2,10 @@
   "label": "Adversary Options",
   "mapping": {
     "name": "name",
-    "description": "system.description"
+    "description": "system.description",
+    "actionname": "system.actions.name",
+    "actiondesc": "system.actions.description",
+    "actioneffectname": "system.actions.effects.name"
   },
   "folders": {
     "Fey": "Fey",
@@ -17,6 +20,7 @@
     "Dragon": "Dragon",
     "Humanoids": "Humanoids",
     "Taxonomies": "Taxonomies",
+    "Monstrosity": "Monstrosity",
     "Monstrosities": "Monstrosities",
     "Abyssal": "Abyssal",
     "Abyssals": "Abyssals",
@@ -138,6 +142,10 @@
       "name": "Jurtak",
       "description": "<p>Saurian humanoids that have become horribly warped by abyssal energies. They possess six eyes perfectly attuned to darkness, and their slender bodies are covered in scales that allow them to easily blend into the shadows of their surroundings.</p>"
     },
+    "Mootap": {
+      "name": "Mootap",
+      "description": "<p>Curious aquatic monstrosities that dwell in pools of the Sinkhole Depths below Arcturel and other subterranean areas of the Pathways.</p>"
+    },
     "Mutagenic Affliction": {
       "name": "Mutagenic Affliction",
       "description": "<p>This @ref[actor.name]{creature} is afflicted by a wasting mutation that makes it  behave erratically. It is stronger and more aggressive but has been rendered @Condition[blinded].</p>"
@@ -209,6 +217,10 @@
     "Tyraphem": {
       "name": "Tyraphem",
       "description": "<p>Tyraphem are the powerful beings that reside upon the Inner Realm of Luxarum. Not only are the Tyraphem powerful but they are extremely numerous and combined with an incredibly warlike and martial nature they could become a major threat to the entire Cosmos. Thankfully they have been engaged in a never-ending war with themselves since Creation.</p>"
+    },
+    "Tyraphic Asset": {
+      "name": "Tyraphic Asset",
+      "description": "<p>The @ref[actor.name] contains control runes and symbols integrated into its innermost parts, making it susceptible to control. Celestial creatures from Luxarum that can speak or otherwise communicate with the construct can give it orders which it will follow to the best of its ability.</p><p>If it must choose between multiple conflicting orders, it always sides with orders that it perceives as originating from Luxarum or wielding greater authority among them.</p>"
     },
     "Vanexis": {
       "name": "Vanexis",

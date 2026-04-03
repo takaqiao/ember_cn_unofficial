@@ -2,7 +2,10 @@
   "label": "Character Options",
   "mapping": {
     "name": "name",
-    "description": "system.description"
+    "description": "system.description",
+    "actionname": "system.actions.name",
+    "actiondesc": "system.actions.description",
+    "actioneffectname": "system.actions.effects.name"
   },
   "folders": {
     "Ancestries": "Ancestries",
@@ -53,7 +56,10 @@
     },
     "Altyra Lineage": {
       "name": "Altyra Lineage",
-      "description": "<p>You are immune to the <strong>Diseased</strong> condition which otherwise prevents you from regaining <strong>Health</strong>.</p>"
+      "description": "<p>You are immune to the <strong>Diseased</strong> condition which otherwise prevents you from regaining <strong>Health</strong>.</p>",
+      "actionname": "Tyraphic Transformation",
+      "actiondesc": "<p>You can imbue yourself with the temporary visage and capabilities of Tyraphem, assuming an otherworldly visage. While transformed, you gain the following benefits.</p><ul><li><p>You gain resistance to <strong>Radiant</strong> damage equal to 2 times your level.</p></li><li><p>Your attacks deal additional <strong>Radiant</strong> damage equal to half your <strong>Presence</strong>.</p></li><li><p>You gain <strong>+2 Boons </strong>to your use of the <strong>Intimidation</strong> skill.</p></li></ul><p>You may end this transformation prior to its full duration on your turn at no cost.</p>",
+      "actioneffectname": "Tyraphic Transformation"
     },
     "Altyra": {
       "name": "Altyra",
@@ -241,7 +247,9 @@
     },
     "Constructed Companion": {
       "name": "Constructed Companion",
-      "description": "<p>You may spend 1 hour creating a tiny @UUID[Actor.oLu6qs3AYUu8eitR] from a natural material that comes from or grows in the ground, for example clay, stone, wood, or straw. The Constructed Companion is an animated construct which becomes a creature under your control, surviving for 8 hours or until it is reduced to 0 health or morale.</p><p>While the Constructed Companion is animated, you can provide it with basic verbal instructions to issue simple commands, such as \"fetch a key\", \"stand watch\", or \"stack some books\". If you issue no commands the Constructed Companion will do nothing other than defend itself against hostile creatures, performing the Defend action whenever appropriate. Once given an order, the Companion continues to follow that order until its task is complete or alternative instructions are given.</p><p>You may only have one Constructed Companion active at a time, creating a second companion causes the magic which animated your prior Constructed Companion to immediately fade.</p>"
+      "description": "<p>You may spend 1 hour creating a tiny @UUID[Actor.oLu6qs3AYUu8eitR] from a natural material that comes from or grows in the ground, for example clay, stone, wood, or straw. The Constructed Companion is an animated construct which becomes a creature under your control, surviving for 8 hours or until it is reduced to 0 health or morale.</p><p>While the Constructed Companion is animated, you can provide it with basic verbal instructions to issue simple commands, such as \"fetch a key\", \"stand watch\", or \"stack some books\". If you issue no commands the Constructed Companion will do nothing other than defend itself against hostile creatures, performing the Defend action whenever appropriate. Once given an order, the Companion continues to follow that order until its task is complete or alternative instructions are given.</p><p>You may only have one Constructed Companion active at a time, creating a second companion causes the magic which animated your prior Constructed Companion to immediately fade.</p>",
+      "actionname": "Construct Companion",
+      "actiondesc": "<p>You spend 1 hour creating a Constructed Companion which follows your basic verbal instructions.</p>"
     },
     "Cora Attunement": {
       "name": "Cora Attunement",
@@ -249,7 +257,10 @@
     },
     "Cor'ak Lineage": {
       "name": "Cor'ak Lineage",
-      "description": "<p>Your thick and partially-metallic hide provides natural protection from blows. While you are unarmored, you gain an <strong>Armor</strong> bonus equal to your <strong>Toughness </strong>ability score.</p>"
+      "description": "<p>Your thick and partially-metallic hide provides natural protection from blows. While you are unarmored, you gain an <strong>Armor</strong> bonus equal to your <strong>Toughness </strong>ability score.</p>",
+      "actionname": "Crystalize Wounds",
+      "actiondesc": "<p>When you become <strong>Weakened </strong>or suffer damage while <strong>Weakened</strong>, a crystalline carapace forms over your body. For a short period of time you gain resistance to <strong>Bludgeoning</strong>, <strong>Piercing</strong>, and <strong>Slashing</strong> damage equal to your <strong>Toughness</strong> modifier. You also immediately gain an amount of <strong>Health</strong> equal to two times your <strong>Level</strong>.</p>",
+      "actioneffectname": "Crystalize Wounds"
     },
     "Personalized Crafting": {
       "name": "Personalized Crafting",
@@ -257,7 +268,9 @@
     },
     "Drakon Lineage": {
       "name": "Drakon Lineage",
-      "description": "<p>You are extraordinarily resistant to the influence of Necromancy and death magic. Spells using the <strong>Rune of Death</strong> have <strong>+2 Banes</strong> to their spell attack rolls against you.</p><p>You instinctually know the <strong>Rune of Flame</strong> and can use it for basic spellcraft.</p>"
+      "description": "<p>You are extraordinarily resistant to the influence of Necromancy and death magic. Spells using the <strong>Rune of Death</strong> have <strong>+2 Banes</strong> to their spell attack rolls against you.</p><p>You instinctually know the <strong>Rune of Flame</strong> and can use it for basic spellcraft.</p>",
+      "actionname": "Drakonfire",
+      "actiondesc": "<p>During moments of great duress, you can harness this power to expel flame in a cone, searing all creatures in your path. You expel draconic flame in a conical area.</p><p>This <strong>Deadly</strong> attack scales using your <strong>Toughness</strong> and targets the <strong>Reflex</strong> defense of affected creatures. This action counts as a <strong>Natural</strong> weapon with which the Drakon is, at least, trained.</p>"
     },
     "Explosives Training": {
       "name": "Explosives Training",
@@ -265,7 +278,16 @@
     },
     "Fej Lineage": {
       "name": "Fej Lineage",
-      "description": "<p>Your Ancestry's resistance to <strong>Fire</strong> damage is further increased by your character <strong>Level</strong>. If you are submersed in water for longer than 6 seconds or begin your turn submersed in water you must test your resolve using the <strong>Water Aversion</strong> action.</p>"
+      "description": "<p>Your Ancestry's resistance to <strong>Fire</strong> damage is further increased by your character <strong>Level</strong>. If you are submersed in water for longer than 6 seconds or begin your turn submersed in water you must test your resolve using the <strong>Water Aversion</strong> action.</p>",
+      "actionname": [
+        "Extreme Metabolism",
+        "Water Aversion"
+      ],
+      "actiondesc": [
+        "<p>You activate your fiery metabolism to engage a burst of supernatural speed.</p><ul><li><p>Your <strong>Stride</strong> increases by +2.</p></li><li><p>You gain a bonus to <strong>Dodge</strong> equal to half your <strong>Dexterity</strong>.</p></li><li><p>You gain +1 to both your current and maximum <strong>Action</strong>.</p></li></ul>",
+        "<p>When submersed in water for longer than 6 seconds, or when you begin your turn submersed in water, you must test your own resolve.</p><p><strong>ALPHA ONE</strong>: This action needs further balancing.</p>"
+      ],
+      "actioneffectname": "Extreme Metabolism"
     },
     "Heart Attunement": {
       "name": "Heart Attunement",
@@ -277,11 +299,16 @@
     },
     "Hulg'run Lineage": {
       "name": "Hulg'run Lineage",
-      "description": "<p>You are immune to the <strong>Asleep</strong> condition. </p><p>You can commune with the essence of Ember when you <strong>Rest</strong>. If you are resting upon solid ground, you do not require sleep and can remain conscious. You may not engage in any strenuous activity in order to gain the benefits of the rest.</p>"
+      "description": "<p>You are immune to the <strong>Asleep</strong> condition. </p><p>You can commune with the essence of Ember when you <strong>Rest</strong>. If you are resting upon solid ground, you do not require sleep and can remain conscious. You may not engage in any strenuous activity in order to gain the benefits of the rest.</p>",
+      "actionname": "Living Stone",
+      "actiondesc": "<p>Your form temporarily calcifies, providing enhanced protection against physical blows.</p><ul><li><p>You gain resistance to <strong>Bludgeoning</strong>, <strong>Piercing</strong>, and <strong>Slashing</strong> damage equal to your <strong>Level + 1</strong>.</p></li><li><p>Your <strong>Stride</strong> is reduced by -2.</p></li><li><p>You are immune to the <strong>Prone</strong> condition and cannot be involuntarily moved.</p></li></ul>",
+      "actioneffectname": "Living Stone"
     },
     "Human Lineage": {
       "name": "Human Lineage",
-      "description": "<p>When you perform a <strong>Reaction</strong> which involves a <strong>Focus</strong> cost, you gain <strong>+1 Boon</strong> on any associated roll.</p>"
+      "description": "<p>When you perform a <strong>Reaction</strong> which involves a <strong>Focus</strong> cost, you gain <strong>+1 Boon</strong> on any associated roll.</p>",
+      "actionname": "Ember Blaze",
+      "actiondesc": "<p>When you become <strong>Weakened </strong>or sustain damage while <strong>Weakened</strong>, you can activate a burst of extraordinary adrenaline called Blaze. You immediately replenish your <strong>Action</strong> and <strong>Focus</strong> pools to their maximum value.</p>"
     },
     "Impassioned Revelry": {
       "name": "Impassioned Revelry",
@@ -297,15 +324,22 @@
     },
     "Keth Lineage": {
       "name": "Keth Lineage",
-      "description": "<p>You thrive on unpredictability and you have a penchant for turning a bad situation into an advantageous one.</p><ul><li><p>If you fail using a <strong>Skill</strong> action, your next action gains the benefit of <strong>+1 Boon </strong>until the start of your next <strong>Turn</strong>.</p></li><li><p>If you miss on an <strong>Attack</strong> action, your next action gains the benefit of <strong>+1 Boon</strong> until the start of your next <strong>Turn</strong>.</p></li></ul>"
+      "description": "<p>You thrive on unpredictability and you have a penchant for turning a bad situation into an advantageous one.</p><ul><li><p>If you fail using a <strong>Skill</strong> action, your next action gains the benefit of <strong>+1 Boon </strong>until the start of your next <strong>Turn</strong>.</p></li><li><p>If you miss on an <strong>Attack</strong> action, your next action gains the benefit of <strong>+1 Boon</strong> until the start of your next <strong>Turn</strong>.</p></li></ul>",
+      "actionname": "Sudden Bite",
+      "actiondesc": "<p>In extraordinary or desperate circumstances, you can make a vicious attack with your sharp teeth. You gnash viciously with your extended jaw of sharp teeth, making a <strong>Natural</strong> weapon attack with the <strong>Deadly</strong> property which deals <strong>Piercing</strong> damage.</p>"
     },
     "Kiska Lineage": {
       "name": "Kiska Lineage",
-      "description": "<p>Your blend effortlessly into the darkness. While standing within dim light or darkness you gain <strong>+2 Boons</strong> to any usage of the <strong>Stealth</strong> skill.</p><p>You instinctually know the <strong>Rune of Illusion</strong> and can use it for spellcraft.</p>"
+      "description": "<p>Your blend effortlessly into the darkness. While standing within dim light or darkness you gain <strong>+2 Boons</strong> to any usage of the <strong>Stealth</strong> skill.</p><p>You instinctually know the <strong>Rune of Illusion</strong> and can use it for spellcraft.</p>",
+      "actionname": "Nimble Leap",
+      "actiondesc": "<p>You draw on a limited reserve of energy to make a spectacular bounding leap. You may immediately <strong>Jump</strong> up to three times your <strong>Stride</strong>. Movement made in this way is so sudden that it affords no opportunity for <strong>Disengagement</strong> attacks.</p>"
     },
     "Kivahr Lineage": {
       "name": "Kivahr Lineage",
-      "description": "<p>Your body is strengthened with the lineage of giants. Your mind and your body work in harmony to solve problems and withstand physical strain. </p><p>You gain a bonus to your <strong>Fortitude</strong> and <strong>Willpower</strong> defenses equal to your <strong>Level</strong> divided by 4.</p><p></p><p></p><p></p>"
+      "description": "<p>Your body is strengthened with the lineage of giants. Your mind and your body work in harmony to solve problems and withstand physical strain. </p><p>You gain a bonus to your <strong>Fortitude</strong> and <strong>Willpower</strong> defenses equal to your <strong>Level</strong> divided by 4.</p><p></p><p></p><p></p>",
+      "actionname": "Regulated Rhythm",
+      "actiondesc": "<p>You engage your supernatural ability to harmonize your mind and body. You enter a trance-like state which provides the following benefits at the start of your <strong>Turn</strong>.</p><ul><li><p>You gain +1 <strong>Focus</strong>.</p></li><li><p>If your Morale is higher than your Health, you transfer up to your <strong>Presence </strong>ability score reducing <strong>Morale</strong> and gaining <strong>Health</strong>.</p></li><li><p>If your Health is higher than your Morale, you transfer up to your <strong>Toughness </strong>ability score, reducing <strong>Health</strong> and gaining <strong>Morale</strong>.</p></li></ul><p>These transfers will not cause any resource to exceed it's maximum value.</p>",
+      "actioneffectname": "Regulated Rhythm"
     },
     "Lunar Tattoos": {
       "name": "Lunar Tattoos",
@@ -325,7 +359,9 @@
     },
     "Nir'ae Lineage": {
       "name": "Nir'ae Lineage",
-      "description": "<p>You know the <strong>Rune of Illumination</strong> and may use it for spellcraft.</p><p>Your iridescent birthmarks provide you with a remarkable ability to evade or instinctually redirect hostile magic. Spell attacks against you suffer from <strong>+2 Banes</strong>.</p>"
+      "description": "<p>You know the <strong>Rune of Illumination</strong> and may use it for spellcraft.</p><p>Your iridescent birthmarks provide you with a remarkable ability to evade or instinctually redirect hostile magic. Spell attacks against you suffer from <strong>+2 Banes</strong>.</p>",
+      "actionname": "Prescient Reflection",
+      "actiondesc": "<p>When a spell which targets you directly is resisted with a critical failure, you can instinctually redirect the energy of the spell, causing it to instead dissipate or affect an alternative target within range of the spell other than its original caster.</p><p>The alternative target must defend against the spell instead and any effects of the spell are applied to that target instead. If no alternative target is chosen, the energy of the spell dissipates harmlessly.</p>"
     },
     "Orbis Attunement": {
       "name": "Orbis Attunement",
@@ -377,7 +413,10 @@
     },
     "Thornling Lineage": {
       "name": "Thornling Lineage",
-      "description": "<p>The fibrous biology of Thornlings is incredibly resilient, providing the following benefits:</p><ul><li><p>Your <strong>Armor</strong> defense cannot be below 6 regardless of what type of equipment you are wearing.</p></li><li><p>Damage taken from <strong>Falling </strong>is reduced by half before other resistances apply.</p></li></ul>"
+      "description": "<p>The fibrous biology of Thornlings is incredibly resilient, providing the following benefits:</p><ul><li><p>Your <strong>Armor</strong> defense cannot be below 6 regardless of what type of equipment you are wearing.</p></li><li><p>Damage taken from <strong>Falling </strong>is reduced by half before other resistances apply.</p></li></ul>",
+      "actionname": "Thornbark",
+      "actiondesc": "<p>When you are targeted by a melee attack, you can cause thorny barbs to extrude from your body. For one minute you gain the following benefits.</p><ul><li><p>Melee attacks which <strong>Hit</strong> or <strong>Glance</strong> you wound the attacker in retaliation who suffers damage equal to your <strong>Toughness</strong> ability score.</p></li><li><p>Attempts to <strong>Grapple</strong> or <strong>Push</strong> you suffer <strong>+2 Banes</strong>.</p></li></ul><p>The effects of this Action apply to the attack which triggered the reaction.</p><p><strong>ALPHA ONE</strong>: The effects of Thornbark are not yet fully automated.</p>",
+      "actioneffectname": "Thornbark"
     },
     "Undaunted Warrior": {
       "name": "Undaunted Warrior",
@@ -389,15 +428,36 @@
     },
     "Vrjnhar Lineage": {
       "name": "Vrjnhar Lineage",
-      "description": "<p>When an attack against you results in a <strong>Glance</strong>, you protect yourself by taking the blow upon your magnificent beard which fully protects you from the damage otherwise dealt by a glancing blow.</p>"
+      "description": "<p>When an attack against you results in a <strong>Glance</strong>, you protect yourself by taking the blow upon your magnificent beard which fully protects you from the damage otherwise dealt by a glancing blow.</p>",
+      "actionname": "Formidable Stamina",
+      "actiondesc": "<p>You draw upon incredible reserves of energy to keep fighting past the point of exhaustion. For a period of time, whenever you exhaust your pool of <strong>Action</strong> points, you have a 25% chance to immediately recover one <strong>Action </strong>point.</p>",
+      "actioneffectname": "Formidable Stamina"
     },
     "Wirrun Lineage": {
       "name": "Wirrun Lineage",
-      "description": "<p>You are immune to the effects of extreme cold. Your vision is not impaired by fog, mist, snow, or other atmospheric effects.</p><p><strong>Alpha One:</strong> This vision effect is not yet automated.</p>"
+      "description": "<p>You are immune to the effects of extreme cold. Your vision is not impaired by fog, mist, snow, or other atmospheric effects.</p><p><strong>Alpha One:</strong> This vision effect is not yet automated.</p>",
+      "actionname": "Implacable Hunter",
+      "actiondesc": "<p>You designate one creature you can see as your quarry.</p><ul><li><p>You gain <strong>+2 Boons </strong>to any <strong>Awareness </strong>or <strong>Wilderness </strong>roll which pertains to identifying its location.</p></li><li><p>When you move closer to your quarry on your turn, you gain <strong>+2 Boons</strong> on the next attack roll made against your quarry on that same turn.</p></li></ul>",
+      "actioneffectname": "Implacable Hunter"
     },
     "Zeph Lineage": {
       "name": "Zeph Lineage",
-      "description": "<p>You know the <strong>Rune of Lightning</strong> and can use it to weave Spellcraft.</p><p>A Zeph’s mask is capable of a limited amount of supernatural malleability. You can alter your mask slightly for regular communication and emotional expressiveness. When you die, only your mask remains. Your mask counts as your physical remains for the purposes of spells or magical effects which target a deceased creature.</p><p>The inscrutable nature of your mask makes reading your intentions difficult. During social challenges, <strong>Awareness</strong> checks to read your motives suffer <strong>+2 Banes</strong>.</p>"
+      "description": "<p>You know the <strong>Rune of Lightning</strong> and can use it to weave Spellcraft.</p><p>A Zeph’s mask is capable of a limited amount of supernatural malleability. You can alter your mask slightly for regular communication and emotional expressiveness. When you die, only your mask remains. Your mask counts as your physical remains for the purposes of spells or magical effects which target a deceased creature.</p><p>The inscrutable nature of your mask makes reading your intentions difficult. During social challenges, <strong>Awareness</strong> checks to read your motives suffer <strong>+2 Banes</strong>.</p>",
+      "actionname": [
+        "Inscrutable Visage",
+        "Menacing Visage",
+        "Beguiling Visage"
+      ],
+      "actiondesc": [
+        "<p>Your mask assumes an inscrutable expression.</p><ul><li><p>You gain <strong>+2 Boons</strong> to all uses of the <strong>Deception </strong>skill.</p></li><li><p>Your <strong>Reflex </strong>defense increases by +2.</p></li></ul><p>You may only have one active mask expression at a given time.</p>",
+        "<p>Your mask assumes a menacing expression.</p><ul><li><p>You gain <strong>+2 Boons</strong> to all uses of the <strong>Intimidation </strong>skill.</p></li><li><p>Your <strong>Fortitude </strong>defense increases by +2.</p></li></ul><p>You may only have one active mask expression at a given time.</p>",
+        "<p>Your mask assumes a beguiling expression.</p><ul><li><p>You gain <strong>+2 Boons</strong> to all uses of the <strong>Persuasion</strong> skill.</p></li><li><p>Your <strong>Willpower</strong> defense increases by +2.</p></li></ul><p>You may only have one active mask expression at a given time.</p>"
+      ],
+      "actioneffectname": [
+        "Inscrutable Visage",
+        "Menacing Visage",
+        "Beguiling Visage"
+      ]
     },
     "Flameguard Militia": {
       "name": "Flameguard Militia",

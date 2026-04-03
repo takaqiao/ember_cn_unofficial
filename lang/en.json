@@ -585,8 +585,8 @@
           "label": "Active Scene",
           "hint": "This Scene becomes active when this Event is started. If blank, the event will take place within the current Scene rather than switching to a different one."
         },
-        "composition": {
-          "label": "Active Composition"
+        "level": {
+          "label": "Active Level"
         }
       },
       "complete": {
@@ -594,8 +594,8 @@
           "label": "Complete Scene",
           "hint": "This Scene becomes active when this Event is completed. If blank, the Scene which was previously active before the start of the Event will be activated."
         },
-        "composition": {
-          "label": "Complete Composition"
+        "level": {
+          "label": "Complete Level"
         }
       }
     },
@@ -620,6 +620,9 @@
     "CHANGE_OUTCOME": "<p>Are you sure you want to {action} the <strong>{label}</strong> outcome?</p>",
     "CHANGE_RESET": "reset",
     "CHANGE_SELECT": "select"
+  },
+  "WARNINGS": {
+    "NotRegistered": "This event with ID \"{eventId}\" is not yet registered as an active gameplay event. This is either because it was only just created or belongs to a parent Journal Entry that is not registered as a source of Standalone Events. Reloading the game (F5) may resolve this issue."
   }
 },
 

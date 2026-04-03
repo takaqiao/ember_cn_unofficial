@@ -1,890 +1,893 @@
 {
-  "TYPES.JournalEntryPage.ember.ancestry": "烬裔血统",
-  "TYPES.JournalEntryPage.ember.biome": "余烬生物群系",
-  "TYPES.JournalEntryPage.ember.characterClass": "余烬角色职业",
-  "TYPES.JournalEntryPage.ember.culture": "余烬文化",
-  "TYPES.JournalEntryPage.ember.cosmos": "余烬寰宇",
-  "TYPES.JournalEntryPage.ember.deity": "余烬神祇",
-  "TYPES.JournalEntryPage.ember.location": "余烬位置",
-  "TYPES.JournalEntryPage.ember.lore": "余烬背景",
-  "TYPES.JournalEntryPage.ember.organization": "余烬组织",
-  "TYPES.JournalEntryPage.ember.quest": "余烬任务概览",
-  "TYPES.JournalEntryPage.ember.questEvent": "余烬任务事件",
-  "TYPES.JournalEntryPage.ember.questFlowchart": "余烬任务流程图",
-  "TYPES.JournalEntryPage.ember.standaloneEvent": "Ember独立事件",
-  "TYPES.RegionBehavior.ember.trapTrigger": "陷阱触发",
-  "TYPES.RegionBehavior.ember.areaEffect": "范围效果",
-  "TYPES.RegionBehavior.ember.footstepSurface": "足迹地表",
-  "TABLE.ACTIONS.Draw": "结果",
-  "ACTOR": {
-    "CONTROLS": {
-      "EmberToken": "余烬动态令牌",
-      "EmberFlags": "余烬角色标记"
-    }
-  },
-  "EMBER.ACTOR_FLAGS": {
-    "FIELDS": {
-      "discoverable": {
-        "label": "可被发现的",
-        "hint": "这个 Actor 在 Ember 法典中能被识别为生物还是角色吗？",
-        "creature": "生物",
-        "character": "角色"
-      },
-      "character": {
-        "ancestry": {
-          "label": "血统",
-          "hint": "一个血统条目 ID 或 Ember 血统名称。"
-        },
-        "culture": {
-          "label": "文化",
-          "hint": "一个文化项目 ID 或 Ember 文化名称。"
-        },
-        "path": {
-          "label": "道路",
-          "hint": "一个自定义字符串，用于描述该角色的职业或背景。"
-        },
-        "pronouns": {
-          "label": "代词"
+    "TYPES.JournalEntryPage.ember.ancestry": "烬裔血统",
+    "TYPES.JournalEntryPage.ember.biome": "余烬生物群系",
+    "TYPES.JournalEntryPage.ember.characterClass": "余烬角色职业",
+    "TYPES.JournalEntryPage.ember.culture": "余烬文化",
+    "TYPES.JournalEntryPage.ember.cosmos": "余烬寰宇",
+    "TYPES.JournalEntryPage.ember.deity": "余烬神祇",
+    "TYPES.JournalEntryPage.ember.location": "余烬位置",
+    "TYPES.JournalEntryPage.ember.lore": "余烬背景",
+    "TYPES.JournalEntryPage.ember.organization": "余烬组织",
+    "TYPES.JournalEntryPage.ember.quest": "余烬任务概览",
+    "TYPES.JournalEntryPage.ember.questEvent": "余烬任务事件",
+    "TYPES.JournalEntryPage.ember.questFlowchart": "余烬任务流程图",
+    "TYPES.JournalEntryPage.ember.standaloneEvent": "Ember独立事件",
+    "TYPES.RegionBehavior.ember.trapTrigger": "陷阱触发",
+    "TYPES.RegionBehavior.ember.areaEffect": "范围效果",
+    "TYPES.RegionBehavior.ember.footstepSurface": "足迹地表",
+    "TABLE.ACTIONS.Draw": "结果",
+    "ACTOR": {
+        "CONTROLS": {
+            "EmberToken": "余烬动态令牌",
+            "EmberFlags": "余烬角色标记"
         }
-      },
-      "portrait": {
-        "width": {
-          "label": "宽度"
-        },
-        "height": {
-          "label": "身高"
-        },
-        "anchorX": {
-          "label": "X"
-        },
-        "anchorY": {
-          "label": "Y"
-        },
-        "flip": {
-          "label": "水平翻转",
-          "hint": "肖像应为正面朝向或左侧朝向。如果肖像绘制为右侧朝向，请勾选此框以在远景中将其翻转。"
-        },
-        "artist": {
-          "label": "艺术家名称"
-        }
-      },
-      "pronunciation": {
-        "label": "发音",
-        "hint": "这个角色名称的发音指南。"
-      },
-      "combatTheme": {
-        "label": "战斗主题",
-        "hint": "将此生物或角色配置为偏好一种对其类别而言并不标准的战斗主题。"
-      }
     },
-    "SHEET": {
-      "CHARACTER": "角色",
-      "COMBAT": "战斗",
-      "DISCOVERABLE": "可发现的",
-      "PORTRAIT": "Portrait"
-    }
-  },
-  "EMBER.ADVENTURE": {
-    "WARNINGS": {
-      "IMPORT_REQUIRED": "Ember 模组已启用，但其内容尚未导入。请导入 Ember 冒险以继续。",
-      "IMPORT_UNDERWAY": "余烬导入进行中，请耐心等待。完成后，游戏将自动重新加载。",
-      "REIMPORT_REQUIRED": "你必须重新导入 Ember 冒险，以包含 Ember 版本 {version} 中的关键更新。",
-      "EVENT_ACTIVE": "在导入冒险之前，你必须先结束或取消当前激活的 Ember 游戏事件。"
-    }
-  },
-  "EMBER.ATTUNEMENT": {
-    "Attunement": "同调",
-    "Amount": "数量",
-    "Identifier": "奖励标识符",
-    "IdentifierHint": "用于标识这一特定同调奖励的唯一字符串。",
-    "Progress": "进度",
-    "Tab": "调谐",
-    "Type": "同调类型",
-    "Rank": "等级",
-    "CurrentTooltip": "获得的调谐点数",
-    "NextTooltip": "晋升至下一等级所需"
-  },
-  "EMBER.CALENDAR": {
-    "ADVANCE": "推进时间",
-    "REWIND": "倒转时间",
-    "WORLD": "世界地图",
-    "COSMOS": "寰宇地图",
-    "REGION": "区域地图",
-    "EXPAND": "展开日历",
-    "COLLAPSE": "折叠日历",
-    "PARTY": "队伍角色卡",
-    "CODEX": "法典",
-    "SEASONS": {
-      "STILLING": "寂止",
-      "SEEDING": "播种",
-      "BLOOMING": "绽放",
-      "STEADING": "庄园",
-      "GLEANING": "拾取",
-      "WITHERING": "凋零"
-    }
-  },
-  "EMBER.CODEX": {
-    "TABS": "法典标签页导航",
-    "JOURNAL": "日志",
-    "QUESTS": "任务日志",
-    "DISCOVERIES": "发现ים",
-    "BESTIARY": "怪物图鉴",
-    "CHARACTERS": "角色",
-    "DISCOVERED_COUNT": "已发现计数",
-    "ENCOUNTERED": "{name} 于 {time} 被遭遇。",
-    "ENCOUNTERED_LOCATION": "{name} 于 {time} 在 {location} 被遭遇。",
-    "NOT_ENCOUNTERED": "{name} 尚未被遇到。",
-    "DISCOVERY_RECORD": "记录发现",
-    "DISCOVERY_RESET": "重置探索"
-  },
-  "EMBER.CONTROLS": {
-    "CycleSlice": "循环高程等级",
-    "TerrainToggle": "切换地形覆盖层",
-    "WeatherToggle": "切换天气覆盖层",
-    "ClockToggle": "切换世界时钟",
-    "EventsHUD": "切换事件 HUD",
-    "InteractionToggle": "与物体互动",
-    "HexHUD": "切换妖术 HUD",
-    "SpawnsToggle": "可视化生成区域",
-    "Teleport": "传送指示物",
-    "VistaConfig": "配置远景",
-    "VistaComposition": "更改构图"
-  },
-  "EMBER.CREATION": {
-    "TABS": "角色创建标签页导航",
-    "MESSAGES": {
-      "CompleteAddParty": "{userName} 已完成 {actorLink} 的角色创建！要将其加入队伍吗？"
-    }
-  },
-  "EMBER.ManagerTitle": "余烬战役管理器",
-  "EMBER.ManagerTabObjectives": "目标",
-  "EMBER.ManagerTabDiscoveries": "发现",
-  "EMBER.ManagerTabEvents": "事件",
-  "EMBER.ManagerTabChoices": "选项",
-  "EMBER.ManagerTabFactions": "派系",
-  "EMBER.MovementMiles": "灰烬要求队伍移动速度以英里为单位。",
-  "EMBER.MILESTONE": {
-    "Award": {
-      "NewLevel": "里程碑奖励已将队伍提升至{level}级！",
-      "Warning": "标识符“{id}”对应的里程碑已被授予。"
-    },
-    "CanLevel": "这个角色可以升级。",
-    "Dialog": {
-      "Identifier": {
-        "Error": "必须提供唯一标识符。",
-        "Hint": "一个用于标识此里程碑事件的唯一字符串。",
-        "Label": "标识符",
-        "Placeholder": "uniqueMilestoneIdentifier"
-      },
-      "Legend": "点数",
-      "Points": {
-        "Label": "奖励"
-      },
-      "Submit": {
-        "Award": "奖励",
-        "Revoke": "撤销"
-      },
-      "Title": {
-        "Award": "授予里程碑",
-        "Revoke": "撤销里程碑"
-      }
-    },
-    "Points": {
-      "Label": "里程碑点数"
-    },
-    "Revoke": {
-      "Warning": "尝试为不存在的事件“{id}”撤销里程碑奖励。"
-    }
-  },
-  "EMBER.SoundscapeMoodCalm": "平静",
-  "EMBER.SoundscapeMoodTension": "紧张",
-  "EMBER.SoundscapeMoodCombat": "战斗",
-  "EMBER.EventTagExploration": "探索事件",
-  "EMBER.EventTagCombat": "战斗事件",
-  "EMBER.EventTagSocial": "社交活动",
-  "EMBER.EventTagGlobal": "全局事件",
-  "EMBER.EventTagUnique": "独特事件",
-  "EMBER.EventActionBegin": "开始事件",
-  "EMBER.EventActionCancel": "取消事件",
-  "EMBER.EventActionDecline": "谢绝事件",
-  "EMBER.EventActionReroll": "建议替代方案",
-  "EMBER.EventActionComplete": "完成事件",
-  "EMBER.EventActionDiscoveryComplete": "完成探索",
-  "EMBER.EventActionDiscoveryDecline": "谢绝发现",
-  "EMBER.EmberStorylineLegend.Title": "剧情线",
-  "EMBER.EmberStorylineLegend.StateNone": "隐藏",
-  "EMBER.EmberStorylineLegend.StateOpen": "公开事件",
-  "EMBER.EmberStorylineLegend.StateAll": "所有事件",
-  "EMBER.EVENTS.Undiscovered": "未遭遇过",
-  "EMBER.EVENTS.Available": "未开始",
-  "EMBER.EVENTS.Active": "激活",
-  "EMBER.EVENTS.Repeating": "重复",
-  "EMBER.EVENTS.Completed": "已完成",
-  "EMBER.EVENTS.Milestone": "授予里程碑",
-  "EMBER.EVENTS.NoExposition": "此事件未定义说明文本！",
-  "EMBER.EVENTS.NoOverview": "此事件未定义概览文本！",
-  "EMBER.EVENTS.NoSummary": "此事件未定义日志摘要文本！",
-  "EMBER.EVENTS.QuestEvent": "任务事件",
-  "EMBER.EVENTS.StandaloneEvent": "独立事件",
-  "EMBER.ANCESTRY": {
-    "FIELDS": {
-      "color": {
-        "label": "UI 颜色",
-        "hint": "一种在角色创建 UI 中用作设计元素、用于表现该血统的颜色。"
-      },
-      "icon": {
-        "label": "血统图标",
-        "hint": "一个用于在角色创建及其他地方表示此血统的图标。"
-      },
-      "item": {
-        "label": "血统 种族 物品",
-        "hint": "D&D5E 游戏系统种族物品。"
-      },
-      "height": {
-        "label": "高度",
-        "hint": "定义这一血统的成年人的典型身高。"
-      },
-      "lifespan": {
-        "label": "寿命",
-        "hint": "为此血统定义典型寿命。"
-      },
-      "origin": {
-        "label": "血统 起源",
-        "hint": "简要描述该血统在宇宙学上的起源。仅供内部备注。"
-      },
-      "portrait": {
-        "label": "肖像",
-        "hint": "此血统示例角色的一幅肖像。"
-      },
-      "rarity": {
-        "label": "稀有度",
-        "hint": "定义该血统的稀有度阶级。"
-      }
-    },
-    "SECTIONS": {
-      "gameplay": "玩法特性"
-    }
-  },
-  "EMBER.BIOME": {
-    "SECTIONS": {
-      "basic": "基础配置",
-      "related": "相关内容",
-      "events": "事件概率",
-      "ambience": "环境 音频",
-      "music": "乐曲",
-      "visibility": "可见度"
-    },
-    "FIELDS": {
-      "biomeId": {
-        "label": "生物群系 ID",
-        "hint": "生物群系所需的唯一标识符。该标识符必须与后端区域数据中配置的标识符完全一致。"
-      },
-      "creatures": {
-        "label": "生物",
-        "hint": "输入 Actor UUID 或使用拖放，来配置栖息于此生物群系的生物。"
-      },
-      "events": {
-        "coefficients": {
-          "label": "事件系数",
-          "hint": "配置用于决定该生物群系中事件发生概率的系数和权重。"
-        }
-      },
-      "exposition": {
-        "label": "设定场景",
-        "hint": "首次发现该生物群系时提供说明的朗读文本。这段介绍性文本对游戏主持人和玩家都可见。"
-      },
-      "fillColor": {
-        "label": "颜色",
-        "hint": "用于在区域地图上表示该生物群系的颜色。"
-      },
-      "overview": {
-        "label": "生物群系概览",
-        "hint": "一段（或多段）面向玩家的关于该生物群系的概览。"
-      },
-      "regionId": {
-        "label": "区域 ID",
-        "hint": "配置此地点所在的 Ember 游戏世界区域。"
-      },
-      "scenes": {
-        "area": {
-          "label": "区域地图",
-          "hint": "指定一张用于表示该生物群系的区域地图。"
-        },
-        "vista": {
-          "label": "远景",
-          "hint": "指定一个用于代表此生物群系的远景。"
-        }
-      },
-      "sounds": {
-        "environment": {
-          "soundscape": {
-            "label": "环境音景",
-            "hint": "配置此生物群系中环境氛围默认使用的音景和布置。"
-          },
-          "arrangements": {
-            "day": {
-              "label": "白天"
+    "EMBER.ACTOR_FLAGS": {
+        "FIELDS": {
+            "discoverable": {
+                "label": "可被发现的",
+                "hint": "这个 Actor 在 Ember 法典中能被识别为生物还是角色吗？",
+                "creature": "生物",
+                "character": "角色"
             },
-            "night": {
-              "label": "夜晚"
+            "character": {
+                "ancestry": {
+                    "label": "血统",
+                    "hint": "一个血统条目 ID 或 Ember 血统名称。"
+                },
+                "culture": {
+                    "label": "文化",
+                    "hint": "一个文化项目 ID 或 Ember 文化名称。"
+                },
+                "path": {
+                    "label": "道路",
+                    "hint": "一个自定义字符串，用于描述该角色的职业或背景。"
+                },
+                "pronouns": {
+                    "label": "代词"
+                }
+            },
+            "portrait": {
+                "width": {
+                    "label": "宽度"
+                },
+                "height": {
+                    "label": "身高"
+                },
+                "anchorX": {
+                    "label": "X"
+                },
+                "anchorY": {
+                    "label": "Y"
+                },
+                "flip": {
+                    "label": "水平翻转",
+                    "hint": "肖像应为正面朝向或左侧朝向。如果肖像绘制为右侧朝向，请勾选此框以在远景中将其翻转。"
+                },
+                "artist": {
+                    "label": "艺术家名称"
+                }
+            },
+            "pronunciation": {
+                "label": "发音",
+                "hint": "这个角色名称的发音指南。"
+            },
+            "combatTheme": {
+                "label": "战斗主题",
+                "hint": "将此生物或角色配置为偏好一种对其类别而言并不标准的战斗主题。"
             }
-          },
-          "surface": {
-            "label": "地表物质",
-            "hint": "用于确定区域地图旅行声音时所使用的地表材质 ID。"
-          }
         },
-        "music": {
-          "soundscape": {
-            "label": "乐曲音景",
-            "hint": "配置在此生物群系内用于游戏乐曲的音景和编排。"
-          },
-          "arrangements": {
-            "day": {
-              "label": "白天"
+        "SHEET": {
+            "CHARACTER": "角色",
+            "COMBAT": "战斗",
+            "DISCOVERABLE": "可发现的",
+            "PORTRAIT": "肖像"
+        }
+    },
+    "EMBER.ADVENTURE": {
+        "WARNINGS": {
+            "IMPORT_REQUIRED": "Ember 模组已启用，但其内容尚未导入。请导入 Ember 冒险以继续。",
+            "IMPORT_UNDERWAY": "余烬导入进行中，请耐心等待。完成后，游戏将自动重新加载。",
+            "REIMPORT_REQUIRED": "你必须重新导入 Ember 冒险，以包含 Ember 版本 {version} 中的关键更新。",
+            "EVENT_ACTIVE": "在导入冒险之前，你必须先结束或取消当前激活的 Ember 游戏事件。"
+        }
+    },
+    "EMBER.ATTUNEMENT": {
+        "Attunement": "同调",
+        "Amount": "数量",
+        "Identifier": "奖励标识符",
+        "IdentifierHint": "用于标识这一特定同调奖励的唯一字符串。",
+        "Progress": "进度",
+        "Tab": "调谐",
+        "Type": "同调类型",
+        "Rank": "等级",
+        "CurrentTooltip": "获得的调谐点数",
+        "NextTooltip": "晋升至下一等级所需"
+    },
+    "EMBER.CALENDAR": {
+        "ADVANCE": "推进时间",
+        "REWIND": "倒转时间",
+        "WORLD": "世界地图",
+        "COSMOS": "寰宇地图",
+        "REGION": "区域地图",
+        "EXPAND": "展开日历",
+        "COLLAPSE": "折叠日历",
+        "PARTY": "队伍角色卡",
+        "CODEX": "法典",
+        "SEASONS": {
+            "STILLING": "寂止",
+            "SEEDING": "播种",
+            "BLOOMING": "绽放",
+            "STEADING": "庄园",
+            "GLEANING": "拾取",
+            "WITHERING": "凋零"
+        }
+    },
+    "EMBER.CODEX": {
+        "TABS": "法典标签页导航",
+        "JOURNAL": "日志",
+        "QUESTS": "任务日志",
+        "DISCOVERIES": "发现ים",
+        "BESTIARY": "怪物图鉴",
+        "CHARACTERS": "角色",
+        "DISCOVERED_COUNT": "已发现计数",
+        "ENCOUNTERED": "{name} 于 {time} 被遭遇。",
+        "ENCOUNTERED_LOCATION": "{name} 于 {time} 在 {location} 被遭遇。",
+        "NOT_ENCOUNTERED": "{name} 尚未被遇到。",
+        "DISCOVERY_RECORD": "记录发现",
+        "DISCOVERY_RESET": "重置探索"
+    },
+    "EMBER.CONTROLS": {
+        "CycleSlice": "循环高程等级",
+        "TerrainToggle": "切换地形覆盖层",
+        "WeatherToggle": "切换天气覆盖层",
+        "ClockToggle": "切换世界时钟",
+        "EventsHUD": "切换事件 HUD",
+        "InteractionToggle": "与物体互动",
+        "HexHUD": "切换妖术 HUD",
+        "SpawnsToggle": "可视化生成区域",
+        "Teleport": "传送指示物",
+        "VistaConfig": "配置远景",
+        "VistaComposition": "更改构图"
+    },
+    "EMBER.CREATION": {
+        "TABS": "角色创建标签页导航",
+        "MESSAGES": {
+            "CompleteAddParty": "{userName} 已完成 {actorLink} 的角色创建！要将其加入队伍吗？"
+        }
+    },
+    "EMBER.ManagerTitle": "余烬战役管理器",
+    "EMBER.ManagerTabObjectives": "目标",
+    "EMBER.ManagerTabDiscoveries": "发现",
+    "EMBER.ManagerTabEvents": "事件",
+    "EMBER.ManagerTabChoices": "选项",
+    "EMBER.ManagerTabFactions": "派系",
+    "EMBER.MovementMiles": "灰烬要求队伍移动速度以英里为单位。",
+    "EMBER.MILESTONE": {
+        "Award": {
+            "NewLevel": "里程碑奖励已将队伍提升至{level}级！",
+            "Warning": "标识符“{id}”对应的里程碑已被授予。"
+        },
+        "CanLevel": "这个角色可以升级。",
+        "Dialog": {
+            "Identifier": {
+                "Error": "必须提供唯一标识符。",
+                "Hint": "一个用于标识此里程碑事件的唯一字符串。",
+                "Label": "标识符",
+                "Placeholder": "uniqueMilestoneIdentifier"
             },
-            "night": {
-              "label": "夜晚"
+            "Legend": "点数",
+            "Points": {
+                "Label": "奖励"
             },
-            "tension": {
-              "label": "紧张"
+            "Submit": {
+                "Award": "奖励",
+                "Revoke": "撤销"
+            },
+            "Title": {
+                "Award": "授予里程碑",
+                "Revoke": "撤销里程碑"
             }
-          }
-        }
-      },
-      "terrain": {
-        "label": "地形",
-        "hint": "指定此生物群系中六边格的默认地形类型。"
-      },
-      "visibility": {
-        "distance": {
-          "label": "距离"
         },
-        "limit": {
-          "label": "限制",
-          "hint": "在遭遇该生物群系的六边格时，视野会如何受限？"
-        }
-      }
-    }
-  },
-  "EMBER.CHARACTER_CLASS": {
-    "FIELDS": {
-      "color": {
-        "label": "界面颜色",
-        "hint": "一种在角色创建 UI 中用于表现此职业的设计元素颜色。"
-      },
-      "icon": {
-        "label": "职业图标",
-        "hint": "一个用于在角色创建及其他地方表示该职业的图标。"
-      },
-      "overview": {
-        "label": "职业概览",
-        "hint": "一段关于该职业的摘要信息，会在角色创建中显示。"
-      }
-    }
-  },
-  "EMBER.CULTURE": {
-    "FIELDS": {
-      "color": {
-        "label": "界面颜色",
-        "hint": "一种作为设计元素使用的颜色，用于在角色创建界面中表现这种文化。"
-      },
-      "icon": {
-        "label": "文化图标",
-        "hint": "一个用于在角色创建及其他地方代表该文化的图标。"
-      },
-      "item": {
-        "label": "文化 背景 物品",
-        "hint": "D&D5E 游戏系统的背景物品。"
-      }
-    }
-  },
-  "EMBER.COSMOS": {
-    "FIELDS": {
-      "color": {
-        "label": "UI 颜色",
-        "hint": "一种用作设计元素、在角色创建界面中表现此宇宙调谐的颜色。"
-      },
-      "icon": {
-        "label": "图标",
-        "hint": "一个用于在角色创建及其他地方表示这种宇宙调谐的图标。"
-      },
-      "item": {
-        "label": "背景物品",
-        "hint": "D&D5E 游戏系统的背景物品。"
-      },
-      "portrait": {
-        "label": "肖像图像",
-        "hint": "用于在角色创建及其他地方表示宇宙学元素的图像。"
-      }
-    },
-    "SECTIONS": {
-      "gameplay": "玩法整合"
-    }
-  },
-  "EMBER.DEITY": {
-    "SECTIONS": {
-      "basic": "基础配置",
-      "related": "相关内容"
-    },
-    "FIELDS": {
-      "banner": {
-        "label": "神祇旗帜",
-        "hint": "一张描绘该神祇的横幅图片，或其他与该神祇相关的参考资料。"
-      },
-      "caption": {
-        "label": "横幅标题",
-        "hint": "显示在横幅图像下方的可选说明文字。"
-      },
-      "pronunciation": {
-        "label": "发音",
-        "hint": "此神祇名称的可选语音发音。"
-      },
-      "category": {
-        "label": "类别",
-        "hint": "定义此神祇条目应归入的侧边栏类别。"
-      },
-      "edict": {
-        "label": "训谕",
-        "hint": "用一句话概括这位神祇的训谕，说明其旨意或目标。"
-      },
-      "overview": {
-        "label": "神祇概览",
-        "hint": "请用2到3句话简要概述这位神祇、其在宇宙秩序中的角色，以及核心教义。"
-      },
-      "organizations": {
-        "label": "相关组织",
-        "hint": "与这位神祇有显著关系的世界组织。"
-      },
-      "locations": {
-        "label": "著名地点",
-        "hint": "与这位神祇有显著关联的世界中的地点。"
-      },
-      "followers": {
-        "label": "知名追随者",
-        "hint": "与该神祇相关、作为其著名追随者的角色或生物。"
-      },
-      "clerics": {
-        "label": "神圣领域",
-        "hint": "该神祇通常关联的神圣领域（若有）。崇拜该神祇的牧师通常会修习这些领域之一。"
-      },
-      "warlocks": {
-        "label": "术士契约",
-        "hint": "通常与该神祇相关联的术士契约（如果有的话）。被该神祇授予力量的术士会遵循其中一种契约。"
-      },
-      "sorcerers": {
-        "label": "术士起源",
-        "hint": "通常与该神祇相关的术士起源（若有）。拥有这些力量起源的术士可能会将其归因于该神祇。"
-      }
-    }
-  },
-  "EMBER.DEVELOPMENT": {
-    "FIELDS": {
-      "development": {
-        "status": {
-          "label": "开发状态",
-          "hint": "记录此内容的当前开发状态。"
+        "Points": {
+            "Label": "里程碑点数"
         },
-        "notes": {
-          "label": "开发者笔记",
-          "hint": "留下简短说明，解释当前的开发状态或后续步骤。支持 URL。"
-        },
-        "secrets": {
-          "label": "隐秘背景",
-          "hint": "关于此主题的补充世界构建或设定汇编信息，不打算作为公开（无论是GM还是玩家）知识。"
+        "Revoke": {
+            "Warning": "尝试为不存在的事件“{id}”撤销里程碑奖励。"
         }
-      }
-    }
-  },
-  "EMBER.EVENT": {
-    "SECTIONS": {
-      "basic": "基础配置",
-      "location": "事件地点",
-      "probability": "事件概率",
-      "activation": "事件激活"
     },
-    "FIELDS": {
-      "biomes": {
-        "label": "事件生物群系",
-        "hint": "将此事件配置为在属于特定一组生物群系的所有六边格中发生。"
-      },
-      "coefficients": {
-        "label": "事件系数",
-        "hint": "配置用于决定此事件发生概率的系数和权重。这是一项高级配置，只有在谨慎操作并了解事件概率引擎如何运作的情况下才应进行。"
-      },
-      "eventId": {
-        "label": "事件标识符",
-        "hint": "事件所需的唯一标识符。按照惯例，此事件标识符应为字母数字组合、采用驼峰式命名，并以小写字母开头。例如“myStandaloneEvent3”。"
-      },
-      "encounter": {
-        "label": "遭遇配置",
-        "hint": "遭遇配置是一项高级功能，只应谨慎进行，并与 Andrew 协商。"
-      },
-      "global": {
-        "label": "全局",
-        "hint": "全局事件可能发生在世界中的任何一个和所有区域。"
-      },
-      "hexes": {
-        "label": "特定六边格",
-        "hint": "将此事件配置为发生在一组特定的妖术坐标中。"
-      },
-      "type": {
-        "label": "事件类型",
-        "hint": "指出此事件的主要玩法类型。目前你只能选择一种类型，但未来你将能够标记多个玩法主题。"
-      },
-      "locations": {
-        "label": "事件地点",
-        "hint": "将此事件配置为在一组特定地点发生。"
-      },
-      "milestone": {
-        "label": "授予里程碑",
-        "hint": "指明此任务事件在完成时是否奖励一个里程碑点。"
-      },
-      "prerequisite": {
-        "label": "前置条件",
-        "hint": "配置解锁此事件所需的父事件前置条件状态。"
-      },
-      "regionId": {
-        "label": "世界区域",
-        "hint": "配置此事件发生于世界的哪个地区。"
-      },
-      "scene": {
-        "label": "激活场景",
-        "hint": "配置此事件应使用哪些场景。",
-        "active": {
-          "id": {
-            "label": "激活场景",
-            "hint": "当此事件开始时，该场景变为激活状态。若留空，则该事件将在当前场景中发生，而不是切换到其他场景。"
-          },
-          "composition": {
-            "label": "激活构图"
-          }
-        },
-        "complete": {
-          "id": {
-            "label": "完整场景",
-            "hint": "当此事件完成时，此场景变为激活状态。若留空，则将在事件开始前先前处于激活状态的场景重新激活。"
-          },
-          "composition": {
-            "label": "完整构图"
-          }
-        }
-      },
-      "unique": {
-        "label": "独特的",
-        "hint": "独特事件只会发生一次，否则此事件可能会重复。"
-      },
-      "overview": {
-        "label": "概览",
-        "hint": "一段简短（1-2句）的引言，仅对游戏主持人可见，用于概述该事件期间将发生的游戏过程。"
-      },
-      "exposition": {
-        "label": "设定场景",
-        "hint": "提供事件说明的朗读文本。这段介绍性文字对游戏主持人和玩家都可见。"
-      },
-      "summary": {
-        "label": "日志摘要",
-        "hint": "请提供一则简短（1-3句）的日志条目，以便在此事件完成后记录到战役管理器中。应以队伍的第一人称复数视角撰写，例如：“我们在路上遇到了一位奇怪的旅人……”"
-      }
-    },
-    "MESSAGES": {
-      "CHANGE_OUTCOME": "<p>您确定要{action}<strong>{label}</strong>结果吗？</p>",
-      "CHANGE_RESET": "重置",
-      "CHANGE_SELECT": "选择"
-    }
-  },
-  "EMBER.LOCATION": {
-    "SECTIONS": {
-      "basic": "基础配置",
-      "related": "相关内容",
-      "events": "事件概率",
-      "ambience": "环境音频",
-      "music": "乐曲",
-      "visibility": "可见性"
-    },
-    "FIELDS": {
-      "creatures": {
-        "label": "生物",
-        "hint": "通过输入 Actor UUID 或使用拖放，配置栖息于此地点的生物。"
-      },
-      "events": {
-        "coefficients": {
-          "label": "事件系数",
-          "hint": "配置用于确定此地点中事件发生概率的系数和重量。"
-        }
-      },
-      "discoveryHexes": {
-        "label": "探索六边格",
-        "hint": "除该地点所在的、可由此发现该地点的六边格之外的其他六边格。"
-      },
-      "exposition": {
-        "label": "设定场景",
-        "hint": "首次发现该地点时提供背景说明的朗读文本。这段介绍性文本对游戏主持人和玩家都可见。"
-      },
-      "locationId": {
-        "label": "地点 ID",
-        "hint": "地点所需的唯一标识符。按照惯例，此地点 ID 应为字母数字组合、采用驼峰式命名，并以小写字母开头。例如 \"myCustomLocation4\"。"
-      },
-      "overview": {
-        "label": "地点概览",
-        "hint": "一段（或多段）面向玩家的地点概览。"
-      },
-      "regionId": {
-        "label": "区域 ID",
-        "hint": "配置此地点所在的 Ember 游戏世界区域。"
-      },
-      "hexes": {
-        "label": "特定六边格",
-        "hint": "配置此地点所在的六边格集合。"
-      },
-      "scenes": {
-        "area": {
-          "label": "区域地图",
-          "hint": "指定一张用于表示此地点的区域地图。"
-        },
-        "vista": {
-          "label": "远景",
-          "hint": "指定一个用于表示此地点的远景。"
-        }
-      },
-      "sounds": {
-        "environment": {
-          "soundscape": {
-            "label": "环境音景",
-            "hint": "配置此地点中环境氛围默认使用的音景和布置。"
-          },
-          "arrangements": {
-            "day": {
-              "label": "白天"
+    "EMBER.SoundscapeMoodCalm": "平静",
+    "EMBER.SoundscapeMoodTension": "紧张",
+    "EMBER.SoundscapeMoodCombat": "战斗",
+    "EMBER.EventTagExploration": "探索事件",
+    "EMBER.EventTagCombat": "战斗事件",
+    "EMBER.EventTagSocial": "社交活动",
+    "EMBER.EventTagGlobal": "全局事件",
+    "EMBER.EventTagUnique": "独特事件",
+    "EMBER.EventActionBegin": "开始事件",
+    "EMBER.EventActionCancel": "取消事件",
+    "EMBER.EventActionDecline": "谢绝事件",
+    "EMBER.EventActionReroll": "建议替代方案",
+    "EMBER.EventActionComplete": "完成事件",
+    "EMBER.EventActionDiscoveryComplete": "完成探索",
+    "EMBER.EventActionDiscoveryDecline": "谢绝发现",
+    "EMBER.EmberStorylineLegend.Title": "剧情线",
+    "EMBER.EmberStorylineLegend.StateNone": "隐藏",
+    "EMBER.EmberStorylineLegend.StateOpen": "公开事件",
+    "EMBER.EmberStorylineLegend.StateAll": "所有事件",
+    "EMBER.EVENTS.Undiscovered": "未遭遇过",
+    "EMBER.EVENTS.Available": "未开始",
+    "EMBER.EVENTS.Active": "激活",
+    "EMBER.EVENTS.Repeating": "重复",
+    "EMBER.EVENTS.Completed": "已完成",
+    "EMBER.EVENTS.Milestone": "授予里程碑",
+    "EMBER.EVENTS.NoExposition": "此事件未定义说明文本！",
+    "EMBER.EVENTS.NoOverview": "此事件未定义概览文本！",
+    "EMBER.EVENTS.NoSummary": "此事件未定义日志摘要文本！",
+    "EMBER.EVENTS.QuestEvent": "任务事件",
+    "EMBER.EVENTS.StandaloneEvent": "独立事件",
+    "EMBER.ANCESTRY": {
+        "FIELDS": {
+            "color": {
+                "label": "UI 颜色",
+                "hint": "一种在角色创建 UI 中用作设计元素、用于表现该血统的颜色。"
             },
-            "night": {
-              "label": "夜晚"
+            "icon": {
+                "label": "血统图标",
+                "hint": "一个用于在角色创建及其他地方表示此血统的图标。"
+            },
+            "item": {
+                "label": "血统 种族 物品",
+                "hint": "D&D5E 游戏系统种族物品。"
+            },
+            "height": {
+                "label": "高度",
+                "hint": "定义这一血统的成年人的典型身高。"
+            },
+            "lifespan": {
+                "label": "寿命",
+                "hint": "为此血统定义典型寿命。"
+            },
+            "origin": {
+                "label": "血统 起源",
+                "hint": "简要描述该血统在宇宙学上的起源。仅供内部备注。"
+            },
+            "portrait": {
+                "label": "肖像",
+                "hint": "此血统示例角色的一幅肖像。"
+            },
+            "rarity": {
+                "label": "稀有度",
+                "hint": "定义该血统的稀有度阶级。"
             }
-          },
-          "neighbors": {
-            "label": "邻居们",
-            "hint": "当位于区域地图上的这个位置时，是否包含来自相邻六边格的环境图层？"
-          }
         },
-        "music": {
-          "soundscape": {
-            "label": "乐曲音景",
-            "hint": "配置在此地点中用于游戏乐曲的音景和编曲。"
-          },
-          "arrangements": {
-            "day": {
-              "label": "白天"
+        "SECTIONS": {
+            "gameplay": "玩法特性"
+        }
+    },
+    "EMBER.BIOME": {
+        "SECTIONS": {
+            "basic": "基础配置",
+            "related": "相关内容",
+            "events": "事件概率",
+            "ambience": "环境 音频",
+            "music": "乐曲",
+            "visibility": "可见度"
+        },
+        "FIELDS": {
+            "biomeId": {
+                "label": "生物群系 ID",
+                "hint": "生物群系所需的唯一标识符。该标识符必须与后端区域数据中配置的标识符完全一致。"
             },
-            "night": {
-              "label": "夜晚"
+            "creatures": {
+                "label": "生物",
+                "hint": "输入 Actor UUID 或使用拖放，来配置栖息于此生物群系的生物。"
             },
-            "tension": {
-              "label": "紧张"
+            "events": {
+                "coefficients": {
+                    "label": "事件系数",
+                    "hint": "配置用于决定该生物群系中事件发生概率的系数和权重。"
+                }
+            },
+            "exposition": {
+                "label": "设定场景",
+                "hint": "首次发现该生物群系时提供说明的朗读文本。这段介绍性文本对游戏主持人和玩家都可见。"
+            },
+            "fillColor": {
+                "label": "颜色",
+                "hint": "用于在区域地图上表示该生物群系的颜色。"
+            },
+            "overview": {
+                "label": "生物群系概览",
+                "hint": "一段（或多段）面向玩家的关于该生物群系的概览。"
+            },
+            "regionId": {
+                "label": "区域 ID",
+                "hint": "配置此地点所在的 Ember 游戏世界区域。"
+            },
+            "scenes": {
+                "area": {
+                    "label": "区域地图",
+                    "hint": "指定一张用于表示该生物群系的区域地图。"
+                },
+                "vista": {
+                    "label": "远景",
+                    "hint": "指定一个用于代表此生物群系的远景。"
+                }
+            },
+            "sounds": {
+                "environment": {
+                    "soundscape": {
+                        "label": "环境音景",
+                        "hint": "配置此生物群系中环境氛围默认使用的音景和布置。"
+                    },
+                    "arrangements": {
+                        "day": {
+                            "label": "白天"
+                        },
+                        "night": {
+                            "label": "夜晚"
+                        }
+                    },
+                    "surface": {
+                        "label": "地表物质",
+                        "hint": "用于确定区域地图旅行声音时所使用的地表材质 ID。"
+                    }
+                },
+                "music": {
+                    "soundscape": {
+                        "label": "乐曲音景",
+                        "hint": "配置在此生物群系内用于游戏乐曲的音景和编排。"
+                    },
+                    "arrangements": {
+                        "day": {
+                            "label": "白天"
+                        },
+                        "night": {
+                            "label": "夜晚"
+                        },
+                        "tension": {
+                            "label": "紧张"
+                        }
+                    }
+                }
+            },
+            "terrain": {
+                "label": "地形",
+                "hint": "指定此生物群系中六边格的默认地形类型。"
+            },
+            "visibility": {
+                "distance": {
+                    "label": "距离"
+                },
+                "limit": {
+                    "label": "限制",
+                    "hint": "在遭遇该生物群系的六边格时，视野会如何受限？"
+                }
             }
-          }
         }
-      },
-      "terrain": {
-        "label": "地形",
-        "hint": "指定此地点中六边格的地形类型。"
-      },
-      "visibility": {
-        "distance": {
-          "label": "距离"
+    },
+    "EMBER.CHARACTER_CLASS": {
+        "FIELDS": {
+            "color": {
+                "label": "界面颜色",
+                "hint": "一种在角色创建 UI 中用于表现此职业的设计元素颜色。"
+            },
+            "icon": {
+                "label": "职业图标",
+                "hint": "一个用于在角色创建及其他地方表示该职业的图标。"
+            },
+            "overview": {
+                "label": "职业概览",
+                "hint": "一段关于该职业的摘要信息，会在角色创建中显示。"
+            }
+        }
+    },
+    "EMBER.CULTURE": {
+        "FIELDS": {
+            "color": {
+                "label": "界面颜色",
+                "hint": "一种作为设计元素使用的颜色，用于在角色创建界面中表现这种文化。"
+            },
+            "icon": {
+                "label": "文化图标",
+                "hint": "一个用于在角色创建及其他地方代表该文化的图标。"
+            },
+            "item": {
+                "label": "文化 背景 物品",
+                "hint": "D&D5E 游戏系统的背景物品。"
+            }
+        }
+    },
+    "EMBER.COSMOS": {
+        "FIELDS": {
+            "color": {
+                "label": "UI 颜色",
+                "hint": "一种用作设计元素、在角色创建界面中表现此宇宙调谐的颜色。"
+            },
+            "icon": {
+                "label": "图标",
+                "hint": "一个用于在角色创建及其他地方表示这种宇宙调谐的图标。"
+            },
+            "item": {
+                "label": "背景物品",
+                "hint": "D&D5E 游戏系统的背景物品。"
+            },
+            "portrait": {
+                "label": "肖像图像",
+                "hint": "用于在角色创建及其他地方表示宇宙学元素的图像。"
+            }
         },
-        "limit": {
-          "label": "限制",
-          "hint": "在这个地点中，六边格的可见性是如何受到限制的？"
+        "SECTIONS": {
+            "gameplay": "玩法整合"
         }
-      }
-    }
-  },
-  "EMBER.LORE": {
-    "SECTIONS": {
-      "basic": "基础配置",
-      "related": "相关内容"
     },
-    "FIELDS": {
-      "banner": {
-        "img": {
-          "label": "横幅图片",
-          "hint": "显示在此主题页面页眉处的横幅图像。"
+    "EMBER.DEITY": {
+        "SECTIONS": {
+            "basic": "基础配置",
+            "related": "相关内容"
         },
-        "caption": {
-          "label": "横幅标题",
-          "hint": "显示在横幅图像下方的可选说明文字。"
+        "FIELDS": {
+            "banner": {
+                "label": "神祇旗帜",
+                "hint": "一张描绘该神祇的横幅图片，或其他与该神祇相关的参考资料。"
+            },
+            "caption": {
+                "label": "横幅标题",
+                "hint": "显示在横幅图像下方的可选说明文字。"
+            },
+            "pronunciation": {
+                "label": "发音",
+                "hint": "此神祇名称的可选语音发音。"
+            },
+            "category": {
+                "label": "类别",
+                "hint": "定义此神祇条目应归入的侧边栏类别。"
+            },
+            "edict": {
+                "label": "训谕",
+                "hint": "用一句话概括这位神祇的训谕，说明其旨意或目标。"
+            },
+            "overview": {
+                "label": "神祇概览",
+                "hint": "请用2到3句话简要概述这位神祇、其在宇宙秩序中的角色，以及核心教义。"
+            },
+            "organizations": {
+                "label": "相关组织",
+                "hint": "与这位神祇有显著关系的世界组织。"
+            },
+            "locations": {
+                "label": "著名地点",
+                "hint": "与这位神祇有显著关联的世界中的地点。"
+            },
+            "followers": {
+                "label": "知名追随者",
+                "hint": "与该神祇相关、作为其著名追随者的角色或生物。"
+            },
+            "clerics": {
+                "label": "神圣领域",
+                "hint": "该神祇通常关联的神圣领域（若有）。崇拜该神祇的牧师通常会修习这些领域之一。"
+            },
+            "warlocks": {
+                "label": "术士契约",
+                "hint": "通常与该神祇相关联的术士契约（如果有的话）。被该神祇授予力量的术士会遵循其中一种契约。"
+            },
+            "sorcerers": {
+                "label": "术士起源",
+                "hint": "通常与该神祇相关的术士起源（若有）。拥有这些力量起源的术士可能会将其归因于该神祇。"
+            }
         }
-      },
-      "content": {
-        "overview": {
-          "label": "主题概览",
-          "hint": "对这一背景主题的简要概览（2-3句话），概述其内容。"
+    },
+    "EMBER.DEVELOPMENT": {
+        "FIELDS": {
+            "development": {
+                "status": {
+                    "label": "开发状态",
+                    "hint": "记录此内容的当前开发状态。"
+                },
+                "notes": {
+                    "label": "开发者笔记",
+                    "hint": "留下简短说明，解释当前的开发状态或后续步骤。支持 URL。"
+                },
+                "secrets": {
+                    "label": "隐秘背景",
+                    "hint": "关于此主题的补充世界构建或设定汇编信息，不打算作为公开（无论是GM还是玩家）知识。"
+                }
+            }
+        }
+    },
+    "EMBER.EVENT": {
+        "SECTIONS": {
+            "basic": "基础配置",
+            "location": "事件地点",
+            "probability": "事件概率",
+            "activation": "事件激活"
         },
-        "gamemaster": {
-          "label": "仅限游戏主持人查看的信息",
-          "hint": "仅向游戏主持人用户显示的关于此主题的附加信息。"
+        "FIELDS": {
+            "biomes": {
+                "label": "事件生物群系",
+                "hint": "将此事件配置为在属于特定一组生物群系的所有六边格中发生。"
+            },
+            "coefficients": {
+                "label": "事件系数",
+                "hint": "配置用于决定此事件发生概率的系数和权重。这是一项高级配置，只有在谨慎操作并了解事件概率引擎如何运作的情况下才应进行。"
+            },
+            "eventId": {
+                "label": "事件标识符",
+                "hint": "事件所需的唯一标识符。按照惯例，此事件标识符应为字母数字组合、采用驼峰式命名，并以小写字母开头。例如“myStandaloneEvent3”。"
+            },
+            "encounter": {
+                "label": "遭遇配置",
+                "hint": "遭遇配置是一项高级功能，只应谨慎进行，并与 Andrew 协商。"
+            },
+            "global": {
+                "label": "全局",
+                "hint": "全局事件可能发生在世界中的任何一个和所有区域。"
+            },
+            "hexes": {
+                "label": "特定六边格",
+                "hint": "将此事件配置为发生在一组特定的妖术坐标中。"
+            },
+            "type": {
+                "label": "事件类型",
+                "hint": "指出此事件的主要玩法类型。目前你只能选择一种类型，但未来你将能够标记多个玩法主题。"
+            },
+            "locations": {
+                "label": "事件地点",
+                "hint": "将此事件配置为在一组特定地点发生。"
+            },
+            "milestone": {
+                "label": "授予里程碑",
+                "hint": "指明此任务事件在完成时是否奖励一个里程碑点。"
+            },
+            "prerequisite": {
+                "label": "前置条件",
+                "hint": "配置解锁此事件所需的父事件前置条件状态。"
+            },
+            "regionId": {
+                "label": "世界区域",
+                "hint": "配置此事件发生于世界的哪个地区。"
+            },
+            "scene": {
+                "label": "激活场景",
+                "hint": "配置此事件应使用哪些场景。",
+                "active": {
+                    "id": {
+                        "label": "激活场景",
+                        "hint": "当此事件开始时，该场景变为激活状态。若留空，则该事件将在当前场景中发生，而不是切换到其他场景。"
+                    },
+                    "level": {
+                        "label": "激活等级"
+                    }
+                },
+                "complete": {
+                    "id": {
+                        "label": "完整场景",
+                        "hint": "当此事件完成时，此场景变为激活状态。若留空，则将在事件开始前先前处于激活状态的场景重新激活。"
+                    },
+                    "level": {
+                        "label": "完成等级"
+                    }
+                }
+            },
+            "unique": {
+                "label": "独特的",
+                "hint": "独特事件只会发生一次，否则此事件可能会重复。"
+            },
+            "overview": {
+                "label": "概览",
+                "hint": "一段简短（1-2句）的引言，仅对游戏主持人可见，用于概述该事件期间将发生的游戏过程。"
+            },
+            "exposition": {
+                "label": "设定场景",
+                "hint": "提供事件说明的朗读文本。这段介绍性文字对游戏主持人和玩家都可见。"
+            },
+            "summary": {
+                "label": "日志摘要",
+                "hint": "请提供一则简短（1-3句）的日志条目，以便在此事件完成后记录到战役管理器中。应以队伍的第一人称复数视角撰写，例如：“我们在路上遇到了一位奇怪的旅人……”"
+            }
+        },
+        "MESSAGES": {
+            "CHANGE_OUTCOME": "<p>您确定要{action}<strong>{label}</strong>结果吗？</p>",
+            "CHANGE_RESET": "重置",
+            "CHANGE_SELECT": "选择"
+        },
+        "WARNINGS": {
+            "NotRegistered": "事件标识符为“{eventId}”的此事件尚未注册为活动中的游戏事件。这可能是因为它刚刚被创建，或它属于一个未注册为独立事件来源的父级日志条目。重新加载游戏（F5）可能会解决此问题。"
         }
-      },
-      "identifier": {
-        "label": "主题标识符",
-        "hint": "用于此背景主题的唯一标识符字符串。"
-      },
-      "pronunciation": {
-        "label": "发音",
-        "hint": "此主题名称的可选语音发音。"
-      },
-      "subtitle": {
-        "label": "副标题",
-        "hint": "用于指代此主题的副标题、次级标题、称号或别称。"
-      },
-      "concepts": {
-        "label": "相关概念",
-        "hint": "与此主题相关联的相关概念（日志页面）。"
-      },
-      "characters": {
-        "label": "相关角色",
-        "hint": "与此主题相关联的角色（Actors）。"
-      }
-    }
-  },
-  "EMBER.ORGANIZATION": {
-    "FIELDS": {
-      "banner": {
-        "label": "横幅图像",
-        "hint": "用于描绘该组织的可选横幅图像。"
-      },
-      "caption": {
-        "label": "横幅标题",
-        "hint": "显示在横幅图像下方的可选标题说明。"
-      },
-      "pronunciation": {
-        "label": "发音",
-        "hint": "该组织名称的可选语音发音。"
-      },
-      "color": {
-        "label": "界面颜色",
-        "hint": "一种用作设计元素、与该组织相关联的颜色。"
-      },
-      "icon": {
-        "label": "组织图标",
-        "hint": "用于代表该组织的图标。"
-      },
-      "locations": {
-        "label": "地点",
-        "hint": "与此组织相关的地点（《地名志》页面）。"
-      },
-      "overview": {
-        "label": "组织概览",
-        "hint": "请用 2-3 句话简要概述该组织，总结其职责和背景。"
-      },
-      "characters": {
-        "label": "角色",
-        "hint": "与此组织相关联的相关角色（Actors）。"
-      }
-    }
-  },
-  "EMBER.QUEST": {
-    "FIELDS": {
-      "questId": {
-        "label": "任务 ID",
-        "hint": "任务所需的唯一标识符。任务 ID 应为字母数字组合、采用驼峰命名法，并以小写字母开头。例如 \"specialQuest3\"。"
-      },
-      "regionId": {
-        "label": "区域 ID",
-        "hint": "配置此任务主要关联于游戏世界的哪个地区。"
-      },
-      "color": {
-        "label": "任务颜色",
-        "hint": "选择一种颜色，在区域地图图例和战役管理器中代表此任务。"
-      },
-      "overview": {
-        "label": "概览",
-        "hint": "仅供游戏主持人查看的任务单段概览，总结该任务的主要玩法元素和主题。"
-      }
     },
-    "SECTIONS": {
-      "basic": "基础配置"
-    }
-  },
-  "EMBER.CONST": {
-    "TRAVEL": {
-      "fast": "迅捷",
-      "hidden": "隐藏",
-      "normal": "普通",
-      "reckless": "鲁莽",
-      "slow": "缓慢的"
+    "EMBER.LOCATION": {
+        "SECTIONS": {
+            "basic": "基础配置",
+            "related": "相关内容",
+            "events": "事件概率",
+            "ambience": "环境音频",
+            "music": "乐曲",
+            "visibility": "可见性"
+        },
+        "FIELDS": {
+            "creatures": {
+                "label": "生物",
+                "hint": "通过输入 Actor UUID 或使用拖放，配置栖息于此地点的生物。"
+            },
+            "events": {
+                "coefficients": {
+                    "label": "事件系数",
+                    "hint": "配置用于确定此地点中事件发生概率的系数和重量。"
+                }
+            },
+            "discoveryHexes": {
+                "label": "探索六边格",
+                "hint": "除该地点所在的、可由此发现该地点的六边格之外的其他六边格。"
+            },
+            "exposition": {
+                "label": "设定场景",
+                "hint": "首次发现该地点时提供背景说明的朗读文本。这段介绍性文本对游戏主持人和玩家都可见。"
+            },
+            "locationId": {
+                "label": "地点 ID",
+                "hint": "地点所需的唯一标识符。按照惯例，此地点 ID 应为字母数字组合、采用驼峰式命名，并以小写字母开头。例如 \"myCustomLocation4\"。"
+            },
+            "overview": {
+                "label": "地点概览",
+                "hint": "一段（或多段）面向玩家的地点概览。"
+            },
+            "regionId": {
+                "label": "区域 ID",
+                "hint": "配置此地点所在的 Ember 游戏世界区域。"
+            },
+            "hexes": {
+                "label": "特定六边格",
+                "hint": "配置此地点所在的六边格集合。"
+            },
+            "scenes": {
+                "area": {
+                    "label": "区域地图",
+                    "hint": "指定一张用于表示此地点的区域地图。"
+                },
+                "vista": {
+                    "label": "远景",
+                    "hint": "指定一个用于表示此地点的远景。"
+                }
+            },
+            "sounds": {
+                "environment": {
+                    "soundscape": {
+                        "label": "环境音景",
+                        "hint": "配置此地点中环境氛围默认使用的音景和布置。"
+                    },
+                    "arrangements": {
+                        "day": {
+                            "label": "白天"
+                        },
+                        "night": {
+                            "label": "夜晚"
+                        }
+                    },
+                    "neighbors": {
+                        "label": "邻居们",
+                        "hint": "当位于区域地图上的这个位置时，是否包含来自相邻六边格的环境图层？"
+                    }
+                },
+                "music": {
+                    "soundscape": {
+                        "label": "乐曲音景",
+                        "hint": "配置在此地点中用于游戏乐曲的音景和编曲。"
+                    },
+                    "arrangements": {
+                        "day": {
+                            "label": "白天"
+                        },
+                        "night": {
+                            "label": "夜晚"
+                        },
+                        "tension": {
+                            "label": "紧张"
+                        }
+                    }
+                }
+            },
+            "terrain": {
+                "label": "地形",
+                "hint": "指定此地点中六边格的地形类型。"
+            },
+            "visibility": {
+                "distance": {
+                    "label": "距离"
+                },
+                "limit": {
+                    "label": "限制",
+                    "hint": "在这个地点中，六边格的可见性是如何受到限制的？"
+                }
+            }
+        }
     },
-    "VISIBILITY": {
-      "BACK": "返回",
-      "FRONT": "前方",
-      "NONE": "无"
-    }
-  },
-  "EMBER.JournalEventPageSheet": "余烬叙事事件",
-  "EMBER.JournalEventPageSheetContent": "页面内容",
-  "EMBER.JournalEventPageSheetConfig": "事件配置",
-  "EMBER.JournalEventPageSheetOutcomes": "选项结果",
-  "EMBER.SHEETS": {
-    "GazetteerSheet": "余烬地名志",
-    "JournalEntrySheet": "余烬日志条目",
-    "QuestSheet": "余烬任务表",
-    "TextSheet": "余烬文本"
-  },
-  "EMBER.JOURNAL_ENTRY_PAGE": {
-    "TABS": {
-      "content": "内容",
-      "secondary": "次要",
-      "config": "配置",
-      "development": "发展",
-      "hooks": "钩子",
-      "outcomes": "结果"
-    }
-  },
-  "EMBER.MOON.PHASES": {
-    "NONE": "休眠的",
-    "WAXING": "打蜡",
-    "WANING": "衰退的",
-    "FULL": "全额"
-  },
-  "EMBER.SUN.PHASES": {
-    "NIGHT": "夜晚",
-    "DAWN": "黎明",
-    "DAY": "白天",
-    "DUSK": "黄昏"
-  },
-  "EMBER.REGION": {
-    "MOVEMENT": {
-      "Impossible": "不可能",
-      "Unknown": "未知",
-      "Mile": {
-        "one": "英里",
-        "other": "英里"
-      }
-    }
-  },
-  "EMBER.VISTA": {
-    "COMPOSITIONS": {
-      "core": "核心构图",
-      "custom": "自定义构图",
-      "template": "模板构图"
+    "EMBER.LORE": {
+        "SECTIONS": {
+            "basic": "基础配置",
+            "related": "相关内容"
+        },
+        "FIELDS": {
+            "banner": {
+                "img": {
+                    "label": "横幅图片",
+                    "hint": "显示在此主题页面页眉处的横幅图像。"
+                },
+                "caption": {
+                    "label": "横幅标题",
+                    "hint": "显示在横幅图像下方的可选说明文字。"
+                }
+            },
+            "content": {
+                "overview": {
+                    "label": "主题概览",
+                    "hint": "对这一背景主题的简要概览（2-3句话），概述其内容。"
+                },
+                "gamemaster": {
+                    "label": "仅限游戏主持人查看的信息",
+                    "hint": "仅向游戏主持人用户显示的关于此主题的附加信息。"
+                }
+            },
+            "identifier": {
+                "label": "主题标识符",
+                "hint": "用于此背景主题的唯一标识符字符串。"
+            },
+            "pronunciation": {
+                "label": "发音",
+                "hint": "此主题名称的可选语音发音。"
+            },
+            "subtitle": {
+                "label": "副标题",
+                "hint": "用于指代此主题的副标题、次级标题、称号或别称。"
+            },
+            "concepts": {
+                "label": "相关概念",
+                "hint": "与此主题相关联的相关概念（日志页面）。"
+            },
+            "characters": {
+                "label": "相关角色",
+                "hint": "与此主题相关联的角色（Actors）。"
+            }
+        }
     },
-    "TABS": {
-      "placements": "资源",
-      "scene": "场景"
+    "EMBER.ORGANIZATION": {
+        "FIELDS": {
+            "banner": {
+                "label": "横幅图像",
+                "hint": "用于描绘该组织的可选横幅图像。"
+            },
+            "caption": {
+                "label": "横幅标题",
+                "hint": "显示在横幅图像下方的可选标题说明。"
+            },
+            "pronunciation": {
+                "label": "发音",
+                "hint": "该组织名称的可选语音发音。"
+            },
+            "color": {
+                "label": "界面颜色",
+                "hint": "一种用作设计元素、与该组织相关联的颜色。"
+            },
+            "icon": {
+                "label": "组织图标",
+                "hint": "用于代表该组织的图标。"
+            },
+            "locations": {
+                "label": "地点",
+                "hint": "与此组织相关的地点（《地名志》页面）。"
+            },
+            "overview": {
+                "label": "组织概览",
+                "hint": "请用 2-3 句话简要概述该组织，总结其职责和背景。"
+            },
+            "characters": {
+                "label": "角色",
+                "hint": "与此组织相关联的相关角色（Actors）。"
+            }
+        }
+    },
+    "EMBER.QUEST": {
+        "FIELDS": {
+            "questId": {
+                "label": "任务 ID",
+                "hint": "任务所需的唯一标识符。任务 ID 应为字母数字组合、采用驼峰命名法，并以小写字母开头。例如 \"specialQuest3\"。"
+            },
+            "regionId": {
+                "label": "区域 ID",
+                "hint": "配置此任务主要关联于游戏世界的哪个地区。"
+            },
+            "color": {
+                "label": "任务颜色",
+                "hint": "选择一种颜色，在区域地图图例和战役管理器中代表此任务。"
+            },
+            "overview": {
+                "label": "概览",
+                "hint": "仅供游戏主持人查看的任务单段概览，总结该任务的主要玩法元素和主题。"
+            }
+        },
+        "SECTIONS": {
+            "basic": "基础配置"
+        }
+    },
+    "EMBER.CONST": {
+        "TRAVEL": {
+            "fast": "迅捷",
+            "hidden": "隐藏",
+            "normal": "普通",
+            "reckless": "鲁莽",
+            "slow": "缓慢的"
+        },
+        "VISIBILITY": {
+            "BACK": "返回",
+            "FRONT": "前方",
+            "NONE": "无"
+        }
+    },
+    "EMBER.JournalEventPageSheet": "余烬叙事事件",
+    "EMBER.JournalEventPageSheetContent": "页面内容",
+    "EMBER.JournalEventPageSheetConfig": "事件配置",
+    "EMBER.JournalEventPageSheetOutcomes": "选项结果",
+    "EMBER.SHEETS": {
+        "GazetteerSheet": "余烬地名志",
+        "JournalEntrySheet": "余烬日志条目",
+        "QuestSheet": "余烬任务表",
+        "TextSheet": "余烬文本"
+    },
+    "EMBER.JOURNAL_ENTRY_PAGE": {
+        "TABS": {
+            "content": "内容",
+            "secondary": "次要",
+            "config": "配置",
+            "development": "发展",
+            "hooks": "钩子",
+            "outcomes": "结果"
+        }
+    },
+    "EMBER.MOON.PHASES": {
+        "NONE": "休眠的",
+        "WAXING": "打蜡",
+        "WANING": "衰退的",
+        "FULL": "全额"
+    },
+    "EMBER.SUN.PHASES": {
+        "NIGHT": "夜晚",
+        "DAWN": "黎明",
+        "DAY": "白天",
+        "DUSK": "黄昏"
+    },
+    "EMBER.REGION": {
+        "MOVEMENT": {
+            "Impossible": "不可能",
+            "Unknown": "未知",
+            "Mile": {
+                "one": "英里",
+                "other": "英里"
+            }
+        }
+    },
+    "EMBER.VISTA": {
+        "COMPOSITIONS": {
+            "core": "核心构图",
+            "custom": "自定义构图",
+            "template": "模板构图"
+        },
+        "TABS": {
+            "placements": "资源",
+            "scene": "场景"
+        }
+    },
+    "EMBER.ThermalVision": "热视觉",
+    "DND5E": {
+        "ADVANCEMENT": {
+            "EmberKnowledge": {
+                "Configure": "配置知识",
+                "Hint": "根据起源获得知识。",
+                "Title": "知识"
+            }
+        }
+    },
+    "SPELL.INFLECTIONS": {
+        "Glyphspeak": "符文语",
+        "GlyphspeakAdj": "符文语"
     }
-  },
-  "EMBER.ThermalVision": "热视觉",
-  "DND5E": {
-    "ADVANCEMENT": {
-      "EmberKnowledge": {
-        "Configure": "配置知识",
-        "Hint": "根据起源获得知识。",
-        "Title": "知识"
-      }
-    }
-  },
-  "SPELL.INFLECTIONS": {
-    "Glyphspeak": "符文语",
-    "GlyphspeakAdj": "符文语"
-  }
 }
