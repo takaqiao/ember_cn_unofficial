@@ -2,7 +2,6 @@
     "label": "角色选项\nCharacter Options",
     "mapping": {
         "name": "name",
-        "description": "system.description",
         "actionname": {
             "path": "system.actions",
             "converter": "emberActions"
