@@ -3,9 +3,10 @@
     "mapping": {
         "name": "name",
         "description": "system.description",
-        "actionname": "system.actions.name",
-        "actiondesc": "system.actions.description",
-        "actioneffectname": "system.actions.effects.name"
+        "actionname": {
+            "path": "system.actions",
+            "converter": "emberActions"
+        }
     },
     "folders": {
         "Fey": "妖精\nFey",
