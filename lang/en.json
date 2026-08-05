@@ -34,6 +34,10 @@
       "creature": "Creature",
       "character": "Character"
     },
+    "disableDynamicToken": {
+      "label": "Disable Dynamic Token",
+      "hint": "Prevent Ember from replacing this Actor's token with an Ember Dynamic Token. Use this for custom static tokens, POG tokens, or Foundry's Dynamic Token Ring."
+    },
     "character": {
       "ancestry": {
         "label": "Ancestry",
@@ -85,7 +89,8 @@
     "CHARACTER": "Character",
     "COMBAT": "Combat",
     "DISCOVERABLE": "Discoverable",
-    "PORTRAIT": "Portrait"
+    "PORTRAIT": "Portrait",
+    "TOKEN": "Token"
   }
 },
 
@@ -94,7 +99,8 @@
     "IMPORT_REQUIRED": "The Ember module is active, but its content is not yet imported. Import the Ember adventure to continue.",
     "IMPORT_UNDERWAY": "Ember import in progress, please wait patiently. When complete, the game will automatically reload.",
     "REIMPORT_REQUIRED": "You must reimport the Ember adventure to include critical updates in Ember version {version}.",
-    "EVENT_ACTIVE": "You must conclude or cancel your currently active Ember game event before importing the adventure."
+    "EVENT_ACTIVE": "You must conclude or cancel your currently active Ember game event before importing the adventure.",
+    "SETUP_FAILED": "Ember failed to initialize. Please report the full browser console error to the Ember team so we can diagnose the issue."
   }
 },
 
@@ -104,9 +110,11 @@
   "Identifier": "Award Identifier",
   "IdentifierHint": "A unique string that identifies this specific attunement award.",
   "Progress": "Progress",
+  "ProgressionTitle": "Attunement Progression",
   "Tab": "Attunements",
   "Type": "Attunement Type",
   "Rank": "Rank",
+  "BoostChangeType": "Attunement Boost",
   "CurrentTooltip": "Attunement points gained",
   "NextTooltip": "Required for next rank"
 },
@@ -121,6 +129,8 @@
   "COLLAPSE": "Collapse Calendar",
   "PARTY": "Party Sheet",
   "CODEX": "Codex",
+  "TIME_FORMAT_12": "12-Hour (e.g. 4:00pm)",
+  "TIME_FORMAT_24": "24-Hour (e.g. 16:00)",
   "SEASONS": {
     "STILLING": "Stilling",
     "SEEDING": "Seeding",
@@ -227,6 +237,7 @@
 "EMBER.EventActionComplete": "Complete Event",
 "EMBER.EventActionDiscoveryComplete": "Complete Discovery",
 "EMBER.EventActionDiscoveryDecline": "Decline Discovery",
+"EMBER.ReadaloudSendToChat": "Send to Chat",
 
 "EMBER.EmberStorylineLegend.Title": "Storylines",
 "EMBER.EmberStorylineLegend.StateNone": "Hidden",
@@ -825,6 +836,10 @@
       "label": "Quest ID",
       "hint": "A required unique identifier for the quest. The quest ID should be alphanumeric, camel-case, and begin with a lowercase letter. For example \"specialQuest3\"."
     },
+    "chapter": {
+      "label": "Campaign Chapter",
+      "hint": "Specify a campaign chapter to which this quest belongs."
+    },
     "regionId": {
       "label": "Region ID",
       "hint": "Configure which region of the game world this Quest is primarily associated with."
@@ -841,6 +856,26 @@
   "SECTIONS": {
     "basic": "Basic Configuration"
   }
+},
+
+"EMBER.CHAPTERS": {
+  "PROLOGUE": "Prologue",
+  "CHAPTER": "Chapter {n}",
+  "LEVEL": "Level {x}",
+  "LEVELS": "Levels {x}-{y}",
+  "LEVEL_PLUS": "Level {x}+",
+  "UNASSIGNED": "Unassigned"
+},
+
+"EMBER.CONTENT_CONFIG": {
+  "TITLE": "Configure Enabled Content",
+  "MENU_NAME": "Enabled Game Content",
+  "MENU_LABEL": "Configure Content",
+  "MENU_HINT": "Choose which quests are enabled for this campaign. Disabled quests and their events are removed from gameplay until re-enabled.",
+  "HINT": "Customize which Ember quests are currently active. All quests are active by default, but the user may selectively disable quests in order to play a specific subset of the campaign as a more limited experience.",
+  "ALL_QUESTS": "All Quests",
+  "SAVE": "Save Configuration",
+  "RESET": "Reset"
 },
 
 "EMBER.CONST": {
@@ -931,6 +966,28 @@
 
 "SPELL.INFLECTIONS": {
   "Glyphspeak": "Glyphspeak",
-  "GlyphspeakAdj": "Glyphspoken"
+  "GlyphspeakAdj": "Glyphspoken",
+  "Abyss": "Abyss",
+  "AbyssAdj": "Abyssal",
+  "Akon": "Akon",
+  "AkonAdj": "Akonic",
+  "Aura": "Aura",
+  "AuraAdj": "Auric",
+  "Cora": "Cora",
+  "CoraAdj": "Coran",
+  "Heart": "Heart",
+  "HeartAdj": "Emberite",
+  "Luxarum": "Luxarum",
+  "LuxarumAdj": "Luxaran",
+  "Mayis": "Mayis",
+  "MayisAdj": "Mayian",
+  "Orbis": "Orbis",
+  "OrbisAdj": "Orbian",
+  "Primordis": "Primordis",
+  "PrimordisAdj": "Primordial",
+  "Ragen": "Ragen",
+  "RagenAdj": "Ragenic",
+  "Signara": "Signara",
+  "SignaraAdj": "Signaran"
 }
 }

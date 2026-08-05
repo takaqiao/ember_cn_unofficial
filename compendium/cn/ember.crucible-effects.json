@@ -1,0 +1,96 @@
+{
+  "label": "Ember Effects",
+  "folders": {
+    "Attunement": "同调",
+    "Blessings": "祝福",
+    "Curses": "诅咒",
+    "Kaleidoscope Caverns": "万花筒洞窟",
+    "Wards": "守护"
+  },
+  "entries": {
+    "Kaleidoscopic Confusion": {
+      "name": "万花筒困惑",
+      "description": "<p>你昏头转向，思绪混浊，言语颠倒，难以连贯地说话。你受到@Condition[disoriented]状态的影响。</p><p>此效果会持续到受影响的角色完成一次休息为止。也可以提前用 [[/counterspell rune=control gesture=influence inflection=push dc=14]] 解除。</p>"
+    },
+    "Kaleidoscopic Fatigue": {
+      "name": "万花筒倦怠",
+      "description": "<p>水晶的光芒抽干了你的全部精力。一阵不自然的倦怠席卷了你，你获得@Condition[exhausted]状态。</p><p>此效果会持续到受影响的角色完成一次休息为止。也可以提前用 [[/counterspell rune=control gesture=influence inflection=push dc=14]] 解除。</p>"
+    },
+    "Kaleidoscopic Focus": {
+      "name": "万花筒专注",
+      "description": "<p>你的心智变得敏锐，足以抵御各种干扰。你获得@Condition[resolute]状态带来的好处。</p><p>此效果会持续到受影响的角色完成一次休息为止。也可以提前用 [[/counterspell rune=control gesture=influence inflection=push dc=14]] 解除。</p>"
+    },
+    "Kaleidoscopic Glare": {
+      "name": "万花筒炫目",
+      "description": "<p>一切光线对你的双眼都变得刺痛而难以承受。你受到@Condition[blinded]状态的影响。</p><p>此效果会持续到受影响的角色完成一次休息为止。也可以提前用 [[/counterspell rune=control gesture=influence inflection=push dc=14]] 解除。</p>"
+    },
+    "Kaleidoscopic Haunting": {
+      "name": "万花筒萦绕",
+      "description": "<p>你听见四周阴影里传来不祥的低语。你只能听见这些声音，并受到@Condition[deafened]状态的影响。</p><p>此效果会持续到受影响的角色完成一次休息为止。也可以提前用 [[/counterspell rune=control gesture=influence inflection=push dc=14]] 解除。</p>"
+    },
+    "Kaleidoscopic Intoxication": {
+      "name": "万花筒迷醉",
+      "description": "<p>你脚步虚浮、四肢迟钝、心智昏沉。你受到@Condition[exposed]状态的影响。</p><p>此效果会持续到受影响的角色完成一次休息为止。也可以提前用 [[/counterspell rune=control gesture=influence inflection=push dc=14]] 解除。</p>"
+    },
+    "Luminous Crystallization": {
+      "name": "辉晶化",
+      "description": "<p>受影响生物的血肉正被诡异遗物的触碰缓缓转化为一种发光的晶质。这场转化痛苦而不断蔓延，先是让四肢僵硬，随后无可阻挡地朝身体核心侵蚀而去。</p><ul><li><p>晶体般的僵直攫住了受影响者的身体，使其陷入@Condition[slowed]状态。</p></li><li><p>脆性的晶体易碎也易蚀：受影响者对<strong>钝击</strong>与<strong>强酸</strong>伤害<strong>易伤</strong>，两者抗性各降低 5。</p></li><li><p>反过来，这种发光的晶体会吞饮光线，使其<strong>光耀</strong>抗性提高 10。</p></li></ul>"
+    },
+    "The Bewilderment": {
+      "name": "迷乱",
+      "description": "<p>受影响生物的心智被 @UUID[JournalEntry.pod4PApXHuZgXwHo.JournalEntryPage.jw0mOUcqhJPRajUY]{迷乱} 攫住 —— 那是一种不断蔓延、绝不松手的奥术混乱。</p><ul><li><p>只要诅咒持续，受影响者便处于@Condition[disoriented]状态。</p></li><li><p>受影响生物的<strong>士气</strong>上限减半。</p></li><li><p>心智防线的溃散使受影响者对<strong>腐化</strong>伤害<strong>易伤</strong>，抗性降低 5。</p></li></ul>"
+    },
+    "Ward of Stabilization": {
+      "name": "稳定守护",
+      "description": "<p>这道防护守护会呼求脚下的大地：当受守护者被击中时，中和腐蚀性液体所需的元素会自发显现，从而提供 +5 点<strong>强酸</strong>伤害<strong>抗性</strong>。</p>"
+    },
+    "Ward of Thunder": {
+      "name": "雷鸣守护",
+      "description": "<p>这道复仇守护会呼求头顶的天空：任何以近战攻击击中受守护角色的敌人，都会被一记轰然雷鸣反震其身。</p><p> [[/hazard 6 fortitude lightning morale]]{复仇雷鸣}</p>"
+    },
+    "Blessing of Abyss": {
+      "name": "深渊之祝福",
+      "description": "<p>你受到深渊之力的祝福。此祝福持续期间，你与深渊的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的深渊同调提升到更高等级。</p>"
+    },
+    "Blessing of Akon": {
+      "name": "阿肯之祝福",
+      "description": "<p>你受到阿肯之力的祝福。此祝福持续期间，你与阿肯的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的阿肯同调提升到更高等级。</p>"
+    },
+    "Blessing of Aura": {
+      "name": "灵气之祝福",
+      "description": "<p>你受到灵气之力的祝福。此祝福持续期间，你与灵气的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的灵气同调提升到更高等级。</p>"
+    },
+    "Blessing of Cora": {
+      "name": "科拉之祝福",
+      "description": "<p>你受到科拉之力的祝福。此祝福持续期间，你与科拉的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的科拉同调提升到更高等级。</p>"
+    },
+    "Blessing of Heart": {
+      "name": "余烬之心之祝福",
+      "description": "<p>你受到余烬之心之力的祝福。此祝福持续期间，你与余烬之心的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的余烬之心同调提升到更高等级。</p>"
+    },
+    "Blessing of Luxarum": {
+      "name": "卢克萨鲁姆之祝福",
+      "description": "<p>你受到卢克萨鲁姆之力的祝福。此祝福持续期间，你与卢克萨鲁姆的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的卢克萨鲁姆同调提升到更高等级。</p>"
+    },
+    "Blessing of Mayis": {
+      "name": "玛伊斯之祝福",
+      "description": "<p>你受到玛伊斯之力的祝福。此祝福持续期间，你与玛伊斯的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的玛伊斯同调提升到更高等级。</p>"
+    },
+    "Blessing of Orbis": {
+      "name": "奥比斯之祝福",
+      "description": "<p>你受到奥比斯之力的祝福。此祝福持续期间，你与奥比斯的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的奥比斯同调提升到更高等级。</p>"
+    },
+    "Blessing of Primordis": {
+      "name": "普里莫迪斯之祝福",
+      "description": "<p>你受到普里莫迪斯之力的祝福。此祝福持续期间，你与普里莫迪斯的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的普里莫迪斯同调提升到更高等级。</p>"
+    },
+    "Blessing of Ragen": {
+      "name": "拉根之祝福",
+      "description": "<p>你受到拉根之力的祝福。此祝福持续期间，你与拉根的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的拉根同调提升到更高等级。</p>"
+    },
+    "Blessing of Signara": {
+      "name": "西格纳拉之祝福",
+      "description": "<p>你受到西格纳拉之力的祝福。此祝福持续期间，你与西格纳拉的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的西格纳拉同调提升到更高等级。</p>"
+    }
+  }
+}
