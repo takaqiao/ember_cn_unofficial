@@ -1,0 +1,921 @@
+{
+  "label": "Ember Character Options",
+  "folders": {
+    "Abyss": "深渊 Abyss",
+    "Akon": "阿肯 Akon",
+    "Aura": "灵气 Aura",
+    "Cora": "科拉 Cora",
+    "Heart": "余烬之心 Heart",
+    "Luxarum": "卢克萨鲁姆 Luxarum",
+    "Mayis": "玛伊斯 Mayis",
+    "Orbis": "奥比斯 Orbis",
+    "Primordis": "普里莫迪斯 Primordis",
+    "Ragen": "拉根 Ragen",
+    "Signara": "西格纳拉 Signara",
+    "Ancestries": "血统 Ancestries",
+    "Ancestry Features": "血统特性 Ancestry Features",
+    "Attunements": "同调 Attunements",
+    "Culture Features": "文化特性 Culture Features",
+    "Cultures": "文化 Cultures",
+    "Paths": "道途 Paths",
+    "Soulbound": "魂缚 Soulbound"
+  },
+  "entries": {
+    "Abyss 1: Whispered": {
+      "name": "深渊 1：低语 Abyss 1: Whispered",
+      "effects": {
+        "Whispered": {
+          "name": "低语 Whispered"
+        }
+      }
+    },
+    "Abyss 2: Nightmare": {
+      "name": "深渊 2：梦魇 Abyss 2: Nightmare",
+      "effects": {
+        "Nightmare": {
+          "name": "梦魇 Nightmare"
+        }
+      }
+    },
+    "Abyss 3: Corrupted": {
+      "name": "深渊 3：堕化 Abyss 3: Corrupted",
+      "effects": {
+        "Corrupted": {
+          "name": "堕化 Corrupted"
+        }
+      }
+    },
+    "Abyss 4: Despair": {
+      "name": "深渊 4：绝望 Abyss 4: Despair",
+      "effects": {
+        "Despair": {
+          "name": "绝望 Despair"
+        }
+      }
+    },
+    "Abyss 5: Torment": {
+      "name": "深渊 5：折磨 Abyss 5: Torment",
+      "effects": {
+        "Torment": {
+          "name": "折磨 Torment"
+        },
+        "Radiant Sensitivity": {
+          "name": "光耀敏感 Radiant Sensitivity"
+        }
+      }
+    },
+    "Akon 1: Hushed": {
+      "name": "阿肯 1：静默 Akon 1: Hushed",
+      "effects": {
+        "Hushed": {
+          "name": "静默 Hushed"
+        }
+      }
+    },
+    "Akon 2: Precise": {
+      "name": "阿肯 2：精准 Akon 2: Precise",
+      "effects": {
+        "Precise": {
+          "name": "精准 Precise"
+        }
+      }
+    },
+    "Akon 3: Methodical": {
+      "name": "阿肯 3：缜密 Akon 3: Methodical",
+      "effects": {
+        "Methodical": {
+          "name": "缜密 Methodical"
+        }
+      }
+    },
+    "Akon 4: Potent": {
+      "name": "阿肯 4：强效 Akon 4: Potent",
+      "effects": {
+        "Potent": {
+          "name": "强效 Potent"
+        }
+      }
+    },
+    "Akon 5: Intense": {
+      "name": "阿肯 5：炽烈 Akon 5: Intense",
+      "effects": {
+        "Potent": {
+          "name": "强效 Potent"
+        }
+      }
+    },
+    "Aura 1: Zephyr": {
+      "name": "灵气 1：微风 Aura 1: Zephyr",
+      "effects": {
+        "Zephyr": {
+          "name": "微风 Zephyr"
+        }
+      }
+    },
+    "Aura 2: Gale": {
+      "name": "灵气 2：疾风 Aura 2: Gale",
+      "effects": {
+        "Gale": {
+          "name": "疾风 Gale"
+        }
+      }
+    },
+    "Aura 3: Cyclone": {
+      "name": "灵气 3：气旋 Aura 3: Cyclone",
+      "effects": {
+        "Cyclone": {
+          "name": "气旋 Cyclone"
+        }
+      }
+    },
+    "Aura 4: Whirlwind": {
+      "name": "灵气 4：旋风 Aura 4: Whirlwind",
+      "effects": {
+        "Whirlwind": {
+          "name": "旋风 Whirlwind"
+        }
+      }
+    },
+    "Aura 5: Hurricane": {
+      "name": "灵气 5：飓风 Aura 5: Hurricane",
+      "effects": {
+        "Hurricane": {
+          "name": "飓风 Hurricane"
+        }
+      }
+    },
+    "Cora 1: Grounded": {
+      "name": "科拉 1：扎根 Cora 1: Grounded",
+      "effects": {
+        "Grounded": {
+          "name": "扎根 Grounded"
+        }
+      }
+    },
+    "Cora 2: Hardened": {
+      "name": "科拉 2：坚硬 Cora 2: Hardened",
+      "effects": {
+        "Hardened": {
+          "name": "坚硬 Hardened"
+        }
+      }
+    },
+    "Cora 3: Resolute": {
+      "name": "科拉 3：坚定 Cora 3: Resolute",
+      "effects": {
+        "Resolute": {
+          "name": "坚定 Resolute"
+        }
+      }
+    },
+    "Cora 4: Compressed": {
+      "name": "科拉 4：压实 Cora 4: Compressed",
+      "effects": {
+        "Compressed": {
+          "name": "压实 Compressed"
+        }
+      }
+    },
+    "Cora 5: Monolith": {
+      "name": "科拉 5：磐岩 Cora 5: Monolith",
+      "effects": {
+        "Monolith": {
+          "name": "磐岩 Monolith"
+        }
+      }
+    },
+    "Heart 1: Spirited": {
+      "name": "余烬之心 1：昂扬 Heart 1: Spirited",
+      "effects": {
+        "Spirited": {
+          "name": "昂扬 Spirited"
+        }
+      }
+    },
+    "Heart 2: Graceful": {
+      "name": "余烬之心 2：优雅 Heart 2: Graceful",
+      "effects": {
+        "Graceful": {
+          "name": "优雅 Graceful"
+        }
+      }
+    },
+    "Heart 3: Vibrant": {
+      "name": "余烬之心 3：蓬勃 Heart 3: Vibrant",
+      "effects": {
+        "Vibrant": {
+          "name": "蓬勃 Vibrant"
+        }
+      }
+    },
+    "Heart 4: Verdant": {
+      "name": "余烬之心 4：苍翠 Heart 4: Verdant",
+      "effects": {
+        "Verdent": {
+          "name": "苍翠 Verdent"
+        }
+      }
+    },
+    "Heart 5: Sacred": {
+      "name": "余烬之心 5：神圣 Heart 5: Sacred",
+      "effects": {
+        "Sacred": {
+          "name": "神圣 Sacred"
+        }
+      }
+    },
+    "Luxarum 1: Flickering": {
+      "name": "卢克萨鲁姆 1：微闪 Luxarum 1: Flickering",
+      "effects": {
+        "Flickering": {
+          "name": "微闪 Flickering"
+        }
+      }
+    },
+    "Luxarum 2: Bright": {
+      "name": "卢克萨鲁姆 2：明亮 Luxarum 2: Bright",
+      "effects": {
+        "Flickering": {
+          "name": "微闪 Flickering"
+        }
+      }
+    },
+    "Luxarum 3: Shining": {
+      "name": "卢克萨鲁姆 3：耀眼 Luxarum 3: Shining",
+      "effects": {
+        "Shining": {
+          "name": "耀眼 Shining"
+        }
+      }
+    },
+    "Luxarum 4: Blinding": {
+      "name": "卢克萨鲁姆 4：致盲 Luxarum 4: Blinding",
+      "effects": {
+        "Blinding": {
+          "name": "致盲 Blinding"
+        }
+      }
+    },
+    "Luxarum 5: Luminous": {
+      "name": "卢克萨鲁姆 5：辉耀 Luxarum 5: Luminous",
+      "effects": {
+        "Luminous": {
+          "name": "辉耀 Luminous"
+        }
+      }
+    },
+    "Mayis 1: Misted": {
+      "name": "玛伊斯 1：薄雾 Mayis 1: Misted",
+      "effects": {
+        "Misted": {
+          "name": "薄雾 Misted"
+        }
+      }
+    },
+    "Mayis 2: Calm": {
+      "name": "玛伊斯 2：平静 Mayis 2: Calm",
+      "effects": {
+        "Calm": {
+          "name": "平静 Calm"
+        }
+      }
+    },
+    "Mayis 3: Tranquil": {
+      "name": "玛伊斯 3：宁谧 Mayis 3: Tranquil",
+      "effects": {
+        "Tranquil": {
+          "name": "宁谧 Tranquil"
+        }
+      }
+    },
+    "Mayis 4: Serene": {
+      "name": "玛伊斯 4：澄澈 Mayis 4: Serene",
+      "effects": {
+        "Serene": {
+          "name": "澄澈 Serene"
+        }
+      }
+    },
+    "Mayis 5: Glacial": {
+      "name": "玛伊斯 5：冰川 Mayis 5: Glacial",
+      "effects": {
+        "Glacial": {
+          "name": "冰川 Glacial"
+        }
+      }
+    },
+    "Orbis 1: Chaotic": {
+      "name": "奥比斯 1：混乱 Orbis 1: Chaotic",
+      "effects": {
+        "Chaotic": {
+          "name": "混乱 Chaotic"
+        }
+      }
+    },
+    "Orbis 2: Excited": {
+      "name": "奥比斯 2：亢奋 Orbis 2: Excited",
+      "effects": {
+        "Excited": {
+          "name": "亢奋 Excited"
+        }
+      }
+    },
+    "Orbis 3: Frenzied": {
+      "name": "奥比斯 3：狂乱 Orbis 3: Frenzied",
+      "effects": {
+        "Frenizied": {
+          "name": "狂乱 Frenizied"
+        }
+      }
+    },
+    "Orbis 4: Manic": {
+      "name": "奥比斯 4：癫狂 Orbis 4: Manic",
+      "effects": {
+        "Manic": {
+          "name": "癫狂 Manic"
+        }
+      }
+    },
+    "Orbis 5: Overwhelming": {
+      "name": "奥比斯 5：压倒 Orbis 5: Overwhelming",
+      "effects": {
+        "Overwhelming": {
+          "name": "压倒 Overwhelming"
+        }
+      }
+    },
+    "Primordis 1: Blurred": {
+      "name": "普里莫迪斯 1：模糊 Primordis 1: Blurred",
+      "effects": {
+        "Blurred": {
+          "name": "模糊 Blurred"
+        }
+      }
+    },
+    "Primordis 2: Canny": {
+      "name": "普里莫迪斯 2：机敏 Primordis 2: Canny",
+      "effects": {
+        "Canny": {
+          "name": "机敏 Canny"
+        }
+      }
+    },
+    "Primordis 3: Hidden": {
+      "name": "普里莫迪斯 3：隐匿 Primordis 3: Hidden",
+      "effects": {
+        "Hidden": {
+          "name": "隐匿 Hidden"
+        }
+      }
+    },
+    "Primordis 4: Devious": {
+      "name": "普里莫迪斯 4：狡诈 Primordis 4: Devious",
+      "effects": {
+        "Devious": {
+          "name": "狡诈 Devious"
+        }
+      }
+    },
+    "Primordis 5: Predatory": {
+      "name": "普里莫迪斯 5：掠食 Primordis 5: Predatory",
+      "effects": {
+        "Predatory": {
+          "name": "掠食 Predatory"
+        }
+      }
+    },
+    "Ragen 1: Kindled": {
+      "name": "拉根 1：引燃 Ragen 1: Kindled",
+      "effects": {
+        "Kindled": {
+          "name": "引燃 Kindled"
+        }
+      }
+    },
+    "Ragen 2: Ignition": {
+      "name": "拉根 2：点火 Ragen 2: Ignition",
+      "effects": {
+        "Ignition": {
+          "name": "点火 Ignition"
+        }
+      }
+    },
+    "Ragen 3: Burning": {
+      "name": "拉根 3：燃烧 Ragen 3: Burning",
+      "effects": {
+        "Burning": {
+          "name": "燃烧 Burning"
+        }
+      }
+    },
+    "Ragen 4: Combustion": {
+      "name": "拉根 4：爆燃 Ragen 4: Combustion",
+      "effects": {
+        "Combustion Burning": {
+          "name": "爆燃灼烧 Combustion Burning",
+          "description": "<p>目标在每个回合开始时承受 [[/damage 1d6 fire]]，直到花费一个动作扑灭火焰为止。</p>"
+        },
+        "Combustion": {
+          "name": "爆燃 Combustion"
+        }
+      }
+    },
+    "Ragen 5: Supernova": {
+      "name": "拉根 5：超新星 Ragen 5: Supernova",
+      "effects": {
+        "Combustion Burning": {
+          "name": "爆燃灼烧 Combustion Burning",
+          "description": "<p>目标在每个回合开始时承受 [[/damage 1d6 fire]]，直到花费一个动作扑灭火焰为止。</p>"
+        },
+        "Supernova": {
+          "name": "超新星 Supernova"
+        }
+      }
+    },
+    "Signara 1: Gloomy": {
+      "name": "西格纳拉 1：阴郁 Signara 1: Gloomy",
+      "effects": {
+        "Gloomy": {
+          "name": "阴郁 Gloomy"
+        }
+      }
+    },
+    "Signara 2: Investigative": {
+      "name": "西格纳拉 2：探查 Signara 2: Investigative",
+      "effects": {
+        "Investigative": {
+          "name": "探查 Investigative"
+        }
+      }
+    },
+    "Signara 3: Quizzical": {
+      "name": "西格纳拉 3：疑窦 Signara 3: Quizzical",
+      "effects": {
+        "Quizzical": {
+          "name": "疑窦 Quizzical"
+        }
+      }
+    },
+    "Signara 4: Inquisitory": {
+      "name": "西格纳拉 4：诘问 Signara 4: Inquisitory",
+      "effects": {
+        "Inquisitory": {
+          "name": "诘问 Inquisitory"
+        }
+      }
+    },
+    "Signara 5: Darkness": {
+      "name": "西格纳拉 5：黑暗 Signara 5: Darkness",
+      "effects": {
+        "Darkness": {
+          "name": "黑暗 Darkness"
+        }
+      }
+    },
+    "Altyra": {
+      "name": "阿尔提拉 Altyra"
+    },
+    "Ashka": {
+      "name": "阿什卡 Ashka"
+    },
+    "Cor'ak": {
+      "name": "科拉克 Cor'ak"
+    },
+    "Drakon": {
+      "name": "龙裔 Drakon"
+    },
+    "Fej": {
+      "name": "费伊杰 Fej"
+    },
+    "Hulg'run": {
+      "name": "赫尔格伦 Hulg'run"
+    },
+    "Human": {
+      "name": "人类 Human"
+    },
+    "Keth": {
+      "name": "凯思 Keth"
+    },
+    "Kiska": {
+      "name": "基斯卡 Kiska"
+    },
+    "Kivahr": {
+      "name": "基瓦尔 Kivahr"
+    },
+    "Nir'ae": {
+      "name": "尼尔艾 Nir'ae"
+    },
+    "Signborn": {
+      "name": "印记裔 Signborn"
+    },
+    "Thornling": {
+      "name": "荆芽灵 Thornling"
+    },
+    "Vrjnhar": {
+      "name": "弗尔金哈尔 Vrjnhar"
+    },
+    "Wirrun": {
+      "name": "威伦 Wirrun"
+    },
+    "Zeph": {
+      "name": "泽夫 Zeph"
+    },
+    "Aster": {
+      "name": "阿斯特 Aster"
+    },
+    "Arcturian": {
+      "name": "阿克图里安 Arcturian"
+    },
+    "Bejak": {
+      "name": "贝雅克 Bejak"
+    },
+    "Cascilian": {
+      "name": "卡斯奇利亚人 Cascilian"
+    },
+    "Kelmezian": {
+      "name": "凯尔梅兹安 Kelmezian"
+    },
+    "Kessian": {
+      "name": "凯西安 Kessian"
+    },
+    "Kithil": {
+      "name": "基希尔 Kithil"
+    },
+    "Lumek": {
+      "name": "卢梅克 Lumek"
+    },
+    "Maziran": {
+      "name": "马兹兰 Maziran"
+    },
+    "Ordani": {
+      "name": "奥尔达尼 Ordani"
+    },
+    "Railen": {
+      "name": "莱伦 Railen"
+    },
+    "Rhivan": {
+      "name": "里凡 Rhivan"
+    },
+    "Strider": {
+      "name": "疾行者 Strider"
+    },
+    "Tayan": {
+      "name": "塔扬 Tayan"
+    },
+    "Waerd": {
+      "name": "瓦尔德 Waerd"
+    },
+    "Wardcall": {
+      "name": "守护召唤 Wardcall"
+    },
+    "Impassioned Revelry": {
+      "name": "热忱欢宴 Impassioned Revelry"
+    },
+    "Ember Blaze": {
+      "name": "余烬烈焰 Ember Blaze",
+      "effects": {
+        "Ember Blaze": {
+          "name": "余烬烈焰 Ember Blaze"
+        }
+      }
+    },
+    "Inheritors of Chaos": {
+      "name": "混沌承继者 Inheritors of Chaos"
+    },
+    "Urban Resourcefulness": {
+      "name": "市井机变 Urban Resourcefulness"
+    },
+    "Cleansing Flame": {
+      "name": "净化之焰 Cleansing Flame"
+    },
+    "Constructed Companion": {
+      "name": "构装伙伴 Constructed Companion"
+    },
+    "Personalized Crafting": {
+      "name": "个性化工艺 Personalized Crafting"
+    },
+    "Oaken": {
+      "name": "橡木之躯 Oaken"
+    },
+    "Munitions Training": {
+      "name": "军械训练 Munitions Training"
+    },
+    "Prescient Reflection": {
+      "name": "先觉反应 Prescient Reflection"
+    },
+    "Amphibious Adaptability": {
+      "name": "两栖适应 Amphibious Adaptability"
+    },
+    "Keth Bite": {
+      "name": "凯思噬咬 Keth Bite"
+    },
+    "Regulated Rhythm": {
+      "name": "律动调控 Regulated Rhythm",
+      "effects": {
+        "Regulated Rhythm": {
+          "name": "律动调控 Regulated Rhythm"
+        }
+      }
+    },
+    "Ethereal Appendages": {
+      "name": "灵界肢体 Ethereal Appendages"
+    },
+    "Resolute Legacy": {
+      "name": "坚定传承 Resolute Legacy"
+    },
+    "Abyssal Resistance": {
+      "name": "深渊抗性 Abyssal Resistance",
+      "effects": {
+        "Abyssal Resistance": {
+          "name": "深渊抗性 Abyssal Resistance"
+        }
+      }
+    },
+    "Fireborn": {
+      "name": "火生者 Fireborn",
+      "effects": {
+        "Submerged": {
+          "name": "没入水中 Submerged",
+          "description": "<p>直到你下一回合结束前，你的攻击检定与属性检定都具有劣势。若你仍处于水下，则在你每个回合开始时重复进行该豁免检定。</p>"
+        }
+      }
+    },
+    "Preeminent Survivalist": {
+      "name": "卓绝生存者 Preeminent Survivalist"
+    },
+    "Implacable Hunter": {
+      "name": "执着猎手 Implacable Hunter",
+      "effects": {
+        "Mark Quarry": {
+          "name": "标记猎物 Mark Quarry"
+        }
+      }
+    },
+    "Extreme Metabolism": {
+      "name": "极限代谢 Extreme Metabolism",
+      "effects": {
+        "Speed +10": {
+          "name": "速度 +10 Speed +10"
+        }
+      }
+    },
+    "Academy Dropout": {
+      "name": "学院辍学者 Academy Dropout"
+    },
+    "Wintersoul": {
+      "name": "冬魂 Wintersoul",
+      "effects": {
+        "Wintersoul": {
+          "name": "冬魂 Wintersoul"
+        }
+      }
+    },
+    "Anchorite Marine": {
+      "name": "隐修海兵 Anchorite Marine"
+    },
+    "Leviathan Form": {
+      "name": "利维坦形态 Leviathan Form",
+      "effects": {
+        "Leviathan Form": {
+          "name": "利维坦形态 Leviathan Form"
+        }
+      }
+    },
+    "Focused Reactivity": {
+      "name": "专注反应 Focused Reactivity"
+    },
+    "Exceptional Taste": {
+      "name": "卓越品味 Exceptional Taste"
+    },
+    "Caravanner": {
+      "name": "商队旅人 Caravanner"
+    },
+    "Cindaric Initiate": {
+      "name": "辛达里克入门者 Cindaric Initiate"
+    },
+    "Nimble Leap": {
+      "name": "轻捷跃动 Nimble Leap"
+    },
+    "Cosmopolitan Fashionista": {
+      "name": "都会时尚家 Cosmopolitan Fashionista"
+    },
+    "Crown Apothecary": {
+      "name": "王室药剂师 Crown Apothecary"
+    },
+    "Tactical Planner": {
+      "name": "战术策划者 Tactical Planner"
+    },
+    "Lesser Soulmark": {
+      "name": "次级魂印 Lesser Soulmark",
+      "effects": {
+        "Lesser Soulbound": {
+          "name": "次级魂缚 Lesser Soulbound",
+          "description": "<p>你已经死去，如今处于魂缚状态。</p>"
+        }
+      }
+    },
+    "Greater Soulmark": {
+      "name": "高阶魂印 Greater Soulmark",
+      "effects": {
+        "Greater Soulmark": {
+          "name": "高阶魂印 Greater Soulmark"
+        }
+      }
+    },
+    "Deathly Soulmark": {
+      "name": "死亡魂印 Deathly Soulmark",
+      "effects": {
+        "Deathly Soulmark": {
+          "name": "死亡魂印 Deathly Soulmark"
+        }
+      }
+    },
+    "Beard Guard": {
+      "name": "髯卫 Beard Guard"
+    },
+    "Flameguard Militia": {
+      "name": "焰卫民兵 Flameguard Militia"
+    },
+    "Tyraphic Transformation": {
+      "name": "提拉法转化 Tyraphic Transformation",
+      "effects": {
+        "Tyraphic Transformation": {
+          "name": "提拉法转化 Tyraphic Transformation",
+          "description": "<p>该阿尔提拉经历一场超凡的转化，呈现出令人不安的面貌。其金属躯体生出机械部件与防御装甲，并散发着天界能量的辉光。</p>"
+        }
+      }
+    },
+    "Undaunted Warrior": {
+      "name": "无畏战士 Undaunted Warrior"
+    },
+    "Thornbark": {
+      "name": "荆棘树皮 Thornbark"
+    },
+    "Formidable Stamina": {
+      "name": "惊人耐力 Formidable Stamina"
+    },
+    "Passionate Trader": {
+      "name": "热忱商贩 Passionate Trader"
+    },
+    "Weirded Eyes": {
+      "name": "异瞳 Weirded Eyes"
+    },
+    "Spiritual Recuperation": {
+      "name": "灵性康复 Spiritual Recuperation"
+    },
+    "Imperial Conscript": {
+      "name": "帝国征召兵 Imperial Conscript"
+    },
+    "Shadowmeld": {
+      "name": "影融 Shadowmeld"
+    },
+    "Sudden Bite": {
+      "name": "骤然噬咬 Sudden Bite"
+    },
+    "Windborn Spellcraft": {
+      "name": "御风施法 Windborn Spellcraft"
+    },
+    "Intrepid Sailor": {
+      "name": "无畏水手 Intrepid Sailor"
+    },
+    "Muscle Machinery": {
+      "name": "肌能机械 Muscle Machinery",
+      "effects": {
+        "Muscle Machinery": {
+          "name": "肌能机械 Muscle Machinery"
+        }
+      }
+    },
+    "Glyphspeak": {
+      "name": "符文语 Glyphspeak"
+    },
+    "Lightsworn": {
+      "name": "誓光者 Lightsworn"
+    },
+    "Lunar Empath": {
+      "name": "月相通感者 Lunar Empath"
+    },
+    "Metallic Blood": {
+      "name": "金属之血 Metallic Blood"
+    },
+    "Monster Hunter": {
+      "name": "怪物猎手 Monster Hunter"
+    },
+    "Natural Artisan": {
+      "name": "天生匠人 Natural Artisan"
+    },
+    "Nightwatch": {
+      "name": "夜巡 Nightwatch"
+    },
+    "Obsidian Antiquary": {
+      "name": "黑曜石古物商 Obsidian Antiquary"
+    },
+    "Arcane Countenance": {
+      "name": "奥术仪容 Arcane Countenance",
+      "effects": {
+        "Menacing Visage": {
+          "name": "慑人面容 Menacing Visage",
+          "description": "<p>你在威吓检定上具有优势。</p>"
+        },
+        "Inscrutable Visage": {
+          "name": "莫测面容 Inscrutable Visage",
+          "description": "<p>你在欺瞒检定上具有优势。</p>"
+        },
+        "Beguiling Visage": {
+          "name": "蛊惑面容 Beguiling Visage",
+          "description": "<p>你在游说检定上具有优势。</p>"
+        }
+      }
+    },
+    "Primalist Disciple": {
+      "name": "原初派信徒 Primalist Disciple"
+    },
+    "Mistrust of Magic": {
+      "name": "疑魔 Mistrust of Magic"
+    },
+    "Living Stone": {
+      "name": "活石 Living Stone",
+      "effects": {
+        "Living Stone": {
+          "name": "活石 Living Stone"
+        }
+      }
+    },
+    "Hot Tempered": {
+      "name": "火爆脾气 Hot Tempered"
+    },
+    "Crystalize Wounds": {
+      "name": "结晶创伤 Crystalize Wounds"
+    },
+    "Scion of Darkness": {
+      "name": "暗裔 Scion of Darkness"
+    },
+    "Shadow Walker": {
+      "name": "行影者 Shadow Walker"
+    },
+    "Shard God Devotee": {
+      "name": "碎片神信徒 Shard God Devotee"
+    },
+    "Sky Wanderer": {
+      "name": "天空漫游者 Sky Wanderer"
+    },
+    "Star Dreamer": {
+      "name": "逐星梦者 Star Dreamer"
+    },
+    "Sunfire Descendant": {
+      "name": "阳炎后裔 Sunfire Descendant"
+    },
+    "Ritual Cooking": {
+      "name": "仪式烹饪 Ritual Cooking",
+      "effects": {
+        "Ritual Cooking": {
+          "name": "仪式烹饪 Ritual Cooking"
+        }
+      }
+    },
+    "Underworld Mechanic": {
+      "name": "地下机械师 Underworld Mechanic"
+    },
+    "Imperial Ambition": {
+      "name": "帝国野心 Imperial Ambition"
+    },
+    "Thermal Vision": {
+      "name": "热视觉 Thermal Vision"
+    },
+    "Fibrous Resilience": {
+      "name": "纤维韧性 Fibrous Resilience",
+      "effects": {
+        "Fibrous Resilience": {
+          "name": "纤维韧性 Fibrous Resilience",
+          "description": "<p>荆芽灵的纤维化生理构造具有惊人的韧性。</p>"
+        }
+      }
+    },
+    "Lunar Tattoos": {
+      "name": "月相纹身 Lunar Tattoos",
+      "effects": {
+        "Akon Lunar Reflection": {
+          "name": "阿肯月华映照 Akon Lunar Reflection"
+        },
+        "Aura Lunar Resonance": {
+          "name": "灵气月华共鸣 Aura Lunar Resonance"
+        },
+        "Orbis Lunar Reflection": {
+          "name": "奥比斯月华映照 Orbis Lunar Reflection"
+        },
+        "Mayis Lunar Reflection": {
+          "name": "玛伊斯月华映照 Mayis Lunar Reflection"
+        },
+        "Ragen Lunar Reflection": {
+          "name": "拉根月华映照 Ragen Lunar Reflection"
+        },
+        "Cora Lunar Reflection": {
+          "name": "科拉月华映照 Cora Lunar Reflection"
+        }
+      }
+    },
+    "Drakonfire": {
+      "name": "龙裔之火 Drakonfire"
+    }
+  }
+}
