@@ -1,216 +1,36 @@
+import { DOCUMENT_MAPPINGS, PROJECT_CONVERTERS } from './babele-mappings.js';
+
+/**
+ * ember_cn_unofficial — runtime registration and Foundry/Crucible compatibility
+ * shims.
+ *
+ * Requires Babele >= 2.9.1.
+ *
+ * Removed in this pass, all of it dead under 2.9.1:
+ *
+ *  - `emberPages` / `emberAdventureJournals` / `emberActions` hand-written
+ *    traversal converters. Babele's built-in recursive `document` converter now
+ *    walks Adventure -> journals -> pages and Adventure -> actors -> items, and
+ *    the custom Ember page subtypes are expressed declaratively instead (see
+ *    babele-mappings.js). Crucially, the built-in path also resolves each
+ *    embedded item against its ORIGINAL compendium's translation via
+ *    `_stats.compendiumSource` — 82% of Ember's actor-embedded item text is
+ *    covered for free that way, which a hand-written traversal cannot do.
+ *
+ *  - The `_tableResults` patch. That converter no longer exists; RollTable
+ *    results are handled by `document` + `documentType: "TableResult"`, keyed by
+ *    the `range` identity. The patch had been silently doing nothing, which is
+ *    exactly why table results were still 0% translated.
+ *
+ *  - `patchBabeleImportAdventureHook`. Babele 2.9.1's own `importAdventure`
+ *    handler reads `token.delta?.name` with optional chaining, so the crash this
+ *    worked around cannot occur.
+ *
+ * Everything below this point is Crucible/Foundry data-shape defence, unrelated
+ * to Babele, and is kept as-is.
+ */
+
 const MODULE_ID = 'ember_cn_unofficial';
-
-// Safe fallback converter for Adventure tables.
-// It translates table name/description and leaves table results untouched.
-function safeTableResultsCollection(collection, translations) {
-  if (!Array.isArray(collection) || !translations) return collection;
-
-  return collection.map((data) => {
-    const translation = translations?.[data.name];
-    if (!translation) return data;
-
-    return foundry.utils.mergeObject(data, {
-      name: translation.name ?? data.name,
-      description: translation.description ?? data.description,
-      translated: true,
-    });
-  });
-}
-
-/**
- * Translate Journal pages including custom page.system fields:
- * overview / exposition / summary / coverview / gamemaster
- *
- * collection: original pages array
- * translations: entry.pages object from translation json
- */
-function emberPages(collection, translations) {
-  if (!Array.isArray(collection) || !translations) return collection;
-
-  const readTranslated = (obj, key) => {
-    if (!obj) return undefined;
-    if (obj[key] !== undefined) return obj[key];
-
-    const legacyKey = `s${key}`;
-    if (obj[legacyKey] !== undefined) return obj[legacyKey];
-
-    return undefined;
-  };
-
-  return collection.map((page) => {
-    const t = translations?.[page.name];
-    if (!t) return page;
-
-    const overview = readTranslated(t, 'overview');
-    const exposition = readTranslated(t, 'exposition');
-    const summary = readTranslated(t, 'summary');
-    const coverview = readTranslated(t, 'coverview');
-    const gamemaster = readTranslated(t, 'gamemaster');
-
-    const patch = {
-      name: t.name ?? page.name,
-      translated: true,
-    };
-
-    // Standard page fields (same spirit as Babele pages converter)
-    if (t.text !== undefined) patch.text = { ...(page.text ?? {}), content: t.text };
-    if (t.src !== undefined) patch.src = t.src;
-    if (t.caption !== undefined) patch.image = { ...(page.image ?? {}), caption: t.caption };
-    if (t.width !== undefined || t.height !== undefined) {
-      patch.video = {
-        ...(page.video ?? {}),
-        ...(t.width !== undefined ? { width: t.width } : {}),
-        ...(t.height !== undefined ? { height: t.height } : {}),
-      };
-    }
-
-    // Custom Crucible fields on page.system
-    if (
-      overview !== undefined ||
-      exposition !== undefined ||
-      summary !== undefined ||
-      coverview !== undefined ||
-      gamemaster !== undefined
-    ) {
-      const contentPatch = {
-        ...(coverview !== undefined ? { overview: coverview } : {}),
-        ...(gamemaster !== undefined ? { gamemaster } : {}),
-      };
-
-      patch.system = {
-        ...(page.system ?? {}),
-        ...(overview !== undefined ? { overview } : {}),
-        ...(exposition !== undefined ? { exposition } : {}),
-        ...(summary !== undefined ? { summary } : {}),
-        ...(Object.keys(contentPatch).length
-          ? {
-            content: {
-              ...(page.system?.content ?? {}),
-              ...contentPatch,
-            },
-          }
-          : {}),
-      };
-    }
-
-    return foundry.utils.mergeObject(page, patch);
-  });
-}
-
-/**
- * Translate journals inside adventures.
- * collection: adventure.journal array
- * translations: entry.journals object
- */
-function emberAdventureJournals(collection, translations) {
-  if (!Array.isArray(collection) || !translations) return collection;
-
-  return collection.map((journal) => {
-    const jTrans = translations?.[journal.name];
-    if (!jTrans) return journal;
-
-    const patch = {
-      name: jTrans.name ?? journal.name,
-      translated: true,
-    };
-
-    if (Array.isArray(journal.pages) && jTrans.pages) {
-      patch.pages = emberPages(journal.pages, jTrans.pages);
-    }
-
-    return foundry.utils.mergeObject(journal, patch);
-  });
-}
-
-function toArray(value) {
-  if (value === undefined || value === null) return [];
-  return Array.isArray(value) ? value : [value];
-}
-
-/**
- * Translate Crucible item actions using legacy flat translation fields:
- * actionname / actiondesc / actioneffectname
- */
-function emberActions(actions, _translation, _data, _tc, allTranslations) {
-  if (!Array.isArray(actions)) return actions;
-
-  const names = toArray(allTranslations?.actionname);
-  const descriptions = toArray(allTranslations?.actiondesc);
-  const effectNames = toArray(allTranslations?.actioneffectname);
-
-  let effectCursor = 0;
-
-  return actions.map((action, actionIndex) => {
-    const patch = {
-      ...(names[actionIndex] !== undefined ? { name: names[actionIndex] } : {}),
-      ...(descriptions[actionIndex] !== undefined ? { description: descriptions[actionIndex] } : {}),
-    };
-
-    if (Array.isArray(action?.effects) && action.effects.length) {
-      patch.effects = action.effects.map((effect) => {
-        if (effectNames[effectCursor] === undefined) {
-          return effect;
-        }
-
-        const translatedEffect = foundry.utils.mergeObject(effect, {
-          name: effectNames[effectCursor],
-        });
-
-        effectCursor += 1;
-        return translatedEffect;
-      });
-    }
-
-    return foundry.utils.mergeObject(action, patch);
-  });
-}
-
-/**
- * Patch Babele's importAdventure hook for Foundry payloads where token.delta can be null.
- *
- * Babele 2.7.5 assumes token.delta is always an object and reads token.delta.name directly.
- * Some imported scenes provide null delta, which throws and interrupts Adventure import.
- */
-function patchBabeleImportAdventureHook() {
-  const events = Hooks?.events;
-  const importAdventure = events?.importAdventure;
-  if (!Array.isArray(importAdventure)) return;
-
-  for (const entry of importAdventure) {
-    const fn = entry?.fn;
-    if (typeof fn !== 'function') continue;
-    if (fn.__emberBabeleImportPatched) continue;
-
-    // Identify the Babele handler by its distinctive source pattern.
-    const source = `${fn}`;
-    const looksLikeBabeleImportHook = source.includes('game.scenes.forEach') && source.includes('token.delta.name');
-    if (!looksLikeBabeleImportHook) continue;
-
-    const wrapped = function safeBabeleImportAdventureHook(...args) {
-      try {
-        return fn.apply(this, args);
-      } catch (error) {
-        const isDeltaNameCrash = error instanceof TypeError && String(error.message).includes("reading 'name'");
-        if (!isDeltaNameCrash) throw error;
-
-        console.debug(`${MODULE_ID} | Patched Babele importAdventure hook fallback`, error);
-
-        // Fallback equivalent to Babele's logic, but with null-safe delta access.
-        game.scenes.forEach((scene) => {
-          scene.tokens.forEach((token) => {
-            const actor = game.actors.get(token.actorId);
-            if (actor && !token?.delta?.name) {
-              token.update({ name: actor.prototypeToken.name });
-            }
-          });
-        });
-      }
-    };
-
-    wrapped.__emberBabeleImportPatched = true;
-    entry.fn = wrapped;
-  }
-}
 
 function normalizeDescriptionValue(value) {
   if (typeof value === 'string') {
@@ -620,59 +440,18 @@ Hooks.on('preCreateItem', (_item, data) => {
 });
 
 Hooks.once('babele.init', (babele) => {
-  // Guard against malformed RollTable result translations that can crash
-  // Babele's internal _tableResults converter on some adventure entries.
-  const patchTableResults = (target, label) => {
-    if (!target || typeof target._tableResults !== 'function') return false;
-    if (target._tableResults.__emberSafePatched) return true;
-
-    const original = target._tableResults;
-    const patched = function patchedTableResults(collection, translations, ...args) {
-      try {
-        return original.call(this, collection, translations, ...args);
-      } catch (error) {
-        console.warn(`${MODULE_ID} | Falling back from Babele _tableResults converter (${label})`, error);
-        return safeTableResultsCollection(collection, translations);
-      }
-    };
-
-    patched.__emberSafePatched = true;
-    target._tableResults = patched;
-    return true;
-  };
-
-  const internalConverters = babele?.converters;
-  const constructorPrototype = babele?.Converters?.prototype;
-  const globalPrototype = globalThis?.Babele?.Converters?.prototype;
-
-  patchTableResults(internalConverters, 'instance');
-  patchTableResults(constructorPrototype, 'babele.Converters.prototype');
-  patchTableResults(globalPrototype, 'globalThis.Babele.Converters.prototype');
-
-  babele.registerConverters({
-    // Extra safety: override converter name used by internal mappings when possible.
-    _tableResults: function safeRegisteredTableResults(collection, translations, ...args) {
-      try {
-        if (internalConverters && typeof internalConverters._tableResults === 'function') {
-          return internalConverters._tableResults.call(this, collection, translations, ...args);
-        }
-      } catch (error) {
-        console.warn(`${MODULE_ID} | Registered _tableResults fallback`, error);
-      }
-
-      return safeTableResultsCollection(collection, translations);
-    },
-    safeTableResultsCollection,
-    emberPages,
-    emberAdventureJournals,
-    emberActions,
-  });
+  if (!game.modules.get('babele')?.active) return;
 
   babele.register({
     module: MODULE_ID,
     lang: 'cn',
     dir: 'compendium/cn',
   });
+
+  babele.registerConverters(PROJECT_CONVERTERS);
+  babele.registerMapping(DOCUMENT_MAPPINGS);
+
+  console.log(`${MODULE_ID} | 已注册 Babele 翻译源与文档映射`);
 });
 
 // Hook APIs are ready by setup and documents have not finished full preparation yet.
@@ -684,7 +463,6 @@ Hooks.once('setup', () => {
 
 // Run import/migration compatibility once world is ready.
 Hooks.once('ready', async () => {
-  patchBabeleImportAdventureHook();
   await migrateLegacyDescriptionShape();
   await migrateLegacyCausticPhialEffects();
 });
