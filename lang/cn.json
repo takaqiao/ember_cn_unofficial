@@ -889,5 +889,87 @@
   "SPELL.INFLECTIONS": {
     "Glyphspeak": "符文语",
     "GlyphspeakAdj": "符文语"
+  },
+  "EMBER": {
+    "ACTOR_FLAGS": {
+      "FIELDS": {
+        "disableDynamicToken": {
+          "label": "禁用动态指示物",
+          "hint": "阻止 Ember 用 Ember 动态指示物替换该角色的指示物。若你使用自定义静态指示物、POG 指示物或 Foundry 的动态指示物环，请启用此项。"
+        }
+      },
+      "SHEET": {
+        "TOKEN": "指示物"
+      }
+    },
+    "ADVENTURE": {
+      "WARNINGS": {
+        "SETUP_FAILED": "Ember 初始化失败。请将浏览器控制台的完整报错反馈给 Ember 团队，以便他们诊断问题。"
+      }
+    },
+    "ATTUNEMENT": {
+      "ProgressionTitle": "同调进程",
+      "BoostChangeType": "同调提升",
+      "Tab": "同调",
+      "CurrentTooltip": "已获得的同调点数"
+    },
+    "CALENDAR": {
+      "TIME_FORMAT_12": "12 小时制（例如 4:00pm）",
+      "TIME_FORMAT_24": "24 小时制（例如 16:00）"
+    },
+    "ReadaloudSendToChat": "发送到聊天栏",
+    "QUEST": {
+      "FIELDS": {
+        "chapter": {
+          "label": "战役章节",
+          "hint": "指定此任务所属的战役章节。"
+        }
+      }
+    },
+    "CHAPTERS": {
+      "PROLOGUE": "序章",
+      "CHAPTER": "第 {n} 章",
+      "LEVEL": "{x} 级",
+      "LEVELS": "{x}-{y} 级",
+      "LEVEL_PLUS": "{x} 级以上",
+      "UNASSIGNED": "未指定"
+    },
+    "CONTENT_CONFIG": {
+      "TITLE": "配置启用的内容",
+      "MENU_NAME": "启用的游戏内容",
+      "MENU_LABEL": "配置内容",
+      "MENU_HINT": "选择本场战役启用哪些任务。被禁用的任务及其事件会从游戏中移除，直到重新启用为止。",
+      "HINT": "自定义当前有哪些 Ember 任务处于启用状态。默认所有任务都启用，但你可以有选择地禁用部分任务，以更精简的方式游玩战役的特定部分。",
+      "ALL_QUESTS": "全部任务",
+      "SAVE": "保存配置",
+      "RESET": "重置"
+    }
+  },
+  "SPELL": {
+    "INFLECTIONS": {
+      "Abyss": "深渊",
+      "AbyssAdj": "深渊的",
+      "Akon": "阿肯",
+      "AkonAdj": "阿肯的",
+      "Aura": "灵气",
+      "AuraAdj": "灵气的",
+      "Cora": "科拉",
+      "CoraAdj": "科拉的",
+      "Heart": "余烬之心",
+      "HeartAdj": "余烬的",
+      "Luxarum": "卢克萨鲁姆",
+      "LuxarumAdj": "卢克萨鲁姆的",
+      "Mayis": "玛伊斯",
+      "MayisAdj": "玛伊斯的",
+      "Orbis": "奥比斯",
+      "OrbisAdj": "奥比斯的",
+      "Primordis": "普里莫迪斯",
+      "PrimordisAdj": "原初的",
+      "Ragen": "拉根",
+      "RagenAdj": "拉根的",
+      "Signara": "西格纳拉",
+      "SignaraAdj": "西格纳拉的",
+      "GlyphspeakAdj": "符文语的"
+    }
   }
 }

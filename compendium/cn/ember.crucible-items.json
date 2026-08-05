@@ -1,0 +1,14 @@
+{
+  "label": "Ember Items",
+  "folders": {
+    "Armor": "护甲",
+    "Consumables": "消耗品",
+    "Equipment": "装备",
+    "Ingredients": "材料",
+    "Plot Items": "剧情物品",
+    "Tools": "工具",
+    "Treasure": "珍宝",
+    "Weapons": "武器"
+  },
+  "entries": {}
+}
