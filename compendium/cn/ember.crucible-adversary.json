@@ -1,12 +1,5 @@
 {
   "label": "对手选项 Adversary Options",
-  "mapping": {
-    "name": "name",
-    "actionname": {
-      "path": "system.actions",
-      "converter": "emberActions"
-    }
-  },
   "folders": {
     "Fey": "妖精 Fey",
     "Oozes": "软泥怪 Oozes",
