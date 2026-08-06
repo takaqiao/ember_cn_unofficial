@@ -8322,7 +8322,7 @@
               "name": "压扁 Squish",
               "description": {
                 "public": "<p>陶里克忠诚的软泥怪伙伴，压扁。</p>",
-                "private": "<p>当 Tauric 已装备压扁时，他不能处于 @Condition[未察觉]。</p>"
+                "private": "<p>当 Tauric 已装备压扁时，他不能处于 @Condition[unaware]。</p>"
               }
             },
             "Light Weapon Training": {
@@ -11094,7 +11094,7 @@
             },
             "Mutagenic Affliction": {
               "name": "诱变病症 Mutagenic Affliction",
-              "description": "<p>这个@ref[actor.name]{生物}受一种使其行为反常的衰弱性突变所苦。它更强壮，也更具侵略性，但已陷入@Condition[目盲]状态。</p>"
+              "description": "<p>这个@ref[actor.name]{生物}受一种使其行为反常的衰弱性突变所苦。它更强壮，也更具侵略性，但已陷入@Condition[blinded]状态。</p>"
             }
           },
           "biography": {
@@ -11232,7 +11232,7 @@
             },
             "Mutagenic Affliction": {
               "name": "诱变病症 Mutagenic Affliction",
-              "description": "<p>这个@ref[actor.name]{生物}受到一种使其行为反常的衰败突变折磨。它更强壮，也更具侵略性，但已陷入@Condition[目盲]状态。</p>"
+              "description": "<p>这个@ref[actor.name]{生物}受到一种使其行为反常的衰败突变折磨。它更强壮，也更具侵略性，但已陷入@Condition[blinded]状态。</p>"
             }
           },
           "biography": {
@@ -11466,7 +11466,7 @@
             },
             "Elemental Surge": {
               "name": "元素涌动 Elemental Surge",
-              "description": "<p>当与流经申特月神殿的魔法能量洪流相连并受其强化时，神殿入侵者可以通过汲取并引导那股力量来执行某些非凡的动作。</p><p>神殿入侵者被一道不可穿透的护盾包围，所有物体、投射、法术和攻击都无法从任一方向穿过它，因此该元素对攻击和法术免疫。当该护盾处于激活状态时，该元素也处于 @Condition[受拘束]。在以这种方式受到保护时，入侵者对除灵能和虚空之外的所有伤害类型免疫。</p><p>这道护盾由六颗魔法法珠提供，它们正在神殿上方的机械装置上旋转。在其回合中，该元素可以耗尽其中一颗法珠，立即获得 1 点<strong>英雄气概</strong>，并可将其用于其他强力能力。一旦六颗法珠全部耗尽，入侵者身上的护盾就会失效，该元素也将变得容易受到攻击。</p>",
+              "description": "<p>当与流经申特月神殿的魔法能量洪流相连并受其强化时，神殿入侵者可以通过汲取并引导那股力量来执行某些非凡的动作。</p><p>神殿入侵者被一道不可穿透的护盾包围，所有物体、投射、法术和攻击都无法从任一方向穿过它，因此该元素对攻击和法术免疫。当该护盾处于激活状态时，该元素也处于 @Condition[restrained]。在以这种方式受到保护时，入侵者对除灵能和虚空之外的所有伤害类型免疫。</p><p>这道护盾由六颗魔法法珠提供，它们正在神殿上方的机械装置上旋转。在其回合中，该元素可以耗尽其中一颗法珠，立即获得 1 点<strong>英雄气概</strong>，并可将其用于其他强力能力。一旦六颗法珠全部耗尽，入侵者身上的护盾就会失效，该元素也将变得容易受到攻击。</p>",
               "actions": {
                 "lunariumTidalWave": {
                   "name": "巨浪 Tidal Wave",
@@ -11840,7 +11840,7 @@
             },
             "Cosmic Gems": {
               "name": "宇宙宝石 Cosmic Gems",
-              "description": "<p>在其每个回合中，@ref[actor.name]都会使用其辉光刺击向环绕房间的一颗宝石发射一道光束，为其充能，并将其指向房间内一个特定的目标位置。请在该宝石的目标位置放置一个模板标记。</p><p>在后续回合开始时，在任何其他生物行动之前，被充能的宝石会在已放置标记的点处或朝向该点发动其效果。@ref[actor.name]必须存活才能为宝石充能，但即使该生物处于@Condition[失能]状态，宝石的效果仍会发生。</p><p>在其效果发动之前，可以通过与石头互动并按正确顺序按下地板上的符文来使被充能的宝石失效，这需要一次成功的[[/skillCheck arcana 13]]检定。</p>",
+              "description": "<p>在其每个回合中，@ref[actor.name]都会使用其辉光刺击向环绕房间的一颗宝石发射一道光束，为其充能，并将其指向房间内一个特定的目标位置。请在该宝石的目标位置放置一个模板标记。</p><p>在后续回合开始时，在任何其他生物行动之前，被充能的宝石会在已放置标记的点处或朝向该点发动其效果。@ref[actor.name]必须存活才能为宝石充能，但即使该生物处于@Condition[incapacitated]状态，宝石的效果仍会发生。</p><p>在其效果发动之前，可以通过与石头互动并按正确顺序按下地板上的符文来使被充能的宝石失效，这需要一次成功的[[/skillCheck arcana 13]]检定。</p>",
               "actions": {
                 "cosmicGemCharge": {
                   "name": "冲锋宝石 Charge Gem",
@@ -22487,7 +22487,7 @@
           "actions": {
             "pipesOfBravado": {
               "name": "英雄崛起",
-              "description": "<p>只要他们并非处于 @Condition[失聪] 状态，30尺内的盟友：</p><ul><li><p>若当前受到这些状态影响，立即移除 @Condition[恐慌] 和 @Condition[倒地] 状态</p></li><li><p>获得 +2 <strong>跨步</strong>，直到其下个回合结束。</p></li><li><p>获得 +2 <strong>意志力</strong>，直到其下个回合结束。</p></li></ul>"
+              "description": "<p>只要他们并非处于 @Condition[deafened] 状态，30尺内的盟友：</p><ul><li><p>若当前受到这些状态影响，立即移除 @Condition[frightened] 和 @Condition[prone] 状态</p></li><li><p>获得 +2 <strong>跨步</strong>，直到其下个回合结束。</p></li><li><p>获得 +2 <strong>意志力</strong>，直到其下个回合结束。</p></li></ul>"
             }
           }
         }
@@ -23663,7 +23663,7 @@
             },
             "Credits": {
               "name": "鸣谢 Credits",
-              "text": "<p>@Embed[日志条目.emberPlayerGuide.日志条目Page.TEr6QcbLgSnhJ59x inline]</p>"
+              "text": "<p>@Embed[JournalEntry.emberPlayerGuide.JournalEntryPage.TEr6QcbLgSnhJ59x inline]</p>"
             },
             "License": {
               "name": "许可 License",
@@ -23671,7 +23671,7 @@
             },
             "System Requirements": {
               "name": "系统需求 System Requirements",
-              "text": "<p>@Embed[日志条目.emberPlayerGuide.JournalEntryPage.Bn946iz3zLYfeCUX inline]</p>"
+              "text": "<p>@Embed[JournalEntry.emberPlayerGuide.JournalEntryPage.Bn946iz3zLYfeCUX inline]</p>"
             },
             "Welcome to Early Access": {
               "name": "欢迎来到抢先体验版 Welcome to Early Access",
@@ -23767,11 +23767,11 @@
             },
             "User Interface": {
               "name": "用户界面 User Interface",
-              "text": "<p>@Embed[日志条目.emberPlayerGuide.JournalEntryPage.syUU9siNvji2bxim inline]</p>"
+              "text": "<p>@Embed[JournalEntry.emberPlayerGuide.JournalEntryPage.syUU9siNvji2bxim inline]</p>"
             },
             "Region Exploration": {
               "name": "区域探索 Region Exploration",
-              "text": "<p>@Embed[日志条目.emberPlayerGuide.JournalEntryPage.BVb0EMYNoOk3FPYc inline]</p>"
+              "text": "<p>@Embed[JournalEntry.emberPlayerGuide.JournalEntryPage.BVb0EMYNoOk3FPYc inline]</p>"
             },
             "Event Characteristics": {
               "name": "事件特征 Event Characteristics",
@@ -23783,7 +23783,7 @@
             },
             "World Map": {
               "name": "世界地图 World Map",
-              "text": "<p>@Embed[日志条目.emberPlayerGuide.JournalEntryPage.scq0o7cvwNlFENzr inline]</p>"
+              "text": "<p>@Embed[JournalEntry.emberPlayerGuide.JournalEntryPage.scq0o7cvwNlFENzr inline]</p>"
             },
             "Cosmos Map": {
               "name": "寰宇地图 Cosmos Map",
@@ -23844,11 +23844,11 @@
             },
             "Languages": {
               "name": "语言 Languages",
-              "text": "<p>@Embed[日志条目.emberCultures000.JournalEntryPage.PD7MYdiisEPZdPcy inline]</p>"
+              "text": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.PD7MYdiisEPZdPcy inline]</p>"
             },
             "Cosmology": {
               "name": "宇宙观 Cosmology",
-              "text": "<p>@Embed[日志条目.emberCosmos00000.JournalEntryPage.JUwFAaelI86yiscL inline]</p>"
+              "text": "<p>@Embed[JournalEntry.emberCosmos00000.JournalEntryPage.JUwFAaelI86yiscL inline]</p>"
             },
             "Setting Overview": {
               "name": "设定概览 Setting Overview",
@@ -23864,7 +23864,7 @@
             },
             "Deities": {
               "name": "神祇 Deities",
-              "text": "<p>@Embed[日志条目.emberDeities0000.JournalEntryPage.39KjcVdySqOz1oSU inline]</p>"
+              "text": "<p>@Embed[JournalEntry.emberDeities0000.JournalEntryPage.39KjcVdySqOz1oSU inline]</p>"
             },
             "Ancestry": {
               "name": "血统 Ancestry",
@@ -23872,7 +23872,7 @@
             },
             "Character Class": {
               "name": "角色职业 Character Class",
-              "text": "<p>@Embed[日志条目.emberCharClasses.JournalEntryPage.emberClassOvervi inline]</p>"
+              "text": "<p>@Embed[JournalEntry.emberCharClasses.JournalEntryPage.emberClassOvervi inline]</p>"
             },
             "Ember Background": {
               "name": "余烬背景 Ember Background",
@@ -23884,7 +23884,7 @@
             },
             "Timeline": {
               "name": "时间线 Timeline",
-              "text": "<p>@Embed[日志条目.umX2Xt1eMUC0ECgc.JournalEntryPage.yOGZUX0Ld9ZnwAO4 inline]</p>"
+              "text": "<p>@Embed[JournalEntry.umX2Xt1eMUC0ECgc.JournalEntryPage.yOGZUX0Ld9ZnwAO4 inline]</p>"
             },
             "Milestone Progression": {
               "name": "里程碑进阶 Milestone Progression",
@@ -24811,12 +24811,12 @@
             },
             "Varún": {
               "name": "瓦伦 Varún",
-              "text": "<section class=\"block social\"><h4>概览</h4><ul><li><p>Language: [[/language 径道语]]</p></li><li><p>Capital City: 无</p></li><li><p>Technology: 青铜制造，以骨骼和符文魔法强化。</p></li><li><p>Major Religions/Beliefs: 献祭</p></li><li><p>Names: Akroth, Balthor, Gorthax, Jiroth, Jonoc, Karoth, Kharn, Kiom, Kiroh, Korm, Lorth, Marm, Mortax, Morth, Raxoc, Skarn, Stor, Throm, Varkas, Vornak, Zorth</p></li><li><p>Ancestries: @UUID[JournalEntry.emberBestiary000.JournalEntryPage.n8XfdXtjFxvpAE7a]{巨人} (100%)</p></li></ul></section><h2 class=\"divider\">暴力的仪式主义者</h2><p>瓦伦人是生活在阿特里卡南部鲁纳高地与毁灭峭岩嶙峋阴影中的巨人文化。他们被认为是古代申特人的暴力残余，是那些在大破裂期间为了避免毁灭而选择用和平与先见之明的天赋，换取绝望原始狂怒的幸存者。根据与瓦伦人的少数几次遭遇可以确定，他们已经堕入一种排外而残暴的状态，似乎会攻击他们遇到的任何人。那些冒险过于接近其氏族的旅者讲述了在元素之月的光芒下进行的黑暗仪式，据说瓦伦人会将扭曲的符文绑定到由骨骼和石料雕成的巨型武器上。</p><section class=\"block gamemaster\"><h4>相关文化</h4><p>瓦伦人的领地西接卡斯奇利亚人，南邻阿克图里亚人，东边则是奇希尔。无一例外，瓦伦人对和平共处或贸易都兴趣寥寥，并会攻击任何进入其领土的人。</p></section>",
+              "text": "<section class=\"block social\"><h4>概览</h4><ul><li><p>Language: [[/language pathward]]</p></li><li><p>Capital City: 无</p></li><li><p>Technology: 青铜制造，以骨骼和符文魔法强化。</p></li><li><p>Major Religions/Beliefs: 献祭</p></li><li><p>Names: Akroth, Balthor, Gorthax, Jiroth, Jonoc, Karoth, Kharn, Kiom, Kiroh, Korm, Lorth, Marm, Mortax, Morth, Raxoc, Skarn, Stor, Throm, Varkas, Vornak, Zorth</p></li><li><p>Ancestries: @UUID[JournalEntry.emberBestiary000.JournalEntryPage.n8XfdXtjFxvpAE7a]{巨人} (100%)</p></li></ul></section><h2 class=\"divider\">暴力的仪式主义者</h2><p>瓦伦人是生活在阿特里卡南部鲁纳高地与毁灭峭岩嶙峋阴影中的巨人文化。他们被认为是古代申特人的暴力残余，是那些在大破裂期间为了避免毁灭而选择用和平与先见之明的天赋，换取绝望原始狂怒的幸存者。根据与瓦伦人的少数几次遭遇可以确定，他们已经堕入一种排外而残暴的状态，似乎会攻击他们遇到的任何人。那些冒险过于接近其氏族的旅者讲述了在元素之月的光芒下进行的黑暗仪式，据说瓦伦人会将扭曲的符文绑定到由骨骼和石料雕成的巨型武器上。</p><section class=\"block gamemaster\"><h4>相关文化</h4><p>瓦伦人的领地西接卡斯奇利亚人，南邻阿克图里亚人，东边则是奇希尔。无一例外，瓦伦人对和平共处或贸易都兴趣寥寥，并会攻击任何进入其领土的人。</p></section>",
               "contentOverview": "<p>瓦伦是申特的暴力后裔，也是最后的幸存者；他们决定反抗并回击施加于自身的毁灭，而不是温顺地接受灭绝。为此，他们抛弃了和平与先见之明的力量，转而开始崇拜寰宇的原始本性。随着时间推移，瓦伦变得排外、侵略性强且残暴。他们在高地和毁灭峭岩周边建立定居点，离群索居，并举行黑暗仪式，崇拜元素之月，并将扭曲的符文束缚于巨大的骨制武器之上。</p>"
             },
             "Niethun": {
               "name": "涅松 Niethun",
-              "text": "<section class=\"block social\"><h4>概览</h4><ul><li><p>语言：[[/language 径道语]]</p></li><li><p>大城市：未知</p></li><li><p>技术：未知</p></li><li><p>主要宗教/信仰：@UUID[JournalEntry.emberBestiary000.JournalEntryPage.nChUneUkEF2XBgxc]{深渊恐怖}</p></li><li><p>名称：Agnash, Dagonis, Ghal-Xath, Hyliss, Ithal-Qun, Kul-Vog, Lythos, Myrkul, Nhag, Nythos, Olthara, Phul, Rhogog, Shath, Thol, Thul-Kesh, Tulu, Ul-Qath, Vahl, Vash-Nir, Xoth, Zeghos</p></li><li><p>祖裔：<span draggable=\"true\" data-link data-uuid=\"JournalEntry.emberBestiary000.JournalEntryPage.n8XfdXtjFxvpAE7a\" data-id=\"n8XfdXtjFxvpAE7a\" data-type=\"JournalEntryPage\" data-tooltip=\"Page\" data-tooltip-text=\"Ember Lore Page\">巨人</span> (75%)</p></li></ul></section><h2 class=\"divider\">骇人的深渊崇拜者</h2><p>关于涅松，几乎一无所知，除了这个名字，以及这一术语出现在申特和艾迪尔的古代文献中。人们认为，他们可能是一个古老而可怖的族群，生活在通路深处，但从未发现任何能够证明其存在的证据。</p><section class=\"block hazard\"><p>了解或知晓涅松属于一种深渊关联。</p></section><p></p>",
+              "text": "<section class=\"block social\"><h4>概览</h4><ul><li><p>语言：[[/language pathward]]</p></li><li><p>大城市：未知</p></li><li><p>技术：未知</p></li><li><p>主要宗教/信仰：@UUID[JournalEntry.emberBestiary000.JournalEntryPage.nChUneUkEF2XBgxc]{深渊恐怖}</p></li><li><p>名称：Agnash, Dagonis, Ghal-Xath, Hyliss, Ithal-Qun, Kul-Vog, Lythos, Myrkul, Nhag, Nythos, Olthara, Phul, Rhogog, Shath, Thol, Thul-Kesh, Tulu, Ul-Qath, Vahl, Vash-Nir, Xoth, Zeghos</p></li><li><p>祖裔：<span draggable=\"true\" data-link data-uuid=\"JournalEntry.emberBestiary000.JournalEntryPage.n8XfdXtjFxvpAE7a\" data-id=\"n8XfdXtjFxvpAE7a\" data-type=\"JournalEntryPage\" data-tooltip=\"Page\" data-tooltip-text=\"Ember Lore Page\">巨人</span> (75%)</p></li></ul></section><h2 class=\"divider\">骇人的深渊崇拜者</h2><p>关于涅松，几乎一无所知，除了这个名字，以及这一术语出现在申特和艾迪尔的古代文献中。人们认为，他们可能是一个古老而可怖的族群，生活在通路深处，但从未发现任何能够证明其存在的证据。</p><section class=\"block hazard\"><p>了解或知晓涅松属于一种深渊关联。</p></section><p></p>",
               "contentOverview": "<p>人们对这种文化所知甚少，只知道它们存在于通路某处广阔而更深层的区域之中。</p>"
             },
             "Moiran": {
@@ -30486,6 +30486,14 @@
             "Arvoda's Elixirs": {
               "name": "阿沃达的灵药铺 Arvoda's Elixirs",
               "text": "<section class=\"block readaloud\"><p>这家不大的药水铺，桌上挤满了瓶子、盆钵与罐子，里面装着形形色色的奇异物质。在这堆杂物之间，一位身形轻盈、穿着阿克图里安精致衣饰的阿什卡女子正俯身端详着一小把草药，透过一副金边放大镜研究这些材料。她一动未动，只是瞥了你们一眼，以一种温厚而慈和的口吻招呼你们。</p><blockquote><p>欢迎光临阿沃达的灵药铺 —— 落水洞深处这一带最好的炼金方案都在这儿。说说看，在这样的乱世里，我能帮上你们什么？</p></blockquote></section><p>这座建筑既是水术师埃梅琳·阿沃达的工坊，也是她的店面，为阿克图瑞尔的居民提供好用（虽然价高）的炼金物资。</p><section class=\"block social\"><h4>与埃梅琳交谈</h4><dl><dt><p>埃梅琳·阿沃达（中立善良，阿克图里安阿什卡人，她）</p></dt><dd><p>这位精明而不失慈和的水术师，为无光深处的旅人制作卷轴、药水与其他魔法物品，但她的眼睛始终盯着账面。</p></dd></dl><p>埃梅琳是个和气（虽说有点唯利是图）的老板，总是乐意帮人 —— 只要对方买点东西，或者为她的专业服务付钱。据说她偶尔会为那些投合她勤勉性情的人降价，但她不信「白给」这回事。</p><p>埃梅琳愿意随口聊的话题包括（但不限于）以下几项：</p><ul><li><p>她那些（定价过高的）存货与服务的细节。</p></li><li><p>她作为法师与药剂师的经历。</p></li><li><p>关于阿克图瑞尔的情况，包括矿渊及其形形色色的居民。</p></li><li><p>关于阿克图斯高原的传闻与时局。</p></li></ul><p>任何通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill insight 13]]</sub><sub data-system=\"crucible\">[[/skillCheck diplomacy 13]]</sub></sup> 检定的角色，都能轻易感受到埃梅琳日常处事中那种干脆利落的坦诚，也没有理由怀疑她对他们藏着什么（除了药剂行当里那些来之不易的秘方）。</p><h4>埃梅琳的货品</h4><p>阿沃达的灵药铺通常备有各种炼金物资、药水以及其他不同稀有度的消耗品 —— 一律加价两成出售。这些货品包括以下各项若干：</p><ul><li><p>@UUID[Item.QwzYLBnZ1PjLFEuI]{炼金银}</p></li><li><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">@UUID[Compendium.dnd5e.items.Item.Fc6UfFNOnW80XMzi]{抗毒剂}</sub> <sub data-system=\"crucible\">@UUID[Compendium.crucible.equipment.Item.antitoxin0000000]</sub></sup></p></li><li><p>@UUID[Item.FXNnFGmbtvZrJEhq]{恒开花}</p></li><li><p>@UUID[Compendium.dnd5e.equipment24.Item.dmgOilOfSlipperi]{滑腻油}</p></li><li><p>@UUID[Item.H4HHgtfjPNU2dGlG]{警觉药水}</p></li><li><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">@UUID[Compendium.dnd5e.equipment24.Item.phbagPotionofHea]{治疗药水} <br></sub> <sub data-system=\"crucible\">@UUID[Compendium.crucible.equipment.Item.healingElixir000]</sub></sup></p></li><li><p>@UUID[Compendium.dnd5e.equipment24.Item.dmgPotionOfResis]{抗性药水}</p></li><li><p>@UUID[Compendium.dnd5e.equipment24.Item.dmgPotionOfWater]{水下呼吸药水}</p></li></ul><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">角色还能在这里找到针对常见 @UUID[RollTable.cK0yaPfqWY4csCUx]{阿特里坎疾病} 的专门药方，例如 @UUID[Item.j6zuAbUyWDWLjBFg]{抗真菌药剂}、@UUID[Item.zYnZJXWZ2s2jKzEv]{抗凝补剂}、@UUID[Item.CZTzfRrJLOdxeS1n]{溶解补剂} 与 @UUID[Item.ohX47gu4PvpL7Go5]{护心灵药}。</sub></sup></p><p>任何通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill persuasion 17]]</sub> <sub data-system=\"crucible\">[[/skillCheck diplomacy 17]]</sub></sup> 检定的角色，都能说服埃梅琳把价格降到标准水平。</p></section><h3 class=\"divider\">[[/eventState otherhood1Arcturel2]]</h3><p>在 [[/eventState otherhood1Arcturel2]] 事件期间，队伍可以就近来接连发生的中毒事件与埃梅琳交谈。详见该事件正文。</p><h3 class=\"divider\">[[/eventState arcturelSideCrime]]</h3><p>在 [[/eventState arcturelSideCrime]] 事件期间，队伍可以找埃梅琳打听关于银光束财团的传闻。详见该事件正文。</p>"
+            },
+            "Area Overview": {
+              "name": "区域总览 Area Overview",
+              "text": "<section class=\"block gamemaster\"><h4>区域地图背景</h4><p>@UUID[Scene.emberArcturelLow]{阿克图瑞尔矿渊}区域地图描绘的是@UUID[JournalEntry.emberArctusGazet.JournalEntryPage.Byemag1k6p66PynZ]{矿渊}的一小片区域。它出现在 @UUID[JournalEntry.CHLiPiU0Bx9Pdevu]{一位老朋友} 主线任务的 [[/eventState otherhood1Arcturel2]] 事件、@UUID[JournalEntry.emberNainSide000]{故事之书} 支线任务的 [[/eventState bookTalesQuarryman]] 事件，以及 @UUID[JournalEntry.m6P3pXWB3ssdG7o3]{黑暗中的微光} 支线任务的 [[/eventState arcturelSideCrime]] 事件之中。</p><ul><li><p>该地图只描绘一个场景层级，其区域分为两部分：矿渊与三层矿井。</p></li><li><p>在 [[/eventState otherhood1Arcturel2]] 与 [[/eventState bookTalesQuarryman]] 事件中，队伍从升降机内部开始，正对着 @UUID[JournalEntry.PWK8ADZy5RgbwBAu.JournalEntryPage.QpHwyxq7yJZGhjFY]{沃特伯恩酿酒坊}。</p></li><li><p>在 [[/eventState arcturelSideCrime]] 事件中，队伍从升降机内部开始，正对着 @UUID[JournalEntry.PWK8ADZy5RgbwBAu.JournalEntryPage.crgIhy7BVETKJYHN]{扳力修理行}。</p></li></ul></section><h2 class=\"divider\">玩法细节</h2><p>除非正文另有说明，阿克图瑞尔矿渊的各处区域都具有以下特征。</p><h3 class=\"divider\">层级与高度</h3><p>阿克图瑞尔矿渊场景只有一个层级，其区域分为两部分：矿渊与三层矿井。</p><ul><li><p><strong>矿渊：</strong>矿渊的高度设为 0，顶高 10 英尺。</p></li><li><p><strong>三层矿井：</strong>三层矿井的高度设为 0，顶高 20 英尺。</p></li></ul><h3 class=\"divider\">照明</h3><p>在落水洞的这一深度，传统的火焰没有帮助便无法维持 —— 所有未加防护的蜡烛都会很快熄灭。因此本地人改用落水洞岩壁上发光的蘑菇、@UUID[Item.pCl2T09DRBETkkbZ]{裂隙蜡烛}，以及偶尔用到的印卡罗珍珠来照明。</p><ul><li><p><strong>矿渊：</strong>照明昏暗但稳定。</p></li><li><p><strong>三层矿井：</strong>照明明亮，主要来自印卡罗珍珠 —— 它们像灯笼一样挂满整座矿井。矿井中央那台装置的动作会暂时影响这些印卡罗珍珠（见下文 @UUID[JournalEntry.PWK8ADZy5RgbwBAu.JournalEntryPage.djOYv32flHBv3LXK#the-device]{装置}）。</p></li></ul><h3 class=\"divider\">地形</h3><p>所有区域都应视为普通地形。</p><h3 class=\"divider\">居民</h3><p>以下角色与生物居住在此区域：</p><ul><li><p>@UUID[Actor.Rh7z2eruwwhFlG58]{佐迪·特拉斯克}</p></li><li><p>@UUID[Actor.9plFRf3Hurd9r7ol]{艾梅琳·阿沃达}</p></li><li><p>10 名 @UUID[Actor.9plFRf3Hurd9r7ol]{阿克图里安}</p></li><li><p>3 只 @UUID[Actor.T6YcptpxcCLx4yLx]{乔布里}</p></li></ul><p>在 [[/eventState arcturelSideCrime]] 事件期间，以下角色与生物居住在此区域：</p><ul><li><p>@UUID[Actor.9plFRf3Hurd9r7ol]{埃奥拉斯·哈斯威克}</p></li><li><p>@UUID[Actor.9plFRf3Hurd9r7ol]{卡兰德拉}</p></li><li><p>@UUID[Actor.9plFRf3Hurd9r7ol]{霍布·科雷尔}</p></li></ul><h3 class=\"divider\">敌人</h3><p>在 [[/eventState otherhood1Arcturel2]] 事件期间，此处会遭遇以下敌人：</p><ul><li><p>5 只 @UUID[Actor.eOeEoqatnUz1TOVR]{沃格}</p></li><li><p>4 只 @UUID[Actor.ZMLyUZaK76soqKx0]{斯基瑟}</p></li><li><p>基尔纳，一名 @UUID[Actor.69yCeDhDktOWW5O0]{阿布里克斯}</p></li></ul><p>在 [[/eventState bookTalesQuarryman]] 事件期间，此处会遭遇以下敌人：</p><ul><li><p>5 只 @UUID[Actor.ZMLyUZaK76soqKx0]{斯基瑟}</p></li></ul><h3 class=\"divider\">装置</h3><p>装置是一台巨大的金属机器，位于矿井中央的 @UUID[JournalEntry.PWK8ADZy5RgbwBAu.JournalEntryPage.eApuNVjHrvwXGB8C]{枢纽厅}。它由如今盘踞在这座矿井里的提拉斐姆 —— @UUID[Actor.69yCeDhDktOWW5O0]{阿布里克斯} 基尔纳 —— 建造，眼下由一群 @UUID[Actor.ZMLyUZaK76soqKx0]{斯基瑟} 悉心照料并守卫着。它若被完全启动，最终会让矿渊的部分隧道系统塌陷，酿成一场足以嫁祸给杰夫赫尔家族的大灾难。</p><section class=\"block hazard\"><h4>矿井效应</h4><p>当装置处于<strong>通电</strong>状态、且角色进入矿井的某些区域时，它会产生一次 @UUID[RollTable.XrY0Hys2AjCMJP8i]{矿井效应}。该表所有结果都被抽完之后，重置该表。</p><h4>让装置断电</h4><p>使用 @UUID[JournalEntry.PWK8ADZy5RgbwBAu.JournalEntryPage.byNiHbuGQAyGerNQ]{副储藏室} 里的隐藏开关，可以让装置<strong>断电</strong>。若要看到这个<strong>可交互物件</strong>，可以按住 <span class=\"reference\">左 Alt 键</span>。</p><h4>摧毁装置</h4><p>该装置的 AC 为 20，生命值 30，免疫毒素、灵能与光耀伤害，并具有 10 点 &amp;reference[damage threshold]。</p></section><h3 class=\"divider\">沃格滋生</h3><p>废弃的矿井隧道已被 @UUID[Actor.eOeEoqatnUz1TOVR]{沃格} 占据，它们潜伏在地下，伏击从头顶经过的生物。</p><p>@Embed[Actor.eOeEoqatnUz1TOVR]</p><section class=\"block hazard\"><h4>沃格伏击</h4><p>每当有角色经过某只沃格 10 英尺范围内时，它便破土而出发动攻击。</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>不具备 @UUID[Compendium.dnd5e.content24.JournalEntry.phbAppendixCRule.JournalEntryPage.r64UrNusMhwJVnxb]{震颤感知} 的生物处于 &amp;Reference[surprise]{突袭} 状态。</p></div></div><h4>沃格巢</h4><p>矿井中的某些区域被标为「沃格巢」。每当角色进入被标为「沃格巢」的区域，或在其中弄出很大动静时，掷 [[/gmroll 1d20]]。结果为 10 或更高时，区域地图上所有沃格都朝角色尽可能地移动。随后，若有一只或多只沃格处于某个角色 10 英尺内，它们便破土而出发动攻击。</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>不具备 @UUID[Compendium.dnd5e.content24.JournalEntry.phbAppendixCRule.JournalEntryPage.r64UrNusMhwJVnxb]{震颤感知} 的生物处于 &amp;Reference[surprise]{突袭} 状态。</p></div></div><h4>沃格战术</h4><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>战斗开始时，沃格会对最近的可选敌人使用其 @UUID[Actor.eOeEoqatnUz1TOVR.Item.QwM0QfEeSuZ8437H] 攻击。</p><p>整场战斗中，沃格会优先使用以下动作与能力：</p><ul><li><p>近战时，沃格会使用其 @UUID[Actor.eOeEoqatnUz1TOVR.Item.H8Hd6YHdoSrjw8sS] 动作。</p></li><li><p>沃格会尽可能多地缠住敌人，以最大化其 @UUID[Actor.eOeEoqatnUz1TOVR.Item.64qGZX2Y4t7nVbi0] 特性的效果。</p></li></ul><p>当沃格被消灭，或生命值降到上限的一半以下时，战斗结束 —— 此时它们会钻入地下逃走。</p></div><div data-system=\"crucible\"><p>战斗开始时，沃格会钻入地下，移动到能让其 @UUID[Actor.eOeEoqatnUz1TOVR.Item.burrower00000000] 动作效果最大化的位置。</p><p>整场战斗中，沃格会优先使用以下动作与能力：</p><ul><li><p>近战时，沃格会使用其 @UUID[Actor.eOeEoqatnUz1TOVR.Item.rakingTalons0000] 动作。</p></li><li><p>若被包围，沃格会试图攀爬到安全处，并在下一回合使用其 @UUID[Actor.eOeEoqatnUz1TOVR.Item.clingingGrip0000]。</p></li></ul><p>当沃格被消灭，或陷入 @Condition[weakened] 或 @Condition[broken] 时，战斗结束 —— 此时它们会钻入地下逃走。若某只沃格无法逃脱，它会调整站位，使其 @UUID[Actor.eOeEoqatnUz1TOVR.Item.radiantDeathBurs] 特性影响尽可能多的敌人。</p></div></div></section>"
+            },
+            "The Last Pit": {
+              "name": "最后的矿坑 The Last Pit",
+              "text": "<section class=\"block readaloud\"><p>在你们前方那巨大的洞窟中央，站着一个散发光辉的身影。它的脸是一团黄色的光，形体则由看起来异样的金属环带构成。它似乎低垂着头，注视着一张书桌，戴着护手甲的手轻轻敲击着木面。一把由凝聚光芒铸成的长剑倚靠在书桌边，随时都能轻易取用。</p><p>片刻之后，它猛地抬起头，立刻抓起自己的长剑；它的面孔骤然炽亮起来，显露出你们猜测应是愤怒或某种强烈情绪的表情。接着，它的声音如同低沉的乐器般回响而出，带着些许呼啸声，仿佛连这些词语本身都难以发音。</p><blockquote><p>你们怎么还没死？</p></blockquote><p>这个身影似乎把每一个音节都咬得格外清楚，随后从书桌后方踏步走出，熟练地挥舞着手中的刀刃，转了个漂亮的圈。</p><blockquote><p>算了。很快就会了。</p></blockquote></section><section class=\"block hazard\"><h4>装置</h4><p>处于<strong>通电</strong>状态时，装置会在每轮战斗结束时产生一次 @UUID[RollTable.XrY0Hys2AjCMJP8i]{矿井效应}。该表所有结果都被抽完之后，重置该表。</p></section><section class=\"block hazard\"><h4>沃格巢</h4><p>当角色进入此区域或弄出很大动静时，掷 [[/gmroll 1d20]]。结果为 10 或更高时，区域地图上所有 @UUID[Actor.eOeEoqatnUz1TOVR]{沃格} 都朝角色尽可能地移动。随后，若有一只或多只沃格处于某个角色 10 英尺内，它们便破土而出发动攻击。</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>不具备 @UUID[Compendium.dnd5e.content24.JournalEntry.phbAppendixCRule.JournalEntryPage.r64UrNusMhwJVnxb]{震颤感知} 的生物处于 &amp;Reference[surprise]{突袭} 状态。</p></div></div><p>沃格的战术参见 @UUID[JournalEntry.PWK8ADZy5RgbwBAu.JournalEntryPage.djOYv32flHBv3LXK#vorg-infestation]{沃格滋生}。</p></section><p>@Embed[Actor.69yCeDhDktOWW5O0]</p><section class=\"block hazard\"><h4>阿布里克斯战术</h4><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>战斗开始时，@UUID[Actor.69yCeDhDktOWW5O0]{阿布里克斯} 会使用其 @UUID[Actor.69yCeDhDktOWW5O0.Item.2sV9jgOZ9nL7oT2d] 动作。</p></div><div data-system=\"crucible\"><p>战斗开始时，@UUID[Actor.69yCeDhDktOWW5O0] 会使用其 @UUID[Actor.69yCeDhDktOWW5O0.Item.callSkither00000] 动作，并用 @Spell[illumination.aspect] 强化自身。</p></div></div><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>整场战斗中，阿布里克斯会优先使用以下动作与能力：</p><ul><li><p>近战时，阿布里克斯会使用其 @UUID[Actor.69yCeDhDktOWW5O0.Item.YCxMD0LclLCMdhIc] 动作。</p></li><li><p>只要有机会，阿布里克斯就会移动过去与施法者交战，即便这会引发一次 @UUID[Compendium.dnd5e.content24.JournalEntry.phbAppendixCRule.JournalEntryPage.eNvzQabiTqTtfzis]{借机攻击}。</p></li><li><p>每当有斯基瑟的生命值降到上限的一半以下时，阿布里克斯就会使用其 @UUID[Actor.69yCeDhDktOWW5O0.Item.o073sZpHxpgrYyCA] 附赠动作。</p></li></ul></div><div data-system=\"crucible\"><p>整场战斗中，阿布里克斯会优先使用以下动作与能力：</p><ul><li><p>近战时，阿布里克斯会使用其 @Spell[illumination.strike]。</p></li><li><p>远程时，阿布里克斯会使用其 @Spell[illumination.ray]。</p></li><li><p>每当附近的斯基瑟使用其 @UUID[Actor.ZMLyUZaK76soqKx0.Item.radiantDeathBurs] 动作时，它会依靠自身的 @UUID[Actor.69yCeDhDktOWW5O0.Item.radiantAbsorptio] 特性恢复生命值。</p></li></ul></div></div><p>当阿布里克斯及其仆从全部被消灭时，战斗结束。阿布里克斯死去时，它的甲壳会凝结成一堆未知金属的熔融残骸。</p></section><p>一旦阿布里克斯及其仆从被击败，角色便可以探索这一区域。</p><section class=\"block exploration\"><h4>搜查最后的矿坑</h4><p>简单搜查这一区域便会发现以下物品：</p><ul><li><p>一大瓶墨水。</p></li><li><p>一张矿渊与三层矿井的地图。</p></li><li><p>几盏破碎的 @UUID[Item.dnzX0TSncwz6EbK4]{懒洋洋的灯}。</p></li><li><p>一颗 @UUID[Item.omZrpwjq5FJuyffF]{蓝色印卡罗珍珠}。</p></li><li><p>一些金属工具。</p></li><li><p>一具乔布里的头骨。</p></li></ul><p>任何检查这瓶墨水并通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill arcana 15]]</sub> <sub data-system=\"crucible\">[[/skillCheck arcana 15]]</sub></sup> 检定的角色，都能将其鉴定为 @UUID[Item.sWmD7INuv2mMZABt]{变幻墨水}。</p><ul class=\"complex-check\"><li class=\"automatic-success\"><p>[[/knowledge alchemy]]：该角色此次检定自动成功。</p></li></ul><p>此外，@UUID[JournalEntry.PWK8ADZy5RgbwBAu.JournalEntryPage.yObJp4josnr70zog]{艾梅琳·阿沃达} 也能鉴定这瓶墨水。</p><h4>阿布里克斯的地图</h4><p>任何查看这张矿渊地图的角色都会看到，每一处标出来的地点上都画着一个象征：</p><ul><li><p>酿酒坊：骷髅与交叉骨头的象征，以及一个红色的 X。</p></li><li><p>霍布的坐骑：一只侧躺着的蜥蜴图案、一团火焰，以及一个红色的 X。</p></li><li><p>佐迪·特拉斯克的住处：一块水晶。没有其他象征。</p></li><li><p>扳力修理行：一台破碎的机器和一个红色的 X。</p></li><li><p>阿沃达的灵药铺：一个问号。</p></li></ul><p>矿井部分也标着象征：</p><ul><li><p>枢纽厅：一个被数颗小球环绕的圆柱图案。</p></li><li><p>最后的矿坑：一把燃烧的剑。</p></li><li><p>最后的矿坑左侧的一个房间：书架。</p></li><li><p>书架房间西南方向的一个房间：试管。</p></li></ul><p>任何通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill investigation 14]]</sub> <sub data-system=\"crucible\">[[/skillCheck awareness 14]]</sub></sup> 检定的角色，都会推断出这张地图记录着阿布里克斯针对本地各家商铺采取的行动，并且西侧还有一个存放纸张或书籍的房间。</p><h4>隐藏房间</h4><p>任何查看该区域西南角并通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill investigation 14]]</sub> <sub data-system=\"crucible\">[[/skillCheck awareness 14]]</sub></sup> 检定的角色，都会发现一堵假墙。</p><ul class=\"complex-check\"><li class=\"automatic-success\"><p><strong>阿布里克斯的地图：</strong>若该角色查阅过阿布里克斯那张矿渊地图，则此次检定自动成功。</p></li></ul><p>推动这堵假墙，它便会摆开，露出后方的隐藏房间。</p><p>简单搜查这间隐藏房间便会发现以下物品：</p><ul><li><p>一件 @UUID[Item.l2Oc7eBtvb9rsNus]，挂在靠墙的衣帽架上。</p></li><li><p>书桌上的 @UUID[Item.AYDgFBnsqMR51Uqt]。</p></li><li><p>一叠往来书信。</p></li></ul><p>任何检查这件 @UUID[Item.l2Oc7eBtvb9rsNus] 的角色，都会在布料上找到一道很深的接缝；缝里藏着 @UUID[Item.hFBEeNSQct3Tgkhc]{给坦特林的讯息}。</p><p>任何通读这叠往来书信的角色都会发现以下几点：</p><ul><li><p>他们刚刚击败的那个阿布里克斯是被人派到这里来的，而在书信中，此人只被称作「辉耀领主」。</p></li><li><p>书信中多次提到万德伦家族；这并不一定表明他们是矿井中这些骚乱与生物的幕后黑手，反而更像是阿布里克斯在追踪他们的一部分行动，并从一名万德伦的联系人那里接收货物。</p></li><li><p>其中一份文件上出现了「For Other Fortunes」这几个字。</p></li></ul></section>"
             }
           }
         }
