@@ -20123,8 +20123,8 @@
           }
         },
         "Paint Globlin": {
-          "name": "绘画地精 Paint Globlin",
-          "tokenName": "绘制地精布林",
+          "name": "颜料格布林 Paint Globlin",
+          "tokenName": "颜料格布林",
           "items": {
             "Clobber": {
               "name": "痛打 Clobber",
@@ -30367,6 +30367,35 @@
               "overview": "<p>当队伍穿过圣堂区的演说者广场时，遇到了一位奥尔达尼公民，正向聚集的人群公开表达不满。通过聆听这位发言者，他们或许能对当前困扰奥尔丹的某项紧张局势获得一些认识。</p>",
               "exposition": "<p>前方聚集着一群当地人物，他们的注意力都集中在一个高声发言的人身上。你们走近后，看到有人站上临时讲台，公开宣泄一桩这座城市尚未解决的不满——至少，还没有以令其个人满意的方式解决。人群不安地骚动着；有些人发出嘲笑与喝倒彩，另一些人则给予鼓励。若你们停下脚步倾听，或许能从中看出这座城市困境的一些端倪。</p>",
               "summary": "<p>当我们穿过圣堂区的演说者广场时，遇到了一位奥尔达尼市民正在聚集的人群面前公开诉说个人的不满。</p>"
+            }
+          }
+        },
+        "Ushna Dredging Docks": {
+          "name": "乌什纳疏浚船坞 Ushna Dredging Docks",
+          "categories": {
+            "Overview": "总览",
+            "Lake Shore": "湖岸"
+          },
+          "pages": {
+            "Area Overview": {
+              "name": "区域总览 Area Overview",
+              "text": "<section class=\"block gamemaster\"><h4>区域地图背景</h4><p>@UUID[Scene.emberDredgerDock]{乌什纳疏浚船坞}区域地图描绘的是一座疏浚船坞，连同仓库与储料罐，属于更大的疏浚者海岸区域的一部分；它出现在@UUID[JournalEntry.emberDisturbedEa]{扰动之地}支线任务的 [[/eventState disturbedEarthDredging]] 阶段。</p><ul><li><p>该区域地图只有 1 个场景层级，涵盖整个船坞区域。</p></li><li><p>队伍从外侧的土路一端抵达。</p></li></ul></section><h2 class=\"divider\">玩法细节</h2><p>除非正文另有说明，乌什纳疏浚船坞的各处区域都具有以下特征。</p><h3 class=\"divider\">层级与高度</h3><p>乌什纳疏浚船坞场景只有一个层级，其区域沿湖岸分布为若干地点。</p><ul><li><p><strong>湖岸：</strong>船坞区域的绝大部分高度为 0，但此处湖水在离岸最远处深达 -6。</p></li></ul><h3 class=\"divider\">声响</h3><p>亚纳克干活的动静、头顶大型木吊车的转动，以及湖浪拍打码头的声音，汇成持续不断的嘈杂，但都不足以影响听觉。</p><h3 class=\"divider\">照明</h3><p>疏浚作业由自然光与提灯照明。</p><h3 class=\"divider\">地形</h3><p>只有湖水本身构成明显的困难地形：较深的水域需要游泳，其余部分只会拖慢穿行者的速度。</p><h3 class=\"divider\">居民</h3><p>船坞全天候由一班工人操作并占用，可用 @UUID[Actor.9plFRf3Hurd9r7ol]{阿克图里安} 角色来表示。</p><h3 class=\"divider\">敌人</h3><p>在 @UUID[JournalEntry.emberDisturbedEa]{扰动之地} 的事件期间，此处会遭遇以下敌人：</p><ul><li><p>@UUID[Actor.wbAp4vmr2fica606]{泥浆格布林}</p></li><li><p>堕化晶巉巨像</p></li><li><p>@UUID[Actor.tOoLvpL31LmVGQnx]{堕化者斯莱斯}</p></li></ul><p></p>"
+            },
+            "Gazetteer Reference": {
+              "name": "地名志参考 Gazetteer Reference",
+              "text": "<p>@Embed[JournalEntry.emberArctusGazet.JournalEntryPage.eNivhO6hTLwtZJEt inline]</p>"
+            },
+            "Foreman's Office": {
+              "name": "工头办公室 Foreman's Office",
+              "text": "<section class=\"block readaloud\"><p>工头办公室比外头的作业区更暖和、也更整洁，作业中的泥浆污垢从未真正沾上脚下这层质朴的木地板。房间正中立着一张书桌，上面堆满文书、账簿与封缄的信件。桌下铺着一张精致的奶白与金色地毯，对这片沾满泥浆的营生而言过于雅致，却被小心地护着，没让最脏的东西碰到。</p><p>一侧墙边立着书柜，放着账簿、手册、地图，以及几本保存良好的册子。与之相对的远墙边有一个柜子，里面是茶壶、茶杯，以及供漫长工作日消遣的零碎物件。</p></section><section class=\"block gamemaster\"><h4>「扰动之地」任务推进：乌什纳一家的重逢</h4><p>若队伍在 @UUID[JournalEntry.emberDisturbedEa] 的 [[/eventState disturbedEarthDredging]] 阶段造访此处，且有 @UUID[Actor.D7gZ1yQUxgWEQZeI] 同行，则：</p><ul><li><p>拉拉的父亲巴亚尔·乌什纳此刻正在办公室里。</p></li><li><p>请立刻参阅该事件的 @UUID[JournalEntry.emberDisturbedEa.JournalEntryPage.emberDredging000#ushna-family-reunion]{乌什纳一家的重逢} 一节，处理接下来与巴亚尔和拉拉的对话。</p></li></ul></section><p>中央书桌上放着 @UUID[Item.D0DYhzNM5e1LRYDS]{乌什纳疏浚船坞账簿} —— 一本厚实的皮面账簿，记录着进出货物。</p><section class=\"block social\"><h4>东道主的注视</h4><p>若雅弗塔·乌什纳陪同队伍，或办公室此刻由巴亚尔·乌什纳占用，他们会对查阅账簿一事抱有几分疑虑，但只要给出合理的说法 —— 比如调查 @UUID[JournalEntry.emberDisturbedEa] 期间奥里亚尔湖的淤泥与农业受扰之事 —— 他们并不介意队伍翻阅。</p></section><section class=\"block exploration\"><h4>字里行间</h4><p>任何仔细通读账簿并通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill investigation 13]]</sub><sub data-system=\"crucible\">[[/skillCheck science 13]]</sub></sup> 检定的角色，都会注意到奥里亚尔湖淤泥的出货量一直稳定，而运给乌什纳家的食物与其他货物却越来越少。这一差距直到本季才变得刺眼，但仔细核算便会发现：收货减少始于十一年前，此后缓慢却持续地恶化 —— 慢到刚好可以被当作自然波动而忽略过去。</p><ul class=\"complex-check\"><li class=\"advantage\"><p>[[/knowledge trade]]：该角色在此次检定上获得 @Advantage[2]。</p></li><li class=\"critical-success\"><p>@CriticalSuccess[13]：该角色还会注意到，在这场缓慢衰退开始之前的那一季里，有整整一个月的淤泥出货量出现过一次小幅且无从解释的下降。</p></li></ul></section><section class=\"block social\"><h4>口耳相传</h4><p>若向雅弗塔或巴亚尔·乌什纳问起十一年前的事，他们会回忆起：</p><ul><li><p>十一年前那场大地震之后不久，湖中出现了一次来源不明的怪异油污，使淤泥一度无法转化为表层土。</p></li><li><p>此事由前任船坞主管、已故的奥奇尔·乌什纳负责处理。</p></li><li><p>据雅弗塔与／或巴亚尔回忆，湖水在一周之内自行澄清、恢复如常，此后再未发生过类似事件。</p></li></ul></section>"
+            },
+            "Warehouse": {
+              "name": "仓库 Warehouse",
+              "text": "<section class=\"block readaloud\"><p>这座仓库是一栋宽敞的木构建筑，高处是椽子与横梁，脚下是被泥浆染污的木板地面。头顶的天窗把苍白的日光洒落下来，照在成堆的木桶、成卷的绳索，以及扫得干净、却已被无数双脚把泥浆碾进木纹里的地板上。</p><p>沉重的横梁上架着一套头顶绞盘系统，链条与吊钩的位置正好把装满淤泥的木桶吊起，再摆荡到货车棚，交给等候的运输车。</p><p>空场的一角辟作制桶作业区，桶板、铁箍、木槌、刨花与半成品的桶身围着一张结实的工作台摆开，而仓库另外几个角落则大多空着。</p></section><p>仓库内部那些空出来的地方，会向足够留心的人透露一段故事。</p><section class=\"block exploration\"><h4>不见了的箱子</h4><p>任何 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill perception 16 passive format=long]]，或通过一次 [[/skill perception 14]] 检定</sub><sub data-system=\"crucible\">[[/skillCheck awareness 14 passive]]</sub></sup> 的角色，都会发现仓库较空的那几侧留有凹痕与污渍，其方形轮廓与斑驳色泽，和乌什纳家所用的圆形泥桶留下的痕迹截然不同。</p><ul class=\"complex-check\"><li class=\"advantage\"><p>[[/knowledge forensics]]：该角色在此次检定上获得 @Advantage[2]。</p></li></ul><p>观察到这一点之后，若角色再通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill investigation 14]] </sub><sub data-system=\"crucible\">[[/skill society 14]]</sub></sup> 检定，便能推断出：这些空着的角落本该是存放到货的地方；出货的桶子看上去一如既往地多，而到货的规模却远不及地板磨损所暗示的当年光景。</p><ul class=\"complex-check\"><li class=\"advantage\"><p>[[/knowledge trade]]：该角色在此次检定上获得 @Advantage[2]。</p></li></ul></section><p>离开仓库时（或仔细查看仓库时），队伍能轻易发现钉在门框内侧的 @UUID[Item.TREjNOeb2PtIzZTo]。</p>"
+            },
+            "Outhouse": {
+              "name": "茅厕 Outhouse",
+              "text": "<section class=\"block readaloud\"><p>这间茅厕是一座朴素的小木棚，与繁忙的作业区隔开一段距离。里面有两个隔间，各自架在一口深坑之上，质朴的木板座面已被磨得光滑。这地方比外面看上去要宽敞些，但没有窗户，逼仄而昏暗。</p><p>里头的气味扑面而来、毫不留情，因为不通风而滞留在凝固的空气里。</p></section><p>茅厕内部一如其本性那般令人不适 —— 对一座整周无休、终日劳作的船坞来说，这并不意外。</p>"
             }
           }
         }
