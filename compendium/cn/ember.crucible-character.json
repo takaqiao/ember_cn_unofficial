@@ -1,12 +1,12 @@
 {
   "label": "角色选项 Character Options",
   "folders": {
-    "Ancestries": "祖裔 Ancestries",
-    "Attunements": "调谐 Attunements",
+    "Ancestries": "血统 Ancestries",
+    "Attunements": "同调 Attunements",
     "Cultures": "文化 Cultures",
     "Paths": "径 Paths",
     "Soulbound": "魂缚 Soulbound",
-    "Ancestry Features": "祖裔特性 Ancestry Features",
+    "Ancestry Features": "血统特性 Ancestry Features",
     "Attunement Features": "调谐特性 Attunement Features",
     "Culture Features": "文化特征 Culture Features",
     "Special": "特殊 Special"
@@ -41,7 +41,7 @@
       "description": "<p>你曾花时间拜访或向位于南方岛屿维塔里上克朗的安珀最杰出的炼金术士学习。你在那里的经历让你对制造强效炼金灵药所需的试剂、灌注物与精华有了更深入的知识。你在这一领域的知识使你更容易辨认炼金材料及其性质，或理解以炼金方式制成的物质所产生的效果。</p><p>克朗的炼金术士以将元素能量灌注于造物之中、提升并强化其效力而闻名。这门技艺需要对元素生物及其能力具备相当深入的知识。作为你在克朗经历的副产物，你还获得了一些关于元素生物、它们的各种类型，以及其内在属性的不寻常知识。</p>"
     },
     "Abyss Attunement": {
-      "name": "深渊调谐 Abyss Attunement",
+      "name": "深渊同调 Abyss Attunement",
       "description": "<p>你的灵魂并未与余烬的宇宙诸力产生共鸣，取而代之的是，你同调于 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.06I8t0GPggrMVnGV]{深渊} 那令人不安的牵引，以及它所代表的哲学理念——<strong>虚无主义</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>虚空</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAbyssAttune abyssMarkUnmaking] 动作，让你在击败被标记的敌人时回复<strong>专注</strong>。</p></li><li><p><strong>阶位 3</strong>：你的专注上限，按同调阶位每超过 2 一阶便提高 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>深渊</strong>施法屈折，可施加于使用<strong>湮灭</strong>符文的法术。造成暴击时，回复该法术的专注消耗并额外回复 2 点专注，每回合一次。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAbyssAttune abyssUntethering] 动作，消耗英雄气概对单一目标造成巨量虚空伤害。</p></li></ul>",
       "actions": {
         "abyssMarkUnmaking": {
@@ -56,7 +56,7 @@
       }
     },
     "Akon Attunement": {
-      "name": "阿肯调谐 Akon Attunement",
+      "name": "阿肯同调 Akon Attunement",
       "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3Oywe0peo57dQT9j]{阿肯}——破碎之月——产生同调共鸣，以及它所代表的哲学理念——<strong>纪律</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>穿刺</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAkonAttunem akonForesight] 反应，让你预测一次掷骰的结果，并在预测正确时回复<strong>专注</strong>。</p></li><li><p><strong>阶位 3</strong>：你的<strong>招架</strong>防御，按同调阶位每超过 2 一阶便提高 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>阿肯</strong>施法屈折，可施加于使用<strong>念力</strong>符文的法术。该法术会自动造成敌人最易伤的那种物理伤害类型。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAkonAttunem akonInevitability] 反应，标记一名敌人，迫使其策略在每轮开始时被公开。</p></li></ul>",
       "actions": {
         "akonForesight": {
@@ -164,7 +164,7 @@
       "description": "<p>你的变异让你有别于你血统中的其他人。你可能会显现出转变带来的身体特征，也可能这些差异隐藏于内在，从根本层面塑造着你。没有任何两个阿斯特是完全相同的，而你的形态完全属于你自己。</p>"
     },
     "Aura Attunement": {
-      "name": "灵气调谐 Aura Attunement",
+      "name": "灵气同调 Aura Attunement",
       "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR]{灵气}——空心之月——产生同调共鸣，以及它所代表的哲学理念——<strong>个人主义</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>电击</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraSlipstream] 动作，在你移动之后以空气的错位环绕自身。</p></li><li><p><strong>阶位 3</strong>：你的<strong>步幅</strong>，按同调阶位每超过 2 一阶便提高 2。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>灵气</strong>施法屈折，可施加于使用<strong>风暴</strong>符文的法术。施法之后，你回复你的<strong>免费移动</strong>。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraBoundless] 动作，获得飞行能力并免疫一系列妨碍移动的状态。</p></li></ul> ",
       "actions": {
         "auraSlipstream": {
@@ -307,7 +307,7 @@
       }
     },
     "Cora Attunement": {
-      "name": "科拉调谐 Cora Attunement",
+      "name": "科拉同调 Cora Attunement",
       "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.5pD8lxiilJJXOgoa]{科拉}——焦裂之月——产生同调共鸣，以及它所代表的哲学理念——<strong>实用主义</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>强酸</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberCoraAttunem coraAftershock] 反应，在你成功防御一次近战攻击时将攻击者击退。</p></li><li><p><strong>阶位 3</strong>：你的<strong>格挡</strong>防御，按同调阶位每超过 2 一阶便提高 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>科拉</strong>施法屈折，可施加于使用<strong>大地</strong>符文的法术。造成暴击时，所有受伤的敌人陷入@Condition[restrained]状态，持续 1 个回合。</p></li> <li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberCoraAttunem coraGraviturgicCrush] 动作，制造一个把敌人向内拉扯的引力漩涡。</p></li></ul>",
       "actions": {
         "coraAftershock": {
@@ -376,7 +376,7 @@
       }
     },
     "Heart Attunement": {
-      "name": "心之调谐 Heart Attunement",
+      "name": "心之同调 Heart Attunement",
       "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.0anKTKgOav9sXox1]{余烬之心} 的生命力能量产生共鸣，以及它所代表的哲学理念——<strong>生机主义</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>腐化</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberHeartAttune heartHallow] 动作，为不死生物与外来者敌人打上光耀报应的印记。</p></li><li><p><strong>阶位 3</strong>：你的<strong>生命值</strong>上限，按同调阶位每超过 2 一阶便在每级提高相应数值（阶位 3 为 +2，阶位 4 为 +4，阶位 5 为 +6）。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>余烬</strong>施法屈折，可施加于使用<strong>生命</strong>符文的法术。生命符文会对敌人造成<strong>光耀</strong>伤害，同时仍为盟友提供恢复。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberHeartAttune heartSparkOfEmber] 动作，可以复活新近死者，或以光耀的裁决放逐不死生物。</p></li></ul>",
       "actions": {
         "heartHallow": {
@@ -472,7 +472,7 @@
       "description": "<p>你身上的发光纹身与余烬诸元素之月的能量共鸣。当一轮或多轮月亮处于满月时，你获得对应伤害类型的 <strong>+2 抗性</strong>：</p><ul><li><p><strong>灵气</strong> - <strong>电击 </strong>抗性</p></li><li><p><strong>科拉</strong> - <strong>强酸 </strong>抗性</p></li><li><p><strong>玛伊斯</strong> - <strong>寒冷 </strong>抗性</p></li><li><p><strong>拉根</strong> - <strong>火焰 </strong>抗性</p></li><li><p><strong>阿肯</strong> - <strong>穿刺 </strong>抗性</p></li><li><p><strong>奥比斯</strong> - <strong>灵能 </strong>抗性</p></li></ul>"
     },
     "Luxarum Attunement": {
-      "name": "卢克萨鲁姆调谐 Luxarum Attunement",
+      "name": "卢克萨鲁姆同调 Luxarum Attunement",
       "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.pPU6VZV7WFubtcSR]{卢克萨鲁姆}——无尽战争之界——产生同调共鸣，以及它所代表的哲学理念——<strong>野心</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>光耀</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberLuxarumAttu luxarumEternalVengeance] 反应，在你被暴击时充满正义的热忱。</p></li><li><p><strong>阶位 3</strong>：你的<strong>坚韧防御</strong>，按同调阶位每超过 2 一阶便提高 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>卢克萨鲁姆</strong>施法屈折，可施加于使用<strong>照明</strong>符文的法术。每个被击中的敌人都会被照亮，并陷入@Condition[exposed]状态，持续 1 个回合。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberLuxarumAttu luxarumTyraphicCrusade] 动作，跃入空中投下一记光耀爆发，并按受伤目标数量返还动作。</p></li></ul> ",
       "actions": {
         "luxarumEternalVengeance": {
@@ -487,7 +487,7 @@
       }
     },
     "Mayis Attunement": {
-      "name": "梅伊丝调谐 Mayis Attunement",
+      "name": "梅伊丝同调 Mayis Attunement",
       "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.RkdBtFQk7STvMbV2]{玛伊斯}——狂澜之月——产生同调共鸣，以及它所代表的哲学理念——<strong>耐心</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>寒冷</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberMayisAttune mayisRestorativeRedirection] 反应，把被抵抗掉的法术能量导向附近的盟友以治疗对方。</p></li> <li><p><strong>阶位 3</strong>：你的<strong>治疗阈值</strong>，按同调阶位每超过 2 一阶便降低 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>玛伊斯</strong>施法屈折，可施加于使用<strong>霜冻</strong>符文的法术。霜冻符文会为盟友提供恢复，同时仍对敌人造成<strong>寒冷</strong>伤害。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberMayisAttune mayisRestorationOfTheDeep] 动作，以一道弧形涌流治疗盟友并净除持续伤害。</p></li></ul> ",
       "actions": {
         "mayisRestorativeRedirection": {
@@ -517,7 +517,7 @@
       }
     },
     "Orbis Attunement": {
-      "name": "奥比斯调谐 Orbis Attunement",
+      "name": "奥比斯同调 Orbis Attunement",
       "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.zkmWSB32y8Fbc4UL]{奥比斯}——灵魂之月——产生同调共鸣，以及它所代表的哲学理念——<strong>率性</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>灵能</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberOrbisAttune orbisChaoticRefraction] 动作，让随机的恩惠骰与祸骰涌入你的下一个动作。</p></li><li><p><strong>阶位 3</strong>：你的<strong>士气</strong>上限，按同调阶位每超过 2 一阶便在每级提高相应数值（阶位 3 为 +2，阶位 4 为 +4，阶位 5 为 +6）。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>奥比斯 </strong>施法屈折，可施加于使用<strong>灵魂</strong>符文的法术。灵魂符文会对敌人造成<strong>灵能</strong>伤害，同时仍为盟友提供士气恢复。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberOrbisAttune orbisPandemonium] 动作，以令人癫狂的灵能冲击附近敌人的心智。</p></li></ul>",
       "actions": {
         "orbisChaoticRefraction": {
@@ -544,7 +544,7 @@
       "description": "<p>你在<strong>察觉</strong>与荒野这两项技能上，始终至少视为已受过<strong>训练</strong>。如果你已经受过训练，则此类<strong>技能检定</strong>以<strong>+1 恩惠</strong>进行。</p><p>此外，除非你处于<strong>失能</strong>、<strong>失聪</strong>或<strong>目盲</strong>状态，否则你不会陷入 @Condition[unaware]。</p>"
     },
     "Primordis Attunement": {
-      "name": "普里莫迪斯调谐 Primordis Attunement",
+      "name": "普里莫迪斯同调 Primordis Attunement",
       "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.16sqn71JsCkghaTt]{普里莫迪斯}——无常巫术之界——产生同调共鸣，以及它所代表的哲学理念——<strong>狡诈</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>毒素</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberPrimordisAt primordisSlipIntoShadow] 动作，让你在未被交战时隐没于黑暗之中。</p></li><li><p><strong>阶位 3</strong>：你的<strong>反射</strong>防御，按同调阶位每超过 2 一阶便提高 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>原初</strong>施法屈折，可施加于使用<strong>幻象</strong>符文的法术。造成暴击时，你陷入@Condition[invisible]状态，直到你下个回合开始。</p></li> <li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberPrimordisAt primordisPredatorsShadow] 动作，从隐形中发动攻击，造成毁灭性的毒素伤害。</p></li></ul>",
       "actions": {
         "primordisSlipIntoShadow": {
@@ -565,7 +565,7 @@
       }
     },
     "Ragen Attunement": {
-      "name": "拉根调谐 Ragen Attunement",
+      "name": "拉根同调 Ragen Attunement",
       "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.LKptgmc56euSOb0G]{拉根}——焦炭之月——产生同调共鸣，以及它所代表的哲学理念——<strong>直率</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>火焰</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberRagenAttune ragenFurnaceBlast] 反应，在你被暴击时以烈火反击。</p></li><li><p><strong>阶位 3</strong>：你的<strong>先攻</strong>，按同调阶位每超过 2 一阶便提高 1。 </p></li><li><p><strong>阶位 4</strong>：你解锁<strong>拉根 </strong>施法屈折，可施加于使用<strong>火焰</strong>符文的法术。若该法术会使任何一个敌人陷入@Condition[burning]，则它会使所有敌人都陷入@Condition[burning]。</p></li> <li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberRagenAttune ragenImmolatingRejuvenation] 动作，耗尽你剩余的生命值以灼烧附近敌人，并获得快速再生。</p></li></ul>",
       "actions": {
         "ragenFurnaceBlast": {
@@ -593,7 +593,7 @@
       "description": "<p><strong>测试版二</strong>：该天赋尚未按《Crucible》机制更新。</p>"
     },
     "Signara Attunement": {
-      "name": "西格纳拉调谐 Signara Attunement",
+      "name": "西格纳拉同调 Signara Attunement",
       "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3OvueRrGcFnwtnmw]{西格纳拉}——无餍好奇之界——产生同调共鸣，以及它所代表的哲学理念——<strong>好奇</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>钝击</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberSignaraAttu signaraStudiousCounter] 动作，使一名你已知晓的敌人对你采取的每个动作都承受一个祸骰。</p></li> <li><p><strong>阶位 3</strong>：你的<strong>意志力</strong>防御，按同调阶位每超过 2 一阶便提高 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>西格纳拉</strong>施法屈折，可施加于使用<strong>控制</strong>符文的法术。造成暴击时，你立即获得 <strong>+2 动作</strong>，每回合一次。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberSignaraAttu signaraImpartTruth] 动作，恢复一个疯狂生物的清明，或击碎一个神智正常者的士气。</p></li></ul>",
       "actions": {
         "signaraStudiousCounter": {
