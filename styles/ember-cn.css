@@ -1,0 +1,47 @@
+/*
+ * ember-cn.css —— 中文排版修正
+ *
+ * 问题：Ember 的标题字体是 `Pirate Scroll`，正文是 `Vollkorn`。实测这两个字体文件
+ * 里**一个中日韩字形都没有**（PirateScroll.otf 99 个码位、Vollkorn.ttf 1222 个码位，
+ * CJK 均为 0）。回退链的末端只有一个 `serif`，中文标题会掉到浏览器的默认衬线字体上，
+ * 在 Windows 上通常是宋体，字重与行高都和周围的装饰性排版对不上。
+ *
+ * 做法：不替换原字体，而是在回退链后面补上中文字体。浏览器的字体回退是**逐字形**的，
+ * 所以拉丁字母仍然用 Pirate Scroll / Vollkorn 渲染，只有中文字符落到后面的中文字体上，
+ * Ember 的视觉风格得以保留。
+ *
+ * 为什么不打包字体文件：一套中文字体动辄 10 MB 以上，会让模块体积翻好几倍；
+ * 为什么不挂 Google Fonts：国内取不到，会静默失败并卡住页面加载。
+ * 因此只用系统已有的字体，按 Windows / macOS / Linux 顺序排列。
+ */
+
+.ember {
+  /* 标题：思源宋体 → 苹方(macOS) → 宋体(Windows) → 文泉驿(Linux) */
+  --font-header: "Pirate Scroll", "Noto Serif CJK SC", "Source Han Serif SC",
+    "Songti SC", "SimSun", "WenQuanYi Micro Hei", serif;
+
+  /* 正文：优先无衬线，小字号下比宋体清晰得多 */
+  --font-body: "Vollkorn", "Noto Sans CJK SC", "Source Han Sans SC",
+    "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", serif;
+  --font-serif: "Vollkorn", "Noto Serif CJK SC", "Source Han Serif SC",
+    "Songti SC", "SimSun", "WenQuanYi Micro Hei", serif;
+  --font-sans: "Signika", "Noto Sans CJK SC", "Source Han Sans SC",
+    "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+/*
+ * Ember 的标题带 0.2em 字距，那是为拉丁文的小型大写效果设计的。
+ * 中文本来就是等宽方块字，再加这么大的字距会散得读不成句。
+ */
+.ember .ember-header,
+.ember h1,
+.ember h2,
+.ember h3 {
+  letter-spacing: 0.05em;
+}
+
+/* 中文没有词间空格，行高压得太紧会显得挤 */
+.ember .journal-entry-content,
+.ember .ember-content {
+  line-height: 1.7;
+}

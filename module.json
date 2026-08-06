@@ -17,7 +17,8 @@
     "maximum": "14.999"
   },
   "esmodules": [
-    "register.js"
+    "register.js",
+    "scripts/ember-hardcoded-cn.mjs"
   ],
   "languages": [
     {
@@ -49,5 +50,8 @@
         }
       }
     ]
-  }
+  },
+  "styles": [
+    "styles/ember-cn.css"
+  ]
 }
