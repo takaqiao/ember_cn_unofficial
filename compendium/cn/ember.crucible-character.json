@@ -8,12 +8,13 @@
     "Soulbound": "魂缚 Soulbound",
     "Ancestry Features": "祖裔特性 Ancestry Features",
     "Attunement Features": "调谐特性 Attunement Features",
-    "Culture Features": "文化特征 Culture Features"
+    "Culture Features": "文化特征 Culture Features",
+    "Special": "特殊 Special"
   },
   "entries": {
     "Oaken": {
       "name": "奥肯 Oaken",
-      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.k7bsL7HRGcz4P314 inline 概览]</p>"
+      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.k7bsL7HRGcz4P314 inline overview]</p>"
     },
     "Academy Dropout": {
       "name": "学院辍学生 Academy Dropout",
@@ -41,11 +42,39 @@
     },
     "Abyss Attunement": {
       "name": "深渊调谐 Abyss Attunement",
-      "description": "<p>你的灵魂中没有与余烬宇宙诸力产生共鸣，取而代之的是，你同调于 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.06I8t0GPggrMVnGV]{深渊} 那令人不安的牵引，以及其哲学理念——<strong>虚无主义</strong>。</p><p>你获得等同于你的同调力量 2 倍的<strong>虚空</strong><strong>伤害</strong>抗性。</p><p><em>在更高的调谐等级时将解锁进一步的效果。</em></p>"
+      "description": "<p>你的灵魂并未与余烬的宇宙诸力产生共鸣，取而代之的是，你同调于 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.06I8t0GPggrMVnGV]{深渊} 那令人不安的牵引，以及它所代表的哲学理念——<strong>虚无主义</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>虚空</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAbyssAttune abyssMarkUnmaking] 动作，让你在击败被标记的敌人时回复<strong>专注</strong>。</p></li><li><p><strong>阶位 3</strong>：你的专注上限，按同调阶位每超过 2 一阶便提高 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>深渊</strong>施法屈折，可施加于使用<strong>湮灭</strong>符文的法术。造成暴击时，回复该法术的专注消耗并额外回复 2 点专注，每回合一次。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAbyssAttune abyssUntethering] 动作，消耗英雄气概对单一目标造成巨量虚空伤害。</p></li></ul>",
+      "actions": {
+        "abyssMarkUnmaking": {
+          "name": "湮解印记 Mark of Unmaking",
+          "description": "<p>对你刚刚造成暴击的、60 英尺内的目标施加一道深渊印记。若你随后使该生物陷入@Condition[weakened]、@Condition[broken] 或 @Condition[dead]，你便收获 <strong>+2 专注</strong>。该印记会一直存在，直到被消耗，或直到你对另一个目标施加新的印记。</p>",
+          "condition": "你对一名敌人造成了暴击。"
+        },
+        "abyssUntethering": {
+          "name": "断系 Untethering",
+          "description": "<p>你冲击单一生物的<strong>坚韧防御</strong>，造成巨量<strong>虚空</strong>伤害。成功时，该生物的<strong>士气</strong>立即降为零，且所造成的全部伤害都直接计入<strong>疯狂</strong>。此外，目标陷入@Condition[entropy]状态，持续 10 轮。此动作以你<strong>力量</strong>、<strong>坚韧</strong>或<strong>敏捷</strong>中最高的属性进行成长。</p>"
+        }
+      }
     },
     "Akon Attunement": {
       "name": "阿肯调谐 Akon Attunement",
-      "description": "<p>你的灵魂与你对 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3Oywe0peo57dQT9j]{阿肯}——破碎之月——及其哲学理念<strong>纪律</strong>的同调产生共鸣。</p><p>你获得对<strong>钝击</strong>、<strong>穿刺</strong>和<strong>挥砍</strong>伤害的抗性，其数值等于你的同调力量。</p><p><em>在更高的调谐等级时，将解锁更多效果。</em></p>"
+      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3Oywe0peo57dQT9j]{阿肯}——破碎之月——产生同调共鸣，以及它所代表的哲学理念——<strong>纪律</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>穿刺</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAkonAttunem akonForesight] 反应，让你预测一次掷骰的结果，并在预测正确时回复<strong>专注</strong>。</p></li><li><p><strong>阶位 3</strong>：你的<strong>招架</strong>防御，按同调阶位每超过 2 一阶便提高 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>阿肯</strong>施法屈折，可施加于使用<strong>念力</strong>符文的法术。该法术会自动造成敌人最易伤的那种物理伤害类型。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAkonAttunem akonInevitability] 反应，标记一名敌人，迫使其策略在每轮开始时被公开。</p></li></ul>",
+      "actions": {
+        "akonForesight": {
+          "name": "预视 Foresight",
+          "description": "<p>在本战斗轮中尚无任何生物行动之前，口头宣告一项具体的预言：某个指名的角色将执行某个特定动作，并得到<strong>成功</strong>或<strong>失败</strong>其中一类结果。若预言应验，你可以使用此反应回复 <strong>+1 专注</strong>。</p>",
+          "condition": "某个生物执行了你此前宣告的动作。"
+        },
+        "akonInevitability": {
+          "name": "必然 Inevitability",
+          "description": "<p>在战斗轮开始时、尚无任何生物行动之前，你宣告一名可见敌人的命运。此后每轮开始时，在你宣告<strong>预视</strong>之前，游戏主持人必须公开宣布该生物在其回合将采取的策略，并且除非该策略变得不可能，否则必须照此执行。</p>",
+          "condition": "在战斗轮开始时，尚无任何生物行动之前。",
+          "effects": [
+            {
+              "name": "必然 Inevitability"
+            }
+          ]
+        }
+      }
     },
     "Altyra Lineage": {
       "name": "阿尔提拉血统 Altyra Lineage",
@@ -53,77 +82,82 @@
       "actions": {
         "tyraphicTransformation": {
           "name": "泰拉菲克变形",
-          "description": "<p>你可以让自己暂时获得提拉斐姆的面容与能力，呈现出异界般的形貌。处于变形状态时，你获得以下收益。</p><ul><li><p>你获得对<strong>光耀</strong>伤害的抗性，数值等于你等级的2倍。</p></li><li><p>你的攻击造成额外<strong>光耀</strong>伤害，数值等于你<strong>气场</strong>的一半。</p></li><li><p>你在使用<strong>威吓</strong>技能时获得<strong>+2 恩惠</strong>。</p></li></ul><p>你可以在自己回合中于持续时间结束前提前结束此次变形，且无需消耗任何代价。</p>"
+          "description": "<p>你可以让自己暂时获得提拉斐姆的面容与能力，呈现出异界般的形貌。处于变形状态时，你获得以下收益。</p><ul><li><p>你获得对<strong>光耀</strong>伤害的抗性，数值等于你等级的2倍。</p></li><li><p>你的攻击造成额外<strong>光耀</strong>伤害，数值等于你<strong>气场</strong>的一半。</p></li><li><p>你在使用<strong>威吓</strong>技能时获得<strong>+2 恩惠</strong>。</p></li></ul><p>你可以在自己回合中于持续时间结束前提前结束此次变形，且无需消耗任何代价。</p>",
+          "effects": [
+            {
+              "name": "提拉法转化 Tyraphic Transformation"
+            }
+          ]
         }
       }
     },
     "Altyra": {
       "name": "阿尔提拉 Altyra",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.tkGzfnJkkLZ3cgpG inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.tkGzfnJkkLZ3cgpG inline overview]</p>"
     },
     "Ashka": {
       "name": "阿什卡 Ashka",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.QIC15zfqh4Ndzgha inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.QIC15zfqh4Ndzgha inline overview]</p>"
     },
     "Cor'ak": {
       "name": "科拉克 Cor'ak",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.blm7nVaaSYLZX3C9 inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.blm7nVaaSYLZX3C9 inline overview]</p>"
     },
     "Drakon": {
       "name": "龙裔 Drakon",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.GRs2vgeVsDpWPqjh inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.GRs2vgeVsDpWPqjh inline overview]</p>"
     },
     "Fej": {
       "name": "费伊杰 Fej",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.fmhP7pxXIXV0BM2r inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.fmhP7pxXIXV0BM2r inline overview]</p>"
     },
     "Hulg'run": {
       "name": "赫尔格伦 Hulg'run",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.K28cb1q6tvU8FP8B inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.K28cb1q6tvU8FP8B inline overview]</p>"
     },
     "Human": {
       "name": "人类 Human",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.p7n66fVhfJCkGd4z inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.p7n66fVhfJCkGd4z inline overview]</p>"
     },
     "Keth": {
       "name": "凯思 Keth",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.bOPreM2lwc0iB46X inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.bOPreM2lwc0iB46X inline overview]</p>"
     },
     "Kiska": {
       "name": "基斯卡 Kiska",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.tyum0IGWIODRfitO inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.tyum0IGWIODRfitO inline overview]</p>"
     },
     "Kivahr": {
       "name": "基瓦尔 Kivahr",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.rl7QgGAIaYqAxLYq inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.rl7QgGAIaYqAxLYq inline overview]</p>"
     },
     "Nir'ae": {
       "name": "尼尔艾 Nir'ae",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.QgnKHUryvNrNqRfN inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.QgnKHUryvNrNqRfN inline overview]</p>"
     },
     "Signborn": {
       "name": "印记裔 Signborn",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.p6DGVnaLHZfLvGem inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.p6DGVnaLHZfLvGem inline overview]</p>"
     },
     "Thornling": {
       "name": "荆芽灵 Thornling",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.3s9YujjWpwPJntGa inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.3s9YujjWpwPJntGa inline overview]</p>"
     },
     "Vrjnhar": {
       "name": "弗尔金哈尔 Vrjnhar",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.0YvoRkcs1BxtRiQz inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.0YvoRkcs1BxtRiQz inline overview]</p>"
     },
     "Wirrun": {
       "name": "威伦 Wirrun",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.PYCLsQgKclg5toxT inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.PYCLsQgKclg5toxT inline overview]</p>"
     },
     "Zeph": {
       "name": "泽夫 Zeph",
-      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.eyvVaX4c1rMos0ws inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberAncestries0.JournalEntryPage.eyvVaX4c1rMos0ws inline overview]</p>"
     },
     "Ashka Lineage": {
       "name": "阿什卡血统 Ashka Lineage",
-      "description": "<p>你在水中时的<strong>移动</strong>不受减值影响。你在水下时最多可以屏息二十分钟。</p><p>你可以精准地察觉温度的细微差异，使你能够定位 60 尺内温血生物或其他会散发热量的生物，只要它们不在完全掩蔽之后，且你没有<strong>目盲</strong>或<strong>失能</strong>。使用热视觉探测到的生物，在需要你看见目标的动作中视为可见。</p><p><strong>ALPHA ONE: </strong>此特性尚未自动化。</p>"
+      "description": "<p>你在水中时<strong>步幅</strong>不受减值。你在水下最多可以屏息二十分钟。</p><p>你能精确地通过温度差异感知世界，从而定位体温偏离环境常态的生物。只要目标未处于完全掩蔽之后，且你未陷入@Condition[blinded]或@Condition[incapacitated]状态，你便能探测到 60 英尺内体温为<strong>冰寒</strong>、<strong>凉冷</strong>、<strong>温热</strong>或<strong>沸腾</strong>的生物。以这种方式探测到的生物，在需要你看见目标的动作中视为可见。</p>"
     },
     "Aster": {
       "name": "阿斯特 Aster",
@@ -131,7 +165,28 @@
     },
     "Aura Attunement": {
       "name": "灵气调谐 Aura Attunement",
-      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR]{灵气}——空洞之月——及其哲学理念<strong>个人主义</strong>产生了同调。</p><p>你获得对<strong>电击</strong>伤害的抗性，数值等于你同调力量的 2 倍。</p><p><em>更高的调谐等级将解锁更多效果。</em></p>"
+      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR]{灵气}——空心之月——产生同调共鸣，以及它所代表的哲学理念——<strong>个人主义</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>电击</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraSlipstream] 动作，在你移动之后以空气的错位环绕自身。</p></li><li><p><strong>阶位 3</strong>：你的<strong>步幅</strong>，按同调阶位每超过 2 一阶便提高 2。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>灵气</strong>施法屈折，可施加于使用<strong>风暴</strong>符文的法术。施法之后，你回复你的<strong>免费移动</strong>。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraBoundless] 动作，获得飞行能力并免疫一系列妨碍移动的状态。</p></li></ul> ",
+      "actions": {
+        "auraSlipstream": {
+          "name": "气隙 Slipstream",
+          "description": "<p>你制造出一道气隙，使你的身形随空气的错位而闪烁不定。直到你下个回合开始前，你的<strong>闪避</strong>与<strong>反射</strong>防御各提高 +1。一旦你受到任何来源的伤害，气隙即告崩溃。</p>",
+          "condition": "你在本回合使用了移动动作。",
+          "effects": [
+            {
+              "name": "气隙 Slipstream"
+            }
+          ]
+        },
+        "auraBoundless": {
+          "name": "无垠 Boundless",
+          "description": "<p>持续 6 轮，你可以飞行，且不会陷入@Condition[slowed]、@Condition[prone]、@Condition[restrained]、@Condition[staggered]、@Condition[stunned] 或 @Condition[paralyzed] 状态。无垠生效期间，你使用<strong>风暴</strong>符文施放的所有法术都获得<strong>强化</strong>。</p>",
+          "effects": [
+            {
+              "name": "无垠 Boundless"
+            }
+          ]
+        }
+      }
     },
     "Abyss": {
       "name": "深渊 Abyss",
@@ -143,7 +198,7 @@
     },
     "Arcturian": {
       "name": "阿克图里亚人 Arcturian",
-      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.8cGPxMRewkagoIvc inline 概览]</p>"
+      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.8cGPxMRewkagoIvc inline overview]</p>"
     },
     "Aura": {
       "name": "灵气 Aura",
@@ -151,11 +206,11 @@
     },
     "Bejak": {
       "name": "贝雅克 Bejak",
-      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.A1uPGhtaDifW8Sph inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.A1uPGhtaDifW8Sph inline overview]</p>"
     },
     "Cascilian": {
       "name": "卡斯奇利亚人 Cascilian",
-      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.Ed7ttdIwKm95IdUG inline 概览]</p>"
+      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.Ed7ttdIwKm95IdUG inline overview]</p>"
     },
     "Cora": {
       "name": "科拉 Cora",
@@ -167,19 +222,19 @@
     },
     "Kelmezian": {
       "name": "凯尔梅兹安 Kelmezian",
-      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.SySGCB7QdgeKowkD inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.SySGCB7QdgeKowkD inline overview]</p>"
     },
     "Kessian": {
       "name": "凯西安 Kessian",
-      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.1WoH2TVw0gngrgWL inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.1WoH2TVw0gngrgWL inline overview]</p>"
     },
     "Kithil": {
       "name": "基希尔 Kithil",
-      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.IOBQMGUigqxn3UkM inline 概览]</p>"
+      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.IOBQMGUigqxn3UkM inline overview]</p>"
     },
     "Lumek": {
       "name": "卢梅克 Lumek",
-      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.f52WC5ZzNSK0yKOz inline 概览]</p>"
+      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.f52WC5ZzNSK0yKOz inline overview]</p>"
     },
     "Luxarum": {
       "name": "卢克萨鲁姆 Luxarum",
@@ -191,7 +246,7 @@
     },
     "Maziran": {
       "name": "马兹兰 Maziran",
-      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.cYMQIQFugpO79L9f inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.cYMQIQFugpO79L9f inline overview]</p>"
     },
     "Orbis": {
       "name": "奥比斯 Orbis",
@@ -199,7 +254,7 @@
     },
     "Ordani": {
       "name": "奥尔达尼 Ordani",
-      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.RxhlhTWqJqB1cZxY inline 概览]</p>"
+      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.RxhlhTWqJqB1cZxY inline overview]</p>"
     },
     "Primordis": {
       "name": "普里莫迪斯 Primordis",
@@ -211,11 +266,11 @@
     },
     "Railen": {
       "name": "莱伦 Railen",
-      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.y4WHE3TEr6Of13SL inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.y4WHE3TEr6Of13SL inline overview]</p>"
     },
     "Rhivan": {
       "name": "里凡 Rhivan",
-      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.emFVgDaCDq0lWY2b inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.emFVgDaCDq0lWY2b inline overview]</p>"
     },
     "Signara": {
       "name": "西格纳拉 Signara",
@@ -223,19 +278,19 @@
     },
     "Strider": {
       "name": "疾行者 Strider",
-      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.VHQNztu45XEHuvtY inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.VHQNztu45XEHuvtY inline overview]</p>"
     },
     "Tayan": {
       "name": "塔扬 Tayan",
-      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.bG3kuSiwqMnIHSrH inline 概览]</p>"
+      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.bG3kuSiwqMnIHSrH inline overview]</p>"
     },
     "Waerd": {
       "name": "瓦尔德 Waerd",
-      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.MsiM0222IPxjGTQQ inline 概览]</p>"
+      "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.MsiM0222IPxjGTQQ inline overview]</p>"
     },
     "Wardcall": {
       "name": "守护召唤 Wardcall",
-      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.xImbz6Nf4mMxtKF1 inline 概览]</p>"
+      "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.xImbz6Nf4mMxtKF1 inline overview]</p>"
     },
     "Cleansing Flame": {
       "name": "净化之焰 Cleansing Flame",
@@ -253,7 +308,18 @@
     },
     "Cora Attunement": {
       "name": "科拉调谐 Cora Attunement",
-      "description": "<p>你的灵魂与@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.5pD8lxiilJJXOgoa]{科拉}——焦灼之月——产生了同调，并与其哲学理念<strong>实用主义</strong>共鸣。</p><p>你获得<strong>强酸</strong>伤害抗性，数值等于你同调力量的 2 倍。</p><p><em>更高的同调等级将解锁进一步的效果。</em></p>"
+      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.5pD8lxiilJJXOgoa]{科拉}——焦裂之月——产生同调共鸣，以及它所代表的哲学理念——<strong>实用主义</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>强酸</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberCoraAttunem coraAftershock] 反应，在你成功防御一次近战攻击时将攻击者击退。</p></li><li><p><strong>阶位 3</strong>：你的<strong>格挡</strong>防御，按同调阶位每超过 2 一阶便提高 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>科拉</strong>施法屈折，可施加于使用<strong>大地</strong>符文的法术。造成暴击时，所有受伤的敌人陷入@Condition[restrained]状态，持续 1 个回合。</p></li> <li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberCoraAttunem coraGraviturgicCrush] 动作，制造一个把敌人向内拉扯的引力漩涡。</p></li></ul>",
+      "actions": {
+        "coraAftershock": {
+          "name": "余震 Aftershock",
+          "description": "<p>你以一记震荡余震反击，将攻击者击退 3 英尺。若目标处于 @Condition[restrained] 或 @Condition[staggered] 状态，则击退距离翻倍。</p>",
+          "condition": "你以护甲或格挡成功防御了一次来袭的近战打击。"
+        },
+        "coraGraviturgicCrush": {
+          "name": "重力挤压 Graviturgic Crush",
+          "description": "<p>你制造出一个引力漩涡，攻击其中所有生物的<strong>坚韧防御</strong>。未能抵抗者会被拉向中心，承受<strong>强化</strong>的<strong>钝击</strong>伤害，并陷入@Condition[staggered]状态。此动作以你<strong>力量</strong>、<strong>坚韧</strong>或<strong>智力</strong>中最高的属性进行成长。</p>"
+        }
+      }
     },
     "Cor'ak Lineage": {
       "name": "科拉克血统 Cor'ak Lineage",
@@ -261,7 +327,13 @@
       "actions": {
         "crystalizeWounds": {
           "name": "结晶化创伤",
-          "description": "<p>当你陷入<strong>虚弱</strong>状态，或在<strong>虚弱</strong>状态下受到伤害时，一层水晶甲壳会覆盖你的身体。在短时间内，你获得等同于你的<strong>坚韧</strong>调整值的<strong>钝击</strong>、<strong>穿刺</strong>和<strong>挥砍</strong>伤害抗性。你还会立即获得等同于你<strong>等级</strong>两倍的<strong>生命值</strong>。</p>"
+          "description": "<p>当你陷入<strong>虚弱</strong>状态，或在<strong>虚弱</strong>状态下受到伤害时，一层水晶甲壳会覆盖你的身体。在短时间内，你获得等同于你的<strong>坚韧</strong>调整值的<strong>钝击</strong>、<strong>穿刺</strong>和<strong>挥砍</strong>伤害抗性。你还会立即获得等同于你<strong>等级</strong>两倍的<strong>生命值</strong>。</p>",
+          "condition": "你陷入虚弱状态，或在虚弱状态下受到伤害。",
+          "effects": [
+            {
+              "name": "结晶创伤 Crystalize Wounds"
+            }
+          ]
         }
       }
     },
@@ -289,17 +361,34 @@
       "actions": {
         "extremeMetabolism": {
           "name": "极端代谢 Extreme Metabolism",
-          "description": "<p>你激发体内炽热的代谢，进入一阵超自然的高速状态。</p><ul><li><p>你的<strong>移动</strong>增加 +2。</p></li><li><p>你获得等同于你<strong>敏捷</strong>一半的<strong>闪避</strong>加值。</p></li><li><p>你的当前和最大<strong>动作</strong>都获得 +1。</p></li></ul>"
+          "description": "<p>你激发体内炽热的代谢，进入一阵超自然的高速状态。</p><ul><li><p>你的<strong>移动</strong>增加 +2。</p></li><li><p>你获得等同于你<strong>敏捷</strong>一半的<strong>闪避</strong>加值。</p></li><li><p>你的当前和最大<strong>动作</strong>都获得 +1。</p></li></ul>",
+          "effects": [
+            {
+              "name": "极限代谢 Extreme Metabolism"
+            }
+          ]
         },
         "waterAversion": {
           "name": "畏水 Water Aversion",
-          "description": "<p>当浸没在水中超过 6 秒，或当你在浸没于水中时开始你的回合，你必须考验自己的决心。</p><p><strong>ALPHA ONE</strong>：这个动作还需要进一步平衡。</p>"
+          "description": "<p>当浸没在水中超过 6 秒，或当你在浸没于水中时开始你的回合，你必须考验自己的决心。</p><p><strong>ALPHA ONE</strong>：这个动作还需要进一步平衡。</p>",
+          "condition": "浸没于水中超过 6 秒。"
         }
       }
     },
     "Heart Attunement": {
       "name": "心之调谐 Heart Attunement",
-      "description": "<p>你的灵魂与@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.0anKTKgOav9sXox1]{余烬之心}的生命力能量及其哲学理念<strong>生命主义</strong>产生共鸣。</p><p>你获得等同于你同调力量 2 倍的<strong>腐化</strong>伤害抗性。</p><p><em>更高的调谐等级将解锁更多效果。</em></p>"
+      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.0anKTKgOav9sXox1]{余烬之心} 的生命力能量产生共鸣，以及它所代表的哲学理念——<strong>生机主义</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>腐化</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberHeartAttune heartHallow] 动作，为不死生物与外来者敌人打上光耀报应的印记。</p></li><li><p><strong>阶位 3</strong>：你的<strong>生命值</strong>上限，按同调阶位每超过 2 一阶便在每级提高相应数值（阶位 3 为 +2，阶位 4 为 +4，阶位 5 为 +6）。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>余烬</strong>施法屈折，可施加于使用<strong>生命</strong>符文的法术。生命符文会对敌人造成<strong>光耀</strong>伤害，同时仍为盟友提供恢复。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberHeartAttune heartSparkOfEmber] 动作，可以复活新近死者，或以光耀的裁决放逐不死生物。</p></li></ul>",
+      "actions": {
+        "heartHallow": {
+          "name": "圣化 Hallow",
+          "description": "<p>你在受影响的生物身上留下一道余烬生命力的印记，使其陷入@Condition[exposed]状态，持续 1 轮。</p>",
+          "condition": "你以打击或法术成功影响了一个不死生物或外来者。"
+        },
+        "heartSparkOfEmber": {
+          "name": "余烬之火花 Spark of Ember",
+          "description": "<p>你触碰一个新近死去或身为不死生物的目标。若目标处于@Condition[dead]状态且死亡时间在 24 小时之内，它会复生，并使<strong>创伤</strong>与<strong>生命值</strong>都获得完全恢复。若用于不死生物目标，你会对其<strong>坚韧防御</strong>发动一次<strong>致命</strong>攻击，该攻击享有 +6 <strong>恩惠骰</strong>，并造成<strong>光耀</strong>伤害。</p>"
+        }
+      }
     },
     "Hot Tempered": {
       "name": "火爆脾气 Hot Tempered",
@@ -311,7 +400,12 @@
       "actions": {
         "livingStone": {
           "name": "活石",
-          "description": "<p>你的形态暂时钙化，令你对物理打击获得更强的保护。</p><ul><li><p>你获得对<strong>钝击</strong>、<strong>穿刺</strong>和<strong>挥砍</strong>伤害的抗性，数值等于你的<strong>等级 + 1</strong>。</p></li><li><p>你的<strong>移动</strong>减少 -2。</p></li><li><p>你免疫<strong>倒地</strong>状态，且不能被强制移动。</p></li></ul>"
+          "description": "<p>你的形态暂时钙化，令你对物理打击获得更强的保护。</p><ul><li><p>你获得对<strong>钝击</strong>、<strong>穿刺</strong>和<strong>挥砍</strong>伤害的抗性，数值等于你的<strong>等级 + 1</strong>。</p></li><li><p>你的<strong>移动</strong>减少 -2。</p></li><li><p>你免疫<strong>倒地</strong>状态，且不能被强制移动。</p></li></ul>",
+          "effects": [
+            {
+              "name": "活石 Living Stone"
+            }
+          ]
         }
       }
     },
@@ -321,7 +415,8 @@
       "actions": {
         "emberBlaze": {
           "name": "余烬烈焰",
-          "description": "<p>当你陷入<strong>虚弱</strong>状态，或在<strong>虚弱</strong>状态下受到伤害时，你可以激发一阵名为 Blaze 的非凡<strong>肾上腺素爆发</strong>。你的<strong>行动</strong>池和<strong>专注</strong>池会立即恢复至其最大值。</p>"
+          "description": "<p>当你陷入<strong>虚弱</strong>状态，或在<strong>虚弱</strong>状态下受到伤害时，你可以激发一阵名为 Blaze 的非凡<strong>肾上腺素爆发</strong>。你的<strong>行动</strong>池和<strong>专注</strong>池会立即恢复至其最大值。</p>",
+          "condition": "你陷入虚弱状态，或在虚弱状态下受到伤害。"
         }
       }
     },
@@ -363,21 +458,48 @@
       "actions": {
         "regulatedRhythm": {
           "name": "规整节律",
-          "description": "<p>你调动自己的超自然能力，使心灵与身体达到和谐。你进入一种恍惚般的状态，并在你的<strong>回合</strong>开始时获得以下益处。</p><ul><li><p>你获得 +1 <strong>专注</strong>。</p></li><li><p>如果你的<strong>士气</strong>高于<strong>生命值</strong>，你可以转移最多等同于你的<strong>存在</strong>能力值的数值，减少<strong>士气</strong>并获得<strong>生命值</strong>。</p></li><li><p>如果你的<strong>生命值</strong>高于你的<strong>士气</strong>，你可以转移最多等同于你的<strong>Toughness </strong>能力值的数值，减少<strong>生命值</strong>并获得<strong>士气</strong>。</p></li></ul><p>这些转移不会使任何资源超过其最大值。</p>"
+          "description": "<p>你调动自己的超自然能力，使心灵与身体达到和谐。你进入一种恍惚般的状态，并在你的<strong>回合</strong>开始时获得以下益处。</p><ul><li><p>你获得 +1 <strong>专注</strong>。</p></li><li><p>如果你的<strong>士气</strong>高于<strong>生命值</strong>，你可以转移最多等同于你的<strong>存在</strong>能力值的数值，减少<strong>士气</strong>并获得<strong>生命值</strong>。</p></li><li><p>如果你的<strong>生命值</strong>高于你的<strong>士气</strong>，你可以转移最多等同于你的<strong>Toughness </strong>能力值的数值，减少<strong>生命值</strong>并获得<strong>士气</strong>。</p></li></ul><p>这些转移不会使任何资源超过其最大值。</p>",
+          "effects": [
+            {
+              "name": "律动调控 Regulated Rhythm"
+            }
+          ]
         }
       }
     },
     "Lunar Tattoos": {
       "name": "月纹身 Lunar Tattoos",
-      "description": "<p><strong>BETA TWO</strong>：该天赋尚未按 Crucible 机制更新。</p>"
+      "description": "<p>你身上的发光纹身与余烬诸元素之月的能量共鸣。当一轮或多轮月亮处于满月时，你获得对应伤害类型的 <strong>+2 抗性</strong>：</p><ul><li><p><strong>灵气</strong> - <strong>电击 </strong>抗性</p></li><li><p><strong>科拉</strong> - <strong>强酸 </strong>抗性</p></li><li><p><strong>玛伊斯</strong> - <strong>寒冷 </strong>抗性</p></li><li><p><strong>拉根</strong> - <strong>火焰 </strong>抗性</p></li><li><p><strong>阿肯</strong> - <strong>穿刺 </strong>抗性</p></li><li><p><strong>奥比斯</strong> - <strong>灵能 </strong>抗性</p></li></ul>"
     },
     "Luxarum Attunement": {
       "name": "卢克萨鲁姆调谐 Luxarum Attunement",
-      "description": "<p>你的灵魂与@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.pPU6VZV7WFubtcSR]{卢克萨鲁姆}——无尽战争的领域——及其哲学理念<strong>野心</strong>产生了同调共鸣。</p><p>你获得对<strong>光耀</strong>伤害的抗性，数值等于你同调力量的2倍。</p><p><em>在更高的同调等级时，将解锁进一步的效果。</em></p>"
+      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.pPU6VZV7WFubtcSR]{卢克萨鲁姆}——无尽战争之界——产生同调共鸣，以及它所代表的哲学理念——<strong>野心</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>光耀</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberLuxarumAttu luxarumEternalVengeance] 反应，在你被暴击时充满正义的热忱。</p></li><li><p><strong>阶位 3</strong>：你的<strong>坚韧防御</strong>，按同调阶位每超过 2 一阶便提高 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>卢克萨鲁姆</strong>施法屈折，可施加于使用<strong>照明</strong>符文的法术。每个被击中的敌人都会被照亮，并陷入@Condition[exposed]状态，持续 1 个回合。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberLuxarumAttu luxarumTyraphicCrusade] 动作，跃入空中投下一记光耀爆发，并按受伤目标数量返还动作。</p></li></ul> ",
+      "actions": {
+        "luxarumEternalVengeance": {
+          "name": "永恒复仇 Eternal Vengeance",
+          "description": "<p>当你被来袭的打击或法术造成暴击时，你会充满正义的热忱，陷入@Condition[hastened]状态，直到你下个回合结束。</p>",
+          "condition": "一次来袭的打击或法术对你造成了重大成功。"
+        },
+        "luxarumTyraphicCrusade": {
+          "name": "提拉法远征 Tyraphic Crusade",
+          "description": "<p>你跃入空中，降落在 120 英尺内你能看见的一点。10 英尺爆破范围内的所有生物都会面临一次针对其<strong>反射</strong>的<strong>强化</strong>攻击，并承受<strong>光耀</strong>伤害。每有一个目标受到伤害，你便获得 <strong>+1 动作</strong>。原本已处于@Condition[exposed]状态的受伤目标会陷入@Condition[stunned]状态，持续 1 轮。此动作以你<strong>力量</strong>、<strong>坚韧</strong>或<strong>敏捷</strong>中最高的属性进行成长。</p>"
+        }
+      }
     },
     "Mayis Attunement": {
       "name": "梅伊丝调谐 Mayis Attunement",
-      "description": "<p>你的灵魂与@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.RkdBtFQk7STvMbV2]{玛伊斯}——风暴之月——及其哲学理念<strong>耐心</strong>产生了同调共鸣。</p><p>你获得等同于你同调力量 2 倍的<strong>寒冷</strong>伤害抗性。</p><p><em>更高的同调等级将解锁进一步的效果。</em></p>"
+      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.RkdBtFQk7STvMbV2]{玛伊斯}——狂澜之月——产生同调共鸣，以及它所代表的哲学理念——<strong>耐心</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>寒冷</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberMayisAttune mayisRestorativeRedirection] 反应，把被抵抗掉的法术能量导向附近的盟友以治疗对方。</p></li> <li><p><strong>阶位 3</strong>：你的<strong>治疗阈值</strong>，按同调阶位每超过 2 一阶便降低 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>玛伊斯</strong>施法屈折，可施加于使用<strong>霜冻</strong>符文的法术。霜冻符文会为盟友提供恢复，同时仍对敌人造成<strong>寒冷</strong>伤害。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberMayisAttune mayisRestorationOfTheDeep] 动作，以一道弧形涌流治疗盟友并净除持续伤害。</p></li></ul> ",
+      "actions": {
+        "mayisRestorativeRedirection": {
+          "name": "疗愈导流 Restorative Redirection",
+          "description": "<p>当你抵抗一次来袭的<strong>法术</strong>时，你把被抵抗掉的部分法术能量导向 30 英尺内你能看见的一名盟友，为其提供<strong>虚弱</strong>程度的恢复，恢复的资源与原法术所针对的资源相同。此动作以你<strong>感知</strong>、<strong>存在</strong>或<strong>智力</strong>中最高的属性进行成长。</p>",
+          "condition": "你抵抗了一次来袭的法术。"
+        },
+        "mayisRestorationOfTheDeep": {
+          "name": "深渊疗愈 Restoration of the Deep",
+          "description": "<p>你释放出一道 30 英尺长、20 英尺宽的净化水流。区域内的盟友获得<strong>强化</strong>程度的<strong>生命值</strong>恢复，并立即被净除所有持续伤害类效果。此动作以你<strong>感知</strong>、<strong>存在</strong>或<strong>智力</strong>中最高的属性进行成长。</p>"
+        }
+      }
     },
     "Mistrust of Magic": {
       "name": "对魔法的不信任 Mistrust of Magic",
@@ -389,13 +511,29 @@
       "actions": {
         "prescientReflection": {
           "name": "先见之反思",
-          "description": "<p>当一个直接以你为目标的法术在被抵抗时出现严重失败，你可以本能地将该法术的能量重定向，使其改为消散，或影响一个在该法术射程内、且并非其原施法者的其他目标。</p><p>该其他目标必须改为对该法术进行防御，并由该目标承受该法术的任何效果。如果没有选择其他目标，则该法术的能量会无害地消散。</p>"
+          "description": "<p>当一个直接以你为目标的法术在被抵抗时出现严重失败，你可以本能地将该法术的能量重定向，使其改为消散，或影响一个在该法术射程内、且并非其原施法者的其他目标。</p><p>该其他目标必须改为对该法术进行防御，并由该目标承受该法术的任何效果。如果没有选择其他目标，则该法术的能量会无害地消散。</p>",
+          "condition": "一个直接以你为目标的法术被以重大失败的结果抵抗。"
         }
       }
     },
     "Orbis Attunement": {
       "name": "奥比斯调谐 Orbis Attunement",
-      "description": "<p>你的灵魂与你对@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.zkmWSB32y8Fbc4UL]{奥比斯}——灵魂之月——及其哲学理念<strong>自发性</strong>的同调产生共鸣。</p><p>你获得等同于你的同调力量2倍的<strong>灵能</strong>伤害抗性。</p><p><em>更高的调谐等级将解锁进一步的效果。</em></p>"
+      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.zkmWSB32y8Fbc4UL]{奥比斯}——灵魂之月——产生同调共鸣，以及它所代表的哲学理念——<strong>率性</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>灵能</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberOrbisAttune orbisChaoticRefraction] 动作，让随机的恩惠骰与祸骰涌入你的下一个动作。</p></li><li><p><strong>阶位 3</strong>：你的<strong>士气</strong>上限，按同调阶位每超过 2 一阶便在每级提高相应数值（阶位 3 为 +2，阶位 4 为 +4，阶位 5 为 +6）。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>奥比斯 </strong>施法屈折，可施加于使用<strong>灵魂</strong>符文的法术。灵魂符文会对敌人造成<strong>灵能</strong>伤害，同时仍为盟友提供士气恢复。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberOrbisAttune orbisPandemonium] 动作，以令人癫狂的灵能冲击附近敌人的心智。</p></li></ul>",
+      "actions": {
+        "orbisChaoticRefraction": {
+          "name": "混沌折射 Chaotic Refraction",
+          "description": "<p>你驾驭奥比斯难以预测的灵性潮流，以自发涌现的幸运或厄运影响你在下个回合结束前的下一个动作。你的下一个动作获得 <strong>+1d4 恩惠骰</strong>与 <strong>+1d4-1 祸骰</strong>。当对@Condition[confused]目标消耗混沌折射时，只有恩惠骰生效，祸骰被舍弃。</p>",
+          "effects": [
+            {
+              "name": "混沌折射 Chaotic Refraction"
+            }
+          ]
+        },
+        "orbisPandemonium": {
+          "name": "群魔乱舞 Pandemonium",
+          "description": "<p>迷乱的灵体袭向区域内的所有敌人，攻击其<strong>意志力</strong>，对<strong>士气</strong>造成<strong>强化</strong>的灵能伤害，并施加@Condition[confused]状态。此动作以你<strong>感知</strong>、<strong>存在</strong>或<strong>智力</strong>中最高的属性进行成长。</p>"
+        }
+      }
     },
     "Passionate Trader": {
       "name": "热情的商人 Passionate Trader",
@@ -407,11 +545,44 @@
     },
     "Primordis Attunement": {
       "name": "普里莫迪斯调谐 Primordis Attunement",
-      "description": "<p>你的灵魂与@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.16sqn71JsCkghaTt]{普里莫迪斯}——反复无常的巫术领域——及其哲学理念<strong>狡诈</strong>产生同调共鸣。</p><p>你获得<strong>毒药</strong>伤害抗性，其数值等于你同调力量的2倍。</p><p><em>在更高的同调等级时，将解锁更多效果。</em></p>"
+      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.16sqn71JsCkghaTt]{普里莫迪斯}——无常巫术之界——产生同调共鸣，以及它所代表的哲学理念——<strong>狡诈</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>毒素</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberPrimordisAt primordisSlipIntoShadow] 动作，让你在未被交战时隐没于黑暗之中。</p></li><li><p><strong>阶位 3</strong>：你的<strong>反射</strong>防御，按同调阶位每超过 2 一阶便提高 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>原初</strong>施法屈折，可施加于使用<strong>幻象</strong>符文的法术。造成暴击时，你陷入@Condition[invisible]状态，直到你下个回合开始。</p></li> <li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberPrimordisAt primordisPredatorsShadow] 动作，从隐形中发动攻击，造成毁灭性的毒素伤害。</p></li></ul>",
+      "actions": {
+        "primordisSlipIntoShadow": {
+          "name": "遁入暗影 Slip Into Shadow",
+          "description": "<p>在你执行移动动作之后，若你身处黑暗或昏暗光照区域内且未被任何敌人交战，你会短暂地遁入暗影，陷入@Condition[invisible]状态，直到你执行<strong>打击</strong>或<strong>法术</strong>动作，或直到你的回合结束。</p>",
+          "condition": "在移动动作之后立即进行，且此时你身处黑暗或昏暗光照区域内、未被任何敌人交战。",
+          "effects": [
+            {
+              "name": "遁入暗影 Slip Into Shadow"
+            }
+          ]
+        },
+        "primordisPredatorsShadow": {
+          "name": "掠食者之影 Predator's Shadow",
+          "description": "<p>在@Condition[invisible]状态下攻击一名敌人。若对方未察觉你，此次攻击享有 <strong>+6 恩惠骰</strong>并具有<strong>致命</strong>。造成暴击时，施加@Condition[poisoned]状态，持续 6 轮。</p>",
+          "condition": "你处于隐形状态。"
+        }
+      }
     },
     "Ragen Attunement": {
       "name": "拉根调谐 Ragen Attunement",
-      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.LKptgmc56euSOb0G]{拉根}——焦炭之月——及其哲学理念<strong>直率</strong>产生了同调。</p><p>你获得对<strong>火焰</strong>伤害的抗性，数值等于你同调力量的 2 倍。</p><p><em>更高的调谐等级将解锁进一步的效果。</em></p>"
+      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.LKptgmc56euSOb0G]{拉根}——焦炭之月——产生同调共鸣，以及它所代表的哲学理念——<strong>直率</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>火焰</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberRagenAttune ragenFurnaceBlast] 反应，在你被暴击时以烈火反击。</p></li><li><p><strong>阶位 3</strong>：你的<strong>先攻</strong>，按同调阶位每超过 2 一阶便提高 1。 </p></li><li><p><strong>阶位 4</strong>：你解锁<strong>拉根 </strong>施法屈折，可施加于使用<strong>火焰</strong>符文的法术。若该法术会使任何一个敌人陷入@Condition[burning]，则它会使所有敌人都陷入@Condition[burning]。</p></li> <li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberRagenAttune ragenImmolatingRejuvenation] 动作，耗尽你剩余的生命值以灼烧附近敌人，并获得快速再生。</p></li></ul>",
+      "actions": {
+        "ragenFurnaceBlast": {
+          "name": "熔炉爆燃 Furnace Blast",
+          "description": "<p>当你被打击或法术造成暴击时，你以拉根之火的烈度爆发开来，对 3 英尺内所有生物的<strong>坚韧防御</strong>发动一次<strong>虚弱</strong>攻击，造成<strong>火焰</strong>伤害并施加@Condition[disoriented]状态。正如风箱助燃，任何处于@Condition[burning]状态的受伤目标会立刻承受其全部剩余的持续伤害，并不再@Condition[burning]。此动作以你<strong>力量</strong>、<strong>坚韧</strong>或<strong>敏捷</strong>中最高的属性进行成长。</p>",
+          "condition": "你被打击或法术造成了暴击。"
+        },
+        "ragenImmolatingRejuvenation": {
+          "name": "焚身新生 Immolating Rejuvenation",
+          "description": "<p>你将全部内火抽调为一次毁灭性攻击，针对附近生物的<strong>反射</strong>防御。你的生命值被降为 <strong>0 生命值</strong>，并陷入@Condition[weakened]状态。你所失去的生命值会在区域内所有目标之间平均分配；每个受伤目标都会将这一份额作为额外伤害承受，并陷入@Condition[burning]状态。你获得@Condition[mending]状态，持续 10 轮。此动作以你<strong>力量</strong>、<strong>坚韧</strong>或<strong>敏捷</strong>中最高的属性进行成长。</p>",
+          "effects": [
+            {
+              "name": "修补 Mending"
+            }
+          ]
+        }
+      }
     },
     "Resolute Legacy": {
       "name": "坚定传承 Resolute Legacy",
@@ -423,7 +594,23 @@
     },
     "Signara Attunement": {
       "name": "西格纳拉调谐 Signara Attunement",
-      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3OvueRrGcFnwtnmw]{西格纳拉}——“永不满足的好奇”国度——及其哲学理念“<strong>好奇</strong>”产生了同调共鸣。</p><p>你获得等同于你同调力量 2 倍的对<strong>虚空</strong>伤害的抗性。</p><p><em>更高的调谐等级将解锁更多效果。</em></p>"
+      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3OvueRrGcFnwtnmw]{西格纳拉}——无餍好奇之界——产生同调共鸣，以及它所代表的哲学理念——<strong>好奇</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>钝击</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberSignaraAttu signaraStudiousCounter] 动作，使一名你已知晓的敌人对你采取的每个动作都承受一个祸骰。</p></li> <li><p><strong>阶位 3</strong>：你的<strong>意志力</strong>防御，按同调阶位每超过 2 一阶便提高 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>西格纳拉</strong>施法屈折，可施加于使用<strong>控制</strong>符文的法术。造成暴击时，你立即获得 <strong>+2 动作</strong>，每回合一次。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberSignaraAttu signaraImpartTruth] 动作，恢复一个疯狂生物的清明，或击碎一个神智正常者的士气。</p></li></ul>",
+      "actions": {
+        "signaraStudiousCounter": {
+          "name": "钻研反制 Studious Counter",
+          "description": "<p>你把注意力集中于某个特定敌人，设法反制它的每一步动作。若你拥有关于该生物类型的<strong>知识</strong>，则在你下个回合开始前，它针对你的任何动作都承受 <strong>+1 祸骰</strong>。此外，在钻研状态持续期间，你带<strong>西格纳拉</strong>屈折的法术以及<strong>授予真知</strong>动作，对该目标获得 <strong>+1 恩惠骰</strong>。</p>",
+          "condition": "你拥有关于目标生物类型的知识。",
+          "effects": [
+            {
+              "name": "钻研反制 Studious Counter"
+            }
+          ]
+        },
+        "signaraImpartTruth": {
+          "name": "授予真知 Impart Truth",
+          "description": "<p>你与一个处于@Condition[insane]状态的生物的心智相连，使其完全恢复清明，并使其<strong>疯狂</strong>与<strong>士气 </strong>各自恢复到最大值的一半。若目标原本并非@Condition[insane]，则它会承受一次针对其<strong>意志力</strong>的攻击；若攻击成功，其士气降为 0 并陷入@Condition[broken]状态。此动作以你<strong>感知</strong>、<strong>存在</strong>或<strong>智力</strong>中最高的属性进行成长，并在用于你当前<strong>钻研反制</strong>的目标时获得 <strong>+1 恩惠骰</strong>。</p>"
+        }
+      }
     },
     "Signborn Lineage": {
       "name": "星兆血统 Signborn Lineage",
@@ -439,7 +626,7 @@
     },
     "Exceptional Taste": {
       "name": "非凡品味 Exceptional Taste",
-      "description": "<p><strong>BETA TWO</strong>：此天赋尚未用 Crucible 机制更新。</p>"
+      "description": "<p>在应对社交场合时，你的衣着比任何刀剑或法术都更有力。当你穿着至少<strong>精良</strong>品质且未<strong>破碎</strong>的衣物时，你在<strong>欺瞒</strong>、<strong>交涉</strong>与<strong>威吓</strong>技能检定上获得 <strong>+2 恩惠骰</strong>。</p>"
     },
     "Thornling Lineage": {
       "name": "荆棘裔血统 Thornling Lineage",
@@ -447,7 +634,13 @@
       "actions": {
         "thornbark": {
           "name": "刺棘树皮",
-          "description": "<p>当你成为一次近战攻击的目标时，你可以使带刺的倒钩从你的身体中突出处。持续一分钟，你获得以下增益。</p><ul><li><p>对你造成<strong>命中</strong>或<strong>擦中</strong>的近战攻击，会使攻击者因反击而受伤，并承受等同于你<strong>坚韧</strong>能力值的伤害。</p></li><li><p>试图对你进行<strong>擒抱</strong>或<strong>推撞</strong>的检定承受<strong>+2祸骰</strong>。</p></li></ul><p>此动作的效果适用于触发该反应的那次攻击。</p><p><strong>ALPHA ONE</strong>：刺棘树皮的效果尚未完全自动化。</p>"
+          "description": "<p>当你成为一次近战攻击的目标时，你可以使带刺的倒钩从你的身体中突出处。持续一分钟，你获得以下增益。</p><ul><li><p>对你造成<strong>命中</strong>或<strong>擦中</strong>的近战攻击，会使攻击者因反击而受伤，并承受等同于你<strong>坚韧</strong>能力值的伤害。</p></li><li><p>试图对你进行<strong>擒抱</strong>或<strong>推撞</strong>的检定承受<strong>+2祸骰</strong>。</p></li></ul><p>此动作的效果适用于触发该反应的那次攻击。</p><p><strong>ALPHA ONE</strong>：刺棘树皮的效果尚未完全自动化。</p>",
+          "condition": "你成为一次近战攻击的目标。",
+          "effects": [
+            {
+              "name": "荆棘树皮 Thornbark"
+            }
+          ]
         }
       }
     },
@@ -465,7 +658,12 @@
       "actions": {
         "formidableStamina": {
           "name": "强健体力",
-          "description": "<p>你汲取惊人的能量储备，使自己在力竭之后仍能继续战斗。在一段时间内，每当你耗尽自己的<strong>动作</strong>点池时，你都有 25% 的几率立即恢复 1 点<strong>动作</strong>点。</p>"
+          "description": "<p>你汲取惊人的能量储备，使自己在力竭之后仍能继续战斗。在一段时间内，每当你耗尽自己的<strong>动作</strong>点池时，你都有 25% 的几率立即恢复 1 点<strong>动作</strong>点。</p>",
+          "effects": [
+            {
+              "name": "惊人耐力 Formidable Stamina"
+            }
+          ]
         }
       }
     },
@@ -475,7 +673,12 @@
       "actions": {
         "implacableHunter": {
           "name": "冷酷无情的猎手",
-          "description": "<p>你将一个你能看见的生物指定为你的追猎目标。</p><ul><li><p>凡是与辨明其位置有关的<strong>察觉</strong>或<strong>荒野</strong>掷骰，你获得<strong>+2 恩惠</strong>。</p></li><li><p>当你在自己的<strong>回合</strong>中<strong>移动</strong>并接近你的追猎目标时，你在该<strong>回合</strong>内对你的追猎目标进行的下一次<strong>攻击检定</strong>获得<strong>+2 恩惠</strong>。</p></li></ul>"
+          "description": "<p>你将一个你能看见的生物指定为你的追猎目标。</p><ul><li><p>凡是与辨明其位置有关的<strong>察觉</strong>或<strong>荒野</strong>掷骰，你获得<strong>+2 恩惠</strong>。</p></li><li><p>当你在自己的<strong>回合</strong>中<strong>移动</strong>并接近你的追猎目标时，你在该<strong>回合</strong>内对你的追猎目标进行的下一次<strong>攻击检定</strong>获得<strong>+2 恩惠</strong>。</p></li></ul>",
+          "effects": [
+            {
+              "name": "执着猎手 Implacable Hunter"
+            }
+          ]
         }
       }
     },
@@ -485,15 +688,30 @@
       "actions": {
         "inscrutableVisage": {
           "name": "高深莫测的面容 Inscrutable Visage",
-          "description": "<p>你的面具呈现出高深莫测的表情。</p><ul><li><p>你在所有使用<strong>欺瞒</strong>技能的检定中获得<strong>+2 恩惠</strong>。</p></li><li><p>你的<strong>反射</strong>防御增加 +2。</p></li></ul><p>在任意给定时间，你只能有一种生效中的面具表情。</p>"
+          "description": "<p>你的面具呈现出高深莫测的表情。</p><ul><li><p>你在所有使用<strong>欺瞒</strong>技能的检定中获得<strong>+2 恩惠</strong>。</p></li><li><p>你的<strong>反射</strong>防御增加 +2。</p></li></ul><p>在任意给定时间，你只能有一种生效中的面具表情。</p>",
+          "effects": [
+            {
+              "name": "莫测面容 Inscrutable Visage"
+            }
+          ]
         },
         "menacingVisage": {
           "name": "狰狞面容 Menacing Visage",
-          "description": "<p>你的面具呈现出威吓的表情。</p><ul><li><p>你在所有<strong>威吓</strong>技能的<strong>使用</strong>中获得<strong>+2 恩惠</strong>。</p></li><li><p>你的<strong>坚韧</strong><strong>防御</strong>提高+2。</p></li></ul><p>在任一给定时间，你只能有一种生效中的面具表情。</p>"
+          "description": "<p>你的面具呈现出威吓的表情。</p><ul><li><p>你在所有<strong>威吓</strong>技能的<strong>使用</strong>中获得<strong>+2 恩惠</strong>。</p></li><li><p>你的<strong>坚韧</strong><strong>防御</strong>提高+2。</p></li></ul><p>在任一给定时间，你只能有一种生效中的面具表情。</p>",
+          "effects": [
+            {
+              "name": "慑人面容 Menacing Visage"
+            }
+          ]
         },
         "beguilingVisage": {
           "name": "魅惑容颜 Beguiling Visage",
-          "description": "<p>你的面具呈现出一个迷人的表情。</p><ul><li><p>你在所有<strong>Persuasion</strong>技能的使用中获得<strong>+2 恩惠</strong>。</p></li><li><p>你的<strong>意志</strong>防御提高 +2。</p></li></ul><p>你在任意时刻只能有一种生效中的面具表情。</p>"
+          "description": "<p>你的面具呈现出一个迷人的表情。</p><ul><li><p>你在所有<strong>Persuasion</strong>技能的使用中获得<strong>+2 恩惠</strong>。</p></li><li><p>你的<strong>意志</strong>防御提高 +2。</p></li></ul><p>你在任意时刻只能有一种生效中的面具表情。</p>",
+          "effects": [
+            {
+              "name": "蛊惑面容 Beguiling Visage"
+            }
+          ]
         }
       }
     },
