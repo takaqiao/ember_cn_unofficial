@@ -5,7 +5,7 @@
     "Bewilderment": {
       "name": "迷乱 Bewilderment",
       "adjective": "迷乱",
-      "description": "<p>此物品带有一道隐藏的诅咒。注入期间，持有者的心智会被 @UUID[JournalEntry.pod4PApXHuZgXwHo.JournalEntryPage.jw0mOUcqhJPRajUY]{迷乱} 攫住 —— 那是一种不断蔓延、绝不松手的混乱。</p><ul><li><p>只要该物品保持注入状态，持有者便持续处于@Condition[disoriented]状态。</p></li><li><p>此词缀每有 1 阶，持有者的<strong>士气</strong>上限便降低 25%。</p></li></ul><h4 class=\"divider\">试玩测试</h4><p>诅咒类词缀目前还没有向玩家隐藏其本质的机制。在诅咒通过游戏过程被揭示之前，持有者的玩家应当扮演成对其存在与效果一无所知。</p>"
+      "description": "<p>此物品带有一道隐藏的诅咒。注入期间，持有者的心智会被 @UUID[JournalEntry.pod4PApXHuZgXwHo.JournalEntryPage.jw0mOUcqhJPRajUY]{迷乱} 攫住——那是一种不断蔓延、绝不松手的混乱。</p><ul><li><p>只要该物品保持注入状态，持有者便持续处于@Condition[disoriented]状态。</p></li><li><p>此词缀每有 1 阶，持有者的<strong>士气</strong>上限便降低 25%。</p></li></ul><h4 class=\"divider\">试玩测试</h4><p>诅咒类词缀目前还没有向玩家隐藏其本质的机制。在诅咒通过游戏过程被揭示之前，持有者的玩家应当扮演成对其存在与效果一无所知。</p>"
     },
     "Lunar Shield": {
       "name": "月相护盾 Lunar Shield",

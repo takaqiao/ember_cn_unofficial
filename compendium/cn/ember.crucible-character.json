@@ -487,7 +487,7 @@
       }
     },
     "Mayis Attunement": {
-      "name": "梅伊丝同调 Mayis Attunement",
+      "name": "玛伊斯同调 Mayis Attunement",
       "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.RkdBtFQk7STvMbV2]{玛伊斯}——狂澜之月——产生同调共鸣，以及它所代表的哲学理念——<strong>耐心</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>寒冷</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberMayisAttune mayisRestorativeRedirection] 反应，把被抵抗掉的法术能量导向附近的盟友以治疗对方。</p></li> <li><p><strong>阶位 3</strong>：你的<strong>治疗阈值</strong>，按同调阶位每超过 2 一阶便降低 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>玛伊斯</strong>施法屈折，可施加于使用<strong>霜冻</strong>符文的法术。霜冻符文会为盟友提供恢复，同时仍对敌人造成<strong>寒冷</strong>伤害。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberMayisAttune mayisRestorationOfTheDeep] 动作，以一道弧形涌流治疗盟友并净除持续伤害。</p></li></ul> ",
       "actions": {
         "mayisRestorativeRedirection": {
