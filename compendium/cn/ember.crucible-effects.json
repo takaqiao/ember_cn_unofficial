@@ -38,7 +38,7 @@
     },
     "The Bewilderment": {
       "name": "迷乱 The Bewilderment",
-      "description": "<p>受影响生物的心智被 @UUID[JournalEntry.pod4PApXHuZgXwHo.JournalEntryPage.jw0mOUcqhJPRajUY]{迷乱} 攫住 —— 那是一种不断蔓延、绝不松手的奥术混乱。</p><ul><li><p>只要诅咒持续，受影响者便处于@Condition[disoriented]状态。</p></li><li><p>受影响生物的<strong>士气</strong>上限减半。</p></li><li><p>心智防线的溃散使受影响者对<strong>腐化</strong>伤害<strong>易伤</strong>，抗性降低 5。</p></li></ul>"
+      "description": "<p>受影响生物的心智被 @UUID[JournalEntry.pod4PApXHuZgXwHo.JournalEntryPage.jw0mOUcqhJPRajUY]{迷乱} 攫住——那是一种不断蔓延、绝不松手的奥术混乱。</p><ul><li><p>只要诅咒持续，受影响者便处于@Condition[disoriented]状态。</p></li><li><p>受影响生物的<strong>士气</strong>上限减半。</p></li><li><p>心智防线的溃散使受影响者对<strong>腐化</strong>伤害<strong>易伤</strong>，抗性降低 5。</p></li></ul>"
     },
     "Ward of Stabilization": {
       "name": "稳定守护 Ward of Stabilization",
