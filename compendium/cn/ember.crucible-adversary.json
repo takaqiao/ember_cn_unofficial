@@ -20,7 +20,9 @@
     "Celestials": "天界生物 Celestials",
     "Talents": "天赋 Talents",
     "Dragons": "巨龙 Dragons",
-    "Celestial": "天界的 Celestial"
+    "Celestial": "天界的 Celestial",
+    "Elemental": "元素 Elemental",
+    "Fiend": "邪魔 Fiend"
   },
   "entries": {
     "Aburyx": {
@@ -33,19 +35,62 @@
     },
     "Abyssal Protection": {
       "name": "深渊防护 Abyssal Protection",
-      "description": "<p>当处于微光或黑暗区域内时，@ref[actor.name]{生物}的<strong>护甲</strong>防御获得 +2 加值，并处于@Condition[guarded]。</p><p>这是通过一个<strong>主动效果</strong>实现的，可以轻松切换以启用或禁用该增益。</p>"
+      "description": "<p>当处于微光或黑暗区域内时，@ref[actor.name]{生物}的<strong>护甲</strong>防御获得 +2 加值，并处于@Condition[guarded]。</p><p>这是通过一个<strong>主动效果</strong>实现的，可以轻松切换以启用或禁用该增益。</p>",
+      "effects": {
+        "Abyssal Protection": {
+          "name": "深渊防护 Abyssal Protection",
+          "description": "<p>该生物的<strong>护甲 </strong>防御获得 +2 加值，并处于@Condition[guarded]状态。</p>"
+        }
+      }
     },
     "Abyssal Remains": {
       "name": "深渊遗骸 Abyssal Remains",
-      "description": "<p>死亡时，@ref[actor.name]{生物}会溶解成一种常被形容为“融化的阴影”的浓稠液体，并从其死亡之处如黏液般漫流开来，使周围区域浸染上深渊腐化。</p>"
+      "description": "<p>死亡时，@ref[actor.name]{生物}会溶解成一种常被形容为“融化的阴影”的浓稠液体，并从其死亡之处如黏液般漫流开来，使周围区域浸染上深渊腐化。</p>",
+      "actions": {
+        "abyssalRemains": {
+          "name": "深渊遗骸 Abyssal Remains",
+          "description": "<p>死亡时，@ref[actor.name]{生物}会化作一滩融化的暗影，从其所在位置向外蔓延成 4 英尺半径的区域。这层残渣会留存一个月，除非被以其他方式净除。</p><p>区域内的任何生物，或在后续回合进入该区域的生物，都必须承受一次针对其<strong>反射</strong>防御的攻击，否则将受到<strong>腐化</strong>伤害，并因此染上诅咒视觉。</p><p>受诅咒视觉影响期间，它们无法察觉昏暗光源，明亮光源在它们眼中也会显得昏暗。</p><p><strong>试玩测试说明</strong>：诅咒视觉尚未实现自动化，会在 Foundry VTT 版本 14 稳定之后的某个时间补上。</p>",
+          "condition": "死亡后立即触发",
+          "effects": [
+            {
+              "name": "诅咒视觉 Cursed Vision"
+            }
+          ]
+        }
+      }
     },
     "Abyssal Whip": {
       "name": "深渊长鞭 Abyssal Whip",
-      "description": "<p>一条骇人地拉长的黑暗触须从@ref[actor.name]{生物}身上延展而出，并打击远处的目标。</p>"
+      "description": "<p>一条骇人地拉长的黑暗触须从@ref[actor.name]{生物}身上延展而出，并打击远处的目标。</p>",
+      "actions": {
+        "abyssalWhip": {
+          "name": "深渊长鞭 Abyssal Whip",
+          "description": "<p>一条由黑暗构成的细长鞭子抽向一个能被感知到、且在身体可及范围内的生物。若未被抵抗，它会造成<strong>寒冷</strong>伤害并缠住目标，将其击倒至@Condition[prone]状态，并把它朝该生物拖近至多 30 英尺。</p>",
+          "effects": [
+            {
+              "name": "深渊长鞭 Abyssal Whip"
+            }
+          ]
+        }
+      }
     },
     "Abyssal Whispers": {
       "name": "深渊低语 Abyssal Whispers",
-      "description": "<p>该@ref[actor.name]{生物}以心灵感应侵入一个生物的心灵，并用有关深渊的思绪与景象将其淹没。它必须能够感知该生物，且自身未失能，才能这样做。</p>"
+      "description": "<p>该@ref[actor.name]{生物}以心灵感应侵入一个生物的心灵，并用有关深渊的思绪与景象将其淹没。它必须能够感知该生物，且自身未失能，才能这样做。</p>",
+      "actions": {
+        "abyssalWhispers": {
+          "name": "深渊低语 Abyssal Whispers",
+          "description": "<p>该生物穿透目标的心智，对<strong>士气</strong>造成<strong>灵能</strong>伤害，并施加@Condition[disoriented]状态。</p><p>造成<strong>暴击</strong>时，目标会在其下个回合一开始就被迫朝 @ref[actor.name]{该生物} 移动，并为此花费 2 点动作。</p>",
+          "effects": [
+            {
+              "name": "深渊低语 Abyssal Whispers"
+            },
+            {
+              "name": "强制移动 Compelled Movement"
+            }
+          ]
+        }
+      }
     },
     "Afflicted Pallid Drake": {
       "name": "受苦的苍白龙兽 Afflicted Pallid Drake",
@@ -77,11 +122,28 @@
     },
     "Bewildering Gaze": {
       "name": "惑乱凝视 Bewildering Gaze",
-      "description": "<p>该@ref[actor.name]{生物}能够用它的凝视迷惑并扰乱它的猎物。</p>"
+      "description": "<p>该@ref[actor.name]{生物}能够用它的凝视迷惑并扰乱它的猎物。</p>",
+      "actions": {
+        "bewilderingGaze": {
+          "name": "迷乱凝视 Bewildering Gaze",
+          "description": "<p>该生物将其超自然的目光聚焦于 60 英尺内一个它能看见、且同样能看见它的目标。</p><p>该目标面临一次针对<strong>意志力</strong>的攻击，对<strong>士气</strong>造成<strong>虚空</strong>伤害，并施加@Condition[confused]状态。</p>",
+          "effects": [
+            {
+              "name": "迷乱凝视 Bewildering Gaze"
+            }
+          ]
+        }
+      }
     },
     "Call Skither": {
       "name": "呼唤斯基瑟尔 Call Skither",
-      "description": "<p>该@ref[actor.name]{生物}控制附近的斯基瑟，它们作为其束缚的仆从行动。</p>"
+      "description": "<p>该@ref[actor.name]{生物}控制附近的斯基瑟，它们作为其束缚的仆从行动。</p>",
+      "actions": {
+        "callSkither": {
+          "name": "呼唤斯基瑟 Call Skither",
+          "description": "<p>@ref[actor.name]{该生物}呼唤一只仆从斯基瑟，它会从附近某处飞来，被召唤到距该生物所在位置 10 英尺以内。</p>"
+        }
+      }
     },
     "Cindaric Initiate": {
       "name": "辛达里克入门者 Cindaric Initiate",
@@ -105,23 +167,72 @@
     },
     "Elemental Summoning": {
       "name": "元素召唤 Elemental Summoning",
-      "description": "<p>该@ref[actor.name]{生物}能够召唤出其他较弱小的元素生物加入他们，成为其盟友。</p>"
+      "description": "<p>该@ref[actor.name]{生物}能够召唤出其他较弱小的元素生物加入他们，成为其盟友。</p>",
+      "actions": {
+        "elementalSummonSprite": {
+          "name": "召唤精灵 Summon Sprite",
+          "description": "<p>@ref[actor.name]{该生物}在 60 英尺内一处它能察觉、且含有水或与水相邻的空间，召唤一个 @UUID[Actor.sVnMPbEj5P18Yo8V]{水之精灵}。</p><p>@ref[actor.name]{该生物}同时只能以这种方式召唤一个精灵。</p>"
+        },
+        "elementalSummonVisitor": {
+          "name": "召唤访客 Summon Visitor",
+          "description": "<p>@ref[actor.name]{该生物}在 60 英尺内一处它能察觉、且含有水或与水相邻的空间，召唤一个 @UUID[Actor.cIX3WXHAZ0gAXCNS]{水之访客}。</p><p>@ref[actor.name]{该生物}同时只能以这种方式召唤一个访客。</p>"
+        }
+      }
     },
     "Extrude Tendril": {
       "name": "伸出触须 Extrude Tendril",
-      "description": "<p>该@ref[actor.name]{生物}能够穿过中间的空间延伸，并挤出其一根触须的独立复制体，使其从其母体的躯体上分离出来。</p>"
+      "description": "<p>该@ref[actor.name]{生物}能够穿过中间的空间延伸，并挤出其一根触须的独立复制体，使其从其母体的躯体上分离出来。</p>",
+      "actions": {
+        "extrudeTendril": {
+          "name": "伸出触须 Extrude Tendril",
+          "description": "<p>@ref[actor.name]{该生物}召唤出一条 @UUID[Actor.UXpL07GsaMzGCUVh]{扭动低语者触须}，它会出现在 60 英尺内的一处空位。</p><p>@ref[actor.name]{该生物}同时最多可拥有 3 条伸出的触须，并可在自己的回合免费遣散任意数量的触须。</p>"
+        }
+      }
     },
     "Frenzied Claws": {
       "name": "狂乱之爪 Frenzied Claws",
-      "description": "<p>该@ref[actor.name]{生物}迅速用其爪发起攻击，对单一目标造成多次抓击。</p>"
+      "description": "<p>该@ref[actor.name]{生物}迅速用其爪发起攻击，对单一目标造成多次抓击。</p>",
+      "actions": {
+        "frenziedClaws": {
+          "name": "狂乱利爪 Frenzied Claws",
+          "description": "<p>@ref[actor.name]{该生物}以一连串狂乱的锐爪发动攻击，用爪子进行三次打击。其中任何一次若为重大成功，便会施加@Condition[bleeding]状态。</p>",
+          "effects": [
+            {
+              "name": "狂乱利爪 Frenzied Claws"
+            }
+          ]
+        }
+      }
     },
     "Grasping Form": {
       "name": "擒握形态 Grasping Form",
-      "description": "<p>@ref[actor.name]{该生物}使其周围的地面爆发出无数纠缠盘绕的暗影触须，将附近的生物绊倒并减缓其速度。</p>"
+      "description": "<p>@ref[actor.name]{该生物}使其周围的地面爆发出无数纠缠盘绕的暗影触须，将附近的生物绊倒并减缓其速度。</p>",
+      "actions": {
+        "graspingForm": {
+          "name": "攫取之形 Grasping Form",
+          "description": "<p>该生物以无数触须构成的团块抓握附近所有生物，其触感令你充满可怖的绝望，对<strong>士气</strong>造成<strong>寒冷</strong>伤害。每个目标都必须以<strong>反射</strong>躲开其抓握，否则陷入@Condition[restrained]]状态（挣脱需 4 点动作或 [[/skillCheck athletics 17]]）。</p><p>若该生物在以此方式擒抱着目标时移动，这些目标也会随之移动，以保持在该生物 15 英尺范围内。</p>",
+          "effects": [
+            {
+              "name": "攫取之形 Grasping Form"
+            }
+          ]
+        }
+      }
     },
     "Grave Mark": {
       "name": "墓之印记 Grave Mark",
-      "description": "<p>当该@ref[actor.name]{生物}以一次近战攻击造成暴击时，它会在其目标身上留下一个不祥的墓之印记。</p>"
+      "description": "<p>当该@ref[actor.name]{生物}以一次近战攻击造成暴击时，它会在其目标身上留下一个不祥的墓之印记。</p>",
+      "actions": {
+        "graveMark": {
+          "name": "墓之印记 Grave Mark",
+          "description": "<p>在以近战攻击造成<strong>暴击</strong>之后，@ref[actor.name]{该生物}攻击目标的<strong>意志力</strong>防御；成功时留下一道墓之印记，施加@Condition[exhausted]状态，该状态会持续到目标完成一次<strong>休息</strong>为止。</p><p>若一个带有墓之印记的人型生物在印记效果持续期间死亡，它会在其后续回合从死亡中站起，化为可怖的 @UUID[Actor.e67w5IOBScYtJKXr]{恐骇者}。</p>",
+          "condition": "以近战攻击造成暴击时。"
+        },
+        "graveMarkHorrendor": {
+          "name": "恐骇者转化 Horrendor Transformation",
+          "description": "<p>在墓之印记效果持续期间死亡的人型生物，会在其下个回合化为恐骇者站起。</p>"
+        }
+      }
     },
     "Horrendor": {
       "name": "霍伦多尔 Horrendor",
@@ -141,19 +252,48 @@
     },
     "Mutagenic Affliction": {
       "name": "诱变病症 Mutagenic Affliction",
-      "description": "<p>这个@ref[actor.name]{生物}受到一种消耗性的突变折磨，导致其行为反常。它更强壮，也更具侵略性，但已陷入@Condition[blinded]。</p>"
+      "description": "<p>这个@ref[actor.name]{生物}受到一种消耗性的突变折磨，导致其行为反常。它更强壮，也更具侵略性，但已陷入@Condition[blinded]。</p>",
+      "effects": {
+        "Mutagenic Blindness": {
+          "name": "诱变失明 Mutagenic Blindness"
+        }
+      }
     },
     "Bewildering Gleam": {
       "name": "惑乱微光 Bewildering Gleam",
-      "description": "<p>这个@ref[actor.name]{软泥怪}将自身摊展开成一层胶状薄膜，覆盖附近的每一处地表。</p>"
+      "description": "<p>这个@ref[actor.name]{软泥怪}将自身摊展开成一层胶状薄膜，覆盖附近的每一处地表。</p>",
+      "actions": {
+        "oozeBewilderingGleam": {
+          "name": "迷乱微光 Bewildering Gleam",
+          "description": "<p>该软泥怪迅速铺展开来，覆盖 15 英尺半径内的每一处表面。区域内除软泥怪之外的生物都必须防御一次针对其<strong>意志力</strong>的攻击，否则会被一阵令人迷乱的倦怠攫住，对<strong>士气</strong>造成<strong>光耀</strong>伤害，并施加<strong>迷失方向</strong>状态。</p>",
+          "effects": [
+            {
+              "name": "迷乱微光 Bewildering Gleam"
+            }
+          ]
+        }
+      }
     },
     "Electrified Pseudopod": {
       "name": "带电拟足 Electrified Pseudopod",
-      "description": "<p>这只@ref[actor.name]{软泥怪}体内涌动着电流，并能将其以猛烈的电力爆炸形式释放出来。</p>"
+      "description": "<p>这只@ref[actor.name]{软泥怪}体内涌动着电流，并能将其以猛烈的电力爆炸形式释放出来。</p>",
+      "actions": {
+        "oozeElectrifiedPseudopod": {
+          "name": "带电伪足 Electrified Pseudopod",
+          "description": "<p>一次针对<strong>坚韧防御</strong>的打击，可在彼此相距 3 英尺内的至多三个目标之间跳跃。此次攻击对<strong>士气</strong>造成<strong>电击</strong>伤害。</p><p>造成暴击时，施加<strong>感电</strong>状态，持续 2 个回合。</p>"
+        }
+      }
     },
     "Magnetic Disarm": {
       "name": "磁力缴械 Magnetic Disarm",
-      "description": "<p>该@ref[actor.name]{软泥怪}利用其带有磁性电荷的身体，使攻击者的金属武器脱手。</p>"
+      "description": "<p>该@ref[actor.name]{软泥怪}利用其带有磁性电荷的身体，使攻击者的金属武器脱手。</p>",
+      "actions": {
+        "oozeMagneticDisarm": {
+          "name": "磁力缴械 Magnetic Disarm",
+          "description": "<p>当被金属武器近战击中时，该软泥怪可以做出反应，用其磁化的身躯把武器从持用者手中拽脱。它对目标的<strong>坚韧防御</strong>发动一次<strong>运动</strong>技能攻击。成功时，该武器脱手并被吸收进软泥怪体内。</p><p>该软泥怪获得等同于其<strong>坚韧</strong>值的<strong>生命值</strong>，且除非软泥怪被击败，否则无法取回该武器。</p>",
+          "condition": "被金属武器近战击中。"
+        }
+      }
     },
     "Pallid Drake": {
       "name": "苍白龙兽 Pallid Drake",
@@ -161,7 +301,18 @@
     },
     "Pestilent Retch": {
       "name": "瘟疫呕吐 Pestilent Retch",
-      "description": "<p>该@ref[actor.name]{生物}能够向前方的目标喷吐腐化胆汁。</p>"
+      "description": "<p>该@ref[actor.name]{生物}能够向前方的目标喷吐腐化胆汁。</p>",
+      "actions": {
+        "corruptionVomit": {
+          "name": "疫病呕吐 Pestilent Retch",
+          "description": "<p>@ref[actor.name]{该生物}喷出腥臭的胆汁，将其前方的生物覆上腐化与朽坏。</p><p>造成<strong>暴击</strong>时，此次攻击会施加@Condition[decaying]状态，持续 <strong>3 个回合</strong>。</p>",
+          "effects": [
+            {
+              "name": "疫病呕吐 Pestilent Retch"
+            }
+          ]
+        }
+      }
     },
     "Primordial Guardian": {
       "name": "原初守护者 Primordial Guardian",
@@ -173,23 +324,73 @@
     },
     "Searing Stare": {
       "name": "灼热凝视 Searing Stare",
-      "description": "<p>@ref[actor.name]将其独眼中的神秘力量汇聚成一道穿透光束，对猎物造成伤害并使其暂时失明。</p>"
+      "description": "<p>@ref[actor.name]将其独眼中的神秘力量汇聚成一道穿透光束，对猎物造成伤害并使其暂时失明。</p>",
+      "actions": {
+        "searingStare": {
+          "name": "灼目凝视 Searing Stare",
+          "description": "<p>苏阿罗克死死盯住 60 英尺内一个它能看见的目标。这道凝视攻击目标的<strong>坚韧防御</strong>，造成<strong>火焰</strong>伤害并施加@Condition[blinded]状态，持续 6 轮，或直到苏阿罗克把凝视集中到另一个目标身上为止。</p>",
+          "effects": [
+            {
+              "name": "灼目凝视 Searing Stare"
+            }
+          ]
+        }
+      }
     },
     "Repelling Kick": {
       "name": "斥退踢击 Repelling Kick",
-      "description": "<p>@ref[actor.name]使出一记由炼金术驱动的飞踢，带着无情的震荡冲击力。</p>"
+      "description": "<p>@ref[actor.name]使出一记由炼金术驱动的飞踢，带着无情的震荡冲击力。</p>",
+      "actions": {
+        "sentinelKick": {
+          "name": "斥退踢击 Repelling Kick",
+          "description": "<p>该哨卫以一记带有冲击力的重靴撞击单一目标，造成<strong>钝击</strong>伤害，将目标向后击退至多 15 英尺，并使其陷入@Condition[staggered]状态。</p>",
+          "effects": [
+            {
+              "name": "斥退踢击 Repelling Kick"
+            }
+          ]
+        }
+      }
     },
     "Alchemical Recharge": {
       "name": "炼金充能 Alchemical Recharge",
-      "description": "<p>@ref[actor.name] 与一台炼金充能站连接，以恢复其内部炼金液体的储备。</p>"
+      "description": "<p>@ref[actor.name] 与一台炼金充能站连接，以恢复其内部炼金液体的储备。</p>",
+      "actions": {
+        "sentinelRecharge": {
+          "name": "炼金充能 Alchemical Recharge",
+          "description": "<p>该哨卫连接到一座已通电且运转正常的炼金充能站。连接之后，该构装体陷入@Condition[restrained]状态，但若充能过程未被打断，它会在下个回合开始时回复至多 4 点<strong>专注</strong>。</p>",
+          "effects": [
+            {
+              "name": "炼金充能 Alchemical Recharge"
+            }
+          ]
+        }
+      }
     },
     "Powered Spin": {
       "name": "动力旋转 Powered Spin",
-      "description": "<p>@ref[actor.name] 发动了一次由炼金力量驱动的旋转攻击，打击所有附近的敌人。</p>"
+      "description": "<p>@ref[actor.name] 发动了一次由炼金力量驱动的旋转攻击，打击所有附近的敌人。</p>",
+      "actions": {
+        "sentinelSpin": {
+          "name": "动力回旋 Powered Spin",
+          "description": "<p>该哨卫以闪电般迅捷的圆弧挥舞其巨剑，击中附近所有敌人。</p>"
+        }
+      }
     },
     "Enhanced Shielding": {
       "name": "强化护盾 Enhanced Shielding",
-      "description": "<p>@ref[actor.name]将炼金液体导入其护甲板中，使其暂时过热并得到强化，以抵御物理伤害。</p>"
+      "description": "<p>@ref[actor.name]将炼金液体导入其护甲板中，使其暂时过热并得到强化，以抵御物理伤害。</p>",
+      "actions": {
+        "sentinelShielding": {
+          "name": "强化护盾 Enhanced Shielding",
+          "description": "<p>你获得@Condition[guarded]状态，且你的<strong>护甲</strong>防御提高 +3，直到你下个回合开始。</p>",
+          "effects": [
+            {
+              "name": "强化护盾 Enhanced Shielding"
+            }
+          ]
+        }
+      }
     },
     "Sight Without": {
       "name": "无视觉感知 Sight Without",
@@ -205,7 +406,18 @@
     },
     "Swallowed Screams": {
       "name": "被吞没的尖叫声 Swallowed Screams",
-      "description": "<p>@ref[actor.name]{生物}紧盯着一个特定的目标，使其失去说话或听见的能力。</p>"
+      "description": "<p>@ref[actor.name]{生物}紧盯着一个特定的目标，使其失去说话或听见的能力。</p>",
+      "actions": {
+        "swallowedScreams": {
+          "name": "吞没尖叫 Swallowed Screams",
+          "description": "<p>@ref[actor.name]{该生物}对 30 英尺内单一目标的<strong>意志力</strong>发动一次<strong>表演</strong>攻击；除非该攻击被抵抗，否则目标陷入@Condition[silenced]状态，持续 1 分钟。</p>",
+          "effects": [
+            {
+              "name": "吞没尖叫 Swallowed Screams"
+            }
+          ]
+        }
+      }
     },
     "Tyraphem": {
       "name": "提拉斐姆 Tyraphem",
@@ -226,6 +438,77 @@
     "Whisperer": {
       "name": "低语者 Whisperer",
       "description": "<p>一团由活生生的黑暗与阴影构成的漩涡状团块，以一种令人不安、近乎不可能的方式在自身之中及其周围蜿蜒蠕动、翻腾扭曲。</p>"
+    },
+    "Agrimage": {
+      "name": "农术师 Agrimage",
+      "description": "<p>农术师以魔法协助当地社群耕作与务农，从让作物长得更快更丰产，到吸引并圈拢牲畜，再到让城镇免于周遭荒野的危险。这份工作的规模因人而异：农术师联合会专注于大规模农业事业，而云游的农术师则服务于阿克图斯高原上的农场、城镇与小型城市，帮助形形色色的阿克图里安人在这片土地上生存与兴旺。</p>"
+    },
+    "Crystallath": {
+      "name": "晶巉巨像 Crystallath",
+      "description": "<p>由暗色岩石构成的高耸晶质元素，体内交织着活体宝石的纹脉：聪慧、耐心而罕见。晶巉巨像没有真正的解剖结构，只有矿物；蕴藏在其晶面中的魔法能量会削弱来袭的法术。它能扭曲大地与重力，以投掷岩石、禁锢敌人，并从远处将其碾碎。</p>"
+    },
+    "Globlin": {
+      "name": "泥砾精 Globlin",
+      "description": "<p>由松散泥土、烂泥或碎砾构成的小型混沌元素，靠科拉的元素魔法黏合在一起。它们是科拉麾下最弱的一类，却狡黠、爱捣乱，成群结队时是真的危险。</p>"
+    },
+    "Gore Bird": {
+      "name": "血啄鸟 Gore Bird",
+      "description": "<p>遍布余烬全境的迅捷食腐猛禽。它们主要以腐尸为食，但在食物匮乏时，也会成大群地凶猛追猎活物。</p>"
+    },
+    "Jahud": {
+      "name": "贾胡德 Jahud",
+      "description": "<p>由西格纳拉生物法师在实验室环境中培育出的异界猎手与使者，它们的形体改造深入到基因层面。</p>"
+    },
+    "Obsidian Brood": {
+      "name": "黑曜子嗣 Obsidian Brood",
+      "description": "<p>这株高耸的藤蔓在战场上播撒自身的次级分蘖，并驱使它们作为自身意志的延伸发动攻击。</p>",
+      "actions": {
+        "spawnOffshoot": {
+          "name": "生出分蘖 Spawn Offshoot",
+          "description": "<p>@ref[actor.name]{该藤蔓}迫使一株次级的<strong>黑曜新枝</strong>从 30 英尺内的地面破土而出。该分蘖会作为受缚的仆从作战，并一直存在到被摧毁为止。</p>"
+        },
+        "directTheBrood": {
+          "name": "指挥子嗣 Direct the Brood",
+          "description": "<p>@ref[actor.name]{该藤蔓}通过大地送出一道号令脉冲。20 英尺内每一株友方<strong>黑曜新枝</strong>都获得@Condition[hastened]状态，直到该藤蔓下个回合开始，被催动着以不自然的速度出击与换位。</p>",
+          "effects": [
+            {
+              "name": "受令 Directed"
+            }
+          ]
+        }
+      }
+    },
+    "Obsidian Vine": {
+      "name": "黑曜藤蔓 Obsidian Vine",
+      "description": "<p>一条无心智的高耸卷须，由黑色火山玻璃构成，通体嵌满剃刀般的黑曜石棘刺。它没有眼睛、没有呼吸、也没有心智，只有抽打、缠绕与碾碎的本能。它坚硬却脆，在足够沉重的一击下会碎裂，但对强酸与毒素则完全不为所动。</p>"
+    },
+    "Stalagmaw": {
+      "name": "石笋巨口 Stalagmaw",
+      "description": "<p>由活体洞穴岩石构成的四足庞然巨兽，其崩解的骨架靠元素引力场维系在一起。石笋巨口拖着庞大的身躯在深层地下穿行，并破土而出，碾碎并吞食一切挡路之物。</p>"
+    },
+    "Subterranean Vine": {
+      "name": "地底藤蔓 Subterranean Vine",
+      "description": "<p>被埋入地下期间，这株巨藤会把自己碎裂的玻璃躯体重新织合，并在土中涌动，从自己的某一株分蘖处重新破土而出。</p>",
+      "actions": {
+        "vineMend": {
+          "name": "地底再生 Subterranean Regrowth",
+          "description": "<p>处于@Condition[burrowing]状态时，@ref[actor.name]{该藤蔓}从周围的泥土中汲取原料，修补自己断裂的躯体，回复可观的<strong>生命值</strong>。</p>",
+          "condition": "掘穴期间。"
+        },
+        "eruptiveRecall": {
+          "name": "破土回归 Eruptive Recall",
+          "description": "<p>当 @ref[actor.name]{该藤蔓} 处于@Condition[burrowing]状态、而它的一株<strong>黑曜新枝</strong>被摧毁时，该藤蔓会被扯着穿过大地来到倒下的分蘖处，视需要跨越高度与楼层，并在其原地破土而出。被摧毁的分蘖会被吞噬，藤蔓则现身，并结束@Condition[burrowing]状态。</p>",
+          "condition": "反应：你处于掘穴状态时，一株黑曜新枝被摧毁。"
+        }
+      }
+    },
+    "Garganthus": {
+      "name": "加尔甘图斯 Garganthus",
+      "description": "<p>恶毒而魁伟的四足歧路捕食者，以其幽暗的鳞状皮肉、六条肢体、凶恶的利爪与矛一般的獠牙而闻名。</p>"
+    },
+    "Yarnac": {
+      "name": "亚纳克 Yarnac",
+      "description": "<p>被称为亚纳克的巨大冠角生物，是阿克图斯高原上最可靠的驮兽之一。</p>"
     }
   }
 }
