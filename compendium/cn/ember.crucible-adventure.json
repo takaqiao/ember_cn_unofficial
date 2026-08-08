@@ -4177,7 +4177,7 @@
             "Sunsword": {
               "name": "阳炎剑 Sunsword",
               "description": {
-                "private": "<p>[[lookup @name]] 挥舞着一把来自灰烬最初的巨人的巨大魔法巨剑，灌注了光能量与兰提尔的祝福。</p><p>[[/attack extended]]。 [[/damage average extended]]。</p><p>当 [[lookup @name]] 使用此武器造成重击时，目标会额外受到 [[/damage average activity=JOZRzLlo3Za14r5R]] 伤害，并获得 &amp;Reference[目盲] 状态，直到 [[lookup @name]] 的下一回合开始。</p>"
+                "private": "<p>[[lookup @name]] 挥舞着一把来自灰烬最初的巨人的巨大魔法巨剑，灌注了光能量与兰提尔的祝福。</p><p>[[/attack extended]]。 [[/damage average extended]]。</p><p>当 [[lookup @name]] 使用此武器造成重击时，目标会额外受到 [[/damage average activity=JOZRzLlo3Za14r5R]] 伤害，并获得 &amp;Reference[blinded] 状态，直到 [[lookup @name]] 的下一回合开始。</p>"
               },
               "effects": {
                 "Blinded": {
@@ -4292,7 +4292,7 @@
             },
             "Blasphemous Word": {
               "name": "亵渎之语 Blasphemous Word",
-              "description": "<p>纳丁吐出一个极其可怖、令人无法理解的词语。</p><p><em>体质豁免</em>：DC [[lookup @save.dc.value activity=dnd5eactivity000]]，由[[lookup @name]]在其[[lookup @target.template.size activity=dnd5eactivity000]]尺内可听见它的每个非[[lookup @details.type.config.label lowercase]]生物进行。</p><p><em>失败</em>：该生物陷入&amp;Reference[震慑 apply=false]状态，直到[[lookup @name]]的下个回合结束。</p><p><em>成功</em>：无效果。</p>",
+              "description": "<p>纳丁吐出一个极其可怖、令人无法理解的词语。</p><p><em>体质豁免</em>：DC [[lookup @save.dc.value activity=dnd5eactivity000]]，由[[lookup @name]]在其[[lookup @target.template.size activity=dnd5eactivity000]]尺内可听见它的每个非[[lookup @details.type.config.label lowercase]]生物进行。</p><p><em>失败</em>：该生物陷入&amp;Reference[Stunned apply=false]状态，直到[[lookup @name]]的下个回合结束。</p><p><em>成功</em>：无效果。</p>",
               "effects": {
                 "Stunned": {
                   "description": "<p>该生物获得&amp;Reference[Stunned apply=false]状态，直到纳丁的下个回合结束。</p>",
@@ -4322,7 +4322,7 @@
             },
             "Blindness/Deafness": {
               "name": "失明/失聪 Blindness/Deafness",
-              "description": "<p>你在范围内能看见的一名生物必须成功通过一次体质豁免，否则其将在持续时间内陷入&amp;Reference[目盲 apply=false]或&amp;Reference[失聪 apply=false]状态（由你选择）。在其每个回合结束时，目标会重复进行该豁免，若成功则其身上的该法术结束。</p><p><strong>使用更高等级的法术位。</strong> 法术位每高于2级一级，你就可以额外指定一个目标生物。</p>",
+              "description": "<p>你在范围内能看见的一名生物必须成功通过一次体质豁免，否则其将在持续时间内陷入&amp;Reference[Blinded apply=false]或&amp;Reference[Deafened apply=false]状态（由你选择）。在其每个回合结束时，目标会重复进行该豁免，若成功则其身上的该法术结束。</p><p><strong>使用更高等级的法术位。</strong> 法术位每高于2级一级，你就可以额外指定一个目标生物。</p>",
               "effects": {
                 "Blindness": {
                   "description": "<p>在其每个回合结束时，目标重复进行[[/save ability=con]]豁免，成功则对自身结束该法术。</p>",
@@ -11631,7 +11631,7 @@
             },
             "Entangle": {
               "name": "缠绕 Entangle",
-              "description": "<p>纠缠的杂草和藤蔓从地面 sprout，在射程内一点开始的一个20英尺正方形区域内生长。持续时间内，这些植物会将该区域内的地面变为困难地形。</p><p>当你施放该法术时，区域内的生物必须成功通过一次力量豁免，否则会被纠缠的植物&amp;Reference[受拘束]，直到法术结束。被这些植物受拘束的生物可以用其动作对你的法术豁免 DC 进行一次力量检定。若成功，它会挣脱束缚。</p><p>当法术结束时，召唤出的植物会枯萎消失。</p>",
+              "description": "<p>纠缠的杂草和藤蔓从地面 sprout，在射程内一点开始的一个20英尺正方形区域内生长。持续时间内，这些植物会将该区域内的地面变为困难地形。</p><p>当你施放该法术时，区域内的生物必须成功通过一次力量豁免，否则会被纠缠的植物&amp;Reference[Restrained]，直到法术结束。被这些植物受拘束的生物可以用其动作对你的法术豁免 DC 进行一次力量检定。若成功，它会挣脱束缚。</p><p>当法术结束时，召唤出的植物会枯萎消失。</p>",
               "effects": {
                 "Entangle": {
                   "description": "<p>区域内的生物会被缠绕的植物施加受缚状态，直到该法术结束。被这些植物束缚的生物可以用其动作对你的法术豁免 DC 进行一次力量检定。若成功，则其挣脱束缚。</p>",
@@ -11649,7 +11649,7 @@
             },
             "Fear": {
               "name": "恐惧 Fear",
-              "description": "<p>你投射出一个生物最深恐惧所形成的幻象。30英尺锥形范围内的每个生物都必须成功通过一次感知豁免，否则就会丢下它所持有的任何物品，并在持续时间内陷入&amp;Reference[恐慌]状态。</p><p>当生物因该法术而处于恐慌状态时，除非无处可移动，否则它在自己的每个回合都必须采取疾走动作，并沿当前可用的最安全路线远离你移动。如果该生物在其回合结束时处于一个看不到你的位置，则该生物可以进行一次感知豁免。若豁免成功，则该法术对该生物结束。</p>",
+              "description": "<p>你投射出一个生物最深恐惧所形成的幻象。30英尺锥形范围内的每个生物都必须成功通过一次感知豁免，否则就会丢下它所持有的任何物品，并在持续时间内陷入&amp;Reference[Frightened]状态。</p><p>当生物因该法术而处于恐慌状态时，除非无处可移动，否则它在自己的每个回合都必须采取疾走动作，并沿当前可用的最安全路线远离你移动。如果该生物在其回合结束时处于一个看不到你的位置，则该生物可以进行一次感知豁免。若豁免成功，则该法术对该生物结束。</p>",
               "effects": {
                 "Fear": {
                   "description": "<p>目标会丢下手中所持的一切，并在持续时间内陷入恐慌。当因此法术而恐慌时，该生物在其每个回合都必须进行疾走动作，沿现有最安全的路线远离施法者，除非无处可移动。</p>",
@@ -11862,7 +11862,7 @@
             },
             "Lesser Restoration": {
               "name": "次级恢复 Lesser Restoration",
-              "description": "<p>你接触一个生物，并终止其身上的一个状态：&amp;Reference[目盲]、&amp;Reference[失聪]、&amp;Reference[麻痹]，或 &amp;Reference[中毒]。</p>"
+              "description": "<p>你接触一个生物，并终止其身上的一个状态：&amp;Reference[blinded]、&amp;Reference[deafened]、&amp;Reference[paralyzed]，或 &amp;Reference[poisoned]。</p>"
             },
             "Spike Growth": {
               "name": "荆棘丛生 Spike Growth",
@@ -12141,7 +12141,7 @@
             "Net": {
               "name": "网 Net",
               "description": {
-                "private": "<p>当你采取攻击动作时，你可以用投掷一张网来替代其中一次攻击。以你15尺内一个你看得见的生物为目标。目标必须成功通过一次敏捷豁免（DC为8 + 你的敏捷调整值和熟练加值），否则将陷入&amp;Reference[受拘束]状态，直到其逃脱为止。如果目标体型为巨型或更大，则自动成功。</p><p>要逃脱，目标或其5尺内的一个生物必须花费一个动作进行一次[[/skill ath 10]]检定，成功则使受拘束的生物脱困。摧毁这张网（AC 10；5 HP；免疫钝击、毒素和心灵伤害）也会使目标脱困，并结束该效果。</p>"
+                "private": "<p>当你采取攻击动作时，你可以用投掷一张网来替代其中一次攻击。以你15尺内一个你看得见的生物为目标。目标必须成功通过一次敏捷豁免（DC为8 + 你的敏捷调整值和熟练加值），否则将陷入&amp;Reference[Restrained]状态，直到其逃脱为止。如果目标体型为巨型或更大，则自动成功。</p><p>要逃脱，目标或其5尺内的一个生物必须花费一个动作进行一次[[/skill ath 10]]检定，成功则使受拘束的生物脱困。摧毁这张网（AC 10；5 HP；免疫钝击、毒素和心灵伤害）也会使目标脱困，并结束该效果。</p>"
               },
               "effects": {
                 "Restrained": {
@@ -13086,7 +13086,7 @@
           "items": {
             "Veiled Presence": {
               "name": "隐秘气场 Veiled Presence",
-              "description": "<p>在奥尔丹的街道中移动时，[[lookup @name]]可以利用人群作为掩护，并在这样做时进行&amp;reference[潜行]检定获得&amp;reference[优势]。处于隐藏状态时，他与@UUID[Actor.pxvrzj4uE4tVFzYL]{奥尔达尼城镇居民}无从分辨。</p>"
+              "description": "<p>在奥尔丹的街道中移动时，[[lookup @name]]可以利用人群作为掩护，并在这样做时进行&amp;reference[advantage]检定获得&amp;reference[stealth]。处于隐藏状态时，他与@UUID[Actor.pxvrzj4uE4tVFzYL]{奥尔达尼城镇居民}无从分辨。</p>"
             },
             "Hidden Dagger": {
               "name": "隐匕 Hidden Dagger",
@@ -13102,7 +13102,7 @@
             },
             "Nimble Escape": {
               "name": "灵巧脱逃 Nimble Escape",
-              "description": "<p class=\"feature\">[[lookup @name]] 进行&amp;Reference[脱离接战]或&amp;Reference[隐匿]动作。</p>",
+              "description": "<p class=\"feature\">[[lookup @name]] 进行&amp;Reference[Disengage]或&amp;Reference[Hide]动作。</p>",
               "effects": {
                 "Apply Hide Action to Target": {
                   "name": "对目标施加躲藏动作 Apply Hide Action to Target"
@@ -13117,7 +13117,7 @@
             },
             "Manacles": {
               "name": "镣铐 Manacles",
-              "description": "<p>作为一个利用动作，若你通过一次 DC 13 的敏捷（巧手）检定，你可以使用镣铐束缚 5 尺内一名不情愿且处于&amp;Reference[被擒抱]、&amp;Reference[失能]或&amp;Reference[受拘束]状态的小型或中型生物。被束缚期间，生物的攻击检定具有劣势；若镣铐连接在固定于原地的锁链或钩子上，该生物还会处于受拘束状态。挣脱镣铐需要以一个动作成功通过一次 DC 20 的敏捷（巧手）检定。强行挣断则需要以一个动作成功通过一次 DC 25 的力量（运动）检定。</p><p>每副镣铐都配有一把钥匙。没有钥匙时，生物可以使用盗贼工具，通过一次成功的 [[/tool thief dex 15]] 检定撬开镣铐的锁。</p>",
+              "description": "<p>作为一个利用动作，若你通过一次 DC 13 的敏捷（巧手）检定，你可以使用镣铐束缚 5 尺内一名不情愿且处于&amp;Reference[Grappled]、&amp;Reference[Incapacitated]或&amp;Reference[Restrained]状态的小型或中型生物。被束缚期间，生物的攻击检定具有劣势；若镣铐连接在固定于原地的锁链或钩子上，该生物还会处于受拘束状态。挣脱镣铐需要以一个动作成功通过一次 DC 20 的敏捷（巧手）检定。强行挣断则需要以一个动作成功通过一次 DC 25 的力量（运动）检定。</p><p>每副镣铐都配有一把钥匙。没有钥匙时，生物可以使用盗贼工具，通过一次成功的 [[/tool thief dex 15]] 检定撬开镣铐的锁。</p>",
               "effects": {
                 "Manacled": {
                   "name": "镣铐束缚 Manacled"
@@ -13141,7 +13141,7 @@
             "Hand Crossbow": {
               "name": "手弩 Hand Crossbow",
               "description": {
-                "private": "<p>[[/attack extended]]. [[/damage average extended]]. 如果目标被命中，则其受到以下效果。</p><p><em>体质豁免</em>：DC [[lookup @save.dc.value activity=0okM2Taq0ZZ84exx]]。</p><p><em>失败</em><strong data-start=\"158\" data-end=\"170\">：</strong>目标陷入&amp;Reference[中毒]状态，直到其下个回合结束。</p>"
+                "private": "<p>[[/attack extended]]. [[/damage average extended]]. 如果目标被命中，则其受到以下效果。</p><p><em>体质豁免</em>：DC [[lookup @save.dc.value activity=0okM2Taq0ZZ84exx]]。</p><p><em>失败</em><strong data-start=\"158\" data-end=\"170\">：</strong>目标陷入&amp;Reference[poisoned]状态，直到其下个回合结束。</p>"
               },
               "effects": {
                 "Poisoned": {
@@ -13961,7 +13961,7 @@
             },
             "Reactive": {
               "name": "反应式 Reactive",
-              "description": "<p>这个果冻体在战斗中的每个回合都可以进行一次&amp;Reference[反应]，但只能用于施展致残触须。</p>"
+              "description": "<p>这个果冻体在战斗中的每个回合都可以进行一次&amp;Reference[Reaction]，但只能用于施展致残触须。</p>"
             },
             "Contact Hazard": {
               "name": "接触危险物 Contact Hazard",
@@ -13999,7 +13999,7 @@
             },
             "Reactive": {
               "name": "反应式 Reactive",
-              "description": "<p>该胶质体在战斗中的每个回合都可以进行一次&amp;Reference[反应]，但只能用来施展致残触须。</p>"
+              "description": "<p>该胶质体在战斗中的每个回合都可以进行一次&amp;Reference[Reaction]，但只能用来施展致残触须。</p>"
             },
             "Special Adaptation": {
               "name": "特殊适应 Special Adaptation",
@@ -14876,7 +14876,7 @@
             "Clawed Fingers": {
               "name": "利爪般的手指 Clawed Fingers",
               "description": {
-                "private": "<p>[[/attack extended]]。[[/damage average extended]]，且目标&amp;Reference[被擒抱]（逃脱 DC 14）。以此方式被擒抱期间，目标具有&amp;Reference[受拘束]状态。</p>"
+                "private": "<p>[[/attack extended]]。[[/damage average extended]]，且目标&amp;Reference[grappled]（逃脱 DC 14）。以此方式被擒抱期间，目标具有&amp;Reference[restrained]状态。</p>"
               },
               "effects": {
                 "Grappled & Restrained": {
@@ -15403,7 +15403,7 @@
             },
             "Reactive": {
               "name": "反应式 Reactive",
-              "description": "<p>果冻体在战斗中的每个回合都可以进行一次&amp;Reference[反应]，但只能用于施展致残触须。</p>"
+              "description": "<p>果冻体在战斗中的每个回合都可以进行一次&amp;Reference[Reaction]，但只能用于施展致残触须。</p>"
             },
             "Special Adaptation": {
               "name": "特殊适应 Special Adaptation",
@@ -15518,7 +15518,7 @@
             },
             "Slippery Form": {
               "name": "滑溜形态 Slippery Form",
-              "description": "<p>[[lookup @name lowercase]] 无视&amp;reference[困难地形]，在水中移动时更为顺畅，能够轻松攀爬湿滑的表面，并且可以花费 5 尺移动来挣脱非魔法束缚或摆脱被擒抱状态。</p>"
+              "description": "<p>[[lookup @name lowercase]] 无视&amp;reference[difficult terrain]，在水中移动时更为顺畅，能够轻松攀爬湿滑的表面，并且可以花费 5 尺移动来挣脱非魔法束缚或摆脱被擒抱状态。</p>"
             },
             "Multiattack": {
               "name": "多重攻击 Multiattack",
@@ -15527,7 +15527,7 @@
             "Toothy Bite": {
               "name": "利齿啃咬 Toothy Bite",
               "description": {
-                "private": "<p>[[/attack extended]] 命中：[[/damage average extended]]，且目标陷入&amp;Reference[被擒抱]状态（逃脱 DC [[lookup @check.dc.value activity=X4pAetetKMWjeZs9]]）。</p><p data-start=\"268\" data-end=\"483\">直到擒抱结束前，目标还会陷入&amp;Reference[受拘束]状态，且[[lookup @name]]不能对其他目标使用 Toothy Bite。当[[lookup @name]]移动时，被擒抱的目标会随之移动。</p>"
+                "private": "<p>[[/attack extended]] 命中：[[/damage average extended]]，且目标陷入&amp;Reference[Grappled]状态（逃脱 DC [[lookup @check.dc.value activity=X4pAetetKMWjeZs9]]）。</p><p data-start=\"268\" data-end=\"483\">直到擒抱结束前，目标还会陷入&amp;Reference[Restrained]状态，且[[lookup @name]]不能对其他目标使用 Toothy Bite。当[[lookup @name]]移动时，被擒抱的目标会随之移动。</p>"
               },
               "effects": {
                 "Grappled & Restrained": {
@@ -15879,7 +15879,7 @@
             },
             "Reactive": {
               "name": "反应式 Reactive",
-              "description": "<p>该胶质体在战斗中的每个回合都可以进行一次&amp;Reference[反应]，但只能用于施展致残触须。</p>"
+              "description": "<p>该胶质体在战斗中的每个回合都可以进行一次&amp;Reference[Reaction]，但只能用于施展致残触须。</p>"
             },
             "Special Adaptation": {
               "name": "特殊适应 Special Adaptation",
@@ -22393,7 +22393,7 @@
             "Grave Strike (Vampyre Form Only)": {
               "name": "墓击（仅限吸血鬼形态） Grave Strike (Vampyre Form Only)",
               "description": {
-                "private": "<p class=\"feature\">[[/attack extended]]。[[/damage average extended]]。如果目标是大型或更小的生物，它会被一只手施加&amp;Reference[被擒抱 apply=false]状态（逃脱 DC [[lookup @skills.ath.passive]]）；该生物最多可同时被两只手中的一只擒抱。</p>"
+                "private": "<p class=\"feature\">[[/attack extended]]。[[/damage average extended]]。如果目标是大型或更小的生物，它会被一只手施加&amp;Reference[Grappled apply=false]状态（逃脱 DC [[lookup @skills.ath.passive]]）；该生物最多可同时被两只手中的一只擒抱。</p>"
               },
               "effects": {
                 "Grappled": {
@@ -22559,7 +22559,7 @@
             },
             "Lesser Restoration": {
               "name": "次级恢复 Lesser Restoration",
-              "description": "<p>你接触一个生物，并结束其身上的一个状态：&amp;Reference[目盲]、&amp;Reference[失聪]、&amp;Reference[麻痹]，或 &amp;Reference[中毒]。</p>"
+              "description": "<p>你接触一个生物，并结束其身上的一个状态：&amp;Reference[blinded]、&amp;Reference[deafened]、&amp;Reference[paralyzed]，或 &amp;Reference[poisoned]。</p>"
             },
             "Aura of Life": {
               "name": "生命灵气 Aura of Life",
@@ -23099,7 +23099,7 @@
             },
             "Lesser Restoration": {
               "name": "次级恢复 Lesser Restoration",
-              "description": "<p>你触碰一个生物，并结束其身上的一个状态：&amp;Reference[目盲]、&amp;Reference[失聪]、&amp;Reference[麻痹]或&amp;Reference[中毒]。</p>",
+              "description": "<p>你触碰一个生物，并结束其身上的一个状态：&amp;Reference[blinded]、&amp;Reference[deafened]、&amp;Reference[paralyzed]或&amp;Reference[poisoned]。</p>",
               "effects": {
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
@@ -23617,7 +23617,7 @@
             },
             "Darkness": {
               "name": "黑暗 Darkness",
-              "description": "<p>在持续时间内，魔法&amp;Reference[黑暗术]从射程内的一点蔓延，并充满一个半径15英尺的球形区域。黑暗视觉无法看穿它，且非魔法光源无法照亮它。</p><p>或者，你将该法术施加在一个未被穿戴或携带的物体上，使黑暗术以该物体为源点，充满一个15英尺的散发区域。用某种不透明物体（如碗或头盔）盖住该物体，会格挡黑暗术。</p><p>如果该法术区域的任何部分与由2级或更低级法术创造的明亮光照或微光区域重叠，则那个其他法术被驱散。</p>"
+              "description": "<p>在持续时间内，魔法&amp;Reference[darkness]从射程内的一点蔓延，并充满一个半径15英尺的球形区域。黑暗视觉无法看穿它，且非魔法光源无法照亮它。</p><p>或者，你将该法术施加在一个未被穿戴或携带的物体上，使黑暗术以该物体为源点，充满一个15英尺的散发区域。用某种不透明物体（如碗或头盔）盖住该物体，会格挡黑暗术。</p><p>如果该法术区域的任何部分与由2级或更低级法术创造的明亮光照或微光区域重叠，则那个其他法术被驱散。</p>"
             },
             "Mirror Image": {
               "name": "镜影术 Mirror Image",
@@ -23679,7 +23679,7 @@
             },
             "Telekinesis": {
               "name": "念动力 Telekinesis",
-              "description": "<p>你获得了通过意念移动或操纵生物或物体的能力。当你施放该法术时，以及在法术结束前你之后的回合中以一个魔法动作，你可以对一个位于射程内且你能看见的生物或物体施加意志，从而产生下述相应效果。你可以一轮接一轮地影响同一个目标，也可以在任何时候改为选择新的目标。如果你切换目标，先前的目标将不再受该法术影响。</p><p><strong>生物。</strong>你可以尝试移动一个大型或更小的生物。目标必须成功通过一次力量豁免，否则你将其在法术射程内沿任意方向移动最多30英尺。直到你的下个回合结束前，该生物具有&amp;Reference[受拘束]状态；如果你将它抬到空中，它会悬 suspended在那里。除非你再次对它使用此选项且它豁免失败，否则它会在你的下个回合结束时坠落。</p><p><strong>物体。</strong>你可以尝试移动一个大型或更小的物体。如果该物体没有被穿戴或携带，你自动将其在法术射程内沿任意方向移动最多30英尺。</p><p>如果该物体正被一个生物穿戴或携带，则该生物必须成功通过一次力量豁免，否则你会将该物体拽离，并将其在法术射程内沿任意方向移动最多30英尺。</p><p>你可以用念动力抓握对物体施加精细控制，例如操纵一个简单工具、打开一扇门或一个容器、将一件物品放入开启的容器中或从中取出，或将一个小瓶中的内容物倒出。</p>"
+              "description": "<p>你获得了通过意念移动或操纵生物或物体的能力。当你施放该法术时，以及在法术结束前你之后的回合中以一个魔法动作，你可以对一个位于射程内且你能看见的生物或物体施加意志，从而产生下述相应效果。你可以一轮接一轮地影响同一个目标，也可以在任何时候改为选择新的目标。如果你切换目标，先前的目标将不再受该法术影响。</p><p><strong>生物。</strong>你可以尝试移动一个大型或更小的生物。目标必须成功通过一次力量豁免，否则你将其在法术射程内沿任意方向移动最多30英尺。直到你的下个回合结束前，该生物具有&amp;Reference[Restrained]状态；如果你将它抬到空中，它会悬 suspended在那里。除非你再次对它使用此选项且它豁免失败，否则它会在你的下个回合结束时坠落。</p><p><strong>物体。</strong>你可以尝试移动一个大型或更小的物体。如果该物体没有被穿戴或携带，你自动将其在法术射程内沿任意方向移动最多30英尺。</p><p>如果该物体正被一个生物穿戴或携带，则该生物必须成功通过一次力量豁免，否则你会将该物体拽离，并将其在法术射程内沿任意方向移动最多30英尺。</p><p>你可以用念动力抓握对物体施加精细控制，例如操纵一个简单工具、打开一扇门或一个容器、将一件物品放入开启的容器中或从中取出，或将一个小瓶中的内容物倒出。</p>"
             },
             "Wall of Force": {
               "name": "力场墙 Wall of Force",
@@ -23864,7 +23864,7 @@
             "Bite": {
               "name": "啃咬 Bite",
               "description": {
-                "private": "<p>[[/attack extended]]。[[/damage average extended]]，且目标必须成功通过一次[[/save format=long]]，否则会&amp;Reference[中毒]，持续1分钟。目标可以在其每个回合结束时重复进行该豁免，成功则使自身身上的该效果结束。</p>"
+                "private": "<p>[[/attack extended]]。[[/damage average extended]]，且目标必须成功通过一次[[/save format=long]]，否则会&amp;Reference[poisoned]，持续1分钟。目标可以在其每个回合结束时重复进行该豁免，成功则使自身身上的该效果结束。</p>"
               },
               "effects": {
                 "Poisoned": {
@@ -24113,7 +24113,7 @@
             },
             "Starry Wisp": {
               "name": "星光幽火 Starry Wisp",
-              "description": "<p>你向射程内的一个生物或物体发射一团光。对目标进行一次远程法术攻击。若命中，目标受到1d8点光耀伤害，并且直到你下个回合结束前，它会在10尺半径内发出微光，且无法从&amp;Reference[隐形]状态中获益。</p><p><strong>戏法强化。</strong>当你达到5级（2d8）、11级（3d8）和17级（4d8）时，伤害提高1d8。</p>",
+              "description": "<p>你向射程内的一个生物或物体发射一团光。对目标进行一次远程法术攻击。若命中，目标受到1d8点光耀伤害，并且直到你下个回合结束前，它会在10尺半径内发出微光，且无法从&amp;Reference[Invisible]状态中获益。</p><p><strong>戏法强化。</strong>当你达到5级（2d8）、11级（3d8）和17级（4d8）时，伤害提高1d8。</p>",
               "effects": {
                 "Illuminated": {
                   "description": "<p>直到你下个回合结束前，它会在 10 英尺半径内发出微光，并且无法从&amp;Reference[Invisible]状态中受益。</p>",
@@ -24167,7 +24167,7 @@
             },
             "Darkness": {
               "name": "黑暗 Darkness",
-              "description": "<p>在持续时间内，魔法&amp;Reference[黑暗]从射程内的一点蔓延开来，并充满一个半径15英尺的球体。黑暗视觉无法看穿它，非魔法光源也无法照亮它。</p><p>或者，你可以将该法术施加在一个未被穿戴或携带的物体上，使黑暗从该物体处发出，形成一个15英尺的散发。用某种不透明物体覆盖该物体，例如碗或头盔，会阻挡黑暗。</p><p>如果该法术区域的任何部分与由2级或更低等级法术创造的明亮光照或微光区域重叠，则那个其他法术被驱散。</p>"
+              "description": "<p>在持续时间内，魔法&amp;Reference[darkness]从射程内的一点蔓延开来，并充满一个半径15英尺的球体。黑暗视觉无法看穿它，非魔法光源也无法照亮它。</p><p>或者，你可以将该法术施加在一个未被穿戴或携带的物体上，使黑暗从该物体处发出，形成一个15英尺的散发。用某种不透明物体覆盖该物体，例如碗或头盔，会阻挡黑暗。</p><p>如果该法术区域的任何部分与由2级或更低等级法术创造的明亮光照或微光区域重叠，则那个其他法术被驱散。</p>"
             },
             "Ray of Enfeeblement": {
               "name": "虚弱射线 Ray of Enfeeblement",
@@ -24488,7 +24488,7 @@
             "Thorn Whip": {
               "name": "荆棘鞭 Thorn Whip",
               "description": {
-                "private": "<p>[[/attack extended]]。[[/damage average extended]]，且目标必须成功通过一次 [[/save format=long]]，否则陷入&amp;Reference[恐慌]，直到梅里的下个回合结束。</p>"
+                "private": "<p>[[/attack extended]]。[[/damage average extended]]，且目标必须成功通过一次 [[/save format=long]]，否则陷入&amp;Reference[frightened]，直到梅里的下个回合结束。</p>"
               },
               "effects": {
                 "Frightened": {
@@ -24715,7 +24715,7 @@
             },
             "Limblock Toxin": {
               "name": "瘫肢毒素 Limblock Toxin",
-              "description": "<p>[[lookup @name]]的武器都涂有一种危险的毒药。每次其用匕首刺击或投掷小刀成功对一个生物造成伤害时，该生物都必须成功通过一次[[/save extended format=long]]。</p><p><em>失败</em>：由于其肌肉痉挛，在其下个回合开始前陷入&amp;reference[受拘束]状态。</p><p><em>成功</em>：目标不受影响，并在1小时内免疫瘫肢毒素。</p>",
+              "description": "<p>[[lookup @name]]的武器都涂有一种危险的毒药。每次其用匕首刺击或投掷小刀成功对一个生物造成伤害时，该生物都必须成功通过一次[[/save extended format=long]]。</p><p><em>失败</em>：由于其肌肉痉挛，在其下个回合开始前陷入&amp;reference[restrained]状态。</p><p><em>成功</em>：目标不受影响，并在1小时内免疫瘫肢毒素。</p>",
               "effects": {
                 "Restrained": {
                   "description": "<p>目标肌肉痉挛僵直，陷入&amp;reference[restrained]状态，直到其下个回合开始。</p>",
@@ -24908,7 +24908,7 @@
             },
             "Limblock Toxin": {
               "name": "瘫肢毒素 Limblock Toxin",
-              "description": "<p>[[lookup @name]]的武器都涂有一种危险的毒药。每次其用匕首刺击或投掷小刀成功对一个生物造成伤害时，该生物都必须成功通过一次[[/save extended format=long]]。</p><p><em>失败</em>：其肌肉会突然僵住，陷入&amp;reference[受拘束]状态，直到其下个回合开始。</p><p><em>成功</em>：目标不受影响，并在1小时内免疫瘫肢毒素。</p>",
+              "description": "<p>[[lookup @name]]的武器都涂有一种危险的毒药。每次其用匕首刺击或投掷小刀成功对一个生物造成伤害时，该生物都必须成功通过一次[[/save extended format=long]]。</p><p><em>失败</em>：其肌肉会突然僵住，陷入&amp;reference[restrained]状态，直到其下个回合开始。</p><p><em>成功</em>：目标不受影响，并在1小时内免疫瘫肢毒素。</p>",
               "effects": {
                 "Restrained": {
                   "description": "<p>目标肌肉痉挛僵直，陷入&amp;reference[restrained]状态，直到其下个回合开始。</p>",
@@ -25031,7 +25031,7 @@
             },
             "Inject Blaze": {
               "name": "注入炽焰 Inject Blaze",
-              "description": "<p>[[lookup @name]]抓起一支预装了发光炼金溶液的注射器，并将其注入自己的手臂。其具有以下效果：</p><ul><li><p>Kaftor直到其下个回合结束前免疫&amp;reference[恐慌状态]。</p></li><li><p>Kaftor获得@UUID[Compendium.dnd5e.spells24.Item.phbsplHaste00000]{加速术}法术的效果，持续一轮，并忽略与该法术结束相关的负面效果。</p></li></ul><p>他身上带有四剂。若从他的身体上搜刮到任何未消耗的剂量，应作为@UUID[Item.GSCmA5aRvggTLWtV]{炽焰蒸馏剂}授予。</p>",
+              "description": "<p>[[lookup @name]]抓起一支预装了发光炼金溶液的注射器，并将其注入自己的手臂。其具有以下效果：</p><ul><li><p>Kaftor直到其下个回合结束前免疫&amp;reference[frightened]。</p></li><li><p>Kaftor获得@UUID[Compendium.dnd5e.spells24.Item.phbsplHaste00000]{加速术}法术的效果，持续一轮，并忽略与该法术结束相关的负面效果。</p></li></ul><p>他身上带有四剂。若从他的身体上搜刮到任何未消耗的剂量，应作为@UUID[Item.GSCmA5aRvggTLWtV]{炽焰蒸馏剂}授予。</p>",
               "effects": {
                 "Frightened CI": {
                   "description": "<p>卡夫托尔直到其下个回合结束前免疫&amp;reference[frightened]状态。</p>",
@@ -25475,7 +25475,7 @@
             },
             "Whirlpool": {
               "name": "漩涡 Whirlpool",
-              "description": "<p>维斯皮安九头蛇在以自身为中心、半径为 [[lookup @target.template.size activity=dnd5eactivity000]] 英尺的气场中制造出一个旋转的水漩涡，持续 1 分钟，或直到维斯皮安九头蛇陷入&amp;Reference[失能]。</p><p><em>力量豁免</em>：DC [[lookup @save.dc.value activity=dnd5eactivity000]]，气场中的每个生物。</p><p><em>失败</em>：该生物被拉至邻近维斯皮安九头蛇的最近未被占据空间，并处于&amp;Reference[被擒抱]状态（逃脱 DC [[lookup @check.dc.value activity=tCVHmS4n52ADuHdD]]）。</p><p>生物在气场内时，其每个回合开始时都会受到 [[/damage average activity=00rwjg090CgZk4Ex]] 伤害。</p><p>处于&amp;Reference[被擒抱]状态的生物可以使用其动作进行一次 [[/check format=long]]，成功则终止自身所受的该效果。</p>",
+              "description": "<p>维斯皮安九头蛇在以自身为中心、半径为 [[lookup @target.template.size activity=dnd5eactivity000]] 英尺的气场中制造出一个旋转的水漩涡，持续 1 分钟，或直到维斯皮安九头蛇陷入&amp;Reference[incapacitated]。</p><p><em>力量豁免</em>：DC [[lookup @save.dc.value activity=dnd5eactivity000]]，气场中的每个生物。</p><p><em>失败</em>：该生物被拉至邻近维斯皮安九头蛇的最近未被占据空间，并处于&amp;Reference[grappled]状态（逃脱 DC [[lookup @check.dc.value activity=tCVHmS4n52ADuHdD]]）。</p><p>生物在气场内时，其每个回合开始时都会受到 [[/damage average activity=00rwjg090CgZk4Ex]] 伤害。</p><p>处于&amp;Reference[grappled]状态的生物可以使用其动作进行一次 [[/check format=long]]，成功则终止自身所受的该效果。</p>",
               "effects": {
                 "Grappled": {
                   "description": "<p>目标被维斯皮安九头蛇施加&amp;Reference[grappled apply=false]状态。在其下个回合，它可以用自己的动作挣脱。</p>",
@@ -25510,7 +25510,7 @@
             "Claw": {
               "name": "爪 Claw",
               "description": {
-                "private": "<p>[[/attack extended]]。[[/damage average extended]]。如果目标是中型或更小的生物，它会因两只爪中的一只而陷入&amp;Reference[被擒抱 apply=false]状态（逃脱 DC [[lookup @skills.ath.passive]]）。</p>"
+                "private": "<p>[[/attack extended]]。[[/damage average extended]]。如果目标是中型或更小的生物，它会因两只爪中的一只而陷入&amp;Reference[Grappled apply=false]状态（逃脱 DC [[lookup @skills.ath.passive]]）。</p>"
               },
               "effects": {
                 "Grappled": {
@@ -25645,7 +25645,7 @@
             "Withering Touch": {
               "name": "凋零触碰 Withering Touch",
               "description": {
-                "private": "<p class=\"feature\">[[/attack extended]]。[[/damage average extended]]，且目标必须在一次 [[/save format=long]] 中成功，否则获得 1级&amp;Reference[力竭]。</p>"
+                "private": "<p class=\"feature\">[[/attack extended]]。[[/damage average extended]]，且目标必须在一次 [[/save format=long]] 中成功，否则获得 1级&amp;Reference[Exhaustion]。</p>"
               },
               "effects": {
                 "Exhaustion": {
@@ -25868,11 +25868,11 @@
             },
             "Waterskin": {
               "name": "水囊 Waterskin",
-              "description": "<p>一个水囊最多可装 4 品脱。若你没有饮用足够的水，就有 &amp;Reference[脱水] 的风险。</p>"
+              "description": "<p>一个水囊最多可装 4 品脱。若你没有饮用足够的水，就有 &amp;Reference[dehydration] 的风险。</p>"
             },
             "Water (Pint)": {
               "name": "水（品脱） Water (Pint)",
-              "description": "<p>如果你没有喝足够的水，你就有 &amp;Reference[脱水] 的风险。</p>"
+              "description": "<p>如果你没有喝足够的水，你就有 &amp;Reference[dehydration] 的风险。</p>"
             },
             "Torch": {
               "name": "火把 Torch",
@@ -25891,7 +25891,7 @@
             },
             "Tactical Retreat": {
               "name": "战术性撤退 Tactical Retreat",
-              "description": "<p>[[lookup @name]] 可以立即移动，最多为其速度的一半，且不会引发 &amp;Reference[借机攻击]。</p>"
+              "description": "<p>[[lookup @name]] 可以立即移动，最多为其速度的一半，且不会引发 &amp;Reference[opportunity attacks]。</p>"
             },
             "Veteran Explorer": {
               "name": "资深探险家 Veteran Explorer",
@@ -26380,7 +26380,7 @@
             },
             "Starry Wisp": {
               "name": "星光幽火 Starry Wisp",
-              "description": "<p>你向射程内的一个生物或物体发射一团光。对目标进行一次远程法术攻击。若命中，目标受到1d8点光耀伤害，且直到你的下个回合结束前，它会在10英尺半径内发出微光，并且无法从&amp;Reference[隐形]状态中获益。</p><p><strong>戏法升级。</strong> 当你达到5级（2d8）、11级（3d8）和17级（4d8）时，伤害提高1d8。</p>",
+              "description": "<p>你向射程内的一个生物或物体发射一团光。对目标进行一次远程法术攻击。若命中，目标受到1d8点光耀伤害，且直到你的下个回合结束前，它会在10英尺半径内发出微光，并且无法从&amp;Reference[Invisible]状态中获益。</p><p><strong>戏法升级。</strong> 当你达到5级（2d8）、11级（3d8）和17级（4d8）时，伤害提高1d8。</p>",
               "effects": {
                 "Illuminated": {
                   "description": "<p>直到你下个回合结束前，它会在 10 英尺半径内发出微光，并且无法从&amp;Reference[Invisible]状态中受益。</p>",
@@ -26503,7 +26503,7 @@
             },
             "Lesser Restoration": {
               "name": "次级恢复 Lesser Restoration",
-              "description": "<p>你触碰一个生物，并结束其身上的一个状态：&amp;Reference[目盲]、&amp;Reference[失聪]、&amp;Reference[麻痹]，或 &amp;Reference[中毒]。</p>"
+              "description": "<p>你触碰一个生物，并结束其身上的一个状态：&amp;Reference[blinded]、&amp;Reference[deafened]、&amp;Reference[paralyzed]，或 &amp;Reference[poisoned]。</p>"
             },
             "Flaming Sphere": {
               "name": "烈焰法球 Flaming Sphere",
@@ -26747,7 +26747,7 @@
             },
             "Nimble Escape": {
               "name": "灵巧脱逃 Nimble Escape",
-              "description": "<p class=\"feature\">该[[lookup @name lowercase]]进行&amp;Reference[脱离接触]或&amp;Reference[藏匿]动作。</p>",
+              "description": "<p class=\"feature\">该[[lookup @name lowercase]]进行&amp;Reference[Disengage]或&amp;Reference[Hide]动作。</p>",
               "effects": {
                 "Apply Hide Action to Target": {
                   "name": "对目标施加躲藏动作 Apply Hide Action to Target"
@@ -26756,7 +26756,7 @@
             },
             "Veiled Presence": {
               "name": "隐秘气场 Veiled Presence",
-              "description": "<p>在穿行于奥尔丹的街道时，[[lookup @name]] 可以利用人群作为掩护，因此进行 &amp;reference[潜行] 检定时获得 &amp;reference[优势]。处于隐藏状态时，她与 @UUID[Actor.pxvrzj4uE4tVFzYL]{奥尔达尼城市居民} 无法区分。</p>"
+              "description": "<p>在穿行于奥尔丹的街道时，[[lookup @name]] 可以利用人群作为掩护，因此进行 &amp;reference[advantage] 检定时获得 &amp;reference[stealth]。处于隐藏状态时，她与 @UUID[Actor.pxvrzj4uE4tVFzYL]{奥尔达尼城市居民} 无法区分。</p>"
             },
             "Swift Club": {
               "name": "迅捷短棍 Swift Club",
@@ -26772,7 +26772,7 @@
             },
             "Manacles": {
               "name": "镣铐 Manacles",
-              "description": "<p>作为一个利用动作，若你在一次 DC 13 的敏捷（巧手）检定中成功，你可以使用镣铐束缚 5 尺内一个不情愿且处于&amp;Reference[被擒抱]、&amp;Reference[失能]或&amp;Reference[受拘束]状态的小型或中型生物。被束缚期间，生物的攻击检定具有劣势；若镣铐连接在固定于原地的锁链或钩子上，该生物还会处于受拘束状态。挣脱镣铐需要用一个动作成功通过 DC 20 的敏捷（巧手）检定。强行挣断则需要用一个动作成功通过 DC 25 的力量（运动）检定。</p><p>每副镣铐都配有一把钥匙。没有钥匙时，生物可以使用盗贼工具，通过一次成功的 [[/tool thief dex 15]] 检定撬开镣铐的锁。</p>",
+              "description": "<p>作为一个利用动作，若你在一次 DC 13 的敏捷（巧手）检定中成功，你可以使用镣铐束缚 5 尺内一个不情愿且处于&amp;Reference[Grappled]、&amp;Reference[Incapacitated]或&amp;Reference[Restrained]状态的小型或中型生物。被束缚期间，生物的攻击检定具有劣势；若镣铐连接在固定于原地的锁链或钩子上，该生物还会处于受拘束状态。挣脱镣铐需要用一个动作成功通过 DC 20 的敏捷（巧手）检定。强行挣断则需要用一个动作成功通过 DC 25 的力量（运动）检定。</p><p>每副镣铐都配有一把钥匙。没有钥匙时，生物可以使用盗贼工具，通过一次成功的 [[/tool thief dex 15]] 检定撬开镣铐的锁。</p>",
               "effects": {
                 "Manacled": {
                   "name": "镣铐束缚 Manacled"
@@ -26805,11 +26805,11 @@
             },
             "Elusive Form": {
               "name": "飘忽形态 Elusive Form",
-              "description": "<p>加斯特恩无视&amp;Reference[困难地形]，并且可以花费 5 尺移动来摆脱非魔法束缚或被擒抱状态。</p>"
+              "description": "<p>加斯特恩无视&amp;Reference[difficult terrain]，并且可以花费 5 尺移动来摆脱非魔法束缚或被擒抱状态。</p>"
             },
             "Lightfooted": {
               "name": "步履轻盈 Lightfooted",
-              "description": "<p>加斯特恩在其每个回合中都可以用一个附赠动作执行&amp;Reference[脱离]动作。</p>"
+              "description": "<p>加斯特恩在其每个回合中都可以用一个附赠动作执行&amp;Reference[Disengage]动作。</p>"
             },
             "Deadly Reaction": {
               "name": "致命反应 Deadly Reaction",
@@ -26970,7 +26970,7 @@
             },
             "Blinding Blast": {
               "name": "致盲爆炸 Blinding Blast",
-              "description": "<p><em>体质豁免：</em>DC [[lookup @save.dc.value activity=B6xM8C2pABIb5o7y]]，所有能看见它的生物都只能看清 [[lookup @range.value activity=B6xM8C2pABIb5o7y]] 尺以内的范围。</p><p><em>失败：</em>陷入&amp;Reference[目盲 apply=false]状态，持续1分钟。</p><p><em>失败或成功：</em>受到 [[/damage average]] 伤害，且该[[lookup @name]]在该特性充能前不能再次执行此动作；该特性在掷出5+时充能。</p>",
+              "description": "<p><em>体质豁免：</em>DC [[lookup @save.dc.value activity=B6xM8C2pABIb5o7y]]，所有能看见它的生物都只能看清 [[lookup @range.value activity=B6xM8C2pABIb5o7y]] 尺以内的范围。</p><p><em>失败：</em>陷入&amp;Reference[Blinded apply=false]状态，持续1分钟。</p><p><em>失败或成功：</em>受到 [[/damage average]] 伤害，且该[[lookup @name]]在该特性充能前不能再次执行此动作；该特性在掷出5+时充能。</p>",
               "effects": {
                 "Blinded": {
                   "description": "<p>目标&amp;Reference[Blinded apply=false]，持续 1 分钟。</p>",
@@ -26994,7 +26994,7 @@
             },
             "Ortarec Core": {
               "name": "奥塔雷克核心 Ortarec Core",
-              "description": "<p><em>触发条件</em>：在一次遭遇中第一次被降至 0 生命值。</p><p><em>效果</em>：[[lookup @name]]不会死亡，而是改为陷入&amp;reference[失能]状态，持续一回合，随后重新激活，恢复[[/heal average]]生命值，并将其阵营切换为混乱邪恶。</p><p>从这一刻起，[[lookup @name]]将不再识别盟友，并会攻击其所能察觉到的任何生物，意图将其杀死，且会优先针对具有魔法能力者。</p>",
+              "description": "<p><em>触发条件</em>：在一次遭遇中第一次被降至 0 生命值。</p><p><em>效果</em>：[[lookup @name]]不会死亡，而是改为陷入&amp;reference[incapacitated]状态，持续一回合，随后重新激活，恢复[[/heal average]]生命值，并将其阵营切换为混乱邪恶。</p><p>从这一刻起，[[lookup @name]]将不再识别盟友，并会攻击其所能察觉到的任何生物，意图将其杀死，且会优先针对具有魔法能力者。</p>",
               "effects": {
                 "Change Alignment": {
                   "name": "改变阵营 Change Alignment"
@@ -27207,7 +27207,7 @@
             },
             "Reactive": {
               "name": "反应式 Reactive",
-              "description": "<p class=\"feature\">[[lookup @name]]在战斗中的每个回合都可以进行一次&amp;Reference[反应]。</p>"
+              "description": "<p class=\"feature\">[[lookup @name]]在战斗中的每个回合都可以进行一次&amp;Reference[Reaction]。</p>"
             }
           },
           "biography": {
@@ -27352,7 +27352,7 @@
             },
             "Nimble Escape": {
               "name": "灵巧脱逃 Nimble Escape",
-              "description": "<p class=\"feature\">该[[lookup @name lowercase]]进行&amp;Reference[脱离]或&amp;Reference[躲藏]动作。</p>",
+              "description": "<p class=\"feature\">该[[lookup @name lowercase]]进行&amp;Reference[Disengage]或&amp;Reference[Hide]动作。</p>",
               "effects": {
                 "Apply Hide Action to Target": {
                   "name": "对目标施加躲藏动作 Apply Hide Action to Target"
@@ -27361,7 +27361,7 @@
             },
             "Veiled Presence": {
               "name": "隐秘气场 Veiled Presence",
-              "description": "<p>在穿行于奥尔丹的街道时，[[lookup @name]] 可以利用人群作为掩护，因此进行 &amp;reference[潜行] 检定时获得 &amp;reference[优势]。处于隐藏状态时，他们与 @UUID[Actor.pxvrzj4uE4tVFzYL]{奥尔达尼市民} 无法区分。</p>"
+              "description": "<p>在穿行于奥尔丹的街道时，[[lookup @name]] 可以利用人群作为掩护，因此进行 &amp;reference[advantage] 检定时获得 &amp;reference[stealth]。处于隐藏状态时，他们与 @UUID[Actor.pxvrzj4uE4tVFzYL]{奥尔达尼市民} 无法区分。</p>"
             },
             "Swift Club": {
               "name": "迅捷短棍 Swift Club",
@@ -27377,7 +27377,7 @@
             },
             "Manacles": {
               "name": "镣铐 Manacles",
-              "description": "<p>作为一个利用动作，若你成功通过一次 DC 13 的敏捷（巧手）检定，你可以使用镣铐束缚 5 尺内一个不情愿且具有&amp;Reference[被擒抱]、&amp;Reference[失能]或&amp;Reference[受拘束]状态的小型或中型生物。被束缚期间，生物的攻击检定具有劣势；如果镣铐连接在固定于原地的锁链或钩子上，该生物则处于受拘束状态。挣脱镣铐需要以一个动作成功通过一次 DC 20 的敏捷（巧手）检定。强行挣断则需要以一个动作成功通过一次 DC 25 的力量（运动）检定。</p><p>每副镣铐都配有一把钥匙。没有钥匙时，生物可以使用盗贼工具，通过一次成功的 [[/tool thief dex 15]] 检定撬开镣铐的锁。</p>",
+              "description": "<p>作为一个利用动作，若你成功通过一次 DC 13 的敏捷（巧手）检定，你可以使用镣铐束缚 5 尺内一个不情愿且具有&amp;Reference[Grappled]、&amp;Reference[Incapacitated]或&amp;Reference[Restrained]状态的小型或中型生物。被束缚期间，生物的攻击检定具有劣势；如果镣铐连接在固定于原地的锁链或钩子上，该生物则处于受拘束状态。挣脱镣铐需要以一个动作成功通过一次 DC 20 的敏捷（巧手）检定。强行挣断则需要以一个动作成功通过一次 DC 25 的力量（运动）检定。</p><p>每副镣铐都配有一把钥匙。没有钥匙时，生物可以使用盗贼工具，通过一次成功的 [[/tool thief dex 15]] 检定撬开镣铐的锁。</p>",
               "effects": {
                 "Manacled": {
                   "name": "镣铐束缚 Manacled"
@@ -28519,7 +28519,7 @@
             },
             "Hold Person": {
               "name": "定身术 Hold Person",
-              "description": "<p>选择一个你在范围内可见的人型生物。目标必须成功通过一次感知豁免，否则将在持续时间内陷入&amp;Reference[麻痹 apply=false]状态。在其每个回合结束时，目标都会重复进行该豁免，若成功，则其自身身上的该法术结束。</p><p><strong>使用更高等级的法术位施放。</strong> 法术位每比2环高一级，你就可以额外指定一个人型生物为目标。</p>",
+              "description": "<p>选择一个你在范围内可见的人型生物。目标必须成功通过一次感知豁免，否则将在持续时间内陷入&amp;Reference[paralyzed apply=false]状态。在其每个回合结束时，目标都会重复进行该豁免，若成功，则其自身身上的该法术结束。</p><p><strong>使用更高等级的法术位施放。</strong> 法术位每比2环高一级，你就可以额外指定一个人型生物为目标。</p>",
               "effects": {
                 "Paralyzed": {
                   "description": "<p>在其每个回合结束时，目标会重复进行[[/save ability=wis]]豁免，若成功则其身上的该法术结束。</p>",
@@ -28724,7 +28724,7 @@
             },
             "Elusive Flight": {
               "name": "飘忽飞行 Elusive Flight",
-              "description": "<p>[[lookup @name]]在飞出敌人的延伸范围时不会引发&amp;Reference[借机攻击]。</p>"
+              "description": "<p>[[lookup @name]]在飞出敌人的延伸范围时不会引发&amp;Reference[opportunity attacks]。</p>"
             },
             "Blood Sense": {
               "name": "血之感知 Blood Sense",
@@ -28814,7 +28814,7 @@
             },
             "Lesser Restoration": {
               "name": "次级恢复 Lesser Restoration",
-              "description": "<p>你触碰一个生物，并结束其身上的一个状态：&amp;Reference[目盲]、&amp;Reference[失聪]、&amp;Reference[麻痹]或&amp;Reference[中毒]。</p>"
+              "description": "<p>你触碰一个生物，并结束其身上的一个状态：&amp;Reference[blinded]、&amp;Reference[deafened]、&amp;Reference[paralyzed]或&amp;Reference[poisoned]。</p>"
             },
             "Healing Word": {
               "name": "治疗之语 Healing Word",
@@ -29138,7 +29138,7 @@
             },
             "Hold Person": {
               "name": "定身术 Hold Person",
-              "description": "<p>选择一个你在射程内可见的人型生物。目标必须成功进行一次感知豁免，否则将陷入&amp;Reference[麻痹 apply=false]状态，持续时间为该法术的持续时间。目标在其每个回合结束时都会重复进行该豁免，若成功，则结束自身受到的该法术效果。</p><p><strong>使用更高等级的法术位。</strong> 法术位每高于2环一级，你就可以额外指定一个人型生物为目标。</p>",
+              "description": "<p>选择一个你在射程内可见的人型生物。目标必须成功进行一次感知豁免，否则将陷入&amp;Reference[paralyzed apply=false]状态，持续时间为该法术的持续时间。目标在其每个回合结束时都会重复进行该豁免，若成功，则结束自身受到的该法术效果。</p><p><strong>使用更高等级的法术位。</strong> 法术位每高于2环一级，你就可以额外指定一个人型生物为目标。</p>",
               "effects": {
                 "Paralyzed": {
                   "description": "<p>在其每个回合结束时，目标会重复进行[[/save ability=wis]]豁免，若成功则其身上的该法术结束。</p>",
@@ -29242,7 +29242,7 @@
             },
             "Horrific Visage": {
               "name": "骇人面容 Horrific Visage",
-              "description": "<p class=\"feature\"><em>感知豁免：</em>DC [[lookup @save.dc.value activity=v8KiqUloIE5eocSu]]，每个在一个 [[lookup @target.template.size activity=v8KiqUloIE5eocSu]] 尺锥形区域内、能看见 [[lookup @name]] 且不是不死生物的生物。</p><p><em>失败：</em>[[/damage average]] 伤害，且目标获得 &amp;Reference[恐慌 apply=false] 状态，直到 [[lookup @name]] 的下个回合开始。</p><p><em>成功：</em>目标对 [[lookup @name]] 的恐怖面容免疫，持续 24 小时。</p>",
+              "description": "<p class=\"feature\"><em>感知豁免：</em>DC [[lookup @save.dc.value activity=v8KiqUloIE5eocSu]]，每个在一个 [[lookup @target.template.size activity=v8KiqUloIE5eocSu]] 尺锥形区域内、能看见 [[lookup @name]] 且不是不死生物的生物。</p><p><em>失败：</em>[[/damage average]] 伤害，且目标获得 &amp;Reference[Frightened apply=false] 状态，直到 [[lookup @name]] 的下个回合开始。</p><p><em>成功：</em>目标对 [[lookup @name]] 的恐怖面容免疫，持续 24 小时。</p>",
               "effects": {
                 "Frightened": {
                   "description": "<p>目标陷入&amp;Reference[Frightened apply=false]状态，直到发动攻击的生物的下个回合开始。</p>",
@@ -29252,7 +29252,7 @@
             },
             "Incorporeal Movement": {
               "name": "虚体移动 Incorporeal Movement",
-              "description": "<p>[[lookup @name]] 可以像它们是&amp;Reference[困难地形]一样穿过其他生物和物体。他若在其回合结束时位于物体内部，则会受到 [[/damage 1d10 average type=force]] 伤害。</p>"
+              "description": "<p>[[lookup @name]] 可以像它们是&amp;Reference[Difficult Terrain]一样穿过其他生物和物体。他若在其回合结束时位于物体内部，则会受到 [[/damage 1d10 average type=force]] 伤害。</p>"
             },
             "Vanish": {
               "name": "消失 Vanish",
@@ -29313,7 +29313,7 @@
             },
             "Telekinesis": {
               "name": "念动力 Telekinesis",
-              "description": "<p>你获得了通过意念移动或操纵生物或物体的能力。当你施放该法术时，以及在法术结束前你之后每个回合作为一个魔法动作时，你可以将意志施加于你在射程内能看见的一个生物或物体，使其产生下述相应效果。你可以一轮接一轮地影响同一目标，或在任何时候改选一个新目标。如果你切换目标，先前的目标将不再受该法术影响。</p><p><strong>生物。</strong>你可以尝试移动一个巨型或更小的生物。目标必须成功通过一次力量豁免，否则你将其在法术射程内朝任意方向移动至多30英尺。直到你下个回合结束前，该生物处于&amp;Reference[受拘束]状态；如果你将其抬到空中，它会悬停在那里。除非你再次对其使用此选项且它豁免失败，否则它会在你下个回合结束时坠落。</p><p><strong>物体。</strong>你可以尝试移动一个巨型或更小的物体。如果该物体没有被穿戴或携带，你自动将其在法术射程内朝任意方向移动至多30英尺。</p><p>如果该物体正被某个生物穿戴或携带，则该生物必须成功通过一次力量豁免，否则你将该物体夺走，并将其在法术射程内朝任意方向移动至多30英尺。</p><p>你可以用你的念动力抓握对物体施加精细控制，例如操作一个简单工具、打开一扇门或一个容器、将一件物品放入一个开口容器中或从中取出，或将一只小瓶中的内容物倒出。</p>",
+              "description": "<p>你获得了通过意念移动或操纵生物或物体的能力。当你施放该法术时，以及在法术结束前你之后每个回合作为一个魔法动作时，你可以将意志施加于你在射程内能看见的一个生物或物体，使其产生下述相应效果。你可以一轮接一轮地影响同一目标，或在任何时候改选一个新目标。如果你切换目标，先前的目标将不再受该法术影响。</p><p><strong>生物。</strong>你可以尝试移动一个巨型或更小的生物。目标必须成功通过一次力量豁免，否则你将其在法术射程内朝任意方向移动至多30英尺。直到你下个回合结束前，该生物处于&amp;Reference[Restrained]状态；如果你将其抬到空中，它会悬停在那里。除非你再次对其使用此选项且它豁免失败，否则它会在你下个回合结束时坠落。</p><p><strong>物体。</strong>你可以尝试移动一个巨型或更小的物体。如果该物体没有被穿戴或携带，你自动将其在法术射程内朝任意方向移动至多30英尺。</p><p>如果该物体正被某个生物穿戴或携带，则该生物必须成功通过一次力量豁免，否则你将该物体夺走，并将其在法术射程内朝任意方向移动至多30英尺。</p><p>你可以用你的念动力抓握对物体施加精细控制，例如操作一个简单工具、打开一扇门或一个容器、将一件物品放入一个开口容器中或从中取出，或将一只小瓶中的内容物倒出。</p>",
               "effects": {
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
@@ -29631,7 +29631,7 @@
             },
             "Pounce": {
               "name": "猛扑 Pounce",
-              "description": "<p>[[lookup @name]]移动至其速度的一半，并进行一次@UUID[Actor.hDGMA97hjsiEszDf.Item.ZH8Zlr7RdgTjDN7K]{抓挠}攻击。</p><p>命中时，<em>力量豁免检定：</em> DC [[lookup @save.dc.value activity=mNFD5tdCvtKYADLv]]</p><p><em>失败：</em>目标被向相反方向推开10英尺，并陷入&amp;Reference[倒地]。</p>"
+              "description": "<p>[[lookup @name]]移动至其速度的一半，并进行一次@UUID[Actor.hDGMA97hjsiEszDf.Item.ZH8Zlr7RdgTjDN7K]{抓挠}攻击。</p><p>命中时，<em>力量豁免检定：</em> DC [[lookup @save.dc.value activity=mNFD5tdCvtKYADLv]]</p><p><em>失败：</em>目标被向相反方向推开10英尺，并陷入&amp;Reference[Prone]。</p>"
             }
           },
           "biography": {
@@ -29651,7 +29651,7 @@
             },
             "Glob Lob": {
               "name": "黏球怪 Glob Lob",
-              "description": "<p><em>敏捷豁免：</em>DC [[lookup @save.dc.value activity=B6xM8C2pABIb5o7y]]，[[lookup @name]] 可见且位于 [[lookup @range.value activity=B6xM8C2pABIb5o7y]] 英尺内的一个生物。</p><p><em>失败：</em>目标身上溅满一层彩色油漆，并陷入 &amp;Reference[目盲 apply=false] 状态，直到其下个回合开始。</p><p><em>成功：</em>目标身上溅满油漆，但除此之外不受影响。</p>",
+              "description": "<p><em>敏捷豁免：</em>DC [[lookup @save.dc.value activity=B6xM8C2pABIb5o7y]]，[[lookup @name]] 可见且位于 [[lookup @range.value activity=B6xM8C2pABIb5o7y]] 英尺内的一个生物。</p><p><em>失败：</em>目标身上溅满一层彩色油漆，并陷入 &amp;Reference[Blinded apply=false] 状态，直到其下个回合开始。</p><p><em>成功：</em>目标身上溅满油漆，但除此之外不受影响。</p>",
               "effects": {
                 "Blinded": {
                   "description": "<p>目标陷入&amp;reference[blinded]状态，持续 1 分钟。</p>",
@@ -31790,7 +31790,7 @@
       "items": {
         "Paralyzing Bolt": {
           "name": "麻痹箭矢 Paralyzing Bolt",
-          "description": "<p>这种弹药适用于所有种类的十字弩，其尖端为特制的中空穿刺箭头，致伤能力有所降低，但带有一小罐毒素，旨在命中目标时破裂并将毒素注入其中。</p><p>这种弩矢命中时仅造成<strong>1点穿刺伤害</strong>，但目标必须成功通过一次[[/save format=long]]，否则会&amp;reference[麻痹] 1分钟。在目标的每个回合结束时，它可以重复此次豁免，若成功则结束自身所受的该效果。</p><p>这种毒药的类型未知，无法被鉴别。</p><p></p>",
+          "description": "<p>这种弹药适用于所有种类的十字弩，其尖端为特制的中空穿刺箭头，致伤能力有所降低，但带有一小罐毒素，旨在命中目标时破裂并将毒素注入其中。</p><p>这种弩矢命中时仅造成<strong>1点穿刺伤害</strong>，但目标必须成功通过一次[[/save format=long]]，否则会&amp;reference[Paralyzed] 1分钟。在目标的每个回合结束时，它可以重复此次豁免，若成功则结束自身所受的该效果。</p><p>这种毒药的类型未知，无法被鉴别。</p><p></p>",
           "effects": {
             "Paralyzed": {
               "description": "<p>目标陷入 &amp;reference[Paralyzed] 状态，持续 1 分钟。</p><p>在目标每个回合结束时，它可以重复该豁免检定，成功则结束自身所受的该效果。</p>",
@@ -33510,7 +33510,7 @@
         },
         "Alchemist's Fire": {
           "name": "炼金火焰 Alchemist's Fire",
-          "description": "<p>当你执行攻击动作时，你可以将其中一次攻击替换为投掷一瓶炼金火焰。以你自身20英尺内你能看见的一个生物或物体为目标。目标必须通过一次敏捷豁免（DC 8 + 你的敏捷调整值 + 熟练加值），否则受到 [[/damage 1d4 type=fire]] 伤害并开始&amp;Reference[燃烧]。</p>",
+          "description": "<p>当你执行攻击动作时，你可以将其中一次攻击替换为投掷一瓶炼金火焰。以你自身20英尺内你能看见的一个生物或物体为目标。目标必须通过一次敏捷豁免（DC 8 + 你的敏捷调整值 + 熟练加值），否则受到 [[/damage 1d4 type=fire]] 伤害并开始&amp;Reference[burning]。</p>",
           "effects": {
             "Burning.": {
               "name": "燃烧 Burning",
@@ -33660,7 +33660,7 @@
         },
         "Rations": {
           "name": "口粮 Rations",
-          "description": "<p>口粮包括适合旅行携带的食物，如肉干、果干、硬饼干和坚果。关于不进食的风险，见规则术语表中的&amp;Reference[营养不良]。</p>"
+          "description": "<p>口粮包括适合旅行携带的食物，如肉干、果干、硬饼干和坚果。关于不进食的风险，见规则术语表中的&amp;Reference[Malnutrition]。</p>"
         },
         "Razorwire": {
           "name": "剃刀铁丝鞭 Razorwire",
@@ -33775,11 +33775,11 @@
         },
         "Water (Pint)": {
           "name": "水（品脱） Water (Pint)",
-          "description": "<p>如果你没有饮用足够的水，你就有 &amp;Reference[脱水] 的风险。</p>"
+          "description": "<p>如果你没有饮用足够的水，你就有 &amp;Reference[dehydration] 的风险。</p>"
         },
         "Waterskin": {
           "name": "水囊 Waterskin",
-          "description": "<p>一个水囊最多可装 4 品脱。如果你没有喝足够的水，就会有 &amp;Reference[脱水] 的风险。</p>"
+          "description": "<p>一个水囊最多可装 4 品脱。如果你没有喝足够的水，就会有 &amp;Reference[dehydration] 的风险。</p>"
         },
         "Wavesong Conch": {
           "name": "潮歌海螺 Wavesong Conch",
@@ -34160,7 +34160,7 @@
         },
         "Rapture": {
           "name": "狂喜 Rapture",
-          "description": "<p>一剂令人沉醉的狂喜，一种可供服用以利用其致醉药用特性的合成液体。口服狂喜后，大多数使用者会进入欣快状态。</p><p>服用后，单剂狂喜会使你在接下来的下一次体质或感知豁免上获得优势，持续时间为 [[/roll 1d2+1]] 小时。</p><p>此外，你必须成功通过一次 [[/save format=long]]，否则获得一级&amp;Reference[力竭]。这剂狂喜提供的优势不能用于此次豁免。</p>",
+          "description": "<p>一剂令人沉醉的狂喜，一种可供服用以利用其致醉药用特性的合成液体。口服狂喜后，大多数使用者会进入欣快状态。</p><p>服用后，单剂狂喜会使你在接下来的下一次体质或感知豁免上获得优势，持续时间为 [[/roll 1d2+1]] 小时。</p><p>此外，你必须成功通过一次 [[/save format=long]]，否则获得一级&amp;Reference[Exhaustion]。这剂狂喜提供的优势不能用于此次豁免。</p>",
           "effects": {
             "CON/WIS Advan.": {
               "description": "<p>你在<strong>下一次</strong>体质或感知豁免上具有优势，持续 [[/roll 1d2+1]] 小时。</p>",
@@ -34397,7 +34397,7 @@
         },
         "Spell Scroll: Locate Object": {
           "name": "法术卷轴：定位物体 Spell Scroll: Locate Object",
-          "description": "<p><em>2级 &amp;Reference[法术卷轴]，需要专注</em></p><p>@Embed[Compendium.dnd5e.spells24.Item.phbsplLocateObje inline]</p>"
+          "description": "<p><em>2级 &amp;Reference[Spell Scroll]，需要专注</em></p><p>@Embed[Compendium.dnd5e.spells24.Item.phbsplLocateObje inline]</p>"
         },
         "Falar's Curious Note": {
           "name": "法拉尔的奇怪便笺 Falar's Curious Note",
@@ -44857,7 +44857,7 @@
             },
             "Gameplay Details": {
               "name": "玩法细节 Gameplay Details",
-              "text": "<p>以下游戏玩法特性适用于青铜拉斯克剧院区域，除非某个具体房间描述中另有说明。</p><h2 class=\"divider\">敌人</h2><p>该区域当前由一批万德伦家族特工以及一些从本地分队借调来的突变学派成员占据。他们聚集于此，准备即将举行的会面。此处会遭遇以下敌人，数量为所列的大致数目：</p><ul><li>@UUID[Actor.UVncdPqmzpZLwGvK]{Brynna Vercocorte}</li><li><p>4 @UUID[Actor.6nFbfFrRVb2lGW3F]{Wandren Patroller}</p></li><li><p>2 @UUID[Actor.Q4dB8frYvdhTbUYk]{Wandren Watcher}</p></li><li>2 @UUID[Actor.uwkC8q5jaZirnE14]{Wandren Tracer]（可变）</li><li>2 @UUID[Actor.lB0MpcO3fI3sbOww]{突变投弹手}</li><li><p>6 @UUID[Actor.jZBVgCb2P61F9SrT]{奥达尼恶棍}</p></li></ul><section class=\"block hazard\"><h4>非致命手段</h4><p>该区域中的战斗人员正试图捕获未来的囚犯，因此攻击时并无致命意图。所有生命值降至 0 的角色和生物都会陷入失能状态，但不会被杀死，也不会进入死亡豁免检定。</p><h4>休息</h4><p>由于正在发生的事件，在该区域内无法进行长休或短休。</p><h4>逃离</h4><p>如果队伍需要逃离该区域，他们可以通过撤出剧院并进入外面的城市街道来做到这一点。</p><h4>被俘</h4><p>如果队伍在战斗中被制服，他们将被关进后台区域的笼子里。此结果的详细信息见遭遇文本。</p></section><h2 class=\"divider\">照明</h2><p>剧院各处都装有高位悬挂的灯和提灯，因此光线充足。后台区域配有独特的提灯，散发纯白色光芒，提升了该区域的可见度。</p><p>后台区域后方的隧道和旧通道只有少数几盏提灯提供不均匀的照明。</p><h2 class=\"divider\">地形</h2><p>此场景中废墟的瓦砾和坍塌区域，对在这些空间中移动的角色而言属于&amp;reference[困难地形]。</p><h2 class=\"divider\">高度</h2><p>剧院底层的天花板高 20 尺，而主剧场房间中的拱顶天花板在最高处可达 80 尺。</p><p>在挖出的隧道中，所有方向的空间都仅有局促的 5 尺，这也包括旧水道。旧通道和门厅之室的天花板高 20 尺。</p><p></p>"
+              "text": "<p>以下游戏玩法特性适用于青铜拉斯克剧院区域，除非某个具体房间描述中另有说明。</p><h2 class=\"divider\">敌人</h2><p>该区域当前由一批万德伦家族特工以及一些从本地分队借调来的突变学派成员占据。他们聚集于此，准备即将举行的会面。此处会遭遇以下敌人，数量为所列的大致数目：</p><ul><li>@UUID[Actor.UVncdPqmzpZLwGvK]{Brynna Vercocorte}</li><li><p>4 @UUID[Actor.6nFbfFrRVb2lGW3F]{Wandren Patroller}</p></li><li><p>2 @UUID[Actor.Q4dB8frYvdhTbUYk]{Wandren Watcher}</p></li><li>2 @UUID[Actor.uwkC8q5jaZirnE14]{Wandren Tracer]（可变）</li><li>2 @UUID[Actor.lB0MpcO3fI3sbOww]{突变投弹手}</li><li><p>6 @UUID[Actor.jZBVgCb2P61F9SrT]{奥达尼恶棍}</p></li></ul><section class=\"block hazard\"><h4>非致命手段</h4><p>该区域中的战斗人员正试图捕获未来的囚犯，因此攻击时并无致命意图。所有生命值降至 0 的角色和生物都会陷入失能状态，但不会被杀死，也不会进入死亡豁免检定。</p><h4>休息</h4><p>由于正在发生的事件，在该区域内无法进行长休或短休。</p><h4>逃离</h4><p>如果队伍需要逃离该区域，他们可以通过撤出剧院并进入外面的城市街道来做到这一点。</p><h4>被俘</h4><p>如果队伍在战斗中被制服，他们将被关进后台区域的笼子里。此结果的详细信息见遭遇文本。</p></section><h2 class=\"divider\">照明</h2><p>剧院各处都装有高位悬挂的灯和提灯，因此光线充足。后台区域配有独特的提灯，散发纯白色光芒，提升了该区域的可见度。</p><p>后台区域后方的隧道和旧通道只有少数几盏提灯提供不均匀的照明。</p><h2 class=\"divider\">地形</h2><p>此场景中废墟的瓦砾和坍塌区域，对在这些空间中移动的角色而言属于&amp;reference[difficult terrain]。</p><h2 class=\"divider\">高度</h2><p>剧院底层的天花板高 20 尺，而主剧场房间中的拱顶天花板在最高处可达 80 尺。</p><p>在挖出的隧道中，所有方向的空间都仅有局促的 5 尺，这也包括旧水道。旧通道和门厅之室的天花板高 20 尺。</p><p></p>"
             },
             "Lobby": {
               "name": "大厅 Lobby",
@@ -46585,7 +46585,7 @@
               "name": "祸根 The Root Issue",
               "overview": "<p>队伍遭到怀有敌意的黑曜石藤蔓袭击，它们突然从队伍脚下的土里冒了出来。击败居中的那株黑曜石藤蔓之后，队伍有机会发现线索，指向这一日渐加剧的威胁的源头。</p>",
               "summary": "<p>我们在雷德拉克原野中漫游时，遭到了从我们脚下破土而出的黑曜石藤蔓伏击。我们把它们打退，随后花了点时间调查它们那古怪的本质。</p>",
-              "text": "<section class=\"block gamemaster\"><h4>游戏主持人摘要</h4><p>这场战斗事件发生在 @UUID[JournalEntry.emberArctusGazet.JournalEntryPage.LcZ893eubbZrIOLX] 生物群系中任意一个没有显著地点的六角格内。在队伍完成第 3 章之后，它出现的概率会大幅提高；在 [[/eventState disturbedEarthSlaith]] 得到解决之前，它每 24 小时最多可以重复一次。通过直面这些危险的活体黑曜石藤蔓，角色可以：</p><ul><li><p>亲眼见证正在侵扰雷德拉克原野、令人忧心的科兰威胁。</p></li><li><p>发现线索，指向 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.5pD8lxiilJJXOgoa] 之月正是这些麻烦的源头。</p></li><li><p>若与 @UUID[Actor.D7gZ1yQUxgWEQZeI] 同行，可就不断演变的局势与他商议。</p></li><li><p>若与 @UUID[Actor.fJ4WogeI4O64Ry1T] 的商队同行，可以保护商队并因此获得酬谢。</p></li></ul><p>本事件使用 @UUID[Scene.emberRedrakField]{雷德拉克原野} 区域地图的 @UUID[Scene.emberRedrakField.Level.emberObsidianVin] 层级来呈现。</p></section><h3 class=\"divider\">黑曜石藤蔓伏击</h3><p>如果队伍此时正与 @UUID[Actor.fJ4WogeI4O64Ry1T] 的商队同行——他们最初是在 [[/eventState disturbedEarthCaravan]] 中相遇的——那么商队的亚纳克会在第一丝轻微震颤时就惊慌起来，让克拉夫顿的护卫察觉到迫近的危险。护卫们随即警告队伍，并开始引导商队沿原路撤回。</p><p>否则，队伍最多只有一瞬间的预警，随后便……</p><p>@Embed[Actor.IVOsSW5Al9Fr0v2L]</p><p>@Embed[Actor.XiEXB4EImAAPKpT5 count=2]</p><section class=\"block exploration\"><h4>辨认藤蔓</h4><p>任何角色只要成功通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/check arcana 16]]</sub><sub data-system=\"crucible\">[[/skillCheck arcana 16]]</sub></sup> 检定，就能回忆起一份关于科拉之月的深奥记载，其中提到过黑曜石藤蔓——它们以棘刺将自身锚入坚固的岩石，以抵御科拉剧烈的引力波动。据说这些藤蔓还与更庞大的地下结构相连。</p><ul class=\"complex-check\"><li class=\"automatic-success\"><p>[[/knowledge cosmology]]：该角色此次检定自动成功。</p></li></ul></section><h3 class=\"divider\">克拉夫顿撤退</h3><p>如果队伍此时正与克拉夫顿的商队同行，且这是他们同行期间第一次遭遇本事件，泰拉·索尔特队长会向队伍高声喊话。请朗读或转述以下内容：</p><section class=\"block readaloud\"><p>一名身披甲胄的人类女子——你们在随商队同行时认得她，那是克拉夫顿·莉莉菲尔德卫队的首领泰拉·索尔特队长——迅速把克拉夫顿的商队引回你们来时的路，一边朝正在撤离的莉莉菲尔德家族当家人示意，一边向你们喊道：</p><blockquote><p>我们得把他弄出去！你们把那东西解决掉，莉莉菲尔德家族一定重重酬谢！</p></blockquote></section><p>如果队伍正与克拉夫顿同行，但他们在与克拉夫顿同行期间已经遭遇过本事件或 [[/eventState disturbedEarthElementals]]，则改为朗读或转述以下内容：</p><section class=\"block readaloud\"><p>索尔特队长向你们喊道：</p><blockquote><p>老规矩！你们把它放倒，我们把商队转移到安全的地方！</p></blockquote></section><h3 class=\"divider\">与藤蔓作战</h3><p>一切准备就绪之后，队伍现在必须直面这些受腐化的科兰藤蔓所带来的危险。队伍并不知道，@UUID[Actor.tOoLvpL31LmVGQnx] 的腐化影响正在此地引发局部扰动，与科拉上经常出现的怪异现象颇为相似。</p><section class=\"block hazard\"><h4>被连根拔起的旅程</h4><p>由坚硬的异界黑曜石构成的古怪藤蔓破土而出，狂躁不安，随时准备撕扯并缠住它们所发现的一切。战斗开始时：</p><ul><li><p>@UUID[Actor.IVOsSW5Al9Fr0v2L] 在靠近队伍中心处破土而出。</p></li><li><p>两株 @UUID[Actor.XiEXB4EImAAPKpT5]{黑曜石藤蔓新枝} 在队伍周围破土而出。</p></li></ul><p>如果队伍是单独赶路，任何角色只要拥有 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/check perception 16 passive format=long]]，或成功通过一次 [[/skill perception 14]] 检定</sub><sub data-system=\"crucible\">[[/skillCheck awareness 14 passive]]</sub></sup>，就会注意到大地的震颤，并认出这是掘穴怪物的征兆，从而可以提醒队伍留意迫在眉睫的危险。否则，队伍在战斗开始时处于 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">&amp;Reference[surprise]{突袭}</sub><sub data-system=\"crucible\">@Condition[unaware]</sub></sup> 状态。</p><p>在第一轮之后的每个战斗轮开始时，查阅下方的“黑曜石藤蔓时刻”表，为这场战斗加入一项独特的环境危害。</p><h4>黑曜石藤蔓战术</h4><p>本场战斗中所有种类的黑曜石藤蔓都连接着同一处地下结构。此外，所有种类都：</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><ul><li><p>拥有 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.eRyghBIaEBHYLlGs] 特性，使它们能够以一个附赠动作钻入地下，且不会引发借机攻击。</p></li><li><p>对强酸伤害与毒素伤害免疫；任何既知道它们源自科拉、又拥有 [[/knowledge cosmology]] 的人都能一眼看出这一点。</p></li><li><p>受到 @UUID[Actor.XiEXB4EImAAPKpT5.Item.eWz4VcJ8u4eEAJIs]、@UUID[Actor.XiEXB4EImAAPKpT5.Item.HWYhMfTXNz1DtQ9d] 与 @UUID[Actor.XiEXB4EImAAPKpT5.Item.LYAnG6XmcyJ8zRa0]{异常本质} 的保护。</p></li></ul></div><div data-system=\"crucible\"><ul><li><p>拥有 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.burrower00000000]{掘穴者} 天赋，使它们能够在土中穿行，以脱离战斗或破土发起攻击。</p></li><li><p>凭借其 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.wrestler00000000]{摔角手} 天赋，擅长抓握并缠住受害者。</p></li><li><p>是 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.spellmute0000000]{法术静默者}，并对魔法效果具有抗性。</p></li></ul></div></div><p>在场的所有新枝都由高耸黑曜石藤蔓控制。</p><p>当高耸黑曜石藤蔓自身受到伤害时，任何角色只要成功通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill perception 15]] </sub><sub data-system=\"crucible\">[[/skillCheck awareness 15]]</sub></sup>，就会注意到黑曜石藤蔓新枝也随之抖动，说明它们在地下彼此相连。一旦有人指出这一点，任何队伍成员只要再成功通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill insight 15]] 或 [[/skill nature 15]] </sub><sub data-system=\"crucible\">[[/skillCheck science 15]] 或 [[/skillCheck wilderness 15]]</sub></sup> 检定，就能断定黑曜石藤蔓新枝是由高耸黑曜石藤蔓控制的，摧毁它便会使其余藤蔓失效。每当高耸黑曜石藤蔓受到伤害时，上述每一步的检定都可以重复进行，直到有队伍成员成功为止。</p><h4>高耸黑曜石藤蔓战术</h4><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>战斗开始时，@UUID[Actor.IVOsSW5Al9Fr0v2L] 会以一次 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.II0lvz5SPBH8tjaR] 向最近的角色猛然抽击。</p><p>战斗期间，高耸黑曜石藤蔓会：</p><ul><li><p>使用 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.II0lvz5SPBH8tjaR]，以两次 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.LnIO84iTZeHKsgyz]，外加 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.0OGLE7K4FfDcik37] 或 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.aYKPQ7sv9SUkWWLT] 之一进行命中。</p></li><li><p>当受到多名近战攻击者威胁时，它更倾向于用 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.eRyghBIaEBHYLlGs] 退入地下，再在某名远程角色身旁重新钻出；若尚有充能，则使用 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.BE5lvJ5f5rXHD4gP]。</p></li><li><p>如果在它回合开始时有角色正被该藤蔓 &amp;Reference[Grappled]，它会用自己的动作对那名角色 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.wfFd0XICUDrqkG1h]，实际上就是把对方吞进自己盘绕的躯体之中。</p></li><li><p>它在整场战斗中可以用自己的动作 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.6s75ga9cc5IVjwVB] 一次。</p></li><li><p>用附赠动作 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.GSxYdyngh29kisNf]，让一株黑曜石藤蔓新枝重新走位。</p></li><li><p>若处于 &amp;Reference[Bloodied]，高耸黑曜石藤蔓会沉入地下，将附赠动作用于 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.eWI5mQieC5a86aPK]，每天最多两次。它会一直藏在那里，直到队伍用 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.dmZ8F7jXaLwMXEYO]（通过摧毁一株黑曜石藤蔓新枝）迫使它回到地面。</p></li><li><p>可以通过以足量的钝击伤害或挥砍伤害触发 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.I16DaDljZNzmHn5p]{脆性黑曜石}，来阻止它在地下恢复生命值。</p></li></ul></div><div data-system=\"crucible\"><p>战斗期间，高耸黑曜石藤蔓会：</p><ul><li><p>利用 @Action[Actor.IVOsSW5Al9Fr0v2L ensnare] 抓住一名敌人，用 @Action[Actor.IVOsSW5Al9Fr0v2L thrash] 对其造成重创，再以 @Action[Actor.IVOsSW5Al9Fr0v2L swallow] 将其吞没进自己蜿蜒的躯体之中。</p></li><li><p>每当它所承受的伤害约达其总生命值的 25% 时，或在适合渲染戏剧性的时刻，使用 @Action[Actor.IVOsSW5Al9Fr0v2L submergingWithdrawal] 撤退。</p></li><li><p>潜伏地下期间，它会 @Action[Actor.IVOsSW5Al9Fr0v2L spawnOffshoot]，用新长出的新枝继续威胁队伍，并用 @Action[Actor.IVOsSW5Al9Fr0v2L directTheBrood] 指挥它们。</p></li><li><p>潜伏地下期间，它会使用 @Action[Actor.IVOsSW5Al9Fr0v2L vineMend] 回复部分生命值，直到它的某一株新枝被摧毁，届时它必须重新浮出地面。</p></li><li><p>把自己获得的任何英雄气概都花在施展 @Action[Actor.IVOsSW5Al9Fr0v2L explosiveEmergence] 上，并以角色成群聚集之处为目标。</p></li></ul><p>高耸黑曜石藤蔓是一种毫无心智的掠食者，仅凭生物本能行动。它无法陷入 @Condition[broken]，也不会逃离战场。</p></div></div><p>由于受到 @UUID[Actor.tOoLvpL31LmVGQnx]{斯莱斯} 的躁动所激（正是它的腐化影响把这株藤蔓引到了这里），该藤蔓会战斗至死。死亡之时，它的整个躯体都会崩碎成黑曜石碎片——包括庞大的地下根系结构，以及所有黑曜石藤蔓新枝。</p><h4>黑曜石藤蔓新枝战术</h4><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>战斗开始时，@UUID[Actor.XiEXB4EImAAPKpT5]{黑曜石藤蔓新枝} 会用它们的 @UUID[Actor.XiEXB4EImAAPKpT5.Item.CHae6nrqHVFR4I53]{多重攻击} 攻击离自己最近的角色。</p><p>战斗期间，它们会继续对附近的角色使用 @UUID[Actor.XiEXB4EImAAPKpT5.Item.CHae6nrqHVFR4I53]，并且：</p><ul><li><p>通过 @UUID[Actor.XiEXB4EImAAPKpT5.Item.JdMHqNLSFPmEyVfv] 再生——被杀死后，它们会碎裂成一截埋在地下的残桩，残桩迅速退向更深处，随后在别处以残桩的形态钻出，再重新长成（添加一个新的 @UUID[Actor.XiEXB4EImAAPKpT5] 角色）。</p></li><li><p>通过 @UUID[Actor.XiEXB4EImAAPKpT5.Item.JdMHqNLSFPmEyVfv] 再生时，倾向于在某名远程角色身旁钻出。</p></li><li><p>可以通过擒抱来制服——它们的 @UUID[Actor.XiEXB4EImAAPKpT5.Item.y6lF2t6fS6XwYtja] 特性会伤害擒抱它们的人，但也会让它们在保持 &amp;Reference[Grappled] 期间一直处于 &amp;Reference[Incapacitated]。</p></li></ul><p>黑曜石藤蔓新枝会重新长出，因此它们完全不会设法躲避死亡。如果控制它们的高耸黑曜石藤蔓死亡，所有新枝也会随之死亡。此外，在高耸黑曜石藤蔓身上触发 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.dmZ8F7jXaLwMXEYO]，也可以永久摧毁新枝。</p></div><div data-system=\"crucible\"><p>黑曜石藤蔓新枝的战斗模式与它们的母体相似，但缺少它的一些专门特性。在战斗中，它们会：</p><ul><li><p>利用 @Action[Actor.XiEXB4EImAAPKpT5 ensnare] 抓住一名敌人，用 @Action[Actor.XiEXB4EImAAPKpT5 thrash] 对其造成重创，再以 @Action[Actor.XiEXB4EImAAPKpT5 swallow] 将其吞没进自己蜿蜒的躯体之中。</p></li><li><p>如果射程内没有敌人，它们可能会暂时钻入地下，朝自己所能感知到的最近敌人移动。</p></li></ul><p>它们毫无心智，不会撤退也不会逃跑，而且无法陷入 @Condition[broken]。</p></div></div><h4>拉拉·乌什纳战术</h4><p>如果 @UUID[Actor.D7gZ1yQUxgWEQZeI] 与队伍同行，他会与他们并肩作战。在战斗中，他会：</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><ul><li><p>在战斗开始时，用他的 @UUID[Actor.D7gZ1yQUxgWEQZeI.Item.ZYFCOzKpqsfxXuMn] 法术为一名队伍成员施加增益。</p></li><li><p>更倾向于用 @UUID[Actor.D7gZ1yQUxgWEQZeI.Item.UUmGqB2A2Bet2NOP]、@UUID[Actor.D7gZ1yQUxgWEQZeI.Item.Wcq9B29zBtTFbPZr]、@UUID[Actor.D7gZ1yQUxgWEQZeI.Item.slaZ3MYeZQ4nNJo4] 和 @UUID[Actor.D7gZ1yQUxgWEQZeI.Item.ZYFCOzKpqsfxXuMn] 这样的法术来支援队伍成员。</p></li><li><p>敦促队伍把伤害集中到高耸黑曜石藤蔓身上。</p></li><li><p>在目睹某株黑曜石藤蔓新枝借 @UUID[Actor.XiEXB4EImAAPKpT5.Item.JdMHqNLSFPmEyVfv] 再生之后，他会请队伍成员把新枝按住，并为任何试图擒抱它们的队伍成员提供治疗与其他支援。</p></li></ul></div><div data-system=\"crucible\"><ul><li><p>@Action[Actor.D7gZ1yQUxgWEQZeI cast] 诸如 @Spell[life.ray] 与 @Spell[life.surge] 这样的法术，通常会用“作曲”屈折从容施法以节省专注，并在必要时使用 @Action[Actor.D7gZ1yQUxgWEQZeI refocus]。</p></li><li><p>会造出一片 @Action[Actor.D7gZ1yQUxgWEQZeI ancestralGrove] 并留在其中，以强化自己的盟友。</p></li><li><p>会把大地符文用于进攻，但一旦意识到自己面对的元素生物对强酸伤害高度抗性甚至免疫，他便会停手，转而用自己的护符 @Action[Actor.D7gZ1yQUxgWEQZeI strike]，改为造成毒素伤害。</p></li></ul></div></div><p>若 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">&amp;Reference[Bloodied]</sub><sub data-system=\"crucible\">@Condition[weakened] 或 @Condition[broken]</sub></sup>，拉拉会尽量远离敌对目标，同时仍保持在能以施法支援队伍的范围之内。不过，拉拉绝不会丢下队伍让他们独自作战。</p></section><p>在第一轮之后的每个战斗轮开始时，在下表上投骰：</p><p>@Embed[RollTable.ydEyw3aN4wzqHkYP inline]</p><h3 class=\"divider\">拉拉的忧虑</h3><p>如果拉拉正与队伍同行，且这是他们第一次遭遇本事件，请朗读或转述以下内容：</p><section class=\"block readaloud\"><p>拉拉拍掉身上的尘土，稳稳地吸了一口气。</p><blockquote><p>刚才那真是……太吓人了。不过我很庆幸有你们在。比起打仗，我在田里可要在行得多。我没碍着你们吧？</p></blockquote></section><section class=\"block social\"><h4>忧心忡忡的学徒</h4><p>这些古怪生物所表现出的侵略性让拉拉深感忧虑，他希望能与队伍一起就此事集思广益。拉拉可以确认以下几点：</p><ul><li><p>在他过去几个月里收集到的那些道听途说之前，这一带从未观察到过任何类似的现象。</p></li><li><p>他认为这生物那毫不退缩的敌意，说明它已远离了自己的天然栖息地，或者是被本地生态中的某种存在深深激怒了。</p></li></ul><p>随后拉拉会询问队伍，他们是否认得这些藤蔓。</p></section><h3 class=\"divider\">调查这些藤蔓</h3><p>无论队伍是自行调查这一怪异现象，还是试图回答拉拉的疑问，他们都可以通过若干途径来寻求信息：</p><section class=\"block exploration\"><h4>攀藤寻答</h4><p>如果队伍在本事件或“扰动之地”的其他事件中尚未获知类似信息，他们可以通过以下任一方法来分析自己目睹的一切：</p><ul><li><p>[[/knowledge elementals]]，据此从藤蔓的晶体结构中辨认出大地元素的共通特性，暗示它们与科拉——大地元素的起源之月——存在联系。</p></li><li><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/check history 12]] 或 [[/check survival 12]]</sub><sub data-system=\"crucible\"> [[/skillCheck wilderness 12]] </sub></sup>，据此确认这类黑曜石藤蔓并不是历史上已知会为祸高原的危害。</p></li><li><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/check arcana 15]]</sub><sub data-system=\"crucible\">[[/skillCheck arcana 15]]、[[/skillCheck science 15]]，</sub></sup>或 [[/knowledge cosmology]]，据此把所有证据碎片——黑曜石、藤蔓、该生物的抗性与弱点，以及“黑曜石藤蔓时刻”表中出现的任何现象——拼合成一个事实：这显然是元素之月科拉的影响。</p></li><li><p>如果队伍发现了藤蔓对强酸的免疫，或目睹了酸雨，则可通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\"> [[/check religion 15]]</sub><sub data-system=\"crucible\">[[/skillCheck society 15]]</sub></sup> 检定或 [[/knowledge gods]]，据此辨认出 @UUID[JournalEntry.emberDeities0000.JournalEntryPage.QzJveYdQLi1LHHci] 的影响——那位统辖科拉的堕落荒野之神；凡他所统辖之处都会渗出这般污秽的液体，而在阿克图斯高原上也有隐秘的教徒崇拜着他。</p></li></ul></section><p>如果拉拉与队伍同行，且队伍尚未完成 [[/eventState disturbedEarthTown]]，他会在最后力劝队伍继续赶往 @UUID[JournalEntry.emberArctusGazet.JournalEntryPage.UkNBiAA4l5PP891p]，把他们的发现带给 @UUID[JournalEntry.emberOrganizatio.JournalEntryPage.ZpBnm8FDlFdwrcgS]；拉拉相信，只要提供了这些观察结果，他们就会知道该怎么做。</p><h3 class=\"divider\">来自莉莉菲尔德家族的酬谢</h3><p>如果队伍正与克拉夫顿的商队同行，克拉夫顿及其随从会在护卫的环绕下返回。索尔特队长走向队伍：</p><section class=\"block readaloud\"><p>索尔特队长一边走近，一边目光来回扫视，显然仍处于戒备之中。</p><blockquote><p>多谢你们驱除了那头污秽的怪物。我希望你们能理解，我必须把我要护送的人送到安全之处；即便如此，把你们丢下独自应战，我还是要向你们道歉。按照约定，我们会为你们所冒的风险给予丰厚的酬谢。</p></blockquote></section><section class=\"block social\"><h4>算在家族账上</h4><p>索尔特队长递上一只带有莉莉菲尔德家族徽记的小箱子，里面装着：</p><ul><li><p>一笔 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/award 250gp]]</sub><sub data-system=\"crucible\">[[/award 25 gp]]</sub></sup> 的酬金。</p></li><li><p>队伍每随克拉夫顿的商队遭遇一次本事件或 [[/eventState disturbedEarthElementals]]，便有一份 @UUID[Item.Qg2cqy4rAf4YSBx0]。</p></li><li><p>一瓶密封的 @UUID[Item.Z8xU3lbhyVV5gIOg]。</p></li></ul></section><h3 class=\"divider\">事件结束</h3><section class=\"block gamemaster\"><h4>后续步骤</h4><p>队伍在这些黑曜石藤蔓的袭击中幸存下来之后，他们可以：</p><ul><li><p>在 [[/eventState disturbedEarthCaravan]] 中遇上正前往罗特瓦克途中的克拉夫顿·莉莉菲尔德（如果他们还没遇到过的话），之后便可在 [[/eventState disturbedEarthTown]] 中调查这股元素威胁的源头。</p></li><li><p>在 [[/eventState disturbedEarthElementals]] 中遭遇其他科兰危害。</p></li><li><p>在 24 小时过去之后，于本事件的又一次重复中面对更多藤蔓。</p></li></ul></section>"
+              "text": "<section class=\"block gamemaster\"><h4>游戏主持人摘要</h4><p>这场战斗事件发生在 @UUID[JournalEntry.emberArctusGazet.JournalEntryPage.LcZ893eubbZrIOLX] 生物群系中任意一个没有显著地点的六角格内。在队伍完成第 3 章之后，它出现的概率会大幅提高；在 [[/eventState disturbedEarthSlaith]] 得到解决之前，它每 24 小时最多可以重复一次。通过直面这些危险的活体黑曜石藤蔓，角色可以：</p><ul><li><p>亲眼见证正在侵扰雷德拉克原野、令人忧心的科兰威胁。</p></li><li><p>发现线索，指向 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.5pD8lxiilJJXOgoa] 之月正是这些麻烦的源头。</p></li><li><p>若与 @UUID[Actor.D7gZ1yQUxgWEQZeI] 同行，可就不断演变的局势与他商议。</p></li><li><p>若与 @UUID[Actor.fJ4WogeI4O64Ry1T] 的商队同行，可以保护商队并因此获得酬谢。</p></li></ul><p>本事件使用 @UUID[Scene.emberRedrakField]{雷德拉克原野} 区域地图的 @UUID[Scene.emberRedrakField.Level.emberObsidianVin] 层级来呈现。</p></section><h3 class=\"divider\">黑曜石藤蔓伏击</h3><p>如果队伍此时正与 @UUID[Actor.fJ4WogeI4O64Ry1T] 的商队同行——他们最初是在 [[/eventState disturbedEarthCaravan]] 中相遇的——那么商队的亚纳克会在第一丝轻微震颤时就惊慌起来，让克拉夫顿的护卫察觉到迫近的危险。护卫们随即警告队伍，并开始引导商队沿原路撤回。</p><p>否则，队伍最多只有一瞬间的预警，随后便……</p><p>@Embed[Actor.IVOsSW5Al9Fr0v2L]</p><p>@Embed[Actor.XiEXB4EImAAPKpT5 count=2]</p><section class=\"block exploration\"><h4>辨认藤蔓</h4><p>任何角色只要成功通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/check arcana 16]]</sub><sub data-system=\"crucible\">[[/skillCheck arcana 16]]</sub></sup> 检定，就能回忆起一份关于科拉之月的深奥记载，其中提到过黑曜石藤蔓——它们以棘刺将自身锚入坚固的岩石，以抵御科拉剧烈的引力波动。据说这些藤蔓还与更庞大的地下结构相连。</p><ul class=\"complex-check\"><li class=\"automatic-success\"><p>[[/knowledge cosmology]]：该角色此次检定自动成功。</p></li></ul></section><h3 class=\"divider\">克拉夫顿撤退</h3><p>如果队伍此时正与克拉夫顿的商队同行，且这是他们同行期间第一次遭遇本事件，泰拉·索尔特队长会向队伍高声喊话。请朗读或转述以下内容：</p><section class=\"block readaloud\"><p>一名身披甲胄的人类女子——你们在随商队同行时认得她，那是克拉夫顿·莉莉菲尔德卫队的首领泰拉·索尔特队长——迅速把克拉夫顿的商队引回你们来时的路，一边朝正在撤离的莉莉菲尔德家族当家人示意，一边向你们喊道：</p><blockquote><p>我们得把他弄出去！你们把那东西解决掉，莉莉菲尔德家族一定重重酬谢！</p></blockquote></section><p>如果队伍正与克拉夫顿同行，但他们在与克拉夫顿同行期间已经遭遇过本事件或 [[/eventState disturbedEarthElementals]]，则改为朗读或转述以下内容：</p><section class=\"block readaloud\"><p>索尔特队长向你们喊道：</p><blockquote><p>老规矩！你们把它放倒，我们把商队转移到安全的地方！</p></blockquote></section><h3 class=\"divider\">与藤蔓作战</h3><p>一切准备就绪之后，队伍现在必须直面这些受腐化的科兰藤蔓所带来的危险。队伍并不知道，@UUID[Actor.tOoLvpL31LmVGQnx] 的腐化影响正在此地引发局部扰动，与科拉上经常出现的怪异现象颇为相似。</p><section class=\"block hazard\"><h4>被连根拔起的旅程</h4><p>由坚硬的异界黑曜石构成的古怪藤蔓破土而出，狂躁不安，随时准备撕扯并缠住它们所发现的一切。战斗开始时：</p><ul><li><p>@UUID[Actor.IVOsSW5Al9Fr0v2L] 在靠近队伍中心处破土而出。</p></li><li><p>两株 @UUID[Actor.XiEXB4EImAAPKpT5]{黑曜石藤蔓新枝} 在队伍周围破土而出。</p></li></ul><p>如果队伍是单独赶路，任何角色只要拥有 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/check perception 16 passive format=long]]，或成功通过一次 [[/skill perception 14]] 检定</sub><sub data-system=\"crucible\">[[/skillCheck awareness 14 passive]]</sub></sup>，就会注意到大地的震颤，并认出这是掘穴怪物的征兆，从而可以提醒队伍留意迫在眉睫的危险。否则，队伍在战斗开始时处于 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">&amp;Reference[surprise]{突袭}</sub><sub data-system=\"crucible\">@Condition[unaware]</sub></sup> 状态。</p><p>在第一轮之后的每个战斗轮开始时，查阅下方的“黑曜石藤蔓时刻”表，为这场战斗加入一项独特的环境危害。</p><h4>黑曜石藤蔓战术</h4><p>本场战斗中所有种类的黑曜石藤蔓都连接着同一处地下结构。此外，所有种类都：</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><ul><li><p>拥有 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.eRyghBIaEBHYLlGs] 特性，使它们能够以一个附赠动作钻入地下，且不会引发借机攻击。</p></li><li><p>对强酸伤害与毒素伤害免疫；任何既知道它们源自科拉、又拥有 [[/knowledge cosmology]] 的人都能一眼看出这一点。</p></li><li><p>受到 @UUID[Actor.XiEXB4EImAAPKpT5.Item.eWz4VcJ8u4eEAJIs]、@UUID[Actor.XiEXB4EImAAPKpT5.Item.HWYhMfTXNz1DtQ9d] 与 @UUID[Actor.XiEXB4EImAAPKpT5.Item.LYAnG6XmcyJ8zRa0]{异常本质} 的保护。</p></li></ul></div><div data-system=\"crucible\"><ul><li><p>拥有 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.burrower00000000]{掘穴者} 天赋，使它们能够在土中穿行，以脱离战斗或破土发起攻击。</p></li><li><p>凭借其 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.wrestler00000000]{摔角手} 天赋，擅长抓握并缠住受害者。</p></li><li><p>是 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.spellmute0000000]{法术静默者}，并对魔法效果具有抗性。</p></li></ul></div></div><p>在场的所有新枝都由高耸黑曜石藤蔓控制。</p><p>当高耸黑曜石藤蔓自身受到伤害时，任何角色只要成功通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill perception 15]] </sub><sub data-system=\"crucible\">[[/skillCheck awareness 15]]</sub></sup>，就会注意到黑曜石藤蔓新枝也随之抖动，说明它们在地下彼此相连。一旦有人指出这一点，任何队伍成员只要再成功通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill insight 15]] 或 [[/skill nature 15]] </sub><sub data-system=\"crucible\">[[/skillCheck science 15]] 或 [[/skillCheck wilderness 15]]</sub></sup> 检定，就能断定黑曜石藤蔓新枝是由高耸黑曜石藤蔓控制的，摧毁它便会使其余藤蔓失效。每当高耸黑曜石藤蔓受到伤害时，上述每一步的检定都可以重复进行，直到有队伍成员成功为止。</p><h4>高耸黑曜石藤蔓战术</h4><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>战斗开始时，@UUID[Actor.IVOsSW5Al9Fr0v2L] 会以一次 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.II0lvz5SPBH8tjaR] 向最近的角色猛然抽击。</p><p>战斗期间，高耸黑曜石藤蔓会：</p><ul><li><p>使用 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.II0lvz5SPBH8tjaR]，以两次 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.LnIO84iTZeHKsgyz]，外加 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.0OGLE7K4FfDcik37] 或 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.aYKPQ7sv9SUkWWLT] 之一进行命中。</p></li><li><p>当受到多名近战攻击者威胁时，它更倾向于用 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.eRyghBIaEBHYLlGs] 退入地下，再在某名远程角色身旁重新钻出；若尚有充能，则使用 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.BE5lvJ5f5rXHD4gP]。</p></li><li><p>如果在它回合开始时有角色正被该藤蔓 &amp;Reference[Grappled]，它会用自己的动作对那名角色 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.wfFd0XICUDrqkG1h]，实际上就是把对方吞进自己盘绕的躯体之中。</p></li><li><p>它在整场战斗中可以用自己的动作 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.6s75ga9cc5IVjwVB] 一次。</p></li><li><p>用附赠动作 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.GSxYdyngh29kisNf]，让一株黑曜石藤蔓新枝重新走位。</p></li><li><p>若处于 &amp;Reference[Bloodied]，高耸黑曜石藤蔓会沉入地下，将附赠动作用于 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.eWI5mQieC5a86aPK]，每天最多两次。它会一直藏在那里，直到队伍用 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.dmZ8F7jXaLwMXEYO]（通过摧毁一株黑曜石藤蔓新枝）迫使它回到地面。</p></li><li><p>可以通过以足量的钝击伤害或挥砍伤害触发 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.I16DaDljZNzmHn5p]{脆性黑曜石}，来阻止它在地下恢复生命值。</p></li></ul></div><div data-system=\"crucible\"><p>战斗期间，高耸黑曜石藤蔓会：</p><ul><li><p>利用 @Action[Actor.IVOsSW5Al9Fr0v2L ensnare] 抓住一名敌人，用 @Action[Actor.IVOsSW5Al9Fr0v2L thrash] 对其造成重创，再以 @Action[Actor.IVOsSW5Al9Fr0v2L swallow] 将其吞没进自己蜿蜒的躯体之中。</p></li><li><p>每当它所承受的伤害约达其总生命值的 25% 时，或在适合渲染戏剧性的时刻，使用 @Action[Actor.IVOsSW5Al9Fr0v2L submergingWithdrawal] 撤退。</p></li><li><p>潜伏地下期间，它会 @Action[Actor.IVOsSW5Al9Fr0v2L spawnOffshoot]，用新长出的新枝继续威胁队伍，并用 @Action[Actor.IVOsSW5Al9Fr0v2L directTheBrood] 指挥它们。</p></li><li><p>潜伏地下期间，它会使用 @Action[Actor.IVOsSW5Al9Fr0v2L vineMend] 回复部分生命值，直到它的某一株新枝被摧毁，届时它必须重新浮出地面。</p></li><li><p>把自己获得的任何英雄气概都花在施展 @Action[Actor.IVOsSW5Al9Fr0v2L explosiveEmergence] 上，并以角色成群聚集之处为目标。</p></li></ul><p>高耸黑曜石藤蔓是一种毫无心智的掠食者，仅凭生物本能行动。它无法陷入 @Condition[broken]，也不会逃离战场。</p></div></div><p>由于受到 @UUID[Actor.tOoLvpL31LmVGQnx]{斯莱斯} 的躁动所激（正是它的腐化影响把这株藤蔓引到了这里），该藤蔓会战斗至死。死亡之时，它的整个躯体都会崩碎成黑曜石碎片——包括庞大的地下根系结构，以及所有黑曜石藤蔓新枝。</p><h4>黑曜石藤蔓新枝战术</h4><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>战斗开始时，@UUID[Actor.XiEXB4EImAAPKpT5]{黑曜石藤蔓新枝} 会用它们的 @UUID[Actor.XiEXB4EImAAPKpT5.Item.CHae6nrqHVFR4I53]{多重攻击} 攻击离自己最近的角色。</p><p>战斗期间，它们会继续对附近的角色使用 @UUID[Actor.XiEXB4EImAAPKpT5.Item.CHae6nrqHVFR4I53]，并且：</p><ul><li><p>通过 @UUID[Actor.XiEXB4EImAAPKpT5.Item.JdMHqNLSFPmEyVfv] 再生——被杀死后，它们会碎裂成一截埋在地下的残桩，残桩迅速退向更深处，随后在别处以残桩的形态钻出，再重新长成（添加一个新的 @UUID[Actor.XiEXB4EImAAPKpT5] 角色）。</p></li><li><p>通过 @UUID[Actor.XiEXB4EImAAPKpT5.Item.JdMHqNLSFPmEyVfv] 再生时，倾向于在某名远程角色身旁钻出。</p></li><li><p>可以通过擒抱来制服——它们的 @UUID[Actor.XiEXB4EImAAPKpT5.Item.y6lF2t6fS6XwYtja] 特性会伤害擒抱它们的人，但也会让它们在保持 &amp;Reference[Incapacitated] 期间一直处于 &amp;Reference[Grappled]。</p></li></ul><p>黑曜石藤蔓新枝会重新长出，因此它们完全不会设法躲避死亡。如果控制它们的高耸黑曜石藤蔓死亡，所有新枝也会随之死亡。此外，在高耸黑曜石藤蔓身上触发 @UUID[Actor.IVOsSW5Al9Fr0v2L.Item.dmZ8F7jXaLwMXEYO]，也可以永久摧毁新枝。</p></div><div data-system=\"crucible\"><p>黑曜石藤蔓新枝的战斗模式与它们的母体相似，但缺少它的一些专门特性。在战斗中，它们会：</p><ul><li><p>利用 @Action[Actor.XiEXB4EImAAPKpT5 ensnare] 抓住一名敌人，用 @Action[Actor.XiEXB4EImAAPKpT5 thrash] 对其造成重创，再以 @Action[Actor.XiEXB4EImAAPKpT5 swallow] 将其吞没进自己蜿蜒的躯体之中。</p></li><li><p>如果射程内没有敌人，它们可能会暂时钻入地下，朝自己所能感知到的最近敌人移动。</p></li></ul><p>它们毫无心智，不会撤退也不会逃跑，而且无法陷入 @Condition[broken]。</p></div></div><h4>拉拉·乌什纳战术</h4><p>如果 @UUID[Actor.D7gZ1yQUxgWEQZeI] 与队伍同行，他会与他们并肩作战。在战斗中，他会：</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><ul><li><p>在战斗开始时，用他的 @UUID[Actor.D7gZ1yQUxgWEQZeI.Item.ZYFCOzKpqsfxXuMn] 法术为一名队伍成员施加增益。</p></li><li><p>更倾向于用 @UUID[Actor.D7gZ1yQUxgWEQZeI.Item.UUmGqB2A2Bet2NOP]、@UUID[Actor.D7gZ1yQUxgWEQZeI.Item.Wcq9B29zBtTFbPZr]、@UUID[Actor.D7gZ1yQUxgWEQZeI.Item.slaZ3MYeZQ4nNJo4] 和 @UUID[Actor.D7gZ1yQUxgWEQZeI.Item.ZYFCOzKpqsfxXuMn] 这样的法术来支援队伍成员。</p></li><li><p>敦促队伍把伤害集中到高耸黑曜石藤蔓身上。</p></li><li><p>在目睹某株黑曜石藤蔓新枝借 @UUID[Actor.XiEXB4EImAAPKpT5.Item.JdMHqNLSFPmEyVfv] 再生之后，他会请队伍成员把新枝按住，并为任何试图擒抱它们的队伍成员提供治疗与其他支援。</p></li></ul></div><div data-system=\"crucible\"><ul><li><p>@Action[Actor.D7gZ1yQUxgWEQZeI cast] 诸如 @Spell[life.ray] 与 @Spell[life.surge] 这样的法术，通常会用“作曲”屈折从容施法以节省专注，并在必要时使用 @Action[Actor.D7gZ1yQUxgWEQZeI refocus]。</p></li><li><p>会造出一片 @Action[Actor.D7gZ1yQUxgWEQZeI ancestralGrove] 并留在其中，以强化自己的盟友。</p></li><li><p>会把大地符文用于进攻，但一旦意识到自己面对的元素生物对强酸伤害高度抗性甚至免疫，他便会停手，转而用自己的护符 @Action[Actor.D7gZ1yQUxgWEQZeI strike]，改为造成毒素伤害。</p></li></ul></div></div><p>若 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">&amp;Reference[Bloodied]</sub><sub data-system=\"crucible\">@Condition[weakened] 或 @Condition[broken]</sub></sup>，拉拉会尽量远离敌对目标，同时仍保持在能以施法支援队伍的范围之内。不过，拉拉绝不会丢下队伍让他们独自作战。</p></section><p>在第一轮之后的每个战斗轮开始时，在下表上投骰：</p><p>@Embed[RollTable.ydEyw3aN4wzqHkYP inline]</p><h3 class=\"divider\">拉拉的忧虑</h3><p>如果拉拉正与队伍同行，且这是他们第一次遭遇本事件，请朗读或转述以下内容：</p><section class=\"block readaloud\"><p>拉拉拍掉身上的尘土，稳稳地吸了一口气。</p><blockquote><p>刚才那真是……太吓人了。不过我很庆幸有你们在。比起打仗，我在田里可要在行得多。我没碍着你们吧？</p></blockquote></section><section class=\"block social\"><h4>忧心忡忡的学徒</h4><p>这些古怪生物所表现出的侵略性让拉拉深感忧虑，他希望能与队伍一起就此事集思广益。拉拉可以确认以下几点：</p><ul><li><p>在他过去几个月里收集到的那些道听途说之前，这一带从未观察到过任何类似的现象。</p></li><li><p>他认为这生物那毫不退缩的敌意，说明它已远离了自己的天然栖息地，或者是被本地生态中的某种存在深深激怒了。</p></li></ul><p>随后拉拉会询问队伍，他们是否认得这些藤蔓。</p></section><h3 class=\"divider\">调查这些藤蔓</h3><p>无论队伍是自行调查这一怪异现象，还是试图回答拉拉的疑问，他们都可以通过若干途径来寻求信息：</p><section class=\"block exploration\"><h4>攀藤寻答</h4><p>如果队伍在本事件或“扰动之地”的其他事件中尚未获知类似信息，他们可以通过以下任一方法来分析自己目睹的一切：</p><ul><li><p>[[/knowledge elementals]]，据此从藤蔓的晶体结构中辨认出大地元素的共通特性，暗示它们与科拉——大地元素的起源之月——存在联系。</p></li><li><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/check history 12]] 或 [[/check survival 12]]</sub><sub data-system=\"crucible\"> [[/skillCheck wilderness 12]] </sub></sup>，据此确认这类黑曜石藤蔓并不是历史上已知会为祸高原的危害。</p></li><li><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/check arcana 15]]</sub><sub data-system=\"crucible\">[[/skillCheck arcana 15]]、[[/skillCheck science 15]]，</sub></sup>或 [[/knowledge cosmology]]，据此把所有证据碎片——黑曜石、藤蔓、该生物的抗性与弱点，以及“黑曜石藤蔓时刻”表中出现的任何现象——拼合成一个事实：这显然是元素之月科拉的影响。</p></li><li><p>如果队伍发现了藤蔓对强酸的免疫，或目睹了酸雨，则可通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\"> [[/check religion 15]]</sub><sub data-system=\"crucible\">[[/skillCheck society 15]]</sub></sup> 检定或 [[/knowledge gods]]，据此辨认出 @UUID[JournalEntry.emberDeities0000.JournalEntryPage.QzJveYdQLi1LHHci] 的影响——那位统辖科拉的堕落荒野之神；凡他所统辖之处都会渗出这般污秽的液体，而在阿克图斯高原上也有隐秘的教徒崇拜着他。</p></li></ul></section><p>如果拉拉与队伍同行，且队伍尚未完成 [[/eventState disturbedEarthTown]]，他会在最后力劝队伍继续赶往 @UUID[JournalEntry.emberArctusGazet.JournalEntryPage.UkNBiAA4l5PP891p]，把他们的发现带给 @UUID[JournalEntry.emberOrganizatio.JournalEntryPage.ZpBnm8FDlFdwrcgS]；拉拉相信，只要提供了这些观察结果，他们就会知道该怎么做。</p><h3 class=\"divider\">来自莉莉菲尔德家族的酬谢</h3><p>如果队伍正与克拉夫顿的商队同行，克拉夫顿及其随从会在护卫的环绕下返回。索尔特队长走向队伍：</p><section class=\"block readaloud\"><p>索尔特队长一边走近，一边目光来回扫视，显然仍处于戒备之中。</p><blockquote><p>多谢你们驱除了那头污秽的怪物。我希望你们能理解，我必须把我要护送的人送到安全之处；即便如此，把你们丢下独自应战，我还是要向你们道歉。按照约定，我们会为你们所冒的风险给予丰厚的酬谢。</p></blockquote></section><section class=\"block social\"><h4>算在家族账上</h4><p>索尔特队长递上一只带有莉莉菲尔德家族徽记的小箱子，里面装着：</p><ul><li><p>一笔 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/award 250gp]]</sub><sub data-system=\"crucible\">[[/award 25 gp]]</sub></sup> 的酬金。</p></li><li><p>队伍每随克拉夫顿的商队遭遇一次本事件或 [[/eventState disturbedEarthElementals]]，便有一份 @UUID[Item.Qg2cqy4rAf4YSBx0]。</p></li><li><p>一瓶密封的 @UUID[Item.Z8xU3lbhyVV5gIOg]。</p></li></ul></section><h3 class=\"divider\">事件结束</h3><section class=\"block gamemaster\"><h4>后续步骤</h4><p>队伍在这些黑曜石藤蔓的袭击中幸存下来之后，他们可以：</p><ul><li><p>在 [[/eventState disturbedEarthCaravan]] 中遇上正前往罗特瓦克途中的克拉夫顿·莉莉菲尔德（如果他们还没遇到过的话），之后便可在 [[/eventState disturbedEarthTown]] 中调查这股元素威胁的源头。</p></li><li><p>在 [[/eventState disturbedEarthElementals]] 中遭遇其他科兰危害。</p></li><li><p>在 24 小时过去之后，于本事件的又一次重复中面对更多藤蔓。</p></li></ul></section>"
             },
             "Through the Grapevine": {
               "exposition": "<p>在一处天然水塘周围，你们看见一支绵延铺开的商队，满载着贸易货物，旗幡上绣着声名远播的莉莉菲尔德家族的纹章。护卫们在商队外围警戒，无数侍从则忙着照料亚纳克、搭起遮阳的天篷。</p><p>其中一顶天篷下站着一位蓄须男子，身披上好的羊毛斗篷，正用洪亮而亲切的嗓音向来回奔走的工人们发号施令。一看见你们走近，他的双眼便闪出喜色，招手让你们过去。</p>",
