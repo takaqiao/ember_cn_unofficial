@@ -150,7 +150,8 @@
         "Simple Melee": "简易近战武器 Simple Melee",
         "Lantern Roads": "提灯路 Lantern Roads",
         "Chapter 4": "第4章 Chapter 4",
-        "Disturbed Earth": "扰动之地 Disturbed Earth"
+        "Disturbed Earth": "扰动之地 Disturbed Earth",
+        "Progression": "进阶 Progression"
       },
       "journals": {
         "Lake Jinro Lunar Shrine": {
@@ -13593,6 +13594,10 @@
             },
             "50-50": {
               "name": "整副纸牌 Playing Cards Set"
+            },
+            "53-53": {
+              "description": "<p>获得 [[/award 10ep]]，重复 [[/roll 1d10]] 次</p>",
+              "name": "一把银金币"
             }
           }
         },
@@ -13859,7 +13864,8 @@
           }
         },
         "Kaleidoscope Crystal Effects": {
-          "name": "万花筒水晶效果 Kaleidoscope Crystal Effects"
+          "name": "万花筒水晶效果 Kaleidoscope Crystal Effects",
+          "description": "<p>万花筒水晶内在之光开始以令人着迷的图案移动，几乎让人无法移开视线，一阵战栗掠过你的身体。</p><p>所有效果持续，直到受影响的角色完成一次<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">长休</sub> <sub data-system=\"crucible\">休息</sub></sup>。<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">对受影响的角色施放解除魔法或次等复原术，可以迅速清除这些效果。</sub> <sub data-system=\"crucible\">使用 [[/spell counterspell rune=control gesture=influence inflection=push dc=14]] 可以迅速清除这些效果。</sub></sup></p>"
         },
         "Yakoshta Mine Track Switches": {
           "name": "雅科什塔矿井轨道道岔 Yakoshta Mine Track Switches",
@@ -13962,40 +13968,52 @@
           "description": "<p>以下来自死亡庇护所事件的戏剧性时刻各自只能发生一次。在适当的时候，在下表上掷1d12，并叙述结果。</p>",
           "results": {
             "6-6": {
-              "name": "叩门之声"
+              "name": "叩门之声",
+              "description": "<p>一具此前未被发现的斯卡利斯已从地图上的另一处位置包抄了队伍，此刻猛地推开附近一扇门，自背后发起攻击。一阵疾风掠过，掀动着散落在整间厅室各处的祈祷书与烛台。</p>"
             },
             "2-2": {
-              "name": "高空扑击"
+              "name": "高空扑击",
+              "description": "<p>一具此前未被发现的斯卡利斯从高处的地面或地形上一跃而下，以俯冲攻击瞄准其中一名角色。被这次攻击命中的角色必须成功通过一次 [[/save str 13]] 豁免检定，才能避免被击倒而陷入&amp;Reference[Prone]状态。</p>"
             },
             "3-3": {
-              "name": "烛火夺命"
+              "name": "烛火夺命",
+              "description": "<p>斯卡利斯群中的一具抄起附近一座烛台，其烛座上还燃着五支跳动的火焰蜡烛。被这具斯卡利斯的近战攻击命中的角色，都会额外受到 [[/roll 1d4 fire]] 点火焰伤害。</p>"
             },
             "1-1": {
-              "name": "不死坚韧"
+              "name": "不死坚韧",
+              "description": "<p>凭借纯粹的恶意意志，一具刚刚被杀死的斯卡利斯吸收了附近一名死去辛达里克人的部分灵魂精华，重新活动起来，再度发起攻击。这具新起身的斯卡利斯拥有1点生命值。</p>"
             },
             "4-4": {
-              "name": "谁在那里？"
+              "name": "谁在那里？",
+              "description": "<p>一具此前未被发现的崩塌的斯卡利斯从阴影中爬出，自背后发起攻击。</p>"
             },
             "5-5": {
-              "name": "血浴"
+              "name": "血浴",
+              "description": "<p>附近一扇门猛然大开，一股人血喷溅到对面的墙上。一具斯卡利斯从门内走出，手里提着一颗刚被砍下的辛达里克人头颅。任何能看见这具斯卡利斯的角色都必须成功通过一次 [[/save wisdom 13]] 豁免检定，否则将陷入&amp;Reference[Frightened]状态，直到自己下个回合结束。</p>"
             },
             "7-7": {
-              "name": "血染之路"
+              "name": "血染之路",
+              "description": "<p>一具此前未被发现的斯卡利斯把一名倒霉的圣所访客的尸体从附近的房间或走廊里拖了出来，在地面上拖出一道血痕。任何能看见这具斯卡利斯的角色都必须成功通过一次 [[/save wisdom 13]] 豁免检定，否则将陷入&amp;Reference[Frightened]状态，直到自己下个回合结束。</p>"
             },
             "8-8": {
-              "name": "人头落地"
+              "name": "人头落地",
+              "description": "<p>一具崩塌的斯卡利斯或斯卡利斯把自己的头骨当作投掷武器。这次临时攻击的射程为30英尺，造成 [[/roll 1d6 bludgeoning]] 点钝击伤害。</p>"
             },
             "9-9": {
-              "name": "背靠背"
+              "name": "背靠背",
+              "description": "<p>一名辛达里克信徒踉跄着闯入该区域，背上还攀附着两具崩塌的斯卡利斯。血流如注间，这名信徒被开膛破肚，而那两具崩塌的斯卡利斯随即将注意力转向队伍。</p>"
             },
             "10-10": {
-              "name": "邪异瘴气"
+              "name": "邪异瘴气",
+              "description": "<p>一团由幽暗深渊能量构成的邪异瘴气从最近被杀死的斯卡利斯或崩塌的斯卡利斯体内渗出，随即消散。遗骸30英尺内的任何活物都必须成功通过一次 [[/save charisma 13]]，才能避免受到 [[/roll 1d4]] 点心灵伤害。任何以此方式受到伤害的角色还会陷入&amp;Reference[Poisoned]状态，直到自己下个回合结束。</p>"
             },
             "11-11": {
-              "name": "残躯重组"
+              "name": "残躯重组",
+              "description": "<p>凭借纯粹的恶意意志，一具刚刚被杀死的崩塌的斯卡利斯吸收了附近一名死去辛达里克人的部分灵魂精华，重新活动起来，再度发起攻击。这具新起身的崩塌的斯卡利斯拥有1点生命值。</p>"
             },
             "12-12": {
-              "name": "战吼号令"
+              "name": "战吼号令",
+              "description": "<p>其中一具斯卡利斯用一种古老而邪恶的语言嘶哑地发出骇人的战吼。60英尺内的每一个斯卡利斯盟友，在自己的下一次攻击上获得@Advantage[2]。</p>"
             }
           }
         },
@@ -14528,6 +14546,9 @@
             },
             "12-12": {
               "name": "学者套装 Scholar's Pack"
+            },
+            "9-9": {
+              "description": "<p>一只@UUID[Compendium.dnd5e.items.Item.7ztvHyYJCcOOAWmR]{香炉}，以及@UUID[Compendium.dnd5e.items.Item.3b0RvGi0TnTYpIxn]{一炷香}×3</p>"
             }
           }
         },
@@ -14972,9 +14993,11 @@
         "Alchemical Toxin": {
           "effects": {
             "Poisoned": {
-              "name": "中毒 Poisoned"
+              "name": "中毒 Poisoned",
+              "description": "<p>若目标在毒素注射后幸存下来，则其陷入&amp;Reference[poisoned]状态，持续 24 小时（若你拥有龙裔血统，则为 48 小时）。</p>"
             }
-          }
+          },
+          "name": "炼金毒素 Alchemical Toxin"
         },
         "Adamantine Breastplate": {
           "name": "精金胸甲 Adamantine Breastplate"
@@ -15069,9 +15092,11 @@
         "Sharp Hunting Trap": {
           "effects": {
             "Restrained": {
-              "name": "受缚 Restrained"
+              "name": "受缚 Restrained",
+              "description": "<p>目标陷入&amp;reference[restrained]状态，直到被解救为止。</p>"
             }
-          }
+          },
+          "name": "锋利狩猎陷阱 Sharp Hunting Trap"
         },
         "Sturdy Pickaxe": {
           "name": "坚固的鹤嘴锄 Sturdy Pickaxe"
@@ -15259,7 +15284,8 @@
           "name": "暗焰头环 Darkflame Circlet",
           "effects": {
             "Sunlight Sensitivity": {
-              "name": "阳光敏感性 Sunlight Sensitivity"
+              "name": "阳光敏感性 Sunlight Sensitivity",
+              "description": "<p>处于阳光下时，你的属性检定与攻击检定具有劣势。</p>"
             }
           }
         },
@@ -15267,7 +15293,8 @@
           "name": "暗行护符 Darkstride Amulet",
           "effects": {
             "Sunlight Sensitivity": {
-              "name": "阳光敏感性 Sunlight Sensitivity"
+              "name": "阳光敏感性 Sunlight Sensitivity",
+              "description": "<p>处于阳光下时，你的属性检定与攻击检定具有劣势。</p>"
             }
           }
         },
@@ -15428,7 +15455,13 @@
           "name": "萤石手镯 Fluorite Bracelet"
         },
         "Grassland Talisman": {
-          "name": "草原护符 Grassland Talisman"
+          "name": "草原护符 Grassland Talisman",
+          "effects": {
+            "Talisman Benefits": {
+              "description": "<p>当该护符被激活时，你获得以下增益：</p><ul><li><p>你获得毒素抗性。</p></li><li><p>你获得对@UUID[Item.qrzBBvBtYQa1AT0n]{尤尔塔克毒素}的免疫。</p></li><li><p>你周围 30 英尺内的盟友，在对抗尤尔塔克毒素的体质豁免检定上具有优势。</p></li></ul>",
+              "name": "护符增益 Talisman Benefits"
+            }
+          }
         },
         "House Vortest Signet Ring": {
           "name": "沃特斯特家族纹章戒指 House Vortest Signet Ring"
@@ -15470,7 +15503,37 @@
           "name": "微型铜钥匙 Tiny Copper Key"
         },
         "Uncanny Relic": {
-          "name": "诡异遗物 Uncanny Relic"
+          "name": "诡异遗物 Uncanny Relic",
+          "effects": {
+            "Cursed": {
+              "description": "<p>受<strong>遗物之触</strong>诅咒期间，你对钝击、力场、闪电、穿刺、挥砍与雷鸣伤害易伤。</p>",
+              "name": "受诅咒 Cursed"
+            },
+            "Exhaustion 1": {
+              "description": "<p>随着水晶化的蔓延，你获得一级&amp;Reference[Exhaustion]。</p><p>每一级都会为你的所有 D20 检定（攻击检定、豁免检定、属性检定）带来 -2 减值，并使速度每级降低 5 英尺。</p>",
+              "name": "力竭1 Exhaustion 1"
+            },
+            "Exhaustion 2": {
+              "description": "<p>随着水晶化的蔓延，你获得第二级&amp;Reference[Exhaustion]。</p><p>每一级都会为你的所有 D20 检定（攻击检定、豁免检定、属性检定）带来 -2 减值，并使速度每级降低 5 英尺。</p>",
+              "name": "力竭2 Exhaustion 2"
+            },
+            "Exhaustion 3": {
+              "description": "<p>随着水晶化的蔓延，你获得第三级&amp;Reference[Exhaustion]。</p><p>每一级都会为你的所有 D20 检定（攻击检定、豁免检定、属性检定）带来 -2 减值，并使速度每级降低 5 英尺。</p>",
+              "name": "力竭3 Exhaustion 3"
+            },
+            "Exhaustion 4": {
+              "description": "<p>随着水晶化的蔓延，你获得第四级&amp;Reference[Exhaustion]。</p><p>每一级都会为你的所有 D20 检定（攻击检定、豁免检定、属性检定）带来 -2 减值，并使速度每级降低 5 英尺。</p>",
+              "name": "力竭4 Exhaustion 4"
+            },
+            "Exhaustion 5": {
+              "description": "<p>随着水晶化的蔓延，你获得第五级&amp;Reference[Exhaustion]。</p><p>每一级都会为你的所有 D20 检定（攻击检定、豁免检定、属性检定）带来 -2 减值，并使速度每级降低 5 英尺。</p>",
+              "name": "力竭5 Exhaustion 5"
+            },
+            "Exhaustion 6 (Dead)": {
+              "description": "<p>随着水晶化的蔓延，你获得第六级&amp;Reference[Exhaustion]，并因此死亡。</p>",
+              "name": "力竭6（死亡） Exhaustion 6 (Dead)"
+            }
+          }
         },
         "Wayfarer's Staff": {
           "name": "旅人木杖 Wayfarer's Staff"
@@ -15527,7 +15590,8 @@
           "name": "可疑的卡拉尔酒 Suspicious Karal",
           "effects": {
             "Poisoned": {
-              "name": "中毒 Poisoned"
+              "name": "中毒 Poisoned",
+              "description": "<p>目标陷入&amp;Reference[poisoned apply=false]状态，持续 1 小时。</p>"
             }
           }
         },
@@ -15547,12 +15611,19 @@
           "name": "浓缩矿尘 Concentrated Ore Dust",
           "effects": {
             "Poisoned": {
-              "name": "中毒 Poisoned"
+              "name": "中毒 Poisoned",
+              "description": "<p>目标陷入&amp;Reference[poisoned apply=false]状态，持续 10 分钟。</p>"
             }
           }
         },
         "Alchemical Grenade": {
-          "name": "炼金手雷 Alchemical Grenade"
+          "name": "炼金手雷 Alchemical Grenade",
+          "effects": {
+            "Poisoned & Blinded": {
+              "description": "<p>目标陷入&amp;Reference[poisoned]状态，持续 1 小时，并陷入&amp;Reference[blinded]状态。</p>",
+              "name": "中毒与目盲 Poisoned & Blinded"
+            }
+          }
         },
         "Amberal Bronze": {
           "name": "安伯拉尔青铜 Amberal Bronze"
@@ -16464,7 +16535,13 @@
           "name": "破旧的书籍 Tattered Book"
         },
         "Pipes of Bravado": {
-          "name": "虚张声势风笛 Pipes of Bravado"
+          "name": "虚张声势风笛 Pipes of Bravado",
+          "effects": {
+            "+5 Feet Movement": {
+              "description": "<p>目标获得额外 5 英尺的移动速度，直到其下个回合结束。</p>",
+              "name": "移动 +5 英尺 +5 Feet Movement"
+            }
+          }
         },
         "Moth-Eaten Diary": {
           "name": "虫蛀的日记 Moth-Eaten Diary"
@@ -16587,6 +16664,48 @@
         },
         "Hunter's Spyglass": {
           "name": "猎人的望远镜 Hunter's Spyglass"
+        },
+        "Cloak of Kindness": {
+          "effects": {
+            "Persuasion Advantage": {
+              "description": "<p>当你处于<em>易容术</em>法术的效果之下时，你在所有说服检定上具有优势。</p>",
+              "name": "说服优势 Persuasion Advantage"
+            }
+          },
+          "name": "仁慈斗篷 Cloak of Kindness"
+        },
+        "Shadowcap Wine": {
+          "name": "影盖葡萄酒 Shadowcap Wine"
+        },
+        "Spell Scroll:  Detect Magic": {
+          "name": "法术卷轴：侦测魔法 Spell Scroll:  Detect Magic"
+        },
+        "Spell Scroll: Antilife Shell": {
+          "name": "法术卷轴：防活物护罩 Spell Scroll: Antilife Shell"
+        },
+        "Spell Scroll: Arcane Lock": {
+          "name": "法术卷轴：秘法锁 Spell Scroll: Arcane Lock"
+        },
+        "Spell Scroll: Death Ward": {
+          "name": "法术卷轴：防死结界 Spell Scroll: Death Ward"
+        },
+        "Spell Scroll: Globe of Invulnerability": {
+          "name": "法术卷轴：法术无效结界 Spell Scroll: Globe of Invulnerability"
+        },
+        "Spell Scroll: Glyph of Warding": {
+          "name": "法术卷轴：守卫刻纹 Spell Scroll: Glyph of Warding"
+        },
+        "Spell Scroll: Mind Blank": {
+          "name": "法术卷轴：心灵屏障 Spell Scroll: Mind Blank"
+        },
+        "Spell Scroll: Protection from Evil and Good": {
+          "name": "法术卷轴：防护善恶 Spell Scroll: Protection from Evil and Good"
+        },
+        "Spell Scroll: Symbol": {
+          "name": "法术卷轴：徽记术 Spell Scroll: Symbol"
+        },
+        "Spell Scroll: Time Stop": {
+          "name": "法术卷轴：时间停止 Spell Scroll: Time Stop"
         }
       },
       "actors": {
@@ -16823,7 +16942,8 @@
             "Sunbeam": {
               "effects": {
                 "Blinded": {
-                  "name": "目盲 Blinded"
+                  "name": "目盲 Blinded",
+                  "description": "<p>目标陷入&amp;Reference[Blinded apply=false]状态，直到你的下一回合开始。</p>"
                 }
               },
               "name": "阳炎射线 Sunbeam"
@@ -16832,7 +16952,13 @@
               "name": "借植物传送 Transport via Plants"
             },
             "Regenerate": {
-              "name": "再生术 Regenerate"
+              "name": "再生术 Regenerate",
+              "effects": {
+                "Regenerating": {
+                  "description": "<p>在持续时间内，目标在其每个回合开始时恢复 [[/healing 1 type=healing]]{1 点生命值}，且任何被切断的身体部位都会在 2 分钟后重新长出。</p>",
+                  "name": "再生 Regenerating"
+                }
+              }
             },
             "Animal Shapes": {
               "name": "动物形态 Animal Shapes"
@@ -16843,7 +16969,8 @@
             "Sunburst": {
               "effects": {
                 "Blinded": {
-                  "name": "目盲 Blinded"
+                  "name": "目盲 Blinded",
+                  "description": "<p>因此法术而&amp;Reference[Blinded apply=false]的生物，在其每一回合结束时都可以再进行一次[[/save ability=con format=long]]，成功则对自身结束该效果。</p>"
                 }
               },
               "name": "阳炎爆 Sunburst"
@@ -16855,18 +16982,25 @@
               "name": "大步奔行 Longstrider",
               "effects": {
                 "Longstrider": {
-                  "name": "大步奔行 Longstrider"
+                  "name": "大步奔行 Longstrider",
+                  "description": "<p>直到法术结束之前，目标的速度提高 10 英尺。</p>"
                 }
               }
             },
             "Barkskin": {
-              "name": "树肤 Barkskin"
+              "name": "树肤 Barkskin",
+              "effects": {
+                "Bark-like Skin": {
+                  "name": "树肤 Bark-like Skin"
+                }
+              }
             },
             "Darkvision": {
               "name": "黑暗视觉 Darkvision",
               "effects": {
                 "Darkvision": {
-                  "name": "黑暗视觉 Darkvision"
+                  "name": "黑暗视觉 Darkvision",
+                  "description": "<p>在持续时间内，你所触碰的一个自愿生物拥有射程 150 英尺的 &amp;Reference[darkvision]。</p>"
                 }
               }
             },
@@ -16886,12 +17020,19 @@
               "name": "气化形体 Gaseous Form",
               "effects": {
                 "Gaseous Form": {
-                  "name": "气化形体 Gaseous Form"
+                  "name": "气化形体 Gaseous Form",
+                  "description": "<p>目标唯一的移动方式是 10 英尺的飞行速度，且可以悬浮。目标可以进入并占据另一个生物所在的空间。目标具有钝击、穿刺与挥砍伤害抗性；对 &amp;Reference[prone apply=false] 状态免疫；并且在力量、敏捷与体质豁免上具有优势。目标可以穿过狭窄的缝隙，但会将液体视作固体表面。</p><p>目标无法说话，也无法操作物件；它先前携带或持握的任何物件都无法被丢下、使用或以其他方式与之互动。最后，目标无法进行攻击，也无法施放法术。</p>"
                 }
               }
             },
             "Stinking Cloud": {
-              "name": "臭云术 Stinking Cloud"
+              "name": "臭云术 Stinking Cloud",
+              "effects": {
+                "Stinking Poison": {
+                  "description": "<p>以此方式处于 &amp;Reference[poisoned apply=false] 状态期间，该生物无法采取动作或附赠动作。</p>",
+                  "name": "恶臭毒素 Stinking Poison"
+                }
+              }
             },
             "Blight": {
               "name": "枯萎术 Blight"
@@ -16903,7 +17044,13 @@
               "name": "林地之精咒唤术 Conjure Woodland Beings"
             },
             "Dominate Beast": {
-              "name": "支配野兽 Dominate Beast"
+              "name": "支配野兽 Dominate Beast",
+              "effects": {
+                "Dominated": {
+                  "description": "<p>每当处于 &amp;Reference[Charmed apply=false] 状态的目标受到伤害时，它会重新进行 [[/save ability=wis]] 豁免，成功则结束其自身身上的该法术。</p>",
+                  "name": "支配 Dominated"
+                }
+              }
             },
             "Giant Insect": {
               "name": "巨虫 Giant Insect"
@@ -16926,10 +17073,42 @@
               "name": "咒唤元素 Conjure Elemental"
             },
             "Contagion": {
-              "name": "疫病术 Contagion"
+              "name": "疫病术 Contagion",
+              "effects": {
+                "Infected (Charisma)": {
+                  "description": "<ul><li><p>处于 &amp;Reference[Poisoned apply=false] 状态期间，目标进行所选属性的豁免检定时具有劣势。</p></li><li><p>目标必须在其每个回合结束时重新进行 [[/save ability=con format=long]]，直到累计三次成功或三次失败为止。</p></li><li><p>每当目标受到能够结束中毒状态的效应作用时，目标必须成功通过一次 [[/save ability=con format=long]]，否则该状态不会对其结束。</p></li></ul>",
+                  "name": "感染（魅力） Infected (Charisma)"
+                },
+                "Infected (Constitution)": {
+                  "description": "<ul><li><p>处于 &amp;Reference[Poisoned apply=false] 状态期间，目标进行所选属性的豁免检定时具有劣势。</p></li><li><p>目标必须在其每个回合结束时重新进行 [[/save ability=con format=long]]，直到累计三次成功或三次失败为止。</p></li><li><p>每当目标受到能够结束中毒状态的效应作用时，目标必须成功通过一次 [[/save ability=con format=long]]，否则该状态不会对其结束。</p></li></ul>",
+                  "name": "感染（体质） Infected (Constitution)"
+                },
+                "Infected (Dexterity)": {
+                  "description": "<ul><li><p>处于 &amp;Reference[Poisoned apply=false] 状态期间，目标进行所选属性的豁免检定时具有劣势。</p></li><li><p>目标必须在其每个回合结束时重新进行 [[/save ability=con format=long]]，直到累计三次成功或三次失败为止。</p></li><li><p>每当目标受到能够结束中毒状态的效应作用时，目标必须成功通过一次 [[/save ability=con format=long]]，否则该状态不会对其结束。</p></li></ul>",
+                  "name": "感染（敏捷） Infected (Dexterity)"
+                },
+                "Infected (Intelligence)": {
+                  "description": "<ul><li><p>处于 &amp;Reference[Poisoned apply=false] 状态期间，目标进行所选属性的豁免检定时具有劣势。</p></li><li><p>目标必须在其每个回合结束时重新进行 [[/save ability=con format=long]]，直到累计三次成功或三次失败为止。</p></li><li><p>每当目标受到能够结束中毒状态的效应作用时，目标必须成功通过一次 [[/save ability=con format=long]]，否则该状态不会对其结束。</p></li></ul>",
+                  "name": "感染（智力） Infected (Intelligence)"
+                },
+                "Infected (Strength)": {
+                  "description": "<ul><li><p>处于 &amp;Reference[Poisoned apply=false] 状态期间，目标进行所选属性的豁免检定时具有劣势。</p></li><li><p>目标必须在其每个回合结束时重新进行 [[/save ability=con format=long]]，直到累计三次成功或三次失败为止。</p></li><li><p>每当目标受到能够结束中毒状态的效应作用时，目标必须成功通过一次 [[/save ability=con format=long]]，否则该状态不会对其结束。</p></li></ul>",
+                  "name": "感染（力量） Infected (Strength)"
+                },
+                "Infected (Wisdom)": {
+                  "description": "<ul><li><p>处于 &amp;Reference[Poisoned apply=false] 状态期间，目标进行所选属性的豁免检定时具有劣势。</p></li><li><p>目标必须在其每个回合结束时重新进行 [[/save ability=con format=long]]，直到累计三次成功或三次失败为止。</p></li><li><p>每当目标受到能够结束中毒状态的效应作用时，目标必须成功通过一次 [[/save ability=con format=long]]，否则该状态不会对其结束。</p></li></ul>",
+                  "name": "感染（感知） Infected (Wisdom)"
+                }
+              }
             },
             "Geas": {
-              "name": "指使术 Geas"
+              "name": "指使术 Geas",
+              "effects": {
+                "Under Orders": {
+                  "description": "<p>处于 &amp;Reference[Charmed apply=false] 状态期间，若该生物的行为直接违背你的命令，它将受到 [[/damage 5d10 type=psyhic]] 伤害。该伤害每天至多生效一次。</p>",
+                  "name": "遵循指示 Under Orders"
+                }
+              }
             },
             "Greater Restoration": {
               "name": "高等复原术 Greater Restoration"
@@ -16941,7 +17120,13 @@
               "name": "医疗术 Heal"
             },
             "Heroes' Feast": {
-              "name": "英雄宴 Heroes' Feast"
+              "name": "英雄宴 Heroes' Feast",
+              "effects": {
+                "Feast's Benefits": {
+                  "description": "<p>该生物具有毒素伤害&amp;Reference[damageResistance]{抗性}，并对 &amp;Reference[Frightened] 与 &amp;Reference[Poisoned] 状态免疫。其生命值上限也提高 2d10 点，并获得等量的生命值。</p>",
+                  "name": "大快朵颐 Feast's Benefits"
+                }
+              }
             },
             "Move Earth": {
               "name": "地动术 Move Earth"
@@ -16971,7 +17156,13 @@
                   "name": "失聪 Deafened"
                 }
               }
+            },
+            "Mushroom Walking Stick": {
+              "name": "蘑菇手杖 Mushroom Walking Stick"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位古老而干瘪的荆芽灵倚靠着一根由化石木制成的短粗树枝，灌木般繁茂张扬的叶须下，隐约露出一抹歪斜的笑容。带刺的盘结肢体和细长的双腿几乎完全掩没在如小山般堆叠的绿叶与枝叶之下。一大丛蓬乱的灌木从他背后生长出来，在他头顶形成一片翠绿的树冠，并沿着他叶片覆盖的背部与肩膀蔓延，其上点缀着成簇发出蓝色幽光的蘑菇。</p></section><p>[[lookup @name]]是一位古老而干瘪的德鲁伊，年岁已高，几乎连自己的起源都记不清了。这个满身盘结的小小荆芽灵居住在通路中，漫不经心地漫游于其深处。他对周围显而易见的危险毫不在意，这正说明了他深藏的力量、智慧与阅历。</p>"
           }
         },
         "Mioroth": {
@@ -16984,6 +17175,9 @@
             "Ephemeral": {
               "name": "以太化 Ephemeral"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>仿佛自传说中走出，一个幽灵般半透明的庞大身影笼罩在你上方——即便他是盘腿而坐。他安详、平静而虚无缥缈，仿佛由纯粹的能量与摇曳的光丝构成。阴影与魔法的微粒不断从他身上蒸腾散去，而他唯一不变的，是那睿智而温和的微笑神情。他隐约像是一位基瓦尔，却又仿佛由石头雕成，眉骨厚重、四肢修长、体格健硕。他所穿的衣物不属于任何可辨认的样式。</p></section><p>[[lookup @name]]是古代申特巨人的一具投影，也是一位曾生活在两千五百年前大破裂事件之前的前任先知、贤者和工匠。如今他似乎以某种幽魂般的灵体形式存在，但奇怪的是，他并非不死生物，而且似乎以某种你所不知的其他方式维持着自己的形体与心智。</p>"
           }
         },
         "Tethra Shùl": {
@@ -17113,14 +17307,39 @@
               "name": "魔鬼视觉 Devil Sight"
             },
             "Comprehend Languages": {
-              "name": "通晓语言 Comprehend Languages"
+              "name": "通晓语言 Comprehend Languages",
+              "effects": {
+                "Comprehension": {
+                  "name": "通晓 Comprehension"
+                }
+              }
             },
             "Levitate": {
-              "name": "浮空术 Levitate"
+              "name": "浮空术 Levitate",
+              "effects": {
+                "Levitating": {
+                  "description": "<p>目标只能通过推或拉触及范围内一个固定的物件或平面（例如一面墙或者天花板）来进行移动，这种移动方式视为等同于攀爬。</p>",
+                  "name": "浮空 Levitating"
+                }
+              }
             },
             "Speak with Dead": {
               "name": "死者交谈 Speak with Dead"
+            },
+            "Blessing of the Abyss": {
+              "effects": {
+                "Blessing of the Abyss": {
+                  "name": "深渊祝福 Blessing of the Abyss"
+                }
+              },
+              "name": "深渊祝福 Blessing of the Abyss"
+            },
+            "Create Horrendor": {
+              "name": "创造霍伦多尔 Create Horrendor"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你们看到一具早已死去的巨人所化的幽暗幻影，身披占卜者那身古老而神秘的长袍。她腐朽的形体被不断流动的阴影所笼罩，而从她那阴森面容的深处，闪着两点诡异的绯红光芒——那是一双不洁的眼睛，正以你们从未见过的残忍恶意注视着你们。</p></section><p>[[lookup @name]] 是一名早已死去的瓦伦术士所化作的施虐怨灵。她那腐朽、虚体的形态上装饰着她生前佩戴的奥术小饰物与邪异饰品，以及由骨骼与内脏制成的战利品和珠宝；这一切都由诡异幽暗的幽灵物质构成。</p>"
           }
         },
         "Zodi Trask": {
@@ -17193,6 +17412,9 @@
             "Shadowmeld": {
               "name": "影融 Shadowmeld"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你看到一名壮实的基斯卡男子，他那筋肉虬结的体魄表明他过着繁重劳作的生活；这一点从他身旁那把饱经岁月的鹤嘴锄以及他宽松朴素的衣着上也能轻易得到印证。他浑身覆着一层灰褐色的毛发与采石场的尘土；这名矿工把自己那头鲜艳的长发编成粗辫，好尽职地不让它碍事。他那留着小胡子的脸上带着一副自鸣得意的神情，看起来还留有几道伤疤，像是某场暴力的童年斗殴或意外所致。</p></section><p>[[lookup @name]]是一位性格外向的阿克图里安矿工，在阿克图瑞尔附近的采石场为杰夫赫尔家族担任工头。他以对工作的自豪态度和面对苦难时的坚韧闻名，因此阿克图瑞尔的其他居民普遍认为他是“好人中的一个”。即使不当班时，人们也知道他总穿着沾满一天劳作尘土的衣服，还随身带着他那把可靠的鹤嘴锄——当被问及为何迟迟不肯放松时，他总是说这是出于对“社区巡逻”的持续需要。</p>"
           }
         },
         "Edivel Sprout": {
@@ -17427,6 +17649,9 @@
             "Blight": {
               "name": "枯萎术 Blight"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位高大的阿什卡学者身披辛达里克贤者的深酒红色长袍。他那覆有翠绿色鳞片的身躯瘦削而严峻，神情中流露出一种饱学之士的悔意。若他蓝绿色鳞甲的年岁与那根饱经风霜的手杖上的包浆能说明什么，那么这位学者无疑是辛达里克技艺的一位造诣深厚的实践者。</p></section><p>[[lookup @name]]是一位经验丰富的辛达里克贤者，驻扎在科尔平庇护所。在奥尔丹的辛达林神殿奉献服务多年后，埃维索前往米亚尔山，将自己对深奥奥术的广博知识运用于为米拉·波角的飞地所做的工作中。他沉默寡言的性格和带着讽刺意味的幽默感，使埃维索在科尔平较年轻的贤者之间赢得了“脾气暴躁的叔叔”的名声。</p>"
           }
         },
         "Mira Wavehorn": {
@@ -17653,6 +17878,9 @@
             "Shadowmeld": {
               "name": "影融 Shadowmeld"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位基斯卡女子那副淡漠的神情，被她诙谐的笑容所推翻——那是一抹亲切而略带好奇的咧嘴笑。她身着辛达里克贤者的红袍与一件轻型卡斯奇利亚胸甲，纵使性情平和，看上去却已随时可以行动。你的直觉告诉你，在这位温文尔雅的贤者体内，跳动着一颗与你一样的冒险者的炽热之心。</p></section><p>[[lookup @name]]是科尔平庇护所内辛达里克贤者飞地正式指定的领袖。科尔平庇护所位于奥尔丹以西的米亚尔山峭壁之间。米拉曾是卡斯奇利亚共和国一位经验丰富的船长，如今身为科尔平庇护所的首席总管，她仍能在日常生活中处处运用那些年航行于大海之上所学到的关键经验。她既是一位技艺高超的治疗者，也是在艰难时期备受欢迎的理性之声。</p>"
           }
         },
         "Aythorn": {
@@ -17752,6 +17980,9 @@
             "Shard God": {
               "name": "碎片女神 Shard God"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位老者身形矮小，被他那件宽大的斗篷、那把在腰间盘绕处泛起深邃魔法微光的长长卷须般的胡子，以及周围数量惊人的纸张，衬得愈发渺小。然而他却全神贯注，目光与双手在一件件东西之间流畅地移动，仿佛每一卷摊开的卷轴、每一页散落的犊皮纸，都恰好待在他预期且需要它待着的位置上。</p></section><p>西吉尔是一位碎片女神，因热爱各类知识、尤其是书面知识，常被称为“书籍之神”。他可以花上数年研究一部文本中的某一部分，搜罗每一处细节，写下足以填满整部典籍的笔记。他通常安居于老工艺旅舍的舒适之中，但偶尔也会外出，去搜求更多的书面著作。据说，正是其中一次为求得某本特定书籍而进行的外出，让他在还是凡人时成为了碎片女神，而这也给了他一直以来最渴望的东西：更多时间去了解这个世界，并为他人记录下其中的知识。他将对知识的追求置于一切之上，因此西吉尔并不是一位供你追随的神明——如果你做得到，他是一位供你学习的神明。多年来，他浩瀚的知识已经化作一场信息的旋风；尽管大多数人都跟不上他的思绪，仍有许多人觉得值得一试。</p>"
           }
         },
         "Sionia": {
@@ -17953,13 +18184,23 @@
         },
         "Sockets": {
           "name": "插孔 Sockets",
-          "tokenName": "插孔"
+          "tokenName": "插孔",
+          "items": {
+            "Elder God": {
+              "name": "上古之神 Elder God"
+            }
+          }
         },
         "Spectra": {
           "name": "光谱 Spectra",
           "tokenName": "光谱",
           "biography": {
             "public": "<section class=\"block readaloud\"><p>光彩夺目地站在你面前的是上古女神丝珀特拉，她化作一位极其高挑而引人注目的女子，头发仿佛由魔法能量本身构成，燃着光辉；她身着一袭长裙，裙摆闪烁变幻，流转着各式各样的元素魔法。一本巨大的典籍漂浮在她伸出的手前，奥术象征环绕着她的双足与下半身旋转，并落在纸张与卷轴之上，而她看起来正陷入沉思。直到终于注意到你的存在，她才轻轻跳了一下，低头朝你咧嘴一笑，带着一种友善而兴奋的气场，仿佛某个刚刚遇见魔法奇景的人。</p></section>"
+          },
+          "items": {
+            "Elder God": {
+              "name": "上古之神 Elder God"
+            }
           }
         },
         "Kazra Steelshift": {
@@ -18046,17 +18287,45 @@
               "name": "香炉挥击 Censer"
             },
             "Comprehend Languages": {
-              "name": "通晓语言 Comprehend Languages"
+              "name": "通晓语言 Comprehend Languages",
+              "effects": {
+                "Comprehension": {
+                  "name": "通晓 Comprehension"
+                }
+              }
             },
             "Enthrall": {
-              "name": "注目术 Enthrall"
+              "name": "注目术 Enthrall",
+              "effects": {
+                "Distracted": {
+                  "description": "<p>直到法术结束之前，目标在 [[/check ability=wis skill=prc]] 检定与被动察觉上承受 −10 减值。</p>",
+                  "name": "分神 Distracted"
+                }
+              }
             },
             "Spiritual Weapon": {
               "name": "灵体武器 Spiritual Weapon"
             },
             "Zone of Truth": {
-              "name": "真言区域 Zone of Truth"
+              "name": "真言区域 Zone of Truth",
+              "effects": {
+                "Cannot Lie": {
+                  "description": "<p>豁免失败时，生物在该区域半径内无法故意说谎。你可以知晓每个生物此次豁免的成败。</p><p>受影响的生物能意识到该法术的存在，因此可以主动回避那些通常会以谎言答复的问题。这类生物可以闪烁其词，但说的仍然必须是真话。</p>",
+                  "name": "无法说谎 Cannot Lie"
+                }
+              }
+            },
+            "Anachraenum Trainee": {
+              "effects": {
+                "+1 Initiative Bonus": {
+                  "name": "先攻 +1 加值"
+                }
+              },
+              "name": "阿纳克瑞纽姆学徒 Anachraenum Trainee"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位年轻的基瓦尔女子戴着兜帽，裹着一条鲜艳而闪烁的披肩，起初显得略有些令人敬畏，但她那书卷气的举止，以及对你到来显而易见的好奇，揭示出她内心其实是一位真正的学者。看着披在那件做工精良的锁子甲上的长袍与象征，她自信地展示着自己对魔法女神光谱的虔诚信仰，并且似乎是阿克沃德教派的一名狂热成员。她一手握着一把硬头锤，另一侧稳稳放着她的大背包；那背包看起来塞满了卷轴、典籍和日志，这些都是她随身携带并在冒险途中研读的。</p></section><div><p>[[lookup @name]]是阿纳克瑞纽姆的一员，也是雷纹刃的首席书记官与牧师。她身着上古女神光谱——魔法女神——的色彩与象征，但她同时也属于光谱神职体系中一个罕见的派系，称为阿克沃德教派；他们相信，对魔法的追求会引向灵性上的启迪。</p></div>"
           }
         },
         "Leeph": {
@@ -18110,7 +18379,13 @@
             },
             "Chalk": {
               "name": "粉笔 Chalk"
+            },
+            "Fancy Ring": {
+              "name": "华丽戒指 Fancy Ring"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一个坐立不安、长得像小萝卜的荆芽灵抬头望着你，那双眼睛泛着珍珠般的微光，表情让人读不出情绪。他们头上那些过大的叶片如同一绺绺头发向后铺开，而他们不停地把它们往后捋，却毫无效果，仿佛是想让自己镇定下来。在其他各方面，他们都像一团躁动不安的能量；即便站着不动，双手与目光也在四处乱转，寻找些什么来打发精力。他们在带刺的树皮外套着深色皮甲，腰间挂着一柄短剑——在旁人看来，那不过是一把大匕首罢了。</p></section><div><div><p>[[lookup @name]]是雷纹刃的新任侦察兵。他们是一名容易兴奋、爱恶作剧的盗贼，几乎没有什么冲动控制能力。</p></div></div>"
           }
         },
         "Rorhim Iron-Cask": {
@@ -18163,7 +18438,18 @@
                   "name": "利维坦形态 Leviathan Form"
                 }
               }
+            },
+            "Anachraenum Trainee": {
+              "effects": {
+                "+1 Initiative Bonus": {
+                  "name": "+1 先攻加值 +1 Initiative Bonus"
+                }
+              },
+              "name": "阿纳克瑞纽姆见习成员 Anachraenum Trainee"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一个魁梧的身影，即便以科拉克的标准来看也算高大，头顶覆着一片厚实的角板，皮肤呈深浅不一的黄褐与棕色。他那双明亮的蓝眼睛打量着四周，兴致明显不高。他显然是一名力量相当强大的战士——背上斜挎着一柄超大的巨剑，腰间还配着一把短剑，粗壮的身躯上则束着沉重的护甲。</p></section><p>[[lookup @name]] 是一名拥有相当强大力量与威势的战士。他是阿纳克瑞纽姆的见习成员，也是雷纹刃的一员。罗希姆在这支队伍中非正式地担任二把手，追随萨乔尔的领导。</p>"
           }
         },
         "Sajor Velex": {
@@ -18307,7 +18593,8 @@
               "name": "电爪 Shocking Grasp",
               "effects": {
                 "Shocked": {
-                  "name": "电击 Shocked"
+                  "name": "电击 Shocked",
+                  "description": "<p>目标在其下一回合开始前不能进行借机攻击。</p>"
                 }
               }
             },
@@ -18315,7 +18602,8 @@
               "name": "黑暗视觉 Darkvision",
               "effects": {
                 "Darkvision": {
-                  "name": "黑暗视觉 Darkvision"
+                  "name": "黑暗视觉 Darkvision",
+                  "description": "<p>在持续时间内，一名你触碰的自愿生物拥有射程 150 英尺的 &amp;Reference[darkvision]。</p>"
                 }
               }
             },
@@ -18327,7 +18615,24 @@
             },
             "Legend Lore": {
               "name": "传奇知识 Legend Lore"
+            },
+            "Anachraenum Trainee": {
+              "effects": {
+                "+1 Initiative Bonus": {
+                  "name": "+1 先攻加值 +1 Initiative Bonus"
+                }
+              },
+              "name": "阿纳克瑞纽姆见习成员 Anachraenum Trainee"
+            },
+            "Luminary Ring": {
+              "name": "辉耀戒指 Luminary Ring"
+            },
+            "Sajor's Spellbook": {
+              "name": "萨乔尔的法术书 Sajor's Spellbook"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一位目光明亮的女子站在你们面前，脸上带着好奇的神情，嘴角却向下撇着，仿佛对你们的出现略有不悦。她留着一头黑色短发，前额有一绺醒目的白色，长着两只朝下的大耳朵，深橄榄色的肌肤上布满鲜明而闪烁的纹样，表明她要么是尼尔艾的后裔，要么本身就是纯血的尼尔艾。</p></section><p>[[lookup @name]] 是雷纹刃沉稳的领袖，这是一支来自奥尔丹、由阿纳克瑞纽姆见习成员组成的队伍。她是一名技艺高超的巫师，热衷于调查古老的艾迪尔遗迹。</p>"
           }
         },
         "Sadri Zhalimorne": {
@@ -18350,14 +18655,28 @@
               "name": "短剑 Shortsword"
             },
             "Cunning Action": {
-              "name": "狡诈动作 Cunning Action"
+              "name": "狡诈动作 Cunning Action",
+              "effects": {
+                "Hiding": {
+                  "name": "躲藏 Hiding"
+                }
+              }
             },
             "Parry": {
               "name": "招架 Parry"
             },
             "Tyraphic Transformation": {
-              "name": "泰拉菲克变形 Tyraphic Transformation"
+              "name": "泰拉菲克变形 Tyraphic Transformation",
+              "effects": {
+                "Unnerving Visage": {
+                  "description": "<p>变形后，萨德里获得：</p><ul><li><p>对光耀伤害的抗性，</p></li><li><p>智力（威吓）检定具有优势</p></li></ul>",
+                  "name": "骇人面容 Unnerving Visage"
+                }
+              }
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你看到一位肌肤如钢的女子，有着一双璀璨的金色眼眸，以及一头短促的银发，梳成偏分的波波头。她身着棕色无袖束腰上衣，配以皮短裤与皮靴，神情里既有明确的目的性，又带着几分打趣的意味；你不由得注意到装点在她双腿上的那些明亮铜色的流光纹路。一条串珠的阿克图里亚式胸甲项链挂在她的颈间，骄傲地昭示着某种社会地位。</p></section><p>[[lookup @name]] 是赫尔卡斯那位雄心勃勃的执政官；赫尔卡斯是一座繁荣的矿业城镇，坐落于石之森林东部边缘。作为一位见多识广的立法者，她脸上常带着一抹讥诮的笑意，以戏谑而略带讽刺的风采，流露出她善于交际的天性。</p>"
           }
         },
         "Juro Wandren": {
@@ -18368,7 +18687,8 @@
               "name": "窒息迷雾粉尘 Choking Fog Dust",
               "effects": {
                 "Choking": {
-                  "name": "窒息 Choking"
+                  "name": "窒息 Choking",
+                  "description": "<p>你呼吸困难，剧烈地咳嗽与喘息，以致陷入失能状态。</p>"
                 }
               }
             },
@@ -18381,6 +18701,9 @@
             "Cunning Action": {
               "name": "狡诈动作 Cunning Action"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>尽管他始终保持着愉快的微笑，那神情显然是经过刻意拿捏、显得温和亲切，这个高瘦的威伦却分明是在打量着附近的每一个人和每一件事物，任由他的目光掠过任何可能值钱的东西，然后才聚焦到他正前方的事物上。当他结束这番审视时，他笑得更灿烂了，尽管那究竟是因为眼前的一切符合他的预期与否，却很难说清。</p></section><p>朱罗·万德伦是个白手起家的人，是一名在阿克图斯高原各地贩卖货物的商人。如果这些货物中大多数都是非法的，那也无妨。朱罗往往把规则视为建议，把障碍视为挑战，这帮助他走到了如今的位置——成为金色平原上增长最快的独立走私网络之一的门面人物。在得到自己想要的东西之后，他老实得近乎过头，许多人认为他是个“诚实的骗子”，其个人魅力有时足以弥补他当前谋划中可能存在的那些暗中使诈。</p>"
           }
         },
         "Luna Karrowrath": {
@@ -18603,7 +18926,21 @@
             },
             "Javelin": {
               "name": "标枪 Javelin"
+            },
+            "Great Maul": {
+              "name": "巨锤 Great Maul"
+            },
+            "Lunaran Plate": {
+              "effects": {
+                "Armor +1": {
+                  "name": "护甲 +1 Armor +1"
+                }
+              },
+              "name": "月灵板甲 Lunaran Plate"
             }
+          },
+          "biography": {
+            "public": "<section><section class=\"block readaloud\"><p>这位费伊杰战士身着饱经战火摧折的月灵钢甲，甲上遍布焰卫与卢梅女神的徽记；她经历过无数场战斗，那道锐利而带着阴翳的目光更印证了这一点。对于一个披着如此沉重甲胄的人来说，她的举止有着少见的优雅。就连背在身后的那柄硕大的硬头锤，似乎也丝毫拖不慢她。</p></section></section><p>[[lookup @name]]在卢梅克人中是个传奇。在灰烬之城最后一次大围攻期间，她杀死了凯尔申的血男爵金达德·瓦拉克斯，并阻止了这座城市彻底沦陷于无尽的死亡军团。她是现任卢梅的冠军。</p>"
           }
         },
         "Kalasak the Cutter": {
@@ -18634,10 +18971,12 @@
             "Prepare Vial": {
               "effects": {
                 "Blinded": {
-                  "name": "目盲 Blinded"
+                  "name": "目盲 Blinded",
+                  "description": "<p>目标陷入 &amp;Reference[blinded apply=false] 状态，直到其下一回合结束。</p>"
                 },
                 "Restrained": {
-                  "name": "受缚 Restrained"
+                  "name": "受缚 Restrained",
+                  "description": "<p>目标陷入 &amp;Reference[restrained apply=false] 状态，直到其下一回合结束。</p>"
                 }
               },
               "name": "准备药瓶 Prepare Vial"
@@ -18680,7 +19019,16 @@
             },
             "Poisoner's Kit": {
               "name": "制毒工具 Poisoner's Kit"
+            },
+            "Refill Needle": {
+              "name": "重填针管 Refill Needle"
+            },
+            "Twisted Surgeon": {
+              "name": "扭曲的外科医生 Twisted Surgeon"
             }
+          },
+          "biography": {
+            "public": "<section><section class=\"block readaloud\"><p>他们穿着沾满污渍的围裙和外套，隔着护目镜和面罩冷冷地打量着你，这让人根本无法辨认出有关他们的任何信息。他们手中把玩着一把锋利如剃刀的手术刀，另一只手则搭在一个小袋上，里面装着数瓶毫无疑问十分危险的化合物。周围的空气中弥漫着浓重的医疗与鲜血气息。</p></section><p>[[lookup @name]]是一名危险的外科医生，痴迷于给实验对象注射化学药剂，然后切开他们的尸体（如果他们够幸运的话），看看这些化合物对受害者产生了什么效果。</p></section>"
           }
         },
         "Amalthea Stonecraft": {
@@ -18789,7 +19137,12 @@
             "Calm Emotions": {
               "effects": {
                 "Calmed": {
-                  "name": "平静 Calmed"
+                  "name": "平静 Calmed",
+                  "description": "<p>直到法术结束前，该生物免疫魅惑与恐慌状态。若该生物原本已处于魅惑或恐慌状态，则这些状态在持续时间内被压制。</p>"
+                },
+                "Indifference": {
+                  "description": "<p>该生物对你所选择的、其原本敌对的生物转为冷漠态度。若目标受到伤害，或目睹其盟友受到伤害，此冷漠即告终止。法术结束时，该生物的态度恢复正常。</p>",
+                  "name": "冷漠 Indifference"
                 }
               },
               "name": "平静情绪 Calm Emotions"
@@ -18828,7 +19181,12 @@
               }
             },
             "Freedom of Movement": {
-              "name": "行动自如 Freedom of Movement"
+              "name": "行动自如 Freedom of Movement",
+              "effects": {
+                "Unrestricted Movement": {
+                  "name": "无拘移动 Unrestricted Movement"
+                }
+              }
             },
             "Greater Invisibility": {
               "name": "高等隐形术 Greater Invisibility",
@@ -18885,7 +19243,13 @@
               "name": "油瓶 Oil Flask"
             },
             "Captivating Tale": {
-              "name": "引人入胜的故事 Captivating Tale"
+              "name": "引人入胜的故事 Captivating Tale",
+              "effects": {
+                "Charmed & Incapacitated": {
+                  "description": "<p>在故事结束之前，目标处于&amp;Reference[Charmed]状态。</p><p>以此方式被魅惑时，目标处于&amp;Reference[incapacitated]状态，且在对抗阿玛尔忒亚或其盟友时进行的感知与魅力豁免上具有劣势。</p><p>被魅惑的目标可以在其每个回合结束时重复进行该豁免；若豁免成功，则此效果对其终止。</p>",
+                  "name": "魅惑并失能 Charmed & Incapacitated"
+                }
+              }
             },
             "Well Practiced": {
               "name": "熟练老到 Well Practiced"
@@ -18909,10 +19273,20 @@
               "name": "安魂曲 Song of Rest"
             },
             "Comprehend Languages": {
-              "name": "通晓语言 Comprehend Languages"
+              "name": "通晓语言 Comprehend Languages",
+              "effects": {
+                "Comprehension": {
+                  "name": "通晓 Comprehension"
+                }
+              }
             },
             "Tongues": {
-              "name": "巧言术 Tongues"
+              "name": "巧言术 Tongues",
+              "effects": {
+                "Universal Communication": {
+                  "name": "有效沟通 Universal Communication"
+                }
+              }
             },
             "Locate Creature": {
               "name": "定位生物 Locate Creature"
@@ -18924,7 +19298,8 @@
               "name": "吟游诗人的激励 Bardic Inspiration",
               "effects": {
                 "Inspired": {
-                  "name": "鼓舞 Inspired"
+                  "name": "鼓舞 Inspired",
+                  "description": "<p>你获得了吟游诗人的激励。在接下来的 1 小时内，当你的一次 D20 检定失败时，你可以掷出吟游诗人的激励骰，并将掷出的数值加到该 d20 上，从而有可能将失败转为成功。吟游诗人的激励骰在掷出时即被消耗。</p>"
                 }
               }
             }
@@ -18934,6 +19309,9 @@
               "name": "法师护甲 Mage Armor",
               "description": "<p>目标的基础 AC 变为 13 加上其敏捷调整值。</p>"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一位身形干瘦的老妇人站在你面前，身着宽松的阿克图里安服饰，苍老的双手拄着一根多节的手杖。你注意到她伛偻的背上生着一对羽翼，紫得如同紫水晶般艳丽夺目，垂落在缝制的褐色围裙褶皱之下。类似的翎羽排列在她的小臂上，而颈间一圈细密的小羽毛则充作了衣领。</p><p>一簇紫色羽毛如同一顶考究的帽子般栖在她苍老的头上，透出一种时髦的乡土韵味，而她将其戴得优雅而从容。她的笑容明亮如破晓，布满皱纹的双眼则以温暖而恒久的兴致注视着这个世界。</p></section><p>[[lookup @name]]是一位85岁的阿斯特吟游诗人，以身为阿克图斯高原上最出色的说书人和本地传说历史学家之一而闻名。阿玛尔忒亚的人类生理特征之外，还生有一对羽翼与华丽的紫色羽毛；她苍老的皮肤上还分布着一片片胎记，引发出余烬诸月那深奥神秘的意象。若世上有什么好故事可讲，阿玛尔忒亚几乎肯定都已经讲过了，至少人们是这么说的。</p>"
           }
         },
         "Svala Bronwen": {
@@ -18957,7 +19335,25 @@
             },
             "Focused Resilience": {
               "name": "专注韧性 Focused Resilience"
+            },
+            "Counter Attack": {
+              "name": "反击 Counter Attack"
+            },
+            "Fearless": {
+              "name": "无所畏惧 Fearless"
+            },
+            "Peerless Warrior": {
+              "name": "无双战士 Peerless Warrior"
+            },
+            "Svala's Battleaxe": {
+              "name": "斯瓦拉的战斧 Svala's Battleaxe"
+            },
+            "Throw Handaxe": {
+              "name": "投掷手斧 Throw Handaxe"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位弗尔金哈尔女子肩膀宽阔、肌肉虬结，举手投足间透着无所畏惧的自信。她那苍白的皮毛自下巴倾泻而下，化作一把长须，分成数条编起的辫股，几处搭落在肩头。每一缕都缀着青铜的扣环与指环，与她苍白的毛发形成浓烈的对比。</p><p>一柄看上去锋利得骇人的战斧横挎在她的肩上，一面饰有繁复交错绳结的沉重木盾则挂在她的腰侧。她身上仅有的一点护甲，看起来是几层锁链与布料。</p></section><p>[[lookup @name]] 是一位强力的弗尔金哈尔战士，游历世界，帮助有需要的人，斩杀怪物，并按她认为合适的方式施行自己的一套正义。她年迈、饱经风霜且无所畏惧，坚信自己与死亡在未来几个世纪内都还不会相遇。</p>"
           }
         },
         "Bassa the Firebug": {
@@ -19006,7 +19402,19 @@
             },
             "Shortsword": {
               "name": "短剑 Shortsword"
+            },
+            "Fire Resistant": {
+              "name": "火焰抗性 Fire Resistant"
+            },
+            "Fire in the Hole!": {
+              "name": "小心爆炸！ Fire in the Hole!"
+            },
+            "Throw Alchemist's Fire": {
+              "name": "投掷炼金火焰 Throw Alchemist's Fire"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一名魁梧的基瓦尔人，双臂粗如树干，一边狂喜地咆哮，一边冲入混战。他穿着一件厚重的焦黑皮甲，身上看似随意的各处绑着一片片深色金属板。胸前横挂着数条装甲弹药带，塞满了盛有不明液体的小瓶。哪怕隔着老远，都能闻到他身上刺鼻的化学药剂与呛人的烟味。</p></section><p>[[lookup @name]]介于精神失常的疯子与炼金术奇才之间。他对火焰的热爱近乎宗教狂热，只要有机会放火焚烧，他就绝不会放过。他究竟是如何得到同伴袭击者们信任、被推举为首领的，无人知晓，而且这似乎也并非明智之举。</p>"
           }
         },
         "Gafto the Howler": {
@@ -19039,6 +19447,10 @@
               "effects": {
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
+                },
+                "Levitating": {
+                  "description": "<p>目标只能通过推或拉触及范围内一个固定的物件或平面（例如一面墙或者天花板）来进行移动，这种移动方式视为等同于攀爬。</p>",
+                  "name": "浮空 Levitating"
                 }
               },
               "name": "浮空术 Levitate"
@@ -19062,12 +19474,25 @@
             },
             "Handaxe": {
               "name": "手斧 Handaxe"
+            },
+            "Fearless": {
+              "name": "无所畏惧 Fearless"
+            },
+            "Howling Mad": {
+              "name": "疯狂嚎叫 Howling Mad"
             }
-          }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这名泽夫袭击者身披破碎的金色长袍和覆有青铜甲片的皮革，看起来仿佛经历了无数场战斗，却从未费心更换过身上装备的一丝一线。他们双手各持一把斧头和锤子，脉动的能量丝缕沿着他们粗壮的手臂以狂野的纹路攀爬而上，最终从头部喷涌而出，化作大片盘旋的雾气。</p></section><p>[[lookup @name]]是一名魁梧、疯狂的狂战士，动不动就想狠狠干上一架，而且总是乐于动手。在战斗中，他们会像疾风一样嚎叫，令敌人心生恐惧。他们的招牌武器是一把锤子和一把斧头，双持并用，以劈开头骨、粉碎骨骼并终结性命。</p>"
+          },
+          "tokenName": "加夫托"
         },
         "Salara, Queen of Scales": {
           "name": "萨拉拉，鳞后 Salara, Queen of Scales",
-          "tokenName": "萨拉拉，鳞后"
+          "tokenName": "萨拉拉，鳞后",
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>萨拉拉是一位高挑而威严的阿什卡女子，年届中年，鳞片呈灰蓝色，一双冰冷的眼睛若是刻意投来，便能如匕首般刺人。她衣着考究，点缀着少许金银饰件，与她本就偏深的衣装和鳞色形成对比。她系着一条低垂的腰带，上面挂着一只袋子，里面塞满了笔记与账册，还有各式各样的量尺、砝码，都是她用来管束自家市集的工具。</p></section><p>[[lookup @name]] 是掌管海堤集市的人物，人称鳞后。</p>"
+          }
         },
         "Shimz Shimring": {
           "name": "希姆兹 希姆林 Shimz Shimring",
@@ -19145,20 +19570,42 @@
               "name": "箭矢 Arrow"
             },
             "Sleep": {
-              "name": "睡眠术 Sleep"
+              "name": "睡眠术 Sleep",
+              "effects": {
+                "Sleeping": {
+                  "description": "<p>目标获得 &amp;Reference[incapacitated apply=false] 状态，直到其下个回合结束；届时它必须重复进行该豁免。若目标第二次豁免失败，则它在持续时间内获得 &amp;Reference[unconscious] 状态。若目标受到伤害，或其 5 英尺内有人用一个动作将它从法术效应中摇醒，则该法术对该目标结束。</p>",
+                  "name": "昏睡 Sleeping"
+                }
+              }
             },
             "Acid Arrow": {
-              "name": "强酸箭 Acid Arrow"
+              "name": "强酸箭 Acid Arrow",
+              "effects": {
+                "Lingering Acid": {
+                  "description": "<p>命中时，目标受到 4d4 点强酸伤害，并在其下一回合结束时受到[[/damage 2d4 type=acid]]（使用的法术位每比二环高一环再加 1d4）强酸伤害。</p>",
+                  "name": "强酸附着 Lingering Acid"
+                }
+              }
             }
-          }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位阿尔提拉劫掠者高挑、纤瘦而气势逼人，举手投足间带着自信的傲气，说话时嗓音浑厚，其中震荡着魔法的余韵。她随手可及之处摆着自己的家伙：一把灰木制成的里拉琴、一张配着大量箭矢的弓，以及一柄挂在腰间的锋利短剑。</p></section><p>[[lookup @name]] 曾是一位知名的吟游诗人，后来她时运不济，便不再为顾客表演，转而洗劫他们。她是一名魅力十足且危险的施法者，如今为异缘会效力，并表现出色。尽管她非常乐意对善良无辜之人施展魔法与使用武器，但她最尖刻的话语却留给了那些受她命令的人。</p>"
+          },
+          "tokenName": "希姆兹"
         },
         "Sticks": {
           "name": "斯蒂克斯 Sticks",
-          "tokenName": "斯蒂克斯"
+          "tokenName": "斯蒂克斯",
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你们先听见这位退隐的海盗，然后才看见他。说话时他把肩膀向后一挺，声音洪亮如雷，白色的皮毛在制服下泛着光——那身制服既随意地皱着，又剪裁得一丝不苟。如果说他知道自己很有魅力（他几乎肯定知道），这也丝毫无损于那份魅力；他的笑容里带着一种暖意，让人很容易明白，为什么会有那么多人乐于沐浴其中。</p></section><p>斯蒂克斯曾是一名海盗，幼时遭遇海难后被一艘船救起，并在那艘船上一路晋升而声名远扬（当时他身边“除了几根木棍什么也没有”，这很快就成了他的名字）。如今，斯蒂克斯已从海上生活中退隐，定居于海边小镇海堤，决心为阿克图斯高原的人民创造更好的生活。他将自己和自己的城市塑造成奥尔丹及其商会的控制与严苛要求之外的另一种选择，因此在高原上深受欢迎，被视为一个没有忘记自己根源、同时又具备领导力，能够改善他所关心之人生活的人。一个会照顾自己人、也让别人按自己认为合适的方式生活的人——即便为此他必须稍微打破规则。</p>"
+          }
         },
         "Avwynn Taol": {
           "name": "阿芙温·陶尔 Avwynn Taol",
-          "tokenName": "阿芙温·陶尔"
+          "tokenName": "阿芙温·陶尔",
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这名人类女子身形高挑、气度雍容，举手投足间尽是笃定，并以钢铁般岿然不动的沉静散发出强大的自信。她那双冰蓝色的眼睛在漆黑的巩膜映衬下锐利地闪着光，泄露出几分非人血脉的痕迹，又或许是她血液中某种魔法的扭曲。</p></section><p>阿芙温机敏精明，有着学者般的好奇心、古代贤者般的智慧，以及外交官般的魅力。她真正的动机似乎是个严密保守的秘密，而围绕着她的神秘感，比大多数帷幕锁链特工都要更深。</p>"
+          }
         },
         "Corvana Vortest": {
           "name": "科瓦娜·沃尔特斯特 Corvana Vortest",
@@ -19264,6 +19711,9 @@
               "effects": {
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
+                },
+                "Comprehension": {
+                  "name": "通晓 Comprehension"
                 }
               },
               "name": "通晓语言 Comprehend Languages"
@@ -19272,6 +19722,10 @@
               "effects": {
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
+                },
+                "Cannot Lie": {
+                  "description": "<p>豁免失败时，生物在该区域半径内无法故意说谎。你可以知晓每个生物此次豁免的成败。</p><p>受影响的生物能意识到该法术的存在，因此可以主动回避那些通常会以谎言答复的问题。这类生物可以闪烁其词，但说的仍然必须是真话。</p>",
+                  "name": "无法说谎 Cannot Lie"
                 }
               },
               "name": "真言区域 Zone of Truth"
@@ -19301,10 +19755,22 @@
               "name": "沙包 Bag of Sand"
             },
             "Suggestion": {
-              "name": "暗示术 Suggestion"
+              "name": "暗示术 Suggestion",
+              "effects": {
+                "Pursuing Suggestion": {
+                  "description": "<p>处于魅惑状态的目标会尽其所能地执行该暗示。所暗示的活动可以在整个持续时间内持续进行；但若该活动能在更短的时间内完成，则法术会在目标完成之后对其结束。</p>",
+                  "name": "遵循暗示 Pursuing Suggestion"
+                }
+              }
             },
             "Banishment": {
-              "name": "放逐术 Banishment"
+              "name": "放逐术 Banishment",
+              "effects": {
+                "Banished": {
+                  "description": "<p>身处该处期间，目标陷入 &amp;Reference[Incapacitated apply=false] 状态。当法术结束时，目标会重新出现在它离开时所在的空间；若该空间已被占据，则出现在最近的未被占据空间。</p><p>若目标是异怪、天族、元素、妖精或邪魔，则在法术持续一分钟后，目标不会返回。该目标会改为被传送到与其生物类型相关的某个位面（由 DM 决定）中的随机地点。</p>",
+                  "name": "放逐 Banished"
+                }
+              }
             },
             "Contact Other Plane": {
               "name": "异界探询 Contact Other Plane"
@@ -19312,6 +19778,9 @@
             "Glyphspeak": {
               "name": "符文语 Glyphspeak"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你端详着一位身形轻盈的女子，她皮肤呈苍白的蓝色，身着学者那身深奥晦涩的长袍。她光洁的头顶上冠着一对高耸弯曲的角，泄露了她的印记裔血统，与她实体双臂并列的那两条虚幻肢体亦是如此。她实体的右手握着一根水晶与白银制成的魔杖；与此同时，她那双幽灵般的手正捧着一本皮面古卷卷了角的书页，寻觅着某种玄奥的知识。这女子的目光中带着一种令人卸下心防的、超凡脱俗的优雅，她以同等分量的猜疑与兴致打量着你。她那双猩红的眼睛极具洞察力，双臂上则纹满了晦涩的神秘学符号。她既诱人又慑人，浑身透着谜团。</p></section><p>[[lookup @name]]是一位性情古怪的法师，有着西格纳兰血统，隐居于金色平原的人群之间。她在巫术之道上学识渊博、经验丰富，而沃尔特斯特那离群索居的生活方式源于她神秘的过去——这件事至今仍是阿克图斯高原守得最严的秘密之一。那些因她的施法服务而前来拜访沃尔特斯特女士的人，众所周知，接近沃特斯特塔时往往都带着相当程度的迟疑与谨慎。据说，沃尔特斯特的举止如余烬诸月的月光一般反复无常；但最了解她的人明白，这不过是一种伪装，用来掩饰她敏锐而冷静克制的专注。</p>"
           }
         },
         "Liestra Grann": {
@@ -19373,7 +19842,21 @@
             },
             "Dice Set": {
               "name": "整副骰子 Dice Set"
+            },
+            "Crafted Ingenuity": {
+              "name": "巧手匠心 Crafted Ingenuity"
+            },
+            "Inheritors of Order": {
+              "effects": {
+                "Adv. Checks": {
+                  "name": "检定优势 Adv. Checks"
+                }
+              },
+              "name": "秩序继承者 Inheritors of Order"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一位肌肉结实的基瓦尔女子身着层层宽松的布料与皮革，姿态随意地倚在墙边。一头侧分的黄褐色波波头垂到下巴稍下，她正用一枚小巧的目镜端详着某件稀奇的小玩意。一抹揶揄而生动的笑容先一步迎向你，随后她才用琥珀色的眼睛把你打量了一番；而你不可能没注意到她腰侧挂着的那柄石制的仿制硬头锤。很明显，她是来谈正事的。</p></section><p>莉耶丝特拉·格兰是一位性格倔强的阿克图里亚当铺经纪人，以机智风趣的斗嘴本事和识破超值交易的能力而闻名。身高6英尺9英寸，莉耶丝特拉是一位身形精瘦、肌肉结实的女商人；她那琥珀色的双眼投出极具威严的凝视，而那意味深长的笑容则暴露了她对挖苦讥讽的偏爱。</p>"
           }
         },
         "Mica Valaston": {
@@ -19424,6 +19907,9 @@
             "Brave": {
               "name": "勇气 Brave"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你看到一位三十来岁的赫尔格伦战士，脸上写满怀疑，身着镶钉皮甲，腰带上挂着一串钥匙。他们的手悬在插入鞘中的长剑剑柄上方，用一副恰到好处的戒备神色打量着你。</p></section><p>[[lookup @name]]是天刷镇顽固而愤世嫉俗的警员。米卡是一位粗犷的战士，其不苟言笑、务实干练的性情让他们随时都准备好履行其职位职责。</p>"
           }
         },
         "Kali Andrella": {
@@ -19540,6 +20026,9 @@
                   "description": "<p>目标的基础 AC 变为 13 加上其敏捷调整值。</p>"
                 }
               }
+            },
+            "Agrimagical Artifact": {
+              "name": "农魔法神器 Agrimagical Artifact"
             }
           },
           "effects": {
@@ -19682,6 +20171,9 @@
                   "name": "雷鸣防护 Thunder Protection"
                 }
               }
+            },
+            "Agrimagical Artifact": {
+              "name": "农艺魔法神器 Agrimagical Artifact"
             }
           },
           "effects": {
@@ -19713,6 +20205,9 @@
             "Rusty Trowel": {
               "name": "生锈的泥铲 Rusty Trowel"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这个人形身影由各式木料废材拼造而成，摇摇晃晃的四肢靠一副木质骨架与藤蔓编成的绑缚连在一起。构成它木质面孔的精湛雕工，被定格在一种欢快而淡然的神情里，而它正勤勉地劳作着，在一片久已被遗忘的田野中收割野生谷物。</p></section><p>拉特尔特拉普被称为斯蒂德角的“摇摇欲坠的人”，是一个独特的编织构装体，统辖着一座注定毁灭的村庄那被荒草吞没的废墟，并在那里静默地服侍于一项永无止境的工作。与标准的编织构装体不同，拉特尔特拉普拥有一种奇特的能力：说话。</p>"
           }
         },
         "Agraband Swift": {
@@ -19740,7 +20235,12 @@
             "Calm Emotions": {
               "effects": {
                 "Calmed": {
-                  "name": "平静 Calmed"
+                  "name": "平静 Calmed",
+                  "description": "<p>直到法术结束前，该生物免疫魅惑与恐慌状态。若该生物原本已处于魅惑或恐慌状态，则这些状态在持续时间内被压制。</p>"
+                },
+                "Indifference": {
+                  "description": "<p>该生物对你所选择的、其原本敌对的生物转为冷漠态度。若目标受到伤害，或目睹其盟友受到伤害，此冷漠即告终止。法术结束时，该生物的态度恢复正常。</p>",
+                  "name": "冷漠 Indifference"
                 }
               },
               "name": "平静情绪 Calm Emotions"
@@ -19773,7 +20273,8 @@
             "Slow": {
               "effects": {
                 "Slowed": {
-                  "name": "迟缓 Slowed"
+                  "name": "迟缓 Slowed",
+                  "description": "<p>受影响目标的速度减半，其 AC 与敏捷豁免受到 −2 减值，且不能进行反应。在其回合中，它只能进行一个动作或一个附赠动作，不能两者兼有；若它进行攻击动作，则只能发动一次攻击。若它施展带有姿势成分的法术，则有 [[/r 1d100cs&gt;25#Spell cast successfully on 1]]{25%} 的几率因目标做出法术手势过于缓慢而导致施法失败。</p><p>受影响的目标在其每个回合结束时重复进行 [[/save ability=wis]] 豁免，成功则对自身终止此法术。</p>"
                 }
               },
               "name": "缓慢术 Slow"
@@ -19863,7 +20364,8 @@
               "name": "吟游诗人的激励 Bardic Inspiration",
               "effects": {
                 "Inspired": {
-                  "name": "鼓舞 Inspired"
+                  "name": "鼓舞 Inspired",
+                  "description": "<p>你获得了一枚 1d8 的吟游诗人的激励骰。在接下来的 1 小时内，当你的一次 D20 检定失败时，你可以掷出这枚吟游诗人的激励骰，并将掷出的数值加到该 d20 上，从而有可能将失败转为成功。吟游诗人的激励骰在掷出时即被消耗。</p>"
                 }
               }
             },
@@ -19882,13 +20384,52 @@
               "name": "专注反应 Focused Reactivity"
             },
             "Aid": {
-              "name": "援助术 Aid"
+              "name": "援助术 Aid",
+              "effects": {
+                "Level 2: +5 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "2 环：生命值上限 +5 Level 2: +5 Max HP"
+                },
+                "Level 3: +10 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "3 环：生命值上限 +10 Level 3: +10 Max HP"
+                },
+                "Level 4: +15 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "4 环：生命值上限 +15 Level 4: +15 Max HP"
+                },
+                "Level 5: +20 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "5 环：生命值上限 +20 Level 5: +20 Max HP"
+                },
+                "Level 6: +25 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "6 环：生命值上限 +25 Level 6: +25 Max HP"
+                },
+                "Level 7: +30 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "7 环：生命值上限 +30 Level 7: +30 Max HP"
+                },
+                "Level 8: +35 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "8 环：生命值上限 +35 Level 8: +35 Max HP"
+                },
+                "Level 9: +40 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "9 环：生命值上限 +40 Level 9: +40 Max HP"
+                }
+              }
             },
             "Mass Healing Word": {
               "name": "群体治愈真言 Mass Healing Word"
             },
             "Tongues": {
-              "name": "巧言术 Tongues"
+              "name": "巧言术 Tongues",
+              "effects": {
+                "Universal Communication": {
+                  "name": "有效沟通 Universal Communication"
+                }
+              }
             },
             "Cutting Words": {
               "name": "语出惊人 Cutting Words"
@@ -19897,7 +20438,21 @@
               "name": "魔法探秘 Magical Discoveries"
             },
             "Magic Weapon": {
-              "name": "魔化武器 Magic Weapon"
+              "name": "魔化武器 Magic Weapon",
+              "effects": {
+                "Magic Weapon +1": {
+                  "description": "<p>直到法术结束前，该武器成为一件魔法武器，并在攻击检定与伤害掷骰上获得 +1 加值。</p>",
+                  "name": "魔化武器 +1 Magic Weapon +1"
+                },
+                "Magic Weapon +2": {
+                  "description": "<p>直到法术结束前，该武器成为一件魔法武器，并在攻击检定与伤害掷骰上获得 +2 加值。</p>",
+                  "name": "魔化武器 +2 Magic Weapon +2"
+                },
+                "Magic Weapon +3": {
+                  "description": "<p>直到法术结束前，该武器成为一件魔法武器，并在攻击检定与伤害掷骰上获得 +3 加值。</p>",
+                  "name": "魔化武器 +3 Magic Weapon +3"
+                }
+              }
             },
             "Dice": {
               "name": "骰子 Dice"
@@ -19913,7 +20468,13 @@
             },
             "Mirror": {
               "name": "镜子 Mirror"
+            },
+            "Costume": {
+              "name": "戏服 Costume"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一把六弦西萨拉琴斜背在这位年迈人类的背后，他身上那套服饰与首饰虽显古怪却颇为实用。这位老练的吟游诗人把花白的长发在脑后束成高高的半马尾。他咧开的笑容与从容的举止为他添上几分历经世事的自信，而眼中闪动的某种光芒，则让人想起一位受人喜爱的叔伯那份快活劲儿。显然，这个人随时都能讲出一个精彩的故事。</p></section><p>[[lookup @name]]是一位饱经风霜、健谈善叙的传奇人物，率领着一支声名显赫的商队，名为迷炉商队。这位阅历丰富的旅者虽已随年岁增长而双鬓斑白、性情平和，却依然是一位备受赞誉的吟游诗人，他那些大胆冒险的岁月远未成为过去。</p>"
           }
         },
         "Ankarist": {
@@ -20041,14 +20602,63 @@
               "name": "契约魔法 Pact Magic"
             },
             "Aid": {
-              "name": "援助术 Aid"
+              "name": "援助术 Aid",
+              "effects": {
+                "Level 2: +5 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "2 环：生命值上限 +5 Level 2: +5 Max HP"
+                },
+                "Level 3: +10 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "3 环：生命值上限 +10 Level 3: +10 Max HP"
+                },
+                "Level 4: +15 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "4 环：生命值上限 +15 Level 4: +15 Max HP"
+                },
+                "Level 5: +20 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "5 环：生命值上限 +20 Level 5: +20 Max HP"
+                },
+                "Level 6: +25 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "6 环：生命值上限 +25 Level 6: +25 Max HP"
+                },
+                "Level 7: +30 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "7 环：生命值上限 +30 Level 7: +30 Max HP"
+                },
+                "Level 8: +35 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "8 环：生命值上限 +35 Level 8: +35 Max HP"
+                },
+                "Level 9: +40 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "9 环：生命值上限 +40 Level 9: +40 Max HP"
+                }
+              }
             },
             "Create or Destroy Water": {
               "name": "造水术或毁水术 Create or Destroy Water"
             },
             "Searing Smite": {
-              "name": "炽焰斩 Searing Smite"
+              "name": "炽焰斩 Searing Smite",
+              "effects": {
+                "Seared": {
+                  "description": "<p>直到法术结束前，目标在其每个回合开始时受到 [[/damage 1d6 type=fire]] 伤害，然后进行一次 [[/save ability=con]] 豁免。豁免失败则法术继续生效，豁免成功则法术终止。</p>",
+                  "name": "灼烧 Seared"
+                }
+              }
+            },
+            "Bound Blade": {
+              "name": "束缚之刃 Bound Blade"
+            },
+            "Draconfang": {
+              "name": "龙牙巨剑 Draconfang"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你看到一位神情坚毅、金瞳如刃的严肃龙裔战士。他身着以钢材加固的皮甲，而从他驾驭腰间那把沉重巨剑的姿态，便能一眼看出其武艺之高强——那是一柄宽刃外张、体量惊人的巨兵。这把双手大剑显然为这位龙裔所敬重，他对待此剑的态度有着分明的自律。他胸前的斗篷别针上刻着帷幕锁链的徽记，那是奥尔丹城高贵的护卫组织。</p></section><p>[[lookup @name]]是奥尔丹一位经验丰富的调查员兼武艺高强的守护者。他的口音、举止和神态流露出塔扬血统，尽管很明显他已不再认为自己属于那一脉。挂在他身侧的那把精制巨剑带着一种深奥难解的气息，而他挥舞这把沉重巨兵时，往往如同捧持一件神圣遗物或珍爱的乐器。[[lookup @name]]是个严肃的人，充满坚毅与决心。</p>"
           }
         },
         "Clipper": {
@@ -20094,6 +20704,9 @@
               "effects": {
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
+                },
+                "Comprehension": {
+                  "name": "通晓 Comprehension"
                 }
               },
               "name": "通晓语言 Comprehend Languages"
@@ -20102,6 +20715,10 @@
               "effects": {
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
+                },
+                "Cannot Lie": {
+                  "description": "<p>豁免失败时，生物在该区域半径内无法故意说谎。你可以知晓每个生物此次豁免的成败。</p><p>受影响的生物能意识到该法术的存在，因此可以主动回避那些通常会以谎言答复的问题。这类生物可以闪烁其词，但说的仍然必须是真话。</p>",
+                  "name": "无法说谎 Cannot Lie"
                 }
               },
               "name": "真言区域 Zone of Truth"
@@ -20181,8 +20798,17 @@
               "name": "灵界肢体 Ethereal Appendages"
             },
             "Suggestion": {
-              "name": "暗示术 Suggestion"
+              "name": "暗示术 Suggestion",
+              "effects": {
+                "Pursuing Suggestion": {
+                  "description": "<p>处于魅惑状态的目标会尽其所能地执行该暗示。所暗示的活动可以在整个持续时间内持续进行；但若该活动能在更短的时间内完成，则法术会在目标完成之后对其结束。</p>",
+                  "name": "遵循暗示 Pursuing Suggestion"
+                }
+              }
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你听见一阵叮当作响的铃声，一个身形瘦小、皮肤呈紫色的印记裔吸引了你的注意。这个年轻商人的头顶仿佛戴着一团缀满羽毛的乱发，发丝间交织着天蓝与淡紫色的条纹；他们那明亮的钴蓝色眼睛和咧开的尖齿笑容，流露出一种显而易见的亲和力。</p><p>他们的服装显露出来自世界各地的起源；些许马兹兰风格的痕迹，与从旧卡林斯到奥尔丹各地的不同特色彼此碰撞。几张手写的羊皮纸优惠券系成绶带挂在他们颈间，一串颜色各异的奇特石头装点着他们的腰际。流苏和钱币也垂挂在他们那身招摇的服装上，每只脚踝上还有两只小铃铛，随着动作叮铃作响。</p></section><p>[[lookup @name]]是一位充满活力的年轻商人，常与阿格拉班德·斯威夫特和迷炉商队一同往来于阿克图里亚的商路。</p>"
           }
         },
         "Lyla Cevher": {
@@ -20235,7 +20861,8 @@
                 "Prone": {
                   "name": "倒地 Prone"
                 }
-              }
+              },
+              "name": "狡诈偷袭攻击 Cunning Sneak Attack"
             },
             "Rapier": {
               "name": "细剑 Rapier"
@@ -20262,7 +20889,16 @@
             },
             "Focused Reactivity": {
               "name": "专注反应 Focused Reactivity"
+            },
+            "Eye for Intrigue": {
+              "name": "权谋慧眼 Eye for Intrigue"
+            },
+            "Unconventional Tactics": {
+              "name": "非常规战术 Unconventional Tactics"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位年轻的人类穿着一件华美而装饰考究的外套，坦然彰显着她优渥的出身，是一幅内敛财富的写照。只消看一眼她整体的仪态与衣着风格，就能明白她自幼便受过礼仪与教养的训练。虽然她站姿笔挺、笑容来得很快，眼底却藏着一份深深的哀伤；而当她以为无人注意时，便会闭上眼睛稳住自己，轻轻叹息。</p></section><p>[[lookup @name]]是来自奥尔丹的杰夫赫尔家族的一员，那是城中主要的贸易家族之一。她在特权、教育与财富中长大，若换作其他许多地方，她会被视为贵族；但她自己并不这样想，因为这个称呼在这座城市里带有负面意味。她是拉尔顿·杰夫赫尔的女儿与继承人，而她最近才得知父亲意外去世。这让莱拉成为杰夫赫尔家族的新任家主——一个她还没准备好接下的位置。</p>"
           }
         },
         "Sin Marmot": {
@@ -20474,8 +21110,16 @@
               "name": "荒野形态 Wild Shape"
             },
             "Barkskin": {
-              "name": "树肤 Barkskin"
+              "name": "树肤 Barkskin",
+              "effects": {
+                "Bark-like Skin": {
+                  "name": "树肤 Bark-like Skin"
+                }
+              }
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一位举止友善的凯思，有着一双睁得大大的蓝眼睛，还戴着一副遮住嘴部的奇特半面罩。她看起来以一种充满惊奇的天真打量着周围的一切，但她那锐利的目光也透露出，她能迅速看清任何局面——她或许比乍看之下更有本事。</p></section><p>[[lookup @name]] 是一位经验丰富的旅行者，也是疾行者中一位技艺娴熟的德鲁伊。帮助他人的愿望，以及进一步了解自己与余烬及其混沌生命能量之间联系的渴望，推动着她不断前行。</p>"
           }
         },
         "Steros Kraver": {
@@ -20523,7 +21167,13 @@
             },
             "Plate Armor": {
               "name": "板甲 Plate Armor"
+            },
+            "Detect": {
+              "name": "侦查 Detect"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位仪容出奇齐整的战士，身着一套令人印象深刻的古旧青铜护甲。胸甲上镌刻着一只对称的绯红手掌，其根须状的纹路宛如一株古老的橡树；与之相配的肩甲上则披着一件华贵的毛皮斗篷。一头浓密的长白发衬托着这位蓄须军人英俊的面庞，脸上写满了洞察一切的神情。他挥舞着一柄与他等身高的巨斧，其致命程度也与之相当。</p></section><p>[[lookup @name]]是辉手的坚毅大指挥官。辉手是一个宣誓保护辛达里克贤者的教团。他也是奥尔丹辛达林神殿训谕的忠实追随者；在那里，圣言者统领辛达里克贤者及其最亲密的盟友。斯特罗斯是一位技艺高超的战士，也是一位富有魅力的领袖，许多人认为他是阿克图里亚历史上最有能力的军事领袖之一。</p>"
           }
         },
         "Del Kalais": {
@@ -20811,7 +21461,8 @@
               "name": "电爪 Shocking Grasp",
               "effects": {
                 "Shocked": {
-                  "name": "电击 Shocked"
+                  "name": "电击 Shocked",
+                  "description": "<p>目标在其下一回合开始前不能进行借机攻击。</p>"
                 }
               }
             },
@@ -20819,18 +21470,35 @@
               "name": "气化形体 Gaseous Form",
               "effects": {
                 "Gaseous Form": {
-                  "name": "气化形体 Gaseous Form"
+                  "name": "气化形体 Gaseous Form",
+                  "description": "<p>目标唯一的移动方式是 10 英尺的飞行速度，且它可以悬浮。目标可以进入并占据另一名生物的空间。目标对钝击、穿刺与挥砍伤害具有抗性；它对 &amp;Reference[prone apply=false] 状态免疫；并且在力量、敏捷与体质豁免上具有优势。目标可以穿过狭窄的缝隙，但它会将液体视为固体表面。</p><p>目标无法说话或操作物件，其携带或持握的任何物件都不能被丢下、使用，或以其他方式与之互动。最后，目标不能攻击或施放法术。</p>"
                 }
               }
             },
             "Banishment": {
-              "name": "放逐术 Banishment"
+              "name": "放逐术 Banishment",
+              "effects": {
+                "Banished": {
+                  "description": "<p>身处该处期间，目标获得 &amp;Reference[Incapacitated apply=false] 状态。法术结束时，目标会重新出现在它离开时所在的空间；若该空间已被占据，则出现在最近的未被占据空间。</p><p>若目标为异怪、天族、元素、妖精或邪魔，则在法术持续 1 分钟后，目标不会返回。该目标会改为被传送到与其生物类型相关的一个位面（由游戏主持人决定）中的随机地点。</p>",
+                  "name": "放逐 Banished"
+                }
+              }
             },
             "Blight": {
               "name": "枯萎术 Blight"
             },
             "Fire Shield": {
-              "name": "火焰护盾 Fire Shield"
+              "name": "火焰护盾 Fire Shield",
+              "effects": {
+                "Chill Shield": {
+                  "description": "<p>每当一名距你 5 英尺内的生物以一次近战攻击检定命中你时，攻击者受到[[/damage 2d8 type=cold]]伤害。</p>",
+                  "name": "寒冷护盾 Chill Shield"
+                },
+                "Warm Shield": {
+                  "description": "<p>每当一名距你 5 英尺内的生物以一次近战攻击检定命中你时，攻击者受到[[/damage 2d8 type=fire]]伤害。</p>",
+                  "name": "温暖护盾 Warm Shield"
+                }
+              }
             },
             "Antilife Shell": {
               "name": "防活物护罩 Antilife Shell",
@@ -20844,7 +21512,13 @@
               "name": "死云术 Cloudkill"
             },
             "Dominate Person": {
-              "name": "支配类人 Dominate Person"
+              "name": "支配类人 Dominate Person",
+              "effects": {
+                "Dominated": {
+                  "description": "<p>每当处于 &amp;Reference[charmed apply=false] 状态的目标受到伤害时，它重复进行[[/save ability=wis]]豁免，成功则对自身结束该法术。</p>",
+                  "name": "支配 Dominated"
+                }
+              }
             },
             "Circle of Death": {
               "name": "死亡法阵 Circle of Death"
@@ -20859,8 +21533,17 @@
               "name": "死亡一指 Finger of Death"
             },
             "Weird": {
-              "name": "怪影杀手 Weird"
+              "name": "怪影杀手 Weird",
+              "effects": {
+                "Frightening Terrors": {
+                  "description": "<p>处于 &amp;Reference[Frightened apply=false] 状态的目标在其每个回合结束时进行一次[[/save ability=wis format=long]]。豁免失败时，它受到[[/damage 5d10 type=psychic]]伤害。豁免成功时，该法术对该目标结束。</p>",
+                  "name": "骇人恐怖 Frightening Terrors"
+                }
+              }
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>他高大而威严，拥有科拉克典型的强壮魁梧体格；他那棕色与黄褐色的肤色上，点缀着一片片鲜艳的紫色。长长的紫色犄角以一种既威仪又令人生畏的方式衬托着他的头颅。他那双青绿色的眼睛引人注目，仿佛能看穿与他交谈的人。他的长袍鲜亮夺目，是奥尔达尼的风尚，上面还垂缀着各种形状与大小的闪亮宝石。</p></section><p>[[lookup @name]] 是一位广为人知且备受赞誉的施法者、学者和调查员。他机敏而健谈，很难不让人喜欢这个人，或者至少会对他留下良好的第一印象。他的幽默有时带着几分阴森，大多数人仍将他视为一位专注的学者，对神秘学与炼金术情有独钟。</p>"
           }
         },
         "Jasper": {
@@ -20890,6 +21573,9 @@
             "Miner's Pick": {
               "name": "矿工镐 Miner's Pick"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这名赫尔格伦男子谨慎地迈步，仿佛正用敏锐的目光和审慎的决心评估着周围的一切。他脸上带着一丝愠色，仿佛自视高于周遭的一切，但他表情中的严厉却被镶嵌在他面部、手臂和腿上的宝石光彩稍稍冲淡了——那些宝石都经过精心打磨，闪耀着璀璨的光辉。</p></section><p>贾斯珀是一名中年赫尔格伦，负责雅科什塔矿井的矿石加工——为了让矿井更有利润并偿还他不断增长的债务，他愿意不择手段。</p>"
           }
         },
         "Sellen": {
@@ -20898,7 +21584,16 @@
           "items": {
             "Grappling Hook": {
               "name": "抓钩 Grappling Hook"
+            },
+            "Sellen's Pickaxe": {
+              "name": "塞伦的鹤嘴锄 Sellen's Pickaxe"
+            },
+            "Yakoshta Mining Gear": {
+              "name": "雅科什塔采矿装备 Yakoshta Mining Gear"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>肩头栖着的蜡烛散发出光亮，一手握着大号鹤嘴锄，另一手拿着写字板——你们面前这位女子，看上去对眼前的一切都准备得再充分不过。她那由石头雕成的身躯上布满风化的痕迹，让人觉得她一路走到今天，必定有不止一两个故事可讲；但无论过往给她带来了什么，她既没有丢掉脸上的笑容，也没有丢掉眼中的决心。</p></section><p>塞伦是一位年近五十的赫尔格伦阿克图里亚人。她曾带领一群寻找新机遇的矿工前往石之森林，并将雅科什塔建设成一座正在运作的矿井；她希望让这里缓慢发展，最终成为一项重大的财务成功。她相信努力工作，但也试图为社区带来一种轻松愉快的氛围，以让她的人民保持快乐。</p>"
           }
         },
         "Tauric": {
@@ -20907,7 +21602,16 @@
           "items": {
             "Pickaxe": {
               "name": "鹤嘴锄 Pickaxe"
+            },
+            "Ooze Warning System": {
+              "name": "软泥怪预警系统 Ooze Warning System"
+            },
+            "Squish the Shield": {
+              "name": "压扁盾 Squish the Shield"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这名年轻男子灰色的身躯看上去像是由岩石雕成，一道道蓝玛瑙的纹路如同血管般贯穿石体。与他体色相衬的，是蹲在他肩头那只蓝绿色小软泥怪的胶状身体——它正窝在一个仿佛专为此凿出的凹处里。</p></section><p>陶里克是一名年轻的赫尔格伦，比起在矿井里干活，他更在意自己那个自封的“软泥怪爱好者”身份，还经常带着他的宠物软泥怪压扁在石之森林里四处游荡。</p>"
           }
         },
         "Jurtak Champion": {
@@ -21065,6 +21769,9 @@
                 }
               }
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你面前这只高大、长着六只眼睛的蜥蜴类生物紧握着一根顶端镶有一块锯齿状幽光水晶的扭曲法杖。这只令人憎恶的生物全身覆盖着厚重、嶙峋的石料，仿佛正从它的皮肤中生长出来，形成一层不自然的护甲。</p></section><p>[[lookup @name]]是极其强力的施法者，他们驾驭余烬地形中潜藏的力量，并用其随心所欲地塑造周遭环境。</p>"
           }
         },
         "Jurtak Hunter": {
@@ -21106,6 +21813,9 @@
             },
             "Cunning Action": {
               "name": "狡诈动作 Cunning Action"
+            },
+            "Lunging Assault": {
+              "name": "突进强攻 Lunging Assault"
             }
           }
         },
@@ -21216,10 +21926,12 @@
               "name": "擒握形态 Grasping Form",
               "effects": {
                 "Grappled": {
-                  "name": "被擒抱 Grappled"
+                  "name": "被擒抱 Grappled",
+                  "description": "<p>目标被擒抱，并可以使用其动作尝试挣脱。</p>"
                 },
                 "Restrained": {
-                  "name": "受缚 Restrained"
+                  "name": "受缚 Restrained",
+                  "description": "<p>如果目标已被该攻击生物擒抱，则在此擒抱结束前，它还会获得 &amp;Reference[Restrained] 状态。</p>"
                 }
               }
             },
@@ -21265,11 +21977,18 @@
             },
             "Psychic Sting": {
               "name": "灵能刺击 Psychic Sting"
+            },
+            "Drag Victim": {
+              "name": "拖拽猎物 Drag Victim"
+            },
+            "Extend Form": {
+              "name": "延展形态 Extend Form"
             }
           },
           "effects": {
             "Impaled": {
-              "name": "被刺穿 Impaled"
+              "name": "被刺穿 Impaled",
+              "description": "<p>蠕动低语者被一柄古代申特巨剑刺穿。被刺穿期间，其移动速度与攀爬速度降为 0，使其无法动弹。</p>"
             }
           }
         },
@@ -21353,13 +22072,16 @@
               "name": "倒刺舌头 Barbed Tongue",
               "effects": {
                 "Paralyzed": {
-                  "name": "麻痹 Paralyzed"
+                  "name": "麻痹 Paralyzed",
+                  "description": "<p>目标陷入 &amp;Reference[Paralyzed apply=false] 状态，持续 1 分钟。</p>"
                 },
                 "Unconscious": {
-                  "name": "失去意识 Unconscious"
+                  "name": "失去意识 Unconscious",
+                  "description": "<p>目标陷入 &amp;Reference[Unconscious apply=false] 状态，持续 1 分钟。</p>"
                 },
                 "Grappled": {
-                  "name": "被擒抱 Grappled"
+                  "name": "被擒抱 Grappled",
+                  "description": "<p>若目标为中型或更小，则它同时陷入 &amp;Reference[Grappled apply=false] 状态，并可使用其动作挣脱。</p>"
                 }
               }
             },
@@ -21381,6 +22103,9 @@
             "Standing Leap": {
               "name": "立定起跳 Standing Leap"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这些色彩斑斓、身形矮胖的蛙类两栖动物那厚实的皮肤很会骗人——它们看起来或许不过是靠着黏滑皮肤贴在峡谷墙壁上的古怪装饰物，但它们那细长的卷握舌头却会来回弹动，随时准备激射而出，缠住胶蟾下一个毫无防备的目标。</p></section><p>这些色彩鲜艳的大型两栖动物会用舌头向外延伸，黏附在更大或会飞的猎物身上，再以自身重量将其压下，或阻碍其移动。虽然它们只是动物，但似乎拥有某种初步的沟通方式，通过皮肤上呈现的颜色与花纹来交流；它们会用这些讯号求偶，并警告其他胶蟾远离自己的猎物。</p>"
           }
         },
         "Hydroxol": {
@@ -21438,7 +22163,16 @@
             },
             "Bite": {
               "name": "啃咬 Bite"
+            },
+            "Keen Hearing and Smell": {
+              "name": "敏锐听觉和嗅觉 Keen Hearing and Smell"
+            },
+            "Well-Timed Help": {
+              "name": "及时相助 Well-Timed Help"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只威风的四足动物，眼中似乎泛着淡淡的磷光。它是一种精瘦的哺乳动物，兼具犬科与猫科的特征；这只幼兽身上生着羽毛般蓬松的绒毛，看上去异常灵巧。一片带条纹的皮毛如冠冕般覆在它高贵的头顶，一条短而蓬松的尾巴则在身后优雅而有意地摆动。</p></section><p>[[lookup @name]]是生活在阿克图斯高原各类生物群系中的驯化四足哺乳动物。它们常被用作动物伙伴和驮兽，而[[lookup @name]]也被认为是这一地区最受喜爱、技巧最娴熟的动物坐骑之一。它们被公认为高贵的野兽，既心地慷慨，意图也很直接。</p>"
           }
         },
         "Swarm of Cave Wasps": {
@@ -21460,6 +22194,9 @@
             "Bites": {
               "name": "啃咬 Bites"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>在黑暗的洞穴与阴影笼罩的峡谷角落里，一阵嗡嗡的振翅声往往是你们唯一的警告——随后你们的光源便会熄灭，被那些潜伏在缝隙与角落中的洞穴黄蜂蜂拥吞没；它们会跟随任何经过的光源，将其据为己有。</p></section><p>洞穴黄蜂群是由大量微小飞虫组成的大群体，在黑暗之地游荡，寻找光源。虽然它们会避开兰提尔之光，但只要看见任何提灯、发光法珠或火把，它们就会迅速吞噬其照明，在将光亮转移到自己身上的同时使其熄灭，并在黑暗中化作一片光之星群。</p>"
           }
         },
         "Yarnac": {
@@ -21490,7 +22227,8 @@
               "name": "践踏冲锋 Trampling Charge",
               "effects": {
                 "Prone": {
-                  "name": "倒地 Prone"
+                  "name": "倒地 Prone",
+                  "description": "<p>目标获得 &amp;Reference[Prone apply=long] 状态。</p><p></p>"
                 }
               }
             },
@@ -21500,6 +22238,9 @@
             "Stomp": {
               "name": "践踏 Stomp"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这头大型四足兽身躯矮壮，覆盖着浓密的皮毛，蹒跚的步伐看似缓慢，却带着明确的意图。这只毛发蓬乱的生物头颅宽阔而有力，其上耸立着一顶由雄伟巨角组成的巨大冠饰；它的三趾足末端是宽大的骨质蹄，构成了这头野兽宽阔如立柱般双腿的基座。一条长长的羽状尾巴在它身后轻轻摇摆，附近的空气中弥漫着一股麝香般的气味。</p></section><p>[[lookup @name]]是成年亚纳克更年幼、体型更小的形态。这些长着冠状巨角的大型生物是阿克图斯高原上最可靠的役用动物之一，而且——多亏了它们温顺的性情和易于训练的特点——[[lookup @name]]在余烬几乎每一个地区都备受赞誉。凭借毛茸茸的厚皮，这些威严的生物能够在余烬一些最严寒的气候中生存下来；从纵横全球的商队到乡间的农夫，人们都知道它们是坚韧而值得信赖的伙伴。的确，它们在日常生活中的作用既至关重要，又无处不在。</p>"
           }
         },
         "Aburyx": {
@@ -21603,7 +22344,19 @@
             },
             "Recharge": {
               "name": "充能 Recharge"
+            },
+            "Alchemical Burn": {
+              "name": "炼金灼烧 Alchemical Burn"
+            },
+            "Rusted Lunge": {
+              "name": "锈蚀突刺 Rusted Lunge"
+            },
+            "Shattered Swipe": {
+              "name": "碎裂挥击 Shattered Swipe"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这具大型人形构装体原本有四条手臂，但其中两条已被扯断——只余下不对称的一对肢体，各自握着一柄宽阔而饱经岁月的利刃。的确，这台笨重的自动机械早已风光不再。这具狰狞造物的机体内似乎充满了一种微微发亮的橙色流体，随着它每一步沉重的迈动，流体便从它开裂而破败的躯体中渗漏、溢出。</p></section><p>这具古旧的构装体由一种深色金属合金打造，以某种奇异的奥术流体为动力；它显然已年久失修，却仍保留着足够多的原有功能，足以充当一名可畏的守卫。艾迪尔哨兵以其坚定不移而闻名，即便面对自身的毁灭也不例外。</p>"
           }
         },
         "Constructed Companion": {
@@ -21634,6 +22387,9 @@
             "Rusty Trowel": {
               "name": "生锈的泥铲 Rusty Trowel"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这个人型身影由各式木料碎片拼制而成，它那东拼西凑的四肢靠木质骨架与藤蔓编成的绑带连在一起。构成它木质面孔的精湛雕刻定格出一副永恒的愉悦而沉静的神情，仿佛它正埋头于某项尽职的活计。</p></section><p>[[lookup @name]]是由木材与藤蔓制成、形似木质人型生物的忠勤自动机。这些拟人构装体被金色平原的阿克图里亚人用于各种任务——包括务农、驯兽、建造和防御等繁重劳作。</p>"
           }
         },
         "Afflicted Pallid Drake": {
@@ -21691,7 +22447,24 @@
                   "name": "诱变病症 Mutagenic Affliction"
                 }
               }
+            },
+            "Pouncing Bite": {
+              "effects": {
+                "Pouncing Bite": {
+                  "name": "猛扑撕咬 Pouncing Bite"
+                }
+              },
+              "name": "猛扑撕咬 Pouncing Bite"
+            },
+            "Rotten Bite": {
+              "name": "腐臭撕咬 Rotten Bite"
+            },
+            "Spit Bile": {
+              "name": "喷吐胆汁 Spit Bile"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只蛇形生物有着细长的身躯，身体中段生着单薄而破烂的斑点颈饰，更显其修长。它的形貌近似巨龙：头顶一圈波状的犄角，大口中满是细小而锋利如刀的牙齿，还不断淌下带有酸性的涎水。它浑浊的双眼显示它已然失明，而未愈合的伤口中那些令人不安的黄色脓疱，则表明它染上了某种怪异的病症。尽管外表病态，这只生物看上去依旧敏捷而危险。</p></section><p>[[lookup @name]]是一种新近发现的龙类怪物的幼年形态，拥有惊人的速度与力量。尽管它们看起来像是巨龙的后裔，或与巨龙有关，但其起源的真实本质目前仍然未知。这些个体染上了某种消耗性的疾病，导致它们的身体由内而外腐烂。</p>"
           }
         },
         "Mutated Ultra Drake": {
@@ -21713,9 +22486,11 @@
             "Tail Spin": {
               "effects": {
                 "Prone": {
-                  "name": "倒地 Prone"
+                  "name": "倒地 Prone",
+                  "description": "<p>目标被击倒为&amp;Reference[prone apply=false]状态，并可在其下个回合花费一半移动力站起。</p>"
                 }
-              }
+              },
+              "name": "扫尾旋击 Tail Spin"
             },
             "Sudden Rush": {
               "name": "突进 Sudden Rush"
@@ -21730,7 +22505,19 @@
                   "name": "先攻优势 Initiative Advantage"
                 }
               }
+            },
+            "Spit Bile": {
+              "name": "喷吐胆汁 Spit Bile"
+            },
+            "Twisted Leap": {
+              "name": "扭曲跃击 Twisted Leap"
+            },
+            "Useful Mutations": {
+              "name": "实用突变 Useful Mutations"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这头怪物扭曲变形，浑身覆盖着厚重的鳞片，用从其畸形躯体上杂乱伸出的六条肢体向前爬行。它的头部顶着一圈张扬的青绿色犄角，这些角向后延伸成长短不一的尖刺，一路铺到脊背中段。这生物细长的口部周围环着六根手指状的附肢，随时准备把猎物送进它参差的利齿之间。结痂的褐色脓疱斑驳地布满它的身体，暗示着一场尚在缓解中的病患。</p></section><p>这只巨大的变异龙兽被突变血清全面强化并扭曲。它拥有厚实的鳞甲皮肤、许多额外的肢体，以及鲜明的角和眼睛。它无法像体型较小的同类那样飞行，但以无穷的攻击性和强大的肉体力量弥补了这一点。</p>"
           }
         },
         "Ketral": {
@@ -21750,7 +22537,13 @@
               "name": "突袭攻击 Surprise Attack"
             },
             "Dust to Dust": {
-              "name": "尘归尘 Dust to Dust"
+              "name": "尘归尘 Dust to Dust",
+              "effects": {
+                "Choking Dust": {
+                  "description": "<p>这团尘云使你&amp;Reference[suffocation]{窒息}，在每回合开始时对你造成伤害。</p><p>只要发动攻击的生物仍保持清醒，受影响的生物就可以在其每一回合结束时重复该豁免，成功则结束此效果。</p>",
+                  "name": "窒息尘埃 Choking Dust"
+                }
+              }
             },
             "Of The Earth": {
               "name": "大地的 Of The Earth"
@@ -21759,10 +22552,14 @@
               "name": "月之攻击 Lunar Attack",
               "effects": {
                 "Lunar Attack": {
-                  "name": "月之攻击 Lunar Attack"
+                  "name": "月之攻击 Lunar Attack",
+                  "description": "<p>当科拉位于天顶时，凯特拉的攻击额外造成 2（1d4）点力场伤害。</p>"
                 }
               }
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只小型生物有着深色的岩石般皮肤与鬃毛，若不是那双发光的黄色眼睛和锋利的爪子，几乎与一堆碎石或湿透的泥土无从分辨。它的牙齿虽小，却似乎挤满了整张嘴，龇露在外，随时准备撕咬任何进入它们攻击范围之物。</p></section><p>这些凶残的掠食者将它们对大地之月科拉的亲和与同调化作武器——它们能够穿过岩石，仿佛岩石几乎不存在一般，潜伏在岩壁最细小的缝隙中，等待出击的机会，仿佛岩石本身长出了牙齿和爪。尽管它们在洞穴中成群生活，但大多数时候都会舒舒服服地蜷伏在自己的巢穴里，把下颚或爪子抵在洞口，一旦遇到任何经过的生物，便猛地探出头和手，从对方身上撕下一块肉来。</p>"
           }
         },
         "Fire Sprite": {
@@ -21771,7 +22568,22 @@
           "items": {
             "Fiery Strike": {
               "name": "炽焰打击 Fiery Strike"
+            },
+            "Conflagration": {
+              "name": "烈焰狂燃 Conflagration"
+            },
+            "Elemental Camouflage": {
+              "name": "元素伪装 Elemental Camouflage"
+            },
+            "Flicker & Flash": {
+              "name": "明灭闪光 Flicker & Flash"
+            },
+            "Heat Absorption": {
+              "name": "高温吸收 Heat Absorption"
             }
+          },
+          "biography": {
+            "public": "<div><section class=\"block readaloud\"><div><p>一团凝聚成球的火焰在你面前的空中盘旋，身后拖曳着一道长长的、由久久不散的火花与余烬构成的轨迹。这个小小精灵的移动轨迹飘忽不定，每一次掠过空中或突然迸发的移动，都伴随着仿佛烈火被迅速鼓入气流时发出的呼啸声音。</p></div></section><p>[[lookup @name]]是一个小型、旋转的火元素，常见于燃烧着魔法能量之火的地方，或吞噬了注入拉根之月精华的燃料之处。若不去招惹它们，它们通常是无害的，但它们所到之处往往会引发火灾，其存在会造成巨大的附带伤害。</p></div>"
           }
         },
         "Temple Invader": {
@@ -21806,12 +22618,22 @@
             },
             "Summon Elemental": {
               "name": "召唤元素 Summon Elemental"
+            },
+            "Icy Projection": {
+              "name": "冰霜投射 Icy Projection"
+            },
+            "Watery Strike": {
+              "name": "水流打击 Watery Strike"
             }
           },
           "effects": {
             "Impenetrable Shield": {
-              "name": "坚不可摧的护盾 Impenetrable Shield"
+              "name": "坚不可摧的护盾 Impenetrable Shield",
+              "description": "<p>此效果生效期间，神殿入侵者对所有伤害免疫，但其所有移动速度都降为 0。</p>"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>它高踞于同类之上，甚至也高过那些较低等的游荡者；这名入侵者的形体既优雅又令人生畏。在一台古老石制机械中流淌的能量增幅之下，这只元素生物显得远比大多数同类更为强大、也更为狡黠。它的动作流畅而从容，散发出一种致命的精准与目的感。</p></section><p>该[[lookup @name]]是涉水者的一种独特形态，已被流经一座献给玛伊斯之月的魔法神殿的魔法能量所灌注。</p>"
           }
         },
         "Water Mote": {
@@ -21820,7 +22642,13 @@
           "items": {
             "Water Form": {
               "name": "水形态 Water Form"
+            },
+            "Watery Strike": {
+              "name": "水流打击 Watery Strike"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只微小的元素生物是一团被赋予生命的水，体型大致相当于一只小动物。它的形态简单而无定形，不断变换、起伏。它们闪烁着内在的微光，呈现出近乎空灵的外观，并且始终处于运动之中。</p></section><p>[[lookup @name]]除了胶状的质地之外没有任何可辨识的特征，而且很少离开水域。它们之中体型最大的那些也是无害的；在罕见的情况下，它们可能会聚集成群，像飞蛾绕着灯一样围绕着某种元素能量源盘旋。</p>"
           }
         },
         "Water Sprite": {
@@ -21832,7 +22660,13 @@
             },
             "Water Form": {
               "name": "水形态 Water Form"
+            },
+            "Watery Strike": {
+              "name": "水流打击 Watery Strike"
             }
+          },
+          "biography": {
+            "public": "<div><section class=\"block readaloud\"><div><p>这只小巧而充满活力的元素生物呈一团凝聚的球状，周围环绕着几滴它似乎能够操控的小水珠。它出人意料地敏捷，以迅捷的爆发与跳跃移动，动作优雅却又难以预料。它们闪烁着内在的微光，呈现出近乎空灵的外观，并且始终处于运动之中。</p></div></section><p>[[lookup @name]]是一种小型的旋动水元素，常出现在水中蕴含魔法能量的地方，尤其是那些汲自水之月玛伊斯的水域。除非有人扰动它们所关注的对象，否则它们通常并无害处。</p></div>"
           }
         },
         "Water Visitor": {
@@ -21850,7 +22684,16 @@
             },
             "Water Form": {
               "name": "水形态 Water Form"
+            },
+            "Icy Projection": {
+              "name": "寒冰投射 Icy Projection"
+            },
+            "Watery Strike": {
+              "name": "水流打击 Watery Strike"
             }
+          },
+          "biography": {
+            "public": "<div><section class=\"block readaloud\"><div><p>这只元素生物的外形近乎人型，有着躯干与头部的轮廓，面部形状依稀可辨，四肢则时而像尾巴、时而像手臂，每一条的末端都缀着冰的碎片。它大约有成年人型生物那么高，身躯是一团旋涌不息、永不停歇的水流。</p></div></section><p>[[lookup @name]]<strong> </strong>是一种不常见的元素生物，很少会在身边没有其他较弱元素生物时被人见到。它们大体上并无危害，往往在周围一带游荡，或聚集在元素能量源附近。</p></div>"
           }
         },
         "Water Wanderer": {
@@ -21868,6 +22711,23 @@
             },
             "Water Form": {
               "name": "水形态 Water Form"
+            },
+            "Icy Projection": {
+              "name": "寒冰投射 Icy Projection"
+            },
+            "Spark": {
+              "name": "迸射 Spark"
+            },
+            "Watery Strike": {
+              "name": "水流打击 Watery Strike"
+            }
+          },
+          "biography": {
+            "public": "<div><section class=\"block readaloud\"><div><p>涉水者比大多数人型生物都更为高大，是一种既优雅又令人生畏的生物。它的动作流畅而从容，散发出低等元素生物所欠缺的智慧与精准。</p><p>它的四肢末端簇生着大块棱彩冰晶，边缘如剃刀般锋利，既能成为威力惊人的钝器，也能化作更为危险的利刃，用于穿刺与突刺。</p></div></section><p>[[lookup @name]]是一种体型庞大、危险而狡黠的元素生物，能够显现出由锋利致密的元素冰构成的致命碎片。它绝不可轻视，所幸在余烬上十分罕见。</p></div>"
+          },
+          "effects": {
+            "Astrolabe Shield": {
+              "name": "星盘护盾 Astrolabe Shield"
             }
           }
         },
@@ -21903,7 +22763,8 @@
               "name": "灵气宝石 Gem of Aura",
               "effects": {
                 "Prone": {
-                  "name": "倒地 Prone"
+                  "name": "倒地 Prone",
+                  "description": "<p>如果目标的豁免失败 5 点或以上，它会被击倒为&amp;reference[Prone apply=false]。目标可在其下个回合花费一半移动力站起。</p>"
                 }
               }
             },
@@ -21911,7 +22772,8 @@
               "name": "科拉宝石 Gem of Cora",
               "effects": {
                 "Prone": {
-                  "name": "倒地 Prone"
+                  "name": "倒地 Prone",
+                  "description": "<p>如果目标的豁免失败 5 点或以上，它会被击倒为&amp;reference[Prone apply=false]。目标可在其下个回合花费一半移动力站起。</p>"
                 }
               }
             },
@@ -21934,7 +22796,8 @@
               "name": "猛扑 Pounce",
               "effects": {
                 "Prone": {
-                  "name": "倒地 Prone"
+                  "name": "倒地 Prone",
+                  "description": "<p>目标被击倒为&amp;Reference[prone apply=false]，并可在其下个回合花费一半移动力站起。</p>"
                 }
               }
             },
@@ -21964,6 +22827,9 @@
               "effects": {
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
+                },
+                "Comprehension": {
+                  "name": "通晓 Comprehension"
                 }
               },
               "name": "通晓语言 Comprehend Languages"
@@ -22043,6 +22909,9 @@
             "Running Leap": {
               "name": "助跑起跳 Running Leap"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只发光的生物以掠食者般的优雅步伐移动，每一步都留下淡淡的光耀痕迹。它那双硕大的发光眼睛，似乎能看透它所注视之物的本质。斑斓的光带有节奏地在它半覆羽毛的皮毛间搏动，一路涌上它的两对翅膀。</p><p>第一对翅膀从前肢伸出，连向体侧；第二对更大，自它背后展开如扇。两对翅膀都缀有繁复花纹的发光羽毛，只要稍有动作，便如活着的星尘般泛起涟漪。</p><p>这只生物看上去也受了伤，脸部、颈部与肩部布满血肉模糊的灼伤。伤口上覆着肿胀的脓疱，皮毛与羽毛被烧尽，露出赤裸而起泡的血肉。</p></section><p>神话尖塔守护者是一种来自普里莫迪斯领域、光辉而充满魔力的生物。自这座古老建筑存在以来，它一直作为神话尖塔天文台坚定不移、毫不退缩的守护者而效力。遗憾的是，最近发生的事件为它的守望带来了一个不光彩的结局。</p>"
           }
         },
         "Vanexis": {
@@ -22184,7 +23053,8 @@
               "name": "等离子射线 Plasma Ray",
               "effects": {
                 "Poisoned": {
-                  "name": "中毒 Poisoned"
+                  "name": "中毒 Poisoned",
+                  "description": "<p>目标陷入 &amp;Reference[poisoned apply=false] 状态，直到其下一回合开始。</p>"
                 }
               }
             },
@@ -22258,6 +23128,9 @@
             "Devil's Sight": {
               "name": "魔鬼视觉 Devil's Sight"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一个四臂、蓝色皮肤的杀手站在你面前，手持两把翠绿色匕首，臂上还装配着一排由深灰色骨头打造的刃护腕。黑色半面罩遮住了这生物的大半张脸，只露出淡蓝色的双眼、一对邪恶的尖角，以及一头像奥术火焰般翻涌的亮蔚蓝色鬃发。这个游荡者的系带皮甲紧紧包裹着它强健的躯体，双肩则覆有层叠的蔚蓝色几丁质板片，如同远古护肩。这个异界威胁身后，一条尖尾凶狠残暴地抽打着，看起来随时准备杀死任何移动的东西。</p></section><p>[[lookup @name]]是来自异界的猎手与使者，将谋杀化作一门精妙的艺术。这些恶毒的刺客穿着简陋的皮甲，挥舞着奇异的异界武器，使他们看起来既致命又令人生畏，同时又显得冷静而沉着。除了天生的魔法防御之外，[[lookup @name]]还精通奥术施法之道，能够召唤出各种深奥秘术来推动他们阴险的图谋。</p>"
           }
         },
         "Agrimage": {
@@ -22501,7 +23374,16 @@
             },
             "Lethal": {
               "name": "致命 Lethal"
+            },
+            "Disarming Bash": {
+              "name": "缴械猛击 Disarming Bash"
+            },
+            "Shield Prowess": {
+              "name": "盾牌娴熟 Shield Prowess"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你看到一位全副重甲的奥尔达尼战士，其青铜板条甲泛着艳丽的赤褐色光泽。这名士兵的胸甲上装饰着一只左右对称的赤红手掌，掌下生着橡树的根须；而挂在身侧、保养良好的长剑看上去随时可以出鞘应战。</p></section><p>[[lookup @name]]是同名军事教团“辉手”的普通部队成员——辉手负责保卫阿克图斯高原，并深受奥肯仪式传统的熏陶。这些训练有素的人型生物士兵披坚执锐，随时准备应对强加于他们的任何冲突，无论战时还是和平时期皆然。辉手的守卫者与其他士兵以效忠德高望重的辛达里克贤者而闻名，并已正式宣誓捍卫他们。</p>"
           }
         },
         "Carmin Anther": {
@@ -22568,7 +23450,13 @@
             },
             "Eversmoking Bottle": {
               "name": "永烟瓶 Eversmoking Bottle"
+            },
+            "Keen Hearing & Sight": {
+              "name": "敏锐听觉与视觉 Keen Hearing & Sight"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这名年轻荆芽灵的身躯与其说是光滑的木质，不如说更多是尖刺与嶙峋的凸起，一身绿红相间的颜色在合适的、纠结丛生的浓密枝叶间很容易与背景融为一体。他们把头抬得高高的、肩膀向后展开，却又不停地把重心从一只脚换到另一只脚，仿佛在向众人现身时，还拿不准究竟该怎么站才好。</p></section><p>卡尔敏是一位年轻的荆芽灵，比起他人的陪伴，他们更喜欢道路与森林中的独处；但即使身处自己所热爱的自然之地，他们仍感到漂泊无依，总是渴望一种冒险与荣耀的感觉。他们由经营布衣生意、专门服务冒险者与达官显贵的父母抚养长大，也想获得同等程度的尊重与名望，却又不太清楚该如何做到。近些年来，这促使他们塑造出了一个新的身份：那名被称为“峡谷爬行者”的强盗，而他们希望这个名字能够远近皆知。</p>"
           }
         },
         "Cindaric Adherent": {
@@ -22767,6 +23655,9 @@
                 }
               }
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位学者气质的治疗者身着亮金与浓艳绯红的衣袍——那正是阿克图斯高原上声名远播的辛达里克贤者的颜色。他们的肩部与外衣上标有为人熟知的四叶菱形纹样，那是辛达里克教团的象征；他们的双手则布满诚实劳作留下的健康磨痕与老茧。这位贤者以慈和的微笑注视着你。</p></section><p>[[lookup @name]]是技艺娴熟的治疗者与学者，他们毕生致力于侍奉辛达里克信仰。无论是来自奥尔丹辛达林神殿的辉煌殿堂、米亚尔山上科尔平庇护所的偏远高地，还是另一处与世隔绝的聚居地，[[lookup @name]]总是随时准备为饥饿者提供食物、治疗病患，或为贫者提供衣物。[[lookup @name]]以其慈悲与善意闻名，而每一位信徒都会在这无休止的奉献中找到属于自己的热忱。为了便于他们践行慈善生活。</p>"
           }
         },
         "Mutagist Bombardier": {
@@ -22784,7 +23675,13 @@
             },
             "Axe": {
               "name": "斧头 Axe"
+            },
+            "Throw Alchemical Grenade": {
+              "name": "投掷炼金手雷 Throw Alchemical Grenade"
             }
+          },
+          "biography": {
+            "public": "<section><section class=\"block readaloud\"><p>这个瘦长的身影身着一件沾满陈年污渍的镶钉皮背心，外面套着一条系在腰间的脏围裙。一条挂满玻璃小瓶与化学药罐的弹药带斜挎在胸前。他们的脸藏在一副笨重的圆眼防毒面具后面，滤罐随着每一次呼吸轻轻噗噗作响。被化学药剂染色又灼伤的手指在身侧不安地抽动，悬在自己的武器库附近，随时准备抓起一枚炸弹。</p></section></section><p>这个[[lookup @name]]是受突变学派雇用、敏捷且难以预测的混沌代理人。他们因精通炼金术而备受重视，也因热衷于制造混乱而令人畏惧，是突变学派队伍中较难预测的成员之一。</p>"
           }
         },
         "Mutagist Scout": {
@@ -22803,9 +23700,11 @@
             "Paralyzing Shot (Heavy Crossbow)": {
               "effects": {
                 "Paralyzed": {
-                  "name": "麻痹 Paralyzed"
+                  "name": "麻痹 Paralyzed",
+                  "description": "<p>目标陷入&amp;Reference[paralyzed]状态，持续 1 分钟。</p>"
                 }
-              }
+              },
+              "name": "麻痹射击（重弩） Paralyzing Shot (Heavy Crossbow)"
             },
             "Explorer's Pack": {
               "name": "探险者背包 Explorer's Pack"
@@ -22842,7 +23741,19 @@
             },
             "Mess Kit": {
               "name": "野炊工具 Mess Kit"
+            },
+            "Coordinated Attack": {
+              "name": "协同攻击 Coordinated Attack"
+            },
+            "Paralyzing Bolts": {
+              "name": "麻痹弩矢 Paralyzing Bolts"
+            },
+            "Team Tactics": {
+              "name": "团队战术 Team Tactics"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一个粗粝而狡黠的家伙，披着一件皮革与布料拼缝而成的斗篷，一身装束尽是冒险磨损后的杂凑旧货。他们有着久经跋涉、风尘仆仆的冒险者或雇佣兵的气派。令人不安的是，他们实际上竟毫无特征可言。</p></section><p>变异学者斥候是一名狡黠的行动人员，伪装成冒险者并融入社会。实际上，他们游历各地，目的是为其更为邪恶的同伴追踪、捕获并收集生物材料。</p>"
           }
         },
         "Mutagist Vivisector": {
@@ -22866,7 +23777,8 @@
                 "Poisoned": {
                   "name": "中毒 Poisoned"
                 }
-              }
+              },
+              "name": "中空细剑 Hollow Stiletto"
             },
             "Poison Vial": {
               "name": "毒药瓶 Poison Vial"
@@ -22876,7 +23788,13 @@
             },
             "Poisoner's Kit": {
               "name": "制毒工具 Poisoner's Kit"
+            },
+            "Twisted Surgeon": {
+              "name": "扭曲外科医生 Twisted Surgeon"
             }
+          },
+          "biography": {
+            "public": "<section><section class=\"block readaloud\"><p>他们身着沾满污渍的围裙与外套，从护目镜与面罩后面冷冷地打量着你——那身装束让人无从看出他们的任何特征。他们的手中转动着一把锋利如刃的手术刀，另一只手则搭在一个小袋上，里面装着好几瓶无疑相当危险的化合物。他们周围的空气里，浓浓地弥漫着药味与血腥味。</p></section><p>这个[[lookup @name]]是一名危险的外科医生，痴迷于给实验对象注射化学药剂，然后剖开他们的尸体（如果他们够幸运的话），看看这些化合物对受害者产生了什么效果。</p></section>"
           }
         },
         "Otherhood Raider": {
@@ -22897,7 +23815,13 @@
             },
             "Fiery Shot": {
               "name": "烈焰射击 Fiery Shot"
+            },
+            "Ambush Tactics": {
+              "name": "伏击战术 Ambush Tactics"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一名轻甲重武的战士，身着金色长袍与棕色皮甲。他们看上去坚定、自律，正跃跃欲试地想打上一架。</p></section><p>这名[[lookup @name]]是一名危险的战士，效力于一个由罪犯袭击者与走私者组成的组织。他们很容易凭借棕色的衣物、素淡的着装与面罩被辨认出来，不过据知他们也会乔装出行。</p>"
           }
         },
         "Juvenile Garganthus": {
@@ -22923,14 +23847,16 @@
               "name": "标记猎物 Mark Prey",
               "effects": {
                 "Marked": {
-                  "name": "已标记 Marked"
+                  "name": "已标记 Marked",
+                  "description": "<p>目标被标记。</p>"
                 }
               }
             },
             "Aversion to Radiance": {
               "effects": {
                 "Poisoned": {
-                  "name": "中毒 Poisoned"
+                  "name": "中毒 Poisoned",
+                  "description": "<p>目标陷入 &amp;Reference[poisoned apply=false] 状态，直到其下一回合结束。</p>"
                 }
               },
               "name": "对辉耀的厌恶 Aversion to Radiance"
@@ -22965,6 +23891,9 @@
             "Hurl Stone": {
               "name": "投掷石块 Hurl Stone"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你看到一只四足爬行类生物的庞大身形，它拖着一条长长的、可以卷握的尾巴，皮肤幽暗如墨。它那灵活的蜥形头颅上生有数对凸出的珍珠色眼睛、两只长得出奇的扇形耳朵，以及一张排满矛状獠牙的嘴。这只生物粗壮的手臂末端是长着骇人利爪的三指手掌，而它肌肉虬结的双腿看上去足以轻松攀越最险恶的地形。</p></section><p>[[lookup @name]]是一种恶毒的通路掠食者，体现了余烬史前时代那种残酷而原始的野性。它有着略近人型生物的躯干，但其覆鳞、略带蛇类特征的外貌却极端、怪异而可怖。它的模样令人不寒而栗，并会在任何小到足以沦为其利爪捕获之物的生物心中激起恐惧。</p>"
           }
         },
         "Suarrok Juvenile": {
@@ -22997,6 +23926,9 @@
             "Flyby": {
               "name": "掠空飞袭 Flyby"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这生物令人极不安适，是鸟与蜥蜴的奇异混合体，长着巨大的蝠状双翼，翼缘垂着长长的羽毛。一段修长而柔韧的脖颈像蛇一样盘绕扭动，顶着一颗巨大的头颅；头上那张带锯齿的凶恶尖喙，正是为撕开血肉而生。这颗头上生着一只硕大无比的独眼，闪着不祥的光；当它的目光扫过你们时，你们能感到一阵灼人的热浪拂来。</p></section><p>该[[lookup @name]]是一种独眼的魔法畸怪，筑巢于高处的岩石地带。它主要分布在石之森林及其周边，在高高的栖处筑巢，让幼崽免受龙兽、卡达娜蜥蜴和峭岩猛禽等机会主义掠食者的侵害。苏阿罗克已成功广泛扩散，因此在余烬各处的岩石区域都可能遇见它，并且常常是当地的顶级飞行掠食者。</p>"
           }
         },
         "Young Cheliceraeth": {
@@ -23007,7 +23939,8 @@
               "name": "啃咬 Bite",
               "effects": {
                 "Poisoned": {
-                  "name": "中毒 Poisoned"
+                  "name": "中毒 Poisoned",
+                  "description": "<p>目标陷入 &amp;reference[poisoned] 状态，直到其下个回合结束。</p>"
                 }
               }
             },
@@ -23018,7 +23951,13 @@
               "name": "伪装外表 False Appearance"
             },
             "Bewildering Gaze": {
-              "name": "惑乱凝视 Bewildering Gaze"
+              "name": "惑乱凝视 Bewildering Gaze",
+              "effects": {
+                "Bewildered": {
+                  "description": "<p>豁免检定失败时，该生物在效果结束前受到 -<strong>2 豁免检定减值</strong>。此外，在效果结束前，每当该生物进行攻击检定时，目标必须<strong>掷一个 d4，并从攻击检定中减去</strong>掷出的数值。</p><p>陷入惑乱的目标可以在其每个回合结束时重复该豁免检定，成功则对自身结束该效果。</p>",
+                  "name": "惑乱 Bewildered"
+                }
+              }
             },
             "Cheliceraeth Eye": {
               "name": "螯肢眼 Cheliceraeth Eye"
@@ -23029,6 +23968,9 @@
             "Web Walker": {
               "name": "蛛网行者 Web Walker"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>悦耳而闪烁的敲击声充满空气——宛如玻璃轻柔倾泻的声响——这时你注意到，一丛中等大小的水晶变形成了一只十眼生物，长着八条细长的腿和两枚巨大而带关节的尖牙。这只可怖的蛛形生物像是一只由多棱面紫色月长石构成的巨型半透明蜘蛛，在微弱的光线下闪烁生辉。愤怒般突起的水晶尖刺点缀着它硅质躯体的末端，而它那十只令人憎恶的眼睛里，仿佛折射出可怕的奥术乳光。</p></section><p>[[lookup @name]]又被称为水晶蜘蛛，是一种体型大得多的蛛形畸怪的幼年形态；这种畸怪原产于余烬遍布水晶纹理的地下世界，外形如同一只由多棱面紫色月长石构成的巨型蜘蛛。除了带毒的啃咬之外，螯蛛艾斯还能以惑乱凝视令猎物入迷，用迷幻般的不确定感扭曲目标的心智。</p>"
           }
         },
         "Giant Luminous Ooze": {
@@ -23043,7 +23985,31 @@
             },
             "Copper Flakes": {
               "name": "铜屑 Copper Flakes"
+            },
+            "Absorb Oozes": {
+              "name": "吸收软泥怪 Absorb Oozes"
+            },
+            "Crystal-Embedded Pseudopod": {
+              "name": "嵌晶伪足 Crystal-Embedded Pseudopod"
+            },
+            "Iron Scraps": {
+              "name": "铁屑 Iron Scraps"
+            },
+            "Liquid Silver": {
+              "name": "液态银 Liquid Silver"
+            },
+            "Magnetic": {
+              "name": "磁性 Magnetic"
+            },
+            "Pooled Gold": {
+              "name": "汇聚的黄金 Pooled Gold"
+            },
+            "Spawn Oozes": {
+              "name": "生成软泥怪 Spawn Oozes"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这团发光的金色无定形团块似乎有着无数条不断变化着形状、尺寸和数量的触手，每一条上都镶嵌着金属碎片和万花筒水晶碎块，其锋利的边缘捕捉并反射着光。</p></section><p>由不同的发光金属软泥怪、万花筒水晶以及一种炼金污染物结合而成，巨型发光软泥怪会运用其生成并吸收较小金属软泥怪的能力，并配合其嵌有水晶的触手所施展的强力打击。</p>"
           }
         },
         "Luminous Copper Ooze": {
@@ -23061,7 +24027,13 @@
             },
             "Luminous Copper Flakes": {
               "name": "发光铜屑 Luminous Copper Flakes"
+            },
+            "Self-Soothing": {
+              "name": "自我疗愈 Self-Soothing"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一只无定形的黏液生物缓缓向前渗流，在它胶质的身体里拖着一片片剥落的铜屑与偶尔可见的晶体。尽管移动时看似毫无形状，但一旦被迫应战，它便会伸出一条长长的触手般的手臂，蓄势待发。</p></section><p>发光铜软泥怪利用其胶状身体内的铜来治愈自身的伤势，而且人们知道它们会假装成一堆铜币，试图在恢复时装死。</p>"
           }
         },
         "Luminous Gold Ooze": {
@@ -23079,6 +24051,21 @@
             },
             "Split": {
               "name": "分裂 Split"
+            },
+            "Pooled Gold": {
+              "name": "汇聚黄金 Pooled Gold"
+            },
+            "Stretch": {
+              "name": "伸展 Stretch"
+            }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只生物就像一滩流动中的凝结金矿石，把自己胶状的软泥躯体拉长成一条细长而黏稠的手臂，拖着自己在地面上前行。它比其他发光软泥怪更细窄，也更乐于伸展，因此在四处搜寻猎物时，移动速度也快过一般的软泥怪。</p></section><p>发光金软泥怪静止时看起来像一堆黄金财宝，但一旦开始移动，它们就比其他软泥怪更快也更黏稠，不仅能够挤过狭小的开口并用金色触手鞭击，还能伸展开来困住并驱赶它们的猎物。</p>"
+          },
+          "effects": {
+            "Stretched": {
+              "description": "<p>该[[lookup @name lowercase]]占据大型生物的空间，并且每回合进行两次攻击。</p>",
+              "name": "已伸展 Stretched"
             }
           }
         },
@@ -23094,11 +24081,21 @@
                 "Restrained": {
                   "name": "受缚 Restrained"
                 }
-              }
+              },
+              "name": "磁力伪足 Magnetic Pseudopod"
             },
             "False Appearance": {
               "name": "伪装外表 False Appearance"
+            },
+            "Iron Scraps": {
+              "name": "铁屑 Iron Scraps"
+            },
+            "Magnetic": {
+              "name": "磁力 Magnetic"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>发光铁软泥怪那黏稠的躯体呈银灰色，里面填满了细小的金属碎片与偶尔可见的闪亮晶体。移动时，它的身体不断塑形又重塑，在一滩黏液中伸缩变化，并探出一条灰铁色的触手。</p></section><p>发光铁软泥怪会对其附近的金属物体施加轻微的磁力拉扯，包括用来攻击它的武器；但它主要依靠无定形的伪足来痛击受害者，而且常常会在静止时伪装成一堆废铁，借此把他们引诱过来。</p>"
           }
         },
         "Luminous Silver Ooze": {
@@ -23116,7 +24113,13 @@
             },
             "Electrified Pseudopod": {
               "name": "带电拟足 Electrified Pseudopod"
+            },
+            "Liquid Silver": {
+              "name": "液态银 Liquid Silver"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>光线从它身上反射开来——它前一刻看着像一堆银币，下一刻又像一只缓缓搏动的银色软泥怪，被困在胶质中心的金属粉尘与晶体不断迸出点点光芒。它一边向前挪动一边变换形状，噼啪作响地带着静电，伸出长长的一段身体，如同一条蓄势待击的手臂。</p></section><p>虽然它们在静止时与银币毫无区别，但发光银软泥怪在移动时会积聚静电，并能利用由它们不断变幻的胶质身体形成的触手，对周围的液体和生物施加电击。</p>"
           }
         },
         "Sarracenias": {
@@ -23129,14 +24132,24 @@
             "Grasping Vines": {
               "effects": {
                 "Grappled": {
-                  "name": "被擒抱 Grappled"
+                  "name": "被擒抱 Grappled",
+                  "description": "<p>若目标为大型或更小体型，它获得 &amp;Reference[Grappled apply=false] 状态，并可以使用其动作挣脱。</p>"
                 }
               },
               "name": "攫握藤蔓 Grasping Vines"
             },
             "Engulf": {
-              "name": "吞没 Engulf"
+              "name": "吞没 Engulf",
+              "effects": {
+                "Engulfed": {
+                  "description": "<p>被吞没的生物获得 &amp;Reference[Blinded apply=false] 与 &amp;Reference[Restrained apply=false] 状态，且无法呼吸。</p>",
+                  "name": "被吞没 Engulfed"
+                }
+              }
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>乍看之下，那似乎只是一堆散落在地面上的植物残屑；可一旦附近有动静的迹象，它便会极其轻微地挪动，等待着出手的时机。在那融入周遭景致的绿紫色团块之下，它的藤蔓早已蓄势待发，随时会攫住任何靠得太近的人，把他们拖进那张饥渴等待的巨口。</p></section><p>萨拉塞尼亚斯静止不动时，常被误认为是一堆植被或一棵大树腐烂的树桩；但它会耐心等待，直到毫无戒心的生物走进它那巨大躯体中隐藏藤蔓的抓取范围，这些藤蔓会抓住猎物并将其拖入它体内囊袋般的腔室之中。一旦进入其中，几乎不可能逃脱；凡是被萨拉塞尼亚斯捕获并困在体内的东西，都会被缓慢溶解并消化，成为它不断增长躯体的养分。</p><p></p>"
           }
         },
         "Corrupted Cadrithor": {
@@ -23207,7 +24220,8 @@
             "Gruesome Mockery": {
               "effects": {
                 "Insulted": {
-                  "description": "<p>在其下个回合结束前，目标进行的下一次攻击检定具有劣势。</p>"
+                  "description": "<p>在其下个回合结束前，目标进行的下一次攻击检定具有劣势。</p>",
+                  "name": "受辱 Insulted"
                 }
               },
               "name": "骇人嘲弄 Gruesome Mockery"
@@ -23215,7 +24229,8 @@
             "Gruesome Attacker": {
               "effects": {
                 "Frightened": {
-                  "name": "恐慌 Frightened"
+                  "name": "恐慌 Frightened",
+                  "description": "<p>目标陷入 &amp;reference[frightened] 状态，持续 1 分钟。</p>"
                 }
               },
               "name": "残忍攻击者 Gruesome Attacker"
@@ -23237,6 +24252,9 @@
             "Cunning Escape": {
               "name": "狡诈脱逃 Cunning Escape"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一个衣衫凌乱的年轻男子尸体潜伏在你面前，刚刚从坟墓中被重新唤醒。它那邪恶的笑容滴落着猩红色的邪恶脓液，扭曲着爬过这具苍白、不死的尸体面孔，而勾勒着它乳白色双眼的夸张眉弓，则泄露出某种残酷而聪明的威胁感。</p><p>这具蹒跚的尸体穿着阿克图里安艺术家或乐师那身时髦的衣裳，拖着一把沉重的石剑在身后缓缓前行，故作懒散地让剑尖在泥土里打转，像个拿到新玩具的疯癫孩子。</p></section><p>这个食尸鬼般的生物曾经是一位名叫[[lookup @name]]的年轻吟游诗人，后来遭遇了可怕的命运。如今，他以一个施虐成性的亡灵 @UUID[Actor.e67w5IOBScYtJKXr]{霍伦多尔} 的形态存续着，成了年轻的德雷斯曾经那段欢乐生活的扭曲嘲弄。曾经的吟游诗人如今不再手持乐器，而是挥舞着一把刻有符文、沾满鲜血的古老刀刃。</p>"
           }
         },
         "Horrendor": {
@@ -23291,6 +24309,9 @@
             "Shortsword": {
               "name": "短剑 Shortsword"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你见到一具复生的人型骸骨，模样骇人；尽管早已没有筋腱与血肉，那些朽坏的骨骼却依旧以可怖的方式拼合在一起。这具可憎的骸骨生物挥舞着一柄历经岁月磨蚀的刀刃，一张腐朽的短弓则斜挎在它嶙峋的背上。</p></section><p>[[lookup @name]]是由死灵术赋予生命的恶意不死生物，由早已死亡的人型生物的骸骨遗骸制成。受无法控制它们的邪恶力量驱使，[[lookup @name]]很少凭自身意志存在，且常作为邪恶施法者和更强大不死生物的爪牙出现。</p>"
           }
         },
         "Crumbling Skallith": {
@@ -23303,6 +24324,9 @@
             "Shortsword": {
               "name": "短剑 Shortsword"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这具狰狞的复生骸骨仿佛勉强才维持住它那朽坏形骸的构造，然而这可怖的生物却带着令人不安的目的性继续存续着，腐烂的身侧拖着一柄锈迹斑斑的刀刃。</p></section><p>[[lookup @name]]是余烬上最低等的斯卡利斯，驱使它们的是与其骸骨同类相同的邪异恶意，却被剥夺了那份活力与防护。[[lookup @name]]最常成群出现，规模小则寥寥数只，大则汇成难以估量的尸潮。</p>"
           }
         },
         "Skallith Warrior": {
@@ -23321,9 +24345,15 @@
             "Frightful Glare": {
               "effects": {
                 "Frightened": {
-                  "name": "恐慌 Frightened"
+                  "name": "恐慌 Frightened",
+                  "description": "<p>目标获得 &amp;Reference[frightened apply=false] 状态，直到发动攻击的生物的下个回合结束。</p>"
+                },
+                "Frightened & Stunned": {
+                  "description": "<p>目标获得 &amp;Reference[frightened apply=false] 与 &amp;Reference[stunned apply=false] 状态，直到发动攻击的生物的下个回合结束。</p>",
+                  "name": "恐慌与震慑 Frightened & Stunned"
                 }
-              }
+              },
+              "name": "骇人凝视 Frightful Glare"
             },
             "Parry": {
               "name": "招架 Parry"
@@ -23337,6 +24367,9 @@
             "Undead Fortitude": {
               "name": "亡灵坚韧 Undead Fortitude"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你见到一具复生的人型骸骨，模样骇人；尽管早已没有筋腱与血肉，那些朽坏的骨骼却依旧以可怖的方式拼合在一起。这名骸骨战士披着腐蚀的护甲，那是在墓中历经无数世纪锈蚀的结果。挂在这生物身侧的锈迹长剑掩不住它不容小觑的力量，一顶头盔则戴在它那开裂而腐朽的头骨之上。</p></section><p>[[lookup @name]]是由死灵魔法赋予生命、永不消亡的骸骨生物，与较低等的斯卡利斯相比，它们在战斗中是出了名的强大对手。凭借更精良的武器和护甲，[[lookup @name]]会成为不死生物战团及其恐怖战役中可怕而高效的冲锋部队。</p>"
           }
         },
         "Sodden Corpse": {
@@ -23349,7 +24382,8 @@
             "Stench": {
               "effects": {
                 "Poisoned": {
-                  "name": "中毒 Poisoned"
+                  "name": "中毒 Poisoned",
+                  "description": "<p>目标获得 &amp;Reference[Poisoned apply=false] 状态，直到其下个回合开始。</p>"
                 }
               },
               "name": "恶臭 Stench"
@@ -23360,6 +24394,9 @@
             "Undead Fortitude": {
               "name": "亡灵坚韧 Undead Fortitude"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>尸体腐烂的恶臭直冲你们的感官，一个略显扭曲的人型剪影蹒跚着走入视野。那看上去像是一具腐臭的、还能行走的尸首，正拖着步子朝你们走来，柔软而肿胀的血肉散发着坟墓的气味。它生前穿的衣物已经破烂不堪，被这具不死之躯的有毒腐液浸染。当这生物那双浑浊、发霉的眼睛带着恶毒而非人的饥渴打量你们时，它腐烂的下颌也在贪婪的期待中咯咯作响。</p></section><p>[[lookup @name]]是由在恶劣境遇或邪恶巫术诅咒下死去的人型生物尸骸中诞生的可憎不死生物。与普通僵尸相似，浸透的尸体可通过其腐烂肿胀、膨大的血肉来辨认，这些血肉散发出带有毒性的腐朽恶臭。</p>"
           }
         },
         "Pallid Drake": {
@@ -23419,7 +24456,18 @@
             },
             "Glider": {
               "name": "滑翔者 Glider"
+            },
+            "Pouncing Bite": {
+              "effects": {
+                "Pouncing Bite": {
+                  "name": "猛扑啃咬 Pouncing Bite"
+                }
+              },
+              "name": "猛扑啃咬 Pouncing Bite"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>苍白幼龙的身体细长而蜿蜒，覆着橄榄绿的鳞片，在移动时闪出明亮的光泽。它的体侧生着硕大而鲜艳的青绿色鳍膜。龙形头颅之上，一圈小角向外展开，每一根的尖端都带着淡淡的青绿色。它那双琥珀橙色的眼睛锐利而好奇，不断打量着周围的一切。</p></section><p>[[lookup @name]]是新近发现的一种龙类怪物的幼年形态，似乎是巨龙的后裔或与其有关，不过其起源的真实本质目前仍然未知。</p>"
           }
         },
         "Otherhood Brigand": {
@@ -23434,7 +24482,13 @@
             },
             "Javelin": {
               "name": "标枪 Javelin"
+            },
+            "Teamfight Tactics": {
+              "name": "团战战术 Teamfight Tactics"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一名装甲精良、久经沙场的异缘会战士，身着金色长袍与鳞甲。他们看上去坚定、自律，正跃跃欲试地想打上一架。</p></section><p>这名[[lookup @name]]是一名危险的战士，效力于一个由罪犯袭击者与走私者组成的组织。他们很容易凭借棕色的衣物、素淡的着装与面罩被辨认出来，不过据知他们也会乔装出行。</p>"
           }
         },
         "Lilla Arien": {
@@ -23551,7 +24605,8 @@
                   "name": "法师护甲 Mage Armor",
                   "description": "<p>目标的基础 AC 变为 13 加上其敏捷调整值。</p>"
                 }
-              }
+              },
+              "name": "法师护甲（已计入 AC） Mage Armor (Included in AC)"
             },
             "Purify Food and Drink": {
               "name": "净化食物与饮水 Purify Food and Drink"
@@ -23642,6 +24697,9 @@
               "effects": {
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
+                },
+                "Comprehension": {
+                  "name": "通晓 Comprehension"
                 }
               },
               "name": "通晓语言 Comprehend Languages"
@@ -23650,6 +24708,10 @@
               "effects": {
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
+                },
+                "Cannot Lie": {
+                  "description": "<p>豁免失败时，生物在该半径范围内不能故意说谎。你可以知晓生物此次豁免成功与否。</p><p>受影响的生物能意识到该法术的存在，因此可以回避回答那些通常会以谎言答复的问题。这样的生物可以闪烁其词、避重就轻，但说的仍然必须是真话。</p>",
+                  "name": "无法说谎 Cannot Lie"
                 }
               },
               "name": "真言区域 Zone of Truth"
@@ -23666,6 +24728,9 @@
             "Glyphspeak": {
               "name": "符文语 Glyphspeak"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一位印记裔女子，圆润而友善的面庞掩去了她所背负的压力。灰色的皮肤衬着她明亮的蓝眼睛、红润的双颊和一头凌乱的白发。两只短小的淡蓝色犄角自额头柔和地弯出。她身着辛达里克教团的华丽长袍。</p></section><p>[[lookup @name]]是辛达里克贤者中的贤者守望者。这个高级职位负责宗教内所有其他贤者的食宿安排与福祉，而她也以极大的奉献精神履行这项职责。</p><p></p>"
           }
         },
         "Gore Bird": {
@@ -23700,7 +24765,13 @@
             },
             "Mephitic Nature": {
               "name": "恶浊本性 Mephitic Nature"
+            },
+            "Keen Sight and Smell": {
+              "name": "敏锐视觉与嗅觉 Keen Sight and Smell"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一大群体型微小、目光敏锐的鸟儿在上空盘旋，它们炭黑色的羽毛与尖锐的红色喙形成鲜明对比。几乎不可能看清它们究竟有多少只，但随着它们越来越近，发出令人不安的嘶哑叫声，猩红色尾羽沙沙作响，你还能闻到它们经常啄食的腐烂尸肉所散发出的恶臭。</p></section><p>[[lookup @name]]是一种迅捷而危险的生物，遍布余烬各地。尽管这些小鸟通常以现成的尸体为食，但像这样的鸟群也已知会转而自行猎杀猎物。</p>"
           }
         },
         "Kadhana Lizard": {
@@ -23786,7 +24857,13 @@
             },
             "Tenacity": {
               "name": "坚韧 Tenacity"
+            },
+            "Arcturian Training": {
+              "name": "阿克图里安训练 Arcturian Training"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>作为船上得力的一名水手，这个壮实的家伙四肢强健，看上去已在烈日与无情的海涌下熬过了许多漫长的日子。虽然只披着轻甲、只带着轻便的武器，但他们看起来足以照顾好自己。</p></section><p>[[lookup @name]]可以在阿克图斯高原及更远处的任何港口找到。他们在横渡劫掠者海洋的众多帆船上工作，是该地区贸易不可或缺的一环。</p>"
           }
         },
         "Arcturian Sea Captain": {
@@ -23815,7 +24892,8 @@
               "name": "还击 Riposte",
               "effects": {
                 "+3 AC": {
-                  "name": "AC +3 加值"
+                  "name": "AC +3 加值",
+                  "description": "<p>该[[lookup @name lowercase]]{怪物}针对该次攻击的 AC 增加 3，可能使其未命中。</p>"
                 }
               }
             },
@@ -23848,7 +24926,22 @@
             },
             "Navigator's Tools": {
               "name": "领航工具 Navigator's Tools"
+            },
+            "Arcturian Training": {
+              "name": "阿克图里安训练 Arcturian Training"
+            },
+            "Lantern, Bullseye": {
+              "name": "牛眼提灯 Lantern, Bullseye"
+            },
+            "Map": {
+              "name": "地图 Map"
+            },
+            "Rally Cry": {
+              "name": "振奋战吼 Rally Cry"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>作为一船之长，这位经验老到的军官四肢强健，看上去已在烈日与无情的海涌下熬过了许多漫长的日子。虽然只披着轻甲、只带着轻便的武器，但他们看起来足以照顾好自己和自己的船员。</p></section><p>[[lookup @name]]可以在阿克图斯高原及更远处的任何港口找到。他们指挥着众多航行于劫掠者海洋上的帆船，对该地区的贸易至关重要。</p>"
           }
         },
         "Grey Hydroxol": {
@@ -24312,7 +25405,13 @@
                   "description": "<p>你受到受诅视觉的折磨。你在察觉检定上具有劣势。此外，处于昏暗光照中时，针对你的攻击检定具有优势，而你的攻击检定具有劣势，如同你处于目盲状态。此外，该生物无法从黑暗视觉中获益。</p>"
                 }
               }
+            },
+            "Malignant Slash": {
+              "name": "恶毒斩击 Malignant Slash"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>自黑暗中浮现的，是一具由黑烟与恶意构成的可怖异界幻影，一排排闪着寒光的利齿格外醒目。它双眼幽幽发光，透出怨毒的憎恨与狡诈，动作从容地在空中滑行。一只只抓握的手掌——仿佛渴望挣脱它的形体——瞬间成形又瞬间消散，而它那两只巨大的利爪之手则似乎能随心所欲地显现与消失。</p></section><p>深渊回响是纯粹邪恶的怪物，是来自余烬世界之外、怀有扭曲憎恨的存在。它们拥有一种残酷的基础智慧，使其能够搜寻并猎杀余烬世界的天然生物，在黑暗中伏击它们并将其撕碎。</p>"
           }
         },
         "Abyssal Eel": {
@@ -24967,11 +26066,31 @@
               "name": "谭森浮碟术 Floating Disk"
             },
             "Magic Weapon": {
-              "name": "魔化武器 Magic Weapon"
+              "name": "魔化武器 Magic Weapon",
+              "effects": {
+                "Magic Weapon +1": {
+                  "description": "<p>直到法术结束前，该武器成为魔法武器且在进行攻击检定和伤害掷骰时具有 +1 加值。</p>",
+                  "name": "魔化武器 +1 Magic Weapon +1"
+                },
+                "Magic Weapon +2": {
+                  "description": "<p>直到法术结束前，该武器成为魔法武器且在进行攻击检定和伤害掷骰时具有 +2 加值。</p>",
+                  "name": "魔化武器 +2 Magic Weapon +2"
+                },
+                "Magic Weapon +3": {
+                  "description": "<p>直到法术结束前，该武器成为魔法武器且在进行攻击检定和伤害掷骰时具有 +3 加值。</p>",
+                  "name": "魔化武器 +3 Magic Weapon +3"
+                }
+              }
             },
             "Locate Object": {
               "name": "物件定位术 Locate Object"
+            },
+            "Lantern, Bullseye": {
+              "name": "牛眼提灯 Lantern, Bullseye"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位目光炯炯的赫尔格伦由金褐色的大理石凿成，身穿发明家标志性的工作围裙，佩戴着一身机械行头。各式各样的奇门工具从他的腰带上垂挂下来；每当他转动那颗石质的脑袋，脸上那副水晶眼镜便闪动着地底的微光。尽管他脸上始终挂着一副神游天外的沉思神情，这位工匠却把他那令人信赖的微笑戴得像顶旧帽子一般自在。</p></section><p>[[lookup @name]]是阿克图瑞尔一位富有远见的机械师，因发明了神奇的棋士而闻名于整个阿克图斯高原——那是一种摒弃传统阿克图里安设计元素、转而采用更为古老的古代艾迪里风格的构装体。瓦索洛缪被视为这座天坑之城最真诚的居民之一，他向来毫不犹豫地把满腔自豪坦露于外。</p>"
           }
         },
         "Chessman": {
@@ -25011,6 +26130,9 @@
             "Shock Spear": {
               "name": "震击长矛 Shock Spear"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你面前这具身披铜甲的人形造物以流畅而机械般的精准移动着，你不由得注意到，它那磨光锁甲下的四肢看上去更像是钢棍，而非血肉之躯。这具构装体那张经过装饰的面孔宛如一件表现“含笑的坚忍”的艺术作品；它几乎没有理会你，只顾继续埋头干活。</p></section><p>[[lookup @name]]是由铜与钢制成的破旧自动机械，是阿克图里亚人所使用的拟人构装体，用于执行各种任务——包括挖掘、驯控野兽、安保等危险劳动，以及高风险采集稀有资源（比如阿克图瑞尔天坑深渊中的因卡罗珍珠）。</p>"
           }
         },
         "Silver Beam Sentinel": {
@@ -25024,7 +26146,8 @@
               "name": "精疲力竭 Burnout",
               "effects": {
                 "Blinded": {
-                  "name": "目盲 Blinded"
+                  "name": "目盲 Blinded",
+                  "description": "<p>目标获得 &amp;Reference[blinded apply=false] 状态，直到其接下来两个回合结束。</p>"
                 }
               }
             },
@@ -25032,7 +26155,8 @@
               "name": "粉碎之爪 Crushing Claw",
               "effects": {
                 "Grappled & Restrained": {
-                  "name": "被擒抱与受缚 Grappled & Restrained"
+                  "name": "被擒抱与受缚 Grappled & Restrained",
+                  "description": "<p>目标陷入 &amp;Reference[grappled apply=false] 状态，并可以使用其动作挣脱。以此方式被擒抱期间，目标获得 &amp;Reference[restrained apply=false] 状态。</p>"
                 }
               }
             },
@@ -25064,7 +26188,16 @@
             },
             "Dying Burst": {
               "name": "濒死爆发 Dying Burst"
+            },
+            "Arm Blade": {
+              "name": "臂刃 Arm Blade"
+            },
+            "Magic Missile Pod": {
+              "name": "魔法飞弹发射舱 Magic Missile Pod"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你看到一个笨重而披甲的人型身影站在面前，身上覆着银合金板甲。它那擦亮的钢制肢体与分节的躯体闪着带有机械威胁感的光泽，前臂上装载的金属管道则蜿蜒通向它体内某处看不见的源头。</p></section><p>该[[lookup @name]]是银光束财团仆从构装体的一种迭代型号，但经过了大量改装，包括更坚固的框架、更强的力量，以及强力得多的进攻性武器装备。</p>"
           }
         },
         "Silver Beam Servitor": {
@@ -25092,7 +26225,8 @@
                   "name": "受缚 Restrained",
                   "description": "<p>目标处于&amp;Reference[Restrained apply=false]状态，直到其脱身。</p>"
                 }
-              }
+              },
+              "name": "抛网器 Net Thrower"
             },
             "Shock Capacitor": {
               "name": "震击电容器 Shock Capacitor"
@@ -25102,7 +26236,13 @@
             },
             "Dying Burst": {
               "name": "濒死爆发 Dying Burst"
+            },
+            "Iron Claw": {
+              "name": "铁爪 Iron Claw"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这具人型构装体由拉丝银钢制成，带有蓝色点缀，并饰有银光束财团独特的徽标。它移动时流畅而精准，其间还夹杂着藏在光亮金属外壳之下的机械发出的各种嗡鸣与嘶响。</p></section><p>由拉丝钢制成、外形流线而纤细的自动机，[[lookup @name]] 由银光束财团制造并出售。它们坚固耐用、适应性强，能够胜任各种任务，从挖掘、采集稀有材料等危险劳动，到照料田地、端盘侍者等较为普通的工作。</p>"
           }
         },
         "Sporix Host": {
@@ -25120,7 +26260,11 @@
             "Single Minded": {
               "name": "一心一意 Single Minded"
             }
-          }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只荆芽灵的树皮苍白而枯槁，枝叶同样干瘪、濒临凋亡。他们看上去已在死亡边缘，目光呆滞，似乎陷入了某种昏沉之中。他们的身体覆满色彩鲜艳、散发光亮的真菌，那些真菌以奇异的纹样脉动、闪烁。</p></section><p>[[lookup @name]] 极为罕见，且只出现在天坑深渊中。它们的身体覆盖着奇异、发光的蘑菇，看起来会成群移动，对周围环境只有极其微弱的感知。</p>"
+          },
+          "tokenName": "受折磨的荆芽灵"
         },
         "Arcturian Miner": {
           "name": "阿克图里安矿工 Arcturian Miner",
@@ -25184,7 +26328,13 @@
             },
             "Dungeoneer's Pack": {
               "name": "地城探险者背包 Dungeoneer's Pack"
+            },
+            "Arcturian Training": {
+              "name": "阿克图里安训练 Arcturian Training"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这名矿工浑身沾满了污泥与尘土——那是从余烬地壳中开采珍贵矿藏、辛苦轮班留下的痕迹——身上则穿戴着这份活计所必需的防护装备与沉重工具。</p></section><p>[[lookup @name]]是这片地区各处都能见到的众多此类工人之一。他们可能隶属于各大家族经营的产业，或某个规模较小的采矿财团，也可能是自己给自己干活。无论效忠于谁或受雇于谁，到头来他们都有一个共同点：他们都只是阿克图里亚人的又一个勤劳成员。</p>"
           }
         },
         "Chamberlain": {
@@ -25227,6 +26377,9 @@
             "Shock Spear": {
               "name": "震击长矛 Shock Spear"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一具身披光滑银钢的人形造物立在你面前。它以机械般的精准移动，而你不由得注意到，它的机体已被磨蹭得斑驳、破旧且脏污。这具无面构装体那颗光滑的头颅上只有一双发光的眼睛。它的躯体上印着银光束财团的徽标，不过看上去有人曾徒劳地试图把它撬下来。</p></section><p>[[lookup @name]]是一具棋士构装体，也是下城人的一员；下城人是一群觉醒了的构装体。它曾受雇于银光束财团，但却毫无预警地擅自脱离控制并逃离了办公室。</p>"
           }
         },
         "Hew": {
@@ -25266,6 +26419,9 @@
             "War Pick": {
               "name": "战镐 War Pick"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一个身披破旧肮脏钢甲的人型生物站在你面前。它的移动缓慢，动作流畅得近乎疲惫，每一个动作都伴随着机械的嗡鸣。这具无面的构装体沉重且经过加固，原本是为体力劳动而制造的。它那原本光滑的头部上只有一双发光的眼睛。它的躯体胸前有一连串浅浅的刮痕与凿痕，还有一块浅色的斑点，像是最近有什么东西被从上面撬走了。</p></section><p>[[lookup @name]]是一个棋士构装体，也是下城人的一员；下城人是一群觉醒了自我的构装体。它曾受雇于银光束财团，担任劳工，但后来毫无征兆地叛离，逃出了矿井。</p>"
           }
         },
         "Lucent": {
@@ -25308,6 +26464,9 @@
             "Shock Spear": {
               "name": "震击长矛 Shock Spear"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一个身披拉丝玫瑰金金属的人形站在你面前。它的动作平滑却带着机械般的精准，看上去格外警觉。这具没有面孔的构装体，光滑的头部上只有一双发光的眼睛。它的身体上别着一枚银色徽章，上面写着：</p><blockquote><p>辉耀</p></blockquote></section><p>[[lookup @name]]是一具棋士构装体，也是下城人的一员；下城人是一群觉醒了的构装体。它曾受雇于微光的诺德里克·斯托拉斯，但却毫无预警地擅自脱离控制并逃离了办公室。</p>"
           }
         },
         "Rider": {
@@ -25347,6 +26506,9 @@
             "Shock Spear": {
               "name": "震击长矛 Shock Spear"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一个身披氧化铜外壳的人型造物站在你们面前。它步态缓慢而平稳，不慌不忙，却依然精准。你注意到，与同类的其他构装体相比，它的骨架更为简单、更为轻盈，仿佛重量对它而言是个需要顾虑的问题。这具没有面孔的构装体，光滑的头颅上只有一双发光的眼睛。它的胸口镌刻着一个词：</p><blockquote><p>骑手</p></blockquote></section><p>[[lookup @name]] 是一台棋士构装体，也是下城人的一员；下城人是一群觉醒的构装体。它曾受雇于霍布·科雷尔的非凡坐骑行，却毫无征兆地失控，逃离了那间办公室。</p>"
           }
         },
         "Larissa Toth": {
@@ -25363,7 +26525,13 @@
               "name": "金属之血 Metallic Blood"
             },
             "Tyraphic Transformation": {
-              "name": "泰拉菲克变形 Tyraphic Transformation"
+              "name": "泰拉菲克变形 Tyraphic Transformation",
+              "effects": {
+                "Unnerving Visage": {
+                  "description": "<p>变形后，拉丽莎获得：</p><ul><li><p>对光耀伤害的抗性，</p></li><li><p>智力（威吓）检定的优势</p></li></ul>",
+                  "name": "骇人容貌 Unnerving Visage"
+                }
+              }
             },
             "Labradorite Earring": {
               "name": "拉长石耳环 Labradorite Earring"
@@ -25473,18 +26641,35 @@
               "name": "黑暗视觉 Darkvision",
               "effects": {
                 "Darkvision": {
-                  "name": "黑暗视觉 Darkvision"
+                  "name": "黑暗视觉 Darkvision",
+                  "description": "<p>在持续时间内，一名你触碰的自愿生物获得射程 150 英尺的&amp;Reference[darkvision]。</p>"
                 }
               }
             },
             "Fire Shield": {
-              "name": "火焰护盾 Fire Shield"
+              "name": "火焰护盾 Fire Shield",
+              "effects": {
+                "Chill Shield": {
+                  "description": "<p>每当一名距你 5 英尺内的生物以一次近战攻击检定命中你时，攻击者受到[[/damage 2d8 type=cold]]伤害。</p>",
+                  "name": "寒冷护盾 Chill Shield"
+                },
+                "Warm Shield": {
+                  "description": "<p>每当一名距你 5 英尺内的生物以一次近战攻击检定命中你时，攻击者受到[[/damage 2d8 type=fire]]伤害。</p>",
+                  "name": "温暖护盾 Warm Shield"
+                }
+              }
             },
             "Polymorph": {
               "name": "变形术 Polymorph"
             },
             "Resilient Sphere": {
-              "name": "弹力法球 Resilient Sphere"
+              "name": "弹力法球 Resilient Sphere",
+              "effects": {
+                "Enclosed in Sphere": {
+                  "description": "<p>被封住的生物可以使用一个动作推动球壁，从而以至多该生物速度一半的速度滚动球体。</p>",
+                  "name": "封闭球体 Enclosed in Sphere"
+                }
+              }
             },
             "Luxarum 2: Bright": {
               "name": "卢克萨鲁姆 2：明亮 Luxarum 2: Bright",
@@ -25494,6 +26679,9 @@
                 }
               }
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你看到一位身材高挑的阿尔提拉女子，身着莱伦的华服，瓷白色的肌肤上布满银色的六边形网格纹路。她的银色长发编成低盘的发髻，专注的双眼是一种醒目的明亮流金色。这位贵族的五官轮廓分明，明显偏于女性化，且几乎不见疤痕或瑕疵；她无疑相当美丽，置身于阿克图瑞尔那肮脏的工业地下城中，显得有些格格不入。</p></section><p>[[lookup @name]]是银光束财团富有魅力而严厉的执行官。银光束财团是一个精明的联盟，由来自西方莱伦城安卡伦的阿尔提拉工程师与企业家组成。银光束的现代利益与拉丽莎本人的利益如出一辙，包括阿克图瑞尔下方天坑深渊中的数处产业，以及在那里开采的资源。</p>"
           }
         },
         "Silver Beam Engineer": {
@@ -25512,9 +26700,11 @@
             "Hand Crossbow (Restraining Bolts)": {
               "effects": {
                 "Restrained": {
-                  "name": "受缚 Restrained"
+                  "name": "受缚 Restrained",
+                  "description": "<p>目标获得 &amp;Reference[restrained] 状态，直到其下个回合结束。</p>"
                 }
-              }
+              },
+              "name": "手弩（束缚弩矢） Hand Crossbow (Restraining Bolts)"
             },
             "Field Repairs": {
               "name": "战地修理 Field Repairs"
@@ -25524,7 +26714,13 @@
             },
             "Tinker's Tools": {
               "name": "修补匠工具 Tinker's Tools"
+            },
+            "Iron Wrench": {
+              "name": "铁扳手 Iron Wrench"
             }
+          },
+          "biography": {
+            "public": "<section><section class=\"block readaloud\"><p>这名技师在银光束采矿财团的灰蓝色制服外套着一件深色围裙，是公司雇来处理各类技术问题的众多技师之一。他们外表上既未携带武器，也未穿戴护甲，但确实带着成套的工具与物资，可以用来进行现场维修，并协助操作银光束的机械。</p></section><p>该[[lookup @name]]是银光束采矿财团的一员，隶属于公司工程部门，资金充足、装备精良，并以金钱为动力。他们训练有素，并忠于公司。</p></section>"
           }
         },
         "Silver Beam Guard": {
@@ -25546,6 +26742,9 @@
             "Trained Security": {
               "name": "受训安保 Trained Security"
             }
+          },
+          "biography": {
+            "public": "<section><section class=\"block readaloud\"><p>这名卫兵身穿银光束采矿财团的灰蓝色制服，是众多受雇于此、负责保障公司运营安全的安保人员之一。他们手持钢制硬头锤与轻弩严阵以待，身上并不穿戴任何显眼的护甲。</p></section><p>该[[lookup @name]]是银光束财团的一名成员。他们资金充足、装备精良，并且是公司安保部门中受金钱驱动的成员。他们训练有素，并且忠于公司。</p></section>"
           }
         },
         "Mootap": {
@@ -25602,7 +26801,12 @@
         },
         "Alar": {
           "name": "阿拉尔 Alar",
-          "tokenName": "阿拉尔"
+          "tokenName": "阿拉尔",
+          "items": {
+            "Elder God": {
+              "name": "上古之神 Elder God"
+            }
+          }
         },
         "Katu": {
           "name": "卡图 Katu",
@@ -26697,7 +27901,13 @@
             },
             "Locate Creature": {
               "name": "定位生物 Locate Creature"
+            },
+            "Agrimagical Artifact": {
+              "name": "农魔法神器 Agrimagical Artifact"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>站在你面前的是一个矮小的身影，暗淡的灰发间闪烁着细小的魔法星辰与新月。橙色的辉光纹路盘绕着他的双臂，一直延伸到面孔上，使他的皮肤看上去像一片正在冷却的熔岩。他那双琥珀色的眼睛似乎总是闪着浓厚的兴致，咧开的尖牙笑容毫不掩饰地透着友善。他穿着朴实耐用，外衣上别着雷德拉克农法师环会的徽记。他举手投足间都充满活力。</p></section><p>[[lookup @name]]是雷德拉克原野农法师环会的现任首领，以聪慧与平易近人而闻名。他在这一地区以及在他的教团中都备受敬重，因为他带领这个组织重新走向魔法研究与学识之路，同时又不牺牲他们赖以维持自身、并养活这片地区的丰厚贸易。</p>"
           }
         },
         "Sanguinary Warden": {
@@ -27216,7 +28426,8 @@
                 "Prone": {
                   "name": "倒地 Prone"
                 }
-              }
+              },
+              "name": "狡诈偷袭攻击 Cunning Sneak Attack"
             },
             "Exceptional Taste": {
               "name": "非凡品味 Exceptional Taste"
@@ -27252,8 +28463,18 @@
             },
             "Focused Reactivity": {
               "name": "专注反应 Focused Reactivity"
+            },
+            "Eye for Intrigue": {
+              "name": "权谋慧眼 Eye for Intrigue"
+            },
+            "Unconventional Tactics": {
+              "name": "非常规战术 Unconventional Tactics"
             }
-          }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位年轻的人类穿着一件华美而装饰考究的外套，坦然彰显着她优渥的出身，是一幅内敛财富的写照。只消看一眼她整体的仪态与衣着风格，就能明白她自幼便受过礼仪与教养的训练。虽然她站姿笔挺、笑容来得很快，眼底却藏着一份深深的哀伤；而当她以为无人注意时，便会闭上眼睛稳住自己，轻轻叹息。</p></section><p>[[lookup @name]]是来自奥尔丹的杰夫赫尔家族的一员，那是城中主要的贸易家族之一。她在特权、教育与财富中长大，若换作其他许多地方，她会被视为贵族；但她自己并不这样想，因为这个称呼在这座城市里带有负面意味。她是拉尔顿·杰夫赫尔的女儿与继承人，而她最近才得知父亲意外去世。这让莱拉成为杰夫赫尔家族的新任家主——一个她还没准备好接下的位置。</p>"
+          },
+          "name": "莱拉 Lyla Cevher (CR3)"
         },
         "Sin Marmot (CR3)": {
           "tokenName": "辛·旱獭",
@@ -27463,7 +28684,12 @@
               "name": "荒野形态 Wild Shape"
             },
             "Barkskin": {
-              "name": "树肤 Barkskin"
+              "name": "树肤 Barkskin",
+              "effects": {
+                "Bark-like Skin": {
+                  "name": "树肤 Bark-like Skin"
+                }
+              }
             },
             "Conjure Animals": {
               "name": "咒唤兽群 Conjure Animals"
@@ -27471,7 +28697,11 @@
             "Revivify": {
               "name": "回生术 Revivify"
             }
-          }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一位举止友善的凯思，有着一双睁得大大的蓝眼睛，还戴着一副遮住嘴部的奇特半面罩。她看起来以一种充满惊奇的天真打量着周围的一切，但她那锐利的目光也透露出，她能迅速看清任何局面——她或许比乍看之下更有本事。</p></section><p>[[lookup @name]] 是一位经验丰富的旅行者，也是疾行者中一位技艺娴熟的德鲁伊。帮助他人的愿望，以及进一步了解自己与余烬及其混沌生命能量之间联系的渴望，推动着她不断前行。</p>"
+          },
+          "name": "辛·旱獭（CR3） Sin Marmot (CR3)"
         },
         "Raster Thorn": {
           "name": "栅格荆棘 Raster Thorn",
@@ -27590,6 +28820,9 @@
             "Bite": {
               "name": "啃咬 Bite"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这种大型爬行类野兽的眼睛大得惊人，而与它六条强壮腿相配的、有软垫的五趾足，更突出了这种生物笨拙而讨喜的神态。这只骑乘蜥蜴配着鞍具与缰绳，带着几分驯化后的平静蛰伏着，每次卷握舌头一弹，都会心不在焉地捕捉昆虫。</p></section><p>[[lookup @name]]是原产于阿克图斯高原的六足蜥蜴，在那里它们通常被驯养为骑乘坐骑和驮兽。这些温顺的爬行类生物通常被认为比马和拉斯克等其他家养坐骑更古怪，但也和它们的哺乳类同侪一样合群。</p>"
           }
         },
         "Scalemaw": {
@@ -29155,13 +30388,53 @@
               }
             },
             "Aid": {
-              "name": "援助术 Aid"
+              "name": "援助术 Aid",
+              "effects": {
+                "Level 2: +5 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "2 环：生命值上限 +5 Level 2: +5 Max HP"
+                },
+                "Level 3: +10 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "3 环：生命值上限 +10 Level 3: +10 Max HP"
+                },
+                "Level 4: +15 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "4 环：生命值上限 +15 Level 4: +15 Max HP"
+                },
+                "Level 5: +20 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "5 环：生命值上限 +20 Level 5: +20 Max HP"
+                },
+                "Level 6: +25 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "6 环：生命值上限 +25 Level 6: +25 Max HP"
+                },
+                "Level 7: +30 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "7 环：生命值上限 +30 Level 7: +30 Max HP"
+                },
+                "Level 8: +35 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "8 环：生命值上限 +35 Level 8: +35 Max HP"
+                },
+                "Level 9: +40 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "9 环：生命值上限 +40 Level 9: +40 Max HP"
+                }
+              }
             },
             "Create or Destroy Water": {
               "name": "造水术或毁水术 Create or Destroy Water"
             },
             "Searing Smite": {
-              "name": "炽焰斩 Searing Smite"
+              "name": "炽焰斩 Searing Smite",
+              "effects": {
+                "Seared": {
+                  "description": "<p>直到法术结束前，目标在其每个回合开始时受到 [[/damage 1d6 type=fire]] 伤害，然后进行一次 [[/save ability=con]] 豁免。豁免失败则法术继续生效，豁免成功则法术终止。</p>",
+                  "name": "灼烧 Seared"
+                }
+              }
             },
             "Eldritch Spear": {
               "name": "魔能长枪 Eldritch Spear"
@@ -29171,8 +30444,18 @@
             },
             "Pact Magic": {
               "name": "契约魔法 Pact Magic"
+            },
+            "Bound Blade": {
+              "name": "束缚之刃 Bound Blade"
+            },
+            "Draconfang": {
+              "name": "龙牙巨剑 Draconfang"
             }
-          }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你看到一位神情坚毅、金瞳如刃的严肃龙裔战士。他身着以钢材加固的皮甲，而从他驾驭腰间那把沉重巨剑的姿态，便能一眼看出其武艺之高强——那是一柄宽刃外张、体量惊人的巨兵。这把双手大剑显然为这位龙裔所敬重，他对待此剑的态度有着分明的自律。他胸前的斗篷别针上刻着帷幕锁链的徽记，那是奥尔丹城高贵的护卫组织。</p></section><p>[[lookup @name]]是奥尔丹一位经验丰富的调查员兼武艺高强的守护者。他的口音、举止和神态流露出塔扬血统，尽管很明显他已不再认为自己属于那一脉。挂在他身侧的那把精制巨剑带着一种深奥难解的气息，而他挥舞这把沉重巨兵时，往往如同捧持一件神圣遗物或珍爱的乐器。[[lookup @name]]是个严肃的人，充满坚毅与决心。</p>"
+          },
+          "name": "安卡里斯特（CR1） Ankarist (CR1)"
         },
         "Ankarist (CR3)": {
           "tokenName": "安卡里斯特",
@@ -29289,13 +30572,53 @@
               }
             },
             "Aid": {
-              "name": "援助术 Aid"
+              "name": "援助术 Aid",
+              "effects": {
+                "Level 2: +5 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "2 环：生命值上限 +5 Level 2: +5 Max HP"
+                },
+                "Level 3: +10 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "3 环：生命值上限 +10 Level 3: +10 Max HP"
+                },
+                "Level 4: +15 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "4 环：生命值上限 +15 Level 4: +15 Max HP"
+                },
+                "Level 5: +20 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "5 环：生命值上限 +20 Level 5: +20 Max HP"
+                },
+                "Level 6: +25 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "6 环：生命值上限 +25 Level 6: +25 Max HP"
+                },
+                "Level 7: +30 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "7 环：生命值上限 +30 Level 7: +30 Max HP"
+                },
+                "Level 8: +35 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "8 环：生命值上限 +35 Level 8: +35 Max HP"
+                },
+                "Level 9: +40 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "9 环：生命值上限 +40 Level 9: +40 Max HP"
+                }
+              }
             },
             "Create or Destroy Water": {
               "name": "造水术或毁水术 Create or Destroy Water"
             },
             "Searing Smite": {
-              "name": "炽焰斩 Searing Smite"
+              "name": "炽焰斩 Searing Smite",
+              "effects": {
+                "Seared": {
+                  "description": "<p>直到法术结束前，目标在其每个回合开始时受到 [[/damage 1d6 type=fire]] 伤害，然后进行一次 [[/save ability=con]] 豁免。豁免失败则法术继续生效，豁免成功则法术终止。</p>",
+                  "name": "灼烧 Seared"
+                }
+              }
             },
             "Eldritch Spear": {
               "name": "魔能长枪 Eldritch Spear"
@@ -29305,8 +30628,18 @@
             },
             "Pact Magic": {
               "name": "契约魔法 Pact Magic"
+            },
+            "Bound Blade": {
+              "name": "束缚之刃 Bound Blade"
+            },
+            "Draconfang": {
+              "name": "龙牙巨剑 Draconfang"
             }
-          }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你看到一位神情坚毅、金瞳如刃的严肃龙裔战士。他身着以钢材加固的皮甲，而从他驾驭腰间那把沉重巨剑的姿态，便能一眼看出其武艺之高强——那是一柄宽刃外张、体量惊人的巨兵。这把双手大剑显然为这位龙裔所敬重，他对待此剑的态度有着分明的自律。他胸前的斗篷别针上刻着帷幕锁链的徽记，那是奥尔丹城高贵的护卫组织。</p></section><p>[[lookup @name]]是奥尔丹一位经验丰富的调查员兼武艺高强的守护者。他的口音、举止和神态流露出塔扬血统，尽管很明显他已不再认为自己属于那一脉。挂在他身侧的那把精制巨剑带着一种深奥难解的气息，而他挥舞这把沉重巨兵时，往往如同捧持一件神圣遗物或珍爱的乐器。[[lookup @name]]是个严肃的人，充满坚毅与决心。</p>"
+          },
+          "name": "安卡里斯特（CR3） Ankarist (CR3)"
         },
         "Lyla Cevher (CR1)": {
           "tokenName": "莱拉",
@@ -29342,7 +30675,8 @@
                 "Prone": {
                   "name": "倒地 Prone"
                 }
-              }
+              },
+              "name": "狡诈偷袭攻击 Cunning Sneak Attack"
             },
             "Exceptional Taste": {
               "name": "非凡品味 Exceptional Taste"
@@ -29381,8 +30715,18 @@
             },
             "Focused Reactivity": {
               "name": "专注反应 Focused Reactivity"
+            },
+            "Eye for Intrigue": {
+              "name": "权谋慧眼 Eye for Intrigue"
+            },
+            "Unconventional Tactics": {
+              "name": "非常规战术 Unconventional Tactics"
             }
-          }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位年轻的人类穿着一件华美而装饰考究的外套，坦然彰显着她优渥的出身，是一幅内敛财富的写照。只消看一眼她整体的仪态与衣着风格，就能明白她自幼便受过礼仪与教养的训练。虽然她站姿笔挺、笑容来得很快，眼底却藏着一份深深的哀伤；而当她以为无人注意时，便会闭上眼睛稳住自己，轻轻叹息。</p></section><p>[[lookup @name]]是来自奥尔丹的杰夫赫尔家族的一员，那是城中主要的贸易家族之一。她在特权、教育与财富中长大，若换作其他许多地方，她会被视为贵族；但她自己并不这样想，因为这个称呼在这座城市里带有负面意味。她是拉尔顿·杰夫赫尔的女儿与继承人，而她最近才得知父亲意外去世。这让莱拉成为杰夫赫尔家族的新任家主——一个她还没准备好接下的位置。</p>"
+          },
+          "name": "莱拉 Lyla Cevher (CR1)"
         },
         "Sin Marmot (CR1)": {
           "tokenName": "辛·旱獭",
@@ -29427,7 +30771,8 @@
               "name": "定身术 Hold Person",
               "effects": {
                 "Hold Person": {
-                  "name": "定身术 Hold Person"
+                  "name": "定身术 Hold Person",
+                  "description": "<p>在持续时间内，目标处于麻痹状态。在其每个回合结束时，目标可以再进行一次感知豁免。若成功，则该法术对该目标结束。</p>"
                 }
               }
             },
@@ -29501,7 +30846,11 @@
             "Wild Shape": {
               "name": "荒野形态 Wild Shape"
             }
-          }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一位举止友善的凯思，有着一双睁得大大的蓝眼睛，还戴着一副遮住嘴部的奇特半面罩。她看起来以一种充满惊奇的天真打量着周围的一切，但她那锐利的目光也透露出，她能迅速看清任何局面——她或许比乍看之下更有本事。</p></section><p>[[lookup @name]] 是一位经验丰富的旅行者，也是疾行者中一位技艺娴熟的德鲁伊。帮助他人的愿望，以及进一步了解自己与余烬及其混沌生命能量之间联系的渴望，推动着她不断前行。</p>"
+          },
+          "name": "辛·旱獭（CR1） Sin Marmot (CR1)"
         },
         "Kynryth Husk": {
           "name": "肯瑞斯空壳 Kynryth Husk",
@@ -29962,6 +31311,9 @@
             "Underwater Camouflage": {
               "name": "水下伪装 Underwater Camouflage"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你瞧见一只微小的半透明软泥怪，从它那谨慎又亲近的动作来看，它似乎正带着几分好奇打量你。这只奇怪的生物把黏稠的身体伸出一条手掌般的触须，友好地向你挥了挥。</p></section><p>与余烬的大多数软泥怪不同，这些小巧且有感知能力的团块是明显爱好和平的生物，它们更喜欢利用自己无定形的形态与他人交流，而不是用于掠食性的获益。[[lookup @name]]以与人型生物和野兽等其他生物建立亲密联系而闻名，并会在最意想不到的时候提供陪伴。</p>"
           }
         },
         "Jonico Daridane": {
@@ -30822,6 +32174,9 @@
             },
             "Self Destruct": {
               "name": "自毁 Self Destruct"
+            },
+            "Skither Repair": {
+              "name": "斯基瑟修复 Skither Repair"
             }
           }
         },
@@ -31763,7 +33118,8 @@
                 "Prone": {
                   "name": "倒地 Prone"
                 }
-              }
+              },
+              "name": "触须打击 Tendril Strike"
             }
           }
         },
@@ -32343,7 +33699,12 @@
             "Calm Emotions": {
               "effects": {
                 "Calmed": {
-                  "name": "平静 Calmed"
+                  "name": "平静 Calmed",
+                  "description": "<p>直到法术结束前，该生物免疫魅惑与恐慌状态。若该生物原本已处于魅惑或恐慌状态，则这些状态在持续时间内被压制。</p>"
+                },
+                "Indifference": {
+                  "description": "<p>该生物对你所选择的、其原本敌对的生物转为冷漠态度。若目标受到伤害，或目睹其盟友受到伤害，此冷漠即告终止。法术结束时，该生物的态度恢复正常。</p>",
+                  "name": "冷漠 Indifference"
                 }
               },
               "name": "平静情绪 Calm Emotions"
@@ -32376,7 +33737,8 @@
             "Slow": {
               "effects": {
                 "Slowed": {
-                  "name": "迟缓 Slowed"
+                  "name": "迟缓 Slowed",
+                  "description": "<p>受影响目标的速度减半，其 AC 与敏捷豁免受到 −2 减值，且不能进行反应。在其回合中，它只能进行一个动作或一个附赠动作，不能两者兼有；若它进行攻击动作，则只能发动一次攻击。若它施展带有姿势成分的法术，则有 [[/r 1d100cs&gt;25#Spell cast successfully on 1]]{25%} 的几率因目标做出法术手势过于缓慢而导致施法失败。</p><p>受影响的目标在其每个回合结束时重复进行 [[/save ability=wis]] 豁免，成功则对自身终止此法术。</p>"
                 }
               },
               "name": "缓慢术 Slow"
@@ -32466,7 +33828,8 @@
               "name": "吟游诗人的激励 Bardic Inspiration",
               "effects": {
                 "Inspired": {
-                  "name": "鼓舞 Inspired"
+                  "name": "鼓舞 Inspired",
+                  "description": "<p>你获得了一枚 1d8 的吟游诗人的激励骰。在接下来的 1 小时内，当你的一次 D20 检定失败时，你可以掷出这枚吟游诗人的激励骰，并将掷出的数值加到该 d20 上，从而有可能将失败转为成功。吟游诗人的激励骰在掷出时即被消耗。</p>"
                 }
               }
             },
@@ -32485,13 +33848,52 @@
               "name": "专注反应 Focused Reactivity"
             },
             "Aid": {
-              "name": "援助术 Aid"
+              "name": "援助术 Aid",
+              "effects": {
+                "Level 2: +5 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "2 环：生命值上限 +5 Level 2: +5 Max HP"
+                },
+                "Level 3: +10 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "3 环：生命值上限 +10 Level 3: +10 Max HP"
+                },
+                "Level 4: +15 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "4 环：生命值上限 +15 Level 4: +15 Max HP"
+                },
+                "Level 5: +20 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "5 环：生命值上限 +20 Level 5: +20 Max HP"
+                },
+                "Level 6: +25 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "6 环：生命值上限 +25 Level 6: +25 Max HP"
+                },
+                "Level 7: +30 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "7 环：生命值上限 +30 Level 7: +30 Max HP"
+                },
+                "Level 8: +35 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "8 环：生命值上限 +35 Level 8: +35 Max HP"
+                },
+                "Level 9: +40 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "9 环：生命值上限 +40 Level 9: +40 Max HP"
+                }
+              }
             },
             "Mass Healing Word": {
               "name": "群体治愈真言 Mass Healing Word"
             },
             "Tongues": {
-              "name": "巧言术 Tongues"
+              "name": "巧言术 Tongues",
+              "effects": {
+                "Universal Communication": {
+                  "name": "有效沟通 Universal Communication"
+                }
+              }
             },
             "Cutting Words": {
               "name": "语出惊人 Cutting Words"
@@ -32500,7 +33902,21 @@
               "name": "魔法探秘 Magical Discoveries"
             },
             "Magic Weapon": {
-              "name": "魔化武器 Magic Weapon"
+              "name": "魔化武器 Magic Weapon",
+              "effects": {
+                "Magic Weapon +1": {
+                  "description": "<p>直到法术结束前，该武器成为一件魔法武器，并在攻击检定与伤害掷骰上获得 +1 加值。</p>",
+                  "name": "魔化武器 +1 Magic Weapon +1"
+                },
+                "Magic Weapon +2": {
+                  "description": "<p>直到法术结束前，该武器成为一件魔法武器，并在攻击检定与伤害掷骰上获得 +2 加值。</p>",
+                  "name": "魔化武器 +2 Magic Weapon +2"
+                },
+                "Magic Weapon +3": {
+                  "description": "<p>直到法术结束前，该武器成为一件魔法武器，并在攻击检定与伤害掷骰上获得 +3 加值。</p>",
+                  "name": "魔化武器 +3 Magic Weapon +3"
+                }
+              }
             },
             "Dice": {
               "name": "骰子 Dice"
@@ -32516,8 +33932,15 @@
             },
             "Mirror": {
               "name": "镜子 Mirror"
+            },
+            "Costume": {
+              "name": "戏服 Costume"
             }
-          }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一把六弦西萨拉琴斜背在这位年迈人类的背后，他身上那套服饰与首饰虽显古怪却颇为实用。这位老练的吟游诗人把花白的长发在脑后束成高高的半马尾。他咧开的笑容与从容的举止为他添上几分历经世事的自信，而眼中闪动的某种光芒，则让人想起一位受人喜爱的叔伯那份快活劲儿。显然，这个人随时都能讲出一个精彩的故事。</p></section><p>[[lookup @name]]是一位饱经风霜、健谈善叙的传奇人物，率领着一支声名显赫的商队，名为迷炉商队。这位阅历丰富的旅者虽已随年岁增长而双鬓斑白、性情平和，却依然是一位备受赞誉的吟游诗人，他那些大胆冒险的岁月远未成为过去。</p>"
+          },
+          "name": "阿格拉班德·斯威夫特（CR3） Agraband Swift (CR3)"
         },
         "Agraband Swift (CR4)": {
           "tokenName": "阿格拉班德·斯威夫特",
@@ -32543,7 +33966,12 @@
             "Calm Emotions": {
               "effects": {
                 "Calmed": {
-                  "name": "平静 Calmed"
+                  "name": "平静 Calmed",
+                  "description": "<p>直到法术结束前，该生物免疫魅惑与恐慌状态。若该生物原本已处于魅惑或恐慌状态，则这些状态在持续时间内被压制。</p>"
+                },
+                "Indifference": {
+                  "description": "<p>该生物对你所选择的、其原本敌对的生物转为冷漠态度。若目标受到伤害，或目睹其盟友受到伤害，此冷漠即告终止。法术结束时，该生物的态度恢复正常。</p>",
+                  "name": "冷漠 Indifference"
                 }
               },
               "name": "平静情绪 Calm Emotions"
@@ -32576,7 +34004,8 @@
             "Slow": {
               "effects": {
                 "Slowed": {
-                  "name": "迟缓 Slowed"
+                  "name": "迟缓 Slowed",
+                  "description": "<p>受影响目标的速度减半，其 AC 与敏捷豁免受到 −2 减值，且不能进行反应。在其回合中，它只能进行一个动作或一个附赠动作，不能两者兼有；若它进行攻击动作，则只能发动一次攻击。若它施展带有姿势成分的法术，则有 [[/r 1d100cs&gt;25#Spell cast successfully on 1]]{25%} 的几率因目标做出法术手势过于缓慢而导致施法失败。</p><p>受影响的目标在其每个回合结束时重复进行 [[/save ability=wis]] 豁免，成功则对自身终止此法术。</p>"
                 }
               },
               "name": "缓慢术 Slow"
@@ -32665,19 +34094,26 @@
             "Lesser Soulmark": {
               "effects": {
                 "Soulbound": {
-                  "name": "魂缚 Soulbound"
+                  "name": "魂缚 Soulbound",
+                  "description": "<p>你已经死去，如今处于魂缚状态。</p>"
                 }
               },
               "name": "次级魂印 Lesser Soulmark"
             },
             "Freedom of Movement": {
-              "name": "行动自如 Freedom of Movement"
+              "name": "行动自如 Freedom of Movement",
+              "effects": {
+                "Unrestricted Movement": {
+                  "name": "无拘移动 Unrestricted Movement"
+                }
+              }
             },
             "Bardic Inspiration": {
               "name": "吟游诗人的激励 Bardic Inspiration",
               "effects": {
                 "Inspired": {
-                  "name": "鼓舞 Inspired"
+                  "name": "鼓舞 Inspired",
+                  "description": "<p>你获得了一枚 1d8 的吟游诗人的激励骰。在接下来的 1 小时内，当你的一次 D20 检定失败时，你可以掷出这枚吟游诗人的激励骰，并将掷出的数值加到该 d20 上，从而有可能将失败转为成功。吟游诗人的激励骰在掷出时即被消耗。</p>"
                 }
               }
             },
@@ -32696,13 +34132,52 @@
               "name": "专注反应 Focused Reactivity"
             },
             "Aid": {
-              "name": "援助术 Aid"
+              "name": "援助术 Aid",
+              "effects": {
+                "Level 2: +5 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "2 环：生命值上限 +5 Level 2: +5 Max HP"
+                },
+                "Level 3: +10 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "3 环：生命值上限 +10 Level 3: +10 Max HP"
+                },
+                "Level 4: +15 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "4 环：生命值上限 +15 Level 4: +15 Max HP"
+                },
+                "Level 5: +20 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "5 环：生命值上限 +20 Level 5: +20 Max HP"
+                },
+                "Level 6: +25 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "6 环：生命值上限 +25 Level 6: +25 Max HP"
+                },
+                "Level 7: +30 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "7 环：生命值上限 +30 Level 7: +30 Max HP"
+                },
+                "Level 8: +35 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "8 环：生命值上限 +35 Level 8: +35 Max HP"
+                },
+                "Level 9: +40 Max HP": {
+                  "description": "<p>在持续时间内，目标的生命值上限提高。</p>",
+                  "name": "9 环：生命值上限 +40 Level 9: +40 Max HP"
+                }
+              }
             },
             "Mass Healing Word": {
               "name": "群体治愈真言 Mass Healing Word"
             },
             "Tongues": {
-              "name": "巧言术 Tongues"
+              "name": "巧言术 Tongues",
+              "effects": {
+                "Universal Communication": {
+                  "name": "有效沟通 Universal Communication"
+                }
+              }
             },
             "Cutting Words": {
               "name": "语出惊人 Cutting Words"
@@ -32711,7 +34186,21 @@
               "name": "魔法探秘 Magical Discoveries"
             },
             "Magic Weapon": {
-              "name": "魔化武器 Magic Weapon"
+              "name": "魔化武器 Magic Weapon",
+              "effects": {
+                "Magic Weapon +1": {
+                  "description": "<p>直到法术结束前，该武器成为一件魔法武器，并在攻击检定与伤害掷骰上获得 +1 加值。</p>",
+                  "name": "魔化武器 +1 Magic Weapon +1"
+                },
+                "Magic Weapon +2": {
+                  "description": "<p>直到法术结束前，该武器成为一件魔法武器，并在攻击检定与伤害掷骰上获得 +2 加值。</p>",
+                  "name": "魔化武器 +2 Magic Weapon +2"
+                },
+                "Magic Weapon +3": {
+                  "description": "<p>直到法术结束前，该武器成为一件魔法武器，并在攻击检定与伤害掷骰上获得 +3 加值。</p>",
+                  "name": "魔化武器 +3 Magic Weapon +3"
+                }
+              }
             },
             "Dice": {
               "name": "骰子 Dice"
@@ -32730,8 +34219,15 @@
             },
             "Countercharm": {
               "name": "反制魅惑 Countercharm"
+            },
+            "Costume": {
+              "name": "戏服 Costume"
             }
-          }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一把六弦西萨拉琴斜背在这位年迈人类的背后，他身上那套服饰与首饰虽显古怪却颇为实用。这位老练的吟游诗人把花白的长发在脑后束成高高的半马尾。他咧开的笑容与从容的举止为他添上几分历经世事的自信，而眼中闪动的某种光芒，则让人想起一位受人喜爱的叔伯那份快活劲儿。显然，这个人随时都能讲出一个精彩的故事。</p></section><p>[[lookup @name]]是一位饱经风霜、健谈善叙的传奇人物，率领着一支声名显赫的商队，名为迷炉商队。这位阅历丰富的旅者虽已随年岁增长而双鬓斑白、性情平和，却依然是一位备受赞誉的吟游诗人，他那些大胆冒险的岁月远未成为过去。</p>"
+          },
+          "name": "阿格拉班德·斯威夫特（CR4） Agraband Swift (CR4)"
         },
         "Vespian Hydral Head": {
           "name": "维斯皮安九头蛇头颅 Vespian Hydral Head",
@@ -32910,6 +34406,9 @@
             "Light Strike": {
               "name": "轻型打击 Light Strike"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只微小的元素生物是一小团缓缓飘过空中的凝聚光芒。它们散发着内在的荧光，使其显出近乎缥缈的姿态，而且始终处于运动之中。</p></section><p>这些[[lookup @name]]除了由纯粹光芒构成的一小团、几乎无形的物质外，没有任何可辨识的特征。它们几乎完全无害，而余烬的天空中每天都有许多不同类型的微粒飘浮而过。在罕见的情况下，它们可能会聚集成群，盘旋在某种元素能量源周围，就像飞蛾围着灯一样。</p>"
           }
         },
         "Chiaroscuran Beast": {
@@ -33181,6 +34680,9 @@
             "Cook's Utensils": {
               "name": "厨师工具 Cook's Utensils"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位衣着考究的人类招手示意你走近，他手臂每一次挥扫，身上的珠宝都叮当作响。你会感到他做任何事都要做得气派十足。即便如此，他笑容里的温暖是真诚而诱人的，嗓音里那份欢快的调子也响得恳切实在。</p></section><p>克拉夫顿·莉莉菲尔德是莉莉菲尔德家族的家主，一个名声很大、个性更张扬的人。他在阿克图斯高原乃至更远的地方，都以对葡萄酒、食物、织物等等无可挑剔的品味而闻名。这种挑剔的品味左右着他家族的一切决策——鉴于莉莉菲尔德家族在整个高原的食品与佳酿生产及烹制中都占据显要地位——也左右着整个地区的饮食风尚。不过别搞错了；在他和善的外表之下，是一位精明的商人，莉莉菲尔德家族的任何一个竞争对手都会乐意告诉你这一点。</p>"
           }
         },
         "Rala Ushna": {
@@ -33332,7 +34834,13 @@
             },
             "Woodcarver's Tools": {
               "name": "木雕工具 Woodcarver's Tools"
+            },
+            "Agrimagical Relic": {
+              "name": "农艺魔法遗物 Agrimagical Relic"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位小伙子高瘦、年轻而亲切，身上有种能感染他人的活力。他衣着朴素，穿着带有贝雅克风格点缀的传统阿克图里亚服饰，外面套着一件正式的雷德拉克农艺法师学徒罩袍。他的右臂上刺着一长串名字，从肘部一直排到手腕。</p></section><p>[[lookup @name]]是农法师环会的一名农艺法师学徒。孩提时代住在乌什纳疏浚船坞时，他就被那些停靠在自家门前的贝雅克商队所讲的故事迷住了，梦想着过上贝雅克先祖那样的游牧生活。后来他听说了农艺法师，以及他们散布在阿克图斯高原各处的众多飞地，便梦想着有朝一日加入他们，带着自己的亚纳克金凤花从一处飞地漫游到另一处，一路照料土地与生活于其上的人们。令家人懊恼的是，他一成年便踏上了这段旅程，并很快被接纳为学徒——任何见过他做事的人，都能清楚看出他对农艺魔法的热忱与天赋。</p>"
           }
         },
         "Clodmarl": {
@@ -33357,9 +34865,11 @@
             "Crushing Grapple": {
               "effects": {
                 "Grappled & Restrained": {
-                  "name": "被擒抱与受缚 Grappled & Restrained"
+                  "name": "被擒抱与受缚 Grappled & Restrained",
+                  "description": "<p>目标被该生物 &amp;Reference[grappled apply=false]，并可使用其动作尝试挣脱。在此擒抱结束之前，目标处于 &amp;Reference[restrained apply=false] 状态。</p>"
                 }
-              }
+              },
+              "name": "碾压擒抱 Crushing Grapple"
             },
             "Throw": {
               "name": "投掷 Throw",
@@ -33383,7 +34893,13 @@
                   "name": "坚硬 Hardened"
                 }
               }
+            },
+            "Mould Earth": {
+              "name": "塑土术 Mould Earth"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只元素生物大致具备人的形体与举止，但走近之后便绝不会把它误认成血肉之躯。它的躯体由致密的黏土与夯实的泥土构成，肩、胸、臂与眉骨处像披甲一般嵌着石板。它的双手是沉重而钝拙的硬化土块，以石料加固，看上去更像是两柄巨槌而非手掌。它每迈出一步，都带着行走石像那般沉闷的分量落地。</p></section><p>[[lookup @name]]是一种人形土元素，由黏土、夯实的泥土与起保护作用的石头构成。远远望去，它的姿态与轮廓可能会被误认成独行的旅人、卫兵或劳工，但只要凑近看上一眼，便能识破它的元素本质。</p>"
           }
         },
         "Crystallath": {
@@ -33445,9 +34961,11 @@
             "Rock Lob": {
               "effects": {
                 "Blinded": {
-                  "name": "目盲 Blinded"
+                  "name": "目盲 Blinded",
+                  "description": "<p>目标陷入 &amp;Reference[Blinded apply=false] 状态，直到其下一回合开始。</p>"
                 }
-              }
+              },
+              "name": "抛石 Rock Lob"
             },
             "Earth Form": {
               "name": "大地形态 Earth Form"
@@ -33471,7 +34989,16 @@
                   "name": "扎根 Grounded"
                 }
               }
+            },
+            "Fist": {
+              "name": "拳击 Fist"
+            },
+            "Mould Earth": {
+              "name": "塑土术 Mould Earth"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只矮墩墩、疙疙瘩瘩的生物由夯实的泥土与松散的土壤构成，勉强聚成一个摇摇晃晃、依稀像人的形体。它那短粗的双腿与其说是在走，不如说是在跺；宽阔的大嘴里长满了歪歪扭扭的卵石与碎岩牙齿。它每挪动一步，都会有土块从身上簌簌剥落，而维系着这只小元素生物的那股力量，又会立刻从地面拽起更多泥土来填补上去。</p></section><p>[[lookup @name]]是一种由松散土壤、卵石与夯实泥土构成的小型混沌土元素生物。它算不上特别聪明，也说不上残忍，但天性就爱惹麻烦，热衷于制造脏乱、噪音和小打小闹的破坏。</p>"
           }
         },
         "Dust Mote": {
@@ -33483,7 +35010,16 @@
             },
             "Kinetic Limb": {
               "name": "念力肢 Kinetic Limb"
+            },
+            "Choking Haze": {
+              "name": "窒息薄霭 Choking Haze"
+            },
+            "Dust Form": {
+              "name": "尘埃形态 Dust Form"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一粒微小的土屑悬在空中，四周环绕着一团躁动不安的尘埃；与其说它在飞，不如说它在飘，随着看不见的气流轻轻起伏，被无形之力托举着——那力量只会短暂而周期性地在它身后掀起一丝空气的涟漪。</p></section><p>[[lookup @name]]是一种由泥土与尘埃构成的微小元素生物，基本无害，通常只会以一片久久不散的薄霭或一团四处游荡的尘雾的形式被人察觉。单独一只不过是个恼人的小麻烦，但若聚在一处的数量够多，它们能让空气中充满令人窒息的尘土，连正常呼吸都变得困难。</p>"
           }
         },
         "Mud Globlin": {
@@ -33509,7 +35045,8 @@
               "name": "阴招 Dirty Tricks",
               "effects": {
                 "Blinded": {
-                  "name": "目盲 Blinded"
+                  "name": "目盲 Blinded",
+                  "description": "<p>目标陷入&amp;Reference[Blinded apply=false]状态，直到其下个回合结束。</p>"
                 }
               }
             },
@@ -33526,7 +35063,13 @@
                   "name": "扎根 Grounded"
                 }
               }
+            },
+            "Corrosive Slam": {
+              "name": "腐蚀猛击 Corrosive Slam"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这个矮壮而佝偻的生物由深棕色的烂泥构成，泥浆在它模糊的人形躯体中缓慢而沉重地翻卷流动。它的表面不断冒泡破裂，仿佛被某种内在的热量或恶性反应搅动着，喷出一股股湿黏的气嗝，浓浓地夹着腐烂植物的臭味。它拖着粗短的四肢从地面上爬过，留下的泥迹黏附不去，把所触及的一切都染成焦黑。</p></section><p>[[lookup @name]]是一种由散发腐败恶臭的深棕色烂泥构成的污秽元素。与更常见的泥土格布林不同，它仅凭接触就足以危害活物，因为构成其躯体的烂泥会使有机物腐烂、枯萎并分解。</p>"
           }
         },
         "Obsidian Vine Outgrowth": {
@@ -33548,9 +35091,11 @@
             "Grasping Thorns": {
               "effects": {
                 "Incapacitated": {
-                  "name": "失能 Incapacitated"
+                  "name": "失能 Incapacitated",
+                  "description": "<p>当这株新枝因另一生物而处于被擒抱状态时，该新枝陷入&amp;Reference[Incapacitated apply=false]状态。</p>"
                 }
-              }
+              },
+              "name": "攫握荆棘 Grasping Thorns"
             },
             "Thorns": {
               "name": "荆棘 Thorns"
@@ -33559,13 +35104,23 @@
               "name": "缠捕 Ensnare",
               "effects": {
                 "Grappled & Restrained": {
-                  "name": "被擒抱与受缚 Grappled & Restrained"
+                  "name": "被擒抱与受缚 Grappled & Restrained",
+                  "description": "<p>目标被该生物&amp;Reference[grappled apply=false]，并可以用自己的动作进行脱离。在此擒抱结束前，目标处于&amp;Reference[restrained apply=false]{受缚}状态。</p>"
                 }
               }
             },
             "Thrash": {
               "name": "猛击 Thrash"
+            },
+            "Regrow Stump": {
+              "name": "残株再生 Regrow Stump"
+            },
+            "Unusual Nature": {
+              "name": "异常本质 Unusual Nature"
             }
+          },
+          "biography": {
+            "public": "<p></p><section class=\"block readaloud\"><p>更多黑色藤蔓从你周围的地面钻出，虽不如先前那般高耸入云，却依旧闪烁着同样致命的、由细尖黑曜石构成的荆棘。</p></section><p>黑曜藤蔓是一种奇特而近乎无心智的土元素，由一种仅见于科拉的独特硬化黑曜石构成。在其原生环境中，它们只求在科拉严酷的环境里活下去。</p><p>黑曜藤蔓新枝是某个更大的地下结构的分支，通常受一株位于中心的高耸黑曜石藤蔓控制。不过在罕见的情况下，一些新枝在与母体分离后依然存活，并能独立运作。</p>"
           }
         },
         "Slaith": {
@@ -33603,7 +35158,8 @@
               "name": "强酸啃咬 Caustic Bite",
               "effects": {
                 "Grappled & Restrained": {
-                  "name": "被擒抱与受缚 Grappled & Restrained"
+                  "name": "被擒抱与受缚 Grappled & Restrained",
+                  "description": "<p>目标被该生物 &amp;Reference[grappled apply=false]，并可以使用其动作进行挣脱。在此擒抱结束前，目标处于 &amp;Reference[restrained apply=false]{受缚} 状态。</p>"
                 }
               }
             },
@@ -33611,7 +35167,12 @@
               "name": "吞下 Swallow",
               "effects": {
                 "Prone": {
-                  "name": "倒地 Prone"
+                  "name": "倒地 Prone",
+                  "description": "<p>若你被吐出，你会落入 10 英尺内的一个空间，并陷入 &amp;Reference[Prone apply=false] 状态。</p>"
+                },
+                "Blinded, Restrained, and Total Cover": {
+                  "description": "<p>被吞下期间，生物获得 &amp;Reference[Blinded apply=false] 与 &amp;Reference[Restrained apply=false] 状态，并在面对攻击时拥有 &amp;Reference[Total Cover apply=false]。</p>",
+                  "name": "目盲、受缚与全身掩护 Blinded, Restrained, and Total Cover"
                 }
               }
             },
@@ -33645,7 +35206,25 @@
                   "name": "磐岩 Monolith"
                 }
               }
+            },
+            "Gravity Well": {
+              "effects": {
+                "Fly Speed 0 ft.": {
+                  "name": "飞行速度 0 英尺 Fly Speed 0 ft."
+                },
+                "Speed Halved": {
+                  "description": "<p>若目标拥有飞行速度，请将此主动效果与其飞行速度分开应用。</p>",
+                  "name": "速度减半 Speed Halved"
+                }
+              },
+              "name": "重力井 Gravity Well"
+            },
+            "Mould Earth": {
+              "name": "塑土术 Mould Earth"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>湖床之中，碎片的光芒清晰可见，随后一声仿佛整片大陆被拦腰折断的巨响响彻湖畔。一头庞然巨兽自水下升起，污秽的强酸从那团起伏涌动的黏液与淤泥上滴落。一条条腐化的污泥如绳索般在这四足生物的肢体之间垂曳，又从它躯体的裂口中溢出。它的面孔是一个粗糙而不断变形的东西，眼睛处只有两个空洞的凹坑，一张宽大而下垂的巨口无论转向何处都在渗出污秽的泥浆。它周围的空气弥漫着腐烂与病气的味道，它的每一次动作都在身后留下一道被污染、被毒化的土地。</p></section><p>[[lookup @name]] 是一头独一无二而可怖的大地元素生物，已被腐化成一团污秽的衰败与毁灭之物。它拥有真正元素巨像般的体型与威势，仅仅是触碰便能污化土地、水域与生灵。</p>"
           }
         },
         "Stalagmaw": {
@@ -33741,7 +35320,8 @@
               "name": "缠捕 Ensnare",
               "effects": {
                 "Grappled & Restrained": {
-                  "name": "被擒抱与受缚 Grappled & Restrained"
+                  "name": "被擒抱与受缚 Grappled & Restrained",
+                  "description": "<p>目标被该生物施加 &amp;Reference[grappled apply=false] 状态，并可以使用其动作挣脱。在此擒抱结束前，目标处于 &amp;Reference[restrained apply=false]{受缚} 状态。</p>"
                 }
               }
             },
@@ -33751,9 +35331,15 @@
             "Wrap": {
               "effects": {
                 "Prone": {
-                  "name": "倒地 Prone"
+                  "name": "倒地 Prone",
+                  "description": "<p>如果你被吐出，你会落入 10 英尺内的一处空间，并陷入 &amp;Reference[Prone apply=false] 状态。</p>"
+                },
+                "Blinded, Restrained, and Total Cover": {
+                  "description": "<p>被吞没期间，生物具有 &amp;Reference[Blinded apply=false] 与 &amp;Reference[Restrained apply=false] 状态，并对攻击拥有 &amp;Reference[Total Cover apply=false]。</p>",
+                  "name": "目盲、受缚与全身掩护 Blinded, Restrained, and Total Cover"
                 }
-              }
+              },
+              "name": "缠裹 Wrap"
             },
             "Explosive Emergence": {
               "name": "爆炸现身",
@@ -33786,7 +35372,22 @@
                   "name": "坚定 Resolute"
                 }
               }
+            },
+            "Bound Offshoots": {
+              "name": "束缚分蘖 Bound Offshoots"
+            },
+            "Brittle Obsidian": {
+              "name": "易碎黑曜石 Brittle Obsidian"
+            },
+            "Earth Burrower": {
+              "name": "大地掘穴者 Earth Burrower"
+            },
+            "Unusual Nature": {
+              "name": "异常本质 Unusual Nature"
             }
+          },
+          "biography": {
+            "public": "<p></p><section class=\"block readaloud\"><p>一条闪着微光的黑色玻璃卷须自地下猛然破土而出，粗如树干，末梢则渐渐收细到巨人拳头大小，在你们头顶的空中带着威胁意味地抽动。它整条表面都闪耀着黑曜石的尖刺，宛如某种不可能存在的植物的藤蔓，通体由黑色晶体构成。</p></section><p>黑曜石藤蔓是一种奇特、近乎无心智的大地元素生物，由一种独特的硬化黑曜石构成，这种黑曜石仅见于科拉。在其自然栖地中，它们所求的不过是在科拉严酷的环境中生存下去。</p>"
           }
         }
       }
