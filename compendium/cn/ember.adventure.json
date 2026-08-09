@@ -13521,6 +13521,78 @@
             "55-55": {
               "name": "一把白金币",
               "description": "<p>获得 [[/award 1pp]]，重复 [[/roll 1d6]] 次</p>"
+            },
+            "3-3": {
+              "name": "手斧 Handaxe"
+            },
+            "5-5": {
+              "name": "镰刀 Sickle"
+            },
+            "7-7": {
+              "name": "战斧 Battleaxe"
+            },
+            "8-8": {
+              "name": "链枷 Flail"
+            },
+            "12-12": {
+              "name": "钉头锤 Morningstar"
+            },
+            "14-14": {
+              "name": "战镐 War Pick"
+            },
+            "22-22": {
+              "name": "兽皮甲 Hide Armor"
+            },
+            "30-30": {
+              "name": "攀爬者工具包 Climber's Kit"
+            },
+            "32-32": {
+              "name": "抓钩 Grappling Hook"
+            },
+            "33-33": {
+              "name": "附盖提灯 Hooded Lantern"
+            },
+            "34-34": {
+              "name": "油瓶 Oil Flask"
+            },
+            "35-35": {
+              "name": "岩钉 Piton"
+            },
+            "36-36": {
+              "name": "麻绳 (50 尺) Hempen Rope (50 ft.)"
+            },
+            "38-38": {
+              "name": "水晶 Crystal"
+            },
+            "39-39": {
+              "name": "法杖 Staff"
+            },
+            "41-41": {
+              "name": "木质法杖 Wooden Staff"
+            },
+            "42-42": {
+              "name": "紫杉魔杖 Yew Wand"
+            },
+            "43-43": {
+              "name": "圣水瓶 Flask of Holy Water"
+            },
+            "44-44": {
+              "name": "护符 Amulet"
+            },
+            "45-45": {
+              "name": "徽章 Emblem"
+            },
+            "46-46": {
+              "name": "玺戒 Signet Ring"
+            },
+            "47-47": {
+              "name": "法术书 Spellbook"
+            },
+            "49-49": {
+              "name": "整副骰子 Dice Set"
+            },
+            "50-50": {
+              "name": "整副纸牌 Playing Cards Set"
             }
           }
         },
@@ -13747,6 +13819,42 @@
             },
             "19-19": {
               "name": "一枚白金币"
+            },
+            "1-1": {
+              "name": "剧毒药水 Potion of Poison"
+            },
+            "2-2": {
+              "name": "滑溜之油 Oil of Slipperiness"
+            },
+            "3-3": {
+              "name": "玻璃瓶 Glass Bottle"
+            },
+            "4-4": {
+              "name": "壶 Jug"
+            },
+            "5-5": {
+              "name": "小瓶 Vial"
+            },
+            "6-6": {
+              "name": "算盘 Abacus"
+            },
+            "7-7": {
+              "name": "铃铛 Bell"
+            },
+            "8-8": {
+              "name": "抓钩 Grappling Hook"
+            },
+            "9-9": {
+              "name": "沙漏 Hourglass"
+            },
+            "11-11": {
+              "name": "钢镜 Steel Mirror"
+            },
+            "14-14": {
+              "name": "募捐盒 Alms Box"
+            },
+            "15-15": {
+              "name": "铁壶 Iron Pot"
             }
           }
         },
@@ -14399,6 +14507,27 @@
             },
             "10-10": {
               "name": "抗毒剂"
+            },
+            "1-1": {
+              "name": "紫杉魔杖 Yew Wand"
+            },
+            "2-2": {
+              "name": "槲寄生枝 Sprig of Mistletoe"
+            },
+            "3-3": {
+              "name": "木质法杖 Wooden Staff"
+            },
+            "4-4": {
+              "name": "水晶 Crystal"
+            },
+            "6-6": {
+              "name": "书法工具 Calligrapher's Supplies"
+            },
+            "11-11": {
+              "name": "圣水瓶 Flask of Holy Water"
+            },
+            "12-12": {
+              "name": "学者套装 Scholar's Pack"
             }
           }
         },
@@ -16449,6 +16578,15 @@
         },
         "Yaphta's Warehouse Note": {
           "name": "雅弗塔的仓库便条 Yaphta's Warehouse Note"
+        },
+        "Vial of Luminous Goo": {
+          "name": "发光黏液小瓶 Vial of Luminous Goo"
+        },
+        "Merchant's Messenger": {
+          "name": "商人的信使 Merchant's Messenger"
+        },
+        "Hunter's Spyglass": {
+          "name": "猎人的望远镜 Hunter's Spyglass"
         }
       },
       "actors": {
@@ -16687,7 +16825,8 @@
                 "Blinded": {
                   "name": "目盲 Blinded"
                 }
-              }
+              },
+              "name": "阳炎射线 Sunbeam"
             },
             "Transport via Plants": {
               "name": "借植物传送 Transport via Plants"
@@ -16706,6 +16845,131 @@
                 "Blinded": {
                   "name": "目盲 Blinded"
                 }
+              },
+              "name": "阳炎爆 Sunburst"
+            },
+            "Create or Destroy Water": {
+              "name": "造水术或毁水术 Create or Destroy Water"
+            },
+            "Longstrider": {
+              "name": "大步奔行 Longstrider",
+              "effects": {
+                "Longstrider": {
+                  "name": "大步奔行 Longstrider"
+                }
+              }
+            },
+            "Barkskin": {
+              "name": "树肤 Barkskin"
+            },
+            "Darkvision": {
+              "name": "黑暗视觉 Darkvision",
+              "effects": {
+                "Darkvision": {
+                  "name": "黑暗视觉 Darkvision"
+                }
+              }
+            },
+            "Flame Blade": {
+              "name": "火焰刀 Flame Blade"
+            },
+            "Moonbeam": {
+              "name": "月华之光 Moonbeam"
+            },
+            "Conjure Animals": {
+              "name": "咒唤兽群 Conjure Animals"
+            },
+            "Daylight": {
+              "name": "昼明术 Daylight"
+            },
+            "Gaseous Form": {
+              "name": "气化形体 Gaseous Form",
+              "effects": {
+                "Gaseous Form": {
+                  "name": "气化形体 Gaseous Form"
+                }
+              }
+            },
+            "Stinking Cloud": {
+              "name": "臭云术 Stinking Cloud"
+            },
+            "Blight": {
+              "name": "枯萎术 Blight"
+            },
+            "Conjure Minor Elementals": {
+              "name": "咒唤微元素群 Conjure Minor Elementals"
+            },
+            "Conjure Woodland Beings": {
+              "name": "林地之精咒唤术 Conjure Woodland Beings"
+            },
+            "Dominate Beast": {
+              "name": "支配野兽 Dominate Beast"
+            },
+            "Giant Insect": {
+              "name": "巨虫 Giant Insect"
+            },
+            "Locate Creature": {
+              "name": "定位生物 Locate Creature"
+            },
+            "Secret Chest": {
+              "name": "秘藏箱 Secret Chest"
+            },
+            "Stoneskin": {
+              "name": "石肤术 Stoneskin",
+              "effects": {
+                "Stoneskin": {
+                  "name": "石肤术 Stoneskin"
+                }
+              }
+            },
+            "Conjure Elemental": {
+              "name": "咒唤元素 Conjure Elemental"
+            },
+            "Contagion": {
+              "name": "疫病术 Contagion"
+            },
+            "Geas": {
+              "name": "指使术 Geas"
+            },
+            "Greater Restoration": {
+              "name": "高等复原术 Greater Restoration"
+            },
+            "Tree Stride": {
+              "name": "树跃术 Tree Stride"
+            },
+            "Heal": {
+              "name": "医疗术 Heal"
+            },
+            "Heroes' Feast": {
+              "name": "英雄宴 Heroes' Feast"
+            },
+            "Move Earth": {
+              "name": "地动术 Move Earth"
+            },
+            "Wall of Thorns": {
+              "name": "棘墙术 Wall of Thorns"
+            },
+            "Fire Storm": {
+              "name": "火焰风暴 Fire Storm"
+            },
+            "Mirage Arcane": {
+              "name": "海市蜃楼 Mirage Arcane"
+            },
+            "Mass Healing Word": {
+              "name": "群体治愈真言 Mass Healing Word"
+            },
+            "Mass Heal": {
+              "name": "群体医疗术 Mass Heal"
+            },
+            "Shapechange": {
+              "name": "形体变化 Shapechange"
+            },
+            "Storm of Vengeance": {
+              "name": "复仇风暴 Storm of Vengeance",
+              "effects": {
+                "Deafened": {
+                  "name": "失聪 Deafened"
+                }
               }
             }
           }
@@ -16716,6 +16980,9 @@
           "items": {
             "Shent Memory": {
               "name": "申特记忆 Shent Memory"
+            },
+            "Ephemeral": {
+              "name": "以太化 Ephemeral"
             }
           }
         },
@@ -16827,7 +17094,8 @@
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
                 }
-              }
+              },
+              "name": "炼狱叱喝 Hellish Rebuke"
             },
             "Shield": {
               "name": "盾牌 Shield",
@@ -16837,6 +17105,21 @@
                   "description": "<p>直到你下个回合开始前，你的 AC 获得 +5 加值，包括针对触发此次效果的攻击，并且你不会受到<em>魔法飞弹</em>的伤害。</p>"
                 }
               }
+            },
+            "Pact Magic": {
+              "name": "契约魔法 Pact Magic"
+            },
+            "Devil Sight": {
+              "name": "魔鬼视觉 Devil Sight"
+            },
+            "Comprehend Languages": {
+              "name": "通晓语言 Comprehend Languages"
+            },
+            "Levitate": {
+              "name": "浮空术 Levitate"
+            },
+            "Speak with Dead": {
+              "name": "死者交谈 Speak with Dead"
             }
           }
         },
@@ -16891,6 +17174,24 @@
             },
             "Nimble Leap": {
               "name": "敏捷跃击"
+            },
+            "Miner's Pick": {
+              "name": "矿工镐 Miner's Pick"
+            },
+            "Dungeoneer's Pack": {
+              "name": "地城探险者背包 Dungeoneer's Pack"
+            },
+            "Hempen Rope (50 ft.)": {
+              "name": "麻绳 (50 尺) Hempen Rope (50 ft.)"
+            },
+            "Piton": {
+              "name": "岩钉 Piton"
+            },
+            "War Pick": {
+              "name": "战镐 War Pick"
+            },
+            "Shadowmeld": {
+              "name": "影融 Shadowmeld"
             }
           }
         },
@@ -17110,6 +17411,21 @@
             },
             "Dimension Door": {
               "name": "任意门 Dimension Door"
+            },
+            "Black Jade Dagger": {
+              "name": "黑玉匕首 Black Jade Dagger"
+            },
+            "Ring of Feather Falling": {
+              "name": "羽落戒指 Ring of Feather Falling"
+            },
+            "Potion of Greater Healing": {
+              "name": "高等治疗药水 Potion of Greater Healing"
+            },
+            "Animate Dead": {
+              "name": "活化死尸 Animate Dead"
+            },
+            "Blight": {
+              "name": "枯萎术 Blight"
             }
           }
         },
@@ -17333,6 +17649,9 @@
                   "name": "法术变更 Spell Changes"
                 }
               }
+            },
+            "Shadowmeld": {
+              "name": "影融 Shadowmeld"
             }
           }
         },
@@ -17713,6 +18032,30 @@
                   "name": "规整节律 Regulated Rhythm"
                 }
               }
+            },
+            "Divine Eminence": {
+              "name": "天赐荣光 Divine Eminence"
+            },
+            "Stick of Incense": {
+              "name": "一炷香 Stick of Incense"
+            },
+            "Hooded Lantern": {
+              "name": "附盖提灯 Hooded Lantern"
+            },
+            "Censer": {
+              "name": "香炉挥击 Censer"
+            },
+            "Comprehend Languages": {
+              "name": "通晓语言 Comprehend Languages"
+            },
+            "Enthrall": {
+              "name": "注目术 Enthrall"
+            },
+            "Spiritual Weapon": {
+              "name": "灵体武器 Spiritual Weapon"
+            },
+            "Zone of Truth": {
+              "name": "真言区域 Zone of Truth"
             }
           }
         },
@@ -17758,6 +18101,15 @@
             },
             "Sneak Attack": {
               "name": "偷袭攻击 Sneak Attack"
+            },
+            "Ball Bearings": {
+              "name": "滚珠 Ball Bearings"
+            },
+            "Bag of Sand": {
+              "name": "沙包 Bag of Sand"
+            },
+            "Chalk": {
+              "name": "粉笔 Chalk"
             }
           }
         },
@@ -17791,6 +18143,26 @@
             },
             "Heavy Crossbow": {
               "name": "重弩 Heavy Crossbow"
+            },
+            "Caltrops": {
+              "name": "铁蒺藜 Caltrops"
+            },
+            "Hempen Rope (50 ft.)": {
+              "name": "麻绳 (50 尺) Hempen Rope (50 ft.)"
+            },
+            "Hooded Lantern": {
+              "name": "附盖提灯 Hooded Lantern"
+            },
+            "Whetstone": {
+              "name": "磨刀石 Whetstone"
+            },
+            "Leviathan Form": {
+              "name": "利维坦形态 Leviathan Form",
+              "effects": {
+                "Leviathan Form": {
+                  "name": "利维坦形态 Leviathan Form"
+                }
+              }
             }
           }
         },
@@ -17921,6 +18293,40 @@
             },
             "Dagger": {
               "name": "匕首 Dagger"
+            },
+            "Potion of Greater Healing": {
+              "name": "高等治疗药水 Potion of Greater Healing"
+            },
+            "Hooded Lantern": {
+              "name": "附盖提灯 Hooded Lantern"
+            },
+            "Weirded Eyes": {
+              "name": "异瞳 Weirded Eyes"
+            },
+            "Shocking Grasp": {
+              "name": "电爪 Shocking Grasp",
+              "effects": {
+                "Shocked": {
+                  "name": "电击 Shocked"
+                }
+              }
+            },
+            "Darkvision": {
+              "name": "黑暗视觉 Darkvision",
+              "effects": {
+                "Darkvision": {
+                  "name": "黑暗视觉 Darkvision"
+                }
+              }
+            },
+            "Find Traps": {
+              "name": "寻获陷阱 Find Traps"
+            },
+            "Arcane Eye": {
+              "name": "秘法眼 Arcane Eye"
+            },
+            "Legend Lore": {
+              "name": "传奇知识 Legend Lore"
             }
           }
         },
@@ -18185,7 +18591,12 @@
               }
             },
             "Extreme Metabolism": {
-              "name": "极限代谢 Extreme Metabolism"
+              "name": "极限代谢 Extreme Metabolism",
+              "effects": {
+                "Speed +10": {
+                  "name": "速度 +10 Speed +10"
+                }
+              }
             },
             "Divine Kindling": {
               "name": "神圣引火物 Divine Kindling"
@@ -18208,7 +18619,8 @@
                   "name": "中毒 Poisoned",
                   "description": "<p>目标陷入 &amp;Reference[poisoned apply=false] 状态，持续 1 分钟。</p>"
                 }
-              }
+              },
+              "name": "毒针 Poison Needle"
             },
             "Padded Armor": {
               "name": "衬垫护甲 Padded Armor"
@@ -18227,7 +18639,8 @@
                 "Restrained": {
                   "name": "受缚 Restrained"
                 }
-              }
+              },
+              "name": "准备药瓶 Prepare Vial"
             },
             "Abyssal Resistance": {
               "name": "深渊抗性 Abyssal Resistance"
@@ -18261,6 +18674,12 @@
                   "name": "法术变更 Spell Changes"
                 }
               }
+            },
+            "Scalpel": {
+              "name": "手术刀 Scalpel"
+            },
+            "Poisoner's Kit": {
+              "name": "制毒工具 Poisoner's Kit"
             }
           }
         },
@@ -18372,7 +18791,8 @@
                 "Calmed": {
                   "name": "平静 Calmed"
                 }
-              }
+              },
+              "name": "平静情绪 Calm Emotions"
             },
             "Detect Thoughts": {
               "name": "侦测思想 Detect Thoughts"
@@ -18457,6 +18877,56 @@
                   "name": "法术变更 Spell Changes"
                 }
               }
+            },
+            "Sealing Wax": {
+              "name": "封蜡 Sealing Wax"
+            },
+            "Oil Flask": {
+              "name": "油瓶 Oil Flask"
+            },
+            "Captivating Tale": {
+              "name": "引人入胜的故事 Captivating Tale"
+            },
+            "Well Practiced": {
+              "name": "熟练老到 Well Practiced"
+            },
+            "Countercharm": {
+              "name": "反制魅惑 Countercharm"
+            },
+            "Common Clothes": {
+              "name": "普通衣物 Common Clothes"
+            },
+            "Paper": {
+              "name": "纸张 Paper"
+            },
+            "Parchment": {
+              "name": "羊皮纸 Parchment"
+            },
+            "Hourglass": {
+              "name": "沙漏 Hourglass"
+            },
+            "Song of Rest": {
+              "name": "安魂曲 Song of Rest"
+            },
+            "Comprehend Languages": {
+              "name": "通晓语言 Comprehend Languages"
+            },
+            "Tongues": {
+              "name": "巧言术 Tongues"
+            },
+            "Locate Creature": {
+              "name": "定位生物 Locate Creature"
+            },
+            "Legend Lore": {
+              "name": "传奇知识 Legend Lore"
+            },
+            "Bardic Inspiration": {
+              "name": "吟游诗人的激励 Bardic Inspiration",
+              "effects": {
+                "Inspired": {
+                  "name": "鼓舞 Inspired"
+                }
+              }
             }
           },
           "effects": {
@@ -18478,6 +18948,15 @@
             },
             "Chain Mail": {
               "name": "锁子甲 Chain Mail"
+            },
+            "Powerful": {
+              "name": "强力 Powerful"
+            },
+            "Beard Guard": {
+              "name": "髯卫 Beard Guard"
+            },
+            "Focused Resilience": {
+              "name": "专注韧性 Focused Resilience"
             }
           }
         },
@@ -18561,7 +19040,8 @@
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
                 }
-              }
+              },
+              "name": "浮空术 Levitate"
             },
             "Mending": {
               "name": "修补 Mending",
@@ -18570,6 +19050,18 @@
                   "name": "法术变更 Spell Changes"
                 }
               }
+            },
+            "Reckless": {
+              "name": "鲁莽 Reckless"
+            },
+            "Arcane Countenance": {
+              "name": "奥术仪容 Arcane Countenance"
+            },
+            "Windborn Spellcraft": {
+              "name": "御风施法 Windborn Spellcraft"
+            },
+            "Handaxe": {
+              "name": "手斧 Handaxe"
             }
           }
         },
@@ -18648,6 +19140,15 @@
             },
             "Shortbow": {
               "name": "短弓 Shortbow"
+            },
+            "Arrow": {
+              "name": "箭矢 Arrow"
+            },
+            "Sleep": {
+              "name": "睡眠术 Sleep"
+            },
+            "Acid Arrow": {
+              "name": "强酸箭 Acid Arrow"
             }
           }
         },
@@ -18764,14 +19265,52 @@
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
                 }
-              }
+              },
+              "name": "通晓语言 Comprehend Languages"
             },
             "Zone of Truth": {
               "effects": {
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
                 }
-              }
+              },
+              "name": "真言区域 Zone of Truth"
+            },
+            "Ethereal Appendages": {
+              "name": "灵界肢体 Ethereal Appendages"
+            },
+            "Crystal Wand": {
+              "name": "水晶魔杖 Crystal Wand"
+            },
+            "Fine Clothes": {
+              "name": "高档服装 Fine Clothes"
+            },
+            "Scholar's Pack": {
+              "name": "学者套装 Scholar's Pack"
+            },
+            "Parchment": {
+              "name": "羊皮纸 Parchment"
+            },
+            "Book of Lore": {
+              "name": "知识之书 Book of Lore"
+            },
+            "Small Knife": {
+              "name": "小刀 Small Knife"
+            },
+            "Bag of Sand": {
+              "name": "沙包 Bag of Sand"
+            },
+            "Suggestion": {
+              "name": "暗示术 Suggestion"
+            },
+            "Banishment": {
+              "name": "放逐术 Banishment"
+            },
+            "Contact Other Plane": {
+              "name": "异界探询 Contact Other Plane"
+            },
+            "Glyphspeak": {
+              "name": "符文语 Glyphspeak"
             }
           }
         },
@@ -18825,6 +19364,15 @@
             },
             "Parry": {
               "name": "招架 Parry"
+            },
+            "Jeweler's Tools": {
+              "name": "珠宝匠工具 Jeweler's Tools"
+            },
+            "Forgery Kit": {
+              "name": "文书伪造工具 Forgery Kit"
+            },
+            "Dice Set": {
+              "name": "整副骰子 Dice Set"
             }
           }
         },
@@ -18872,6 +19420,9 @@
             },
             "Parry": {
               "name": "招架 Parry"
+            },
+            "Brave": {
+              "name": "勇气 Brave"
             }
           }
         },
@@ -19155,6 +19706,12 @@
             },
             "Rusty Scythe": {
               "name": "生锈的镰刀 Rusty Scythe"
+            },
+            "Gust of Brambles": {
+              "name": "荆棘阵风 Gust of Brambles"
+            },
+            "Rusty Trowel": {
+              "name": "生锈的泥铲 Rusty Trowel"
             }
           }
         },
@@ -19185,7 +19742,8 @@
                 "Calmed": {
                   "name": "平静 Calmed"
                 }
-              }
+              },
+              "name": "平静情绪 Calm Emotions"
             },
             "Enhance Ability": {
               "name": "强化能力 Enhance Ability",
@@ -19217,7 +19775,8 @@
                 "Slowed": {
                   "name": "迟缓 Slowed"
                 }
-              }
+              },
+              "name": "缓慢术 Slow"
             },
             "Heroism": {
               "name": "英雄气概 Heroism",
@@ -19299,6 +19858,61 @@
             },
             "Clothes, Traveler's": {
               "name": "旅行者服装 Clothes, Traveler's"
+            },
+            "Bardic Inspiration": {
+              "name": "吟游诗人的激励 Bardic Inspiration",
+              "effects": {
+                "Inspired": {
+                  "name": "鼓舞 Inspired"
+                }
+              }
+            },
+            "Well Practiced": {
+              "name": "熟练老到 Well Practiced",
+              "effects": {
+                "Well Practiced": {
+                  "name": "熟练老到 Well Practiced"
+                }
+              }
+            },
+            "Song of Rest": {
+              "name": "安魂曲 Song of Rest"
+            },
+            "Focused Reactivity": {
+              "name": "专注反应 Focused Reactivity"
+            },
+            "Aid": {
+              "name": "援助术 Aid"
+            },
+            "Mass Healing Word": {
+              "name": "群体治愈真言 Mass Healing Word"
+            },
+            "Tongues": {
+              "name": "巧言术 Tongues"
+            },
+            "Cutting Words": {
+              "name": "语出惊人 Cutting Words"
+            },
+            "Magical Discoveries": {
+              "name": "魔法探秘 Magical Discoveries"
+            },
+            "Magic Weapon": {
+              "name": "魔化武器 Magic Weapon"
+            },
+            "Dice": {
+              "name": "骰子 Dice"
+            },
+            "Entertainer's Pack": {
+              "name": "艺人套组 Entertainer's Pack"
+            },
+            "Bullseye Lantern": {
+              "name": "牛眼提灯 Bullseye Lantern"
+            },
+            "Bell": {
+              "name": "铃铛 Bell"
+            },
+            "Mirror": {
+              "name": "镜子 Mirror"
             }
           }
         },
@@ -19416,6 +20030,24 @@
                   "name": "镣铐束缚 Manacled"
                 }
               }
+            },
+            "Eldritch Spear": {
+              "name": "魔能长枪 Eldritch Spear"
+            },
+            "Explosives Training": {
+              "name": "爆炸物训练 Explosives Training"
+            },
+            "Pact Magic": {
+              "name": "契约魔法 Pact Magic"
+            },
+            "Aid": {
+              "name": "援助术 Aid"
+            },
+            "Create or Destroy Water": {
+              "name": "造水术或毁水术 Create or Destroy Water"
+            },
+            "Searing Smite": {
+              "name": "炽焰斩 Searing Smite"
             }
           }
         },
@@ -19463,14 +20095,16 @@
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
                 }
-              }
+              },
+              "name": "通晓语言 Comprehend Languages"
             },
             "Zone of Truth": {
               "effects": {
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
                 }
-              }
+              },
+              "name": "真言区域 Zone of Truth"
             },
             "Mage Hand": {
               "name": "法师之手 Mage Hand"
@@ -19498,7 +20132,8 @@
                 "Blinded": {
                   "name": "目盲 Blinded"
                 }
-              }
+              },
+              "name": "七彩喷射 Color Spray"
             },
             "Mage Armor": {
               "name": "法师护甲 Mage Armor",
@@ -19532,6 +20167,21 @@
             },
             "Maziran": {
               "name": "马兹兰 Maziran"
+            },
+            "Flask of Holy Water": {
+              "name": "圣水瓶 Flask of Holy Water"
+            },
+            "Merchant's Messenger": {
+              "name": "商人的信使 Merchant's Messenger"
+            },
+            "Glyphspeak": {
+              "name": "符文语 Glyphspeak"
+            },
+            "Ethereal Appendages": {
+              "name": "灵界肢体 Ethereal Appendages"
+            },
+            "Suggestion": {
+              "name": "暗示术 Suggestion"
             }
           }
         },
@@ -19600,6 +20250,18 @@
                   "name": "余烬烈焰 Ember Blaze"
                 }
               }
+            },
+            "Ditchdigger": {
+              "name": "沟渠挖掘工 Ditchdigger"
+            },
+            "Crossbow Bolt": {
+              "name": "弩矢 Crossbow Bolt"
+            },
+            "Passionate Trader": {
+              "name": "热忱商贩 Passionate Trader"
+            },
+            "Focused Reactivity": {
+              "name": "专注反应 Focused Reactivity"
             }
           }
         },
@@ -19775,6 +20437,44 @@
                   "name": "蛛行术 Spider Climb"
                 }
               }
+            },
+            "Druidic": {
+              "name": "德鲁伊语 Druidic"
+            },
+            "Natural Recovery": {
+              "name": "自然恢复 Natural Recovery"
+            },
+            "Sling Bullet": {
+              "name": "投石索弹丸 Sling Bullet"
+            },
+            "Lunar Tattoos": {
+              "name": "月相纹身 Lunar Tattoos",
+              "effects": {
+                "Aura Lunar Resonance": {
+                  "name": "灵气月华共鸣 Aura Lunar Resonance"
+                },
+                "Cora Lunar Reflection": {
+                  "name": "科拉月华映照 Cora Lunar Reflection"
+                },
+                "Mayis Lunar Reflection": {
+                  "name": "玛伊斯月华映照 Mayis Lunar Reflection"
+                },
+                "Ragen Lunar Reflection": {
+                  "name": "拉根月华映照 Ragen Lunar Reflection"
+                },
+                "Orbis Lunar Reflection": {
+                  "name": "奥比斯月华映照 Orbis Lunar Reflection"
+                },
+                "Akon Lunar Reflection": {
+                  "name": "阿肯月华映照 Akon Lunar Reflection"
+                }
+              }
+            },
+            "Wild Shape": {
+              "name": "荒野形态 Wild Shape"
+            },
+            "Barkskin": {
+              "name": "树肤 Barkskin"
             }
           }
         },
@@ -19805,6 +20505,24 @@
                   "description": "<p>在持续时间内，每当目标进行攻击检定或豁免检定时，该目标为该次攻击检定或豁免加上1d4。</p>"
                 }
               }
+            },
+            "Relentless": {
+              "name": "坚韧 Relentless"
+            },
+            "Martial Advantage": {
+              "name": "军用优势 Martial Advantage"
+            },
+            "Brave": {
+              "name": "勇气 Brave"
+            },
+            "Magic Weapons": {
+              "name": "魔法武器 Magic Weapons"
+            },
+            "Vicious Greataxe": {
+              "name": "恶毒巨斧 Vicious Greataxe"
+            },
+            "Plate Armor": {
+              "name": "板甲 Plate Armor"
             }
           }
         },
@@ -20088,6 +20806,60 @@
             },
             "Magic Resistance": {
               "name": "魔法抗性 Magic Resistance"
+            },
+            "Shocking Grasp": {
+              "name": "电爪 Shocking Grasp",
+              "effects": {
+                "Shocked": {
+                  "name": "电击 Shocked"
+                }
+              }
+            },
+            "Gaseous Form": {
+              "name": "气化形体 Gaseous Form",
+              "effects": {
+                "Gaseous Form": {
+                  "name": "气化形体 Gaseous Form"
+                }
+              }
+            },
+            "Banishment": {
+              "name": "放逐术 Banishment"
+            },
+            "Blight": {
+              "name": "枯萎术 Blight"
+            },
+            "Fire Shield": {
+              "name": "火焰护盾 Fire Shield"
+            },
+            "Antilife Shell": {
+              "name": "防活物护罩 Antilife Shell",
+              "effects": {
+                "Antilife Shell": {
+                  "name": "防活物护罩 Antilife Shell"
+                }
+              }
+            },
+            "Cloudkill": {
+              "name": "死云术 Cloudkill"
+            },
+            "Dominate Person": {
+              "name": "支配类人 Dominate Person"
+            },
+            "Circle of Death": {
+              "name": "死亡法阵 Circle of Death"
+            },
+            "Disintegrate": {
+              "name": "解离术 Disintegrate"
+            },
+            "Globe of Invulnerability": {
+              "name": "法术无效结界 Globe of Invulnerability"
+            },
+            "Finger of Death": {
+              "name": "死亡一指 Finger of Death"
+            },
+            "Weird": {
+              "name": "怪影杀手 Weird"
             }
           }
         },
@@ -20114,12 +20886,20 @@
                   "name": "活石 Living Stone"
                 }
               }
+            },
+            "Miner's Pick": {
+              "name": "矿工镐 Miner's Pick"
             }
           }
         },
         "Sellen": {
           "name": "塞伦 Sellen",
-          "tokenName": "塞伦"
+          "tokenName": "塞伦",
+          "items": {
+            "Grappling Hook": {
+              "name": "抓钩 Grappling Hook"
+            }
+          }
         },
         "Tauric": {
           "name": "牛族 Tauric",
@@ -20252,6 +21032,38 @@
             },
             "Sleet Storm": {
               "name": "雨夹雪风暴 Sleet Storm"
+            },
+            "Rocky Shield": {
+              "name": "岩石盾牌 Rocky Shield"
+            },
+            "Instant Barrier": {
+              "name": "瞬时屏障 Instant Barrier"
+            },
+            "Stone Camouflage": {
+              "name": "石质伪装 Stone Camouflage"
+            },
+            "Launch Stone": {
+              "name": "发射石料 Launch Stone"
+            },
+            "Crystal Staff": {
+              "name": "水晶木杖 Crystal Staff"
+            },
+            "Swift Claw": {
+              "name": "迅捷之爪 Swift Claw"
+            },
+            "False Life": {
+              "name": "虚假生命 False Life"
+            },
+            "Meld into Stone": {
+              "name": "融入石料 Meld into Stone"
+            },
+            "Stoneskin": {
+              "name": "石肤术 Stoneskin",
+              "effects": {
+                "Stoneskin": {
+                  "name": "石肤术 Stoneskin"
+                }
+              }
             }
           }
         },
@@ -20384,6 +21196,12 @@
             },
             "Limited Telepathy": {
               "name": "有限心灵感应 Limited Telepathy"
+            },
+            "Crude Javelin": {
+              "name": "粗制标枪 Crude Javelin"
+            },
+            "Jurtak Medium Armor": {
+              "name": "尤尔塔克中型护甲 Jurtak Medium Armor"
             }
           }
         },
@@ -20444,6 +21262,9 @@
                   "description": "<p>你受到受诅视觉的折磨。你在察觉检定上具有劣势。此外，处于昏暗光照中时，针对你的攻击检定具有优势，而你的攻击检定具有劣势，如同你处于目盲状态。此外，该生物无法从黑暗视觉中获益。</p>"
                 }
               }
+            },
+            "Psychic Sting": {
+              "name": "灵能刺击 Psychic Sting"
             }
           },
           "effects": {
@@ -20488,6 +21309,9 @@
                   "name": "倒地 Prone"
                 }
               }
+            },
+            "Siege Monster": {
+              "name": "攻城怪物 Siege Monster"
             }
           }
         },
@@ -20550,6 +21374,12 @@
             },
             "Amphibious": {
               "name": "两栖 Amphibious"
+            },
+            "Adhesive": {
+              "name": "黏附 Adhesive"
+            },
+            "Standing Leap": {
+              "name": "立定起跳 Standing Leap"
             }
           }
         },
@@ -20626,6 +21456,9 @@
             },
             "Swarm": {
               "name": "虫群 Swarm"
+            },
+            "Bites": {
+              "name": "啃咬 Bites"
             }
           }
         },
@@ -20701,6 +21534,9 @@
             },
             "Pack Tactics": {
               "name": "群体战术 Pack Tactics"
+            },
+            "Dying Burst": {
+              "name": "濒死爆发 Dying Burst"
             }
           }
         },
@@ -20721,6 +21557,9 @@
             },
             "Spider Climb": {
               "name": "蛛行术 Spider Climb"
+            },
+            "Heated Body": {
+              "name": "灼热之躯 Heated Body"
             }
           }
         },
@@ -20755,6 +21594,15 @@
             },
             "Aedir Construct Fluid": {
               "name": "艾迪尔构装流体 Aedir Construct Fluid"
+            },
+            "Charge": {
+              "name": "冲锋 Charge"
+            },
+            "Self Repair": {
+              "name": "自我修复 Self Repair"
+            },
+            "Recharge": {
+              "name": "充能 Recharge"
             }
           }
         },
@@ -20782,6 +21630,9 @@
             },
             "Greater Improvised Weaponry": {
               "name": "高等即兴武器 Greater Improvised Weaponry"
+            },
+            "Rusty Trowel": {
+              "name": "生锈的泥铲 Rusty Trowel"
             }
           }
         },
@@ -20894,6 +21745,23 @@
             },
             "Pack Tactics": {
               "name": "群体战术 Pack Tactics"
+            },
+            "Surprise Attack": {
+              "name": "突袭攻击 Surprise Attack"
+            },
+            "Dust to Dust": {
+              "name": "尘归尘 Dust to Dust"
+            },
+            "Of The Earth": {
+              "name": "大地的 Of The Earth"
+            },
+            "Lunar Attack": {
+              "name": "月之攻击 Lunar Attack",
+              "effects": {
+                "Lunar Attack": {
+                  "name": "月之攻击 Lunar Attack"
+                }
+              }
             }
           }
         },
@@ -20932,6 +21800,12 @@
             },
             "Freezing Fog": {
               "name": "冰冻迷雾 Freezing Fog"
+            },
+            "Water Form": {
+              "name": "水形态 Water Form"
+            },
+            "Summon Elemental": {
+              "name": "召唤元素 Summon Elemental"
             }
           },
           "effects": {
@@ -20942,7 +21816,12 @@
         },
         "Water Mote": {
           "name": "水微粒 Water Mote",
-          "tokenName": "水微粒"
+          "tokenName": "水微粒",
+          "items": {
+            "Water Form": {
+              "name": "水形态 Water Form"
+            }
+          }
         },
         "Water Sprite": {
           "name": "水妖精 Water Sprite",
@@ -20950,6 +21829,9 @@
           "items": {
             "Aqueous Transmission": {
               "name": "水相传导 Aqueous Transmission"
+            },
+            "Water Form": {
+              "name": "水形态 Water Form"
             }
           }
         },
@@ -20965,6 +21847,9 @@
             },
             "Elemental Ice": {
               "name": "元素冰 Elemental Ice"
+            },
+            "Water Form": {
+              "name": "水形态 Water Form"
             }
           }
         },
@@ -20980,6 +21865,9 @@
             },
             "Multiattack": {
               "name": "多重攻击 Multiattack"
+            },
+            "Water Form": {
+              "name": "水形态 Water Form"
             }
           }
         },
@@ -21077,7 +21965,8 @@
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
                 }
-              }
+              },
+              "name": "通晓语言 Comprehend Languages"
             },
             "Mirror Image": {
               "name": "镜影术 Mirror Image",
@@ -21150,6 +22039,9 @@
                   "name": "法术变更 Spell Changes"
                 }
               }
+            },
+            "Running Leap": {
+              "name": "助跑起跳 Running Leap"
             }
           }
         },
@@ -21207,7 +22099,8 @@
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
                 }
-              }
+              },
+              "name": "通晓语言 Comprehend Languages"
             },
             "Mirror Image": {
               "name": "镜影术 Mirror Image",
@@ -21268,6 +22161,9 @@
             },
             "Cunning Action": {
               "name": "狡诈动作 Cunning Action"
+            },
+            "Running Leap": {
+              "name": "助跑起跳 Running Leap"
             }
           }
         },
@@ -21356,7 +22252,11 @@
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
                 }
-              }
+              },
+              "name": "位面转移 Plane Shift"
+            },
+            "Devil's Sight": {
+              "name": "魔鬼视觉 Devil's Sight"
             }
           }
         },
@@ -21544,6 +22444,9 @@
             },
             "Clothes, Traveler's": {
               "name": "旅行者服装 Clothes, Traveler's"
+            },
+            "Woodcarver's Tools": {
+              "name": "木雕工具 Woodcarver's Tools"
             }
           },
           "effects": {
@@ -21565,6 +22468,12 @@
             },
             "Clothes, Traveler's": {
               "name": "旅行者服装 Clothes, Traveler's"
+            },
+            "Woodcarver's Tools": {
+              "name": "木雕工具 Woodcarver's Tools"
+            },
+            "Tenacity": {
+              "name": "坚韧 Tenacity"
             }
           }
         },
@@ -21656,6 +22565,9 @@
             },
             "Longbow": {
               "name": "长弓 Longbow"
+            },
+            "Eversmoking Bottle": {
+              "name": "永烟瓶 Eversmoking Bottle"
             }
           }
         },
@@ -21805,7 +22717,8 @@
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
                 }
-              }
+              },
+              "name": "火焰刀 Flame Blade"
             },
             "Lesser Restoration": {
               "name": "次级恢复 Lesser Restoration",
@@ -21920,6 +22833,15 @@
             },
             "Bolts": {
               "name": "弩矢 Bolts"
+            },
+            "Crossbow Bolt Case": {
+              "name": "弩矢匣 Crossbow Bolt Case"
+            },
+            "Hempen Rope (50 ft.)": {
+              "name": "麻绳 (50 尺) Hempen Rope (50 ft.)"
+            },
+            "Mess Kit": {
+              "name": "野炊工具 Mess Kit"
             }
           }
         },
@@ -21951,6 +22873,9 @@
             },
             "Multiattack": {
               "name": "多重攻击 Multiattack"
+            },
+            "Poisoner's Kit": {
+              "name": "制毒工具 Poisoner's Kit"
             }
           }
         },
@@ -21966,6 +22891,12 @@
             },
             "Shortbow": {
               "name": "短弓 Shortbow"
+            },
+            "Arrow": {
+              "name": "箭矢 Arrow"
+            },
+            "Fiery Shot": {
+              "name": "烈焰射击 Fiery Shot"
             }
           }
         },
@@ -22001,7 +22932,8 @@
                 "Poisoned": {
                   "name": "中毒 Poisoned"
                 }
-              }
+              },
+              "name": "对辉耀的厌恶 Aversion to Radiance"
             },
             "Garganthus Hide": {
               "name": "加甘图斯兽皮 Garganthus Hide"
@@ -22012,7 +22944,8 @@
                   "name": "倒地 Prone",
                   "description": "<p>目标获得 &amp;Reference[Prone apply=false] 状态。</p>"
                 }
-              }
+              },
+              "name": "致命跳跃 Deadly Leap"
             },
             "Fear Aura": {
               "name": "恐惧灵气 Fear Aura",
@@ -22025,6 +22958,12 @@
             },
             "Sunlight Sensitivity": {
               "name": "阳光敏感性 Sunlight Sensitivity"
+            },
+            "Maddening Screech": {
+              "name": "癫狂尖啸 Maddening Screech"
+            },
+            "Hurl Stone": {
+              "name": "投掷石块 Hurl Stone"
             }
           }
         },
@@ -22101,6 +23040,9 @@
             },
             "Electrified Pseudopod": {
               "name": "带电拟足 Electrified Pseudopod"
+            },
+            "Copper Flakes": {
+              "name": "铜屑 Copper Flakes"
             }
           }
         },
@@ -22134,6 +23076,9 @@
             },
             "Amorphous": {
               "name": "无定形 Amorphous"
+            },
+            "Split": {
+              "name": "分裂 Split"
             }
           }
         },
@@ -22186,7 +23131,11 @@
                 "Grappled": {
                   "name": "被擒抱 Grappled"
                 }
-              }
+              },
+              "name": "攫握藤蔓 Grasping Vines"
+            },
+            "Engulf": {
+              "name": "吞没 Engulf"
             }
           }
         },
@@ -22260,14 +23209,33 @@
                 "Insulted": {
                   "description": "<p>在其下个回合结束前，目标进行的下一次攻击检定具有劣势。</p>"
                 }
-              }
+              },
+              "name": "骇人嘲弄 Gruesome Mockery"
             },
             "Gruesome Attacker": {
               "effects": {
                 "Frightened": {
                   "name": "恐慌 Frightened"
                 }
+              },
+              "name": "残忍攻击者 Gruesome Attacker"
+            },
+            "Common Clothes": {
+              "name": "普通衣物 Common Clothes"
+            },
+            "Undeathly Fortitude": {
+              "name": "不死坚韧 Undeathly Fortitude",
+              "effects": {
+                "Undeathly Fortitude": {
+                  "name": "不死坚韧 Undeathly Fortitude"
+                }
               }
+            },
+            "Fetid Claws": {
+              "name": "恶臭之爪 Fetid Claws"
+            },
+            "Cunning Escape": {
+              "name": "狡诈脱逃 Cunning Escape"
             }
           }
         },
@@ -22283,17 +23251,33 @@
                 "Insulted": {
                   "description": "<p>在其下个回合结束前，目标进行的下一次攻击检定具有劣势。</p>"
                 }
-              }
+              },
+              "name": "骇人嘲弄 Gruesome Mockery"
             },
             "Gruesome Attacker": {
               "effects": {
                 "Frightened": {
                   "name": "恐慌 Frightened"
                 }
-              }
+              },
+              "name": "残忍攻击者 Gruesome Attacker"
             },
             "Pestilent Bite": {
               "name": "疫病之咬 Pestilent Bite"
+            },
+            "Cunning Escape": {
+              "name": "狡诈脱逃 Cunning Escape"
+            },
+            "Undeathly Fortitude": {
+              "name": "不死坚韧 Undeathly Fortitude",
+              "effects": {
+                "Undeathly Fortitude": {
+                  "name": "不死坚韧 Undeathly Fortitude"
+                }
+              }
+            },
+            "Fetid Claws": {
+              "name": "恶臭之爪 Fetid Claws"
             }
           }
         },
@@ -22343,6 +23327,15 @@
             },
             "Parry": {
               "name": "招架 Parry"
+            },
+            "Handaxe": {
+              "name": "手斧 Handaxe"
+            },
+            "Rusted Chain Mail": {
+              "name": "锈蚀的锁子甲 Rusted Chain Mail"
+            },
+            "Undead Fortitude": {
+              "name": "亡灵坚韧 Undead Fortitude"
             }
           }
         },
@@ -22358,7 +23351,14 @@
                 "Poisoned": {
                   "name": "中毒 Poisoned"
                 }
-              }
+              },
+              "name": "恶臭 Stench"
+            },
+            "Pestilent Retch": {
+              "name": "疫病呕吐 Pestilent Retch"
+            },
+            "Undead Fortitude": {
+              "name": "亡灵坚韧 Undead Fortitude"
             }
           }
         },
@@ -22643,20 +23643,28 @@
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
                 }
-              }
+              },
+              "name": "通晓语言 Comprehend Languages"
             },
             "Zone of Truth": {
               "effects": {
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
                 }
-              }
+              },
+              "name": "真言区域 Zone of Truth"
             },
             "Sage's Shillelagh": {
               "name": "贤者的橡木棍棒咒 Sage's Shillelagh"
             },
             "Heartblood Wisp": {
               "name": "心血幽光 Heartblood Wisp"
+            },
+            "Ethereal Appendages": {
+              "name": "灵界肢体 Ethereal Appendages"
+            },
+            "Glyphspeak": {
+              "name": "符文语 Glyphspeak"
             }
           }
         },
@@ -22668,6 +23676,9 @@
             },
             "Dying Call": {
               "name": "临终呼唤 Dying Call"
+            },
+            "Mephitic Nature": {
+              "name": "恶浊本性 Mephitic Nature"
             }
           }
         },
@@ -22686,6 +23697,9 @@
             },
             "Swarm": {
               "name": "虫群 Swarm"
+            },
+            "Mephitic Nature": {
+              "name": "恶浊本性 Mephitic Nature"
             }
           }
         },
@@ -22763,6 +23777,15 @@
             },
             "Light Crossbow": {
               "name": "轻弩 Light Crossbow"
+            },
+            "Handaxe": {
+              "name": "手斧 Handaxe"
+            },
+            "Woodcarver's Tools": {
+              "name": "木雕工具 Woodcarver's Tools"
+            },
+            "Tenacity": {
+              "name": "坚韧 Tenacity"
             }
           }
         },
@@ -22813,6 +23836,18 @@
             },
             "Seawall Brandy": {
               "name": "海堤白兰地 Seawall Brandy"
+            },
+            "Woodcarver's Tools": {
+              "name": "木雕工具 Woodcarver's Tools"
+            },
+            "Dice": {
+              "name": "骰子 Dice"
+            },
+            "Playing Cards": {
+              "name": "扑克牌 Playing Cards"
+            },
+            "Navigator's Tools": {
+              "name": "领航工具 Navigator's Tools"
             }
           }
         },
@@ -23909,6 +24944,33 @@
             },
             "Lightning Bolt": {
               "name": "闪电箭 Lightning Bolt"
+            },
+            "Magnifying Glass": {
+              "name": "放大镜 Magnifying Glass"
+            },
+            "Scholar's Pack": {
+              "name": "学者套装 Scholar's Pack"
+            },
+            "Parchment": {
+              "name": "羊皮纸 Parchment"
+            },
+            "Tinker's Tools": {
+              "name": "修补匠工具 Tinker's Tools"
+            },
+            "Warhammer": {
+              "name": "战锤 Warhammer"
+            },
+            "Elementalism": {
+              "name": "四象法门 Elementalism"
+            },
+            "Floating Disk": {
+              "name": "谭森浮碟术 Floating Disk"
+            },
+            "Magic Weapon": {
+              "name": "魔化武器 Magic Weapon"
+            },
+            "Locate Object": {
+              "name": "物件定位术 Locate Object"
             }
           }
         },
@@ -23942,6 +25004,12 @@
             },
             "Steam Vent": {
               "name": "蒸汽喷口 Steam Vent"
+            },
+            "War Pick": {
+              "name": "战镐 War Pick"
+            },
+            "Shock Spear": {
+              "name": "震击长矛 Shock Spear"
             }
           }
         },
@@ -23987,6 +25055,15 @@
                   "name": "法术变更 Spell Changes"
                 }
               }
+            },
+            "Internal Capacitor": {
+              "name": "内置电容器 Internal Capacitor"
+            },
+            "Stabilizer": {
+              "name": "稳定器 Stabilizer"
+            },
+            "Dying Burst": {
+              "name": "濒死爆发 Dying Burst"
             }
           }
         },
@@ -24016,6 +25093,15 @@
                   "description": "<p>目标处于&amp;Reference[Restrained apply=false]状态，直到其脱身。</p>"
                 }
               }
+            },
+            "Shock Capacitor": {
+              "name": "震击电容器 Shock Capacitor"
+            },
+            "Stabilizer": {
+              "name": "稳定器 Stabilizer"
+            },
+            "Dying Burst": {
+              "name": "濒死爆发 Dying Burst"
             }
           }
         },
@@ -24030,6 +25116,9 @@
             },
             "Death Spores": {
               "name": "死亡孢子 Death Spores"
+            },
+            "Single Minded": {
+              "name": "一心一意 Single Minded"
             }
           }
         },
@@ -24078,10 +25167,23 @@
                 "Slowed": {
                   "name": "迟缓 Slowed"
                 }
-              }
+              },
+              "name": "铁蒺藜 Caltrops"
             },
             "Oil": {
               "name": "油 Oil"
+            },
+            "Woodcarver's Tools": {
+              "name": "木雕工具 Woodcarver's Tools"
+            },
+            "Tenacity": {
+              "name": "坚韧 Tenacity"
+            },
+            "War Pick": {
+              "name": "战镐 War Pick"
+            },
+            "Dungeoneer's Pack": {
+              "name": "地城探险者背包 Dungeoneer's Pack"
             }
           }
         },
@@ -24118,6 +25220,12 @@
             },
             "Rapier": {
               "name": "细剑 Rapier"
+            },
+            "War Pick": {
+              "name": "战镐 War Pick"
+            },
+            "Shock Spear": {
+              "name": "震击长矛 Shock Spear"
             }
           }
         },
@@ -24148,6 +25256,15 @@
             },
             "Construct": {
               "name": "构装体 Construct"
+            },
+            "Shock Spear": {
+              "name": "震击长矛 Shock Spear"
+            },
+            "Lightning Absorption": {
+              "name": "闪电吸收 Lightning Absorption"
+            },
+            "War Pick": {
+              "name": "战镐 War Pick"
             }
           }
         },
@@ -24184,6 +25301,12 @@
             },
             "Light Crossbow": {
               "name": "轻弩 Light Crossbow"
+            },
+            "War Pick": {
+              "name": "战镐 War Pick"
+            },
+            "Shock Spear": {
+              "name": "震击长矛 Shock Spear"
             }
           }
         },
@@ -24217,6 +25340,12 @@
             },
             "Steam Vent": {
               "name": "蒸汽喷口 Steam Vent"
+            },
+            "War Pick": {
+              "name": "战镐 War Pick"
+            },
+            "Shock Spear": {
+              "name": "震击长矛 Shock Spear"
             }
           }
         },
@@ -24339,6 +25468,31 @@
             },
             "Lightning Bolt": {
               "name": "闪电箭 Lightning Bolt"
+            },
+            "Darkvision": {
+              "name": "黑暗视觉 Darkvision",
+              "effects": {
+                "Darkvision": {
+                  "name": "黑暗视觉 Darkvision"
+                }
+              }
+            },
+            "Fire Shield": {
+              "name": "火焰护盾 Fire Shield"
+            },
+            "Polymorph": {
+              "name": "变形术 Polymorph"
+            },
+            "Resilient Sphere": {
+              "name": "弹力法球 Resilient Sphere"
+            },
+            "Luxarum 2: Bright": {
+              "name": "卢克萨鲁姆 2：明亮 Luxarum 2: Bright",
+              "effects": {
+                "Flickering": {
+                  "name": "微闪 Flickering"
+                }
+              }
             }
           }
         },
@@ -24364,6 +25518,12 @@
             },
             "Field Repairs": {
               "name": "战地修理 Field Repairs"
+            },
+            "Crossbow Bolt": {
+              "name": "弩矢 Crossbow Bolt"
+            },
+            "Tinker's Tools": {
+              "name": "修补匠工具 Tinker's Tools"
             }
           }
         },
@@ -24379,6 +25539,12 @@
             },
             "Light Crossbow": {
               "name": "轻弩 Light Crossbow"
+            },
+            "Steel Mace": {
+              "name": "钢制钉头锤 Steel Mace"
+            },
+            "Trained Security": {
+              "name": "受训安保 Trained Security"
             }
           }
         },
@@ -24422,6 +25588,15 @@
                   "name": "法术变更 Spell Changes"
                 }
               }
+            },
+            "Underwater Camouflage": {
+              "name": "水下伪装 Underwater Camouflage"
+            },
+            "Bioluminescence": {
+              "name": "生物荧光 Bioluminescence"
+            },
+            "Lightning Susceptibility": {
+              "name": "易受闪电影响 Lightning Susceptibility"
             }
           }
         },
@@ -25519,6 +26694,9 @@
             },
             "Walking Stick": {
               "name": "手杖 Walking Stick"
+            },
+            "Locate Creature": {
+              "name": "定位生物 Locate Creature"
             }
           }
         },
@@ -26062,6 +27240,18 @@
                   "name": "余烬烈焰 Ember Blaze"
                 }
               }
+            },
+            "Crossbow Bolt": {
+              "name": "弩矢 Crossbow Bolt"
+            },
+            "Passionate Trader": {
+              "name": "热忱商贩 Passionate Trader"
+            },
+            "Ditchdigger": {
+              "name": "沟渠挖掘工 Ditchdigger"
+            },
+            "Focused Reactivity": {
+              "name": "专注反应 Focused Reactivity"
             }
           }
         },
@@ -26236,6 +27426,50 @@
                   "name": "蛛行术 Spider Climb"
                 }
               }
+            },
+            "Sling Bullet": {
+              "name": "投石索弹丸 Sling Bullet"
+            },
+            "Druidic": {
+              "name": "德鲁伊语 Druidic"
+            },
+            "Natural Recovery": {
+              "name": "自然恢复 Natural Recovery"
+            },
+            "Lunar Tattoos": {
+              "name": "月相纹身 Lunar Tattoos",
+              "effects": {
+                "Aura Lunar Resonance": {
+                  "name": "灵气月华共鸣 Aura Lunar Resonance"
+                },
+                "Cora Lunar Reflection": {
+                  "name": "科拉月华映照 Cora Lunar Reflection"
+                },
+                "Mayis Lunar Reflection": {
+                  "name": "玛伊斯月华映照 Mayis Lunar Reflection"
+                },
+                "Ragen Lunar Reflection": {
+                  "name": "拉根月华映照 Ragen Lunar Reflection"
+                },
+                "Orbis Lunar Reflection": {
+                  "name": "奥比斯月华映照 Orbis Lunar Reflection"
+                },
+                "Akon Lunar Reflection": {
+                  "name": "阿肯月华映照 Akon Lunar Reflection"
+                }
+              }
+            },
+            "Wild Shape": {
+              "name": "荒野形态 Wild Shape"
+            },
+            "Barkskin": {
+              "name": "树肤 Barkskin"
+            },
+            "Conjure Animals": {
+              "name": "咒唤兽群 Conjure Animals"
+            },
+            "Revivify": {
+              "name": "回生术 Revivify"
             }
           }
         },
@@ -27415,6 +28649,9 @@
             },
             "Weaver's Tools": {
               "name": "织工工具 Weaver's Tools"
+            },
+            "Tenacity": {
+              "name": "坚韧 Tenacity"
             }
           }
         },
@@ -27916,6 +29153,24 @@
                   "name": "镣铐束缚 Manacled"
                 }
               }
+            },
+            "Aid": {
+              "name": "援助术 Aid"
+            },
+            "Create or Destroy Water": {
+              "name": "造水术或毁水术 Create or Destroy Water"
+            },
+            "Searing Smite": {
+              "name": "炽焰斩 Searing Smite"
+            },
+            "Eldritch Spear": {
+              "name": "魔能长枪 Eldritch Spear"
+            },
+            "Explosives Training": {
+              "name": "爆炸物训练 Explosives Training"
+            },
+            "Pact Magic": {
+              "name": "契约魔法 Pact Magic"
             }
           }
         },
@@ -28032,6 +29287,24 @@
                   "name": "镣铐束缚 Manacled"
                 }
               }
+            },
+            "Aid": {
+              "name": "援助术 Aid"
+            },
+            "Create or Destroy Water": {
+              "name": "造水术或毁水术 Create or Destroy Water"
+            },
+            "Searing Smite": {
+              "name": "炽焰斩 Searing Smite"
+            },
+            "Eldritch Spear": {
+              "name": "魔能长枪 Eldritch Spear"
+            },
+            "Explosives Training": {
+              "name": "爆炸物训练 Explosives Training"
+            },
+            "Pact Magic": {
+              "name": "契约魔法 Pact Magic"
             }
           }
         },
@@ -28096,6 +29369,18 @@
                   "name": "余烬烈焰 Ember Blaze"
                 }
               }
+            },
+            "Crossbow Bolt": {
+              "name": "弩矢 Crossbow Bolt"
+            },
+            "Passionate Trader": {
+              "name": "热忱商贩 Passionate Trader"
+            },
+            "Ditchdigger": {
+              "name": "沟渠挖掘工 Ditchdigger"
+            },
+            "Focused Reactivity": {
+              "name": "专注反应 Focused Reactivity"
             }
           }
         },
@@ -28172,6 +29457,49 @@
             },
             "Sling": {
               "name": "投石索 Sling"
+            },
+            "Sling Bullet": {
+              "name": "投石索弹丸 Sling Bullet"
+            },
+            "Barkskin": {
+              "name": "树肤 Barkskin",
+              "effects": {
+                "Barkskin": {
+                  "name": "树肤 Barkskin"
+                }
+              }
+            },
+            "Lunar Tattoos": {
+              "name": "月相纹身 Lunar Tattoos",
+              "effects": {
+                "Aura Lunar Resonance": {
+                  "name": "灵气月华共鸣 Aura Lunar Resonance"
+                },
+                "Cora Lunar Reflection": {
+                  "name": "科拉月华映照 Cora Lunar Reflection"
+                },
+                "Mayis Lunar Reflection": {
+                  "name": "玛伊斯月华映照 Mayis Lunar Reflection"
+                },
+                "Ragen Lunar Reflection": {
+                  "name": "拉根月华映照 Ragen Lunar Reflection"
+                },
+                "Orbis Lunar Reflection": {
+                  "name": "奥比斯月华映照 Orbis Lunar Reflection"
+                },
+                "Akon Lunar Reflection": {
+                  "name": "阿肯月华映照 Akon Lunar Reflection"
+                }
+              }
+            },
+            "Natural Recovery": {
+              "name": "自然恢复 Natural Recovery"
+            },
+            "Druidic": {
+              "name": "德鲁伊语 Druidic"
+            },
+            "Wild Shape": {
+              "name": "荒野形态 Wild Shape"
             }
           }
         },
@@ -28198,6 +29526,9 @@
             },
             "Unlit Kynryth Torch": {
               "name": "未点燃的肯瑞斯火炬 Unlit Kynryth Torch"
+            },
+            "Receive Flame": {
+              "name": "接受火焰 Receive Flame"
             }
           }
         },
@@ -28604,6 +29935,9 @@
             },
             "Evasion": {
               "name": "闪避 Evasion"
+            },
+            "Light Sensitivity": {
+              "name": "光照敏感 Light Sensitivity"
             }
           }
         },
@@ -28616,6 +29950,17 @@
             },
             "Pseudopod": {
               "name": "伪足 Pseudopod"
+            },
+            "Alert": {
+              "name": "警戒 Alert",
+              "effects": {
+                "Alert": {
+                  "name": "警戒 Alert"
+                }
+              }
+            },
+            "Underwater Camouflage": {
+              "name": "水下伪装 Underwater Camouflage"
             }
           }
         },
@@ -30116,6 +31461,9 @@
                   "description": "<p>目标直到你下个回合结束前都无法恢复生命值。</p>"
                 }
               }
+            },
+            "Eldritch Mind": {
+              "name": "魔能意志 Eldritch Mind"
             }
           }
         },
@@ -30394,6 +31742,9 @@
                   "description": "<p>目标陷入 &amp;Reference[charmed apply=false] 状态，直到其下一回合结束。</p>"
                 }
               }
+            },
+            "Eldritch Mind": {
+              "name": "魔能意志 Eldritch Mind"
             }
           }
         },
@@ -30994,7 +32345,8 @@
                 "Calmed": {
                   "name": "平静 Calmed"
                 }
-              }
+              },
+              "name": "平静情绪 Calm Emotions"
             },
             "Enhance Ability": {
               "name": "强化能力 Enhance Ability",
@@ -31026,7 +32378,8 @@
                 "Slowed": {
                   "name": "迟缓 Slowed"
                 }
-              }
+              },
+              "name": "缓慢术 Slow"
             },
             "Heroism": {
               "name": "英雄气概 Heroism",
@@ -31108,6 +32461,61 @@
             },
             "Clothes, Traveler's": {
               "name": "旅行者服装 Clothes, Traveler's"
+            },
+            "Bardic Inspiration": {
+              "name": "吟游诗人的激励 Bardic Inspiration",
+              "effects": {
+                "Inspired": {
+                  "name": "鼓舞 Inspired"
+                }
+              }
+            },
+            "Well Practiced": {
+              "name": "熟练老到 Well Practiced",
+              "effects": {
+                "Well Practiced": {
+                  "name": "熟练老到 Well Practiced"
+                }
+              }
+            },
+            "Song of Rest": {
+              "name": "安魂曲 Song of Rest"
+            },
+            "Focused Reactivity": {
+              "name": "专注反应 Focused Reactivity"
+            },
+            "Aid": {
+              "name": "援助术 Aid"
+            },
+            "Mass Healing Word": {
+              "name": "群体治愈真言 Mass Healing Word"
+            },
+            "Tongues": {
+              "name": "巧言术 Tongues"
+            },
+            "Cutting Words": {
+              "name": "语出惊人 Cutting Words"
+            },
+            "Magical Discoveries": {
+              "name": "魔法探秘 Magical Discoveries"
+            },
+            "Magic Weapon": {
+              "name": "魔化武器 Magic Weapon"
+            },
+            "Dice": {
+              "name": "骰子 Dice"
+            },
+            "Entertainer's Pack": {
+              "name": "艺人套组 Entertainer's Pack"
+            },
+            "Bullseye Lantern": {
+              "name": "牛眼提灯 Bullseye Lantern"
+            },
+            "Bell": {
+              "name": "铃铛 Bell"
+            },
+            "Mirror": {
+              "name": "镜子 Mirror"
             }
           }
         },
@@ -31137,7 +32545,8 @@
                 "Calmed": {
                   "name": "平静 Calmed"
                 }
-              }
+              },
+              "name": "平静情绪 Calm Emotions"
             },
             "Enhance Ability": {
               "name": "强化能力 Enhance Ability",
@@ -31169,7 +32578,8 @@
                 "Slowed": {
                   "name": "迟缓 Slowed"
                 }
-              }
+              },
+              "name": "缓慢术 Slow"
             },
             "Heroism": {
               "name": "英雄气概 Heroism",
@@ -31257,10 +32667,69 @@
                 "Soulbound": {
                   "name": "魂缚 Soulbound"
                 }
-              }
+              },
+              "name": "次级魂印 Lesser Soulmark"
             },
             "Freedom of Movement": {
               "name": "行动自如 Freedom of Movement"
+            },
+            "Bardic Inspiration": {
+              "name": "吟游诗人的激励 Bardic Inspiration",
+              "effects": {
+                "Inspired": {
+                  "name": "鼓舞 Inspired"
+                }
+              }
+            },
+            "Well Practiced": {
+              "name": "熟练老到 Well Practiced",
+              "effects": {
+                "Well Practiced": {
+                  "name": "熟练老到 Well Practiced"
+                }
+              }
+            },
+            "Song of Rest": {
+              "name": "安魂曲 Song of Rest"
+            },
+            "Focused Reactivity": {
+              "name": "专注反应 Focused Reactivity"
+            },
+            "Aid": {
+              "name": "援助术 Aid"
+            },
+            "Mass Healing Word": {
+              "name": "群体治愈真言 Mass Healing Word"
+            },
+            "Tongues": {
+              "name": "巧言术 Tongues"
+            },
+            "Cutting Words": {
+              "name": "语出惊人 Cutting Words"
+            },
+            "Magical Discoveries": {
+              "name": "魔法探秘 Magical Discoveries"
+            },
+            "Magic Weapon": {
+              "name": "魔化武器 Magic Weapon"
+            },
+            "Dice": {
+              "name": "骰子 Dice"
+            },
+            "Entertainer's Pack": {
+              "name": "艺人套组 Entertainer's Pack"
+            },
+            "Bullseye Lantern": {
+              "name": "牛眼提灯 Bullseye Lantern"
+            },
+            "Bell": {
+              "name": "铃铛 Bell"
+            },
+            "Mirror": {
+              "name": "镜子 Mirror"
+            },
+            "Countercharm": {
+              "name": "反制魅惑 Countercharm"
             }
           }
         },
@@ -31705,6 +33174,12 @@
             },
             "Parry": {
               "name": "招架 Parry"
+            },
+            "Brewer's Supplies": {
+              "name": "酿酒工具 Brewer's Supplies"
+            },
+            "Cook's Utensils": {
+              "name": "厨师工具 Cook's Utensils"
             }
           }
         },
@@ -31854,6 +33329,9 @@
             },
             "Healing Word": {
               "name": "治疗之语 Healing Word"
+            },
+            "Woodcarver's Tools": {
+              "name": "木雕工具 Woodcarver's Tools"
             }
           }
         },
@@ -31894,6 +33372,17 @@
             },
             "False Appearance": {
               "name": "伪装外表 False Appearance"
+            },
+            "Earth Glide": {
+              "name": "遁地 Earth Glide"
+            },
+            "Cora 2: Hardened": {
+              "name": "科拉 2：坚硬 Cora 2: Hardened",
+              "effects": {
+                "Hardened": {
+                  "name": "坚硬 Hardened"
+                }
+              }
             }
           }
         },
@@ -31931,8 +33420,23 @@
             },
             "Aftershock": {
               "name": "余震 Aftershock"
+            },
+            "Earth Glide": {
+              "name": "遁地 Earth Glide"
+            },
+            "Telekinetic Flight": {
+              "name": "念力飞行 Telekinetic Flight"
+            },
+            "Cora 4: Compressed": {
+              "name": "科拉 4：压实 Cora 4: Compressed",
+              "effects": {
+                "Compressed": {
+                  "name": "压实 Compressed"
+                }
+              }
             }
-          }
+          },
+          "name": "晶巉巨像 Crystallath"
         },
         "Dirt Globlin": {
           "name": "泥土格布林 Dirt Globlin",
@@ -31959,6 +33463,14 @@
             },
             "Submerging Withdrawal": {
               "name": "潜地撤离 Submerging Withdrawal"
+            },
+            "Cora 1: Grounded": {
+              "name": "科拉 1：扎根 Cora 1: Grounded",
+              "effects": {
+                "Grounded": {
+                  "name": "扎根 Grounded"
+                }
+              }
             }
           }
         },
@@ -32006,6 +33518,14 @@
             },
             "Submerging Withdrawal": {
               "name": "潜地撤离 Submerging Withdrawal"
+            },
+            "Cora 1: Grounded": {
+              "name": "科拉 1：扎根 Cora 1: Grounded",
+              "effects": {
+                "Grounded": {
+                  "name": "扎根 Grounded"
+                }
+              }
             }
           }
         },
@@ -32190,6 +33710,14 @@
             },
             "Graviturgic Crush": {
               "name": "重力挤压 Graviturgic Crush"
+            },
+            "Cora 4: Compressed": {
+              "name": "科拉 4：压实 Cora 4: Compressed",
+              "effects": {
+                "Compressed": {
+                  "name": "压实 Compressed"
+                }
+              }
             }
           }
         },
@@ -32250,6 +33778,14 @@
             },
             "Eruptive Recall": {
               "name": "破土回归 Eruptive Recall"
+            },
+            "Cora 3: Resolute": {
+              "name": "科拉 3：坚定 Cora 3: Resolute",
+              "effects": {
+                "Resolute": {
+                  "name": "坚定 Resolute"
+                }
+              }
             }
           }
         }
