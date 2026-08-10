@@ -49,11 +49,16 @@ jobs:
         run: |
           # compendium/en 是**英文基准**（22 MB），只用于算 drift，绝不能进发布包 ——
           # 装进去会让用户每次开世界白下一倍体积。
+          # zip 对已存在的同名档案是**追加更新**、不是重建。仓库里若留着上一版的
+          # module.zip，旧内容会原样活到新包里 —— 1.1.0 就这么混进了 22 MB 陈旧副本
+          # （含那份损坏的 ember.crucible-adventure-en.json）。先删干净再打。
+          rm -f module.zip
           zip -r module.zip . \
             -x ".git/*" \
             -x ".github/*" \
             -x ".gitignore" \
             -x "release/*" \
+            -x "lang/lang_keep_english.json" \
             -x "compendium/en/*" \
             -x "scripts/__pycache__/*" \
             -x "*.zip" \
