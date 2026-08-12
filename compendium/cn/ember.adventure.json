@@ -1,6 +1,5 @@
 {
   "label": "Ember Adventure",
-  "folders": {},
   "entries": {
     "Ember Early Access": {
       "name": "余烬抢先体验 Ember Early Access",
@@ -10552,27 +10551,10 @@
           }
         },
         "Lake Jinro": {
-          "name": "金罗湖 Lake Jinro",
-          "notes": {
-            "4bu8vPmVqa1qgu8h": "墓刃海岸 Grave Blade Shore",
-            "W45KkcV3ubTUz6mJ": "折返小径 Switchback Path",
-            "ItXj4ziyij9mP8IV": "毁坏的月神殿 Ruined Lunar Shrine",
-            "31qeHnAhOGem3E40": "遗忘的残骸 Forgotten Wreckage",
-            "xG85NLjXvXOp0Qvr": "藏宝空谷 Loot-Lined Hollow",
-            "V86oFrkMVK5uqKLD": "加冈瑟斯隧道 Garganthus Tunnel"
-          }
+          "name": "金罗湖 Lake Jinro"
         },
         "Mythspire Observatory - Lower": {
           "name": "神话尖塔天文台 - 下层 Mythspire Observatory - Lower",
-          "notes": {
-            "oEGn4vrRCFXilK3M": "灵气宝石 Gem of Aura",
-            "FgZCV367lypfRM9V": "科拉宝石 Gem of Cora",
-            "k6ugGHiWWXqVPMV1": "玛伊斯宝石 Gem of Mayis",
-            "IoL6AUQz03z4GsUN": "拉根宝石 Gem of Ragen",
-            "TmbfbQtuAodeQkLz": "奥比斯宝石 Gem of Orbis",
-            "61a0jFHtmWF4kwG3": "阿肯宝石 Gem of Akon",
-            "KdhBrlfNpW0Smyzd": "兰提尔宝石 Gem of Lantyr"
-          },
           "regions": {
             "Elevator Up": {
               "name": "升降机上行"
@@ -11021,22 +11003,6 @@
         },
         "The Bleak Archive": {
           "name": "黯淡秘库 The Bleak Archive",
-          "notes": {
-            "GLAH4RiyXUsmivl9": "前厅 Antechamber",
-            "pUZ4MvfM2lg9N7zc": "主展厅 Main Gallery",
-            "wNlwvOdAtRHCPrUp": "雾幕掩映的接近 Mist-Veiled Approach",
-            "qxyIkdGFFKyWdr9I": "西侧走廊 Western Corridor",
-            "7GodyrZeYKt4zI4U": "隐秘裂口 Hidden Breach",
-            "fG4dOA547jrjeko1": "蛛网陵墓 Webbed Mausoleum",
-            "qBrX0yUObfEyEPlJ": "骨库 Ossuary",
-            "mPeMp0BT6KvRn9jL": "东侧走廊 Eastern Corridor",
-            "fEWlxy2zYR0CEBDU": "暗室 Darkroom",
-            "3xvqRkJNQ4VKB0a4": "东侧藏宝室 Eastern Treasure Chamber",
-            "LTyc3MSBHfUwhxjA": "西侧藏宝室 Western Treasure Chamber",
-            "TAFPdbH7yxMldvOi": "内前厅 Inner Antechamber",
-            "5UhD2vr8GPZc3eA4": "书房 Study Chamber",
-            "jS0BgnmhychugfXn": "反射阵列 Reflector Array"
-          },
           "regions": {
             "West Blade Trap Trigger": {
               "name": "西侧刀刃陷阱触发器",
@@ -11126,9 +11092,6 @@
         },
         "Vortest Tower": {
           "name": "沃特斯特塔 Vortest Tower",
-          "notes": {
-            "f05TiGOieu54kSMi": "塔前室 Tower Antechamber"
-          },
           "regions": {
             "Tower Transporter": {
               "name": "塔楼传送装置",
@@ -11223,10 +11186,6 @@
         },
         "Yakoshta Mine": {
           "name": "雅科什塔矿井 Yakoshta Mine",
-          "notes": {
-            "Pjcnbw3ApmLMjhf8": "蓝色轨道 Blue Track",
-            "xmXoioRQwCcfXy8Q": "红色路径 Red Track"
-          },
           "regions": {
             "Broken West Bridge": {
               "name": "断裂的西桥",
@@ -11392,20 +11351,6 @@
         },
         "The Arctus Plateau": {
           "name": "阿克图斯高原 The Arctus Plateau",
-          "notes": {
-            "5ukzHLIJoxslLkQm": "福布鲁克 Fallbrook",
-            "IQlIrWLIMFzbjun7": "金罗湖 Lake Jinro",
-            "psJSVJ9338qcP2z5": "伊尔赛恩湖 Lake Yrthain",
-            "jsIsyjD0B8zppDFz": "阿加斯湖 Lake Argath",
-            "q0r6bacmeriWDvBq": "米斯拉湖 Lake Mithra",
-            "o862m543c78DTlJZ": "阿帕隆湾 Aparon Bay",
-            "T0tt5UWme9xZ1oXi": "德拉德利庄园 Dradley Grange",
-            "68wgXkZTi5As3BKn": "流放者登陆点 Exile's Landing",
-            "Bz1hpo6IBjBwl4U9": "漂滓区 Flotsam",
-            "zb1DoTg6Dcs6SO2B": "莉莉菲尔德驿站 Lilifeld Stations",
-            "qeJx7aU9SVADP85m": "栅堡十字 Palisade Cross",
-            "jwTLTKBM5a6S8zS6": "卡德拉赞恩 Kadra Zann"
-          },
           "regions": {
             "Cavern Darkness": {
               "name": "洞窟黑暗",
@@ -11421,194 +11366,7 @@
           "name": "寰宇 The Cosmos"
         },
         "The World of Ember": {
-          "name": "余烬世界 The World of Ember",
-          "notes": {
-            "5fN2g192NkqHIof9": "托拉加 Toraga",
-            "093OGgOxZ3T2ZJjz": "莱勒尔 Ryleir",
-            "5ktMXYA72MA4FCae": "卡斯拉-布拉瓦 Casla-Brava",
-            "eDRcsi8vUn2ZIXTr": "科托斯岛 Kortos Isle",
-            "cpXF6706cnIEY2EE": "卢恩 Luen",
-            "0p26H5CEWFSOob7L": "考斯提克边域 KAUSTIC HINTERLANDS",
-            "VlSYJ99XOOGTwwa7": "奥什爪 Oshclaw",
-            "KLRuTYCq91WqxD7R": "库尔伦 Kulrun",
-            "1Lx9QXd4Oz79ETF4": "低地堡垒 Lowland Bastions",
-            "68JTTCqzacE53hCa": "烛芯 Wick",
-            "mUvcG0FPJZLLkUXY": "奇美拉 Chimeras",
-            "7qvpRx7dbMdjStJJ": "斯佩伦 Sperun",
-            "ONZviU3k8x5t67go": "海妖港 Kraken Port",
-            "tgyGuZJeAxLNigOC": "弑神者奥里诺斯 Godkiller Orinoth",
-            "KMLOZSon1plzRscJ": "卡斯卡尔金原 CASCAAL GOLDS",
-            "k22nEBZkgwooKv4Q": "鲁纳高地 RUNA HIGHLANDS",
-            "9g2NAJt3o5vMYvi9": "法尔伦特山脉 FAR'RENT MOUNTAINS",
-            "6P0VbMGSZMNCpbZO": "灵魂之地 The Spiritlands",
-            "DfofwGIK5n33wWcM": "劫掠者海洋 The Reaver Ocean",
-            "DkRDgGDRipPB3GCY": "咆哮之缘 The Roaring Edge",
-            "q3NJXFjcyVnW5EUL": "利维坦禁猎区 The Leviathan Preserve",
-            "FekenBOE6CXI4ouy": "失落之地 Land of the Lost",
-            "3UD8djH4UnXtHEgc": "受诅大陆 The Cursed Continent",
-            "AGv68wEv5p2MWhze": "旋涡之缘 The Swirling Edge",
-            "jqP3ZI1wmLNidv1s": "遥南荒域 The Far Southlands",
-            "6VetlPyBnepzkOeh": "南大洋 The Southern Ocean",
-            "iIM92yMGnubbjaPX": "辉耀大陆 The Radiant Continent",
-            "JVFtk5kGfff0gnS6": "狂野之缘 The Untamed Edge",
-            "DRrcOCK9jEpqE21R": "西部荒野 The Western Wilds",
-            "w4747EHcoJVq0yfI": "失落诸域 The Lost Realms",
-            "er8xxJJ9oYaIHqzR": "霜寒之缘 The Hoarfrost Edge",
-            "lihjpzjuzcWI0UUT": "萨利斯卡 SALISKA",
-            "kBP6ahmH5uzt6dlh": "埃梅尔 EMEIR",
-            "xlWyx5yl6J1HSUf9": "丝绸之海 The Silken Sea",
-            "D76lBLIRKDHDyBTr": "星之盾 The Starshield",
-            "mwjXKqsdLkJtTT0m": "贾恩半岛 The Jarn Peninsula",
-            "HG1pkIvozn427Ezf": "和谐真理 The Harmonious Truth",
-            "O0G6gBO8eCYiLjUu": "卡罗海洋 The Carrow Ocean",
-            "3kpLIkQV7y3YIhtA": "裂片石大陆 The Shardstone Continent",
-            "Jfp6FEEYccUSW8bs": "潜行的死亡 The Prowling Death",
-            "lEsjN7lvZCpy2Ces": "风秃地 WINDBARE",
-            "woJRBRRAuP3QTX9e": "斯基塔里 SKITARI",
-            "lLdLJteB7Fg6Dhga": "托尔沃尔·科哈泰 TOLVOR KOHATAI",
-            "P1SuIR5GGJxcdGXy": "贾迪思 JAEDITH",
-            "6ueWeG3jzv1C6Wd6": "影裔 SHADEKIN",
-            "5RkM435VoXcdGLfk": "瓦提克 VARTIC",
-            "wH4wE9yJkHusut7r": "绍维克 SAURVEK",
-            "8Ib0b4FnKylMKv6p": "苏纳雷 SUNARAE",
-            "wxnKGzhLqT5vqxjJ": "坦帕尔 TEMPAR",
-            "TByALXGeuDkivP9o": "巴布灵 BARBLINGS",
-            "FRkj0iAwkDJBKPdA": "尘灵 DUSTRA",
-            "dk0GVwRFfI21XF16": "比约丹 BJORDAN",
-            "KFzCZ0eZ4sTAiIT8": "瓦雷娜 VARENA",
-            "C2JUOQduyR0aLxcG": "卢纳莱 LUNARAI",
-            "PFmO7Jzvdxv0MH7Q": "尘土荒原 Dustlands",
-            "LrU3vMfGLoNe9UUS": "灰烬卫峰群 Ash Guard Peaks",
-            "DfXbOrdISw7lSnPd": "最后的失职 Last Remiss",
-            "ayw49o43LQO9PtNW": "莫伊兰的哀歌 Moiran's Lament",
-            "6z1hiakRhDj8yjvL": "尖啸荒原 Screaming Wasteland",
-            "NILjIvJdxpwI07R4": "黄金湾 The Golden Bay",
-            "h9ODcZWaGbfSjyuP": "恐惧丘陵 Dread Hills",
-            "qSB5XMlXq4Oz8Qwz": "赞科尔广袤域 Zancol Expanse",
-            "Ps2yNE2WqMVSjfMq": "拉根的入侵 Incursion of Ragen",
-            "wFsNnDwM5hkmvAKh": "赫基罗 Hekkiro",
-            "mzk57fdmPhOK2Qzr": "菲亚拉的监狱 Prison of Fiyara",
-            "p0yj84ZyOU2iVuUP": "荆棘峰 Briar Peaks",
-            "WcihdlYf5OOLyeqA": "芬灵族 FENLINGS",
-            "My28yU3HdAOaaIuc": "爪山 Mt Claw",
-            "N1hHEZS0UJ3haygS": "丘陵尽头 Trailing Hills",
-            "UFldLbwNOQRLTLmQ": "大莫瑞内尔 Great Morenel",
-            "vVgJfoZrrYJwTVU8": "躁动湾 Restless Bay",
-            "0FWNRWGeNlc0sMJI": "卡隆群山 Karon Mounts",
-            "Gg5w3G9CjUcaeYWT": "铁脊丘陵 Ironrow Hills",
-            "CoRUiveGMuhEpirT": "克雷纳湖 Lake Krena",
-            "mWN1gQBWO3u9NGcS": "中央海 The Middle Sea",
-            "u45z4iFlXGMK1y7R": "失而复得之岛 Regained Isle",
-            "raK41MDM1uTLxsAO": "剑锋山脉 The Sword Range",
-            "J9kxveRr67X8BFyW": "迷雾束缚海峡 Mistbound Narrows",
-            "EFOs5aZ7zpLEAV7n": "瓦伦丘陵 Varen Hills",
-            "4dAzcljFkAFSyrva": "边境墙 Border Walls",
-            "KqXQrJA4L4icQaEq": "第一王座 The First Throne",
-            "pKzH6zY2oLGHY3X4": "马本丘陵 Marben Hills",
-            "jOQsRnJYSMSuWe1q": "命运山 Mount Fate",
-            "boHQqyXQ0MXJiiUI": "水晶苔原 Crystal Tundra",
-            "v4Nibd4dFUATuz80": "失落谷地 The Lost Dale",
-            "YcBxTPcqTcgO8VQt": "冠冕群峰 Crowning Peaks",
-            "kzGvFoHAFAJKRSZv": "埃克斯滕半岛 Exten Peninsula",
-            "HslLEdoptrXPY76I": "野兽之喉 The Beast's Maw",
-            "kJocHJvevD5qAAON": "科兰尖刺 Coran Spike",
-            "VG8GwF0VPNvl1Uex": "壁垒 The Bulwark",
-            "uZ4ZTRNM4WZxpHAu": "科隆达荒原 Koronda Barrens",
-            "MvnDGLHuZdyFfkaB": "肯特山 Mount K'Hente",
-            "Viy6ikZXMJYCmhLO": "沙纳山脉南部 Southern Shana Mountains",
-            "Lrr7aFXgsTwVGdak": "深渊荒芜 Abyssal Desolation",
-            "4PMxQzr1qc4ejOEK": "卢马林家园 Lumarin Homelands",
-            "JibBaxHjTvyEe5gW": "南部辉核森林 Southern Corebright Forest",
-            "vjz9Zrr8pgdSx6Yo": "觉醒草原 Awakened Savanna",
-            "lfBxH3iVbyVPsNqA": "太阳群山 Mountains of the Sun",
-            "y4o9kMcPzhh19lxZ": "梅尔卡托的避难所 Melcator's Refuge",
-            "zCgWfbityD45hFXd": "最后林地 Last Grove",
-            "hLiCZdIvsVJaWuvk": "凯马斯荒地 Kemas Badlands",
-            "csloYDrSlxOqqqd6": "阿里斯半岛 Aris Peninsula",
-            "8wpDKCfLkp1ZPO1W": "卡纳西亚 Canasia",
-            "LMtr8WUreNc5MHZw": "边境荒原 Border Heathlands",
-            "uiJDDOeyXFfnGfUd": "瓦萨尔森林 Vathar Forests",
-            "HQBXtJKPvzr1vibD": "辉核 Brightcore",
-            "4O7EX3XTL4mofI4p": "南部辉核森林 Southern Corebright Forest",
-            "YBI4ugyyDP2xAdBZ": "北部辉核森林 Northern Corebright Forest",
-            "0fijcD1V1mze6k04": "沙纳山脉北部 Northern Shana Mountains",
-            "gmLZDCWfGHdkDlZ8": "横渡之海 The Crossing Sea",
-            "7UBKeEEUxxbAFDrU": "基里克荒野 Kirike Wildlands",
-            "aNKA0uXp3PzyixRS": "梅宁高地 Menin Heights",
-            "al0tLpSO8dWPoH9M": "世界尽头 World's End",
-            "L8OcUeVG4K5oyTf9": "维塔里 Vita'ri",
-            "vHV9V9CWVavbOkur": "三眼岛 Three Eyes Island",
-            "VMTgPePpRLCtfIyw": "烬脊 Spine of Ember",
-            "JwIMEIQ2GB1HAprC": "珊瑚 Coral",
-            "rqP93B7UJhFFdVVB": "航行 Sail",
-            "NtD3suvo7wLncvyx": "阿瓦伊 Avai",
-            "3rPcjHeShSYin4nr": "升起 Hoist",
-            "tKT36paBerb6iswt": "卡克斯科 Caxco",
-            "9sTKtWbxczVTu3Z9": "轮子 Wheel",
-            "9u0fGn8wR9ft2AZh": "阿拉瓦伊 Alavai",
-            "6PypydbIQcHY06wo": "折磨 Torment",
-            "ziWsO1itNEPRfNa3": "奈姆 Na'me",
-            "CzFdZPjYU8iZCld6": "哀悼 Mourn",
-            "EFdRtYqXrexkhlAE": "破坏 Break",
-            "ycWyCv0bJeQwlbDn": "破碎要塞 Shattered Keep",
-            "GUslkdD0cPFT8M4J": "埃尔温的座位 Elwin's Seat",
-            "T9vb7dTAuUpAZLib": "墓寒 Gravechill",
-            "dK45rdgUdoQMTyAj": "灰烬 Ash",
-            "NJi13NDfPCeuQegC": "炉床 Hearth",
-            "ZvKXvULKf0HNpNQa": "奥尔泰杰 Aurtej",
-            "VaKFCttcVvx0UPJA": "库拉梅 Kula'me",
-            "VaSohghp40bkqrei": "拉维尔 Ra'vel",
-            "KqmeTfCIJfmep4IO": "纳斯贾尔 Nasjar",
-            "6H16Hz3NNKxzjs2k": "接住 Catch",
-            "MW4nGBb0chtQNBh4": "卡拉克索 Kalaxo",
-            "SnUswZ90KiN8mSjz": "雅里诺 Yarino",
-            "mRSAMkRN7WpQ7JNe": "异界之门 Gate",
-            "fXcsR1i53Ez3LJvT": "斯普林提斯 Splintis",
-            "k4PgRwVBxQmQ0oAl": "福尔吉尔 Forgil",
-            "5JtoygC4QzpVn6el": "雷丝塔 Reysta",
-            "mSjJmfZe54Y145Mz": "考恩 Kawn",
-            "s1RKH8tVsQ3Pywxm": "范托尔 Vantol",
-            "Ce4f6FJZFkXzo9Pr": "科拉 Corla",
-            "A0QWunDSr2vCgpbB": "阿沃克 Avok",
-            "1bvKQutcwESw4i7v": "凯胡恩 Kayhurn",
-            "WMUwCQRV8uWIQEzr": "瓦森 Vathan",
-            "UCHbsV1C6N4UJYc7": "点 Point",
-            "nlnsjj0VHWbT0QlH": "奥谢尔 Oshel",
-            "5ZCfnXQHak6ngDuA": "哀伤 Sorrow",
-            "jvqNEUbM0T7TQwCs": "布拉肯 Braken",
-            "OMRZLMzK5owSm0IC": "西尔伍德 Sirewood",
-            "asaThkJPihODN3vc": "埃尔凡 Elvan",
-            "41jTzu1MngecN0VD": "拳之登陆点 Fist's Landing",
-            "1PzAjq7xUMWErNPe": "腐蚀 Mordant",
-            "eMCCa89audQbTVAH": "王冠 Crown",
-            "v8j2Dg27bEfOsWtO": "红色鲁因 Red Rhuin",
-            "5NZLU9Ed0d1TdxrO": "尘土 Dust",
-            "Kmep90g8esxYNYNH": "纪森 Kisen",
-            "0LxBMJ9b1GWx9Jrj": "卡基罗 Kakiro",
-            "scQp1ZZMckP4Ftuy": "哈克西姆 Haxim",
-            "hNZzPhR1MbMAPtvW": "伊克泰 Iktae",
-            "ExIpFSrltHuFlK0C": "伊西克 Ixik",
-            "fjN3xwrY5Ky8Qj3B": "最后的港口 Last Port",
-            "2BDr7hg1fEzNuZGk": "移位石 Shiftstone",
-            "JjGMNp8fw0XFDg7I": "阿比拉斯 Abilas",
-            "GwUY9ZBlJYb0dgdG": "典籍 Tome",
-            "gsLKbyToKRInERoe": "闪耀山脉 GLITTERING MOUNTAINS",
-            "P2UPU7ycFzyoKPqD": "血虫 Bloodworm",
-            "u1hZ1a7wM0t9PXzF": "血虫 Bloodworm",
-            "E7XBRNnhzOcPJ2Wi": "血虫 Bloodworm",
-            "JEaJ7ZPHKHFVxvR5": "萨卡拉斯 Sacarath",
-            "durtvDL47Dsz7cgT": "荆棘皮毛 Briarfur",
-            "LvCuakytaPWSaGOU": "爬行者 The Crawler",
-            "6WuVAVdPwfdLmSGr": "希奥德雷德 Siodread",
-            "6eaM8q2yXBuIv89m": "谢露 She'lu",
-            "KXuOiM7pQNeZYJTS": "血虫 Bloodworm",
-            "JYcvE8NL7EFgN9qj": "血虫 Bloodworm",
-            "EW4NgPYW7Nmwm9lL": "血虫 Bloodworm",
-            "cBIGGRtzrwJbszaE": "克雷纳克 Krenac",
-            "5lUZ29URcNaoLsh0": "克雷纳克 Krenac",
-            "V1IyjbQI4GxTsOPU": "克拉萨里奥克 Krasarioc",
-            "dHyFxU7xW72Djnyl": "维拉塔热 VELLATAGÉ"
-          }
+          "name": "余烬世界 The World of Ember"
         },
         "Ocean": {
           "name": "海洋 Ocean",
@@ -11835,11 +11593,7 @@
           }
         },
         "Lightless Halls": {
-          "name": "无光大厅 Lightless Halls",
-          "notes": {
-            "U15Af8Wxy20nIp13": "火盆角落 Brazier Nook",
-            "NO5Aiky4p9Hy6HSZ": "石祭坛 Stone Altar"
-          }
+          "name": "无光大厅 Lightless Halls"
         },
         "Ordain Docks": {
           "name": "奥丹船坞 Ordain Docks",
@@ -12178,9 +11932,6 @@
         },
         "Jekeroka Villa": {
           "name": "杰刻罗卡别墅 Jekeroka Villa",
-          "notes": {
-            "a5qTLh6WK5Oj8eQO": "外部 Exterior"
-          },
           "regions": {
             "Interior": {
               "name": "内部",
@@ -12248,10 +11999,6 @@
         },
         "Marlstone Manor - First Floor": {
           "name": "马尔斯通庄园 - 一层 Marlstone Manor - First Floor",
-          "notes": {
-            "OeXVbWHZFav7ZMUW": "前方喷泉 Front Fountains",
-            "tmkwRM2QfEgKFu0E": "前方喷泉 Front Fountains"
-          },
           "regions": {
             "Wood Floors": {
               "name": "木地板",
@@ -12412,9 +12159,6 @@
         },
         "Oldcraft Lodge": {
           "name": "老工艺旅舍 Oldcraft Lodge",
-          "notes": {
-            "rBfcDCzsCWk59SVh": "临时厨房 The Ad-Hoc Kitchen"
-          },
           "regions": {
             "Interior Darkness": {
               "name": "室内黑暗",
@@ -12442,24 +12186,6 @@
         },
         "Ordain Burial Grounds": {
           "name": "奥丹墓地 Ordain Burial Grounds",
-          "notes": {
-            "FQtkGLXaGCFK6NGo": "葬礼大厅 Funeral Hall",
-            "RyOZRq7waBxeNb0l": "追忆之室 Chamber of Remembrance",
-            "C3PJhbyaGm7xLxhZ": "共祭之室 Chamber of Communion",
-            "Czv0ny2DvshgqNe8": "反思之室 Chamber of Reflection",
-            "6NtlBVPjPvUzzzDC": "辛达里克阈限 Cindaric Threshold",
-            "gnNPOPJBzTvSC2Fl": "前厅 Antechamber",
-            "qR9ZOfFdXmg5jE5x": "准备室 Preparation Chamber",
-            "7lXk0VMefCvGZWhX": "防腐室 Embalming Room",
-            "mHobqKVxFPTUL8p9": "杰夫赫家族陵墓 House Cevher Mausoleum",
-            "uYEaiobyULdYhKyi": "光谱之选民的坟墓 Tomb of Spectra's Chosen",
-            "GHQwJkQQ2zSR71KV": "安拉克陵墓 Anrak Mausoleum",
-            "Z31JEkBKXTyBYVML": "普雷斯廷陵墓 Prestyn Mausoleum",
-            "q6Pa96kjsZwssfAf": "点灯人的安息所 Lamplighter's Rest",
-            "BJGRis5LKeY6wQEw": "灰谷陵墓 Ashvale Mausoleum",
-            "l033kM49v1u5wTgx": "崩塌的陵墓 Crumbling Mausoleum",
-            "wbBpseS9vOweX7dd": "崩塌的陵墓 Crumbling Mausoleum"
-          },
           "regions": {
             "Darkness": {
               "name": "黑暗",
@@ -12538,15 +12264,6 @@
         },
         "Traveler's Rest Basement": {
           "name": "旅者歇脚处地下室 Traveler's Rest Basement",
-          "notes": {
-            "wBLKTYQKjUNIDspr": "医疗档案室 Medical Archives",
-            "MHgSdcDJzQ7PgQT6": "冷藏库 Cold Storage",
-            "VoSUkzdKJ6seIoxN": "楼下前厅 Downstairs Vestibule",
-            "ynDxwyEe2mAMFSfP": "检查室 Examination Room",
-            "v8wWJHUG1szF8tbX": "停尸房 Morgue",
-            "jrwgTAafpcMRQuQe": "地下室储藏室 Basement Storage",
-            "ZLdOfzKDBEXIUU2q": "地下室入口 Basement Entrance"
-          },
           "regions": {
             "Wood Floor": {
               "name": "木地板"
@@ -12579,26 +12296,6 @@
         },
         "Traveler's Rest Healing House": {
           "name": "旅者歇脚处疗愈所 Traveler's Rest Healing House",
-          "notes": {
-            "TRiIFhUtjtDkziur": "地下室入口 Basement Entrance",
-            "yysvEqO0SV9wY4xi": "总办公室 Main Office",
-            "wqh1z1pCyBIP61wx": "庭院 Courtyard",
-            "9N0RGLQ0KKC7I1Dz": "图书馆 Library",
-            "bw9Zp41drDtyNCij": "医务室 Infirmary",
-            "jvttZl8sZPGGYZmk": "辛达里克旅舍 Cindaric Lodging",
-            "0zq5PBJhEJo4VFyu": "食堂 Refectory",
-            "gqodEAMDptm07nVt": "炼金术 Alchemy",
-            "kosu3G76KyCniGt1": "书房 Study",
-            "rcBAtfDC89U6ItFm": "休憩室 Recreation",
-            "5FltOuUuR5izzf6C": "杰萨的私人房间 Jessa's Private Quarters",
-            "H1AQl7qBh8gyTnak": "私人手术室 Private Surgery",
-            "F2G80GdqSSeFSdpV": "后部储物前室 Rear Storage Vestibule",
-            "hUy8ucM24lm5YFMN": "储物间 Storage Closet",
-            "gc7VgMpMJG7G8S7H": "储物间 Storage Closet",
-            "WBZBfsM52fKX1FLm": "储物间 Storage Closet",
-            "rGbbzC5Co4MxhmLB": "客房区 Guest Quarters",
-            "NgRMF06Yb67Z6tVT": "手术室 Operating Theater"
-          },
           "regions": {
             "Indoors": {
               "name": "室内",
@@ -12676,9 +12373,6 @@
         },
         "Ember's Bounty": {
           "name": "余烬的恩赐 Ember's Bounty",
-          "notes": {
-            "OMm0yXYwmJGlSDPT": "拳击擂台 Boxing Ring"
-          },
           "regions": {
             "Indoors": {
               "name": "室内",
@@ -13091,32 +12785,7 @@
           "name": "远景：布雷文 Vista: Brevin"
         },
         "Kalion Stadium Underworks": {
-          "name": "卡利昂竞技场地下工事 Kalion Stadium Underworks",
-          "notes": {
-            "yUY1XNPPmwnNnS8V": "入口大厅 Entrance Hall",
-            "16bFmxCOF35Rapvd": "准备大厅 Hall of Preparation",
-            "S1GCYMEWBvHSYIJX": "前房 Anterior Chamber",
-            "IDI0P4jMn1L6AQDi": "冠军大厅 Hall of Champions",
-            "pm19Mu92yc5a13GI": "档案大厅 Hall of Records",
-            "OQH5U4WfSQTOdtr9": "康复大厅 Hall of Recovery",
-            "9wdPpBTVhyZhPFwf": "澡堂 Bathhouse",
-            "acHXYjq2RDf49XhB": "神殿圣所 Temple Sanctum",
-            "t30RbELYO7vc6BeZ": "腐化祭坛 Corrupted Altar",
-            "Z9C1MqNOs1Tj1xRj": "秘密前厅 Secret Vestibule",
-            "t64zdENH5XtnDW7A": "秘密通道 Secret Passage",
-            "NbFBAApTJCZx94if": "军械库 Armory",
-            "c8kZeOfMIuPHQFtq": "圣髑匣 Reliquary",
-            "N9WI6zA4eOBq9yvr": "侍僧宿舍 Acolyte Quarters",
-            "ZxOAxp6xAlzUr7of": "侍僧宿舍 Acolyte Quarters",
-            "GH2nPlBeCY7UHt0V": "侍僧宿舍 Acolyte Quarters",
-            "1IW9nnKCxRDTEqHi": "侍僧宿舍 Acolyte Quarters",
-            "xivwWnsM81QHB95G": "交易之室 Chamber of Bargains",
-            "zBOzcZaHM5x6fBmy": "秘密通道 Secret Passage",
-            "ufwBmHFhb8e5YjnP": "封闭入口 Sealed Entrance",
-            "CJ8gn1YhUF3QoqKd": "仪式之室 Ritual Chamber",
-            "w4MbNGJlv6ahxoLf": "礼拜堂 Chantry",
-            "GZwXrLMQWREBG64U": "奥术工坊 Arcane Workshop"
-          }
+          "name": "卡利昂竞技场地下工事 Kalion Stadium Underworks"
         },
         "The Pit Trap": {
           "name": "陷坑 The Pit Trap",
@@ -13139,10 +12808,6 @@
         },
         "Flotsam Canal Market": {
           "name": "漂滓区运河市场 Flotsam Canal Market",
-          "notes": {
-            "AtdKKqs4vVLOivFS": "瓦琳娜的工作室（上层） Varinna's Studio (Upper)",
-            "RY4ZRVgGVK7Ro984": "脚跟与鞋底 Heel and Sole"
-          },
           "regions": {
             "Upper Interiors (20ft)": {
               "name": "上层室内（20 尺）",
@@ -24898,7 +24563,7 @@
             }
           },
           "biography": {
-            "public": "<section class=\"block readaloud\"><p>作为船上得力的一名水手，这个壮实的家伙四肢强健，看上去已在烈日与无情的海涌下熬过了许多漫长的日子。虽然只披着轻甲、只带着轻便的武器，但他们看起来足以照顾好自己。</p></section><p>[[lookup @name]]可以在阿克图斯高原及更远处的任何港口找到。他们在横渡收割者海洋的众多帆船上工作，是该地区贸易不可或缺的一环。</p>"
+            "public": "<section class=\"block readaloud\"><p>作为船上得力的一名水手，这个壮实的家伙四肢强健，看上去已在烈日与无情的海涌下熬过了许多漫长的日子。虽然只披着轻甲、只带着轻便的武器，但他们看起来足以照顾好自己。</p></section><p>[[lookup @name]]可以在阿克图斯高原及更远处的任何港口找到。他们在横渡劫掠者海洋的众多帆船上工作，是该地区贸易不可或缺的一环。</p>"
           }
         },
         "Arcturian Sea Captain": {
@@ -24976,7 +24641,7 @@
             }
           },
           "biography": {
-            "public": "<section class=\"block readaloud\"><p>作为一船之长，这位经验老到的军官四肢强健，看上去已在烈日与无情的海涌下熬过了许多漫长的日子。虽然只披着轻甲、只带着轻便的武器，但他们看起来足以照顾好自己和自己的船员。</p></section><p>[[lookup @name]]可以在阿克图斯高原及更远处的任何港口找到。他们指挥着众多航行于收割者海洋上的帆船，对该地区的贸易至关重要。</p>"
+            "public": "<section class=\"block readaloud\"><p>作为一船之长，这位经验老到的军官四肢强健，看上去已在烈日与无情的海涌下熬过了许多漫长的日子。虽然只披着轻甲、只带着轻便的武器，但他们看起来足以照顾好自己和自己的船员。</p></section><p>[[lookup @name]]可以在阿克图斯高原及更远处的任何港口找到。他们指挥着众多航行于劫掠者海洋上的帆船，对该地区的贸易至关重要。</p>"
           }
         },
         "Grey Hydroxol": {
@@ -32186,7 +31851,7 @@
           "name": "风袭劫掠者登舰兵 Wind Raider Boarder",
           "tokenName": "风袭边境",
           "biography": {
-            "public": "<section class=\"block readaloud\"><p>这名水手坚毅粗犷，饱经风霜，沾满盐痕，因无数个季节在收割者海洋上迎风破浪而晒得黝黑。他们身着灰、棕、蓝色调的衣装，背心上绘有旋卷的风与云。一把弯刀悬在他们的腰侧，只要有理由，他们显然非常乐意拔刀相向。</p></section><p>[[lookup @name]] 是同名凶残海盗团的一员，他们早已适应了在收割者海洋上航海生活的种种艰辛。</p>"
+            "public": "<section class=\"block readaloud\"><p>这名水手坚毅粗犷，饱经风霜，沾满盐痕，因无数个季节在劫掠者海洋上迎风破浪而晒得黝黑。他们身着灰、棕、蓝色调的衣装，背心上绘有旋卷的风与云。一把弯刀悬在他们的腰侧，只要有理由，他们显然非常乐意拔刀相向。</p></section><p>[[lookup @name]] 是同名凶残海盗团的一员，他们早已适应了在劫掠者海洋上航海生活的种种艰辛。</p>"
           },
           "items": {
             "Cut 'Em Down!": {

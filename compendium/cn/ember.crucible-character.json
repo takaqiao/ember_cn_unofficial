@@ -5,9 +5,7 @@
     "Attunements": "同调 Attunements",
     "Cultures": "文化 Cultures",
     "Paths": "径 Paths",
-    "Soulbound": "魂缚 Soulbound",
     "Ancestry Features": "血统特性 Ancestry Features",
-    "Attunement Features": "调谐特性 Attunement Features",
     "Culture Features": "文化特征 Culture Features",
     "Special": "特殊 Special"
   },
@@ -188,21 +186,9 @@
         }
       }
     },
-    "Abyss": {
-      "name": "深渊 Abyss",
-      "description": "<p>@Embed[JournalEntry.emberCosmos00000.JournalEntryPage.06I8t0GPggrMVnGV inline 概览]</p>"
-    },
-    "Akon": {
-      "name": "阿肯 Akon",
-      "description": "<p>@Embed[JournalEntry.emberCosmos00000.JournalEntryPage.3Oywe0peo57dQT9j inline 概览]</p>"
-    },
     "Arcturian": {
       "name": "阿克图里亚人 Arcturian",
       "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.8cGPxMRewkagoIvc inline overview]</p>"
-    },
-    "Aura": {
-      "name": "灵气 Aura",
-      "description": "<p>@embed[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR inline 概览]</p>"
     },
     "Bejak": {
       "name": "贝雅克 Bejak",
@@ -211,14 +197,6 @@
     "Cascilian": {
       "name": "卡斯奇利亚人 Cascilian",
       "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.Ed7ttdIwKm95IdUG inline overview]</p>"
-    },
-    "Cora": {
-      "name": "科拉 Cora",
-      "description": "<p>@embed[JournalEntry.emberCosmos00000.JournalEntryPage.5pD8lxiilJJXOgoa inline 概览]</p>"
-    },
-    "Heart": {
-      "name": "心 Heart",
-      "description": "<p>@embed[JournalEntry.emberCosmos00000.JournalEntryPage.0anKTKgOav9sXox1 inline 概览]</p>"
     },
     "Kelmezian": {
       "name": "凯尔梅兹安 Kelmezian",
@@ -236,33 +214,13 @@
       "name": "卢梅克 Lumek",
       "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.f52WC5ZzNSK0yKOz inline overview]</p>"
     },
-    "Luxarum": {
-      "name": "卢克萨鲁姆 Luxarum",
-      "description": "<p>@Embed[JournalEntry.emberCosmos00000.JournalEntryPage.pPU6VZV7WFubtcSR inline 概览]</p>"
-    },
-    "Mayis": {
-      "name": "玛伊斯 Mayis",
-      "description": "<p>@embed[JournalEntry.emberCosmos00000.JournalEntryPage.RkdBtFQk7STvMbV2 inline 概览]</p>"
-    },
     "Maziran": {
       "name": "马兹兰 Maziran",
       "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.cYMQIQFugpO79L9f inline overview]</p>"
     },
-    "Orbis": {
-      "name": "奥比斯 Orbis",
-      "description": "<p>@embed[JournalEntry.emberCosmos00000.JournalEntryPage.zkmWSB32y8Fbc4UL inline 概览]</p>"
-    },
     "Ordani": {
       "name": "奥尔达尼 Ordani",
       "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.RxhlhTWqJqB1cZxY inline overview]</p>"
-    },
-    "Primordis": {
-      "name": "普里莫迪斯 Primordis",
-      "description": "<p>@Embed[JournalEntry.emberCosmos00000.JournalEntryPage.16sqn71JsCkghaTt inline 概览]</p>"
-    },
-    "Ragen": {
-      "name": "拉根 Ragen",
-      "description": "<p>@embed[JournalEntry.emberCosmos00000.JournalEntryPage.LKptgmc56euSOb0G inline 概览]</p>"
     },
     "Railen": {
       "name": "莱伦 Railen",
@@ -271,10 +229,6 @@
     "Rhivan": {
       "name": "里凡 Rhivan",
       "description": "<p>@Embed[JournalEntry.emberCultures000.JournalEntryPage.emFVgDaCDq0lWY2b inline overview]</p>"
-    },
-    "Signara": {
-      "name": "西格纳拉 Signara",
-      "description": "<p>@Embed[JournalEntry.emberCosmos00000.JournalEntryPage.3OvueRrGcFnwtnmw inline 概览]</p>"
     },
     "Strider": {
       "name": "疾行者 Strider",
