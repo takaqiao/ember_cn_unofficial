@@ -126,7 +126,7 @@
       "actions": {
         "bewilderingGaze": {
           "name": "迷乱凝视 Bewildering Gaze",
-          "description": "<p>该生物将其超自然的目光聚焦于 60 英尺内一个它能看见、且同样能看见它的目标。</p><p>该目标面临一次针对<strong>意志力</strong>的攻击，对<strong>士气</strong>造成<strong>虚空</strong>伤害，并施加@Condition[confused]状态。</p>",
+          "description": "<p>该生物将其超自然的目光聚焦于 60 英尺内一个它能看见、且同样能看见它的目标。</p><p>该目标面临一次针对<strong>意志</strong>的攻击，对<strong>士气</strong>造成<strong>虚空</strong>伤害，并施加@Condition[confused]状态。</p>",
           "effects": [
             {
               "name": "迷乱凝视 Bewildering Gaze"
@@ -225,7 +225,7 @@
       "actions": {
         "graveMark": {
           "name": "墓之印记 Grave Mark",
-          "description": "<p>在以近战攻击造成<strong>暴击</strong>之后，@ref[actor.name]{该生物}攻击目标的<strong>意志力</strong>防御；成功时留下一道墓之印记，施加@Condition[exhausted]状态，该状态会持续到目标完成一次<strong>休息</strong>为止。</p><p>若一个带有墓之印记的人型生物在印记效果持续期间死亡，它会在其后续回合从死亡中站起，化为可怖的 @UUID[Actor.e67w5IOBScYtJKXr]{恐骇者}。</p>",
+          "description": "<p>在以近战攻击造成<strong>暴击</strong>之后，@ref[actor.name]{该生物}攻击目标的<strong>意志</strong>防御；成功时留下一道墓之印记，施加@Condition[exhausted]状态，该状态会持续到目标完成一次<strong>休息</strong>为止。</p><p>若一个带有墓之印记的人型生物在印记效果持续期间死亡，它会在其后续回合从死亡中站起，化为可怖的 @UUID[Actor.e67w5IOBScYtJKXr]{恐骇者}。</p>",
           "condition": "以近战攻击造成暴击时。"
         },
         "graveMarkHorrendor": {
@@ -265,7 +265,7 @@
       "actions": {
         "oozeBewilderingGleam": {
           "name": "迷乱微光 Bewildering Gleam",
-          "description": "<p>该软泥怪迅速铺展开来，覆盖 15 英尺半径内的每一处表面。区域内除软泥怪之外的生物都必须防御一次针对其<strong>意志力</strong>的攻击，否则会被一阵令人迷乱的倦怠攫住，对<strong>士气</strong>造成<strong>光耀</strong>伤害，并施加<strong>迷失方向</strong>状态。</p>",
+          "description": "<p>该软泥怪迅速铺展开来，覆盖 15 英尺半径内的每一处表面。区域内除软泥怪之外的生物都必须防御一次针对其<strong>意志</strong>的攻击，否则会被一阵令人迷乱的倦怠攫住，对<strong>士气</strong>造成<strong>光耀</strong>伤害，并施加<strong>迷失方向</strong>状态。</p>",
           "effects": [
             {
               "name": "迷乱微光 Bewildering Gleam"
@@ -280,7 +280,7 @@
       "actions": {
         "oozeElectrifiedPseudopod": {
           "name": "带电伪足 Electrified Pseudopod",
-          "description": "<p>一次针对<strong>坚韧防御</strong>的打击，可在彼此相距 3 英尺内的至多三个目标之间跳跃。此次攻击对<strong>士气</strong>造成<strong>电击</strong>伤害。</p><p>造成暴击时，施加<strong>感电</strong>状态，持续 2 个回合。</p>"
+          "description": "<p>一次针对<strong>强韧</strong>的打击，可在彼此相距 3 英尺内的至多三个目标之间跳跃。此次攻击对<strong>士气</strong>造成<strong>电击</strong>伤害。</p><p>造成暴击时，施加<strong>感电</strong>状态，持续 2 个回合。</p>"
         }
       }
     },
@@ -328,7 +328,7 @@
       "actions": {
         "searingStare": {
           "name": "灼目凝视 Searing Stare",
-          "description": "<p>苏阿罗克死死盯住 60 英尺内一个它能看见的目标。这道凝视攻击目标的<strong>坚韧防御</strong>，造成<strong>火焰</strong>伤害并施加@Condition[blinded]状态，持续 6 轮，或直到苏阿罗克把凝视集中到另一个目标身上为止。</p>",
+          "description": "<p>苏阿罗克死死盯住 60 英尺内一个它能看见的目标。这道凝视攻击目标的<strong>强韧</strong>，造成<strong>火焰</strong>伤害并施加@Condition[blinded]状态，持续 6 轮，或直到苏阿罗克把凝视集中到另一个目标身上为止。</p>",
           "effects": [
             {
               "name": "灼目凝视 Searing Stare"
@@ -410,7 +410,7 @@
       "actions": {
         "swallowedScreams": {
           "name": "吞没尖叫 Swallowed Screams",
-          "description": "<p>@ref[actor.name]{该生物}对 30 英尺内单一目标的<strong>意志力</strong>发动一次<strong>表演</strong>攻击；除非该攻击被抵抗，否则目标陷入@Condition[silenced]状态，持续 1 分钟。</p>",
+          "description": "<p>@ref[actor.name]{该生物}对 30 英尺内单一目标的<strong>意志</strong>发动一次<strong>表演</strong>攻击；除非该攻击被抵抗，否则目标陷入@Condition[silenced]状态，持续 1 分钟。</p>",
           "effects": [
             {
               "name": "吞没尖叫 Swallowed Screams"
