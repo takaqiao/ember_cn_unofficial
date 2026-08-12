@@ -22026,7 +22026,8 @@
               "name": "践踏冲锋 Trampling Charge",
               "effects": {
                 "Prone": {
-                  "name": "倒地 Prone"
+                  "name": "倒地 Prone",
+                  "description": "<p>目标获得 &amp;Reference[Prone apply=long] 状态。</p><p></p>"
                 }
               }
             },
@@ -22214,7 +22215,8 @@
               "name": "践踏冲锋 Trampling Charge",
               "effects": {
                 "Prone": {
-                  "name": "倒地 Prone"
+                  "name": "倒地 Prone",
+                  "description": "<p>目标获得 &amp;Reference[Prone apply=long] 状态。</p><p></p>"
                 }
               }
             }
@@ -22367,6 +22369,9 @@
             "Slam": {
               "name": "猛击 Slam"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这个人型身影由各式木料碎片拼制而成，它那东拼西凑的四肢靠木质骨架与藤蔓编成的绑带连在一起。构成它木质面孔的精湛雕刻定格出一副永恒的愉悦而沉静的神情，仿佛它正埋头于某项尽职的活计。</p></section><p>[[lookup @name]]是由木材与藤蔓制成、形似木质人型生物的忠勤自动机。这些拟人构装体被金色平原的阿克图里亚人用于各种任务——包括务农、驯兽、建造和防御等繁重劳作。</p>"
           }
         },
         "Woven Construct": {
@@ -22425,6 +22430,12 @@
                   "description": "<p>目标被击倒至&amp;Reference[prone]，并可在其下个动作中花费一半移动力站起。</p>"
                 }
               }
+            },
+            "Rotten Bite": {
+              "name": "腐臭撕咬 Rotten Bite"
+            },
+            "Spit Bile": {
+              "name": "喷吐胆汁 Spit Bile"
             }
           }
         },
@@ -22941,7 +22952,8 @@
               "name": "猛扑 Pounce",
               "effects": {
                 "Prone": {
-                  "name": "倒地 Prone"
+                  "name": "倒地 Prone",
+                  "description": "<p>目标被击倒为&amp;Reference[prone apply=false]，并可在其下个回合花费一半移动力站起。</p>"
                 }
               }
             },
@@ -22968,6 +22980,9 @@
               "effects": {
                 "Spell Changes": {
                   "name": "法术变更 Spell Changes"
+                },
+                "Comprehension": {
+                  "name": "通晓 Comprehension"
                 }
               },
               "name": "通晓语言 Comprehend Languages"
@@ -23321,6 +23336,12 @@
             },
             "Woodcarver's Tools": {
               "name": "木雕工具 Woodcarver's Tools"
+            },
+            "Agrimagical Relic": {
+              "name": "农艺魔法遗物 Agrimagical Relic"
+            },
+            "Arcturian Training": {
+              "name": "阿克图里安训练 Arcturian Training"
             }
           },
           "effects": {
@@ -23348,6 +23369,9 @@
             },
             "Tenacity": {
               "name": "坚韧 Tenacity"
+            },
+            "Arcturian Training": {
+              "name": "阿克图里安训练 Arcturian Training"
             }
           }
         },
@@ -24185,6 +24209,14 @@
                   "name": "力竭 Exhaustion"
                 }
               }
+            },
+            "Blessing of the Abyss": {
+              "name": "深渊祝福 Blessing of the Abyss",
+              "effects": {
+                "Blessing of the Abyss": {
+                  "name": "深渊祝福 Blessing of the Abyss"
+                }
+              }
             }
           }
         },
@@ -24268,7 +24300,8 @@
             "Gruesome Mockery": {
               "effects": {
                 "Insulted": {
-                  "description": "<p>在其下个回合结束前，目标进行的下一次攻击检定具有劣势。</p>"
+                  "description": "<p>在其下个回合结束前，目标进行的下一次攻击检定具有劣势。</p>",
+                  "name": "受辱 Insulted"
                 }
               },
               "name": "骇人嘲弄 Gruesome Mockery"
@@ -24276,7 +24309,8 @@
             "Gruesome Attacker": {
               "effects": {
                 "Frightened": {
-                  "name": "恐慌 Frightened"
+                  "name": "恐慌 Frightened",
+                  "description": "<p>目标陷入 &amp;reference[frightened] 状态，持续 1 分钟。</p>"
                 }
               },
               "name": "残忍攻击者 Gruesome Attacker"
@@ -25009,6 +25043,12 @@
                   "name": "对目标施加躲藏动作 Apply Hide Action to Target"
                 }
               }
+            },
+            "Keen Hearing and Smell": {
+              "name": "敏锐听觉和嗅觉 Keen Hearing and Smell"
+            },
+            "Well-Timed Help": {
+              "name": "及时相助 Well-Timed Help"
             }
           }
         },
@@ -34951,9 +34991,25 @@
                   "name": "压实 Compressed"
                 }
               }
+            },
+            "Gravity Well": {
+              "name": "重力井 Gravity Well",
+              "effects": {
+                "Speed Halved": {
+                  "name": "速度减半 Speed Halved",
+                  "description": "<p>若目标拥有飞行速度，请将此主动效果与其飞行速度分开应用。</p>"
+                },
+                "Fly Speed 0 ft.": {
+                  "name": "飞行速度 0 英尺 Fly Speed 0 ft."
+                }
+              }
+            },
+            "Mould Earth": {
+              "name": "塑土术 Mould Earth"
             }
           },
-          "name": "晶巉巨像 Crystallath"
+          "name": "晶巉巨像 Crystallath",
+          "tokenName": "晶巉巨像 Crystallath"
         },
         "Dirt Globlin": {
           "name": "泥土格布林 Dirt Globlin",
@@ -35241,7 +35297,12 @@
               "name": "吞下 Swallow",
               "effects": {
                 "Prone": {
-                  "name": "倒地 Prone"
+                  "name": "倒地 Prone",
+                  "description": "<p>若你被吐出，你会落入 10 英尺内的一个空间，并陷入 &amp;Reference[Prone apply=false] 状态。</p>"
+                },
+                "Blinded, Restrained, and Total Cover": {
+                  "name": "目盲、受缚与全身掩护 Blinded, Restrained, and Total Cover",
+                  "description": "<p>被吞下期间，生物获得 &amp;Reference[Blinded apply=false] 与 &amp;Reference[Restrained apply=false] 状态，并在面对攻击时拥有 &amp;Reference[Total Cover apply=false]。</p>"
                 }
               }
             },
@@ -35270,7 +35331,8 @@
               "name": "强酸啃咬 Caustic Bite",
               "effects": {
                 "Grappled & Restrained": {
-                  "name": "被擒抱与受缚 Grappled & Restrained"
+                  "name": "被擒抱与受缚 Grappled & Restrained",
+                  "description": "<p>目标被该生物&amp;Reference[grappled apply=false]，并可以用自己的动作进行脱离。在此擒抱结束前，目标处于&amp;Reference[restrained apply=false]{受缚}状态。</p>"
                 }
               }
             },
@@ -35296,6 +35358,21 @@
               "effects": {
                 "Compressed": {
                   "name": "压实 Compressed"
+                }
+              }
+            },
+            "Mould Earth": {
+              "name": "塑土术 Mould Earth"
+            },
+            "Gravity Well": {
+              "name": "重力井 Gravity Well",
+              "effects": {
+                "Speed Halved": {
+                  "name": "速度减半 Speed Halved",
+                  "description": "<p>若目标拥有飞行速度，请将此主动效果与其飞行速度分开应用。</p>"
+                },
+                "Fly Speed 0 ft.": {
+                  "name": "飞行速度 0 英尺 Fly Speed 0 ft."
                 }
               }
             }
