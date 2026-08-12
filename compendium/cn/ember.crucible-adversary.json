@@ -1,5 +1,5 @@
 {
-  "label": "对手选项 Adversary Options",
+  "label": "余烬对手选项 Ember Adversary Options",
   "folders": {
     "Fey": "妖精 Fey",
     "Oozes": "软泥怪 Oozes",
@@ -94,7 +94,7 @@
     },
     "Afflicted Pallid Drake": {
       "name": "受苦的苍白龙兽 Afflicted Pallid Drake",
-      "description": "<p>这些生物直到最近才在灰烬星上被发现，它们的起源完全不明。尽管它们与邪龙极为相似，但并不具备相同的能力，而且在生物材料特征上也只有有限的相似性。它们看起来像是蛇与巨龙的奇美拉式混合体，这或许表明它们具有魔法起源。这一新近出现的现象在研究者和冒险者之间都引发了相当大的兴趣与担忧，因为这些新的生物可能预示着常态正在发生变化，以及新的、危险的龙类敌人的崛起。</p>"
+      "description": "<p>这些生物直到最近才在余烬被发现，其起源完全未知。尽管它们与邪龙极为相似，但并不具备相同的能力，且仅有有限的生物学相似性。它们看起来像是蛇与巨龙的奇美拉式混合体，这或许表明它们具有魔法起源。这一新近出现的现象已在研究者与冒险者之间引发了相当大的兴趣与担忧，因为这些新的生物可能预示着常态的变化，以及全新、危险的龙类敌人的崛起。</p>"
     },
     "Aedir Sentinel": {
       "name": "艾迪尔哨兵 Aedir Sentinel",
@@ -110,11 +110,11 @@
     },
     "Hydroxol": {
       "name": "羟氧醇 Hydroxol",
-      "description": "<p>大型两栖野兽，原产于烬境的水域地带。</p>"
+      "description": "<p>大型两栖野兽，原产于余烬水域地带。</p>"
     },
     "Suarrok": {
       "name": "苏阿罗克 Suarrok",
-      "description": "<p>栖息于高耸岩峭峭壁上的可怖有翼掠食者。苏阿罗克是极其奇异的生物，长有一只独眼、羽毛、蝙蝠般的翅膀、两条尾巴，以及一根细长尖锐、足以刺穿猎物的喙。尽管形态怪异，它们却出奇地敏捷，而它们的眼睛还蕴含着相当强大的魔法力量，仅凭凝视就能伤害生物。</p>"
+      "description": "<p>栖息于高耸嶙峋峭壁上的可怖有翼掠食者。苏阿罗克是极其奇异的生物，长有一只独眼、羽毛、蝙蝠般的翅膀、两条尾巴，以及一根细长尖锐、足以刺穿猎物的喙。尽管形态怪异，它们却出奇地敏捷，而它们的眼睛还蕴含着相当强大的魔法力量，仅凭凝视就能伤害生物。</p>"
     },
     "Baradom": {
       "name": "巴拉多姆 Baradom",
@@ -125,18 +125,18 @@
       "description": "<p>该@ref[actor.name]{生物}能够用它的凝视迷惑并扰乱它的猎物。</p>",
       "actions": {
         "bewilderingGaze": {
-          "name": "迷乱凝视 Bewildering Gaze",
+          "name": "惑乱凝视 Bewildering Gaze",
           "description": "<p>该生物将其超自然的目光聚焦于 60 英尺内一个它能看见、且同样能看见它的目标。</p><p>该目标面临一次针对<strong>意志</strong>的攻击，对<strong>士气</strong>造成<strong>虚空</strong>伤害，并施加@Condition[confused]状态。</p>",
           "effects": [
             {
-              "name": "迷乱凝视 Bewildering Gaze"
+              "name": "惑乱凝视 Bewildering Gaze"
             }
           ]
         }
       }
     },
     "Call Skither": {
-      "name": "呼唤斯基瑟尔 Call Skither",
+      "name": "呼唤斯基瑟 Call Skither",
       "description": "<p>该@ref[actor.name]{生物}控制附近的斯基瑟，它们作为其束缚的仆从行动。</p>",
       "actions": {
         "callSkither": {
@@ -155,7 +155,7 @@
     },
     "Corrupted Cadrithor": {
       "name": "腐化的卡德里索尔 Corrupted Cadrithor",
-      "description": "<p>俗称“暮色猎犬”的腐化的卡德里索尔，是一种由纯粹阴影构成的凶残灵体掠食者。这些令人憎恶的四眼生物，形似一只腐朽的犬类，长着邪恶的犄角，周身缠绕着可怕的黑色火焰帷幕。</p>"
+      "description": "<p>俗称“暮猎犬”的腐化的卡德里索尔，是一种由纯粹阴影构成的凶残灵体掠食者。这些令人憎恶的四眼生物，形似一只腐朽的犬类，长着邪恶的犄角，周身缠绕着可怕的黑色火焰帷幕。</p>"
     },
     "Crevvet": {
       "name": "克雷维特 Crevvet",
@@ -194,11 +194,11 @@
       "description": "<p>该@ref[actor.name]{生物}迅速用其爪发起攻击，对单一目标造成多次抓击。</p>",
       "actions": {
         "frenziedClaws": {
-          "name": "狂乱利爪 Frenzied Claws",
-          "description": "<p>@ref[actor.name]{该生物}以一连串狂乱的锐爪发动攻击，用爪子进行三次打击。其中任何一次若为重大成功，便会施加@Condition[bleeding]状态。</p>",
+          "name": "狂乱之爪 Frenzied Claws",
+          "description": "<p>@ref[actor.name]{该生物}以一连串狂乱的锐爪发动攻击，用爪子进行三次打击。其中任何一次若为大成功，便会施加@Condition[bleeding]状态。</p>",
           "effects": [
             {
-              "name": "狂乱利爪 Frenzied Claws"
+              "name": "狂乱之爪 Frenzied Claws"
             }
           ]
         }
@@ -209,11 +209,11 @@
       "description": "<p>@ref[actor.name]{该生物}使其周围的地面爆发出无数纠缠盘绕的暗影触须，将附近的生物绊倒并减缓其速度。</p>",
       "actions": {
         "graspingForm": {
-          "name": "攫取之形 Grasping Form",
+          "name": "擒握形态 Grasping Form",
           "description": "<p>该生物以无数触须构成的团块抓握附近所有生物，其触感令你充满可怖的绝望，对<strong>士气</strong>造成<strong>寒冷</strong>伤害。每个目标都必须以<strong>反射</strong>躲开其抓握，否则陷入@Condition[restrained]]状态（挣脱需 4 点动作或 [[/skillCheck athletics 17]]）。</p><p>若该生物在以此方式擒抱着目标时移动，这些目标也会随之移动，以保持在该生物 15 英尺范围内。</p>",
           "effects": [
             {
-              "name": "攫取之形 Grasping Form"
+              "name": "擒握形态 Grasping Form"
             }
           ]
         }
@@ -226,7 +226,7 @@
         "graveMark": {
           "name": "墓之印记 Grave Mark",
           "description": "<p>在以近战攻击造成<strong>暴击</strong>之后，@ref[actor.name]{该生物}攻击目标的<strong>意志</strong>防御；成功时留下一道墓之印记，施加@Condition[exhausted]状态，该状态会持续到目标完成一次<strong>休息</strong>为止。</p><p>若一个带有墓之印记的人型生物在印记效果持续期间死亡，它会在其后续回合从死亡中站起，化为可怖的 @UUID[Actor.e67w5IOBScYtJKXr]{恐骇者}。</p>",
-          "condition": "以近战攻击造成暴击时。"
+          "condition": "当以近战攻击造成暴击时。"
         },
         "graveMarkHorrendor": {
           "name": "恐骇者转化 Horrendor Transformation",
@@ -240,7 +240,7 @@
     },
     "Inscrutable": {
       "name": "高深莫测 Inscrutable",
-      "description": "<p>该@ref[actor.name]{生物}是一个不可知的深渊实体。它免疫任何试图感知其情绪或读取其思想的效果或法术。任何用于查明该生物意图的技能检定均带有+4<strong>祸骰</strong>。</p>"
+      "description": "<p>该@ref[actor.name]{生物}是一个不可知的深渊实体。它免疫任何试图感知其情绪或读取其思想的效果或法术。任何用于查明该生物意图的技能检定均带有 +4 <strong>祸骰</strong>。</p>"
     },
     "Jurtak": {
       "name": "尤尔塔克 Jurtak",
@@ -264,11 +264,11 @@
       "description": "<p>这个@ref[actor.name]{软泥怪}将自身摊展开成一层胶状薄膜，覆盖附近的每一处地表。</p>",
       "actions": {
         "oozeBewilderingGleam": {
-          "name": "迷乱微光 Bewildering Gleam",
+          "name": "惑乱微光 Bewildering Gleam",
           "description": "<p>该软泥怪迅速铺展开来，覆盖 15 英尺半径内的每一处表面。区域内除软泥怪之外的生物都必须防御一次针对其<strong>意志</strong>的攻击，否则会被一阵令人迷乱的倦怠攫住，对<strong>士气</strong>造成<strong>光耀</strong>伤害，并施加<strong>迷失方向</strong>状态。</p>",
           "effects": [
             {
-              "name": "迷乱微光 Bewildering Gleam"
+              "name": "惑乱微光 Bewildering Gleam"
             }
           ]
         }
@@ -279,7 +279,7 @@
       "description": "<p>这只@ref[actor.name]{软泥怪}体内涌动着电流，并能将其以猛烈的电力爆炸形式释放出来。</p>",
       "actions": {
         "oozeElectrifiedPseudopod": {
-          "name": "带电伪足 Electrified Pseudopod",
+          "name": "带电拟足 Electrified Pseudopod",
           "description": "<p>一次针对<strong>强韧</strong>的打击，可在彼此相距 3 英尺内的至多三个目标之间跳跃。此次攻击对<strong>士气</strong>造成<strong>电击</strong>伤害。</p><p>造成暴击时，施加<strong>感电</strong>状态，持续 2 个回合。</p>"
         }
       }
@@ -290,17 +290,17 @@
       "actions": {
         "oozeMagneticDisarm": {
           "name": "磁力缴械 Magnetic Disarm",
-          "description": "<p>当被金属武器近战击中时，该软泥怪可以做出反应，用其磁化的身躯把武器从持用者手中拽脱。它对目标的<strong>坚韧防御</strong>发动一次<strong>运动</strong>技能攻击。成功时，该武器脱手并被吸收进软泥怪体内。</p><p>该软泥怪获得等同于其<strong>坚韧</strong>值的<strong>生命值</strong>，且除非软泥怪被击败，否则无法取回该武器。</p>",
+          "description": "<p>当被金属武器近战击中时，该软泥怪可以做出反应，用其磁化的身躯把武器从持用者手中拽脱。它对目标的<strong>强韧</strong>发动一次<strong>运动</strong>技能攻击。成功时，该武器脱手并被吸收进软泥怪体内。</p><p>该软泥怪获得等同于其<strong>坚韧</strong>值的<strong>生命值</strong>，且除非软泥怪被击败，否则无法取回该武器。</p>",
           "condition": "被金属武器近战击中。"
         }
       }
     },
     "Pallid Drake": {
       "name": "苍白龙兽 Pallid Drake",
-      "description": "<p>这些生物直到最近才在恩博尔被发现，其起源完全未知。尽管它们与邪龙极为相似，但并不具备相同的能力，且仅有有限的生物材料相似性。它们看起来像是蛇与巨龙的奇美拉式混合体，这或许表明它们具有魔法起源。这一新近出现的现象已在研究者与冒险者之间引发了相当大的兴趣与担忧，因为这些新的生物可能预示着常态的变化，以及全新、危险的龙类敌人的崛起。</p>"
+      "description": "<p>这些生物直到最近才在余烬被发现，其起源完全未知。尽管它们与邪龙极为相似，但并不具备相同的能力，且仅有有限的生物学相似性。它们看起来像是蛇与巨龙的奇美拉式混合体，这或许表明它们具有魔法起源。这一新近出现的现象已在研究者与冒险者之间引发了相当大的兴趣与担忧，因为这些新的生物可能预示着常态的变化，以及全新、危险的龙类敌人的崛起。</p>"
     },
     "Pestilent Retch": {
-      "name": "瘟疫呕吐 Pestilent Retch",
+      "name": "疫病呕吐 Pestilent Retch",
       "description": "<p>该@ref[actor.name]{生物}能够向前方的目标喷吐腐化胆汁。</p>",
       "actions": {
         "corruptionVomit": {
@@ -327,11 +327,11 @@
       "description": "<p>@ref[actor.name]将其独眼中的神秘力量汇聚成一道穿透光束，对猎物造成伤害并使其暂时失明。</p>",
       "actions": {
         "searingStare": {
-          "name": "灼目凝视 Searing Stare",
+          "name": "灼热凝视 Searing Stare",
           "description": "<p>苏阿罗克死死盯住 60 英尺内一个它能看见的目标。这道凝视攻击目标的<strong>强韧</strong>，造成<strong>火焰</strong>伤害并施加@Condition[blinded]状态，持续 6 轮，或直到苏阿罗克把凝视集中到另一个目标身上为止。</p>",
           "effects": [
             {
-              "name": "灼目凝视 Searing Stare"
+              "name": "灼热凝视 Searing Stare"
             }
           ]
         }
@@ -372,7 +372,7 @@
       "description": "<p>@ref[actor.name] 发动了一次由炼金力量驱动的旋转攻击，打击所有附近的敌人。</p>",
       "actions": {
         "sentinelSpin": {
-          "name": "动力回旋 Powered Spin",
+          "name": "动力旋转 Powered Spin",
           "description": "<p>该哨卫以闪电般迅捷的圆弧挥舞其巨剑，击中附近所有敌人。</p>"
         }
       }
@@ -394,26 +394,26 @@
     },
     "Sight Without": {
       "name": "无视觉感知 Sight Without",
-      "description": "<p>该@ref[actor.name]{生物}没有眼睛、耳朵或嘴巴。它不会陷入@Condition[blinded]、@Condition[silenced]或@Condition[deafened]。它具有60尺的盲视，并且可以与120尺内任意一个或所有生物进行心灵感应交流。</p>"
+      "description": "<p>该@ref[actor.name]{生物}没有眼睛、耳朵或嘴巴。它不会陷入@Condition[blinded]、@Condition[silenced]或@Condition[deafened]。它具有 60 英尺的盲视，并且可以与 120 英尺内任意一个或所有生物进行心灵感应交流。</p>"
     },
     "Sitherian": {
       "name": "西瑟里安 Sitherian",
-      "description": "<p>一种@ref[name]是蛛形类野兽，源自其同名者——西希拉，注视者。它们以其精巧繁复的蛛网格构所产生的振动为先兆，西瑟里安能够用其螯肢上的尖牙注入强效毒液，并可从其巨大卵形腹部后部的纺器中吐出丝线。</p>"
+      "description": "<p>@ref[name]是一种蛛形类野兽，得名于与其同名的注视者西希拉。以它们精巧繁复的蛛网格构所产生的振动为先兆，西瑟里安能够用其螯肢上的尖牙注入强效毒液，并可从其巨大卵形腹部后部的纺器中吐出丝线。</p>"
     },
     "Skither": {
       "name": "斯基瑟 Skither",
-      "description": "<p>斯基瑟常被提拉斐姆用作一种尤为具破坏性的信使品种，被派去在敌人的财产和身体上留下燃烧的讯息。它们利用自己较小的体型和伪装能力，把自己置于所选目标无法进行防御的位置。斯基瑟致力于为它们所侍奉的更强力的生物尽可能制造屠戮；众所周知，它们会尾随目标数英里，并会在认为自己已输掉战斗时让身体超载辐光能量，决意即使必须付出自己的生命，也要伤害目标。</p>"
+      "description": "<p>斯基瑟常被提拉斐姆用作一种尤为具破坏性的信使品种，被派去在敌人的财产和身体上留下燃烧的讯息。它们利用自己较小的体型和伪装能力，把自己置于所选目标无法进行防御的位置。斯基瑟致力于为它们所侍奉的更强力的生物尽可能制造屠戮；众所周知，它们会尾随目标数英里，并会在认为自己已输掉战斗时让身体超载光耀能量，决意即使必须付出自己的生命，也要伤害目标。</p>"
     },
     "Swallowed Screams": {
       "name": "被吞没的尖叫声 Swallowed Screams",
       "description": "<p>@ref[actor.name]{生物}紧盯着一个特定的目标，使其失去说话或听见的能力。</p>",
       "actions": {
         "swallowedScreams": {
-          "name": "吞没尖叫 Swallowed Screams",
+          "name": "被吞没的尖叫声 Swallowed Screams",
           "description": "<p>@ref[actor.name]{该生物}对 30 英尺内单一目标的<strong>意志</strong>发动一次<strong>表演</strong>攻击；除非该攻击被抵抗，否则目标陷入@Condition[silenced]状态，持续 1 分钟。</p>",
           "effects": [
             {
-              "name": "吞没尖叫 Swallowed Screams"
+              "name": "被吞没的尖叫声 Swallowed Screams"
             }
           ]
         }
@@ -433,7 +433,7 @@
     },
     "Vorg": {
       "name": "沃格 Vorg",
-      "description": "<p>沃格是一种外形类似蜈蚣的生物，其金属甲壳包裹着永无止息地发出辐射光芒的光亮。它们触之灼热，能够爬上墙壁、掘入地下，并沿着地表拖行自己，因此对于那些在洞穴、岩窟及其他地下地点中偶然遇见它们的人来说，往往是不受欢迎的意外。</p>"
+      "description": "<p>沃格是一种外形类似蜈蚣的生物，其金属甲壳包裹着永无止息的光耀辉光。它们触之灼热，能够爬上墙壁、掘入地下，并沿着地表拖行自己，因此对于那些在洞穴、岩窟及其他地下地点中偶然遇见它们的人来说，往往是不受欢迎的意外。</p>"
     },
     "Whisperer": {
       "name": "低语者 Whisperer",
@@ -452,7 +452,7 @@
       "description": "<p>由松散泥土、烂泥或碎砾构成的小型混沌元素，靠科拉的元素魔法黏合在一起。它们是科拉麾下最弱的一类，却狡黠、爱捣乱，成群结队时是真的危险。</p>"
     },
     "Gore Bird": {
-      "name": "血啄鸟 Gore Bird",
+      "name": "血鸟 Gore Bird",
       "description": "<p>遍布余烬全境的迅捷食腐猛禽。它们主要以腐尸为食，但在食物匮乏时，也会成大群地凶猛追猎活物。</p>"
     },
     "Jahud": {
@@ -479,7 +479,7 @@
       }
     },
     "Obsidian Vine": {
-      "name": "黑曜藤蔓 Obsidian Vine",
+      "name": "黑曜石藤蔓 Obsidian Vine",
       "description": "<p>一条无心智的高耸卷须，由黑色火山玻璃构成，通体嵌满剃刀般的黑曜石棘刺。它没有眼睛、没有呼吸、也没有心智，只有抽打、缠绕与碾碎的本能。它坚硬却脆，在足够沉重的一击下会碎裂，但对强酸与毒素则完全不为所动。</p>"
     },
     "Stalagmaw": {
@@ -493,7 +493,7 @@
         "vineMend": {
           "name": "地底再生 Subterranean Regrowth",
           "description": "<p>处于@Condition[burrowing]状态时，@ref[actor.name]{该藤蔓}从周围的泥土中汲取原料，修补自己断裂的躯体，回复可观的<strong>生命值</strong>。</p>",
-          "condition": "掘穴期间。"
+          "condition": "在掘穴时。"
         },
         "eruptiveRecall": {
           "name": "破土回归 Eruptive Recall",
@@ -503,7 +503,7 @@
       }
     },
     "Garganthus": {
-      "name": "加尔甘图斯 Garganthus",
+      "name": "加甘萨斯 Garganthus",
       "description": "<p>恶毒而魁伟的四足歧路捕食者，以其幽暗的鳞状皮肉、六条肢体、凶恶的利爪与矛一般的獠牙而闻名。</p>"
     },
     "Yarnac": {

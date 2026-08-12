@@ -223,21 +223,26 @@ export const DOCUMENT_MAPPINGS = {
       "cardinality": "many"
     }
   },
+  "ActiveEffect": {
+    "adjective": "system.adjective",
+    "actions": {
+      "path": "system.actions",
+      "converter": "crucibleActions"
+    }
+  },
   "JournalEntryPage.ember.location": {
     "name": "name",
     "text": "text.content",
     "caption": "image.caption",
     "overview": "system.overview",
-    "exposition": "system.exposition",
-    "terrain": "system.terrain"
+    "exposition": "system.exposition"
   },
   "JournalEntryPage.ember.biome": {
     "name": "name",
     "text": "text.content",
     "caption": "image.caption",
     "overview": "system.overview",
-    "exposition": "system.exposition",
-    "terrain": "system.terrain"
+    "exposition": "system.exposition"
   },
   "JournalEntryPage.ember.quest": {
     "name": "name",

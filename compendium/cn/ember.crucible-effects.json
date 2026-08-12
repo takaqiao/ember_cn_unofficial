@@ -1,5 +1,5 @@
 {
-  "label": "Ember Effects",
+  "label": "余烬效果 Ember Effects",
   "folders": {
     "Attunement": "同调",
     "Blessings": "祝福",
@@ -37,8 +37,8 @@
       "description": "<p>受影响生物的血肉正被诡异遗物的触碰缓缓转化为一种发光的晶质。这场转化痛苦而不断蔓延，先是让四肢僵硬，随后无可阻挡地朝身体核心侵蚀而去。</p><ul><li><p>晶体般的僵直攫住了受影响者的身体，使其陷入@Condition[slowed]状态。</p></li><li><p>脆性的晶体易碎也易蚀：受影响者对<strong>钝击</strong>与<strong>强酸</strong>伤害<strong>易伤</strong>，两者抗性各降低 5。</p></li><li><p>反过来，这种发光的晶体会吞饮光线，使其<strong>光耀</strong>抗性提高 10。</p></li></ul>"
     },
     "The Bewilderment": {
-      "name": "迷乱 The Bewilderment",
-      "description": "<p>受影响生物的心智被 @UUID[JournalEntry.pod4PApXHuZgXwHo.JournalEntryPage.jw0mOUcqhJPRajUY]{迷乱} 攫住——那是一种不断蔓延、绝不松手的奥术混乱。</p><ul><li><p>只要诅咒持续，受影响者便处于@Condition[disoriented]状态。</p></li><li><p>受影响生物的<strong>士气</strong>上限减半。</p></li><li><p>心智防线的溃散使受影响者对<strong>腐化</strong>伤害<strong>易伤</strong>，抗性降低 5。</p></li></ul>"
+      "name": "迷惘 The Bewilderment",
+      "description": "<p>受影响生物的心智被 @UUID[JournalEntry.pod4PApXHuZgXwHo.JournalEntryPage.jw0mOUcqhJPRajUY]{迷惘} 攫住——那是一种不断蔓延、绝不松手的奥术混乱。</p><ul><li><p>只要诅咒持续，受影响者便处于@Condition[disoriented]状态。</p></li><li><p>受影响生物的<strong>士气</strong>上限减半。</p></li><li><p>心智防线的溃散使受影响者对<strong>腐化</strong>伤害<strong>易伤</strong>，抗性降低 5。</p></li></ul>"
     },
     "Ward of Stabilization": {
       "name": "稳定守护 Ward of Stabilization",
@@ -50,47 +50,47 @@
     },
     "Blessing of Abyss": {
       "name": "深渊之祝福 Blessing of Abyss",
-      "description": "<p>你受到深渊之力的祝福。此祝福持续期间，你与深渊的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的深渊同调提升到更高等级。</p>"
+      "description": "<p>你受到深渊之力的祝福。此祝福持续期间，你与深渊的同调得到增强，为你的有效阶位提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的深渊同调提升到更高阶位。</p>"
     },
     "Blessing of Akon": {
       "name": "阿肯之祝福 Blessing of Akon",
-      "description": "<p>你受到阿肯之力的祝福。此祝福持续期间，你与阿肯的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的阿肯同调提升到更高等级。</p>"
+      "description": "<p>你受到阿肯之力的祝福。此祝福持续期间，你与阿肯的同调得到增强，为你的有效阶位提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的阿肯同调提升到更高阶位。</p>"
     },
     "Blessing of Aura": {
-      "name": "灵气之祝福 Blessing of Aura",
-      "description": "<p>你受到灵气之力的祝福。此祝福持续期间，你与灵气的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的灵气同调提升到更高等级。</p>"
+      "name": "奥拉之祝福 Blessing of Aura",
+      "description": "<p>你受到奥拉之力的祝福。此祝福持续期间，你与灵气的同调得到增强，为你的有效阶位提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的奥拉同调提升到更高阶位。</p>"
     },
     "Blessing of Cora": {
       "name": "科拉之祝福 Blessing of Cora",
-      "description": "<p>你受到科拉之力的祝福。此祝福持续期间，你与科拉的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的科拉同调提升到更高等级。</p>"
+      "description": "<p>你受到科拉之力的祝福。此祝福持续期间，你与科拉的同调得到增强，为你的有效阶位提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的科拉同调提升到更高阶位。</p>"
     },
     "Blessing of Heart": {
       "name": "余烬之心之祝福 Blessing of Heart",
-      "description": "<p>你受到余烬之心之力的祝福。此祝福持续期间，你与余烬之心的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的余烬之心同调提升到更高等级。</p>"
+      "description": "<p>你受到余烬之心之力的祝福。此祝福持续期间，你与余烬之心的同调得到增强，为你的有效阶位提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的余烬之心同调提升到更高阶位。</p>"
     },
     "Blessing of Luxarum": {
       "name": "卢克萨鲁姆之祝福 Blessing of Luxarum",
-      "description": "<p>你受到卢克萨鲁姆之力的祝福。此祝福持续期间，你与卢克萨鲁姆的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的卢克萨鲁姆同调提升到更高等级。</p>"
+      "description": "<p>你受到卢克萨鲁姆之力的祝福。此祝福持续期间，你与卢克萨鲁姆的同调得到增强，为你的有效阶位提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的卢克萨鲁姆同调提升到更高阶位。</p>"
     },
     "Blessing of Mayis": {
       "name": "玛伊斯之祝福 Blessing of Mayis",
-      "description": "<p>你受到玛伊斯之力的祝福。此祝福持续期间，你与玛伊斯的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的玛伊斯同调提升到更高等级。</p>"
+      "description": "<p>你受到玛伊斯之力的祝福。此祝福持续期间，你与玛伊斯的同调得到增强，为你的有效阶位提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的玛伊斯同调提升到更高阶位。</p>"
     },
     "Blessing of Orbis": {
       "name": "奥比斯之祝福 Blessing of Orbis",
-      "description": "<p>你受到奥比斯之力的祝福。此祝福持续期间，你与奥比斯的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的奥比斯同调提升到更高等级。</p>"
+      "description": "<p>你受到奥比斯之力的祝福。此祝福持续期间，你与奥比斯的同调得到增强，为你的有效阶位提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的奥比斯同调提升到更高阶位。</p>"
     },
     "Blessing of Primordis": {
       "name": "普里莫迪斯之祝福 Blessing of Primordis",
-      "description": "<p>你受到普里莫迪斯之力的祝福。此祝福持续期间，你与普里莫迪斯的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的普里莫迪斯同调提升到更高等级。</p>"
+      "description": "<p>你受到普里莫迪斯之力的祝福。此祝福持续期间，你与普里莫迪斯的同调得到增强，为你的有效阶位提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的普里莫迪斯同调提升到更高阶位。</p>"
     },
     "Blessing of Ragen": {
       "name": "拉根之祝福 Blessing of Ragen",
-      "description": "<p>你受到拉根之力的祝福。此祝福持续期间，你与拉根的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的拉根同调提升到更高等级。</p>"
+      "description": "<p>你受到拉根之力的祝福。此祝福持续期间，你与拉根的同调得到增强，为你的有效阶位提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的拉根同调提升到更高阶位。</p>"
     },
     "Blessing of Signara": {
       "name": "西格纳拉之祝福 Blessing of Signara",
-      "description": "<p>你受到西格纳拉之力的祝福。此祝福持续期间，你与西格纳拉的同调得到增强，为你的有效等级提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的西格纳拉同调提升到更高等级。</p>"
+      "description": "<p>你受到西格纳拉之力的祝福。此祝福持续期间，你与西格纳拉的同调得到增强，为你的有效阶位提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的西格纳拉同调提升到更高阶位。</p>"
     }
   }
 }

@@ -52,6 +52,10 @@ jobs:
           # zip 对已存在的同名档案是**追加更新**、不是重建。仓库里若留着上一版的
           # module.zip，旧内容会原样活到新包里 —— 1.1.0 就这么混进了 22 MB 陈旧副本
           # （含那份损坏的 ember.crucible-adventure-en.json）。先删干净再打。
+          # lang/en.json 是 lang_gap.py 的**旧版英文基准**（进 git，不进包）。
+          # module.json 的 languages 里已不再声明它 —— 声明了等于用一份冻结快照覆盖
+          # Ember 自己的英文串，Ember 一升级就是静默过期覆盖。
+          # *.py 是仓库里的维护脚本（normalize_adventure_translation.py），运行时用不到。
           rm -f module.zip
           zip -r module.zip . \
             -x ".git/*" \
@@ -59,15 +63,19 @@ jobs:
             -x ".gitignore" \
             -x "release/*" \
             -x "lang/lang_keep_english.json" \
+            -x "lang/en.json" \
             -x "compendium/en/*" \
+            -x "*.py" \
             -x "scripts/__pycache__/*" \
+            -x "__pycache__/*" \
+            -x "*.pyc" \
             -x "*.zip" \
             -x "*.bak" \
             -x ".DS_Store" \
             -x "Thumbs.db"
           ls -la module.zip
           echo "--- 确认英文基准没被打进去（应无输出）---"
-          unzip -l module.zip | grep "compendium/en/" && exit 1 || true
+          unzip -l module.zip | grep -E "compendium/en/|lang/en\.json|\.py$" && exit 1 || true
           unzip -l module.zip | tail -10
 
       - name: Create GitHub Release

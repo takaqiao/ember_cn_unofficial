@@ -1,5 +1,5 @@
 {
-  "label": "角色选项 Character Options",
+  "label": "余烬角色选项 Ember Character Options",
   "folders": {
     "Ancestries": "血统 Ancestries",
     "Attunements": "同调 Attunements",
@@ -36,7 +36,7 @@
     },
     "Crown Apothecary": {
       "name": "王室药剂师 Crown Apothecary",
-      "description": "<p>你曾花时间拜访或向位于南方岛屿维塔里上克朗的安珀最杰出的炼金术士学习。你在那里的经历让你对制造强效炼金灵药所需的试剂、灌注物与精华有了更深入的知识。你在这一领域的知识使你更容易辨认炼金材料及其性质，或理解以炼金方式制成的物质所产生的效果。</p><p>克朗的炼金术士以将元素能量灌注于造物之中、提升并强化其效力而闻名。这门技艺需要对元素生物及其能力具备相当深入的知识。作为你在克朗经历的副产物，你还获得了一些关于元素生物、它们的各种类型，以及其内在属性的不寻常知识。</p>"
+      "description": "<p>你曾花时间拜访或向位于南方岛屿维塔里上克朗的余烬最杰出的炼金术士学习。你在那里的经历让你对制造强效炼金灵药所需的试剂、灌注物与精华有了更深入的知识。你在这一领域的知识使你更容易辨认炼金材料及其性质，或理解以炼金方式制成的物质所产生的效果。</p><p>克朗的炼金术士以将元素能量灌注于造物之中、提升并强化其效力而闻名。这门技艺需要对元素生物及其能力具备相当深入的知识。作为你在克朗经历的副产物，你还获得了一些关于元素生物、它们的各种类型，以及其内在属性的不寻常知识。</p>"
     },
     "Abyss Attunement": {
       "name": "深渊同调 Abyss Attunement",
@@ -49,7 +49,7 @@
         },
         "abyssUntethering": {
           "name": "断系 Untethering",
-          "description": "<p>你冲击单一生物的<strong>坚韧防御</strong>，造成巨量<strong>虚空</strong>伤害。成功时，该生物的<strong>士气</strong>立即降为零，且所造成的全部伤害都直接计入<strong>疯狂</strong>。此外，目标陷入@Condition[entropy]状态，持续 10 轮。此动作以你<strong>力量</strong>、<strong>坚韧</strong>或<strong>敏捷</strong>中最高的属性进行成长。</p>"
+          "description": "<p>你冲击单一生物的<strong>强韧</strong>，造成巨量<strong>虚空</strong>伤害。成功时，该生物的<strong>士气</strong>立即降为零，且所造成的全部伤害都直接计入<strong>疯狂</strong>。此外，目标陷入@Condition[entropy]状态，持续 10 轮。此动作以你<strong>力量</strong>、<strong>坚韧</strong>或<strong>敏捷</strong>中最高的属性进行成长。</p>"
         }
       }
     },
@@ -58,13 +58,13 @@
       "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3Oywe0peo57dQT9j]{阿肯}——破碎之月——产生同调共鸣，以及它所代表的哲学理念——<strong>纪律</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>穿刺</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAkonAttunem akonForesight] 反应，让你预测一次掷骰的结果，并在预测正确时回复<strong>专注</strong>。</p></li><li><p><strong>阶位 3</strong>：你的<strong>招架</strong>防御，按同调阶位每超过 2 一阶便提高 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>阿肯</strong>施法屈折，可施加于使用<strong>念力</strong>符文的法术。该法术会自动造成敌人最易伤的那种物理伤害类型。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAkonAttunem akonInevitability] 反应，标记一名敌人，迫使其策略在每轮开始时被公开。</p></li></ul>",
       "actions": {
         "akonForesight": {
-          "name": "预视 Foresight",
+          "name": "先见之明 Foresight",
           "description": "<p>在本战斗轮中尚无任何生物行动之前，口头宣告一项具体的预言：某个指名的角色将执行某个特定动作，并得到<strong>成功</strong>或<strong>失败</strong>其中一类结果。若预言应验，你可以使用此反应回复 <strong>+1 专注</strong>。</p>",
           "condition": "某个生物执行了你此前宣告的动作。"
         },
         "akonInevitability": {
           "name": "必然 Inevitability",
-          "description": "<p>在战斗轮开始时、尚无任何生物行动之前，你宣告一名可见敌人的命运。此后每轮开始时，在你宣告<strong>预视</strong>之前，游戏主持人必须公开宣布该生物在其回合将采取的策略，并且除非该策略变得不可能，否则必须照此执行。</p>",
+          "description": "<p>在战斗轮开始时、尚无任何生物行动之前，你宣告一名可见敌人的命运。此后每轮开始时，在你宣告<strong>先见之明</strong>之前，游戏主持人必须公开宣布该生物在其回合将采取的策略，并且除非该策略变得不可能，否则必须照此执行。</p>",
           "condition": "在战斗轮开始时，尚无任何生物行动之前。",
           "effects": [
             {
@@ -80,10 +80,10 @@
       "actions": {
         "tyraphicTransformation": {
           "name": "泰拉菲克变形",
-          "description": "<p>你可以让自己暂时获得提拉斐姆的面容与能力，呈现出异界般的形貌。处于变形状态时，你获得以下收益。</p><ul><li><p>你获得对<strong>光耀</strong>伤害的抗性，数值等于你等级的2倍。</p></li><li><p>你的攻击造成额外<strong>光耀</strong>伤害，数值等于你<strong>气场</strong>的一半。</p></li><li><p>你在使用<strong>威吓</strong>技能时获得<strong>+2 恩惠骰</strong>。</p></li></ul><p>你可以在自己回合中于持续时间结束前提前结束此次变形，且无需消耗任何代价。</p>",
+          "description": "<p>你可以让自己暂时获得提拉斐姆的面容与能力，呈现出异界般的形貌。处于变形状态时，你获得以下收益。</p><ul><li><p>你获得对<strong>光耀</strong>伤害的抗性，数值等于你等级的 2 倍。</p></li><li><p>你的攻击造成额外<strong>光耀</strong>伤害，数值等于你<strong>存在</strong>的一半。</p></li><li><p>你在使用<strong>威吓</strong>技能时获得<strong>+2 恩惠骰</strong>。</p></li></ul><p>你可以在自己回合中于持续时间结束前提前结束此次变形，且无需消耗任何代价。</p>",
           "effects": [
             {
-              "name": "提拉法转化 Tyraphic Transformation"
+              "name": "泰拉菲克变形 Tyraphic Transformation"
             }
           ]
         }
@@ -162,8 +162,8 @@
       "description": "<p>你的变异让你有别于你血统中的其他人。你可能会显现出转变带来的身体特征，也可能这些差异隐藏于内在，从根本层面塑造着你。没有任何两个阿斯特是完全相同的，而你的形态完全属于你自己。</p>"
     },
     "Aura Attunement": {
-      "name": "灵气同调 Aura Attunement",
-      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR]{灵气}——空心之月——产生同调共鸣，以及它所代表的哲学理念——<strong>个人主义</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>电击</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraSlipstream] 动作，在你移动之后以空气的错位环绕自身。</p></li><li><p><strong>阶位 3</strong>：你的<strong>步幅</strong>，按同调阶位每超过 2 一阶便提高 2。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>灵气</strong>施法屈折，可施加于使用<strong>风暴</strong>符文的法术。施法之后，你回复你的<strong>免费移动</strong>。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraBoundless] 动作，获得飞行能力并免疫一系列妨碍移动的状态。</p></li></ul> ",
+      "name": "奥拉同调 Aura Attunement",
+      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR]{奥拉}——空心之月——产生同调共鸣，以及它所代表的哲学理念——<strong>个人主义</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>电击</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraSlipstream] 动作，在你移动之后以空气的错位环绕自身。</p></li><li><p><strong>阶位 3</strong>：你的<strong>步幅</strong>，按同调阶位每超过 2 一阶便提高 2。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>灵气</strong>施法屈折，可施加于使用<strong>风暴</strong>符文的法术。施法之后，你回复你的<strong>免费移动</strong>。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberAuraAttunem auraBoundless] 动作，获得飞行能力并免疫一系列妨碍移动的状态。</p></li></ul> ",
       "actions": {
         "auraSlipstream": {
           "name": "气隙 Slipstream",
@@ -187,7 +187,7 @@
       }
     },
     "Arcturian": {
-      "name": "阿克图里亚人 Arcturian",
+      "name": "阿克图里安人 Arcturian",
       "description": "<p>@embed[JournalEntry.emberCultures000.JournalEntryPage.8cGPxMRewkagoIvc inline overview]</p>"
     },
     "Bejak": {
@@ -255,7 +255,7 @@
       "description": "<p>你可以花费1小时，用一种来自地面或生长于地面的天然材料制造一个微型 @UUID[Actor.oLu6qs3AYUu8eitR]，例如黏土、石料、木材或稻草。构装同伴是一个被赋予生命的构装体，会成为受你控制的生物，持续存在8小时，或直到其生命值或士气降至0。</p><p>当构装同伴被激活时，你可以向它下达基本的口头指示，以发出简单命令，例如“取一把钥匙”、“站岗”，或“把一些书籍堆起来”。如果你没有下达任何命令，构装同伴将什么也不做，只会在面对敌对生物时进行自我防御，并在适当时执行防御动作。一旦收到命令，同伴会持续遵循该命令，直到其任务完成或收到其他指示。</p><p>你同一时间只能有一个主动的构装同伴，创造第二个同伴会使先前赋予你的构装同伴生命的魔法立即消散。</p>",
       "actions": {
         "constructedCompanion": {
-          "name": "构装体伙伴",
+          "name": "构装同伴",
           "description": "<p>你花费1小时创造一个构装同伴，它会遵从你的基本口头指令。</p>"
         }
       }
@@ -271,7 +271,7 @@
         },
         "coraGraviturgicCrush": {
           "name": "重力挤压 Graviturgic Crush",
-          "description": "<p>你制造出一个引力漩涡，攻击其中所有生物的<strong>坚韧防御</strong>。未能抵抗者会被拉向中心，承受<strong>强化</strong>的<strong>钝击</strong>伤害，并陷入@Condition[staggered]状态。此动作以你<strong>力量</strong>、<strong>坚韧</strong>或<strong>智力</strong>中最高的属性进行成长。</p>"
+          "description": "<p>你制造出一个引力漩涡，攻击其中所有生物的<strong>强韧</strong>。未能抵抗者会被拉向中心，承受<strong>强化</strong>的<strong>钝击</strong>伤害，并陷入@Condition[staggered]状态。此动作以你<strong>力量</strong>、<strong>坚韧</strong>或<strong>智力</strong>中最高的属性进行成长。</p>"
         }
       }
     },
@@ -285,7 +285,7 @@
           "condition": "你陷入虚弱状态，或在虚弱状态下受到伤害。",
           "effects": [
             {
-              "name": "结晶创伤 Crystalize Wounds"
+              "name": "结晶化创伤 Crystalize Wounds"
             }
           ]
         }
@@ -293,7 +293,7 @@
     },
     "Personalized Crafting": {
       "name": "个性化制作 Personalized Crafting",
-      "description": "<p><strong>测试版二</strong>：该天赋尚未根据 Crucible 机制进行更新。</p>"
+      "description": "<p><strong>测试版二</strong>：该天赋尚未根据 Crucible 机制更新。</p>"
     },
     "Drakon Lineage": {
       "name": "龙裔血统 Drakon Lineage",
@@ -307,15 +307,15 @@
     },
     "Explosives Training": {
       "name": "爆炸物训练 Explosives Training",
-      "description": "<p>你熟悉爆炸物。使用<strong>Bomb</strong>类型的消耗品时，你在相关技能上始终至少视为<strong>受训</strong>。如果你已经在该技能上受训，则改为在任何相关检定上获得<strong>+1 恩惠骰</strong>。</p>"
+      "description": "<p>你熟悉爆炸物。使用<strong>炸弹</strong>类型的消耗品时，你在相关技能上始终至少视为<strong>受训</strong>。如果你已经在该技能上受训，则改为在任何相关检定上获得<strong>+1 恩惠骰</strong>。</p>"
     },
     "Fej Lineage": {
       "name": "费伊杰血统 Fej Lineage",
-      "description": "<p>你的血统对<strong>火元素</strong>伤害的抗性会进一步提高，提高值等于你的角色<strong>等级</strong>。如果你在水中浸没超过6秒，或在你的回合开始时处于水中浸没状态，你必须使用<strong>畏水</strong>动作来检定你的意志。</p>",
+      "description": "<p>你的血统对<strong>火焰</strong>伤害的抗性会进一步提高，提高值等于你的角色<strong>等级</strong>。如果你在水中浸没超过6秒，或在你的回合开始时处于水中浸没状态，你必须使用<strong>畏水</strong>动作来检定你的意志。</p>",
       "actions": {
         "extremeMetabolism": {
-          "name": "极端代谢 Extreme Metabolism",
-          "description": "<p>你激发体内炽热的代谢，进入一阵超自然的高速状态。</p><ul><li><p>你的<strong>移动</strong>增加 +2。</p></li><li><p>你获得等同于你<strong>敏捷</strong>一半的<strong>闪避</strong>加值。</p></li><li><p>你的当前和最大<strong>动作</strong>都获得 +1。</p></li></ul>",
+          "name": "极限代谢 Extreme Metabolism",
+          "description": "<p>你激发体内炽热的代谢，进入一阵超自然的高速状态。</p><ul><li><p>你的<strong>步幅</strong>增加 +2。</p></li><li><p>你获得等同于你<strong>敏捷</strong>一半的<strong>闪避</strong>加值。</p></li><li><p>你的当前和最大<strong>动作</strong>都获得 +1。</p></li></ul>",
           "effects": [
             {
               "name": "极限代谢 Extreme Metabolism"
@@ -346,15 +346,15 @@
     },
     "Hot Tempered": {
       "name": "火爆脾气 Hot Tempered",
-      "description": "<p><strong>测试版二</strong>：该天赋尚未按照 Crucible 机制更新。</p>"
+      "description": "<p><strong>测试版二</strong>：该天赋尚未根据 Crucible 机制更新。</p>"
     },
     "Hulg'run Lineage": {
       "name": "赫尔格伦血统 Hulg'run Lineage",
-      "description": "<p>你免疫<strong>睡眠</strong>状态。</p><p>当你<strong>休息</strong>时，你可以与余烬的本质问道自然。若你在坚实地面上休息，则不需要睡眠，并可保持清醒。为了获得休息的收益，你不得进行任何剧烈活动。</p>",
+      "description": "<p>你免疫<strong>睡眠</strong>状态。</p><p>当你<strong>休息</strong>时，你可以与余烬的精华交流。若你在坚实地面上休息，则不需要睡眠，并可保持清醒。为了获得休息的收益，你不得进行任何剧烈活动。</p>",
       "actions": {
         "livingStone": {
           "name": "活石",
-          "description": "<p>你的形态暂时钙化，令你对物理打击获得更强的保护。</p><ul><li><p>你获得对<strong>钝击</strong>、<strong>穿刺</strong>和<strong>挥砍</strong>伤害的抗性，数值等于你的<strong>等级 + 1</strong>。</p></li><li><p>你的<strong>移动</strong>减少 -2。</p></li><li><p>你免疫<strong>倒地</strong>状态，且不能被强制移动。</p></li></ul>",
+          "description": "<p>你的形态暂时钙化，令你对物理打击获得更强的保护。</p><ul><li><p>你获得对<strong>钝击</strong>、<strong>穿刺</strong>和<strong>挥砍</strong>伤害的抗性，数值等于你的<strong>等级 + 1</strong>。</p></li><li><p>你的<strong>步幅</strong>减少 -2。</p></li><li><p>你免疫<strong>倒地</strong>状态，且不能被强制移动。</p></li></ul>",
           "effects": [
             {
               "name": "活石 Living Stone"
@@ -369,22 +369,22 @@
       "actions": {
         "emberBlaze": {
           "name": "余烬烈焰",
-          "description": "<p>当你陷入<strong>虚弱</strong>状态，或在<strong>虚弱</strong>状态下受到伤害时，你可以激发一阵名为 Blaze 的非凡肾上腺素爆发。你的<strong>行动</strong>池和<strong>专注</strong>池会立即恢复至其最大值。</p>",
+          "description": "<p>当你陷入<strong>虚弱</strong>状态，或在<strong>虚弱</strong>状态下受到伤害时，你可以激发一阵名为“烈焰”的非凡肾上腺素爆发。你的<strong>动作</strong>池和<strong>专注</strong>池会立即恢复至其最大值。</p>",
           "condition": "你陷入虚弱状态，或在虚弱状态下受到伤害。"
         }
       }
     },
     "Impassioned Revelry": {
       "name": "热情狂欢 Impassioned Revelry",
-      "description": "<p><strong>BETA TWO</strong>：此天赋尚未以 Crucible 机制更新。</p>"
+      "description": "<p><strong>测试版二</strong>：该天赋尚未根据 Crucible 机制更新。</p>"
     },
     "Imperial Ambition": {
       "name": "帝国野心 Imperial Ambition",
-      "description": "<p><strong>BETA TWO</strong>：该天赋尚未根据 Crucible 机制进行更新。</p>"
+      "description": "<p><strong>测试版二</strong>：该天赋尚未根据 Crucible 机制更新。</p>"
     },
     "Intrepid Sailor": {
       "name": "无畏水手 Intrepid Sailor",
-      "description": "<p><strong>BETA TWO</strong>：此天赋尚未根据 Crucible 机制更新。</p>"
+      "description": "<p><strong>测试版二</strong>：该天赋尚未根据 Crucible 机制更新。</p>"
     },
     "Keth Lineage": {
       "name": "凯思血统 Keth Lineage",
@@ -407,7 +407,7 @@
       }
     },
     "Kivahr Lineage": {
-      "name": "基瓦赫血统 Kivahr Lineage",
+      "name": "基瓦尔血统 Kivahr Lineage",
       "description": "<p>你的身体因巨人的血统而得到强化。你的心智与身体和谐协作，以解决问题并承受肉体上的压力。</p><p>你的<strong>强韧</strong>和<strong>意志</strong>防御获得等同于你的<strong>等级</strong>除以4的加值。</p><p></p><p></p><p></p>",
       "actions": {
         "regulatedRhythm": {
@@ -415,24 +415,24 @@
           "description": "<p>你调动自己的超自然能力，使心灵与身体达到和谐。你进入一种恍惚般的状态，并在你的<strong>回合</strong>开始时获得以下益处。</p><ul><li><p>你获得 +1 <strong>专注</strong>。</p></li><li><p>如果你的士气高于你的生命值，你可以转移最多等同于你的<strong>存在</strong>能力值的数值，减少<strong>士气</strong>并获得<strong>生命值</strong>。</p></li><li><p>如果你的生命值高于你的士气，你可以转移最多等同于你的<strong>坚韧</strong>能力值的数值，减少<strong>生命值</strong>并获得<strong>士气</strong>。</p></li></ul><p>这些转移不会使任何资源超过其最大值。</p>",
           "effects": [
             {
-              "name": "律动调控 Regulated Rhythm"
+              "name": "规整节律 Regulated Rhythm"
             }
           ]
         }
       }
     },
     "Lunar Tattoos": {
-      "name": "月纹身 Lunar Tattoos",
+      "name": "月相纹身 Lunar Tattoos",
       "description": "<p>你身上的发光纹身与余烬诸元素之月的能量共鸣。当一轮或多轮月亮处于满月时，你获得对应伤害类型的 <strong>+2 抗性</strong>：</p><ul><li><p><strong>灵气</strong> - <strong>电击 </strong>抗性</p></li><li><p><strong>科拉</strong> - <strong>强酸 </strong>抗性</p></li><li><p><strong>玛伊斯</strong> - <strong>寒冷 </strong>抗性</p></li><li><p><strong>拉根</strong> - <strong>火焰 </strong>抗性</p></li><li><p><strong>阿肯</strong> - <strong>穿刺 </strong>抗性</p></li><li><p><strong>奥比斯</strong> - <strong>灵能 </strong>抗性</p></li></ul>"
     },
     "Luxarum Attunement": {
       "name": "卢克萨鲁姆同调 Luxarum Attunement",
-      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.pPU6VZV7WFubtcSR]{卢克萨鲁姆}——无尽战争之界——产生同调共鸣，以及它所代表的哲学理念——<strong>野心</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>光耀</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberLuxarumAttu luxarumEternalVengeance] 反应，在你被暴击时充满正义的热忱。</p></li><li><p><strong>阶位 3</strong>：你的<strong>强韧</strong>，按同调阶位每超过 2 一阶便提高 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>卢克萨鲁姆</strong>施法屈折，可施加于使用<strong>照明</strong>符文的法术。每个被击中的敌人都会被照亮，并陷入@Condition[exposed]状态，持续 1 个回合。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberLuxarumAttu luxarumTyraphicCrusade] 动作，跃入空中投下一记光耀爆发，并按受伤目标数量返还动作。</p></li></ul> ",
+      "description": "<p>你的灵魂与 @UUID[JournalEntry.emberCosmos00000.JournalEntryPage.pPU6VZV7WFubtcSR]{卢克萨鲁姆}——无尽战争之界——产生同调共鸣，以及它所代表的哲学理念——<strong>野心</strong>。</p><p>你获得以下增益，它们会随你的同调阶位提升而增强。</p><ul><li><p><strong>阶位 1</strong>：你获得等同于同调阶位 2 倍的<strong>光耀</strong>伤害抗性。</p></li><li><p><strong>阶位 2</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberLuxarumAttu luxarumEternalVengeance] 反应，在你被暴击时充满正义的热忱。</p></li><li><p><strong>阶位 3</strong>：你的<strong>强韧</strong>防御，按同调阶位每超过 2 一阶便提高 1。</p></li><li><p><strong>阶位 4</strong>：你解锁<strong>卢克萨鲁姆</strong>施法屈折，可施加于使用<strong>照明</strong>符文的法术。每个被击中的敌人都会被照亮，并陷入@Condition[exposed]状态，持续 1 个回合。</p></li><li><p><strong>阶位 5</strong>：你解锁 @Action[Compendium.ember.crucible-character.Item.emberLuxarumAttu luxarumTyraphicCrusade] 动作，跃入空中投下一记光耀爆发，并按受伤目标数量返还动作。</p></li></ul> ",
       "actions": {
         "luxarumEternalVengeance": {
           "name": "永恒复仇 Eternal Vengeance",
           "description": "<p>当你被来袭的打击或法术造成暴击时，你会充满正义的热忱，陷入@Condition[hastened]状态，直到你下个回合结束。</p>",
-          "condition": "一次来袭的打击或法术对你造成了重大成功。"
+          "condition": "一次来袭的打击或法术对你取得了大成功。"
         },
         "luxarumTyraphicCrusade": {
           "name": "提拉法远征 Tyraphic Crusade",
@@ -464,9 +464,9 @@
       "description": "<p>你知晓<strong>照明符文</strong>，并可将其用于施法。</p><p>你那虹彩般的胎记赋予你非凡的能力，使你能够闪避或凭本能将敌意魔法引开。针对你的法术攻击承受<strong>+2 祸骰</strong>。</p>",
       "actions": {
         "prescientReflection": {
-          "name": "先见之反思",
+          "name": "先见反照",
           "description": "<p>当一个直接以你为目标的法术在被抵抗时出现严重失败，你可以本能地将该法术的能量重定向，使其改为消散，或影响一个在该法术射程内、且并非其原施法者的其他目标。</p><p>该其他目标必须改为对该法术进行防御，并由该目标承受该法术的任何效果。如果没有选择其他目标，则该法术的能量会无害地消散。</p>",
-          "condition": "一个直接以你为目标的法术被以重大失败的结果抵抗。"
+          "condition": "一个直接以你为目标的法术被以严重失败的结果抵抗。"
         }
       }
     },
@@ -490,12 +490,12 @@
       }
     },
     "Passionate Trader": {
-      "name": "热情的商人 Passionate Trader",
-      "description": "<p><strong>BETA TWO</strong>：此天赋尚未更新为 Crucible 机制。</p>"
+      "name": "热忱商贩 Passionate Trader",
+      "description": "<p><strong>测试版二</strong>：该天赋尚未根据 Crucible 机制更新。</p>"
     },
     "Preeminent Survivalist": {
       "name": "卓越求生者 Preeminent Survivalist",
-      "description": "<p>你在<strong>察觉</strong>与荒野这两项技能上，始终至少视为已受过<strong>训练</strong>。如果你已经受过训练，则此类<strong>技能检定</strong>以<strong>+1 恩惠骰</strong>进行。</p><p>此外，除非你处于<strong>失能</strong>、<strong>失聪</strong>或<strong>目盲</strong>状态，否则你不会陷入 @Condition[unaware]。</p>"
+      "description": "<p>你在<strong>察觉</strong>与<strong>荒野</strong>这两项技能上，始终至少视为<strong>受训</strong>。如果你已经受过训练，则此类技能检定以<strong>+1 恩惠骰</strong>进行。</p><p>此外，除非你处于<strong>失能</strong>、<strong>失聪</strong>或<strong>目盲</strong>状态，否则你不会陷入 @Condition[unaware]。</p>"
     },
     "Primordis Attunement": {
       "name": "普里莫迪斯同调 Primordis Attunement",
@@ -524,7 +524,7 @@
       "actions": {
         "ragenFurnaceBlast": {
           "name": "熔炉爆燃 Furnace Blast",
-          "description": "<p>当你被打击或法术造成暴击时，你以拉根之火的烈度爆发开来，对 3 英尺内所有生物的<strong>坚韧防御</strong>发动一次<strong>虚弱</strong>攻击，造成<strong>火焰</strong>伤害并施加@Condition[disoriented]状态。正如风箱助燃，任何处于@Condition[burning]状态的受伤目标会立刻承受其全部剩余的持续伤害，并不再@Condition[burning]。此动作以你<strong>力量</strong>、<strong>坚韧</strong>或<strong>敏捷</strong>中最高的属性进行成长。</p>",
+          "description": "<p>当你被打击或法术造成暴击时，你以拉根之火的烈度爆发开来，对 3 英尺内所有生物的<strong>强韧</strong>发动一次<strong>虚弱</strong>攻击，造成<strong>火焰</strong>伤害并施加@Condition[disoriented]状态。正如风箱助燃，任何处于@Condition[burning]状态的受伤目标会立刻承受其全部剩余的持续伤害，并不再@Condition[burning]。此动作以你<strong>力量</strong>、<strong>坚韧</strong>或<strong>敏捷</strong>中最高的属性进行成长。</p>",
           "condition": "你被打击或法术造成了暴击。"
         },
         "ragenImmolatingRejuvenation": {
@@ -540,11 +540,11 @@
     },
     "Resolute Legacy": {
       "name": "坚定传承 Resolute Legacy",
-      "description": "<p><strong>测试版二</strong>：该天赋尚未更新为 Crucible 机制。</p>"
+      "description": "<p><strong>测试版二</strong>：该天赋尚未根据 Crucible 机制更新。</p>"
     },
     "Ritual Cooking": {
       "name": "仪式烹饪 Ritual Cooking",
-      "description": "<p><strong>测试版二</strong>：该天赋尚未按《Crucible》机制更新。</p>"
+      "description": "<p><strong>测试版二</strong>：该天赋尚未根据 Crucible 机制更新。</p>"
     },
     "Signara Attunement": {
       "name": "西格纳拉同调 Signara Attunement",
@@ -567,20 +567,20 @@
       }
     },
     "Signborn Lineage": {
-      "name": "星兆血统 Signborn Lineage",
-      "description": "<p>除了你的实体肢体外，你还拥有两条虚体手臂。这些手臂不能持用武器、盾牌或其他装备。然而，它们可以与您的常规肢体一同用于快速操纵物品。每<strong>轮</strong>一次，你可以从你的物品栏中装备一件物品，而无需为此花费任何<strong>动作</strong>点数。</p><p>通过使用印记裔特有的语言与生理结构，你将虚体肢体同步融入施法的编织之中，从而毫不费力地施展魔法技艺。你知晓独特的<strong>符文语</strong>屈折，可将其附加到法术上。以符文语强化的法术在施放时需额外花费<strong>+1 英雄气概</strong>，但可减少<strong>-2 动作</strong>的消耗来施展。</p>"
+      "name": "印记裔血统 Signborn Lineage",
+      "description": "<p>除了你的实体肢体外，你还拥有两条虚体手臂。这些手臂不能持用武器、盾牌或其他装备。然而，它们可以与你的常规肢体一同用于快速操纵物品。每<strong>轮</strong>一次，你可以从你的物品栏中装备一件物品，而无需为此花费任何<strong>动作</strong>点数。</p><p>通过使用印记裔特有的语言与生理结构，你将虚体肢体同步融入施法的编织之中，从而毫不费力地施展魔法技艺。你知晓独特的<strong>符文语</strong>屈折，可将其附加到法术上。以符文语强化的法术在施放时需额外花费<strong>+1 英雄气概</strong>，但可减少<strong>-2 动作</strong>的消耗来施展。</p>"
     },
     "Soulbound": {
       "name": "魂缚 Soulbound",
-      "description": "<p>你已经死亡，如今成为了魂缚者，受到一种名为魂印的魔法系缚影响，它阻止你的灵魂依照烬界通常的灵魂循环继续前行。你并非不死生物，并且保留了生前拥有的特征，但你的持续存在将受到额外规则的约束，其后果会随着魂印强度的增长而愈发恶化。</p><p>魂缚共有三个等级，并依序施加以下魂印：“次等”“高等”和“死亡”。每个等级都会施加逐渐更严重的效果。</p><p>你的<strong>疯狂</strong>最大值会降低，因为你更容易受到不死状态那种吞噬心智的影响。</p><ul><li><p><strong>次等魂印：</strong>每级降低2</p></li><li><p><strong>高等魂印</strong>：每级降低4</p></li><li><p><strong>死亡魂印</strong>：每级降低6</p></li></ul><p>你的<strong>士气阈值</strong>与<strong>治疗阈值</strong>防御提高，使你更难被治疗。</p><ul><li><p><strong>次等魂印：</strong>提高2</p></li><li><p><strong>高等魂印</strong>：提高4</p></li><li><p><strong>死亡魂印</strong>：提高6</p></li></ul><p><strong>异界者</strong>、<strong>不死生物</strong>和<strong>畸怪</strong>类型的生物在感知你时进行的<strong>察觉</strong>检定获得恩惠骰。</p><ul><li><p><strong>次等魂印：</strong>1恩惠骰</p></li><li><p><strong>高等魂印</strong>：2恩惠骰，且你在@Condition[invisible]时也会被看见</p></li><li><p><strong>死亡魂印</strong>：3恩惠骰，且你在@Condition[invisible]时也会被看见</p></li></ul><p>所有以<strong>野兽</strong>类型生物为目标的<strong>技能</strong>动作都会受到祸骰，因为动物天生会对你保持警惕与不信任。</p><ul><li><p><strong>次等魂印：</strong>1祸骰</p></li><li><p><strong>高等魂印</strong>：2祸骰</p></li><li><p><strong>死亡魂印</strong>：3祸骰</p></li></ul><p>对<strong>人型生物</strong>类型生物使用<strong>外交</strong>技能时，会因你可怖的本质而受到祸骰：</p><ul><li><p><strong>次等魂印：</strong>1祸骰</p></li><li><p><strong>高等魂印</strong>：2祸骰</p></li><li><p><strong>死亡魂印</strong>：3祸骰</p></li></ul><p>当你死亡时，你的魂缚等级提高1级，从次等提升为高等，或从高等提升为死亡。如果你在承受<strong>死亡魂印</strong>时死亡，你会变成一个受游戏主持人控制的不死生物。</p>"
+      "description": "<p>你已经死亡，如今成为了魂缚者，受到一种名为魂印的魔法系缚影响，它阻止你的灵魂依照余烬通常的灵魂循环继续前行。你并非不死生物，并且保留了生前拥有的特征，但你的持续存在将受到额外规则的约束，其后果会随着魂印强度的增长而愈发恶化。</p><p>魂缚共有三个等级，并依序施加以下魂印：“次等”“高等”和“死亡”。每个等级都会施加逐渐更严重的效果。</p><p>你的<strong>疯狂</strong>最大值会降低，因为你更容易受到不死状态那种吞噬心智的影响。</p><ul><li><p><strong>次等魂印：</strong>每级降低2</p></li><li><p><strong>高等魂印</strong>：每级降低4</p></li><li><p><strong>死亡魂印</strong>：每级降低6</p></li></ul><p>你的<strong>士气阈值</strong>与<strong>治疗阈值</strong>防御提高，使你更难被治疗。</p><ul><li><p><strong>次等魂印：</strong>提高2</p></li><li><p><strong>高等魂印</strong>：提高4</p></li><li><p><strong>死亡魂印</strong>：提高6</p></li></ul><p><strong>异界者</strong>、<strong>不死生物</strong>和<strong>畸怪</strong>类型的生物在感知你时进行的<strong>察觉</strong>检定获得恩惠骰。</p><ul><li><p><strong>次等魂印：</strong>1恩惠骰</p></li><li><p><strong>高等魂印</strong>：2恩惠骰，且你在@Condition[invisible]时也会被看见</p></li><li><p><strong>死亡魂印</strong>：3恩惠骰，且你在@Condition[invisible]时也会被看见</p></li></ul><p>所有以<strong>野兽</strong>类型生物为目标的<strong>技能</strong>动作都会受到祸骰，因为动物天生会对你保持警惕与不信任。</p><ul><li><p><strong>次等魂印：</strong>1祸骰</p></li><li><p><strong>高等魂印</strong>：2祸骰</p></li><li><p><strong>死亡魂印</strong>：3祸骰</p></li></ul><p>对<strong>人型生物</strong>类型生物使用<strong>外交</strong>技能时，会因你可怖的本质而受到祸骰：</p><ul><li><p><strong>次等魂印：</strong>1祸骰</p></li><li><p><strong>高等魂印</strong>：2祸骰</p></li><li><p><strong>死亡魂印</strong>：3祸骰</p></li></ul><p>当你死亡时，你的魂缚等级提高1级，从次等提升为高等，或从高等提升为死亡。如果你在承受<strong>死亡魂印</strong>时死亡，你会变成一个受游戏主持人控制的不死生物。</p>"
     },
     "Tactical Planner": {
       "name": "战术规划师 Tactical Planner",
-      "description": "<p><strong>测试版二</strong>：此天赋尚未根据 Crucible 机制更新。</p>"
+      "description": "<p><strong>测试版二</strong>：该天赋尚未根据 Crucible 机制更新。</p>"
     },
     "Exceptional Taste": {
       "name": "非凡品味 Exceptional Taste",
-      "description": "<p>在应对社交场合时，你的衣着比任何刀剑或法术都更有力。当你穿着至少<strong>精良</strong>品质且未<strong>破碎</strong>的衣物时，你在<strong>欺瞒</strong>、<strong>交涉</strong>与<strong>威吓</strong>技能检定上获得 <strong>+2 恩惠骰</strong>。</p>"
+      "description": "<p>在应对社交场合时，你的衣着比任何刀剑或法术都更有力。当你穿着至少<strong>精良</strong>品质且未<strong>破碎</strong>的衣物时，你在<strong>欺瞒</strong>、<strong>外交</strong>与<strong>威吓</strong>技能检定上获得 <strong>+2 恩惠骰</strong>。</p>"
     },
     "Thornling Lineage": {
       "name": "荆芽灵血统 Thornling Lineage",
@@ -592,7 +592,7 @@
           "condition": "你成为一次近战攻击的目标。",
           "effects": [
             {
-              "name": "荆棘树皮 Thornbark"
+              "name": "刺棘树皮 Thornbark"
             }
           ]
         }
@@ -600,14 +600,14 @@
     },
     "Undaunted Warrior": {
       "name": "无畏战士 Undaunted Warrior",
-      "description": "<p>你在面对可怖的敌人时展现出非凡的勇气，并接受过相关训练。对类型为畸怪的<strong>敌人</strong>进行任何攻击时，你获得<strong>+1 恩惠骰</strong>。</p>"
+      "description": "<p>你在面对可怖的敌人时展现出非凡的勇气，并接受过相关训练。对<strong>畸怪</strong>类型的敌人进行任何攻击时，你获得<strong>+1 恩惠骰</strong>。</p>"
     },
     "Urban Resourcefulness": {
       "name": "都市机敏 Urban Resourcefulness",
-      "description": "<p><strong>测试版二</strong>：此天赋尚未根据《Crucible》机制更新。</p>"
+      "description": "<p><strong>测试版二</strong>：该天赋尚未根据 Crucible 机制更新。</p>"
     },
     "Vrjnhar Lineage": {
-      "name": "Vrjnhar 血统 Vrjnhar Lineage",
+      "name": "弗尔金哈尔血统 Vrjnhar Lineage",
       "description": "<p>当对你进行的一次攻击结果为<strong>掠过</strong>时，你用自己华丽的胡须承受这一击，从而保护自己，使你完全免受原本由掠过一击造成的伤害。</p>",
       "actions": {
         "formidableStamina": {
@@ -615,22 +615,22 @@
           "description": "<p>你汲取惊人的能量储备，使自己在力竭之后仍能继续战斗。在一段时间内，每当你耗尽自己的<strong>动作</strong>点池时，你都有 25% 的几率立即恢复 1 点<strong>动作</strong>点。</p>",
           "effects": [
             {
-              "name": "惊人耐力 Formidable Stamina"
+              "name": "强健体力 Formidable Stamina"
             }
           ]
         }
       }
     },
     "Wirrun Lineage": {
-      "name": "维伦血统 Wirrun Lineage",
+      "name": "威伦血统 Wirrun Lineage",
       "description": "<p>你免疫极寒的影响。你的视野不会因雾、薄雾、雪或其他大气效果而受阻。</p><p><strong>Alpha One：</strong>此视觉效果尚未自动化。</p>",
       "actions": {
         "implacableHunter": {
-          "name": "冷酷无情的猎手",
-          "description": "<p>你将一个你能看见的生物指定为你的追猎目标。</p><ul><li><p>凡是与辨明其位置有关的<strong>察觉</strong>或荒野掷骰，你获得+2 恩惠骰。</p></li><li><p>当你在自己的回合中移动并接近你的追猎目标时，你在该<strong>回合</strong>内对你的追猎目标进行的下一次<strong>攻击检定</strong>获得<strong>+2 恩惠骰</strong>。</p></li></ul>",
+          "name": "无情猎手",
+          "description": "<p>你将一个你能看见的生物指定为你的追猎目标。</p><ul><li><p>凡是与辨明其位置有关的<strong>察觉</strong>或<strong>荒野</strong>掷骰，你获得<strong>+2 恩惠骰</strong>。</p></li><li><p>当你在自己的回合中移动并接近你的追猎目标时，你在该回合内对你的追猎目标进行的下一次攻击检定获得<strong>+2 恩惠骰</strong>。</p></li></ul>",
           "effects": [
             {
-              "name": "执着猎手 Implacable Hunter"
+              "name": "无情猎手 Implacable Hunter"
             }
           ]
         }
@@ -641,7 +641,7 @@
       "description": "<p>你知晓<strong>风暴符文</strong>，并能够用它来编织施法。</p><p>泽夫的面具具备有限程度的超自然可塑性。你可以稍微改变你的面具，以便进行日常沟通并表达情绪。当你死亡时，留下的只有你的面具。对于以已死亡生物为目标的法术或魔法效果而言，你的面具视为你的物理遗骸。</p><p>你的面具高深莫测的本质使他人难以看穿你的意图。在社交挑战中，用于洞悉你动机的<strong>察觉</strong>检定承受<strong>+2祸骰</strong>。</p>",
       "actions": {
         "inscrutableVisage": {
-          "name": "高深莫测的面容 Inscrutable Visage",
+          "name": "莫测面容 Inscrutable Visage",
           "description": "<p>你的面具呈现出高深莫测的表情。</p><ul><li><p>你在所有使用<strong>欺瞒</strong>技能的检定中获得<strong>+2 恩惠骰</strong>。</p></li><li><p>你的<strong>反射</strong>防御增加 +2。</p></li></ul><p>在任意给定时间，你只能有一种生效中的面具表情。</p>",
           "effects": [
             {
@@ -650,8 +650,8 @@
           ]
         },
         "menacingVisage": {
-          "name": "狰狞面容 Menacing Visage",
-          "description": "<p>你的面具呈现出威吓的表情。</p><ul><li><p>你在所有威吓技能的使用中获得<strong>+2 恩惠骰</strong>。</p></li><li><p>你的<strong>强韧</strong><strong>防御</strong>提高+2。</p></li></ul><p>在任一给定时间，你只能有一种生效中的面具表情。</p>",
+          "name": "慑人面容 Menacing Visage",
+          "description": "<p>你的面具呈现出威吓的表情。</p><ul><li><p>你在所有使用<strong>威吓</strong>技能的检定中获得<strong>+2 恩惠骰</strong>。</p></li><li><p>你的<strong>强韧</strong>防御提高 +2。</p></li></ul><p>在任一给定时间，你只能有一种生效中的面具表情。</p>",
           "effects": [
             {
               "name": "慑人面容 Menacing Visage"
@@ -659,8 +659,8 @@
           ]
         },
         "beguilingVisage": {
-          "name": "魅惑容颜 Beguiling Visage",
-          "description": "<p>你的面具呈现出一个迷人的表情。</p><ul><li><p>你在所有<strong>Persuasion</strong>技能的使用中获得<strong>+2 恩惠骰</strong>。</p></li><li><p>你的<strong>意志</strong>防御提高 +2。</p></li></ul><p>你在任意时刻只能有一种生效中的面具表情。</p>",
+          "name": "蛊惑面容 Beguiling Visage",
+          "description": "<p>你的面具呈现出一个迷人的表情。</p><ul><li><p>你在所有<strong>外交</strong>技能的使用中获得<strong>+2 恩惠骰</strong>。</p></li><li><p>你的<strong>意志</strong>防御提高 +2。</p></li></ul><p>你在任意时刻只能有一种生效中的面具表情。</p>",
           "effects": [
             {
               "name": "蛊惑面容 Beguiling Visage"
@@ -687,11 +687,11 @@
     },
     "Monster Hunter": {
       "name": "怪物猎人 Monster Hunter",
-      "description": "<p>你或许曾经过着简单的生活，但当黑暗中的怪物突破了你们社群的防御，摧毁了你所珍视的一切时，一切都改变了。如今，你可能怀着燃烧般的狂怒憎恨烬界的畸变体，并在世界各地追猎它们。或者，你也可能从小就接受了如何猎杀怪物的训练，清楚地知道无论它们出现在何处，该如何追踪并消灭它们。</p><p>你是一名熟练的生存专家，常常一连数日甚至数周在荒野中搜索，并且了解许多不同生物和怪物留下的踪迹。与其他人相比，你更容易辨认畸变体，甚至可能还知道它们的一些弱点。</p><p><br class=\"Apple-interchange-newline\" /></p>"
+      "description": "<p>你或许曾经过着简单的生活，但当黑暗中的怪物突破了你们社群的防御，摧毁了你所珍视的一切时，一切都改变了。如今，你可能怀着燃烧般的狂怒憎恨余烬的畸变体，并在世界各地追猎它们。或者，你也可能从小就接受了如何猎杀怪物的训练，清楚地知道无论它们出现在何处，该如何追踪并消灭它们。</p><p>你是一名熟练的生存专家，常常一连数日甚至数周在荒野中搜索，并且了解许多不同生物和怪物留下的踪迹。与其他人相比，你更容易辨认畸变体，甚至可能还知道它们的一些弱点。</p><p><br class=\"Apple-interchange-newline\" /></p>"
     },
     "Natural Artisan": {
       "name": "天生工匠 Natural Artisan",
-      "description": "<p>在已知世界各地，有许多技艺高超、经验丰富的工匠，但若论奉献精神与传承声望，没有谁比阿克图斯高原的阿克图里亚人更负盛名。你花费了许多年学习他们的技艺与传统知识。你知道如何用木材和其他天然材料，如纤维与壤土，手工制作物品，打造出既实用又美观的形制；此外，你还理解建筑施工以及建筑物是如何组装而成的。</p><p>你了解如何以传统方式使用木材与来自大地的天然材料来建造并制作物品。你也对植物生命与自然世界有所了解。</p>"
+      "description": "<p>在已知世界各地，有许多技艺高超、经验丰富的工匠，但若论奉献精神与传承声望，没有谁比阿克图斯高原的阿克图里安人更负盛名。你花费了许多年学习他们的技艺与传统知识。你知道如何用木材和其他天然材料，如纤维与壤土，手工制作物品，打造出既实用又美观的形制；此外，你还理解建筑施工以及建筑物是如何组装而成的。</p><p>你了解如何以传统方式使用木材与来自大地的天然材料来建造并制作物品。你也对植物生命与自然世界有所了解。</p>"
     },
     "Nightwatch": {
       "name": "夜巡者 Nightwatch",
@@ -703,7 +703,7 @@
     },
     "Primalist Disciple": {
       "name": "原始信徒弟子 Primalist Disciple",
-      "description": "<p>在已知世界中心的辉核森林里，于那些巨木的深处之下，潜伏着会变形且崇拜自然的原始主义者。你或许曾在森林边缘徘徊过一段时日，甚至还可能遇见过一位原始主义者，向你讲述他们的信念，以及如何以某种方式与动物问道自然。此外，你也可能了解过许多仍统治着世界广阔区域的古老利维坦；凭借你与自然的联系，你比一般凡人更能感知并理解它们。</p><p>你能够在一定程度上理解动物与野兽，并且与自然世界有着与生俱来的联系。此外，你对利维坦也有一些知识。</p><p><br class=\"Apple-interchange-newline\" /></p>"
+      "description": "<p>在已知世界中心的辉核森林里，于那些巨木的深处之下，潜伏着会变形且崇拜自然的原始主义者。你或许曾在森林边缘徘徊过一段时日，甚至还可能遇见过一位原始主义者，向你讲述他们的信念，以及如何以某种方式与动物沟通。此外，你也可能了解过许多仍统治着世界广阔区域的古老利维坦；凭借你与自然的联系，你比一般凡人更能感知并理解它们。</p><p>你能够在一定程度上理解动物与野兽，并且与自然世界有着与生俱来的联系。此外，你对利维坦也有一些知识。</p><p><br class=\"Apple-interchange-newline\" /></p>"
     },
     "Scion of Darkness": {
       "name": "黑暗之裔 Scion of Darkness",
@@ -715,7 +715,7 @@
     },
     "Shard God Devotee": {
       "name": "碎片神信徒 Shard God Devotee",
-      "description": "<p>你被那些与其追随者一同行走于世间的碎片诸神的故事深深吸引，一直痴迷于有朝一日成为诸神的侍者。你可能虔诚信教，坚守某位特定神祇的教义与训诫，来自某位遥远碎片女神的问道自然团体或其神殿之一。或者，你也可能只是想直接崇拜某位特定的碎片女神，并亲身见到祂，而你正在这个危险的世界中寻找意义与信仰。</p><p>你的信仰赋予了你关于许多不同神祇、神祇般的存在以及强力实体的知识，以及它们各异宗教实践的知识。</p>"
+      "description": "<p>你被那些与其追随者一同行走于世间的碎片诸神的故事深深吸引，一直痴迷于有朝一日成为诸神的侍者。你可能虔诚信教，坚守某位特定神祇的教义与训诫，来自某位遥远碎片之神的社群或其神殿之一。或者，你也可能只是想直接崇拜某位特定的碎片之神，并亲身见到祂，而你正在这个危险的世界中寻找意义与信仰。</p><p>你的信仰赋予了你关于许多不同神祇、神祇般的存在以及强力实体的知识，以及它们各异宗教实践的知识。</p>"
     },
     "Sky Wanderer": {
       "name": "天际漫游者 Sky Wanderer",

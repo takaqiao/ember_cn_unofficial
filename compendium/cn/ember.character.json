@@ -1,5 +1,5 @@
 {
-  "label": "Ember Character Options",
+  "label": "余烬角色选项 Ember Character Options",
   "folders": {
     "Abyss": "深渊 Abyss",
     "Akon": "阿肯 Akon",
@@ -105,7 +105,7 @@
       }
     },
     "Aura 1: Zephyr": {
-      "name": "灵气 1：微风 Aura 1: Zephyr",
+      "name": "奥拉 1：微风 Aura 1: Zephyr",
       "effects": {
         "Zephyr": {
           "name": "微风 Zephyr"
@@ -113,7 +113,7 @@
       }
     },
     "Aura 2: Gale": {
-      "name": "灵气 2：疾风 Aura 2: Gale",
+      "name": "奥拉 2：疾风 Aura 2: Gale",
       "effects": {
         "Gale": {
           "name": "疾风 Gale"
@@ -121,7 +121,7 @@
       }
     },
     "Aura 3: Cyclone": {
-      "name": "灵气 3：气旋 Aura 3: Cyclone",
+      "name": "奥拉 3：气旋 Aura 3: Cyclone",
       "effects": {
         "Cyclone": {
           "name": "气旋 Cyclone"
@@ -129,7 +129,7 @@
       }
     },
     "Aura 4: Whirlwind": {
-      "name": "灵气 4：旋风 Aura 4: Whirlwind",
+      "name": "奥拉 4：旋风 Aura 4: Whirlwind",
       "effects": {
         "Whirlwind": {
           "name": "旋风 Whirlwind"
@@ -137,7 +137,7 @@
       }
     },
     "Aura 5: Hurricane": {
-      "name": "灵气 5：飓风 Aura 5: Hurricane",
+      "name": "奥拉 5：飓风 Aura 5: Hurricane",
       "effects": {
         "Hurricane": {
           "name": "飓风 Hurricane"
@@ -580,7 +580,7 @@
       }
     },
     "Inheritors of Chaos": {
-      "name": "混沌承继者 Inheritors of Chaos"
+      "name": "混沌继承者 Inheritors of Chaos"
     },
     "Urban Resourcefulness": {
       "name": "市井机变 Urban Resourcefulness"
@@ -589,31 +589,31 @@
       "name": "净化之焰 Cleansing Flame"
     },
     "Constructed Companion": {
-      "name": "构装伙伴 Constructed Companion"
+      "name": "构装同伴 Constructed Companion"
     },
     "Personalized Crafting": {
-      "name": "个性化工艺 Personalized Crafting"
+      "name": "个性化制作 Personalized Crafting"
     },
     "Oaken": {
-      "name": "橡木之躯 Oaken"
+      "name": "奥肯 Oaken"
     },
     "Munitions Training": {
       "name": "军械训练 Munitions Training"
     },
     "Prescient Reflection": {
-      "name": "先觉反应 Prescient Reflection"
+      "name": "先见反照 Prescient Reflection"
     },
     "Amphibious Adaptability": {
-      "name": "两栖适应 Amphibious Adaptability"
+      "name": "水陆适应性 Amphibious Adaptability"
     },
     "Keth Bite": {
       "name": "凯思噬咬 Keth Bite"
     },
     "Regulated Rhythm": {
-      "name": "律动调控 Regulated Rhythm",
+      "name": "规整节律 Regulated Rhythm",
       "effects": {
         "Regulated Rhythm": {
-          "name": "律动调控 Regulated Rhythm"
+          "name": "规整节律 Regulated Rhythm"
         }
       }
     },
@@ -632,7 +632,7 @@
       }
     },
     "Fireborn": {
-      "name": "火生者 Fireborn",
+      "name": "火裔 Fireborn",
       "effects": {
         "Submerged": {
           "name": "没入水中 Submerged",
@@ -685,7 +685,7 @@
       "name": "专注反应 Focused Reactivity"
     },
     "Exceptional Taste": {
-      "name": "卓越品味 Exceptional Taste"
+      "name": "非凡品味 Exceptional Taste"
     },
     "Caravanner": {
       "name": "商队旅人 Caravanner"
@@ -694,7 +694,7 @@
       "name": "辛达里克入门者 Cindaric Initiate"
     },
     "Nimble Leap": {
-      "name": "轻捷跃动 Nimble Leap"
+      "name": "敏捷跃击 Nimble Leap"
     },
     "Cosmopolitan Fashionista": {
       "name": "都会时尚家 Cosmopolitan Fashionista"
@@ -737,10 +737,10 @@
       "name": "焰卫民兵 Flameguard Militia"
     },
     "Tyraphic Transformation": {
-      "name": "提拉法转化 Tyraphic Transformation",
+      "name": "泰拉菲克变形 Tyraphic Transformation",
       "effects": {
         "Tyraphic Transformation": {
-          "name": "提拉法转化 Tyraphic Transformation",
+          "name": "泰拉菲克变形 Tyraphic Transformation",
           "description": "<p>该阿尔提拉经历一场超凡的转化，呈现出令人不安的面貌。其金属躯体生出机械部件与防御装甲，并散发着天界能量的辉光。</p>"
         }
       }
@@ -749,7 +749,7 @@
       "name": "无畏战士 Undaunted Warrior"
     },
     "Thornbark": {
-      "name": "荆棘树皮 Thornbark"
+      "name": "刺棘树皮 Thornbark"
     },
     "Formidable Stamina": {
       "name": "惊人耐力 Formidable Stamina"
@@ -761,7 +761,7 @@
       "name": "异瞳 Weirded Eyes"
     },
     "Spiritual Recuperation": {
-      "name": "灵性康复 Spiritual Recuperation"
+      "name": "灵性调养 Spiritual Recuperation"
     },
     "Imperial Conscript": {
       "name": "帝国征召兵 Imperial Conscript"
@@ -770,7 +770,7 @@
       "name": "影融 Shadowmeld"
     },
     "Sudden Bite": {
-      "name": "骤然噬咬 Sudden Bite"
+      "name": "猝然撕咬 Sudden Bite"
     },
     "Windborn Spellcraft": {
       "name": "御风施法 Windborn Spellcraft"
@@ -779,10 +779,10 @@
       "name": "无畏水手 Intrepid Sailor"
     },
     "Muscle Machinery": {
-      "name": "肌能机械 Muscle Machinery",
+      "name": "肌肉机械装置 Muscle Machinery",
       "effects": {
         "Muscle Machinery": {
-          "name": "肌能机械 Muscle Machinery"
+          "name": "肌肉机械装置 Muscle Machinery"
         }
       }
     },
@@ -845,7 +845,7 @@
       "name": "火爆脾气 Hot Tempered"
     },
     "Crystalize Wounds": {
-      "name": "结晶创伤 Crystalize Wounds"
+      "name": "结晶化创伤 Crystalize Wounds"
     },
     "Scion of Darkness": {
       "name": "暗裔 Scion of Darkness"
@@ -898,7 +898,7 @@
           "name": "阿肯月华映照 Akon Lunar Reflection"
         },
         "Aura Lunar Resonance": {
-          "name": "灵气月华共鸣 Aura Lunar Resonance"
+          "name": "奥拉月华共鸣 Aura Lunar Resonance"
         },
         "Orbis Lunar Reflection": {
           "name": "奥比斯月华映照 Orbis Lunar Reflection"
@@ -915,7 +915,7 @@
       }
     },
     "Drakonfire": {
-      "name": "龙裔之火 Drakonfire"
+      "name": "龙焰 Drakonfire"
     }
   }
 }
