@@ -353,5 +353,16 @@ export const DOCUMENT_MAPPINGS = {
   },
   "JournalEntryPage.ember.questFlowchart": {
     "name": "name"
+  },
+  "Scene": {
+    "levels": {
+      "path": "levels",
+      "converter": "nameCollection"
+    },
+    "tokens": {
+      "path": "tokens",
+      "converter": "nameCollection"
+    },
+    "navName": "navName"
   }
 };
