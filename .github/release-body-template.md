@@ -16,19 +16,22 @@ https://github.com/takaqiao/ember_cn_unofficial/releases/latest/download/module.
 
 ## 变更 / Changes
 
-### 1.1.1 重点
+### 1.1.2 重点
 
-- **修复：界面汉化此前有 77% 是失效的。** `lang/cn.json` 的键写成了
-  「顶层带点、值却是嵌套对象」的形态，Foundry 两条查找路径都命不中，
-  486 个键里只有 114 个真正生效。日历上那排 tooltip（寰宇地图 / 世界地图 /
-  区域地图 / 倒转时间 / 队伍角色卡 / 法典）就属于失效的那批，现已全部恢复。
-- **修复：日历月名不汉化。** Ember 的历法把季节名写成 i18n 键、月名却硬编码成
-  英文，Babele 与 i18n 都够不着，改由运行时补丁翻译。
-- **补齐 414 条从未翻译的条目**（怪物图鉴、物品与效果名等）——
-  这类「中文侧整条不存在」的缺口此前所有检查都发现不了。
-- **清理 1435 条死键**（上游已删除或改名的条目），发布包小了约 460 KB。
-- 术语统一：Boon → 恩惠骰、Fortitude → 强韧（与属性 Toughness 解除撞名）、
-  Willpower → 意志、Accurate → 精准、Arrow → 箭矢。dnd5e 侧的规则文本不受影响。
+- **修正 20 组同一事物的不同译名**，此前同一个专名在正文与条目名之间对不上：
+  Agrimage 农法师→**农艺法师**、Thornling 荆棘裔→**荆芽灵**、
+  House Cevher 切夫赫尔→**杰夫赫尔**、Ordain 奥丹→**奥尔丹**（225 处）、
+  Aberin 阿贝林→**阿伯林**、Hulg'run（原样留着英文）→**赫尔格伦**。
+- **世界地图针脚重译 14 个**：`Karon Mounts`「卡隆坐骑」→卡隆山脉、
+  `The Sword Range`「剑的射程」→剑锋山脉（Mounts / Range 都是山脉）、
+  `Elvan`「精灵语」→埃尔凡（它是聚落名不是语言）、
+  `Sail/Hoist/Break/Catch` 原本被译成动词，现按地名改为 帆 / 吊索 / 断口 / 渔获。
+- **两处中文与英文不符**：`Wedgelands` 页中文凭空多出一处英文里没有的庄园；
+  `Supplies and Demands` 旁白整段被重排，且把 thornling 误作「农法师」（
+  埃迪维尔是荆芽灵），台词被改写成了旁白。均已按英文重译。
+- `The Waterworks`（城区地下的运河隧道迷宫）此前有 3 处被写成
+  `The Waterworks Office`（另一栋楼），照指示走会走错地方，已分开。
+- 术语：essence→**精华**、Stride→**步幅**、Attunement 残留→**同调**。
 
 完整改动请见本次发布对应的提交记录。
 See the commits associated with this tag for the full change list.
