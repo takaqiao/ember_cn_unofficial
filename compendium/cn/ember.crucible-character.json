@@ -28,7 +28,7 @@
     },
     "Cindaric Initiate": {
       "name": "辛达里克入门者 Cindaric Initiate",
-      "description": "<p>奥丹的辛达里克贤者以派遣其成员走向世界闻名，向他人传授余烬之心及其奇妙、赋予生命的能量。你或许小时候曾在故乡受过一位游历贤者的教导，并一直梦想着亲自造访辛达里克神殿；又或者你的家族原本就来自奥丹，因此在成长过程中与贤者们有着密切联系。你很可能对宗教观念颇为熟悉，并坚信余烬之心是一股向善的力量，赋予所有生物生命与目标。</p><p>你的信仰让你获得了关于余烬之心——生命力中赋予生命的能量——的知识，而你也可能与自然以及生命与死亡的循环有着深厚的联系。<br class=\"Apple-interchange-newline\" /></p>"
+      "description": "<p>奥尔丹的辛达里克贤者以派遣其成员走向世界闻名，向他人传授余烬之心及其奇妙、赋予生命的能量。你或许小时候曾在故乡受过一位游历贤者的教导，并一直梦想着亲自造访辛达里克神殿；又或者你的家族原本就来自奥尔丹，因此在成长过程中与贤者们有着密切联系。你很可能对宗教观念颇为熟悉，并坚信余烬之心是一股向善的力量，赋予所有生物生命与目标。</p><p>你的信仰让你获得了关于余烬之心——生命力中赋予生命的能量——的知识，而你也可能与自然以及生命与死亡的循环有着深厚的联系。<br class=\"Apple-interchange-newline\" /></p>"
     },
     "Cosmopolitan Fashionista": {
       "name": "世界风尚达人 Cosmopolitan Fashionista",
@@ -349,7 +349,7 @@
       "description": "<p><strong>测试版二</strong>：该天赋尚未按照 Crucible 机制更新。</p>"
     },
     "Hulg'run Lineage": {
-      "name": "Hulg'run血统 Hulg'run Lineage",
+      "name": "赫尔格伦血统 Hulg'run Lineage",
       "description": "<p>你免疫<strong>睡眠</strong>状态。</p><p>当你<strong>休息</strong>时，你可以与余烬的本质问道自然。若你在坚实地面上休息，则不需要睡眠，并可保持清醒。为了获得休息的收益，你不得进行任何剧烈活动。</p>",
       "actions": {
         "livingStone": {
@@ -583,7 +583,7 @@
       "description": "<p>在应对社交场合时，你的衣着比任何刀剑或法术都更有力。当你穿着至少<strong>精良</strong>品质且未<strong>破碎</strong>的衣物时，你在<strong>欺瞒</strong>、<strong>交涉</strong>与<strong>威吓</strong>技能检定上获得 <strong>+2 恩惠骰</strong>。</p>"
     },
     "Thornling Lineage": {
-      "name": "荆棘裔血统 Thornling Lineage",
+      "name": "荆芽灵血统 Thornling Lineage",
       "description": "<p>荆芽灵的纤维状生物学结构极其坚韧，提供以下好处：</p><ul><li><p>无论你穿着何种类型的装备，你的<strong>护甲</strong>防御都不会低于 6。</p></li><li><p>来自<strong>坠落</strong>的伤害在应用其他抗性之前减半。</p></li></ul>",
       "actions": {
         "thornbark": {
