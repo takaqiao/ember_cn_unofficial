@@ -195,7 +195,7 @@
       "actions": {
         "frenziedClaws": {
           "name": "狂乱之爪 Frenzied Claws",
-          "description": "<p>@ref[actor.name]{该生物}以一连串狂乱的锐爪发动攻击，用爪子进行三次打击。其中任何一次若为大成功，便会施加@Condition[bleeding]状态。</p>",
+          "description": "<p>该@ref[actor.name]{生物}以狂乱的锋利爪发动连击。它用自己的爪进行三次打击。若其中任意一次结果为大成功，则其施加@Condition[bleeding]状态。</p>",
           "effects": [
             {
               "name": "狂乱之爪 Frenzied Claws"
