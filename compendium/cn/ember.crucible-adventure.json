@@ -19,7 +19,8 @@
             "Exile's Landing": "流放者登陆点 Exile's Landing",
             "Flotsam": "漂滓区 Flotsam",
             "Lilifeld Stations": "莉莉菲尔德驿站 Lilifeld Stations",
-            "Palisade Cross": "栅堡十字 Palisade Cross"
+            "Palisade Cross": "栅堡十字 Palisade Cross",
+            "Kadra Zann": "卡德拉赞恩 Kadra Zann"
           },
           "regions": {
             "Cavern Darkness": {
@@ -2115,6 +2116,9 @@
             "Region": {
               "name": "区域"
             }
+          },
+          "notes": {
+            "Exterior": "外部"
           }
         },
         "Lantern Roads": {
@@ -14459,11 +14463,16 @@
           },
           "biography": {
             "public": "<p>这种微小的@ref[name]是一种迅捷的食腐食肉鸟类，遍布整个余烬世界。尽管它们主要以尸体为食，但在食物匮乏时，也曾被发现以大群结队的方式凶猛追猎活物。</p>",
-            "private": "<h2 class=\"divider\">身体构造</h2><p>卡迪索斯血鸟很容易通过其喙部和尾羽鲜红的颜色辨认出来。雄性血鸟的胸部和头部两侧通常带有低调的黑灰色几何纹样，而该物种的雌性——外观通常更深暗——则往往呈现更为均一的背部羽毛和底绒。</p><h2 class=\"divider\">行为</h2><p>血鸟倾向于聚集成群，这会大大提升它们的生存能力。这些微小食腐鸟类组成的鸟群通常被称为一“掠食群”血鸟，而这些善于抓住机会的生物已知会与更大型的掠食者（例如苏阿罗克、sisastl 和利维坦）形成共生关系。血鸟群在遭遇威胁时，更喜欢利用地形或盟友来取得优势——尤其是在成为远程攻击目标时——并且在战斗中往往会将精力集中在较小的敌人身上。如果条件允许，落单的血鸟通常会避免与体型更大的敌人战斗。</p><p>凡是能发现血鸟群的地方，附近几乎必然也有杀戮与腐败。血鸟群经常被发现正在啄食那些命运不济的生物所留下的恶臭残骸；当然，这其中有时也包括遭到伏击的旅人和命途多舛的冒险者的尸体。通常来说，单独一只血鸟离其余鸟群也不会太远。</p><h2 class=\"divider\">背景</h2><p>尽管原产于卡迪索斯岛，但由于轻度驯化的尝试以及与其共生的大型伙伴缓慢迁徙，血鸟已经到达了阿克图斯高原乃至更远的地方。虽然相对少见，但对于那些不介意血鸟恶名的施法者来说，血鸟确实能成为高效的魔宠。</p>"
+            "private": "<h2 class=\"divider\">身体构造</h2><p>卡迪索斯血鸟很容易通过其喙部和尾羽鲜红的颜色辨认出来。雄性血鸟的胸部和头部两侧通常带有低调的黑灰色几何纹样，而该物种的雌性——外观通常更深暗——则往往呈现更为均一的背部羽毛和底绒。</p><h2 class=\"divider\">行为</h2><p>血鸟倾向于聚集成群，这会大大提升它们的生存能力。这些微小食腐鸟类组成的鸟群通常被称为一“掠食群”血鸟，而这些善于抓住机会的生物已知会与更大型的掠食者（例如苏阿罗克、sisastl 和利维坦）形成共生关系。血鸟群在遭遇威胁时，更喜欢利用地形或盟友来取得优势——尤其是在成为远程攻击目标时——并且在战斗中往往会将精力集中在较小的敌人身上。如果条件允许，落单的血鸟通常会避免与体型更大的敌人战斗。</p><p>凡是能发现血鸟群的地方，附近几乎必然也有杀戮与腐败。血鸟群经常被发现正在啄食那些命运不济的生物所留下的恶臭残骸；当然，这其中有时也包括遭到伏击的旅人和命途多舛的冒险者的尸体。通常来说，单独一只血鸟离其余鸟群也不会太远。</p><h2 class=\"divider\">背景</h2><p>尽管原产于卡迪索斯岛，但由于轻度驯化的尝试以及与其共生的大型伙伴缓慢迁徙，血鸟已经到达了阿克图斯高原乃至更远的地方。虽然相对少见，但对于那些不介意血鸟恶名的施法者来说，血鸟确实能成为高效的魔宠。</p>",
+            "appearance": "<p>一只目光锐利的小鸟正啄食着某只新近死去的生物的腐尸。它猩红的尖喙肆无忌惮地撕扯着腐臭的血肉。这只食肉飞禽一身炭黑色的暗沉羽毛，被尾羽那抹鲜亮的绯红衬得格外分明。血喙上还挂着一条筋腱，它发出一声令人不安的嘶哑鸣叫，恰如其分地提醒你它就在那里。</p>"
           },
           "taxonomy": {
             "name": "血鸟 Gore Bird",
             "description": "<p>遍布余烬全境的迅捷食腐猛禽。它们主要以腐尸为食，但在食物匮乏时，也会成大群地凶猛追猎活物。</p>"
+          },
+          "archetype": {
+            "name": "有翼食腐者 Winged Scavenger",
+            "description": "<p>这些能够飞行的野兽可以靠腐肉与残余存活，它们从空中扑击，捕食下方的猎物。</p>"
           }
         },
         "Grey Hydroxol": {
@@ -14706,7 +14715,8 @@
             "description": "<p>大型两栖野兽，原产于烬境的水域地带。</p>"
           },
           "taxonomy": {
-            "name": "两栖动物 Amphibian"
+            "name": "两栖动物 Amphibian",
+            "description": "<p>栖息在水中或水边的野兽。两栖动物通常很灵巧，但有些种类则强力或体型较大。</p><ul><li><p><strong>体型</strong>：可变</p></li><li><p><strong>步幅</strong>：可变</p></li></ul>"
           }
         },
         "Jobri": {
@@ -15654,7 +15664,8 @@
           "name": "构装同伴 Constructed Companion",
           "tokenName": "构装同伴",
           "biography": {
-            "public": "<section class=\"block readaloud\"><p>这个人型身影由各式木料碎片拼制而成，它那东拼西凑的四肢靠木质骨架与藤蔓编成的绑带连在一起。构成它木质面孔的精湛雕刻定格出一副永恒的愉悦而沉静的神情，仿佛它正埋头于某项尽职的活计。</p></section><p>[[lookup @name]]是由木材与藤蔓制成、形似木质人型生物的忠勤自动机。这些拟人构装体被金色平原的阿克图里亚人用于各种任务——包括务农、驯兽、建造和防御等繁重劳作。</p>"
+            "public": "<section class=\"block readaloud\"><p>这个人型身影由各式木料碎片拼制而成，它那东拼西凑的四肢靠木质骨架与藤蔓编成的绑带连在一起。构成它木质面孔的精湛雕刻定格出一副永恒的愉悦而沉静的神情，仿佛它正埋头于某项尽职的活计。</p></section><p>[[lookup @name]]是由木材与藤蔓制成、形似木质人型生物的忠勤自动机。这些拟人构装体被金色平原的阿克图里亚人用于各种任务——包括务农、驯兽、建造和防御等繁重劳作。</p>",
+            "private": "<p>你可以花费 1 小时，用一种取自地下或生长于地下的天然材料——例如黏土、石头、木料或稻草——制作一个微型的 @UUID[Actor.oLu6qs3AYUu8eitR]。构装同伴是一具被赋予活力的构装体，它会成为受你控制的生物，存续 8 小时，或直到其生命值降至 0。</p><p>你同时只能拥有一个处于活动状态的构装同伴；制作第二个同伴，会使赋予前一个构装同伴活力的魔法立即消散。</p><h3 class=\"divider\">构造</h3><p>[[lookup @name]]以木料与藤蔓制成，仿照阿克图里安类人生物的样貌，被视为名匠瓦索洛缪·切斯原初设计的乡土版本。与切西亚构装体一样，[[lookup @name]]形体的匠艺水准，从其精心雕琢的面孔与削制衣饰的细部就看得出来。</p><p>作为构装体，[[lookup @name]]无需进食、呼吸或睡眠即可存续。不过，受过足够训练并具备相应熟练度的角色，或是魔法修补与巧术，都可以对它们加以修复。</p><h3 class=\"divider\">行为</h3><p>[[lookup @name]]可能成群出现，但也有独自劳作的。它们常常由一名或多名类人操控者陪同，因而会依照在世主人的命令，尽其所能地协同工作。它们更为出色的临时武器特性，让[[lookup @name]]能够更精准地在战斗中挥舞各类工具与物件。[[lookup @name]]具体的近战武器攻击方式，通常取决于它们所在的地点与所分派的工作（金色平原的收割者就会使用泥铲与镰刀）。</p><p>构装同伴处于活动状态期间，你可以用基本的口头指示向它下达简单命令，例如「取一把钥匙」「站岗放哨」或「把书叠好」。若你不下达任何命令，构装同伴除了在面对敌对生物时自卫——并在适当时机执行闪避动作——之外不会有任何举动。一旦接到命令，同伴便会持续执行，直到任务完成或收到新的指示。</p><h3 class=\"divider\">背景</h3><p>[[lookup @name]]在阿克图斯高原上相当常见，许多金色平原的农庄都有它们效力。这些自动机以其木质构造所用材料之多样而闻名，据说它们所佩的雕刻面孔会映照出各自主人家的性情。</p>"
           },
           "items": {
             "Slam": {
@@ -17700,10 +17711,12 @@
               "name": "旅行者服装 Clothes, Traveler's"
             },
             "Woodcarver's Tools": {
-              "name": "木雕工具 Woodcarver's Tools"
+              "name": "木雕工具 Woodcarver's Tools",
+              "description": "<p class=\"phb-meta\"><strong>能力：</strong>敏捷</p><p class=\"phb-meta\"><strong>运用：</strong>在木料上雕出花纹（DC 10）</p><p class=\"phb-meta\"><strong>制作：</strong>@UUID[Compendium.dnd5e.equipment24.Item.phbwepClub000000]{短棒}、@UUID[Compendium.dnd5e.equipment24.Item.phbwepGreatclub0]{巨棒}、@UUID[Compendium.dnd5e.equipment24.Item.phbwepQuartersta]{长棍}、远程武器（手枪、火枪与投石索除外）、奥术法器、@UUID[Compendium.dnd5e.equipment24.Item.phbamoArrows0000]{箭矢}、@UUID[Compendium.dnd5e.equipment24.Item.phbamoBolts00000]{弩矢}、德鲁伊法器、@UUID[Compendium.dnd5e.equipment24.Item.phbagInkPen00000]{墨水笔}、@UUID[Compendium.dnd5e.equipment24.Item.phbamoNeedles000]{针}</p>"
             },
             "Arcturian Training": {
-              "name": "阿克图里安训练 Arcturian Training"
+              "name": "阿克图里安训练 Arcturian Training",
+              "description": "<p class=\"feature\">[[lookup @name]]在游戏主持人选定的一项技能上具有熟练，并且在使用该技能进行属性检定时拥有 @Advantage[2]。</p><p class=\"feature\">[[lookup @name]]同时对 @UUID[Compendium.dnd5e.equipment24.Item.phbtulWoodcarver]{木雕工具} 具有熟练。</p>"
             },
             "Agrimagical Artifact: Everbloom": {
               "name": "农魔法神器：永绽之花 Agrimagical Artifact: Everbloom",
@@ -19513,7 +19526,11 @@
               "description": "<p>[[lookup @name]]对一个被它擒抱的[[lookup @target.affects.special activity=dnd5eactivity000]]生物发动一次[[/item Tentacles]]{触手}攻击。若该攻击命中，目标同时被吞下，擒抱随之结束。</p><p>被吞下期间，目标处于&amp;Reference[blinded apply=false]与&amp;Reference[restrained apply=false]状态，面对来自[[lookup @name]]体外的攻击与其他效果时享有&amp;Reference[total cover]，并在[[lookup @name]]的每个回合开始时受到[[/damage average]]伤害。一个[[lookup @name lowercase]]同一时间只能吞下一个生物。</p><p>[[lookup @activation.condition activity=lqsQqCswmP5o75Tr]]，[[lookup @name]]必须在该回合结束时成功通过一次[[/save format=long activity=lqsQqCswmP5o75Tr]]，否则就会把该生物吐出；被吐出的生物落在距[[lookup @name]] [[lookup @range.value activity=lqsQqCswmP5o75Tr]] 英尺内的一个空间中，并陷入&amp;Reference[prone]状态。</p><p>如果[[lookup @name]]死亡，被吞下的生物不再受其束缚，可以消耗 [[lookup @range.value activity=0yJYLi86qazYndz1]] 英尺移动力从尸体中脱出，脱出时处于&amp;Reference[prone]状态。</p>",
               "effects": {
                 "Prone": {
-                  "name": "倒地 Prone"
+                  "name": "倒地 Prone",
+                  "description": "<p>被吞下的生物会在穆塔普旁边的一个空间内陷入&amp;Reference[prone apply=false]状态。</p>"
+                },
+                "Swallowed": {
+                  "name": "被吞下 Swallowed"
                 }
               }
             },
@@ -26504,7 +26521,18 @@
           "items": {
             "Uncanny Eye": {
               "name": "怪异之眼 Uncanny Eye",
-              "description": "<p>[[lookup @name lowercase]]将目光锁定在自身120英尺内其能看见的一个生物身上，并从下列选项中选择一项。它每轮不能使用同一个选项超过一次。</p><p><strong>辉耀之眼。</strong><em>体质豁免：</em> DC [[lookup @save.dc.value activity=5uPC9sbf7zlOQZq2]]，<em>失败：</em> [[/damage activity=activity=5uPC9sbf7zlOQZq2 average=true]]伤害，且目标陷入&amp;Reference[Blinded apply=false]状态，直到[[lookup @name lowercase]]的下个回合开始。<em>成功：</em>伤害减半，且目标在1小时内免疫辉耀之眼的致盲效果。</p><p><strong>迷乱之眼。</strong><em>感知豁免：</em> DC [[lookup @save.dc.value activity=fqRf978A7MtkLUOp]]。<em>失败：</em>[[/damage activity=fqRf978A7MtkLUOp average=true]]伤害，且目标受到@UUID[Compendium.dnd-players-handbook.spells.Item.phbsplConfusion0]{Confusion}法术的影响，直到[[lookup @name lowercase]]的下个回合开始。<em>成功：</em>伤害减半，且目标在1小时内免疫迷乱之眼的惑乱效果。</p><p><strong>毁灭之眼。</strong><em>敏捷豁免：</em> DC [[lookup @save.dc.value activity=sh95Siqb74ItVnNX]]，60英尺长、5英尺宽的直线上的每个生物。<em>失败：</em>[[/damage activity=sh95Siqb74ItVnNX average=true]]伤害。</p><p></p>"
+              "description": "<p>[[lookup @name lowercase]]将目光锁定在自身120英尺内其能看见的一个生物身上，并从下列选项中选择一项。它每轮不能使用同一个选项超过一次。</p><p><strong>辉耀之眼。</strong><em>体质豁免：</em> DC [[lookup @save.dc.value activity=5uPC9sbf7zlOQZq2]]，<em>失败：</em> [[/damage activity=activity=5uPC9sbf7zlOQZq2 average=true]]伤害，且目标陷入&amp;Reference[Blinded apply=false]状态，直到[[lookup @name lowercase]]的下个回合开始。<em>成功：</em>伤害减半，且目标在1小时内免疫辉耀之眼的致盲效果。</p><p><strong>迷乱之眼。</strong><em>感知豁免：</em> DC [[lookup @save.dc.value activity=fqRf978A7MtkLUOp]]。<em>失败：</em>[[/damage activity=fqRf978A7MtkLUOp average=true]]伤害，且目标受到@UUID[Compendium.dnd-players-handbook.spells.Item.phbsplConfusion0]{Confusion}法术的影响，直到[[lookup @name lowercase]]的下个回合开始。<em>成功：</em>伤害减半，且目标在1小时内免疫迷乱之眼的惑乱效果。</p><p><strong>毁灭之眼。</strong><em>敏捷豁免：</em> DC [[lookup @save.dc.value activity=sh95Siqb74ItVnNX]]，60英尺长、5英尺宽的直线上的每个生物。<em>失败：</em>[[/damage activity=sh95Siqb74ItVnNX average=true]]伤害。</p><p></p>",
+              "effects": {
+                "Eye of Brilliance": {
+                  "name": "光辉之眼 Eye of Brilliance"
+                },
+                "Eye of Bewilderment": {
+                  "name": "迷乱之眼 Eye of Bewilderment"
+                },
+                "Eye of Malfeasance": {
+                  "name": "祸行之眼 Eye of Malfeasance"
+                }
+              }
             },
             "Long Beak": {
               "name": "长喙 Long Beak",
@@ -30703,6 +30731,11 @@
                 "public": "<p>@ref[actor.name]{该生物}以纯粹动能凝成的无形肢体挥击。</p>"
               }
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>晶巉巨像是一种由岩石与水晶构成的强大土元素。它们罕见而独居，既神秘又迟缓沉重。</p></section>",
+            "private": "<h3 class=\"divider\">构造</h3><p>晶巉巨像的形体大体呈类人形：厚重的躯干、粗壮的双腿、修长的手臂和一颗头颅，全都由天然的岩板与水晶构成。它并没有真正意义上的生理构造，纯由矿物组成，但往往生有一张类人的面孔，双眼是宝石。</p><p>晶巉巨像身上的水晶结晶会随时间不断变大，若活得够久，最终会通体化为晶体。</p><h3 class=\"divider\">行为</h3><p>晶巉巨像审慎、耐心、极少匆忙，宁可让敌人自己送上门来，也不愿把力气浪费在追击上。它们最常出没于深邃的洞窟、遍布水晶的废墟、古老的采石场，以及科拉的能量或远古魔法沉积于富含矿物的岩石之中的地方。</p><p>它们并不总是怀有敌意，但很有领地意识，尤其是面对那些要闯入其巢穴的矿工和掘地生物时。</p><p>一旦被激怒，晶巉巨像便会运用它对局部重力的操控来投掷碎石、将敌人定在原地，或以惊人的速度压向对手。不仅如此，它们还被证实具备某种天生的魔法抗性，多半得益于其晶面中蕴含的魔法能量。</p><h3 class=\"divider\">背景</h3><p>晶巉巨像是强大的土元素，难得一见，智力与常人相当，却比人们可能遇到过的任何小型元素都危险得无从衡量。</p><p>学者们相信，它们映照着构成自身的元素，在元素能量一点一滴汇聚之处，历经数年乃至数百年缓慢生长，渗入水晶矿床与宝石矿脉之中。这正是它们兼具岩石之耐心与琢磨宝石之璀璨专注的由来。</p>",
+            "appearance": "<p>这只巨大元素的身躯由暗色岩石构成，其间贯穿着明亮的水晶脉络，一经光照便熠熠生辉。它的形体呈类人形，各种形状与大小的宝石从身上突刺而出，将轮廓割裂开来。尽管体型庞大，它的每一步却都显得轻缓无声，压入地面的深度远不及其体重所应有的程度。</p>"
           }
         },
         "Stalagmaw": {
@@ -30859,6 +30892,12 @@
                 "public": "<p>@ref[actor.name]{该生物}拥有嶙峋如岩的皮肤。</p>"
               }
             }
+          },
+          "tokenName": "石笋巨口",
+          "biography": {
+            "public": "<p>石笋巨口是一种形似野兽的巨型土元素，其洞穴般的巨口能将敌人整个吞下，在不断研磨的体腔内将其碾碎。尽管体量惊人，它却能靠扭曲自身周围的重力，以骤然而可怖的速度移动。</p>",
+            "private": "<h3 class=\"divider\">构造</h3><p>石笋巨口那由致密岩石、洞穴矿物与受压硬化的泥土构成的庞大身躯，呈四足形态，比起类人更近乎兽形：宽阔的前肢、低垂的重心，以及覆着层叠岩甲的厚实脊背。它最鲜明的特征是那张巨口，内里天然生长着成排的钟乳石与石笋，其排布正是为了把猎物引向咽喉深处。它体内并非任何生物意义上的胃，而是一处由错动岩板、碾压之力与失稳重力构成的研磨洞腔。</p><h3 class=\"divider\">行为</h3><p>石笋巨口具有捕食性与领地意识，且不易被惊动。它们常常在洞窟、峡谷、天坑或废弃的地下厅堂中蛰伏数百年，其嶙峋的巨口在动起来之前，都会被误认作天然的岩石构造。</p><p>一旦被激怒或遭到攻击，石笋巨口便会骤然发难，将巨颚合咬在够得着的任何东西上，或把猎物吞进其碾磨的体腔。它虽然巨大沉重，却并不迟缓；靠着扭曲自身周围的重力，它能纵身跃出不合常理的大步，如同一场自行择向的山崩，横扫整个战场。</p><h3 class=\"divider\">背景</h3><p>石笋巨口是来自科拉的稀有而可畏的巨兽，被学者列为已知最危险的土元素之一。在余烬世界上被目击到的不过寥寥数只，绝大多数关于它们的记述，都出自矿工与探洞者之口——不是为了吓唬生人，就是为了给无从解释的塌方或失踪的探险队找个说法。</p><p>而几乎所有记述都认同同一条警告：如果那个洞口看上去更像一张鲨鱼的嘴而不是天然的入口，最好趁它还没合上就赶紧离开。</p>",
+            "appearance": "<p>这头巨兽弓着背的四足身形高耸在你面前，脊背与腹部布满洞穴岩板，板与板之间的矿物接缝如同血管般延伸。它的头几乎只剩一张洞窟般的巨口，上排钟乳石、下排石笋成列而生，宛如某种岩石所生的鲨鱼的利齿。它一移动，松动的碎石便从地面颤然扬起，汇入始终追随着它的滚滚尘雾之中。</p>"
           }
         }
       },

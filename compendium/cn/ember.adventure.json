@@ -10551,7 +10551,15 @@
           }
         },
         "Lake Jinro": {
-          "name": "金罗湖 Lake Jinro"
+          "name": "金罗湖 Lake Jinro",
+          "notes": {
+            "Grave Blade Shore": "墓刃海岸 Grave Blade Shore",
+            "Switchback Path": "折返小径 Switchback Path",
+            "Ruined Lunar Shrine": "毁坏的月神殿 Ruined Lunar Shrine",
+            "Forgotten Wreckage": "遗忘的残骸 Forgotten Wreckage",
+            "Loot-Lined Hollow": "藏宝空谷 Loot-Lined Hollow",
+            "Garganthus Tunnel": "加冈瑟斯隧道 Garganthus Tunnel"
+          }
         },
         "Mythspire Observatory - Lower": {
           "name": "神话尖塔天文台 - 下层 Mythspire Observatory - Lower",
@@ -10578,6 +10586,15 @@
                 }
               }
             }
+          },
+          "notes": {
+            "Gem of Aura": "灵气宝石 Gem of Aura",
+            "Gem of Cora": "科拉宝石 Gem of Cora",
+            "Gem of Mayis": "玛伊斯宝石 Gem of Mayis",
+            "Gem of Ragen": "拉根宝石 Gem of Ragen",
+            "Gem of Orbis": "奥比斯宝石 Gem of Orbis",
+            "Gem of Akon": "阿肯宝石 Gem of Akon",
+            "Gem of Lantyr": "兰提尔宝石 Gem of Lantyr"
           }
         },
         "Repurposed Quarry - Lower": {
@@ -11052,6 +11069,22 @@
                 }
               }
             }
+          },
+          "notes": {
+            "Antechamber": "前厅 Antechamber",
+            "Main Gallery": "主展厅 Main Gallery",
+            "Mist-Veiled Approach": "雾幕掩映的接近 Mist-Veiled Approach",
+            "Western Corridor": "西侧走廊 Western Corridor",
+            "Hidden Breach": "隐秘裂口 Hidden Breach",
+            "Webbed Mausoleum": "蛛网陵墓 Webbed Mausoleum",
+            "Ossuary": "骨库 Ossuary",
+            "Eastern Corridor": "东侧走廊 Eastern Corridor",
+            "Darkroom": "暗室 Darkroom",
+            "Eastern Treasure Chamber": "东侧藏宝室 Eastern Treasure Chamber",
+            "Western Treasure Chamber": "西侧藏宝室 Western Treasure Chamber",
+            "Inner Antechamber": "内前厅 Inner Antechamber",
+            "Study Chamber": "书房 Study Chamber",
+            "Reflector Array": "反射阵列 Reflector Array"
           }
         },
         "Ushna Dredging Docks": {
@@ -11154,6 +11187,9 @@
                 }
               }
             }
+          },
+          "notes": {
+            "Tower Antechamber": "塔前室 Tower Antechamber"
           }
         },
         "Writhing Grave": {
@@ -11296,6 +11332,10 @@
                 }
               }
             }
+          },
+          "notes": {
+            "Blue Track": "蓝色轨道 Blue Track",
+            "Red Track": "红色路径 Red Track"
           }
         },
         "Vista: Barrows": {
@@ -11360,13 +11400,206 @@
                 }
               }
             }
+          },
+          "notes": {
+            "Fallbrook": "福布鲁克 Fallbrook",
+            "Lake Jinro": "金罗湖 Lake Jinro",
+            "Lake Yrthain": "伊尔赛恩湖 Lake Yrthain",
+            "Lake Argath": "阿加斯湖 Lake Argath",
+            "Lake Mithra": "米斯拉湖 Lake Mithra",
+            "Aparon Bay": "阿帕隆湾 Aparon Bay",
+            "Dradley Grange": "德拉德利庄园 Dradley Grange",
+            "Exile's Landing": "流放者登陆点 Exile's Landing",
+            "Flotsam": "漂滓区 Flotsam",
+            "Lilifeld Stations": "莉莉菲尔德驿站 Lilifeld Stations",
+            "Palisade Cross": "栅堡十字 Palisade Cross",
+            "Kadra Zann": "卡德拉赞恩 Kadra Zann"
           }
         },
         "The Cosmos": {
           "name": "寰宇 The Cosmos"
         },
         "The World of Ember": {
-          "name": "余烬世界 The World of Ember"
+          "name": "余烬世界 The World of Ember",
+          "notes": {
+            "Toraga": "托拉加 Toraga",
+            "Ryleir": "莱勒尔 Ryleir",
+            "Casla-Brava": "卡斯拉-布拉瓦 Casla-Brava",
+            "Kortos Isle": "科托斯岛 Kortos Isle",
+            "Luen": "卢恩 Luen",
+            "KAUSTIC HINTERLANDS": "KAUSTIC 边域 KAUSTIC HINTERLANDS",
+            "Oshclaw": "奥什爪 Oshclaw",
+            "Kulrun": "库尔伦 Kulrun",
+            "Lowland Bastions": "低地堡垒 Lowland Bastions",
+            "Wick": "烛芯 Wick",
+            "Chimeras": "奇美拉 Chimeras",
+            "Sperun": "斯佩伦 Sperun",
+            "Kraken Port": "海妖港 Kraken Port",
+            "Godkiller Orinoth": "弑神者奥里诺斯 Godkiller Orinoth",
+            "CASCAAL GOLDS": "卡斯卡尔金币 CASCAAL GOLDS",
+            "RUNA HIGHLANDS": "鲁纳高地 RUNA HIGHLANDS",
+            "FAR'RENT MOUNTAINS": "法尔伦特山脉 FAR'RENT MOUNTAINS",
+            "The Spiritlands": "灵魂之地 The Spiritlands",
+            "The Reaver Ocean": "劫掠者海洋 The Reaver Ocean",
+            "The Roaring Edge": "咆哮之锋 The Roaring Edge",
+            "The Leviathan Preserve": "利维坦禁猎区 The Leviathan Preserve",
+            "Land of the Lost": "失落之地 Land of the Lost",
+            "The Cursed Continent": "受诅大陆 The Cursed Continent",
+            "The Swirling Edge": "旋涡之刃 The Swirling Edge",
+            "The Far Southlands": "遥南荒域 The Far Southlands",
+            "The Southern Ocean": "南大洋 The Southern Ocean",
+            "The Radiant Continent": "辉耀大陆 The Radiant Continent",
+            "The Untamed Edge": "狂野锋刃 The Untamed Edge",
+            "The Western Wilds": "西部荒野 The Western Wilds",
+            "The Lost Realms": "失落诸域 The Lost Realms",
+            "The Hoarfrost Edge": "霜锋之刃 The Hoarfrost Edge",
+            "SALISKA": "萨利斯卡 SALISKA",
+            "EMEIR": "埃梅尔 EMEIR",
+            "The Silken Sea": "丝绸之海 The Silken Sea",
+            "The Starshield": "星之盾 The Starshield",
+            "The Jarn Peninsula": "贾恩半岛 The Jarn Peninsula",
+            "The Harmonious Truth": "和谐真理 The Harmonious Truth",
+            "The Carrow Ocean": "卡罗海洋 The Carrow Ocean",
+            "The Shardstone Continent": "裂片石大陆 The Shardstone Continent",
+            "The Prowling Death": "潜行的死亡 The Prowling Death",
+            "WINDBARE": "光秃秃的 WINDBARE",
+            "SKITARI": "斯基塔里 SKITARI",
+            "TOLVOR KOHATAI": "托尔沃尔·科哈泰 TOLVOR KOHATAI",
+            "JAEDITH": "贾迪思 JAEDITH",
+            "SHADEKIN": "影裔 SHADEKIN",
+            "VARTIC": "瓦提克 VARTIC",
+            "SAURVEK": "绍维克 SAURVEK",
+            "SUNARAE": "苏纳雷 SUNARAE",
+            "TEMPAR": "坦帕尔 TEMPAR",
+            "BARBLINGS": "巴布灵 BARBLINGS",
+            "DUSTRA": "尘灵 DUSTRA",
+            "BJORDAN": "比约丹 BJORDAN",
+            "VARENA": "瓦雷娜 VARENA",
+            "LUNARAI": "卢纳莱 LUNARAI",
+            "Dustlands": "尘土荒原 Dustlands",
+            "Ash Guard Peaks": "灰烬卫峰群 Ash Guard Peaks",
+            "Last Remiss": "最后的失职 Last Remiss",
+            "Moiran's Lament": "莫伊兰的哀歌 Moiran's Lament",
+            "Screaming Wasteland": "尖啸荒原 Screaming Wasteland",
+            "The Golden Bay": "黄金湾 The Golden Bay",
+            "Dread Hills": "恐惧丘陵 Dread Hills",
+            "Zancol Expanse": "赞科尔广袤域 Zancol Expanse",
+            "Incursion of Ragen": "拉根的入侵 Incursion of Ragen",
+            "Hekkiro": "赫基罗 Hekkiro",
+            "Prison of Fiyara": "菲亚拉的监狱 Prison of Fiyara",
+            "Briar Peaks": "荆棘峰 Briar Peaks",
+            "FENLINGS": "芬灵族 FENLINGS",
+            "Mt Claw": "爪山 Mt Claw",
+            "Trailing Hills": "丘陵尽头 Trailing Hills",
+            "Great Morenel": "大莫瑞内尔 Great Morenel",
+            "Restless Bay": "躁动湾 Restless Bay",
+            "Karon Mounts": "卡隆坐骑 Karon Mounts",
+            "Ironrow Hills": "铁脊丘陵 Ironrow Hills",
+            "Lake Krena": "克雷纳湖 Lake Krena",
+            "The Middle Sea": "中央海 The Middle Sea",
+            "Regained Isle": "失而复得之岛 Regained Isle",
+            "The Sword Range": "剑的射程 The Sword Range",
+            "Mistbound Narrows": "迷雾束缚海峡 Mistbound Narrows",
+            "Varen Hills": "瓦伦丘陵 Varen Hills",
+            "Border Walls": "边境墙 Border Walls",
+            "The First Throne": "第一王座 The First Throne",
+            "Marben Hills": "马本丘陵 Marben Hills",
+            "Mount Fate": "命运山 Mount Fate",
+            "Crystal Tundra": "水晶苔原 Crystal Tundra",
+            "The Lost Dale": "失落谷地 The Lost Dale",
+            "Crowning Peaks": "冠冕群峰 Crowning Peaks",
+            "Exten Peninsula": "埃克斯滕半岛 Exten Peninsula",
+            "The Beast's Maw": "野兽之喉 The Beast's Maw",
+            "Coran Spike": "科兰尖刺 Coran Spike",
+            "The Bulwark": "壁垒 The Bulwark",
+            "Koronda Barrens": "科隆达荒原 Koronda Barrens",
+            "Mount K'Hente": "肯特山 Mount K'Hente",
+            "Southern Shana Mountains": "沙纳山脉南部 Southern Shana Mountains",
+            "Abyssal Desolation": "深渊荒芜 Abyssal Desolation",
+            "Lumarin Homelands": "卢马林家园 Lumarin Homelands",
+            "Southern Corebright Forest": "南部辉核森林 Southern Corebright Forest",
+            "Awakened Savanna": "觉醒草原 Awakened Savanna",
+            "Mountains of the Sun": "太阳群山 Mountains of the Sun",
+            "Melcator's Refuge": "梅尔卡托的避难所 Melcator's Refuge",
+            "Last Grove": "最后林地 Last Grove",
+            "Kemas Badlands": "凯马斯荒地 Kemas Badlands",
+            "Aris Peninsula": "阿里斯半岛 Aris Peninsula",
+            "Canasia": "卡纳西亚 Canasia",
+            "Border Heathlands": "边境荒原 Border Heathlands",
+            "Vathar Forests": "瓦萨尔森林 Vathar Forests",
+            "Brightcore": "辉核 Brightcore",
+            "Northern Corebright Forest": "北部辉核森林 Northern Corebright Forest",
+            "Northern Shana Mountains": "沙纳山脉北部 Northern Shana Mountains",
+            "The Crossing Sea": "穿海之海 The Crossing Sea",
+            "Kirike Wildlands": "基里克荒野 Kirike Wildlands",
+            "Menin Heights": "梅宁高地 Menin Heights",
+            "World's End": "世界尽头 World's End",
+            "Vita'ri": "维塔里 Vita'ri",
+            "Three Eyes Island": "三眼岛 Three Eyes Island",
+            "Spine of Ember": "烬脊 Spine of Ember",
+            "Coral": "珊瑚 Coral",
+            "Sail": "航行 Sail",
+            "Avai": "阿瓦伊 Avai",
+            "Hoist": "升起 Hoist",
+            "Caxco": "卡克斯科 Caxco",
+            "Wheel": "轮子 Wheel",
+            "Alavai": "阿拉瓦伊 Alavai",
+            "Torment": "折磨 Torment",
+            "Mourn": "哀悼 Mourn",
+            "Break": "破坏 Break",
+            "Shattered Keep": "破碎要塞 Shattered Keep",
+            "Elwin's Seat": "埃尔温的座位 Elwin's Seat",
+            "Gravechill": "墓寒 Gravechill",
+            "Ash": "灰烬 Ash",
+            "Hearth": "炉床 Hearth",
+            "Aurtej": "奥尔泰杰 Aurtej",
+            "Kula'me": "库拉梅 Kula'me",
+            "Ra'vel": "拉维尔 Ra'vel",
+            "Nasjar": "纳斯贾尔 Nasjar",
+            "Catch": "接住 Catch",
+            "Kalaxo": "卡拉克索 Kalaxo",
+            "Yarino": "雅里诺 Yarino",
+            "Gate": "异界之门 Gate",
+            "Splintis": "夹板骨针 Splintis",
+            "Forgil": "福尔吉尔 Forgil",
+            "Reysta": "雷丝塔 Reysta",
+            "Kawn": "考恩 Kawn",
+            "Vantol": "范托尔 Vantol",
+            "Corla": "科拉 Corla",
+            "Avok": "阿沃克 Avok",
+            "Kayhurn": "凯胡恩 Kayhurn",
+            "Vathan": "瓦森 Vathan",
+            "Point": "点 Point",
+            "Oshel": "奥谢尔 Oshel",
+            "Sorrow": "哀伤 Sorrow",
+            "Braken": "布拉肯 Braken",
+            "Sirewood": "西尔伍德 Sirewood",
+            "Elvan": "精灵语 Elvan",
+            "Fist's Landing": "拳之登陆点 Fist's Landing",
+            "Mordant": "腐蚀性的 Mordant",
+            "Crown": "王冠 Crown",
+            "Red Rhuin": "红色鲁因 Red Rhuin",
+            "Dust": "尘土 Dust",
+            "Kisen": "纪森 Kisen",
+            "Kakiro": "卡基罗 Kakiro",
+            "Haxim": "哈克西姆 Haxim",
+            "Iktae": "伊克泰 Iktae",
+            "Ixik": "伊西克 Ixik",
+            "Last Port": "最后的港口 Last Port",
+            "Shiftstone": "移位石 Shiftstone",
+            "Abilas": "阿比拉斯 Abilas",
+            "Tome": "典籍 Tome",
+            "GLITTERING MOUNTAINS": "闪耀山脉 GLITTERING MOUNTAINS",
+            "Bloodworm": "血虫 Bloodworm",
+            "Sacarath": "萨卡拉斯 Sacarath",
+            "Briarfur": "荆棘皮毛 Briarfur",
+            "The Crawler": "爬行者 The Crawler",
+            "Siodread": "希奥德雷德 Siodread",
+            "She'lu": "谢露 She'lu",
+            "Krenac": "克雷纳克 Krenac",
+            "Krasarioc": "克拉萨里奥克 Krasarioc",
+            "VELLATAGÉ": "维拉塔热 VELLATAGÉ"
+          }
         },
         "Ocean": {
           "name": "海洋 Ocean",
@@ -11593,7 +11826,11 @@
           }
         },
         "Lightless Halls": {
-          "name": "无光大厅 Lightless Halls"
+          "name": "无光大厅 Lightless Halls",
+          "notes": {
+            "Brazier Nook": "火盆角落 Brazier Nook",
+            "Stone Altar": "石祭坛 Stone Altar"
+          }
         },
         "Ordain Docks": {
           "name": "奥丹船坞 Ordain Docks",
@@ -11966,6 +12203,9 @@
             "Pressure Traps": {
               "name": "压力陷阱"
             }
+          },
+          "notes": {
+            "Exterior": "外部"
           }
         },
         "Lantern Roads": {
@@ -12079,6 +12319,9 @@
                 }
               }
             }
+          },
+          "notes": {
+            "Front Fountains": "前方喷泉 Front Fountains"
           }
         },
         "Marlstone Manor - Second Floor": {
@@ -12182,6 +12425,9 @@
             "Surface: Water": {
               "name": "地表：水面"
             }
+          },
+          "notes": {
+            "The Ad-Hoc Kitchen": "临时厨房 The Ad-Hoc Kitchen"
           }
         },
         "Ordain Burial Grounds": {
@@ -12195,6 +12441,23 @@
                 }
               }
             }
+          },
+          "notes": {
+            "Funeral Hall": "葬礼大厅 Funeral Hall",
+            "Chamber of Remembrance": "追忆之室 Chamber of Remembrance",
+            "Chamber of Communion": "共祭之室 Chamber of Communion",
+            "Chamber of Reflection": "反思之室 Chamber of Reflection",
+            "Cindaric Threshold": "辛达里克阈限 Cindaric Threshold",
+            "Antechamber": "前厅 Antechamber",
+            "Preparation Chamber": "准备室 Preparation Chamber",
+            "Embalming Room": "防腐室 Embalming Room",
+            "House Cevher Mausoleum": "杰夫赫家族陵墓 House Cevher Mausoleum",
+            "Tomb of Spectra's Chosen": "光谱之选民的坟墓 Tomb of Spectra's Chosen",
+            "Anrak Mausoleum": "安拉克陵墓 Anrak Mausoleum",
+            "Prestyn Mausoleum": "普雷斯廷陵墓 Prestyn Mausoleum",
+            "Lamplighter's Rest": "点灯人的安息所 Lamplighter's Rest",
+            "Ashvale Mausoleum": "灰谷陵墓 Ashvale Mausoleum",
+            "Crumbling Mausoleum": "崩塌的陵墓 Crumbling Mausoleum"
           }
         },
         "Toothbreaker Hideout": {
@@ -12292,6 +12555,15 @@
                 }
               }
             }
+          },
+          "notes": {
+            "Medical Archives": "医疗档案室 Medical Archives",
+            "Cold Storage": "冷藏库 Cold Storage",
+            "Downstairs Vestibule": "楼下前厅 Downstairs Vestibule",
+            "Examination Room": "检查室 Examination Room",
+            "Morgue": "停尸房 Morgue",
+            "Basement Storage": "地下室储藏室 Basement Storage",
+            "Basement Entrance": "地下室入口 Basement Entrance"
           }
         },
         "Traveler's Rest Healing House": {
@@ -12332,6 +12604,24 @@
                 }
               }
             }
+          },
+          "notes": {
+            "Basement Entrance": "地下室入口 Basement Entrance",
+            "Main Office": "总办公室 Main Office",
+            "Courtyard": "庭院 Courtyard",
+            "Library": "图书馆 Library",
+            "Infirmary": "医务室 Infirmary",
+            "Cindaric Lodging": "辛达里克旅舍 Cindaric Lodging",
+            "Refectory": "食堂 Refectory",
+            "Alchemy": "炼金术 Alchemy",
+            "Study": "书房 Study",
+            "Recreation": "休憩室 Recreation",
+            "Jessa's Private Quarters": "杰萨的私人房间 Jessa's Private Quarters",
+            "Private Surgery": "私人手术室 Private Surgery",
+            "Rear Storage Vestibule": "后部储物前室 Rear Storage Vestibule",
+            "Storage Closet": "储物间 Storage Closet",
+            "Guest Quarters": "客房区 Guest Quarters",
+            "Operating Theater": "手术室 Operating Theater"
           }
         },
         "Vista: Caste": {
@@ -12385,6 +12675,9 @@
                 }
               }
             }
+          },
+          "notes": {
+            "Boxing Ring": "拳击擂台 Boxing Ring"
           }
         },
         "Spellbreaker Tower (Level 1)": {
@@ -12785,7 +13078,28 @@
           "name": "远景：布雷文 Vista: Brevin"
         },
         "Kalion Stadium Underworks": {
-          "name": "卡利昂竞技场地下工事 Kalion Stadium Underworks"
+          "name": "卡利昂竞技场地下工事 Kalion Stadium Underworks",
+          "notes": {
+            "Entrance Hall": "入口大厅 Entrance Hall",
+            "Hall of Preparation": "准备大厅 Hall of Preparation",
+            "Anterior Chamber": "前房 Anterior Chamber",
+            "Hall of Champions": "冠军大厅 Hall of Champions",
+            "Hall of Records": "档案大厅 Hall of Records",
+            "Hall of Recovery": "康复大厅 Hall of Recovery",
+            "Bathhouse": "澡堂 Bathhouse",
+            "Temple Sanctum": "神殿圣所 Temple Sanctum",
+            "Corrupted Altar": "腐化祭坛 Corrupted Altar",
+            "Secret Vestibule": "秘密前厅 Secret Vestibule",
+            "Secret Passage": "秘密通道 Secret Passage",
+            "Armory": "军械库 Armory",
+            "Reliquary": "圣髑匣 Reliquary",
+            "Acolyte Quarters": "侍僧宿舍 Acolyte Quarters",
+            "Chamber of Bargains": "交易之室 Chamber of Bargains",
+            "Sealed Entrance": "封闭入口 Sealed Entrance",
+            "Ritual Chamber": "仪式之室 Ritual Chamber",
+            "Chantry": "礼拜堂 Chantry",
+            "Arcane Workshop": "奥术工坊 Arcane Workshop"
+          }
         },
         "The Pit Trap": {
           "name": "陷坑 The Pit Trap",
@@ -12873,6 +13187,10 @@
             "Spawn - Promenade East": {
               "name": "出生点 - 步道东侧"
             }
+          },
+          "notes": {
+            "Varinna's Studio (Upper)": "瓦琳娜的工作室（上层） Varinna's Studio (Upper)",
+            "Heel and Sole": "脚跟与脚掌 Heel and Sole"
           }
         },
         "Redwalk Ramble": {
@@ -21666,7 +21984,8 @@
               "name": "啃咬 Bite",
               "effects": {
                 "Grappled & Restrained": {
-                  "name": "被擒抱与受缚 Grappled & Restrained"
+                  "name": "被擒抱与受缚 Grappled & Restrained",
+                  "description": "<p>目标陷入&amp;Reference[Grappled]与&amp;Reference[Restrained]状态，并可以使用其动作进行挣脱。</p>"
                 }
               }
             },
@@ -21674,7 +21993,8 @@
               "name": "尾巴 Tail",
               "effects": {
                 "Prone": {
-                  "name": "倒地 Prone"
+                  "name": "倒地 Prone",
+                  "description": "<p>目标陷入&amp;Reference[Prone]状态，并可以在其回合中用一半的移动力站起。</p>"
                 }
               }
             },
@@ -21698,7 +22018,13 @@
             },
             "Siege Monster": {
               "name": "攻城怪物 Siege Monster"
+            },
+            "Gnash": {
+              "name": "咬啮 Gnash"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只巨兽披着盾牌般厚实的鳞甲，以一种睡眼惺忪、事不关己的冷淡打量着你和整个世界。它那张大得惊人的宽阔嘴巴微微耷拉着张开，仿佛连闭上的力气都没有。就在那沉重的甲质颌部之后，是一排排巨大的牙齿，看上去足以把咬住的任何东西撕成碎片。</p></section><p>巴拉多姆是一种体型庞大、行动迟缓的蜥蜴；它既令人敬畏，又因惊人的体型和悠闲懒散的神态而显得有些讨人喜欢。它常常四仰八叉地躺在通路的黑暗中，巨大的圆肚子随着每一次悠长的呼吸一起一伏。它那深色的厚鳞几乎无法穿透，与其说是寻常爬行动物的皮肤，不如说每一片都是一块装甲。</p>"
           }
         },
         "Sitherian": {
@@ -21711,7 +22037,8 @@
               "name": "啃咬 Bite",
               "effects": {
                 "Poisoned & Paralyzed": {
-                  "name": "中毒并麻痹 Poisoned & Paralyzed"
+                  "name": "中毒并麻痹 Poisoned & Paralyzed",
+                  "description": "<p>若毒素伤害使目标的生命值降至 0，则目标进入稳定状态，并在 1 小时内持续处于&amp;Reference[poisoned]状态（即使之后恢复了生命值也是如此）。以此方式中毒期间，目标同时处于&amp;Reference[paralyzed]状态。</p>"
                 }
               }
             },
@@ -21725,10 +22052,15 @@
               "name": "蛛网术 Web",
               "effects": {
                 "Restrained": {
-                  "name": "受缚 Restrained"
+                  "name": "受缚 Restrained",
+                  "description": "<p>目标被蛛丝&amp;Reference[restrained]。</p>"
                 }
               }
             }
+          },
+          "tokenName": "西希拉之子",
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只八足大生物长着两根带毒牙的螯肢，上面似乎正滴落着黏稠的绿色毒液。当它从蛛网笼罩的藏身处爬出时，十只反光的眼睛带着野兽般敏锐的恶意注视着你。</p></section><p>西瑟里安是一种蛛形类野兽，源自其同名者——西希拉，注视者。它们以其精巧繁复的蛛网格构所产生的振动为先兆，西瑟里安能够用其螯肢上的尖牙注入强效毒液，并可从其巨大卵形腹部末端的吐丝器中抽出蛛丝。</p>"
           }
         },
         "Gumtoad": {
@@ -21814,6 +22146,9 @@
             "Amphibious": {
               "name": "两栖 Amphibious"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只大型生物用锐利的双眼审视着四周，宽阔的大口张开着，随时准备猛地咬下。一条长舌来回摆动，像是在积极嗅探这片区域。它宽厚的身躯泛着近乎胶质的光泽，几缕微光闪烁的空灵光线自头至尾沿脊背流淌，而随着每一次呼吸，硕大的发光鳃都在搏动。</p></section><p>[[lookup @name]]是一种体型过大、被元素之力浸染的钝口螈。这种大型的领地性生物栖息在隐蔽的水域中，可以在那里不受打扰地筑巢。</p>"
           }
         },
         "Rask Juvenile": {
@@ -21885,6 +22220,9 @@
                 }
               }
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只巨大四足兽矮壮的身躯覆盖着浓密的皮毛，笨重的动作看似迟缓，实则沉稳有度。这只毛发蓬乱的生物头部宽阔而有力，顶着一副威严的巨大角冠；三趾的脚掌前端是宽厚的骨质蹄，构成了这头巨兽宽阔如柱的双腿的根基。一条长长的羽状尾巴在身后轻缓摇摆，附近的空气中弥漫着一股麝香般的气味。</p></section><p>这种被称为[[lookup @name]]的巨大角冠生物，是阿克图斯高原最可靠的驮兽之一；而得益于温和的性情与易于训练的特点，[[lookup @name]]在余烬几乎每一个地区都被誉为世上首屈一指的驮运牲畜。凭着一身羊毛般的厚皮，这些威严的生物能够在余烬最为严寒的一些气候中存活；它们以坚韧可靠著称，是有需要者的忠实伙伴——从横贯全球的商队到乡间的农户皆然。它们在日常生活中的角色，既不可或缺，又无处不在。</p>"
           }
         },
         "Yarnac Juvenile": {
@@ -21923,7 +22261,25 @@
             },
             "Breastplate": {
               "name": "胸甲 Breastplate"
+            },
+            "The Flame Within": {
+              "name": "内蕴之焰 The Flame Within"
+            },
+            "Glowing Weapons": {
+              "name": "辉耀武器 Glowing Weapons"
+            },
+            "Cleaving Light": {
+              "name": "裂光 Cleaving Light"
+            },
+            "Beckoning": {
+              "name": "引召 Beckoning"
+            },
+            "Reckoning": {
+              "name": "清算 Reckoning"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>那身影顶着一颗辉耀的黄色火焰之首，形体裹在奇异而华美的黄金板甲之中，随着一道光芒的闪耀转身面向你。它手中握着一柄由凝聚光芒构成的长剑，正准备发动攻击。</p></section><p>对余烬地表上的任何人来说，阿布里克斯不过就是提拉斐姆。根据学者们对这类生物的研究，一般认为它们属于最弱的提拉斐姆之列。它们主要在大规模战役中充当地面部队，但也有把它们描述为助手与信使的记载，这表明它们能够凭借在战场内外的出色表现来提升自身地位。</p><p>各种记述虽然不一，但所有传闻中都有几点共通之处——它们冷酷、忠诚而狡黠，这既体现在战术上，也体现在它们于战前战后播下不和种子的本事上。</p>"
           }
         },
         "Skither": {
@@ -21946,7 +22302,19 @@
             },
             "Dying Burst": {
               "name": "濒死爆发 Dying Burst"
+            },
+            "Rend": {
+              "name": "撕裂 Rend"
+            },
+            "Self Sacrifice": {
+              "name": "自我牺牲 Self Sacrifice"
+            },
+            "Tyraphic Sending": {
+              "name": "泰拉菲克传讯 Tyraphic Sending"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只生物体型小巧、行动迅捷，乍看之下像是不值一提的东西，不过是一块粗劣地做成昆虫模样、长着锯齿状翅膀的废料。可当它出击时，那只独眼与爪状的附肢却似乎迸发出炽烈的辉光，在身后拖出一道道琥珀色的光痕。</p></section><p>斯基瑟常被提拉斐姆当作一种格外具有破坏性的信使来使用，被派去在敌人的财物与躯体上留下灼烧的讯息。它们利用自身的娇小体型与伪装能力，抢占所选目标无从防御的位置。斯基瑟一心要为其效力的更强大存在制造杀戮，据说它们会尾随一个目标数英里之遥；一旦自认为已经落败，便会让自己的身体过载于光耀能量之中，决意即便要为此付出性命，也要伤到目标。</p>"
           }
         },
         "Vorg": {
@@ -21957,7 +22325,8 @@
               "name": "猛击 Slam",
               "effects": {
                 "Stunned": {
-                  "name": "震慑 Stunned"
+                  "name": "震慑 Stunned",
+                  "description": "<p>沃格的庞大身躯撞得你喘不过气来，让你一时之间动弹不得。</p>"
                 }
               }
             },
@@ -21969,7 +22338,16 @@
             },
             "Heated Body": {
               "name": "灼热之躯 Heated Body"
+            },
+            "Compress": {
+              "name": "压碾 Compress"
+            },
+            "Rend": {
+              "name": "撕裂 Rend"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一节节仿佛无穷无尽的金属体节疾速掠过地面，由两侧无数条腿的咔哒作响拖曳着前行，还有数对灵活得出人意料的螯钳。在这具金属躯体之内，可以从生物尖锐的脊背和那算作眼睛的部位望见一片橙黄色的辉光，燃烧的热量正从它体内向周遭空气散发。</p></section><p>沃格是一种形似蜈蚣的生物，金属甲壳之内包裹着永不熄灭的光耀之辉。它们触之滚烫，能够攀上墙壁、钻入地下，也能贴着地面拖行前进；对于在洞窟、岩洞及其他地下场所与之遭遇的人来说，它们往往是个不受欢迎的意外。</p>"
           }
         },
         "Broken Aedir Sentinel": {
@@ -22102,6 +22480,9 @@
             "Spit Bile": {
               "name": "喷吐胆汁 Spit Bile"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只巨大的蛇形生物通体覆盖着灰白泛绿的鳞片，尾部张扬展开，缀着破烂的绿色鳍膜。它龙形的头颅上生着长角，角尖是同样的淡绿色；身体中段还有更多宽大而残破的鳍膜。这只龙兽双眼一片浑浊的乳白，暗示着失明，躯体上则布满了从溃烂伤口中冒出的、令人不安的黄色脓疱。尽管病痛显而易见，它的动作却依旧优雅从容，不时在滴着涎水的巨口中露出一排排锋利如刀的牙齿。</p></section><p>[[lookup @name]]属于新近发现的一类龙形怪物，具有惊人的速度与力量。它们看上去像是巨龙的后裔或近亲，但其起源的真实面貌目前尚不可知。眼下这些个体正被某种消耗性疾病所侵蚀，使它们的躯体自内而外地腐坏。</p>"
           }
         },
         "Afflicted Pallid Drakeling": {
@@ -22715,6 +23096,9 @@
             "Running Leap": {
               "name": "助跑起跳 Running Leap"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只散发光辉的生物以掠食者般的优雅移动着，每一步都留下一道淡淡的光耀痕迹。它硕大而发亮的双眼似乎能洞察所观之物的本质。一道道光耀的色彩有节奏地在它半覆羽毛的皮毛间、以及两对翅膀上搏动流转。</p><p>第一对翅膀自前肢延展而出，与体侧相连；第二对更为宽大，自背部展开如扇。两对翅膀都缀着纹理精致的发光羽毛，只需最轻微的动作，便如活着的星尘般泛起涟漪。</p></section><p>[[lookup @name]]是一种来自普里莫迪斯界域的光耀魔法生物。它们这一族充当着知识与秘密之地坚定不移的守护者。</p>"
           }
         },
         "Jahud Assassin": {
@@ -23038,6 +23422,9 @@
             "Arcturian Training": {
               "name": "阿克图里安训练 Arcturian Training"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这个看上去颇为寻常的类人生物，穿着乡野的衣装，迈着阿克图斯高原寻常居民那种自豪的步态——那是一片干燥的夏季地带，那里的人们勤劳质朴，被誉为社会的中坚。</p></section><p>[[lookup @name]]是阿克图斯高原的寻常百姓，那片地区以农耕传统和诚挚的民风著称。多数阿克图里安过着简单的生活，是不知疲倦的手艺人，被视为纺织、木工与耕作这些日常技艺的行家。寻常的[[lookup @name]]珍视田园式的生活方式——辛劳一日之后，被炉火与家人的温暖围绕。</p>"
           }
         },
         "Burnished Hand Protector": {
@@ -23871,7 +24258,8 @@
               "name": "墓之印记 Grave Mark",
               "effects": {
                 "Exhaustion": {
-                  "name": "力竭 Exhaustion"
+                  "name": "力竭 Exhaustion",
+                  "description": "<p>目标获得一级&amp;reference[exhaustion]。</p>"
                 }
               }
             },
@@ -23883,6 +24271,9 @@
                 }
               }
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>你看见一只由纯粹阴影构成的四足生物。它幽暗形体的轮廓，分明像是某种略似犬类的怪物那副狰狞骨架，外面笼罩着一层黑紫色的深渊火焰披风。它残忍的双眼闪着幽灵般的光辉，那不似尘世的低吼中透着墓穴硝石的气味。</p></section><p>[[lookup @name]]俗称暮猎犬，是一种由纯粹阴影构成的凶暴幽影掠食者。这些可憎的四眼生物形似一头腐朽的犬科动物，头生邪角，周身缠绕着骇人的黑焰帷幕。</p>"
           }
         },
         "Dereth Erekos": {
@@ -23997,6 +24388,9 @@
             "Fetid Claws": {
               "name": "恶臭之爪 Fetid Claws"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一具蓬头垢面的尸体潜伏在你面前，浑身散发着墓穴的腐臭。一抹滴着暗红色脓液的邪恶笑容，在这具尸首苍白而不死的脸上扭曲蔓延；而框住那双乳白双眼的夸张眉弓，泄露出某种狡诈的凶意。</p></section><p>[[lookup @name]]是被邪恶晦涩的魔法赋予活性的残忍不死生物。它绝非只会活动的骷髅或蹒跚的僵尸——[[lookup @name]]受着一股永不止息的欲望驱使，要制造令人恐惧的浩劫，其存在本身仿佛就是对余烬上一切生命的冒犯。事实上，[[lookup @name]]那些恶毒的言语，往往与它满口利齿的撕咬或惊人的利爪同样致命。</p>"
           }
         },
         "Skallith": {
@@ -24445,6 +24839,10 @@
             "Mephitic Nature": {
               "name": "恶浊本性 Mephitic Nature"
             }
+          },
+          "tokenName": "血鸟劫群",
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一只目光锐利的小鸟正啄食着某只新近死去的生物的腐尸。它猩红的尖喙肆无忌惮地撕扯着腐臭的血肉。这只食肉飞禽一身炭黑色的暗沉羽毛，被尾羽那抹鲜亮的绯红衬得格外分明。血喙上还挂着一条筋腱，它发出一声令人不安的嘶哑鸣叫，恰如其分地提醒你它就在那里。</p></section><p>微小的[[lookup @name]]是遍布余烬各地的迅捷食腐猛禽。虽然它们主要以腐尸为食，但据说在食物匮乏时，它们会成群结队地凶猛追猎活物。</p>"
           }
         },
         "Gore Bird Ravage": {
@@ -24715,6 +25113,9 @@
             "Well-Timed Help": {
               "name": "及时相助 Well-Timed Help"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只威严四足兽的双眼似乎泛着幽微的磷光。这是一种兼具犬科与猫科特征的精瘦哺乳动物，硕大的身躯上点缀着羽状的绒毛簇，看上去既强壮又灵巧。一身带条纹的皮毛为这头野兽尊贵的头颅加冕，短而蓬松的尾巴则在身后优雅而有意地摆动。</p></section><p>[[lookup @name]]是常见于阿克图斯高原各类生境的驯化四足哺乳动物。它们常被用作动物同伴与驮兽，[[lookup @name]]被认为是该地区最受喜爱、也最为出色的坐骑之一。它们以高贵著称，既心性慷慨，又意图直率。</p>"
           }
         },
         "Corrupted Kezus Jelly": {
@@ -26461,7 +26862,11 @@
               "name": "吞下 Swallow",
               "effects": {
                 "Prone": {
-                  "name": "倒地 Prone"
+                  "name": "倒地 Prone",
+                  "description": "<p>被吞下的生物会在穆塔普旁边的一个空间内陷入&amp;Reference[prone apply=false]状态。</p>"
+                },
+                "Swallowed": {
+                  "name": "被吞下 Swallowed"
                 }
               }
             },
@@ -26469,10 +26874,12 @@
               "name": "触手 Tentacles",
               "effects": {
                 "Poisoned": {
-                  "name": "中毒 Poisoned"
+                  "name": "中毒 Poisoned",
+                  "description": "<p>目标在 1 分钟内处于&amp;Reference[poisoned apply=false]状态。目标可以在其每个回合结束时重复该豁免，成功则对自身结束此效果。</p>"
                 },
                 "Grappled": {
-                  "name": "被擒抱 Grappled"
+                  "name": "被擒抱 Grappled",
+                  "description": "<p>目标陷入&amp;Reference[grappled]状态，并可以使用其动作进行挣脱。</p>"
                 }
               }
             },
@@ -26503,6 +26910,9 @@
             "Lightning Susceptibility": {
               "name": "易受闪电影响 Lightning Susceptibility"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>一只无眼的生物凭空出现，形似一条短粗的鳗鱼，头顶却生着二十来根发光的触须，宛如一只巨大的海葵。当它盲目地向前方水中探去时，这些发光触手带着不似人类的欣喜扭动着。</p></section><p>[[lookup @name]]是一种古怪的水生怪物，栖居于阿克图瑞尔之下天坑深渊的水潭，以及通路的其他地下区域中。它们能够产出一种名为因卡罗珍珠的稀有奥术石，阿克图斯高原的人们费尽气力才得以小规模地养殖这些由鳗鱼与海葵混合而成的生物荧光造物。</p>"
           }
         },
         "Alar": {
@@ -29592,6 +30002,9 @@
             "Tenacity": {
               "name": "坚韧 Tenacity"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这个看上去颇为寻常的类人生物，穿着城里的衣装，迈着奥尔丹寻常居民那种自信的步态。</p></section><p>[[lookup @name]]是奥尔丹的寻常百姓——那座坐落于阿克图斯高原东北海岸、素有「风尚之城」之称的都市。许多奥尔达尼过着简单的生活，热衷于文化与艺术，被认为是阿特里卡最为时髦的居民之列。寻常的[[lookup @name]]……</p>"
           }
         },
         "Ordani Ruffian": {
@@ -30870,6 +31283,9 @@
             "Sage's Shillelagh": {
               "name": "贤者的橡木棍棒咒 Sage's Shillelagh"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这位学识渊博的治疗者身着亮金与浓艳绯红的衣袍，那正是阿克图斯高原上声名远播的辛达里克贤者的颜色。他们的肩部与外袍上标着象征辛达里克教团的四叶菱形纹样，双手因诚实劳作而磨出了健康的老茧与印痕。贤者带着慈和的微笑打量着你。</p></section><p>[[lookup @name]]是技艺娴熟的治疗者与学者，毕生投身于对辛达里克信仰的虔诚侍奉。无论是来自奥尔丹辛达林神殿的辉煌之地、米亚尔山上科尔平庇护所的偏远高处，还是另一处隐修聚落的幽僻所在，[[lookup @name]]总是随时准备着让饥者得食、病者得愈、贫者得衣。[[lookup @name]]以其慈悲与善意著称，而每一位贤者都在这永无止境的侍奉中，寻得属于自己的那份热忱。</p>"
           }
         },
         "Flameguard Firebrand": {
@@ -30994,6 +31410,9 @@
             "Light Sensitivity": {
               "name": "光照敏感 Light Sensitivity"
             }
+          },
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只微小的六足啮齿动物覆盖着浅灰色的皮毛，四只圆溜溜的小眼睛呈现出闪亮祖母绿的色泽。它前肢的末端是相当惊人的利爪（尤其考虑到它的体型），显然是用来在松碎的泥土中来回掘进的。</p></section><p>从奥尔丹的海岸到阿卡泽娅最遥远的边陲，处处都能见到[[lookup @name]]。这些讨人厌的小野兽以其出众的挖掘本领，以及总能在恰到好处的时刻四散逃开而闻名。这些随处可见的啮齿动物是贪得无厌的群居生物，常常成群出没，为了洗劫下一顿饭食几乎不择手段。</p>"
           }
         },
         "Oozeling": {
@@ -31894,7 +32313,18 @@
           },
           "items": {
             "Uncanny Eye": {
-              "name": "怪异之眼 Uncanny Eye"
+              "name": "怪异之眼 Uncanny Eye",
+              "effects": {
+                "Eye of Brilliance": {
+                  "name": "光辉之眼 Eye of Brilliance"
+                },
+                "Eye of Bewilderment": {
+                  "name": "迷乱之眼 Eye of Bewilderment"
+                },
+                "Eye of Malfeasance": {
+                  "name": "祸行之眼 Eye of Malfeasance"
+                }
+              }
             },
             "Long Beak": {
               "name": "长喙 Long Beak"
@@ -34613,9 +35043,11 @@
             "Chain of Cora": {
               "effects": {
                 "Grappled & Restrained": {
-                  "name": "被擒抱与受缚 Grappled & Restrained"
+                  "name": "被擒抱与受缚 Grappled & Restrained",
+                  "description": "<p>若目标是大型或更小的生物，它会被该生物&amp;Reference[grappled apply=false]，并可以使用其动作进行脱离。在此擒抱结束前，目标处于&amp;Reference[restrained apply=false]{受缚}状态。</p>"
                 }
-              }
+              },
+              "name": "科拉之链 Chain of Cora"
             },
             "Unseen Strike": {
               "effects": {
@@ -34623,7 +35055,8 @@
                   "name": "倒地 Prone",
                   "description": "<p>目标被击倒为 &amp;Reference[prone apply=false]，并可以在其回合中花费一半的移动距离站起。</p>"
                 }
-              }
+              },
+              "name": "无形打击 Unseen Strike"
             },
             "Multiattack": {
               "name": "多重攻击 Multiattack"
@@ -34647,7 +35080,12 @@
               "name": "遁地 Earth Glide"
             },
             "Telekinetic Flight": {
-              "name": "念力飞行 Telekinetic Flight"
+              "name": "念力飞行 Telekinetic Flight",
+              "effects": {
+                "Fly Speed 30 Ft.": {
+                  "name": "飞行速度 30 英尺 Fly Speed 30 Ft."
+                }
+              }
             },
             "Cora 4: Compressed": {
               "name": "科拉 4：压实 Cora 4: Compressed",
@@ -34671,10 +35109,19 @@
             },
             "Mould Earth": {
               "name": "塑土术 Mould Earth"
+            },
+            "Crushing Force": {
+              "name": "碾压之力 Crushing Force"
+            },
+            "Reflective Facets": {
+              "name": "反照晶面 Reflective Facets"
             }
           },
           "name": "晶巉巨像 Crystallath",
-          "tokenName": "晶巉巨像 Crystallath"
+          "tokenName": "晶巉巨像 Crystallath",
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这只巨大元素的身躯由暗色岩石构成，其间贯穿着明亮的水晶脉络，一经光照便熠熠生辉。它的形体呈类人形，各种形状与大小的宝石从身上突刺而出，将轮廓割裂开来。尽管体型庞大，它的每一步却都显得轻缓无声，压入地面的深度远不及其体重所应有的程度。 </p></section><p>[[lookup @name]]是一种由岩石与水晶构成的强大土元素。它们罕见而独居，既神秘又迟缓沉重。</p>"
+          }
         },
         "Dirt Globlin": {
           "name": "泥土格布林 Dirt Globlin",
@@ -35041,6 +35488,10 @@
                 }
               }
             }
+          },
+          "tokenName": "石笋巨口",
+          "biography": {
+            "public": "<section class=\"block readaloud\"><p>这头巨兽弓着背的四足身形高耸在你面前，脊背与腹部布满洞穴岩板，板与板之间的矿物接缝如同血管般延伸。它的头几乎只剩一张洞窟般的巨口，上排钟乳石、下排石笋成列而生，宛如某种岩石所生的鲨鱼的利齿。它一移动，松动的碎石便从地面颤然扬起，汇入始终追随着它的滚滚尘雾之中。 </p></section><p>[[lookup @name]]是一种形似野兽的巨型土元素，其洞穴般的巨口能将敌人整个吞下，在不断研磨的体腔内将其碾碎。尽管体量惊人，它却能靠扭曲自身周围的重力，以骤然而可怖的速度移动。</p>"
           }
         },
         "Towering Obsidian Vine": {
