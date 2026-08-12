@@ -530,7 +530,7 @@
       "name": "贝雅克 Bejak"
     },
     "Cascilian": {
-      "name": "卡斯奇利亚人 Cascilian"
+      "name": "卡斯奇利亚 Cascilian"
     },
     "Kelmezian": {
       "name": "凯尔梅兹安 Kelmezian"
@@ -660,7 +660,7 @@
       }
     },
     "Academy Dropout": {
-      "name": "学院辍学者 Academy Dropout"
+      "name": "学院辍学生 Academy Dropout"
     },
     "Wintersoul": {
       "name": "冬魂 Wintersoul",
@@ -671,7 +671,7 @@
       }
     },
     "Anchorite Marine": {
-      "name": "隐修海兵 Anchorite Marine"
+      "name": "隐修士陆战队员 Anchorite Marine"
     },
     "Leviathan Form": {
       "name": "利维坦形态 Leviathan Form",
@@ -697,7 +697,7 @@
       "name": "敏捷跃击 Nimble Leap"
     },
     "Cosmopolitan Fashionista": {
-      "name": "都会时尚家 Cosmopolitan Fashionista"
+      "name": "世界风尚达人 Cosmopolitan Fashionista"
     },
     "Crown Apothecary": {
       "name": "王室药剂师 Crown Apothecary"
@@ -715,10 +715,10 @@
       }
     },
     "Greater Soulmark": {
-      "name": "高阶魂印 Greater Soulmark",
+      "name": "高等魂印 Greater Soulmark",
       "effects": {
         "Greater Soulmark": {
-          "name": "高阶魂印 Greater Soulmark"
+          "name": "高等魂印 Greater Soulmark"
         }
       }
     },
@@ -790,25 +790,25 @@
       "name": "符文语 Glyphspeak"
     },
     "Lightsworn": {
-      "name": "誓光者 Lightsworn"
+      "name": "光誓者 Lightsworn"
     },
     "Lunar Empath": {
-      "name": "月相通感者 Lunar Empath"
+      "name": "月之共情者 Lunar Empath"
     },
     "Metallic Blood": {
       "name": "金属之血 Metallic Blood"
     },
     "Monster Hunter": {
-      "name": "怪物猎手 Monster Hunter"
+      "name": "怪物猎人 Monster Hunter"
     },
     "Natural Artisan": {
-      "name": "天生匠人 Natural Artisan"
+      "name": "天生工匠 Natural Artisan"
     },
     "Nightwatch": {
-      "name": "夜巡 Nightwatch"
+      "name": "夜巡者 Nightwatch"
     },
     "Obsidian Antiquary": {
-      "name": "黑曜石古物商 Obsidian Antiquary"
+      "name": "黑曜石古物学者 Obsidian Antiquary"
     },
     "Arcane Countenance": {
       "name": "奥术仪容 Arcane Countenance",
@@ -828,7 +828,7 @@
       }
     },
     "Primalist Disciple": {
-      "name": "原初派信徒 Primalist Disciple"
+      "name": "原始主义弟子 Primalist Disciple"
     },
     "Mistrust of Magic": {
       "name": "疑魔 Mistrust of Magic"
@@ -848,22 +848,22 @@
       "name": "结晶化创伤 Crystalize Wounds"
     },
     "Scion of Darkness": {
-      "name": "暗裔 Scion of Darkness"
+      "name": "黑暗之裔 Scion of Darkness"
     },
     "Shadow Walker": {
-      "name": "行影者 Shadow Walker"
+      "name": "暗影行者 Shadow Walker"
     },
     "Shard God Devotee": {
       "name": "碎片神信徒 Shard God Devotee"
     },
     "Sky Wanderer": {
-      "name": "天空漫游者 Sky Wanderer"
+      "name": "天际漫游者 Sky Wanderer"
     },
     "Star Dreamer": {
-      "name": "逐星梦者 Star Dreamer"
+      "name": "星辰逐梦者 Star Dreamer"
     },
     "Sunfire Descendant": {
-      "name": "阳炎后裔 Sunfire Descendant"
+      "name": "烈阳后裔 Sunfire Descendant"
     },
     "Ritual Cooking": {
       "name": "仪式烹饪 Ritual Cooking",

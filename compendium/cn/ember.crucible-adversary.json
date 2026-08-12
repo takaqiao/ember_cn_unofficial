@@ -185,7 +185,7 @@
       "actions": {
         "extrudeTendril": {
           "name": "伸出触须 Extrude Tendril",
-          "description": "<p>@ref[actor.name]{该生物}召唤出一条 @UUID[Actor.UXpL07GsaMzGCUVh]{扭动低语者触须}，它会出现在 60 英尺内的一处空位。</p><p>@ref[actor.name]{该生物}同时最多可拥有 3 条伸出的触须，并可在自己的回合免费遣散任意数量的触须。</p>"
+          "description": "<p>@ref[actor.name]{该生物}召唤出一条 @UUID[Actor.UXpL07GsaMzGCUVh]{蠕动低语者触须}，它会出现在 60 英尺内的一处空位。</p><p>@ref[actor.name]{该生物}同时最多可拥有 3 条伸出的触须，并可在自己的回合免费遣散任意数量的触须。</p>"
         }
       }
     },
