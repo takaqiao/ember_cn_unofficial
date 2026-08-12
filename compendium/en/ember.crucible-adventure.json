@@ -9920,10 +9920,17 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Surface": "Surface",
+            "Pathways": "Pathways"
           }
         },
         "The Cosmos": {
-          "name": "The Cosmos"
+          "name": "The Cosmos",
+          "levels": {
+            "The Cosmos": "The Cosmos"
+          }
         },
         "The World of Ember": {
           "name": "The World of Ember",
@@ -10106,10 +10113,16 @@
             "Krenac": "Krenac",
             "Krasarioc": "Krasarioc",
             "VELLATAGÉ": "VELLATAGÉ"
+          },
+          "levels": {
+            "The World of Ember": "The World of Ember"
           }
         },
         "Vista: The Broken Tower": {
-          "name": "Vista: The Broken Tower"
+          "name": "Vista: The Broken Tower",
+          "levels": {
+            "The Broken Tower": "The Broken Tower"
+          }
         },
         "Dripstones": {
           "name": "Dripstones",
@@ -10167,6 +10180,10 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Lower Pools": "Lower Pools",
+            "Upper Paths": "Upper Paths"
           }
         },
         "Kaleidoscope Caverns": {
@@ -10220,6 +10237,14 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Arcane Machine": "Arcane Machine",
+            "Crystal Caverns": "Crystal Caverns",
+            "Ooze Pools": "Ooze Pools",
+            "Pillar Maze": "Pillar Maze",
+            "Spider Maze": "Spider Maze",
+            "Underground Lake": "Underground Lake"
           }
         },
         "Verdant Paths": {
@@ -10300,31 +10325,83 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Lower Paths": "Lower Paths",
+            "Upper Paths": "Upper Paths"
           }
         },
         "Vista: Dripstones": {
-          "name": "Vista: Dripstones"
+          "name": "Vista: Dripstones",
+          "levels": {
+            "Dripstones Base": "Dripstones Base",
+            "Waterfall Paths": "Waterfall Paths",
+            "Cliffside Clearing": "Cliffside Clearing",
+            "Cliffside Clearing - Camp": "Cliffside Clearing - Camp",
+            "Ooze Pool": "Ooze Pool"
+          }
         },
         "Vista: Verdant Paths": {
-          "name": "Vista: Verdant Paths"
+          "name": "Vista: Verdant Paths",
+          "levels": {
+            "Verdant Paths Base": "Verdant Paths Base",
+            "Forked Passage": "Forked Passage",
+            "Ravine Corridor": "Ravine Corridor",
+            "Ravine Corridor - Camp": "Ravine Corridor - Camp",
+            "Cliff Arch Clearing": "Cliff Arch Clearing",
+            "Shard of Akon": "Shard of Akon",
+            "Shard of Akon - Caravan Camp": "Shard of Akon - Caravan Camp",
+            "Shent Moonstone": "Shent Moonstone",
+            "Dry Outpost": "Dry Outpost",
+            "Dry Outpost - Caravan Camp": "Dry Outpost - Caravan Camp",
+            "Ancient Shent Door": "Ancient Shent Door",
+            "Ancient Shent Door (Open)": "Ancient Shent Door (Open)",
+            "Ancient Wayshrine": "Ancient Wayshrine",
+            "Fulgurite Blades Campsite": "Fulgurite Blades Campsite"
+          }
         },
         "Vista: Wedgelands": {
-          "name": "Vista: Wedgelands"
+          "name": "Vista: Wedgelands",
+          "levels": {
+            "Wedgelands Base": "Wedgelands Base",
+            "Snowy Ledge": "Snowy Ledge",
+            "Snowy Ledge - Camp": "Snowy Ledge - Camp",
+            "Cave Entrance": "Cave Entrance",
+            "Cave Entrance - Camp": "Cave Entrance - Camp"
+          }
         },
         "Vista: Helkas": {
-          "name": "Vista: Helkas"
+          "name": "Vista: Helkas",
+          "levels": {
+            "Helkas": "Helkas",
+            "Dusktide Festival": "Dusktide Festival",
+            "Dusktide Attack": "Dusktide Attack",
+            "Dusktide Aftermath": "Dusktide Aftermath"
+          }
         },
         "Bloodwoods": {
-          "name": "Bloodwoods"
+          "name": "Bloodwoods",
+          "levels": {
+            "Bloodwoods": "Bloodwoods"
+          }
         },
         "Fogbound Caverns": {
-          "name": "Fogbound Caverns"
+          "name": "Fogbound Caverns",
+          "levels": {
+            "Fogbound Caverns": "Fogbound Caverns"
+          }
         },
         "Golden Flats": {
-          "name": "Golden Flats"
+          "name": "Golden Flats",
+          "levels": {
+            "Golden Flats": "Golden Flats"
+          }
         },
         "Mycelian Expanse": {
-          "name": "Mycelian Expanse"
+          "name": "Mycelian Expanse",
+          "levels": {
+            "Mycelian Expanse": "Mycelian Expanse"
+          }
         },
         "Ocean": {
           "name": "Ocean",
@@ -10345,6 +10422,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Ocean": "Ocean"
           }
         },
         "Redrak Fields": {
@@ -10435,6 +10515,18 @@
             "Spawn - Vineyard Road": {
               "name": "Spawn - Vineyard Road"
             }
+          },
+          "levels": {
+            "Campsite": "Campsite",
+            "Fields": "Fields",
+            "Lakeshore": "Lakeshore",
+            "Settlement 1": "Settlement 1",
+            "Settlement 2": "Settlement 2",
+            "Settlement 3": "Settlement 3",
+            "Vineyard": "Vineyard",
+            "Vineyard Attack": "Vineyard Attack",
+            "Tar Pits": "Tar Pits",
+            "Obsidian Vines": "Obsidian Vines"
           }
         },
         "Rustvar Valleys": {
@@ -10451,6 +10543,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Rustvar Valleys": "Rustvar Valleys"
           }
         },
         "Sinkhole Depths": {
@@ -10481,13 +10576,29 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Sinkhole Forest (Upper)": "Sinkhole Forest (Upper)",
+            "Fortified Camp (Upper)": "Fortified Camp (Upper)",
+            "Scrapyard (Upper)": "Scrapyard (Upper)",
+            "Inkaro Pools (Upper)": "Inkaro Pools (Upper)",
+            "Sinkhole Forest (Lower)": "Sinkhole Forest (Lower)",
+            "Fortified Camp (Lower)": "Fortified Camp (Lower)",
+            "Scrapyard (Lower)": "Scrapyard (Lower)",
+            "Inkaro Pools (Lower)": "Inkaro Pools (Lower)"
           }
         },
         "Splinter Canyons": {
-          "name": "Splinter Canyons"
+          "name": "Splinter Canyons",
+          "levels": {
+            "Splinter Canyons": "Splinter Canyons"
+          }
         },
         "Amerasp Grove": {
-          "name": "Amerasp Grove"
+          "name": "Amerasp Grove",
+          "levels": {
+            "Amerasp Grove": "Amerasp Grove"
+          }
         },
         "Arcturel Dives": {
           "name": "Arcturel Dives",
@@ -10538,6 +10649,9 @@
             "Transition: Pathways Elevator": {
               "name": "Transition: Pathways Elevator"
             }
+          },
+          "levels": {
+            "The Dives": "The Dives"
           }
         },
         "Arcturel Tradeway": {
@@ -10676,10 +10790,17 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Tradeway": "Tradeway",
+            "Underbelly": "Underbelly"
           }
         },
         "Arcturian Jail": {
-          "name": "Arcturian Jail"
+          "name": "Arcturian Jail",
+          "levels": {
+            "Arcturian Jail": "Arcturian Jail"
+          }
         },
         "Bastion Apex": {
           "name": "Bastion Apex",
@@ -10692,6 +10813,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Bastion Apex": "Bastion Apex"
           }
         },
         "Corpin Sanctuary": {
@@ -10705,6 +10829,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Corpin Sanctuary": "Corpin Sanctuary"
           }
         },
         "Helkas": {
@@ -10882,6 +11009,11 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Mine": "Mine",
+            "Green": "Green",
+            "Boneway": "Boneway"
           }
         },
         "Keeper's Crossing": {
@@ -10941,6 +11073,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Keeper's Crossing": "Keeper's Crossing"
           }
         },
         "Lake Jinro": {
@@ -10952,6 +11087,9 @@
             "Forgotten Wreckage": "Forgotten Wreckage",
             "Loot-Lined Hollow": "Loot-Lined Hollow",
             "Garganthus Tunnel": "Garganthus Tunnel"
+          },
+          "levels": {
+            "Lake Jinro": "Lake Jinro"
           }
         },
         "Lightless Halls": {
@@ -10959,6 +11097,9 @@
           "notes": {
             "Brazier Nook": "Brazier Nook",
             "Stone Altar": "Stone Altar"
+          },
+          "levels": {
+            "Lightless Halls": "Lightless Halls"
           }
         },
         "Mythspire Observatory - Lower": {
@@ -10995,6 +11136,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Mythspire Observatory - Lower": "Mythspire Observatory - Lower"
           }
         },
         "Mythspire Observatory - Upper": {
@@ -11020,6 +11164,9 @@
             "Elevation: Increase": {
               "name": "Elevation: Increase"
             }
+          },
+          "levels": {
+            "Mythspire Observatory - Upper": "Mythspire Observatory - Upper"
           }
         },
         "Repurposed Quarry - Lower": {
@@ -11057,6 +11204,12 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Repurposed Quarry - Lower": "Repurposed Quarry - Lower"
+          },
+          "tokens": {
+            "Mutated Ultra Drake": "Mutated Ultra Drake"
           }
         },
         "Repurposed Quarry - Middle": {
@@ -11110,6 +11263,13 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Repurposed Quarry - Middle": "Repurposed Quarry - Middle"
+          },
+          "tokens": {
+            "Vivisector": "Vivisector",
+            "Kalasak": "Kalasak"
           }
         },
         "Repurposed Quarry - Upper": {
@@ -11147,6 +11307,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Repurposed Quarry - Upper": "Repurposed Quarry - Upper"
           }
         },
         "Seawall Alleys": {
@@ -11176,6 +11339,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Seawall Alleys": "Seawall Alleys"
           }
         },
         "Shent Moon Temple": {
@@ -11257,6 +11423,9 @@
             "Spawn Zone - West": {
               "name": "Spawn Zone - West"
             }
+          },
+          "levels": {
+            "Temple": "Temple"
           }
         },
         "Steed's Point": {
@@ -11441,6 +11610,10 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Ground": "Ground",
+            "Roofs": "Roofs"
           }
         },
         "The Bleak Archive": {
@@ -11510,6 +11683,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "The Bleak Archive": "The Bleak Archive"
           }
         },
         "Ushna Dredging Docks": {
@@ -11546,6 +11722,9 @@
             "Befouled Waters SW": {
               "name": "Befouled Waters SW"
             }
+          },
+          "levels": {
+            "Ushna Dredging Docks": "Ushna Dredging Docks"
           }
         },
         "Vortest Tower": {
@@ -11615,6 +11794,10 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Signara": "Signara",
+            "The Golden Flats": "The Golden Flats"
           }
         },
         "Writhing Grave": {
@@ -11643,6 +11826,9 @@
             "Surface - Underwater": {
               "name": "Surface - Underwater"
             }
+          },
+          "levels": {
+            "Writhing Grave": "Writhing Grave"
           }
         },
         "Yakoshta Mine": {
@@ -11761,28 +11947,110 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Upper Mine": "Upper Mine",
+            "Lower Tracks": "Lower Tracks"
           }
         },
         "Vista: Barrows": {
-          "name": "Vista: Barrows"
+          "name": "Vista: Barrows",
+          "levels": {
+            "Barrows Base": "Barrows Base",
+            "Oceanside Cliffs": "Oceanside Cliffs"
+          }
         },
         "Vista: Fogbound Caverns": {
-          "name": "Vista: Fogbound Caverns"
+          "name": "Vista: Fogbound Caverns",
+          "levels": {
+            "Blank (Expanse)": "Blank (Expanse)",
+            "Blank (Expanse + Formations)": "Blank (Expanse + Formations)",
+            "Blank (Expanse + Lake)": "Blank (Expanse + Lake)",
+            "Blank (Caverns)": "Blank (Caverns)",
+            "Blank (Caverns + Lake)": "Blank (Caverns + Lake)",
+            "Lakeview Expanse": "Lakeview Expanse",
+            "Enclosed Hollow": "Enclosed Hollow",
+            "Bastion Approach": "Bastion Approach",
+            "Bastion Approach (Dark)": "Bastion Approach (Dark)",
+            "Distant Bastion": "Distant Bastion",
+            "Lakeside Offshoot": "Lakeside Offshoot",
+            "Hazardous Labyrinth": "Hazardous Labyrinth"
+          }
         },
         "Vista: Golden Flats": {
-          "name": "Vista: Golden Flats"
+          "name": "Vista: Golden Flats",
+          "levels": {
+            "Golden Flats Base": "Golden Flats Base",
+            "Crossroads": "Crossroads",
+            "Crossroads - Camp": "Crossroads - Camp",
+            "Gully Path": "Gully Path",
+            "Gully Path - Camp": "Gully Path - Camp",
+            "Ridge Valley": "Ridge Valley",
+            "Ridge Valley Road": "Ridge Valley Road",
+            "Brambled Crossing (Blocked)": "Brambled Crossing (Blocked)",
+            "Brambled Crossing (Cleared)": "Brambled Crossing (Cleared)",
+            "Burning Farmstead": "Burning Farmstead",
+            "Merchant Caravan": "Merchant Caravan",
+            "Riverside Farmstead": "Riverside Farmstead",
+            "Nain Outskirts": "Nain Outskirts"
+          }
         },
         "Vista: Mycelian Expanse": {
-          "name": "Vista: Mycelian Expanse"
+          "name": "Vista: Mycelian Expanse",
+          "levels": {
+            "Mycelian Expanse Base A": "Mycelian Expanse Base A",
+            "Mycelian Expanse Base B": "Mycelian Expanse Base B",
+            "Overgrowth": "Overgrowth",
+            "Cavern Ledge": "Cavern Ledge",
+            "Cavern Ledge - Camp": "Cavern Ledge - Camp",
+            "Scout Camp": "Scout Camp",
+            "Disturbed Ossuary": "Disturbed Ossuary",
+            "Trapped Clearing": "Trapped Clearing",
+            "Vast Overlook": "Vast Overlook"
+          }
         },
         "Vista: Rustvar Valleys": {
-          "name": "Vista: Rustvar Valleys"
+          "name": "Vista: Rustvar Valleys",
+          "levels": {
+            "Rustvar Valleys Blank": "Rustvar Valleys Blank",
+            "Mountainside Plateaus": "Mountainside Plateaus",
+            "Riverside Path": "Riverside Path",
+            "Riverside Path - Camp": "Riverside Path - Camp",
+            "Path Across": "Path Across",
+            "Refugee Caravan": "Refugee Caravan",
+            "Derelict Farm": "Derelict Farm",
+            "Moon Blossom Field": "Moon Blossom Field",
+            "Storsa's Strand": "Storsa's Strand"
+          }
         },
         "Vista: Sinkhole Depths": {
-          "name": "Vista: Sinkhole Depths"
+          "name": "Vista: Sinkhole Depths",
+          "levels": {
+            "Sinkhole Depths Base A": "Sinkhole Depths Base A",
+            "Sinkhole Depths Base B": "Sinkhole Depths Base B",
+            "Bramble Ledge": "Bramble Ledge",
+            "Bramble Ledge - Camp": "Bramble Ledge - Camp",
+            "Lush Overlook": "Lush Overlook",
+            "Glowing Overgrowth": "Glowing Overgrowth",
+            "Overhanging Precipice": "Overhanging Precipice",
+            "Fortified Encampment": "Fortified Encampment",
+            "Rock Bottom": "Rock Bottom"
+          }
         },
         "Vista: Splinter Canyons": {
-          "name": "Vista: Splinter Canyons"
+          "name": "Vista: Splinter Canyons",
+          "levels": {
+            "Canyons Base - Chasm": "Canyons Base - Chasm",
+            "Canyons Base - Flat": "Canyons Base - Flat",
+            "Canyons Base - Ledges": "Canyons Base - Ledges",
+            "Canyons Base - Water": "Canyons Base - Water",
+            "Chasm Crevasse": "Chasm Crevasse",
+            "Ledge Wreckage": "Ledge Wreckage",
+            "Lush Basin": "Lush Basin",
+            "Winding Brambles": "Winding Brambles",
+            "Water Surge": "Water Surge",
+            "Bramble Maze": "Bramble Maze"
+          }
         },
         "Vista: Arcturel": {
           "name": "Vista: Arcturel",
@@ -11803,25 +12071,50 @@
                 }
               }
             }
+          },
+          "levels": {
+            "The Tradeway": "The Tradeway",
+            "The Dives": "The Dives",
+            "Rock Bottom": "Rock Bottom"
           }
         },
         "Vista: Marlstone Gala": {
-          "name": "Vista: Marlstone Gala"
+          "name": "Vista: Marlstone Gala",
+          "levels": {
+            "Gala": "Gala"
+          }
         },
         "Vista: Ordain Overview": {
-          "name": "Vista: Ordain Overview"
+          "name": "Vista: Ordain Overview",
+          "levels": {
+            "Ordain Overview": "Ordain Overview"
+          }
         },
         "Vista: Seawall": {
-          "name": "Vista: Seawall"
+          "name": "Vista: Seawall",
+          "levels": {
+            "Seawall": "Seawall"
+          }
         },
         "Vista: Skybrush": {
-          "name": "Vista: Skybrush"
+          "name": "Vista: Skybrush",
+          "levels": {
+            "Skybrush - Gloomy": "Skybrush - Gloomy",
+            "Skybrush - Cheery": "Skybrush - Cheery"
+          }
         },
         "Vista: The Hallows": {
-          "name": "Vista: The Hallows"
+          "name": "Vista: The Hallows",
+          "levels": {
+            "Hallows": "Hallows",
+            "Alleyway": "Alleyway"
+          }
         },
         "Vista: The Sleeping Vault": {
-          "name": "Vista: The Sleeping Vault"
+          "name": "Vista: The Sleeping Vault",
+          "levels": {
+            "Nethehepticas Sleeps": "Nethehepticas Sleeps"
+          }
         },
         "Ordain Docks": {
           "name": "Ordain Docks",
@@ -11845,6 +12138,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Ordain Docks": "Ordain Docks"
           }
         },
         "Ordain Flats": {
@@ -11858,6 +12154,11 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Apartment Block": "Apartment Block",
+            "Bonfire Celebration": "Bonfire Celebration",
+            "Blacksmith Row": "Blacksmith Row"
           }
         },
         "Ordain Spires": {
@@ -12076,6 +12377,11 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Gardens": "Gardens",
+            "Markets": "Markets",
+            "Library": "Library"
           }
         },
         "Chamber of Agaseros - Entrance": {
@@ -12089,6 +12395,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Chamber of Agaseros - Entrance": "Chamber of Agaseros - Entrance"
           }
         },
         "Chamber of Agaseros - Main Level": {
@@ -12113,6 +12422,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Chamber of Agaseros - Main Level": "Chamber of Agaseros - Main Level"
           }
         },
         "Chamber of Agaseros - Reservoir": {
@@ -12137,6 +12449,9 @@
             "Central Stair Landing": {
               "name": "Central Stair Landing"
             }
+          },
+          "levels": {
+            "Chamber of Agaseros - Reservoir": "Chamber of Agaseros - Reservoir"
           }
         },
         "Forgotten Cistern": {
@@ -12156,6 +12471,9 @@
             "Wood": {
               "name": "Wood"
             }
+          },
+          "levels": {
+            "Forgotten Cistern": "Forgotten Cistern"
           }
         },
         "Jekeroka Villa": {
@@ -12197,6 +12515,9 @@
             "Pressure Traps": {
               "name": "Pressure Traps"
             }
+          },
+          "levels": {
+            "Jekeroka Villa": "Jekeroka Villa"
           }
         },
         "Lantern Roads": {
@@ -12226,6 +12547,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Lantern Roads": "Lantern Roads"
           }
         },
         "Marlstone Manor - First Floor": {
@@ -12313,6 +12637,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Marlstone Manor - First Floor": "Marlstone Manor - First Floor"
           }
         },
         "Marlstone Manor - Second Floor": {
@@ -12389,6 +12716,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Marlstone Manor - Second Floor": "Marlstone Manor - Second Floor"
           }
         },
         "Oldcraft Lodge": {
@@ -12419,6 +12749,9 @@
             "Surface: Water": {
               "name": "Surface: Water"
             }
+          },
+          "levels": {
+            "Oldcraft Lodge": "Oldcraft Lodge"
           }
         },
         "Ordain Burial Grounds": {
@@ -12449,6 +12782,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Ordain Burial Grounds": "Ordain Burial Grounds"
           }
         },
         "Toothbreaker Hideout": {
@@ -12508,6 +12844,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Toothbreaker Hideout": "Toothbreaker Hideout"
           }
         },
         "Traveler's Rest Basement": {
@@ -12549,6 +12888,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Traveler's Rest Basement": "Traveler's Rest Basement"
           }
         },
         "Traveler's Rest Healing House": {
@@ -12607,16 +12949,40 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Traveler's Rest Healing House": "Traveler's Rest Healing House"
           }
         },
         "Vista: Ordain Streets": {
-          "name": "Vista: Ordain Streets"
+          "name": "Vista: Ordain Streets",
+          "levels": {
+            "Ordain Streets - Brick": "Ordain Streets - Brick",
+            "Ordain Streets - Offset Stone": "Ordain Streets - Offset Stone",
+            "Ordain Streets - Marble": "Ordain Streets - Marble",
+            "Ordain Streets - Flagstone": "Ordain Streets - Flagstone",
+            "Residential Corridor": "Residential Corridor",
+            "Dockside Street": "Dockside Street",
+            "Lilifeld Stations Granary": "Lilifeld Stations Granary",
+            "Lower Ashvale Healing House": "Lower Ashvale Healing House",
+            "Foxlairs Stables": "Foxlairs Stables",
+            "Palisade Cross Inn": "Palisade Cross Inn",
+            "Numinous Shrines": "Numinous Shrines",
+            "Tayan Embassy Garden": "Tayan Embassy Garden",
+            "Huge Mural": "Huge Mural"
+          }
         },
         "Vista: Arbore Sanctorus": {
-          "name": "Vista: Arbore Sanctorus"
+          "name": "Vista: Arbore Sanctorus",
+          "levels": {
+            "Arbore Sanctorus": "Arbore Sanctorus"
+          }
         },
         "Vista: Caste": {
-          "name": "Vista: Caste"
+          "name": "Vista: Caste",
+          "levels": {
+            "Caste": "Caste"
+          }
         },
         "Bronze Rask Theater": {
           "name": "Bronze Rask Theater",
@@ -12644,13 +13010,32 @@
             "Cage": {
               "name": "Cage"
             }
+          },
+          "levels": {
+            "Bronze Rask Theater": "Bronze Rask Theater"
           }
         },
         "Vista: Yakoshta": {
-          "name": "Vista: Yakoshta"
+          "name": "Vista: Yakoshta",
+          "levels": {
+            "Yakoshta": "Yakoshta"
+          }
         },
         "Vista: Ordain Interiors": {
-          "name": "Vista: Ordain Interiors"
+          "name": "Vista: Ordain Interiors",
+          "levels": {
+            "Ordain Interiors - Brick": "Ordain Interiors - Brick",
+            "Ordain Interiors - Oak Boards": "Ordain Interiors - Oak Boards",
+            "Ordain Interiors - Cobblestone": "Ordain Interiors - Cobblestone",
+            "Cozy Lounge": "Cozy Lounge",
+            "House Cevher HQ": "House Cevher HQ",
+            "House Cevher HQ (hiding)": "House Cevher HQ (hiding)",
+            "Veiled Chain HQ": "Veiled Chain HQ",
+            "Bastilla Estate Parlor": "Bastilla Estate Parlor",
+            "Blacksmith's Workshop": "Blacksmith's Workshop",
+            "Mystic's Apartment": "Mystic's Apartment",
+            "Cherish's Office": "Cherish's Office"
+          }
         },
         "Ember's Bounty": {
           "name": "Ember's Bounty",
@@ -12669,6 +13054,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Ember's Bounty": "Ember's Bounty"
           }
         },
         "Spellbreaker Tower (Level 1)": {
@@ -12733,6 +13121,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Spellbreaker Tower (Level 1)": "Spellbreaker Tower (Level 1)"
           }
         },
         "Spellbreaker Tower (Level 2)": {
@@ -12802,6 +13193,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Spellbreaker Tower (Level 2)": "Spellbreaker Tower (Level 2)"
           }
         },
         "Spellbreaker Tower (Level 3)": {
@@ -12854,6 +13248,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Spellbreaker Tower (Level 3)": "Spellbreaker Tower (Level 3)"
           }
         },
         "Spellbreaker Tower (Level 4)": {
@@ -12923,6 +13320,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Spellbreaker Tower (Level 4)": "Spellbreaker Tower (Level 4)"
           }
         },
         "Spellbreaker Tower (Level 5)": {
@@ -12995,6 +13395,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Spellbreaker Tower (Level 5)": "Spellbreaker Tower (Level 5)"
           }
         },
         "Spellbreaker Tower (Level 6)": {
@@ -13047,6 +13450,9 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Spellbreaker Tower (Level 6)": "Spellbreaker Tower (Level 6)"
           }
         },
         "Spellbreaker Tower (Level 7)": {
@@ -13063,10 +13469,19 @@
                 }
               }
             }
+          },
+          "levels": {
+            "Spellbreaker Tower (Level 7)": "Spellbreaker Tower (Level 7)"
           }
         },
         "Vista: Brevin": {
-          "name": "Vista: Brevin"
+          "name": "Vista: Brevin",
+          "levels": {
+            "Brevin": "Brevin",
+            "Brevin Festival": "Brevin Festival",
+            "Brevin Festival, Bridge Complete": "Brevin Festival, Bridge Complete",
+            "Brevin, Bridge Complete": "Brevin, Bridge Complete"
+          }
         },
         "Kalion Stadium Underworks": {
           "name": "Kalion Stadium Underworks",
@@ -13090,6 +13505,9 @@
             "Ritual Chamber": "Ritual Chamber",
             "Chantry": "Chantry",
             "Arcane Workshop": "Arcane Workshop"
+          },
+          "levels": {
+            "Kalion Stadium Underworks": "Kalion Stadium Underworks"
           }
         },
         "The Pit Trap": {
@@ -13106,10 +13524,17 @@
                 }
               }
             }
+          },
+          "levels": {
+            "The Pit Trap": "The Pit Trap"
           }
         },
         "Vista: Temple of Sockets": {
-          "name": "Vista: Temple of Sockets"
+          "name": "Vista: Temple of Sockets",
+          "levels": {
+            "Temple Hall": "Temple Hall",
+            "Solemn Service": "Solemn Service"
+          }
         },
         "Flotsam Canal Market": {
           "name": "Flotsam Canal Market",
@@ -13182,6 +13607,11 @@
             "Spawn - Promenade East": {
               "name": "Spawn - Promenade East"
             }
+          },
+          "levels": {
+            "Dockside": "Dockside",
+            "Stoneside": "Stoneside",
+            "Promenade": "Promenade"
           }
         },
         "Redwalk Ramble": {
@@ -13207,10 +13637,16 @@
             "Spawn - South Entrance": {
               "name": "Spawn - South Entrance"
             }
+          },
+          "levels": {
+            "Redwalk Ramble": "Redwalk Ramble"
           }
         },
         "Vista: Cindarin Temple": {
-          "name": "Vista: Cindarin Temple"
+          "name": "Vista: Cindarin Temple",
+          "levels": {
+            "Main Chamber": "Main Chamber"
+          }
         },
         "Aedir Signalpost": {
           "name": "Aedir Signalpost",
@@ -13357,13 +13793,37 @@
                 }
               }
             }
-          }
+          },
+          "levels": {
+            "Underforge": "Underforge",
+            "Basement": "Basement",
+            "Entry": "Entry",
+            "Lookout": "Lookout",
+            "Suarrok Nest": "Suarrok Nest"
+          },
+          "navName": "Tower Overlook"
         },
         "Vista: Redrak Fields": {
-          "name": "Vista: Redrak Fields"
+          "name": "Vista: Redrak Fields",
+          "levels": {
+            "Base Template": "Base Template",
+            "Traveling Caravan": "Traveling Caravan",
+            "Earthen Henge": "Earthen Henge",
+            "Obsidian Vines": "Obsidian Vines",
+            "Agrimage Courtyard": "Agrimage Courtyard",
+            "Redrak Farm": "Redrak Farm",
+            "Earthen Henge (active)": "Earthen Henge (active)",
+            "Winding Road": "Winding Road"
+          }
         },
         "Vista: The Ordinate": {
-          "name": "Vista: The Ordinate"
+          "name": "Vista: The Ordinate",
+          "levels": {
+            "Empty": "Empty",
+            "Sparse Crowd": "Sparse Crowd",
+            "Medium Crowd": "Medium Crowd",
+            "Dense Crowd": "Dense Crowd"
+          }
         }
       },
       "macros": {
