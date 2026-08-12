@@ -171,11 +171,11 @@
       "actions": {
         "elementalSummonSprite": {
           "name": "召唤精灵 Summon Sprite",
-          "description": "<p>@ref[actor.name]{该生物}在 60 英尺内一处它能察觉、且含有水或与水相邻的空间，召唤一个 @UUID[Actor.sVnMPbEj5P18Yo8V]{水之精灵}。</p><p>@ref[actor.name]{该生物}同时只能以这种方式召唤一个精灵。</p>"
+          "description": "<p>@ref[actor.name]{该生物}在 60 英尺内一处它能察觉、且含有水或与水相邻的空间，召唤一个 @UUID[Actor.sVnMPbEj5P18Yo8V]{水妖精}。</p><p>@ref[actor.name]{该生物}同时只能以这种方式召唤一个精灵。</p>"
         },
         "elementalSummonVisitor": {
           "name": "召唤访客 Summon Visitor",
-          "description": "<p>@ref[actor.name]{该生物}在 60 英尺内一处它能察觉、且含有水或与水相邻的空间，召唤一个 @UUID[Actor.cIX3WXHAZ0gAXCNS]{水之访客}。</p><p>@ref[actor.name]{该生物}同时只能以这种方式召唤一个访客。</p>"
+          "description": "<p>@ref[actor.name]{该生物}在 60 英尺内一处它能察觉、且含有水或与水相邻的空间，召唤一个 @UUID[Actor.cIX3WXHAZ0gAXCNS]{水访客}。</p><p>@ref[actor.name]{该生物}同时只能以这种方式召唤一个访客。</p>"
         }
       }
     },
@@ -225,7 +225,7 @@
       "actions": {
         "graveMark": {
           "name": "墓之印记 Grave Mark",
-          "description": "<p>在以近战攻击造成<strong>暴击</strong>之后，@ref[actor.name]{该生物}攻击目标的<strong>意志</strong>防御；成功时留下一道墓之印记，施加@Condition[exhausted]状态，该状态会持续到目标完成一次<strong>休息</strong>为止。</p><p>若一个带有墓之印记的人型生物在印记效果持续期间死亡，它会在其后续回合从死亡中站起，化为可怖的 @UUID[Actor.e67w5IOBScYtJKXr]{恐骇者}。</p>",
+          "description": "<p>在以近战攻击造成<strong>暴击</strong>之后，@ref[actor.name]{该生物}攻击目标的<strong>意志</strong>防御；成功时留下一道墓之印记，施加@Condition[exhausted]状态，该状态会持续到目标完成一次<strong>休息</strong>为止。</p><p>若一个带有墓之印记的人型生物在印记效果持续期间死亡，它会在其后续回合从死亡中站起，化为可怖的 @UUID[Actor.e67w5IOBScYtJKXr]{霍伦多尔}。</p>",
           "condition": "当以近战攻击造成暴击时。"
         },
         "graveMarkHorrendor": {

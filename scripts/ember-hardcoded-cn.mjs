@@ -28,13 +28,22 @@ const warn = (...a) => console.warn(`${MODULE} |`, ...a);
 /*  1. 翻译数据                                                  */
 /* ============================================================ */
 
-/** 同调（11 轮元素之月 / 界域），译名与 compendium、lang 保持一致 */
+/**
+ * 同调（11 轮元素之月 / 界域），译名与 compendium、lang 保持一致。
+ *
+ * 两套键都要有：合集页名（`Attunement: ${page.name}` 走这一套）与 `ember.CONST.ATTUNEMENTS[x].label`
+ * 的短名（`Activate Attunement: ${label}` 走这一套，dnd5e-async.mjs:406 定义为 Abyss / Heart，不带 The / of Ember）。
+ * 2026-08-13 第三轮：`Aura` 原译「灵气」是错的 —— 它是月亮专名，Cosmos 页 name 字段即「奥拉 Aura」，
+ * 同一份月亮清单里 Mayis/Cora/Ragen/Orbis/Akon 全是音译；「灵气」是 `Aura Spellcraft` 手势的 adjective，不是月名。
+ */
 const ATTUNEMENTS = {
   "The Abyss": "深渊",
+  "Abyss": "深渊",
   "Akon": "阿肯",
-  "Aura": "灵气",
+  "Aura": "奥拉",
   "Cora": "科拉",
   "Heart of Ember": "余烬之心",
+  "Heart": "余烬之心",
   "Luxarum": "卢克萨鲁姆",
   "Mayis": "玛伊斯",
   "Orbis": "奥比斯",
@@ -48,19 +57,19 @@ const LANGUAGES = {
   "Common": "通用语",
   "Sign": "手语",
   "Arcden": "奥克登语",
-  "Cascal": "卡斯卡语",
-  "Forest Speech": "森语",
+  "Cascal": "卡斯卡尔语",
+  "Forest Speech": "森林语",
   "Hardac": "哈达克语",
   "Imperial": "帝国语",
   "Solical": "索利卡语",
   "Mithia": "密西亚语",
   "Luma": "卢玛语",
-  "Kaziric": "卡兹瑞克语",
+  "Kaziric": "卡兹里克语",
   "Scripta": "书文语",
   "Wyrdic": "维尔迪克语",
-  "Pathward": "歧路语",
+  "Pathward": "径道语",
   "Scor": "斯科尔语",
-  "Towyr": "托威尔语",
+  "Towyr": "托维尔语",
   "Windclaw": "风爪语",
   "Abyssal": "深渊语",
   "Draconic": "龙语",
@@ -68,7 +77,7 @@ const LANGUAGES = {
   "Lunix": "月语",
   "Caligon": "卡利贡语",
   "Eonic": "永世语",
-  "Harmos": "和谐语",
+  "Harmos": "哈莫斯语",
   "Thieves' Cant": "盗贼黑话"
 };
 
@@ -96,13 +105,17 @@ const KNOWLEDGE = {
   "Souls": "灵魂", "Subterranea": "地下世界", "Tracking": "追踪", "Trade": "贸易",
   "Undeath": "亡灵化", "Warfare": "战争", "Weather": "天气",
   // 以下四条为 Ember 新增
-  "Abyssals": "深渊生物", "Aedir": "埃迪尔", "Leviathans": "利维坦", "Shent": "申特"
+  "Abyssals": "深渊裔", "Aedir": "艾迪尔", "Leviathans": "利维坦", "Shent": "申特"
 };
 
-/** 音乐氛围 */
+/**
+ * 音乐氛围。**只有这两档** —— `EmberSoundscape.MOODS`（ember.mjs:15606）就是
+ * `{CALM: "calm", TENSION: "tension"}`，enricher 拼的是 `Music Mood: ${mood.titleCase()}`。
+ * 原来那五个键（战斗/探索/环境/旅行/休息）在 ember 0.6.x 里一个都不会出现。
+ * 译名取 lang/cn.json 的 `EMBER.SoundscapeMoodCalm` / `EMBER.SoundscapeMoodTension`。
+ */
 const MOODS = {
-  "Combat": "战斗", "Exploration": "探索", "Ambience": "环境",
-  "Travel": "旅行", "Rest": "休息"
+  "Calm": "平静", "Tension": "紧张"
 };
 
 /** 带前缀的标签：`前缀: 名字` → `中文前缀：中文名字` */
@@ -129,30 +142,30 @@ const EXACT = {
   // 事件状态提示
   "Event Completed": "事件已完成",
   "Event Not Completed": "事件未完成",
-  "Event Outcome Completed": "事件结局已完成",
-  "Event Outcome Not Completed": "事件结局未完成",
+  "Event Outcome Completed": "事件结果已完成",
+  "Event Outcome Not Completed": "事件结果未完成",
 
   // 角色卡 / 日志分节标题
-  "Gamemaster Information": "主持人信息",
+  "Gamemaster Information": "游戏主持人信息",
   "Ancestry Details": "血统详情",
   "Culture Details": "文化详情",
   "Notable Inhabitants": "知名居民",
   "Secret Lore": "秘辛",
   "At a Glance": "概览",
-  "Setting the Scene": "场景铺陈",
+  "Setting the Scene": "场景设定",
   "Event Details": "事件详情",
   "Journal Summary": "日志摘要",
-  "Event Outcomes": "事件结局",
+  "Event Outcomes": "事件结果",
   "Quest Details": "任务详情",
   "Involved Locations": "涉及地点",
   "Event Summary": "事件摘要",
-  "Biome Details": "生态域详情",
+  "Biome Details": "生物群系详情",
   "Locations": "地点",
   "Location Details": "地点详情",
-  "Biomes": "生态域",
+  "Biomes": "生物群系",
   "Related Locations": "相关地点",
   "Events": "事件",
-  "Quest Overview": "任务总览",
+  "Quest Overview": "任务概览",
   "Standalone Event": "独立事件",
   "Quest Event": "任务事件",
 
@@ -161,7 +174,7 @@ const EXACT = {
   "Reset Event": "重置事件",
   "Complete Event": "完成事件",
   "Mark as Discovered": "标记为已发现",
-  "Reset Discovery": "重置发现状态",
+  "Reset Discovery": "重置发现",
   "Award Attunements": "授予同调",
   "Attunements Awarded": "同调已授予",
   "No Awarded Attunements": "无可授予的同调",
@@ -179,13 +192,13 @@ const EXACT = {
   "Add to Party?": "加入队伍？",
   "Re-combine Caravans?": "重新合并商队？",
   "Initiate Event": "启动事件",
-  "Select Outcome": "选择结局",
-  "Delete Saved Composition?": "删除已保存的编成？",
-  "Transition to Pathways?": "转入歧路？",
+  "Select Outcome": "选择结果",
+  "Delete Saved Composition?": "删除已保存的构图？",
+  "Transition to Pathways?": "转入通路？",
   "Ring Alarm Bell?": "敲响警钟？",
   "Modify Flow Control Valve?": "调整流量控制阀？",
   "Mine Cart Destination": "矿车目的地",
-  "Install Junction Wheel": "安装道岔轮",
+  "Install Junction Wheel": "安装路口轮盘",
   "Elevator Controls": "升降机控制",
   "Elevator Destination": "升降机目的地",
   "Steam Cleansing Cutoff": "蒸汽净化切断",
@@ -205,8 +218,10 @@ const PATTERNS = [
   { re: /^Award Attunement: (.+)$/, cn: (m) => `授予同调：${m[1]}` },
   { re: /^Revoke Attunement: (.+)$/, cn: (m) => `撤销同调：${m[1]}` },
   { re: /^Activate Attunement: (.+)$/, cn: (m) => `激活同调：${translateLeaf(m[1], ATTUNEMENTS)}` },
-  { re: /^Day (\d+)$/, cn: (m) => `第 ${m[1]} 天` },
-  { re: /^Day\b(.*)$/, cn: (m) => `日${m[1]}` }
+  // 世界时钟拼的是整串 `Day 43 - 12:00`（ember.mjs:24576），法典日志表头是纯 `Day 43`
+  // （ember.mjs:25243），一条正则同时吃掉两种。原先那条 `^Day\b(.*)$` 兜底会把整串译成
+  // 「日 43 - 12:00」，还会误伤远景资源名 `Day, Generic` / `Day, Clear`（ember.mjs:32102），已删。
+  { re: /^Day (\d+)\b(.*)$/, cn: (m) => `第 ${m[1]} 天${m[2]}` }
 ];
 
 /**
@@ -301,7 +316,10 @@ function translateNode(node) {
     return;
   }
   if (node.nodeType !== Node.ELEMENT_NODE) return;
-  for (const attr of ["data-tooltip", "title", "aria-label"]) {
+  // v14 的 tooltip 取值顺序是 tooltipHtml > tooltipText > tooltip（tooltip-manager.mjs:138）。
+  // ember 的事件状态提示走的正是 data-tooltip-text（ember.mjs:23042/23047），
+  // 漏掉它等于「事件已完成 / 事件未完成」那几条永不生效。
+  for (const attr of ["data-tooltip", "data-tooltip-text", "data-tooltip-html", "title", "aria-label"]) {
     const v = node.getAttribute?.(attr);
     if (v) {
       const t = translateText(v);
@@ -425,7 +443,20 @@ function patchRenderedApplications() {
       const cls = root.className ?? "";
       const id = app?.constructor?.name ?? "";
       // 只处理 Ember 自己的界面，避免把别的模块的英文也一起改了
-      if (!/ember/i.test(cls) && !/^Ember/.test(id)) return;
+      if (!/ember/i.test(cls) && !/^Ember/.test(id)) {
+        // 例外：Ember 的十五个确认框走的是**原生 DialogV2**（根元素 class 只有 "dialog"、
+        // 类名就是 "DialogV2"），标题是硬编码英文、babele 与 i18n 两条通道都够不着，
+        // 而上面那道 ember 闸会把它整个挡掉。
+        // 闸只放行 DialogV2 这一档，不放行全世界的 ApplicationV2 ——
+        // EXACT 里有 Path / Culture / Events 这类通用词，别的模块的窗口标题恰好同名就会被误改。
+        if (id !== "DialogV2" && !/(^|\s)dialog(\s|$)/.test(cls)) return;
+        const title = root.querySelector?.(".window-title");
+        if (title && !title.children.length) {
+          const t = translateText(title.textContent);
+          if (t !== title.textContent) title.textContent = t;
+        }
+        return;
+      }
       translateNode(root);
     } catch (err) {
       warn("界面文本翻译失败：", err);
