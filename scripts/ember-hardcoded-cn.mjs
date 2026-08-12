@@ -200,6 +200,40 @@ const PATTERNS = [
   { re: /^Day\b(.*)$/, cn: (m) => `日${m[1]}` }
 ];
 
+/**
+ * Ember 历法的月名与星期名。
+ *
+ * 这是实测反馈出来的一个坑：日历里 **seasons 走 i18n、months 不走**。
+ * Ember 的 `EMBER_CALENDAR_CONFIG` 是这么写的：
+ *
+ *     months:  { values: [{name: "Blooming"}, …] }                       ← 裸英文
+ *     seasons: { values: [{name: "EMBER.CALENDAR.SEASONS.BLOOMING"}, …] } ← i18n 键
+ *
+ * 所以我们在 `lang/cn.json` 里把 `EMBER.CALENDAR.SEASONS.*` 全译了也没用 ——
+ * 日历条上显示的日期串由 `formatEmberDate` 用**月名**拼出来，那一份 i18n 够不着。
+ *
+ * 译名与 `lang/cn.json` 的 `EMBER.CALENDAR.SEASONS.*` **逐字一致**：同一个词在
+ * 「季节」和「月份」两处必须同名，否则玩家会以为是两回事。
+ */
+const CALENDAR_MONTHS = {
+  "Seeding": "播种",
+  "Blooming": "绽放",
+  "Steading": "庄园",
+  "Gleaning": "拾取",
+  "Withering": "凋零",
+  "Stilling": "寂止"
+};
+
+/** 星期名同样是裸英文（`days.values[].name`） */
+const CALENDAR_DAYS = {
+  "Monday": "周一", "Tuesday": "周二", "Wednesday": "周三", "Thursday": "周四",
+  "Friday": "周五", "Saturday": "周六", "Sunday": "周日"
+};
+const CALENDAR_DAY_ABBR = {
+  "Mon": "一", "Tues": "二", "Wed": "三", "Thu": "四",
+  "Fri": "五", "Sat": "六", "Sun": "日"
+};
+
 /* ============================================================ */
 /*  2. 翻译引擎                                                  */
 /* ============================================================ */
@@ -323,6 +357,40 @@ function patchCrucibleConfig() {
 }
 
 /**
+ * 改写历法里的月名与星期名。
+ *
+ * 这两处是**数据**不是文案：`CONFIG.time.worldCalendarConfig` 里存的就是裸英文，
+ * 日历条的日期串由它拼出来，i18n 与 babele 两条通道都碰不到。
+ *
+ * 两个对象都要改：`CONFIG.time.worldCalendarConfig` 是原始配置，
+ * `game.time.calendar` 是已经实例化出来的日历 —— 实例可能持有配置的深拷贝，
+ * 只改其中一个可能不生效。两边都改，且都做「翻不到就不动」的保护。
+ */
+function patchCalendarNames() {
+  const targets = [CONFIG?.time?.worldCalendarConfig, game?.time?.calendar].filter(Boolean);
+  if (!targets.length) return warn("找不到历法配置，月名补丁跳过。");
+  let n = 0;
+  for (const cal of targets) {
+    for (const [key, table] of [["months", CALENDAR_MONTHS], ["days", CALENDAR_DAYS]]) {
+      for (const v of cal?.[key]?.values ?? []) {
+        if (v && typeof v.name === "string" && table[v.name]) { v.name = table[v.name]; n++; }
+        if (v && typeof v.abbreviation === "string" && CALENDAR_DAY_ABBR[v.abbreviation]) {
+          v.abbreviation = CALENDAR_DAY_ABBR[v.abbreviation];
+        }
+      }
+    }
+  }
+  // 日历条多半已经渲染过了，改完要让它重画一次，否则要等下一次时间变动才显示中文
+  try {
+    for (const app of Object.values(ui.windows ?? {})) {
+      if (/calendar/i.test(app?.constructor?.name ?? "")) app.render(false);
+    }
+    document.querySelector("#ember-calendar")?.dispatchEvent(new Event("change"));
+  } catch { /* 重画失败不影响下次开界面 */ }
+  log(`已改写历法里 ${n} 个月名/星期名。`);
+}
+
+/**
  * Ember 各类应用（角色卡、任务面板、日历）渲染出来的分节标题与按钮同样是硬编码。
  * 在 renderApplication 之后对根元素做一次 DOM 遍历。
  */
@@ -353,6 +421,7 @@ Hooks.once("ready", () => {
   if (!game.modules.get("ember")?.active) return;
   applyOnce(CONFIG, "__emberCnEnrichers", patchEnrichers, "富文本增强器");
   applyOnce(globalThis.crucible?.CONFIG ?? {}, "__emberCnConfig", patchCrucibleConfig, "crucible.CONFIG");
+  applyOnce(CONFIG, "__emberCnCalendar", patchCalendarNames, "历法月名");
   applyOnce(CONFIG, "__emberCnRender", patchRenderedApplications, "界面渲染");
   log("Ember 硬编码字符串补丁已就绪。");
 });
