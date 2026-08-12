@@ -73,9 +73,18 @@ const LANGUAGES = {
 };
 
 /**
- * 知识领域。前 30 条 crucible 本体的 lang 已经有译名，这里重复一份是因为
+ * 知识领域。前 31 条 crucible 本体的 lang 已经有译名，这里重复一份是因为
  * Ember 的增强器不走 lang key、直接拼英文 label，我们只能按英文原文匹配。
  * 译名与 crucible lang 的 KNOWLEDGE.* 逐条对齐，改一处要两边一起改。
+ *
+ * 2026-08-12 对表：31 条共有键里漂了 2 条，裁决**以本表为准**，crucible lang 那两条要改过来：
+ *   - `Crafts` 本表「工艺」/ lang「工艺品」→ 取**工艺**。Crafts 是知识领域不是成品器物；
+ *     crucible.rules 的 Character Mechanics/Background 页那张背景表里
+ *     `Crafts, Trade` 译的就是「工艺、贸易」。
+ *   - `Seafaring` 本表「航海」/ lang「航海的」→ 取**航海**。其余 30 条 KNOWLEDGE.* 全是
+ *     不带「的」的名词，带「的」是机翻形容词残留（与 08-12 裁掉的 `Auditory` 听觉的→听觉
+ *     同一类问题）。
+ * 末尾 4 条是 Ember 新增的领域，crucible lang 里没有对应键。
  */
 const KNOWLEDGE = {
   "Alchemy": "炼金术", "Ancients": "远古者", "Artifacts": "神器", "Arts": "艺术",
@@ -114,8 +123,8 @@ const EXACT = {
   // 恩惠 / 祸骰
   "-3 Banes": "-3 祸骰", "-2 Banes": "-2 祸骰", "-1 Banes": "-1 祸骰",
   "+1 Boons": "+1 恩惠骰", "+2 Boons": "+2 恩惠骰", "+3 Boons": "+3 恩惠骰",
-  "Critical Success": "重大成功",
-  "Critical Failure": "重大失败",
+  "Critical Success": "大成功",
+  "Critical Failure": "严重失败",
 
   // 事件状态提示
   "Event Completed": "事件已完成",
@@ -187,7 +196,7 @@ const EXACT = {
 /** 掷骰结果档位。Ember 用 `Result of X` 的形式作为结局标题 */
 const RESULTS = {
   "Success": "成功", "Failure": "失败",
-  "Critical Success": "重大成功", "Critical Failure": "重大失败"
+  "Critical Success": "大成功", "Critical Failure": "严重失败"
 };
 
 /** 需要按模式改写的（保留其中的动态部分） */
@@ -214,11 +223,25 @@ const PATTERNS = [
  *
  * 译名与 `lang/cn.json` 的 `EMBER.CALENDAR.SEASONS.*` **逐字一致**：同一个词在
  * 「季节」和「月份」两处必须同名，否则玩家会以为是两回事。
+ *
+ * 2026-08-12：`Steading` 原译「庄园」是错的 —— 它是季节名不是建筑，而「庄园」在本库
+ * 已被 `Grange` / `Manor` 占用（英文闸：英文写 Grange/Manor 的 120 条叶子中文 120 条全是
+ * 「庄园」，如 Dradley Grange 德拉德利庄园），于是正文出现「庄园被称为工业季节」这种句子。
+ * 改为 **耕耘**：
+ *   - 英文侧 `History/Steading` 页原文 "The Steading is known as the Season of Industry …
+ *     the period of the year when people are happiest being productive and working with
+ *     their hands"，Gleaning 页又写 "the quiet duty found in the Steading"，
+ *     讲的是脚踏实地的劳作季，「耕耘」正是这个意思且兼有勤勉义；
+ *   - 与另外五个同为两字动名词的季节名（播种/绽放/拾取/凋零/寂止）保持同一构词与农事语域；
+ *   - 库内「耕耘」原本只有 2 处，不与既有译名相撞。
+ * **同名的另外两处必须一起改**（否则玩家会同屏看到两套词）：
+ *   ① `lang/cn.json` 的 `EMBER.CALENDAR.SEASONS.STEADING`；
+ *   ② compendium 里 `History/Steading` 页名与正文的「庄园（季）」。
  */
 const CALENDAR_MONTHS = {
   "Seeding": "播种",
   "Blooming": "绽放",
-  "Steading": "庄园",
+  "Steading": "耕耘",
   "Gleaning": "拾取",
   "Withering": "凋零",
   "Stilling": "寂止"

@@ -1,3 +1,14 @@
 
 # 构建产物，绝不能提交：zip 对已存在的同名档案是追加更新，旧内容会活到新发布包里
 module.zip
+*.zip
+release/
+
+# 维护脚本的中间产物
+__pycache__/
+*.pyc
+*.bak
+
+# 系统垃圾文件
+.DS_Store
+Thumbs.db
