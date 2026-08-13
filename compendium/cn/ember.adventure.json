@@ -3761,7 +3761,7 @@
             },
             "Vile Dragons": {
               "name": "邪龙 Vile Dragons",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，Beta 版本暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，Beta 版暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p>邪龙是余烬地表上现存的巨龙中最凶残、最危险的类型。凡人、自然生物与诸神都普遍对它们深恶痛绝。邪龙几乎只渴求以各种形式积累力量。它们不仅具有毁灭性，还残忍施虐、冷酷无情，并会不择手段地控制周围的一切。幸运的是，它们也极其罕见，甚至堪称神话中的怪物，而大多数文化与凡人都未察觉它们的存在。</p>"
             },
             "Carnal Dragons": {
@@ -3783,12 +3783,12 @@
             },
             "Giant": {
               "name": "巨人 Giant",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，Beta 版本暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，Beta 版暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p>“巨人”是一个涵义宽泛的术语，在余烬各处有多种用法，但最常见的是用来描述一种高大人型生物的血统，他们早在野兽时代便已出现。这些族群中最古老的一支——被称为真巨人——如今已不复存在，在揭幕之后被逐出了通路。此外，建立了申特文化的长老巨人也大多已从世间消失。如今在余烬，仅有构成瓦伦与托尔沃·科哈泰氏族的继承者巨人仍然存在；而这些高大族民比起他们远古时代的先祖，实际上要矮小得多。</p>"
             },
             "Trolls": {
               "name": "巨魔 Trolls",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，Beta 版本暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，Beta 版暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p>巨魔是凶残、野蛮的生物，它们曾经是野兽和动物，但在野兽时代早期，被一位名叫萨瓦里斯的远古碎片之神转化成了可怖的蛮兽。巨魔是阿特里卡大陆北方大地上的一场瘟疫，而唯一能遏制它们的，便是它们彼此之间近乎持续不断的冲突。</p>"
             },
             "Leviathans": {
@@ -3799,22 +3799,22 @@
             },
             "Hassratch": {
               "name": "哈斯拉奇 Hassratch",
-              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版本暂无更多信息可用。</p></section></div>",
+              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版暂无更多信息可用。</p></section></div>",
               "contentOverview": "<p>哈斯拉奇是一种怪物，据说是由一位邪恶的神所创造，并在大破裂时期大量释放到余烬之上。它们倾向于聚集在黑暗、隐秘之处，在那里囤积秘密，并利用这些隐秘之事操纵凡人为其效劳；众所周知，这些爪牙会执行各种任务，从收集知识到实施骇人听闻的恶行。哈斯拉奇是善于欺骗的生物，常常将自己伪装成高贵神祇的女祭司或侍僧。</p>"
             },
             "Casia": {
               "name": "卡西娅 Casia",
-              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版本暂无更多信息可用。</p></section></div>",
+              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版暂无更多信息可用。</p></section></div>",
               "contentOverview": "<p>卡西娅是统治普里莫迪斯领域的强大类猫生物。</p>"
             },
             "Tyraphem": {
               "name": "提拉斐姆 Tyraphem",
-              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版本暂无更多信息可用。</p></section></div>",
+              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版暂无更多信息可用。</p></section></div>",
               "contentOverview": "<p>提拉斐姆是居住在卢克萨鲁姆内界的强力存在。提拉斐姆不仅强大，而且数量极其庞大，再加上其极度好战、崇尚武力的天性，他们本可能成为整个寰宇的重大威胁。所幸，自创造以来，他们一直陷于一场永无止境的内战之中。</p>"
             },
             "Daemos": {
               "name": "戴莫斯 Daemos",
-              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版本暂无更多信息可用。</p></section></div>",
+              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版暂无更多信息可用。</p></section></div>",
               "contentOverview": "<p>戴莫斯是统治西格纳拉内界的极其强大的存在，它们数量稀少，但每一个都能施展威力非凡的壮举。</p>"
             },
             "Wyrms": {
@@ -3834,17 +3834,17 @@
             },
             "Fiend": {
               "name": "邪魔 Fiend",
-              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版本暂无更多信息可用。</p></section></div>",
+              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版暂无更多信息可用。</p></section></div>",
               "contentOverview": "<p>邪魔是戴莫斯的仆从，主要生活在西格纳拉，不过也有少数会受其主人的指派，在地表世界追求他们自己的目标。</p>"
             },
             "Celestials": {
               "name": "天界生物 Celestials",
-              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版本暂无更多信息可用。</p></section></div>",
+              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版暂无更多信息可用。</p></section></div>",
               "contentOverview": "<p>天界生物是来自卢克萨鲁姆、侍奉提拉斐姆的异界存在。就像它们的主人一样，它们天性侵略性强、尚武，而且在侍奉被称为“光明 The Light”的卢克萨鲁姆宗教时，往往热忱十足，甚至可谓狂热。</p>"
             },
             "Fae": {
               "name": "精灵 Fae",
-              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版本暂无更多信息可用。</p></section></div>",
+              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版暂无更多信息可用。</p></section></div>",
               "contentOverview": "<p>精灵是卡西娅的子嗣，这是一个极其多样且复杂的群体；其中有些会以强烈的忠诚侍奉某位卡西娅，而另一些则混乱、狂野，并对凡人构成危险。</p>"
             },
             "V'Mar": {
@@ -3899,7 +3899,7 @@
             },
             "Wights": {
               "name": "尸妖 Wights",
-              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版本暂无更多信息可用。</p></section><p></p></div>",
+              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面目前正在开发中，Beta 版暂无更多信息可用。</p></section><p></p></div>",
               "contentOverview": "<p>尸妖是一种强力的不死战士。它们肉体强壮，但行动缓慢；这些满怀复仇之念的实体对余烬的凡人怀有极深的憎恨，被不灭的狂怒与对毁灭的渴求所驱使。对生者而言，幸运的是，这些邪恶的生物会被阳光与火焰逼退，这在最黑暗的夜晚中也带来了一线希望。</p>"
             },
             "Ghouls": {
@@ -3909,7 +3909,7 @@
             },
             "Theroch": {
               "name": "瑟洛克 Theroch",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，Beta 版本暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，Beta 版暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p>据说，瑟洛克是最早出现在余烬地表上的有智慧凡人生物之一。传闻他们在遥远北方的大陆杰卡洛斯仍然存在，只是因被遗弃的战争中的事件而大为衰落。如今这个年代，人们对瑟洛克所知甚少，但偶尔仍会发现艾迪尔人的记载与失落的知识，这也引发了学者们的大量猜测。</p>"
             },
             "Carrow": {
@@ -4457,7 +4457,7 @@
             },
             "Scoris": {
               "name": "斯科里斯 Scoris",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p><strong>斯科里斯</strong>是一位与知识、魔法和创造相关的碎片之神。她创造了阿什卡族，并将他们塑造成自己的模样，帮助他们在卡迪索斯上建立了一个社会。可悲的是，一场因信息不足而起、与被称为巴尔的熵蚀之力之间的争斗，最终导致了她的陨落。</p>",
               "pronunciation": "斯科-里斯（Scor-ris）"
             },
@@ -4611,7 +4611,7 @@
             },
             "Lorex": {
               "name": "洛雷克斯 Lorex",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "pronunciation": "洛-雷克斯（Lor-ex）",
               "contentOverview": "<p><strong>洛雷克斯</strong>是一位活跃于世界舞台仅有数百年的碎片之神。起初，许多人对他的神格存有争议，但随着他的传说不断扩散，并开始回应那些崇拜他的人，这一点便变得无可辩驳。洛雷克斯被认为是世界上最伟大的战士，没有任何事物或任何人能够抵挡他雷霆般的铁拳，而他也把大部分时间都花在确保人们知道这一点上。他是一位爱笑、爱唱、充满活力的<strong></strong>神祇，无论是饮酒歌唱还是战斗，都同样乐在其中。</p>"
             },
@@ -4623,7 +4623,7 @@
             },
             "Shattered One": {
               "name": "碎裂者 Shattered One",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p>一个拥有强大力量的神秘实体，世上几乎无人知晓其存在。人们对其意图、个性或目标所知甚少，而似乎只有狂热的马利凯会崇拜他们。</p>"
             },
             "Sha-Xotha": {
@@ -4704,17 +4704,17 @@
             },
             "Xalarax": {
               "name": "萨拉拉克斯 Xalarax",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p><strong>萨拉拉克斯</strong>这个名字鲜为人知，但凡听闻者，心中都会生出恐惧与惊骇。那些不幸背负这一重担的人，会将它与那场毁灭了莫伊拉城的永夜、其后形成的破碎之地，以及如今统治那里的血男爵联系在一起。</p>"
             },
             "Menis Valegar": {
               "name": "梅尼斯·瓦勒加尔 Menis Valegar",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p><strong>梅尼斯·瓦勒加尔</strong>，也被称为“折磨之主”，是强力的血男爵之一。血男爵是一群与碎片诸神不相上下的不死生物。</p>"
             },
             "Nethehepticas": {
               "name": "奈瑟赫普提卡斯 Nethehepticas",
-              "text": "<section class=\"content\"><div><div><p></p><section class=\"block readaloud\"><p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">奈瑟赫普提卡斯的训谕</span></strong></span></p><blockquote><p>通过痛苦获得解脱。</p></blockquote></section><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><p></p><section class=\"block readaloud\"><p><span style=\"text-decoration:underline\"><strong><span style=\"text-decoration:underline\">奈瑟赫普提卡斯的训谕</span></strong></span></p><blockquote><p>通过痛苦获得解脱。</p></blockquote></section><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p>对于那些陷入梦魇控制之中的人来说，<strong>奈瑟赫普提卡斯</strong>这个名称可能会如同潜意识中的低语般浮现。这个名称会随着梦魇在醒来时一同消散，而这最好不过，因为若在清醒世界中回想起它，只会带来厄运。</p>"
             },
             "Areyter": {
@@ -4752,7 +4752,7 @@
             },
             "Herald of the Whispering Choir": {
               "name": "低语唱诗班的使者 Herald of the Whispering Choir",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p>一阵沉默的嘈杂充斥着你心灵的空白之处，这种缺失如同某种你就是想不起来之物的前兆，在你体内回响。</p>"
             },
             "Godkiller Orinoth": {
@@ -4770,17 +4770,17 @@
             },
             "Nalgomith": {
               "name": "纳尔戈弥斯 Nalgomith",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p><strong>纳尔戈弥斯</strong>是十六位戴莫斯之一，这些统治西格纳拉的强大存在以创造了后来成为威伦的邪魔而闻名。他是一个极其好奇且博学的实体，在其漫长得难以想象的生命中研究了海量秘奥背景与奥术现象，因此他的举止显得异样而超凡脱俗。他沉迷于种种诡计、谋划与计划之中；这些安排如此神秘、层层叠叠且复杂，以至于他的动作几乎显得毫无规律可循。</p>"
             },
             "Elwin Davos": {
               "name": "埃尔温·达沃斯 Elwin Davos",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p><strong>埃尔温·达沃斯</strong>，也被称为“暴虐血魔 Tyranous Vamperis”，是强力的血男爵之一；血男爵是一群可与碎片诸神比肩的不死生物。</p>"
             },
             "Elena Lor": {
               "name": "埃琳娜·洛尔 Elena Lor",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p><strong>埃琳娜·洛尔</strong>，亦被称为“痛苦少女”，是强力的血男爵之一；血男爵是一群与碎片诸神比肩的不死生物。</p>"
             },
             "Nymbohr": {
@@ -4813,7 +4813,7 @@
             },
             "Kerastes": {
               "name": "角盔蛇 Kerastes",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p><strong>角盔蛇</strong>是十六位戴莫斯之一，即统治西格纳拉的强力存在。他所影响的领域是腐化与隐秘，并且是那位名为纳尔戈弥斯的戴莫斯的坚定宿敌。</p>"
             },
             "Shard Gods": {
@@ -4823,22 +4823,22 @@
             },
             "Titans": {
               "name": "泰坦 Titans",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p>没有任何关于泰坦的已知信息。</p>"
             },
             "Nimaelle": {
               "name": "尼梅尔 Nimaelle",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p>尼梅尔是来自普里莫迪斯内界的一位善意而充满热情的卡西娅。他们通常出现在地表，帮助凡人。</p>"
             },
             "Pyix": {
               "name": "派伊克斯 Pyix",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p>派伊克斯是一位效力于塔里亚凯尔的强力提拉斐姆。</p>"
             },
             "Fenra Irdragon": {
               "name": "芬拉·伊尔德拉贡 Fenra Irdragon",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p>芬拉·伊尔德拉贡被称为“唯一的英雄之灵”，他们曾是原始凯尔梅兹安文化的至高王，并于数千年前逝世。然而，传说与故事讲述他们会在危难之时现身，保卫凡人族裔免受黑暗侵袭。</p>"
             },
             "Wild Gods": {
@@ -4853,19 +4853,19 @@
             },
             "Verador": {
               "name": "维拉多尔 Verador",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p>维拉多尔是一位古老的、掌管混乱魅惑的碎片之神，并以难以预测和随性而闻名。</p>",
               "contentGamemaster": "<ul><li><p>维拉多尔，欢笑天穹，是掌管混沌、狡诈与自由的碎片之神。</p></li></ul>",
               "pronunciation": "维-拉-多尔（VAIR-a-door）"
             },
             "The Silent Pack": {
               "name": "寂静狼群 The Silent Pack",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p>在普里莫迪斯内界的深处，坐落着暗影灌丛。这处原初之地，正是卡西娅最初于创造之时现身之所。它是寰宇中最危险的地方之一，因为那里不仅充斥着原始而未被驯服的魔法能量，同时也是一群名为寂静狼群的恶意卡西娅的栖居地。这支狼群是否其实是拥有许多不同实体躯体的单一存在，尚不得而知。在追随者的心智中，它们显现为一群在阴影中闪烁的红色燃烧之眼；而如果你在清醒世界中看见这些眼睛，那你几乎没有逃跑的意义，因为你很可能早已死亡。</p>"
             },
             "Juriel": {
               "name": "尤里耶尔 Juriel",
-              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面目前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
+              "text": "<section class=\"content\"><div><div><section class=\"block wip\"><h4 data-anchor=\"under-construction\">施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div></div></section>",
               "contentOverview": "<p>尤里耶尔是来自卢克萨鲁姆内界的一位相对年轻的提拉斐姆领主。仅仅在一千年前，他们才取得自己的地位，而自那以后，他们一直面临着来自其他更强力领主的压力，不得不防御并维持自己的领地。与其他领主不同，尤里耶尔行事理性，且拥有敏锐的务实智慧。他还以平静、自制和公正著称，而这些品质是绝大多数提拉斐姆都难以体现的。</p>"
             },
             "Orvaath": {
@@ -4993,7 +4993,7 @@
             },
             "Malicae": {
               "name": "马利凯 Malicae",
-              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面当前仍在开发中，抢先体验阶段暂无更多信息可供查看。</p></section></div><p>马利凯是余烬世界上最隐秘、最地下的组织之一，然而它却掌握着惊人的力量，并在余烬世界、上方的群星之海，甚至遥远的内界之中维持着无数隐藏的知识宝藏。自艾迪尔帝国坠落、其诸神体系被彻底毁灭以来，马利凯一直在暗中努力恢复那些失落之物。</p><p>许多年代以前，当艾迪尔帝国正处于鼎盛时期时，马利凯承担着诸多职责。然而随着时间推移，它的目标也发生了最为剧烈的转变。如今，这个深奥难测的组织前方仅剩下一条血腥之径，由毁灭铺就。苦涩、愤怒与恐惧交织，幸存的马利凯成员因其横跨世界的人口近乎灭绝，以及他们昔日强盛文明的崩塌而深受打击。因此，现代年代的马利凯对拯救任何人都毫无兴趣。它只在乎一件事：一个恶意昭彰的艾迪尔帝国的重生，而马利凯将作为其至高统治者。统御一切，不惜任何代价。</p>",
+              "text": "<div><section class=\"block wip\"><h4>施工中</h4><p>此页面当前正在开发中，抢先体验阶段暂无更多信息可用。</p></section></div><p>马利凯是余烬世界上最隐秘、最地下的组织之一，然而它却掌握着惊人的力量，并在余烬世界、上方的群星之海，甚至遥远的内界之中维持着无数隐藏的知识宝藏。自艾迪尔帝国坠落、其诸神体系被彻底毁灭以来，马利凯一直在暗中努力恢复那些失落之物。</p><p>许多年代以前，当艾迪尔帝国正处于鼎盛时期时，马利凯承担着诸多职责。然而随着时间推移，它的目标也发生了最为剧烈的转变。如今，这个深奥难测的组织前方仅剩下一条血腥之径，由毁灭铺就。苦涩、愤怒与恐惧交织，幸存的马利凯成员因其横跨世界的人口近乎灭绝，以及他们昔日强盛文明的崩塌而深受打击。因此，现代年代的马利凯对拯救任何人都毫无兴趣。它只在乎一件事：一个恶意昭彰的艾迪尔帝国的重生，而马利凯将作为其至高统治者。统御一切，不惜任何代价。</p>",
               "contentOverview": "<p>马利凯由昔日一度占据统治地位的艾迪尔帝国残部组建而成。由于失去了自身的疆域，又遭逢艾迪尔诸神系的死亡，这个秘密结社的成员致力于通过摧毁帝国之后出现的一切来重建帝国——同时也让自己重新成为这片土地上居于支配地位的统治者。</p><p>在朝着这一终极目标努力的过程中，马利凯通过广泛的研究和庞大的间谍网络积累了知识。这批彼此分散的信息宝藏，只有被马利凯认定为有资格的人才能接触，而马利凯的成员也会用生命守护这些秘密情报。</p>",
               "contentGamemaster": "<p>艾迪尔人的阳炎帝国曾一度横跨世界，在大破裂之前很久便发现并定居于沐浴在阳光下的凯西亚大陆。伟大的城市拔地而起，人口在数千年间急剧增长。艾迪尔的殖民地仅仅在口头上承认星之盾上的帝国皇室。然而，就像艾迪尔帝国本身一样，大破裂重创了凯西安殖民地，而随着黑曜沙漠的形成，它们几乎被彻底摧毁。如今，那些殖民地的遗民自称为纳尔瓦尼，即帝国的继承者，一个与世隔绝且极端隐秘的文化群体，依然隐藏于世界其他地方之外。</p>",
               "pronunciation": "马尔-伊斯-塞（MAL-is-say）"
