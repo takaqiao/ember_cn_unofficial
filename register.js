@@ -31,6 +31,48 @@ import { DOCUMENT_MAPPINGS, PROJECT_CONVERTERS } from './babele-mappings.js';
  */
 
 const MODULE_ID = 'ember_cn_unofficial';
+const MIGRATION_SETTINGS = {
+  legacyDescription: 'legacyDescriptionMigrated',
+  legacyCausticPhial: 'legacyCausticPhialMigrated',
+};
+
+/**
+ * ⚠ crucible 的 `system.description` 是**多态**的，不能靠「值是不是字符串」来判断形状。
+ *
+ * crucible 0.10.1 里只有 `CruciblePhysicalItem` 的 description 是
+ * `SchemaField{public, private}`；talent / spell / ancestry / archetype / background /
+ * taxonomy / loot / schematic / spellcraftRune / spellcraftGesture 这**十类**都是裸
+ * `HTMLField`（即普通字符串，`HTMLField extends StringField`）。
+ *
+ * 早先这里用 `typeof description === 'string'` 当「旧版脏数据」的判据，等于把这十类的
+ * **当前正确形状**当成需要修的目标：转成对象后交给 `StringField._cast()` → `String(value)`
+ * → 落库变成字面量 `"[object Object]"`，描述原文永久丢失，且不抛错不提示。
+ *
+ * 唯一可靠的判据是**问 schema 本身**。
+ *
+ * @param {object} doc  一个 Document 实例，或 `{type}` 形态的原始数据
+ * @returns {boolean}   该文档的 system.description 是否真的是 SchemaField{public,private}
+ */
+function descriptionExpectsObject(doc) {
+  if (!doc) return false;
+
+  // 1) 有实例：直接问它自己的 schema
+  let field = doc?.system?.schema?.fields?.description;
+
+  // 2) 只有原始数据（如冒险导入的 item 载荷）：按 type 查 CONFIG 里注册的数据模型
+  if (!field && typeof doc.type === 'string') {
+    const model = globalThis.CONFIG?.Item?.dataModels?.[doc.type];
+    field = model?.schema?.fields?.description;
+  }
+
+  if (!field) return false;
+
+  const SchemaField = foundry?.data?.fields?.SchemaField;
+  if (SchemaField && field instanceof SchemaField) return true;
+
+  // 跨 realm 时 instanceof 可能失效，退化为鸭子判断：它得真的有 public 子字段
+  return !!field?.fields?.public;
+}
 
 function normalizeDescriptionValue(value) {
   if (typeof value === 'string') {
@@ -60,16 +102,22 @@ function normalizeDescriptionValue(value) {
 async function migrateLegacyDescriptionShape() {
   if (!game.user?.isGM) return;
 
-  const world = game.world;
-  const migratedFlag = world?.getFlag?.(MODULE_ID, 'legacyDescriptionMigrated');
-  if (migratedFlag) return;
+  // ⚠ `game.world` 是 `foundry.packages.World`（DataModel），**不是 Document**，
+  // 没有 getFlag/setFlag。原先写的 `world?.getFlag?.(...)` 被可选调用静默吞成 undefined，
+  // 守卫恒不成立、写回也恒空操作 —— 这个「只跑一次」的迁移其实每次开世界都在跑。
+  // 改用 game.settings（world scope）。
+  if (game.settings.get(MODULE_ID, MIGRATION_SETTINGS.legacyDescription)) return;
 
   let updatedWorldItems = 0;
   let updatedActors = 0;
   let updatedEmbeddedItems = 0;
 
+  // 读 **_source**（落库原值）而不是 item.system（已 prepare 的值）：
+  // 对 SchemaField 类型的物品，prepare 之后永远是对象，旧版留下的字符串在这里根本看不见 ——
+  // 原先读 prepared 值，导致真目标一个也命不中，只误伤本来就正确的那十类。
   for (const item of game.items ?? []) {
-    const description = foundry.utils.getProperty(item, 'system.description');
+    if (!descriptionExpectsObject(item)) continue;
+    const description = foundry.utils.getProperty(item, '_source.system.description');
     if (typeof description !== 'string') continue;
 
     try {
@@ -83,21 +131,24 @@ async function migrateLegacyDescriptionShape() {
   }
 
   for (const actor of game.actors ?? []) {
-    const actorDescription = foundry.utils.getProperty(actor, 'system.description');
-    if (typeof actorDescription === 'string') {
-      try {
-        await actor.update({
-          'system.description': normalizeDescriptionValue(actorDescription),
-        });
-        updatedActors += 1;
-      } catch (error) {
-        console.warn(`${MODULE_ID} | Failed to migrate actor description`, actor?.name, error);
+    if (descriptionExpectsObject(actor)) {
+      const actorDescription = foundry.utils.getProperty(actor, '_source.system.description');
+      if (typeof actorDescription === 'string') {
+        try {
+          await actor.update({
+            'system.description': normalizeDescriptionValue(actorDescription),
+          });
+          updatedActors += 1;
+        } catch (error) {
+          console.warn(`${MODULE_ID} | Failed to migrate actor description`, actor?.name, error);
+        }
       }
     }
 
     const itemUpdates = [];
     for (const item of actor.items ?? []) {
-      const description = foundry.utils.getProperty(item, 'system.description');
+      if (!descriptionExpectsObject(item)) continue;
+      const description = foundry.utils.getProperty(item, '_source.system.description');
       if (typeof description !== 'string') continue;
 
       itemUpdates.push({
@@ -124,7 +175,7 @@ async function migrateLegacyDescriptionShape() {
   }
 
   try {
-    await world?.setFlag?.(MODULE_ID, 'legacyDescriptionMigrated', true);
+    await game.settings.set(MODULE_ID, MIGRATION_SETTINGS.legacyDescription, true);
   } catch (error) {
     console.warn(`${MODULE_ID} | Unable to persist migration flag`, error);
   }
@@ -258,7 +309,11 @@ function exposeSyncApi() {
   };
 }
 
-function sanitizeItemDataShape(itemData) {
+/**
+ * @param {object} itemData  待改写的载荷（update 的 changes，或导入时的 item 原始数据）
+ * @param {object} [doc]     该载荷对应的 Item 文档实例（有就传，用于问 schema）
+ */
+function sanitizeItemDataShape(itemData, doc) {
   if (!itemData || typeof itemData !== 'object' || Array.isArray(itemData)) return itemData;
 
   const patch = {};
@@ -268,8 +323,11 @@ function sanitizeItemDataShape(itemData) {
     patch.effects = embeddedEffects;
   }
 
+  // ⚠ 只有当目标的 schema 真的要求 {public, private} 时才转（见 descriptionExpectsObject）。
+  // 拿不到实例就退回用载荷自带的 type 查数据模型；两者都问不出来就**不动** ——
+  // 宁可漏修也不能把十类合法的字符串描述写成 "[object Object]"。
   const description = foundry.utils.getProperty(itemData, 'system.description');
-  if (typeof description === 'string') {
+  if (typeof description === 'string' && descriptionExpectsObject(doc ?? itemData)) {
     foundry.utils.setProperty(patch, 'system.description', normalizeDescriptionValue(description));
   }
 
@@ -349,9 +407,8 @@ function patchActorUpdateDocuments() {
 async function migrateLegacyCausticPhialEffects() {
   if (!game.user?.isGM) return;
 
-  const world = game.world;
-  const migratedFlag = world?.getFlag?.(MODULE_ID, 'legacyCausticPhialEffectsMigrated');
-  if (migratedFlag) return;
+  // 同上：game.world 没有 flag API，原守卫恒空。改用 game.settings。
+  if (game.settings.get(MODULE_ID, MIGRATION_SETTINGS.legacyCausticPhial)) return;
 
   let updatedWorldItems = 0;
   let updatedEmbeddedItems = 0;
@@ -400,7 +457,7 @@ async function migrateLegacyCausticPhialEffects() {
   }
 
   try {
-    await world?.setFlag?.(MODULE_ID, 'legacyCausticPhialEffectsMigrated', true);
+    await game.settings.set(MODULE_ID, MIGRATION_SETTINGS.legacyCausticPhial, true);
   } catch (error) {
     console.warn(`${MODULE_ID} | Unable to persist causticPhial migration flag`, error);
   }
@@ -431,12 +488,19 @@ Hooks.on('preUpdateActor', (_actor, changes) => {
   sanitizeActorUpdatePayload(changes);
 });
 
-Hooks.on('preUpdateItem', (_item, changes) => {
-  sanitizeItemDataShape(changes);
+Hooks.on('preUpdateItem', (item, changes) => {
+  // 把文档实例传进去，才能问它的 schema 判断 description 到底该是什么形状
+  sanitizeItemDataShape(changes, item);
 });
 
-Hooks.on('preCreateItem', (_item, data) => {
-  sanitizeItemDataShape(data);
+// ⚠ v10 起 preCreate 钩子里改第二个参数 data 是**无效**的：
+// client-backend.mjs 早在钩子之前就用 deepClone(createData) 把文档构造好了，
+// 真正下发的是那个已构造的 doc，不是 createData。要在这里改数据必须用 doc.updateSource()。
+// 这一处原本就是死代码；现在 description 判据已收紧，即便改活也不会再误伤，
+// 但既然它本来什么也没做，就保持不做，避免在创建路径上引入新的行为。
+Hooks.on('preCreateItem', (item, data) => {
+  const effects = sanitizeEmbeddedCollectionArray(data?.effects);
+  if (effects !== data?.effects) item?.updateSource?.({ effects });
 });
 
 Hooks.once('babele.init', (babele) => {
@@ -455,6 +519,18 @@ Hooks.once('babele.init', (babele) => {
 });
 
 // Hook APIs are ready by setup and documents have not finished full preparation yet.
+// 两个迁移的「只跑一次」状态位。必须在 ready（迁移执行）之前注册，放 init 最稳。
+Hooks.once('init', () => {
+  for (const key of Object.values(MIGRATION_SETTINGS)) {
+    game.settings.register(MODULE_ID, key, {
+      scope: 'world',
+      config: false,
+      type: Boolean,
+      default: false,
+    });
+  }
+});
+
 Hooks.once('setup', () => {
   patchCrucibleCausticPhialHook();
   patchActorUpdateDocuments();
