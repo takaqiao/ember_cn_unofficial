@@ -569,7 +569,7 @@
       "name": "守护召唤 Wardcall"
     },
     "Impassioned Revelry": {
-      "name": "热忱欢宴 Impassioned Revelry"
+      "name": "热情狂欢 Impassioned Revelry"
     },
     "Ember Blaze": {
       "name": "余烬烈焰 Ember Blaze",
@@ -641,10 +641,10 @@
       }
     },
     "Preeminent Survivalist": {
-      "name": "卓绝生存者 Preeminent Survivalist"
+      "name": "卓越求生者 Preeminent Survivalist"
     },
     "Implacable Hunter": {
-      "name": "执着猎手 Implacable Hunter",
+      "name": "无情猎手 Implacable Hunter",
       "effects": {
         "Mark Quarry": {
           "name": "标记猎物 Mark Quarry"
@@ -752,7 +752,7 @@
       "name": "刺棘树皮 Thornbark"
     },
     "Formidable Stamina": {
-      "name": "惊人耐力 Formidable Stamina"
+      "name": "强健体力 Formidable Stamina"
     },
     "Passionate Trader": {
       "name": "热忱商贩 Passionate Trader"
@@ -831,7 +831,7 @@
       "name": "原始主义弟子 Primalist Disciple"
     },
     "Mistrust of Magic": {
-      "name": "疑魔 Mistrust of Magic"
+      "name": "对魔法的不信任 Mistrust of Magic"
     },
     "Living Stone": {
       "name": "活石 Living Stone",
