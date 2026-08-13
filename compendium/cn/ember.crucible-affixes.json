@@ -9,7 +9,7 @@
     },
     "Lunar Shield": {
       "name": "月相护盾 Lunar Shield",
-      "description": "<p>注入期间，你被一层由宇宙能量驱动的防御屏障环绕，其强度随 Ember 诸元素之月的月相而起伏。对每一轮月亮而言，当它处于<strong>盈月</strong>或<strong>亏月</strong>时，你获得等同于此前缀<strong>阶</strong>的抗性；当它处于<strong>满月</strong>时则为该<strong>阶</strong>数的两倍：</p><ul><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR]{奥拉} - 电击</p></li><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.5pD8lxiilJJXOgoa]{科拉} - 强酸</p></li><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.LKptgmc56euSOb0G]{拉根} - 火焰</p></li><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.RkdBtFQk7STvMbV2]{玛伊斯} - 寒冷</p></li><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.zkmWSB32y8Fbc4UL]{奥比斯} - 灵能</p></li><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3Oywe0peo57dQT9j]{阿肯} - 穿刺</p></li></ul>",
+      "description": "<p>注入期间，你被一层由宇宙能量驱动的防御屏障环绕，其强度随余烬诸元素之月的月相而起伏。对每一轮月亮而言，当它处于<strong>盈月</strong>或<strong>亏月</strong>时，你获得等同于此前缀<strong>阶</strong>的抗性；当它处于<strong>满月</strong>时则为该<strong>阶</strong>数的两倍：</p><ul><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.smc0OuMxsxfcSdhR]{奥拉} - 电击</p></li><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.5pD8lxiilJJXOgoa]{科拉} - 强酸</p></li><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.LKptgmc56euSOb0G]{拉根} - 火焰</p></li><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.RkdBtFQk7STvMbV2]{玛伊斯} - 寒冷</p></li><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.zkmWSB32y8Fbc4UL]{奥比斯} - 灵能</p></li><li><p>@UUID[JournalEntry.emberCosmos00000.JournalEntryPage.3Oywe0peo57dQT9j]{阿肯} - 穿刺</p></li></ul>",
       "adjective": "月相"
     }
   }

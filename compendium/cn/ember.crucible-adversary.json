@@ -13,15 +13,15 @@
     "Dragon": "巨龙 Dragon",
     "Humanoids": "人型生物 Humanoids",
     "Taxonomies": "分类法 Taxonomies",
-    "Monstrosity": "畸怪",
-    "Monstrosities": "怪物 Monstrosities",
-    "Abyssal": "深渊语 Abyssal",
+    "Monstrosity": "畸怪 Monstrosity",
+    "Monstrosities": "畸怪 Monstrosities",
+    "Abyssal": "深渊裔 Abyssal",
     "Abyssals": "深渊裔 Abyssals",
     "Celestials": "天界生物 Celestials",
     "Talents": "天赋 Talents",
     "Dragons": "巨龙 Dragons",
-    "Celestial": "天界的 Celestial",
-    "Elemental": "元素 Elemental",
+    "Celestial": "天界生物 Celestial",
+    "Elemental": "元素生物 Elemental",
     "Fiend": "邪魔 Fiend"
   },
   "entries": {
@@ -94,7 +94,7 @@
     },
     "Afflicted Pallid Drake": {
       "name": "受苦的苍白龙兽 Afflicted Pallid Drake",
-      "description": "<p>这些生物直到最近才在余烬被发现，其起源完全未知。尽管它们与邪龙极为相似，但并不具备相同的能力，且仅有有限的生物学相似性。它们看起来像是蛇与巨龙的奇美拉式混合体，这或许表明它们具有魔法起源。这一新近出现的现象已在研究者与冒险者之间引发了相当大的兴趣与担忧，因为这些新的生物可能预示着常态的变化，以及全新、危险的龙类敌人的崛起。</p>"
+      "description": "<p>这些生物直到最近才在余烬上被人遭遇，其起源完全不明。尽管它们与邪龙极为相似，却并不具备相同的能力，生物学上的相似之处也很有限。它们看起来像是蛇与龙的奇美拉式混合体，这或许表明它们源于魔法。这一新出现的存在在研究者与冒险者之中都激起了相当大的兴趣与忧虑，因为这些新生物可能预示着常态的改变，以及新的、危险的龙族敌人的崛起。</p>"
     },
     "Aedir Sentinel": {
       "name": "艾迪尔哨兵 Aedir Sentinel",
@@ -185,7 +185,7 @@
       "actions": {
         "extrudeTendril": {
           "name": "伸出触须 Extrude Tendril",
-          "description": "<p>@ref[actor.name]{该生物}召唤出一条 @UUID[Actor.UXpL07GsaMzGCUVh]{蠕动低语者触须}，它会出现在 60 英尺内的一处空位。</p><p>@ref[actor.name]{该生物}同时最多可拥有 3 条伸出的触须，并可在自己的回合免费遣散任意数量的触须。</p>"
+          "description": "<p>该@ref[actor.name]{生物}召唤一个@UUID[Actor.UXpL07GsaMzGCUVh]{蠕动低语者触须}，其出现在60英尺内的一个空置空间中。</p><p>该@ref[actor.name]{生物}在任意时刻至多可拥有3条挤出的触须，并且可以在自己的回合中免费遣散其任意数量的触须。</p>"
         }
       }
     },
@@ -297,7 +297,7 @@
     },
     "Pallid Drake": {
       "name": "苍白龙兽 Pallid Drake",
-      "description": "<p>这些生物直到最近才在余烬被发现，其起源完全未知。尽管它们与邪龙极为相似，但并不具备相同的能力，且仅有有限的生物学相似性。它们看起来像是蛇与巨龙的奇美拉式混合体，这或许表明它们具有魔法起源。这一新近出现的现象已在研究者与冒险者之间引发了相当大的兴趣与担忧，因为这些新的生物可能预示着常态的变化，以及全新、危险的龙类敌人的崛起。</p>"
+      "description": "<p>这些生物直到最近才在余烬上被人遭遇，其起源完全不明。尽管它们与邪龙极为相似，却并不具备相同的能力，生物学上的相似之处也很有限。它们看起来像是蛇与龙的奇美拉式混合体，这或许表明它们源于魔法。这一新出现的存在在研究者与冒险者之中都激起了相当大的兴趣与忧虑，因为这些新生物可能预示着常态的改变，以及新的、危险的龙族敌人的崛起。</p>"
     },
     "Pestilent Retch": {
       "name": "疫病呕吐 Pestilent Retch",
@@ -316,11 +316,11 @@
     },
     "Primordial Guardian": {
       "name": "原初守护者 Primordial Guardian",
-      "description": "<p>普里莫迪斯的守护者，以及卡西亚的仆从。</p>"
+      "description": "<p>普里莫迪斯的守护者，以及卡西娅的仆从。</p>"
     },
     "Rask": {
       "name": "拉斯克 Rask",
-      "description": "<p>这种瘦长的哺乳动物兼具犬科与猫科特征，这种大型生物有着羽毛般成簇的毛发，看起来既强壮又敏捷。条纹皮毛覆盖着这头野兽高贵的头部，一条短而蓬松的尾巴在身后优雅而有意地摆动着。</p><p>@ref[name]是已被驯化的四足哺乳动物，常见于阿克图斯高原的各种生物群系。它们常被用作动物伙伴和驮兽，@ref[name]也被认为是这一地区最受喜爱且最有技巧的动物坐骑之一。它们以高贵的野兽而闻名，既慷慨热诚，又意志坚定。</p>"
+      "description": "<p>这是一种精瘦的哺乳动物，兼具犬科与猫科的特征；这头大型生物身上覆有羽状的绒毛簇，看上去既强壮又敏捷。一张带条纹的毛皮如冠冕般覆在这头野兽威严的头颅上，一条短而蓬松的尾巴带着优雅的意味在其身后摇摆。</p><p>@ref[name]是被驯化的四足哺乳动物，常出没于阿克图斯高原的各种生物群系。@ref[name]常被用作动物伙伴与驮兽，被公认为该地区最受喜爱、也最娴熟的动物坐骑之一。它们被视为高贵的野兽，既心地慷慨，又意图直率。</p>"
     },
     "Searing Stare": {
       "name": "灼热凝视 Searing Stare",
@@ -398,7 +398,7 @@
     },
     "Sitherian": {
       "name": "西瑟里安 Sitherian",
-      "description": "<p>@ref[name]是一种蛛形类野兽，得名于与其同名的注视者西希拉。以它们精巧繁复的蛛网格构所产生的振动为先兆，西瑟里安能够用其螯肢上的尖牙注入强效毒液，并可从其巨大卵形腹部后部的纺器中吐出丝线。</p>"
+      "description": "<p>@ref[name]是一种蛛形类野兽，传承自与其同名的注视者西希拉。以它们精巧繁复的蛛网格构所产生的振动为先兆，西瑟里安能够用其螯肢上的尖牙注入强效毒液，并可从其巨大卵形腹部后部的纺器中吐出丝线。</p>"
     },
     "Skither": {
       "name": "斯基瑟 Skither",
@@ -429,7 +429,7 @@
     },
     "Vanexis": {
       "name": "瓦内克西斯 Vanexis",
-      "description": "<p>作为普里莫迪斯的卡西亚分支，这些守护者被创造出来，作为知识的终极守护者。在普里莫迪斯的诸存在之中，他们普遍被认为拥有最敏锐的头脑、最灵敏的感知，以及最稳健的判断力。虽然与其他卡西亚相比，他们不那么公开地好奇，也不太容易沉溺于异想天开，但他们对知识的渴求丝毫不减，并且常常会尽可能了解自己被要求守护的任何地点，成为该处布局与历史方面的专家。</p>"
+      "description": "<p>作为普里莫迪斯的卡西娅分支，这些守护者被创造出来，作为知识的终极守护者。在普里莫迪斯的诸存在之中，他们普遍被认为拥有最敏锐的头脑、最灵敏的感知，以及最稳健的判断力。虽然与其他卡西娅相比，他们不那么公开地好奇，也不太容易沉溺于异想天开，但他们对知识的渴求丝毫不减，并且常常会尽可能了解自己被要求守护的任何地点，成为该处布局与历史方面的专家。</p>"
     },
     "Vorg": {
       "name": "沃格 Vorg",
@@ -457,7 +457,7 @@
     },
     "Jahud": {
       "name": "贾胡德 Jahud",
-      "description": "<p>由西格纳拉生物法师在实验室环境中培育出的异界猎手与使者，它们的形体改造深入到基因层面。</p>"
+      "description": "<p>由西格纳兰生物法师在实验室环境中培育出的异界猎手与使者，它们的形体改造深入到基因层面。</p>"
     },
     "Obsidian Brood": {
       "name": "黑曜石子嗣 Obsidian Brood",
@@ -465,11 +465,11 @@
       "actions": {
         "spawnOffshoot": {
           "name": "生出分蘖 Spawn Offshoot",
-          "description": "<p>@ref[actor.name]{该藤蔓}迫使一株次级的<strong>黑曜新枝</strong>从 30 英尺内的地面破土而出。该分蘖会作为受缚的仆从作战，并一直存在到被摧毁为止。</p>"
+          "description": "<p>@ref[actor.name]{该藤蔓}迫使一株次级的<strong>黑曜石藤蔓新枝</strong>从 30 英尺内的地面破土而出。该分蘖会作为受束缚的仆从作战，并一直存在到被摧毁为止。</p>"
         },
         "directTheBrood": {
           "name": "指挥子嗣 Direct the Brood",
-          "description": "<p>@ref[actor.name]{该藤蔓}通过大地送出一道号令脉冲。20 英尺内每一株友方<strong>黑曜新枝</strong>都获得@Condition[hastened]状态，直到该藤蔓下个回合开始，被催动着以不自然的速度出击与换位。</p>",
+          "description": "<p>@ref[actor.name]{该藤蔓}通过大地送出一道号令脉冲。20 英尺内每一株友方<strong>黑曜石藤蔓新枝</strong>都获得@Condition[hastened]状态，直到该藤蔓下个回合开始，被催动着以不自然的速度出击与换位。</p>",
           "effects": [
             {
               "name": "受令 Directed"
@@ -497,14 +497,14 @@
         },
         "eruptiveRecall": {
           "name": "破土回归 Eruptive Recall",
-          "description": "<p>当 @ref[actor.name]{该藤蔓} 处于@Condition[burrowing]状态、而它的一株<strong>黑曜新枝</strong>被摧毁时，该藤蔓会被扯着穿过大地来到倒下的分蘖处，视需要跨越高度与楼层，并在其原地破土而出。被摧毁的分蘖会被吞噬，藤蔓则现身，并结束@Condition[burrowing]状态。</p>",
-          "condition": "反应：你处于掘穴状态时，一株黑曜新枝被摧毁。"
+          "description": "<p>当 @ref[actor.name]{该藤蔓} 处于@Condition[burrowing]状态、而它的一株<strong>黑曜石藤蔓新枝</strong>被摧毁时，该藤蔓会被扯着穿过大地来到倒下的分蘖处，视需要跨越高度与楼层，并在其原地破土而出。被摧毁的分蘖会被吞噬，藤蔓则现身，并结束@Condition[burrowing]状态。</p>",
+          "condition": "反应：你处于掘穴状态时，一株黑曜石藤蔓新枝被摧毁。"
         }
       }
     },
     "Garganthus": {
       "name": "加甘萨斯 Garganthus",
-      "description": "<p>恶毒而魁伟的四足歧路捕食者，以其幽暗的鳞状皮肉、六条肢体、凶恶的利爪与矛一般的獠牙而闻名。</p>"
+      "description": "<p>恶毒、体格庞大的四足通路掠食者，以其幽暗的鳞状皮肉、六肢、凶恶的利爪和矛状獠牙而闻名。</p>"
     },
     "Yarnac": {
       "name": "亚纳克 Yarnac",
