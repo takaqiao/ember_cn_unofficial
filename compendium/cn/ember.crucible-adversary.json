@@ -460,7 +460,7 @@
       "description": "<p>由西格纳拉生物法师在实验室环境中培育出的异界猎手与使者，它们的形体改造深入到基因层面。</p>"
     },
     "Obsidian Brood": {
-      "name": "黑曜子嗣 Obsidian Brood",
+      "name": "黑曜石子嗣 Obsidian Brood",
       "description": "<p>这株高耸的藤蔓在战场上播撒自身的次级分蘖，并驱使它们作为自身意志的延伸发动攻击。</p>",
       "actions": {
         "spawnOffshoot": {

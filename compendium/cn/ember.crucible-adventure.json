@@ -4283,7 +4283,7 @@
               "description": "<p>[[lookup @name]]与位于通路深处原初堡垒顶端的兰提尔之球遗物相连。很久以前，当法珠处于完全充能状态时，[[lookup @name]]能够穿行于通路之中，也会被更强的能量强化，从而增强他本就相当可观的天生力量。</p><p>不幸的是，兰提尔之球正在衰微，[[lookup @name]]已经失去了大量他远古的力量，以及远离堡垒顶点的能力。</p><p>[[lookup @name]]会随着兰提尔之球一同受到伤害；当法珠被摧毁时，[[lookup @name]]也会如此。</p>"
             },
             "Radiant Absorption": {
-              "name": "辉光吸收 Radiant Absorption",
+              "name": "光耀吸收 Radiant Absorption",
               "description": "<p>每当 [[lookup @name]] 受到光耀伤害时，他不会受到伤害，转而恢复等同于所受光耀伤害数值的生命值。</p>"
             },
             "Beacon of Light": {
@@ -4509,7 +4509,7 @@
                   "description": "<p>持握魔杖时，你可以使用一个动作，以一具体型为4或更大的生物尸体或遗骸为目标。一个腐化的卡德里索尔会在该遗骸原本占据的空间中，或在最近的未被占据空间中升起。</p>"
                 },
                 "fingerSiphonVitality": {
-                  "name": "汲取活力 Siphon Vitality",
+                  "name": "虹吸活力 Siphon Vitality",
                   "description": "<p>当你用一个你能看见的<strong>法术</strong>对一个生物造成伤害后，你随后可以进行一次奥术技能攻击，对抗其<strong>强韧</strong>防御，以窃取其部分生命精华。成功时，你<strong>恢复</strong>等同于该法术所造成伤害量的<strong>生命值</strong>。</p>"
                 },
                 "fingerWakingNightmares": {
@@ -5146,9 +5146,9 @@
               }
             },
             "Chessman Plating": {
-              "name": "棋士镀层 Chessman Plating",
+              "name": "棋士装甲板 Chessman Plating",
               "description": {
-                "public": "<p>这层曾经坚不可摧的强化镀层，因数个世纪的疏于维护而变得破损风化。</p>"
+                "public": "<p>这层曾经坚不可摧的强化装甲板，因数个世纪的疏于维护而变得破损风化。</p>"
               }
             },
             "Diplomacy Novice": {
@@ -5232,7 +5232,7 @@
               "description": "<p>该@ref[actor.name]{生物}拥有非凡的能力，能从容承受电击爆炸。其<strong>电击</strong>抗性加倍；如果该抗性会将伤害值降至零以下，则超出的负值改为作为<strong>治疗</strong>获得。</p>"
             },
             "Improvisational Expertise": {
-              "name": "即兴专精 Improvisational Expertise",
+              "name": "即兴专长 Improvisational Expertise",
               "description": "<p>一把破损的椅子、一个酒杯、一本书的书脊、一个密封的罐子，任何东西在合适的人手中都能成为武器。你习惯于在战斗中就地取材。你用临时武器进行的打击获得 @Advantage[2] 命中加值，并造成由 GM 认为最适合所用物品的类型的伤害。</p>",
               "actions": {
                 "improvisedAttack": {
@@ -5263,7 +5263,7 @@
               }
             },
             "Chessman Plating": {
-              "name": "棋士镀层 Chessman Plating",
+              "name": "棋士装甲板 Chessman Plating",
               "description": {
                 "public": "<p>这层曾经坚不可摧的加固装甲板，在数个世纪的疏于维护中已经变得破败风化。</p>"
               }
@@ -5366,7 +5366,7 @@
               }
             },
             "Chessman Plating": {
-              "name": "棋士镀层 Chessman Plating",
+              "name": "棋士装甲板 Chessman Plating",
               "description": {
                 "public": "<p>这层曾经坚不可摧的加固装甲板在数个世纪的疏于维护中逐渐老化风蚀。</p>"
               }
@@ -5491,7 +5491,7 @@
             "Chessman Plating": {
               "name": "棋士装甲板 Chessman Plating",
               "description": {
-                "public": "<p>这曾经坚不可摧的强化镀层，经过数个世纪的疏于维护，已经变得破损风化。</p>"
+                "public": "<p>这曾经坚不可摧的强化装甲板，经过数个世纪的疏于维护，已经变得破损风化。</p>"
               }
             },
             "Wilderness Journeyman": {
@@ -5995,7 +5995,7 @@
               }
             },
             "Agrimagical Artifact: Everbloom": {
-              "name": "农魔法神器：永绽之花 Agrimagical Artifact: Everbloom",
+              "name": "农艺魔法神器：永绽之花 Agrimagical Artifact: Everbloom",
               "description": "<p>每天一次，埃迪维尔可以触碰一块石头、一株植物或其他单件天然物品，并为其赋予如下农法魔效：</p><p><strong>永绽花。</strong> 该奇物周围100英尺见方范围内的土地生产力翻倍——所有植物的产量都是其普通产量的两倍。此外，该奇物获得[[/r 1d4]]次充能——当埃迪维尔位于其50英尺范围内时，他们施放的任何咒法学派法术都会被施放两次，并消耗1次充能。一旦充能全部耗尽，该物品便会失去力量，变为凡物。</p>"
             },
             "Produce Flame": {
@@ -6340,7 +6340,7 @@
           "tokenName": "莉拉·艾瑞恩",
           "items": {
             "Signborn Lineage": {
-              "name": "星兆血统 Signborn Lineage",
+              "name": "印记裔血统 Signborn Lineage",
               "description": "<p>除了你的实体肢体外，你还拥有两条灵体手臂。这些手臂不能持用武器、盾牌或其他装备。不过，它们可以与普通肢体一同用于快速操弄物品。每轮一次，你可以从物品栏中装备一件物品而无需为此花费任何<strong>动作</strong>点。</p><p>借助印记裔独特的语言与生理结构，你将灵体肢体同步融入施法的编织之中，从而毫不费力地施展魔法技艺。你知晓独特的<strong>符文语</strong>屈折，可添加到法术中。以符文语强化的法术在施放时需要额外花费<strong>+1 英雄气概</strong>，但其所需<strong>动作</strong>可减少<strong>-2</strong>。</p>"
             },
             "Rune: Life": {
@@ -7651,7 +7651,7 @@
               }
             },
             "Kivahr Lineage": {
-              "name": "基瓦赫血统 Kivahr Lineage",
+              "name": "基瓦尔血统 Kivahr Lineage",
               "description": "<p>你的身体因巨人的血统而得到强化。你的心智与身体和谐协作，以解决问题并承受肉体上的压力。</p><p>你的<strong>强韧</strong>与<strong>意志</strong>防御获得等同于你的<strong>等级</strong>除以4的加值。</p><p></p><p></p><p></p>",
               "actions": {
                 "regulatedRhythm": {
@@ -8418,7 +8418,7 @@
               }
             },
             "Wirrun Lineage": {
-              "name": "维伦血统 Wirrun Lineage",
+              "name": "威伦血统 Wirrun Lineage",
               "description": "<p>你免疫极寒的影响。你的视野不会因雾、薄雾、雪或其他大气效果而受阻。</p><p><strong>阿尔法一：</strong>此视觉效果尚未自动化。</p>",
               "actions": {
                 "implacableHunter": {
@@ -8757,7 +8757,7 @@
                   ]
                 },
                 "waterAversion": {
-                  "name": "畏水症 Water Aversion",
+                  "name": "畏水 Water Aversion",
                   "description": "<p>当浸没在水元素中超过 6 秒，或当你在浸没于水元素中时开始你的回合时，你必须检验自己的决心。</p><p><strong>ALPHA ONE</strong>：这个动作需要进一步平衡。</p>",
                   "condition": "在水中浸没超过6秒。"
                 }
@@ -9073,14 +9073,14 @@
               }
             },
             "Electrocharge Ampoule": {
-              "name": "电荷安瓿瓶 Electrocharge Ampoule",
+              "name": "电荷安瓿 Electrocharge Ampoule",
               "description": {
                 "public": "<p>一个装满黄色液体的密封玻璃管在破裂时会爆炸，产生突然的电流放电。</p>",
                 "private": "<p></p><p>这些炼金容器主要用于为小型机电机器在短时间内提供动力，但它们有些不稳定，其内容物暴露在空气中时会发生不良反应，因此可作为有用但难以预测的简易爆炸物。若以正确方式结合足够大的数量，它们也可用于为更重要的装置提供动力，并释放出更多电能。</p>"
               },
               "actions": {
                 "electroAmpoule": {
-                  "name": "电荷安瓿瓶 Electrocharge Ampoule",
+                  "name": "电荷安瓿 Electrocharge Ampoule",
                   "description": "<p>你投掷@ref[name]，对放电半径内的所有敌人造成虚弱的<strong>电击</strong>伤害，并使其短暂陷入@Condition[staggered]。<strong>放电</strong>的半径取决于炸弹的品质：</p><ul><li><p><strong>粗糙</strong> - 3尺</p></li><li><p><strong>标准</strong> - 4尺</p></li><li><p><strong>精良</strong> - 6尺</p></li><li><p><strong>卓越</strong> - 8尺</p></li><li><p><strong>大师级</strong> - 10尺</p></li></ul>"
                 }
               }
@@ -9458,7 +9458,7 @@
               }
             },
             "Vrjnhar Lineage": {
-              "name": "Vrjnhar 血统 Vrjnhar Lineage",
+              "name": "弗尔金哈尔血统 Vrjnhar Lineage",
               "description": "<p>当一次针对你的攻击导致<strong>擦击</strong>时，你会以你那华丽的胡须承受这一击，从而完全保护自己，不受原本由擦击造成的伤害。</p>",
               "actions": {
                 "formidableStamina": {
@@ -9715,7 +9715,7 @@
               }
             },
             "Kivahr Lineage": {
-              "name": "基瓦赫血统 Kivahr Lineage",
+              "name": "基瓦尔血统 Kivahr Lineage",
               "description": "<p>你的身体因巨人的血统而得到强化。你的心智与身体和谐协作，以解决问题并承受身体上的负担。</p><p>你的<strong>强韧</strong>和<strong>意志</strong>防御获得等于你的<strong>等级</strong>除以4的加值。</p><p></p><p></p><p></p>",
               "actions": {
                 "regulatedRhythm": {
@@ -9778,7 +9778,7 @@
               "description": "<p>你知晓<strong>风暴符文</strong>，并能用它来编织施法。</p><p>泽夫的面具具备有限的超自然可塑性。你可以稍微改变你的面具，以用于日常沟通和情感表达。当你死亡时，只会留下你的面具。就以法术或以已死亡生物为目标的魔法效果而言，你的面具视为你的物理遗骸。</p><p>你的面具高深莫测的本质，使他人难以看出你的意图。在社交挑战中，试图解读你动机的<strong>察觉</strong>检定承受<strong>+2祸骰</strong>。</p>",
               "actions": {
                 "inscrutableVisage": {
-                  "name": "高深莫测的面容 Inscrutable Visage",
+                  "name": "莫测面容 Inscrutable Visage",
                   "description": "<p>你的面具呈现出一种高深莫测的表情。</p><ul><li><p>你在所有欺瞒技能的用途上获得<strong>+2 恩惠骰</strong>。</p></li><li><p>你的<strong>反射</strong><strong>防御</strong>增加 +2。</p></li></ul><p>你在任意时刻只能有一种生效中的面具表情。</p>",
                   "effects": [
                     {
@@ -9787,7 +9787,7 @@
                   ]
                 },
                 "menacingVisage": {
-                  "name": "骇人面容 Menacing Visage",
+                  "name": "慑人面容 Menacing Visage",
                   "description": "<p>你的面具呈现出一副凶恶的表情。</p><ul><li><p>你在所有威吓技能的用途上获得<strong>+2 恩惠骰</strong>。</p></li><li><p>你的<strong>强韧</strong><strong>防御</strong>提高 +2。</p></li></ul><p>你在任意时刻只能有一种生效中的面具表情。</p>",
                   "effects": [
                     {
@@ -10710,7 +10710,7 @@
             },
             "Signborn Lineage": {
               "description": "<p>除了你的实体肢体外，你还拥有两条灵体手臂。这些手臂不能持用武器、盾牌或其他装备。不过，它们可以与普通肢体一同用于快速操弄物品。每<strong>轮</strong>一次，你可以从物品栏中装备一件物品而无需为此花费任何<strong>动作</strong>点。</p><p>借助印记裔独特的语言与生理结构，你将灵体肢体同步融入施法的编织之中，从而毫不费力地施展魔法技艺。你知晓独特的<strong>符文语</strong>屈折，可添加到法术中。以符文语强化的法术在施放时需要额外花费<strong>+1 英雄气概</strong>，但可降低<strong>-2 动作</strong>的消耗来施展。</p>",
-              "name": "星兆血统 Signborn Lineage"
+              "name": "印记裔血统 Signborn Lineage"
             },
             "Talisman Weapon Training": {
               "actions": {
@@ -10747,7 +10747,7 @@
               }
             },
             "Liestra's Bracer of Appraisal": {
-              "name": "列斯特拉的鉴定护臂 Liestra's Bracer of Appraisal",
+              "name": "莉耶丝特拉的鉴定护腕 Liestra's Bracer of Appraisal",
               "description": {
                 "public": "<p>这只附魔护臂上装配着诸如发条卡尺和镊子、奥术分光镜以及一架幻影天平之类的法器。</p>",
                 "private": "<p>注入了这副护腕的使用者可以激活其附魔，使护腕展开为一张功能完备的 @UUID[Compendium.crucible.equipment.Item.jewelersPortable]{珠宝匠便携式工作台}，并在使用这些工具对物品价值进行鉴定时获得 @Advantage[2]。</p>"
@@ -10772,7 +10772,7 @@
               }
             },
             "Kivahr Lineage": {
-              "name": "基瓦赫血统 Kivahr Lineage",
+              "name": "基瓦尔血统 Kivahr Lineage",
               "description": "<p>你的身体因巨人的血脉而得到强化。你的心智与身体和谐运作，以解决问题并承受身体上的压力。</p><p>你的<strong>强韧</strong>和<strong>意志</strong>防御获得等同于你的<strong>等级</strong>除以 4 的加值。</p><p></p><p></p><p></p>",
               "actions": {
                 "regulatedRhythm": {
@@ -10879,8 +10879,8 @@
             }
           },
           "biography": {
-            "public": "<section class=\"block readaloud\"><p>@ref[name]是一位性格倔强的阿克图里安当铺经纪人，以机智风趣的斗嘴本事和识破超值交易的能力而闻名。身高6英尺9英寸，莉耶斯特拉是一位身形精瘦、肌肉结实的女商人；她那琥珀色的双眼投出极具威严的凝视，而那意味深长的笑容则暴露了她对挖苦讥讽的偏爱。</p></section>",
-            "private": "<p>@ref[name]白天靠操办申特与瓦伦古物的贸易过着相当富足的生活（此外还有一系列非法货物与服务，不过她只提供给经过筛选的客户）。她在@UUID[JournalEntry.emberArctusGazet.JournalEntryPage.QpeeUqr3NZMsObnG]{天刷镇}下层街区经营的店面（长途行）提供种类繁多的标准冒险者装备与探索装备，也为她更隐秘的交易提供了完美掩护。</p><p>在奥尔丹度过一段充满冒险的青年时期后，这位天刷镇本地人将注意力转向了家乡附近的楔地丘麓；那里古代巨人族的遗迹正适合发掘（而那些外省来的当地人也早该被好好宰一笔了）。她的交易并不总是公平；她的忠诚心也同样如此。莉埃丝特拉经营长途行已有将近十年，只偶尔会为了追寻新的可窃宝物而暂时离开。</p><h2 class=\"divider\">个性</h2><p>莉埃丝特拉的目标是积累足够财富，将她的生意扩展到天刷镇之外，最终还计划在奥尔丹开设一家店面。她作息相当晚，要么沉浸于狂欢与放纵之中，要么对工作投入极度专注。莉埃丝特拉宁可把人赶出店门，也不愿忍受他们的羞辱；当她感到挫败或惊讶时，常会低声用径道语咒骂。她特别偏爱稀有甜食，比如奥尔达尼糖果和时令阿克图里安甜点，也喜欢刺激的打赌。</p><h2 class=\"divider\">关联</h2><p>机遇让少女时期的莉埃丝特拉从天刷镇来到奥尔丹，在那里，她一面与当地街头帮派四处鬼混，一面也投入数小时的实用学习。有一次值得一提的冒险——莉埃丝特拉试图从一位以深居简出而恶名昭彰的收藏家那间塞满藏品的宅邸中偷走一件珍贵古董——最终以这名年轻盗贼落入@UUID[JournalEntry.emberOrganizatio.JournalEntryPage.dNRnUUfnB5gWCGKf]{帷幕锁链}之手、戴上镣铐而告终。那位名叫@UUID[Actor.ehBJkqqxoa7VEwSs]{安卡里斯特}的龙裔对她获释起到了关键作用，直到今天，她仍欠这位年迈战士一份人情。</p><p>莉埃丝特拉还在@UUID[JournalEntry.emberOrganizatio.JournalEntryPage.lRAxRZ4doNSLC6zw]{阿纳克瑞纽姆}内部维持着数名联系人，用于稀有古物的出售与分销。而奥尔丹那位声名远扬的工匠@UUID[Actor.gBXPA4AerLzwSbi6]{贾尼克斯·曼斯}，也始终是她一生的挚友。</p><h2 class=\"divider\">短语</h2><section class=\"block answer\"><p><em>想知道我在想什么？那得拿点东西来换。</em></p></section><section class=\"block answer\"><p><em>凡事都可以谈价。</em></p></section><section class=\"block answer\"><p><em>天刷镇可不是软手软心之人该待的地方。</em></p></section>",
+            "public": "<section class=\"block readaloud\"><p>@ref[name]是一位性格倔强的阿克图里安当铺经纪人，以机智风趣的斗嘴本事和识破超值交易的能力而闻名。身高6英尺9英寸，莉耶丝特拉是一位身形精瘦、肌肉结实的女商人；她那琥珀色的双眼投出极具威严的凝视，而那意味深长的笑容则暴露了她对挖苦讥讽的偏爱。</p></section>",
+            "private": "<p>@ref[name]白天靠操办申特与瓦伦古物的贸易过着相当富足的生活（此外还有一系列非法货物与服务，不过她只提供给经过筛选的客户）。她在@UUID[JournalEntry.emberArctusGazet.JournalEntryPage.QpeeUqr3NZMsObnG]{天刷镇}下层街区经营的店面（长途行）提供种类繁多的标准冒险者装备与探索装备，也为她更隐秘的交易提供了完美掩护。</p><p>在奥尔丹度过一段充满冒险的青年时期后，这位天刷镇本地人将注意力转向了家乡附近的楔地丘麓；那里古代巨人族的遗迹正适合发掘（而那些外省来的当地人也早该被好好宰一笔了）。她的交易并不总是公平；她的忠诚心也同样如此。莉耶丝特拉经营长途行已有将近十年，只偶尔会为了追寻新的可窃宝物而暂时离开。</p><h2 class=\"divider\">个性</h2><p>莉耶丝特拉的目标是积累足够财富，将她的生意扩展到天刷镇之外，最终还计划在奥尔丹开设一家店面。她作息相当晚，要么沉浸于狂欢与放纵之中，要么对工作投入极度专注。莉耶丝特拉宁可把人赶出店门，也不愿忍受他们的羞辱；当她感到挫败或惊讶时，常会低声用径道语咒骂。她特别偏爱稀有甜食，比如奥尔达尼糖果和时令阿克图里安甜点，也喜欢刺激的打赌。</p><h2 class=\"divider\">关联</h2><p>机遇让少女时期的莉耶丝特拉从天刷镇来到奥尔丹，在那里，她一面与当地街头帮派四处鬼混，一面也投入数小时的实用学习。有一次值得一提的冒险——莉耶丝特拉试图从一位以深居简出而恶名昭彰的收藏家那间塞满藏品的宅邸中偷走一件珍贵古董——最终以这名年轻盗贼落入@UUID[JournalEntry.emberOrganizatio.JournalEntryPage.dNRnUUfnB5gWCGKf]{帷幕锁链}之手、戴上镣铐而告终。那位名叫@UUID[Actor.ehBJkqqxoa7VEwSs]{安卡里斯特}的龙裔对她获释起到了关键作用，直到今天，她仍欠这位年迈战士一份人情。</p><p>莉耶丝特拉还在@UUID[JournalEntry.emberOrganizatio.JournalEntryPage.lRAxRZ4doNSLC6zw]{阿纳克瑞纽姆}内部维持着数名联系人，用于稀有古物的出售与分销。而奥尔丹那位声名远扬的工匠@UUID[Actor.gBXPA4AerLzwSbi6]{贾尼克斯·曼斯}，也始终是她一生的挚友。</p><h2 class=\"divider\">短语</h2><section class=\"block answer\"><p><em>想知道我在想什么？那得拿点东西来换。</em></p></section><section class=\"block answer\"><p><em>凡事都可以谈价。</em></p></section><section class=\"block answer\"><p><em>天刷镇可不是软手软心之人该待的地方。</em></p></section>",
             "appearance": "<section class=\"block readaloud\"><p>一位肌肉结实的基瓦尔女性身披宽松层叠的布料与皮革，神态随意地倚靠在墙边。她那一头浅棕色头发梳成偏分波波头，发梢垂至下巴下方；她正用一枚小巧的目镜审视着某件奇特的小玩意。片刻之后，她带着一抹意味深长、神采飞扬的笑容迎上你，随后又用琥珀色的眼睛将你上下打量，而你也不由得注意到她侧腰上绑着一把石质的仿制硬头锤。很显然，她是来办正事的。</p></section>"
           },
           "archetype": {
@@ -11232,7 +11232,7 @@
             },
             "Agrimagical Artifact: Everbloom": {
               "description": "<p>每天一次，埃迪维尔可以触碰一块石头、一株植物或其他单件天然物品，并为其赋予如下农法魔效：</p><p><strong>永绽花。</strong> 该奇物周围100英尺见方范围内的土地生产力翻倍——所有植物的产量都是其普通产量的两倍。此外，该奇物获得[[/r 1d4]]次充能——当埃迪维尔位于其50英尺范围内时，他们施放的任何咒法学派法术都会被施放两次，并消耗1次充能。一旦充能全部耗尽，该物品便会失去力量，变为凡物。</p>",
-              "name": "农魔法神器：永绽之花 Agrimagical Artifact: Everbloom"
+              "name": "农艺魔法神器：永绽之花 Agrimagical Artifact: Everbloom"
             }
           },
           "biography": {
@@ -11406,7 +11406,7 @@
             },
             "Agrimagical Artifact: Everbloom": {
               "description": "<p>每天一次，埃迪维尔可以触碰一块石头、一株植物或其他单件天然物品，并为其赋予如下农法魔效：</p><p><strong>永绽花。</strong> 该奇物周围100英尺见方范围内的土地生产力翻倍——所有植物的产量都是其普通产量的两倍。此外，该奇物获得[[/r 1d4]]次充能——当埃迪维尔位于其50英尺范围内时，他们施放的任何咒法学派法术都会被施放两次，并消耗1次充能。一旦充能全部耗尽，该物品便会失去力量，变为凡物。</p>",
-              "name": "农魔法神器：永绽之花 Agrimagical Artifact: Everbloom"
+              "name": "农艺魔法神器：永绽之花 Agrimagical Artifact: Everbloom"
             }
           },
           "biography": {
@@ -11970,7 +11970,7 @@
               }
             },
             "Signborn Lineage": {
-              "name": "星兆血统 Signborn Lineage",
+              "name": "印记裔血统 Signborn Lineage",
               "description": "<p>除了你的实体肢体外，你还拥有两条以太手臂。这些手臂不能持用武器、盾牌或其他装备。不过，它们可以在你正常肢体之外，用于快速操控物品。每轮一次，你可以从物品栏中装备一件物品，而无需为此花费任何<strong>动作</strong>点。</p><p>借助印记裔特有的语言与生理构造，你将以太肢体同步融入施法编织之中，毫不费力地施展魔法技艺。你知晓独特的<strong>符文语</strong>屈折，可添加到法术中。以符文语强化的法术施放时需额外消耗<strong>+1 英雄气概</strong>，但可将所需<strong>动作</strong>减少<strong>-2</strong>。</p>"
             },
             "Enchanting Novice": {
@@ -12612,7 +12612,7 @@
               "description": "<p>[[lookup @name]]在对一个生物进行攻击检定时具有<strong>优势</strong>，前提是该生物的<strong>5 英尺</strong>内至少有一个友方生物，且该友方未失能。</p><p>此外，对于该生物使用过且其至少见过一次的任何能力、异能或法术，他们进行的豁免检定具有<strong>优势</strong>。</p>"
             },
             "Precise": {
-              "name": "精确的 Precise",
+              "name": "精准 Precise",
               "description": "<p>[[lookup @name]]极其精确，并且在攻击检定中掷出天然 19 或 20 时，其攻击会造成暴击。</p>",
               "effects": {
                 "Crit on 19+": {
@@ -12922,7 +12922,7 @@
               }
             },
             "Claw Hammer": {
-              "name": "羊角锤 Claw Hammer",
+              "name": "爪锤 Claw Hammer",
               "description": {
                 "public": "<p>爪锤看似只是种朴素的工具，有着平坦的敲击面和弯曲的爪部，但在意志坚定之人手中，它也能成为凶悍的武器。</p>"
               }
@@ -14889,11 +14889,11 @@
               }
             },
             "Dying Call": {
-              "name": "临终呼唤 Dying Call",
+              "name": "垂死呼号 Dying Call",
               "description": "<p>当@ref[actor.name]{这只生物}身陷垂死挣扎时，它会发出最后一声呼唤，向附近的同类示警它已被杀死，并召唤它们前来复仇。</p>",
               "actions": {
                 "dyingCall": {
-                  "name": "临终呼唤 Dying Call",
+                  "name": "垂死呼号 Dying Call",
                   "description": "<p>@ref[actor.name]{该生物}以垂死之举发出一声尖锐呼号，向附近的同类生物告知自身的死讯，它们会本能地被吸引至此处。</p>",
                   "condition": "该生物进入死亡状态。"
                 }
@@ -15239,7 +15239,7 @@
               }
             },
             "Light Scales": {
-              "name": "轻型鳞片 Light Scales",
+              "name": "轻质鳞片 Light Scales",
               "description": {
                 "public": "<p>该@ref[actor.name]{生物}的皮肤覆盖着轻质鳞片，能为其提供一些适度的伤害保护。</p>"
               }
@@ -15523,7 +15523,7 @@
               "description": "<p>任何被该@ref[actor.name]{生物}啃咬的生物都会在10分钟内于5英尺半径内散发微光。多次啃咬不会改变这种照明的等级。</p>"
             },
             "Swarm": {
-              "name": "虫群 Swarm",
+              "name": "群集 Swarm",
               "description": "<p>此敌手是由众多同类生物组成的一群，作为单一的蜂拥群体行动。</p><ul><li><p>最大<strong>生命值</strong>翻倍。</p></li><li><p>面对任何单体伤害来源时，该群集获得等同于其<strong>坚韧</strong>的额外<strong>抗性</strong>。</p></li><li><p>随着生命值被消耗，群集的<strong>体型</strong>会随之下降，最低降至体型 2。</p></li></ul>"
             },
             "Radiant Bite": {
@@ -15561,7 +15561,7 @@
               }
             },
             "Thick Hide": {
-              "name": "厚皮 Thick Hide",
+              "name": "厚实兽皮 Thick Hide",
               "description": {
                 "public": "<p>这头@ref[actor.name]{野兽}有着厚实的皮革般外皮，对攻击具有坚韧的抗性。</p>"
               }
@@ -15654,7 +15654,7 @@
               "description": "<p>你坚强的意志使你极难受到影响。你的<strong>意志</strong>防御获得 +1，并获得对<strong>灵能</strong>伤害的 +5 抗性。</p>"
             },
             "Radiant Absorption": {
-              "name": "辉光吸收 Radiant Absorption",
+              "name": "光耀吸收 Radiant Absorption",
               "description": "<p>该@ref[actor.name]{生物}对混乱的光之力量并不陌生。其<strong>光耀</strong>抗性加倍，并且如果该抗性会使伤害量降至零以下，则负数部分改为作为<strong>治疗</strong>承受。</p>"
             },
             "Last Stand": {
@@ -15691,11 +15691,11 @@
               "description": "<p>@ref[actor.name]{生物}发出非魔法的明亮光照，照亮15英尺半径范围，并在30 foot radius内提供微光。</p>"
             },
             "Call Skither": {
-              "name": "呼唤斯基瑟尔 Call Skither",
+              "name": "呼唤斯基瑟 Call Skither",
               "description": "<p>该@ref[actor.name]{生物}控制附近的斯基瑟，它们作为其束缚者仆从行动。</p>",
               "actions": {
                 "callSkither": {
-                  "name": "呼唤斯基瑟尔 Call Skither",
+                  "name": "呼唤斯基瑟 Call Skither",
                   "description": "<p>该@ref[actor.name]{生物}召唤来一只仆从斯基瑟，它从附近某处飞来，并将该生物召唤至距离该生物所在位置10英尺内。</p>"
                 }
               }
@@ -15890,7 +15890,7 @@
               }
             },
             "Heavy Carapace": {
-              "name": "重型甲壳 Heavy Carapace",
+              "name": "重甲壳 Heavy Carapace",
               "description": {
                 "public": "<p>该@ref[actor.name]{生物}拥有一副重型铰接外骨骼，可保护其免受伤害。</p>"
               }
@@ -16097,7 +16097,7 @@
               "description": "<p>该@ref[actor.name]{生物}拥有出众的能力，能够从容承受电击爆炸。其<strong>电击</strong>抗性翻倍，并且如果该抗性会使伤害量降至零以下，则负数部分改为作为<strong>治疗</strong>获得。</p>"
             },
             "Improvisational Expertise": {
-              "name": "即兴专精 Improvisational Expertise",
+              "name": "即兴专长 Improvisational Expertise",
               "description": "<p>一把破损的椅子、一个大酒杯、一本书的书脊、一个密封的罐子——只要在合适的人手中，任何东西都能成为武器。你早已习惯在战斗中就地取材。你使用临时武器进行的打击获得 @Advantage[2] 命中，并造成一种由GM认为最适合所用物品的类型的伤害。</p>",
               "actions": {
                 "improvisedAttack": {
@@ -16128,7 +16128,7 @@
               }
             },
             "Chessman Plating": {
-              "name": "棋士镀层 Chessman Plating",
+              "name": "棋士装甲板 Chessman Plating",
               "description": {
                 "public": "<p>这层曾经密不透风的强化装甲板，在数个世纪的疏于维护中已经变得破败风化。</p>"
               }
@@ -16326,11 +16326,11 @@
               }
             },
             "Burnout": {
-              "name": "精疲力竭 Burnout",
+              "name": "熔毁 Burnout",
               "description": "<p>蒸汽驱动的构装体在体内储存着大量危险的过热蒸汽，如果不安全地排放，可能会造成严重伤害。</p>",
               "actions": {
                 "steamVent": {
-                  "name": "精疲力竭 Burnout",
+                  "name": "熔毁 Burnout",
                   "description": "<p>该@ref[actor.name]{构装体}爆裂开来，喷涌出一阵火焰与烟雾的爆炸，对半径内每个目标的<strong>反射</strong>发动攻击，并造成<strong>火焰</strong>伤害。因这次攻击受到伤害者会陷入@Condition[blinded]，持续3回合。</p>",
                   "condition": "@ref[actor.name]{该构装体}处于负伤状态"
                 }
@@ -16523,7 +16523,7 @@
               "description": "<p>当其保持静止不动时，@ref[actor.name]{生物}与某个其他物体或材料无法区分。</p>"
             },
             "Improvisational Expertise": {
-              "name": "即兴专精 Improvisational Expertise",
+              "name": "即兴专长 Improvisational Expertise",
               "description": "<p>一把破损的椅子、一个酒杯、一本书的书脊、一个封好的罐子——在合适的人手中，任何东西都能成为武器。你习惯于在战斗中就地取材。你用临时武器进行的打击获得 @Advantage[2] 命中优势，并造成一种由 GM 认为最适合所用物品的伤害类型。</p>",
               "actions": {
                 "improvisedAttack": {
@@ -17276,7 +17276,7 @@
               "description": "<p>该@ref[actor.name]{生物}能够召唤出其他较弱小的元素生物，与其并肩作战。</p>",
               "actions": {
                 "elementalSummonSprite": {
-                  "name": "召唤精魄精灵 Summon Sprite",
+                  "name": "召唤精灵 Summon Sprite",
                   "description": "<p>@ref[actor.name]{该生物}在 60 英尺内一处它能察觉、且含有水或与水相邻的空间，召唤一个 @UUID[Actor.sVnMPbEj5P18Yo8V]{水妖精}。</p><p>@ref[actor.name]{该生物}同时只能以这种方式召唤一个精灵。</p>"
                 },
                 "elementalSummonVisitor": {
@@ -18244,7 +18244,7 @@
               "description": "<p class=\"feature\">[[lookup @name]]在游戏主持人选定的一项技能上具有熟练，并且在使用该技能进行属性检定时拥有 @Advantage[2]。</p><p class=\"feature\">[[lookup @name]]同时对 @UUID[Compendium.dnd5e.equipment24.Item.phbtulWoodcarver]{木雕工具} 具有熟练。</p>"
             },
             "Agrimagical Artifact: Everbloom": {
-              "name": "农魔法神器：永绽之花 Agrimagical Artifact: Everbloom",
+              "name": "农艺魔法神器：永绽之花 Agrimagical Artifact: Everbloom",
               "description": "<p>每天一次，埃迪维尔可以触碰一块石头、一株植物或其他单件天然物品，并为其赋予如下农法魔效：</p><p><strong>永绽花。</strong> 该奇物周围100英尺见方范围内的土地生产力翻倍——所有植物的产量都是其普通产量的两倍。此外，该奇物获得[[/r 1d4]]次充能——当埃迪维尔位于其50英尺范围内时，他们施放的任何咒法学派法术都会被施放两次，并消耗1次充能。一旦充能全部耗尽，该物品便会失去力量，变为凡物。</p>"
             }
           },
@@ -18362,7 +18362,7 @@
               }
             },
             "Claw Hammer": {
-              "name": "羊角锤 Claw Hammer",
+              "name": "爪锤 Claw Hammer",
               "description": {
                 "public": "<p>这件看似普通的工具有着平坦的敲击面和弯曲的爪部，而在意志坚定之人手中，爪锤也能成为凶悍的武器。</p>"
               }
@@ -20073,7 +20073,7 @@
               "description": "<p>该@ref[actor.name]{生物}会发出非魔法的明亮光照，半径为15英尺；并发出微光，半径为30英尺。</p>"
             },
             "Aqueous Camouflage": {
-              "name": "水生伪装 Aqueous Camouflage",
+              "name": "水相伪装 Aqueous Camouflage",
               "description": "<p>当完全浸没于水或液体中时，@ref[actor.name]{该生物}在<strong>潜行</strong>检定上获得@Advantage[2]。</p>"
             },
             "Natural Invisibility": {
@@ -20087,7 +20087,7 @@
               }
             },
             "Aquatic Breathing": {
-              "name": "水下呼吸 Aquatic Breathing",
+              "name": "水生呼吸 Aquatic Breathing",
               "description": "<p>@ref[actor.name]{该生物}只能在水下呼吸。</p>"
             },
             "Thick Skin": {
@@ -21086,7 +21086,7 @@
               }
             },
             "Pestilent Bite": {
-              "name": "疫病之咬 Pestilent Bite",
+              "name": "疫病啃咬 Pestilent Bite",
               "description": {
                 "public": "<p>该@ref[actor.name]{生物}拥有强力的啃咬。</p>"
               }
@@ -21136,7 +21136,7 @@
           "tokenName": "霍伦多尔",
           "items": {
             "Pestilent Bite": {
-              "name": "疫病之咬 Pestilent Bite",
+              "name": "疫病啃咬 Pestilent Bite",
               "description": {
                 "public": "<p>该@ref[actor.name]{生物}拥有强有力的啃咬。</p>"
               }
@@ -28921,7 +28921,7 @@
               }
             },
             "Radiant Absorption": {
-              "name": "辉光吸收 Radiant Absorption",
+              "name": "光耀吸收 Radiant Absorption",
               "description": "<p>该@ref[actor.name]{生物}对混乱的光之力量并不陌生。其<strong>光耀</strong>抗性加倍，并且如果该抗性会使伤害量降至零以下，则负数部分改为作为<strong>治疗</strong>承受。</p>"
             },
             "Rune: Illumination": {
@@ -29530,11 +29530,11 @@
                 "dyingCall": {
                   "condition": "该生物进入死亡状态。",
                   "description": "<p>@ref[actor.name]{该生物}以垂死之举发出一声尖锐呼号，向附近的同类生物告知自身的死讯，它们会本能地被吸引至此处。</p>",
-                  "name": "临终呼唤 Dying Call"
+                  "name": "垂死呼号 Dying Call"
                 }
               },
               "description": "<p>当@ref[actor.name]{此生物}濒临死亡之际，它会发出最后一声呼号，警示附近同类它已被杀，并召唤它们前来复仇。</p>",
-              "name": "临终呼唤 Dying Call"
+              "name": "垂死呼号 Dying Call"
             },
             "Elusive Flight": {
               "description": "<p>这个@ref[actor.name]{生物}在飞行时尤其难以捉摸，能够猛扑着进出战斗而不会引发任何<strong>脱离接战</strong>。如果它降落到地面上，就可以被接战；而若它试图重新飞回空中，则可能会适用脱离接战。</p>",
@@ -29570,7 +29570,7 @@
             },
             "Swarm": {
               "description": "<p>此敌手是由众多同类生物组成的一群，作为单一的蜂拥群体行动。</p><ul><li><p>最大<strong>生命值</strong>翻倍。</p></li><li><p>面对任何单体伤害来源时，该群集获得等同于其<strong>坚韧</strong>的额外<strong>抗性</strong>。</p></li><li><p>随着生命值被消耗，群集的<strong>体型</strong>会随之下降，最低降至体型 2。</p></li></ul>",
-              "name": "虫群 Swarm"
+              "name": "群集 Swarm"
             },
             "Swooping Strike": {
               "actions": {
@@ -30284,7 +30284,7 @@
           "items": {
             "Agrimagical Artifact: Everbloom": {
               "description": "<p>每天一次，埃迪维尔可以触碰一块石头、一株植物或其他单件天然物品，并为其赋予如下农法魔效：</p><p><strong>永绽花。</strong> 该奇物周围100英尺见方范围内的土地生产力翻倍——所有植物的产量都是其普通产量的两倍。此外，该奇物获得[[/r 1d4]]次充能——当埃迪维尔位于其50英尺范围内时，他们施放的任何咒法学派法术都会被施放两次，并消耗1次充能。一旦充能全部耗尽，该物品便会失去力量，变为凡物。</p>",
-              "name": "农魔法神器：永绽之花 Agrimagical Artifact: Everbloom"
+              "name": "农艺魔法神器：永绽之花 Agrimagical Artifact: Everbloom"
             },
             "Antitoxin": {
               "actions": {
@@ -30355,7 +30355,7 @@
                 }
               },
               "description": "<p>你的身体因巨人的血统而得到强化。你的心智与身体和谐协作，以解决问题并承受肉体上的压力。</p><p>你的<strong>强韧</strong>与<strong>意志</strong>防御获得等同于你的<strong>等级</strong>除以4的加值。</p><p></p><p></p><p></p>",
-              "name": "基瓦赫血统 Kivahr Lineage"
+              "name": "基瓦尔血统 Kivahr Lineage"
             },
             "Life Proficiency": {
               "description": "<p>你熟练于运用生命符文编织施法。使用此符文施放的法术获得<strong>+1技能加值</strong>。</p><h3 class=\"divider\">试玩测试说明</h3><p>该天赋最终还将为@Action[Compendium.crucible.talent.Item.runeLife00000000 bloom]动作提供升级，扩展其效果或加入新的使用选项。</p>",
@@ -32158,7 +32158,7 @@
           }
         },
         "Liestra's Bracer of Appraisal": {
-          "name": "莉埃斯特拉的鉴定护腕 Liestra's Bracer of Appraisal",
+          "name": "莉耶丝特拉的鉴定护腕 Liestra's Bracer of Appraisal",
           "description": {
             "public": "<p>这只附魔护腕上装配了法器，如发条卡尺和镊子、奥术分光镜，以及一架幻影天平。</p>",
             "private": "<p>已向这只护臂注能的使用者可以激活其附魔，使其展开为一个功能完备的 @UUID[Compendium.crucible.equipment.Item.jewelersPortable]{珠宝匠便携工作台}，并在使用这些工具鉴定一件物品的价值时获得 @Advantage[2]。</p>"
@@ -37100,7 +37100,7 @@
             },
             "Patch 0.4.3": {
               "name": "补丁 0.4.3 Patch 0.4.3",
-              "text": "<p>欢迎使用 Ember 更新与内容发布，版本 <code>0.4.3</code>。这是一次小型更新，旨在修复我们现有任务中的漏洞并补充内容缺口，作为我们持续进行的<strong>Ember Beta Two</strong>流程的一部分。</p><section class=\"block wip\"><h4>兼容性</h4><p>Ember 补丁 <code>0.4.3</code> 需要核心 Foundry VTT 版本 <code>13.351</code> 或更高版本，以及：</p><ul><li><p>D&amp;D5E 系统版本 <code>5.2.4</code> 或更高。</p></li><li><p>Crucible 系统版本 <code>0.8.5</code> 或更高。</p></li></ul><p><strong>不建议</strong>使用 Foundry VTT 14 版本仍在进行中的原型构建来测试 Ember。</p></section><section class=\"block gamemaster\"><h4>重要试玩测试变更</h4><p>我们扩大了第 2 章任务所授予的里程碑数量。对于当前正在第 2 章或第 3 章游玩 Ember 的各位，你们应当仔细对比已授予的里程碑数量，与队伍已完成的新里程碑授予事件数量是否一致。</p></section><h2 class=\"divider\">亮点</h2><p>本次新版本最重要的亮点如下：</p><ul><li><p>重新平衡了 D&amp;D 角色特性。</p></li><li><p>启用自定义地名志地点。</p></li><li><p>为聚落布雷文加入了一个全新的远景。</p></li><li><p>扩大了冗长的第 2 章任务所授予的里程碑数量。</p></li><li><p>为第 2 章主线任务“一位老朋友”提供了 Crucible 转换。</p></li></ul><p>关于这些亮点的更多细节，请见下方完整说明。</p><h2 class=\"divider\">功能与修复</h2><p>本次更新包含的所有新功能详见下列各节。</p><h3 class=\"divider\">角色</h3><ul><li><p>添加成年苏阿罗克角色，并在坍塌石冢中引用它。感谢社区成员 Raxray 为该数据块贡献了部分内容。</p></li><li><p>修正法典怪物图鉴中那些拥有肖像插图而不只是棋子插图的生物之插图署名。</p></li><li><p>修复侧边栏中托隆角色的损坏图像问题。</p></li><li><p>添加 Yeela Drevin 的生平简介，并更新其外观以匹配新插图。</p></li><li><p>修复了万德伦追踪者及相关角色中的一些错字和问题。</p></li><li><p>修复了所有龙兽角色中的若干小型文本、公式和 enricher 问题。</p></li></ul><h3 class=\"divider\">Crucible</h3><ul><li><p>为第 2 章主线任务“一位老朋友”添加完整的 Crucible 转换，包括其若干相关角色、物品等内容。</p></li><li><p>在 Crucible 中实现第 3 章任务中的同伴 NPC 角色自动成长。</p></li><li><p>大幅扩展《玩家指南》中“Magic and Spellcraft”页面，提供 Crucible 专属信息，说明 12 个施法符文中的每一个如何与 Ember 中的宇宙学或形而上力量相关联。</p></li><li><p>重新审视具有无定形特质生物的防御，确保其闪避不会高得不合理。</p></li><li><p>修复导致科拉克的结晶化创伤未能提供其应有正确抗性的漏洞。</p></li><li><p>正确添加印记裔符文语法术的英雄气概消耗组件。</p></li><li><p>修正龙焰特性的掷出伤害骰。</p></li><li><p>龙裔血统的龙焰现在会正确确保至少为“trained”</p></li><li><p>费伊杰血统的极限代谢现在会正确提高最大动作数</p></li><li><p>赫尔格伦血统的活石现在会正确防止倒地</p></li><li><p>基瓦赫血统的规整节律现在会在回合开始时正确提高专注并转移资源</p></li><li><p>维伦血统的无情猎手现在会正确授予恩惠骰</p></li><li><p>First Soulmark 现在会对以野兽为目标的技能动作正确施加一个祸骰</p></li><li><p>艾迪尔哨兵类型对手的炼金充能现在会正确随时间授予专注恢复</p></li><li><p>构装切割者现在会在攻击构装体时正确授予恩惠骰。</p></li><li><p>提拉斐语变形增益现在会正确应用于使用它的角色。</p></li><li><p>从 Crucible 冒险构建中排除未使用的 D&amp;D 晋升角色。</p></li></ul><h3 class=\"divider\">D&amp;D5e</h3><ul><li><p><strong>Arcane Countenance (Zeph)</strong> - 为该特性添加了优势主动效果。</p></li><li><p><strong>Drakonfire (Drakon)</strong> - 更新龙焰，使你在每个龙焰法术于晋升至其所需等级时授予时，选择智力、感知或魅力作为施法属性。</p></li><li><p><strong>Extreme Metabolism (Fej)</strong> - 添加了一个主动效果，在该特性所指示的持续时间内提高角色的速度。</p></li><li><p><strong>Fireborn (Fej)</strong> - 将由水触发的力竭惩罚替换为一次 DC 14 体质豁免失败时获得临时中毒状态（直到你下个回合结束），在保留畏水风味的同时，移除了长休恢复的记录负担。</p></li><li><p><strong>Implacable Hunter (Wirrun)</strong> - 添加了一个主动效果，对目标施加已标记状态。</p></li><li><p><strong>Muscle Machinery (Kivahr)</strong> - 澄清负重能力按体型大一号来计算。添加了一个主动效果，以相应提高角色的负重能力。</p></li><li><p><strong>Nimble Leap (Kiska)</strong> - 使此能力的机制与 Jump 法术保持一致，将跳跃距离上限设为 30 英尺。</p></li><li><p><strong>Regulated Rhythm (Kivahr)</strong> - 添加了一个主动效果，为该特性的技能检定、专注豁免以及战斗内外的治疗活动授予优势。</p></li><li><p><strong>Ritual Cooking (Kithil)</strong> - 澄清食用这顿餐食的盟友会恢复等同于其熟练加值的生命值，并在 8 小时内使其生命值上限提高同样的数值。</p></li><li><p><strong>Thornbark (Thornling)</strong> - 重做刺棘树皮，使其在应对近战攻击或擒抱时运作更一致。</p></li><li><p><strong>Tyraphic Transformation (Altyra)</strong> - 添加主动效果，将伤害抗性和威吓优势应用到目标的角色卡上。澄清额外伤害如何施加到目标。</p></li><li><p>修复在 D&amp;D 系统中，使用未自定义原型棋子图像的角色无法被鉴定的问题。</p></li><li><p>修正 NPC 角色（安卡里斯特）和队伍商队的速度定义问题。</p></li><li><p>为洛里斯·特兹兰和惊惧者角色补充缺失的生命值数值与公式。</p></li><li><p>怪物猎人背景径原本只提供一项熟练而非两项。</p></li><li><p>Ember 游戏状态重置也需要将具有成长路径的 D&amp;D 角色恢复到其最低等级版本。</p></li></ul><h3 class=\"divider\">任务</h3><ul><li><p>扩大冗长的第 2 章任务所授予的里程碑数量，以提供稍快一些的里程碑进阶速度。第 2 章主线任务现在各授予 3 个里程碑。第 2 章支线任务现在各授予 2 个里程碑。</p></li><li><p>对新任务“意图信号”进行了大量编辑改进。</p></li><li><p>对“月上之旅”任务进行了大量编辑改进。</p></li><li><p>修复外交豁免权中“一名死去的信使”事件里的死去信使外观。</p></li><li><p>删除了一些错误遗留在附录部分中的过时或已移动任务事件。</p></li><li><p>修订了外交豁免权中的叙事文本，以改善各个场景的衔接流畅度。</p></li><li><p>修正了破法者监狱中缺失和配置错误的地图注记。</p></li><li><p>更新下层阿克图瑞尔中带有“该装置”的遭遇，加入新角色、新特性并澄清流程说明文本。</p></li><li><p>修复了外交豁免权中的错字、格式问题和技能 enricher 问题。</p></li><li><p>修正了日志中布琳娜·维罗科尔特名字出现拼写错误的各种情况。</p></li></ul><h3 class=\"divider\">区域地图</h3><ul><li><p>通过可配置的“Gazetteer Location Journal Entries”游戏设置，启用自定义配置的地名志地点来源。</p></li></ul><h3 class=\"divider\">棋子</h3><ul><li><p>加入新的“Vertical Hand”姿势，这对某些类型的武器握持方式以及一些相关的手部与前臂解剖改进将很重要。</p></li><li><p>修复尼尔艾前臂定位错误的问题。</p></li><li><p>修复阿什卡棋子制作器手部颜色分配问题。</p></li></ul><h3 class=\"divider\">用户界面</h3><ul><li><p>将事件结果显示在页面底部而非顶部，以便游戏主持人能够更快到达事件详情和 GM 摘要部分，同时不遗漏上下文。</p></li><li><p>在用于开始事件的提示中点击事件名称时，直接跳转到页面的事件详情部分，而不是跳到顶部重复显示相同概览信息的位置。</p></li></ul><h3 class=\"divider\">远景</h3><ul><li><p>为聚落布雷文添加一个全新的远景，它会在“棘手的困境”任务中显著出现。</p></li><li><p>远景初始视图默认改为居中，而不是使用定义的“initial”参数。</p></li><li><p>移除 Yakoshta 远景中错误的棋子视野需求。</p></li></ul><h3 class=\"divider\">其他</h3><ul><li><p>添加正式的 ember.api.actors.combineGroups 辅助函数，用于以可靠且无漏洞的方式将多个商队合并为单一队伍。</p></li><li><p>改进在启用“Preserve World State”时重新导入 Ember 冒险对队伍组的保留。</p></li></ul><h2 class=\"divider\">设定汇编</h2><p>本次更新对设定汇编及其中收录的各篇日志条目进行了大量具有重要影响的更新，整体重点放在诸神部分。</p><h3 class=\"divider\">寰宇</h3><ul><li><p>玛伊斯已被扩展和修订，现已完整撰写并可供试玩测试。</p></li></ul><h3 class=\"divider\">神祇</h3><ul><li><p>重写了神祇概览，并解释了四种神祇类型。</p></li><li><p>阿拉尔的条目经过大幅修订，现已与其他上古诸神保持一致。</p></li><li><p>上古诸神已精修。新增传说概要部分</p></li><li><p>外神已精修。新增传说概要部分</p></li><li><p>荒野诸神已撰写完成并可供试玩测试</p></li><li><p>碎片诸神已精修。新增传说概要部分</p></li><li><p>光谱已撰写完成并可供试玩测试。</p></li><li><p>维恩阿薇已撰写完成并可供试玩测试。</p></li><li><p>兰提尔已撰写完成并可供试玩测试。</p></li><li><p>萨克茨已撰写完成并可供试玩测试。</p></li><li><p>径行者已撰写完成并可供试玩测试。</p></li><li><p>菲诺尔已撰写完成并可供试玩测试。</p></li><li><p>维斯玛拉已撰写完成并可供试玩测试。</p></li><li><p>基亚西弗已撰写完成并可供试玩测试。</p></li><li><p>基纳拉西已撰写完成并可供试玩测试。</p></li><li><p>阿雷特尔已撰写完成并可供试玩测试。</p></li><li><p>斯林纳拉克已撰写完成并可供试玩测试。</p></li><li><p>菲亚拉已撰写完成并可供试玩测试。</p></li><li><p>洛尔吉已撰写完成并可供试玩测试。</p></li></ul>"
+              "text": "<p>欢迎使用 Ember 更新与内容发布，版本 <code>0.4.3</code>。这是一次小型更新，旨在修复我们现有任务中的漏洞并补充内容缺口，作为我们持续进行的<strong>Ember Beta Two</strong>流程的一部分。</p><section class=\"block wip\"><h4>兼容性</h4><p>Ember 补丁 <code>0.4.3</code> 需要核心 Foundry VTT 版本 <code>13.351</code> 或更高版本，以及：</p><ul><li><p>D&amp;D5E 系统版本 <code>5.2.4</code> 或更高。</p></li><li><p>Crucible 系统版本 <code>0.8.5</code> 或更高。</p></li></ul><p><strong>不建议</strong>使用 Foundry VTT 14 版本仍在进行中的原型构建来测试 Ember。</p></section><section class=\"block gamemaster\"><h4>重要试玩测试变更</h4><p>我们扩大了第 2 章任务所授予的里程碑数量。对于当前正在第 2 章或第 3 章游玩 Ember 的各位，你们应当仔细对比已授予的里程碑数量，与队伍已完成的新里程碑授予事件数量是否一致。</p></section><h2 class=\"divider\">亮点</h2><p>本次新版本最重要的亮点如下：</p><ul><li><p>重新平衡了 D&amp;D 角色特性。</p></li><li><p>启用自定义地名志地点。</p></li><li><p>为聚落布雷文加入了一个全新的远景。</p></li><li><p>扩大了冗长的第 2 章任务所授予的里程碑数量。</p></li><li><p>为第 2 章主线任务“一位老朋友”提供了 Crucible 转换。</p></li></ul><p>关于这些亮点的更多细节，请见下方完整说明。</p><h2 class=\"divider\">功能与修复</h2><p>本次更新包含的所有新功能详见下列各节。</p><h3 class=\"divider\">角色</h3><ul><li><p>添加成年苏阿罗克角色，并在坍塌石冢中引用它。感谢社区成员 Raxray 为该数据块贡献了部分内容。</p></li><li><p>修正法典怪物图鉴中那些拥有肖像插图而不只是棋子插图的生物之插图署名。</p></li><li><p>修复侧边栏中托隆角色的损坏图像问题。</p></li><li><p>添加 Yeela Drevin 的生平简介，并更新其外观以匹配新插图。</p></li><li><p>修复了万德伦追踪者及相关角色中的一些错字和问题。</p></li><li><p>修复了所有龙兽角色中的若干小型文本、公式和 enricher 问题。</p></li></ul><h3 class=\"divider\">Crucible</h3><ul><li><p>为第 2 章主线任务“一位老朋友”添加完整的 Crucible 转换，包括其若干相关角色、物品等内容。</p></li><li><p>在 Crucible 中实现第 3 章任务中的同伴 NPC 角色自动成长。</p></li><li><p>大幅扩展《玩家指南》中“Magic and Spellcraft”页面，提供 Crucible 专属信息，说明 12 个施法符文中的每一个如何与 Ember 中的宇宙学或形而上力量相关联。</p></li><li><p>重新审视具有无定形特质生物的防御，确保其闪避不会高得不合理。</p></li><li><p>修复导致科拉克的结晶化创伤未能提供其应有正确抗性的漏洞。</p></li><li><p>正确添加印记裔符文语法术的英雄气概消耗组件。</p></li><li><p>修正龙焰特性的掷出伤害骰。</p></li><li><p>龙裔血统的龙焰现在会正确确保至少为“trained”</p></li><li><p>费伊杰血统的极限代谢现在会正确提高最大动作数</p></li><li><p>赫尔格伦血统的活石现在会正确防止倒地</p></li><li><p>基瓦尔血统的规整节律现在会在回合开始时正确提高专注并转移资源</p></li><li><p>威伦血统的无情猎手现在会正确授予恩惠骰</p></li><li><p>First Soulmark 现在会对以野兽为目标的技能动作正确施加一个祸骰</p></li><li><p>艾迪尔哨兵类型对手的炼金充能现在会正确随时间授予专注恢复</p></li><li><p>构装切割者现在会在攻击构装体时正确授予恩惠骰。</p></li><li><p>提拉斐语变形增益现在会正确应用于使用它的角色。</p></li><li><p>从 Crucible 冒险构建中排除未使用的 D&amp;D 晋升角色。</p></li></ul><h3 class=\"divider\">D&amp;D5e</h3><ul><li><p><strong>Arcane Countenance (Zeph)</strong> - 为该特性添加了优势主动效果。</p></li><li><p><strong>Drakonfire (Drakon)</strong> - 更新龙焰，使你在每个龙焰法术于晋升至其所需等级时授予时，选择智力、感知或魅力作为施法属性。</p></li><li><p><strong>Extreme Metabolism (Fej)</strong> - 添加了一个主动效果，在该特性所指示的持续时间内提高角色的速度。</p></li><li><p><strong>Fireborn (Fej)</strong> - 将由水触发的力竭惩罚替换为一次 DC 14 体质豁免失败时获得临时中毒状态（直到你下个回合结束），在保留畏水风味的同时，移除了长休恢复的记录负担。</p></li><li><p><strong>Implacable Hunter (Wirrun)</strong> - 添加了一个主动效果，对目标施加已标记状态。</p></li><li><p><strong>Muscle Machinery (Kivahr)</strong> - 澄清负重能力按体型大一号来计算。添加了一个主动效果，以相应提高角色的负重能力。</p></li><li><p><strong>Nimble Leap (Kiska)</strong> - 使此能力的机制与 Jump 法术保持一致，将跳跃距离上限设为 30 英尺。</p></li><li><p><strong>Regulated Rhythm (Kivahr)</strong> - 添加了一个主动效果，为该特性的技能检定、专注豁免以及战斗内外的治疗活动授予优势。</p></li><li><p><strong>Ritual Cooking (Kithil)</strong> - 澄清食用这顿餐食的盟友会恢复等同于其熟练加值的生命值，并在 8 小时内使其生命值上限提高同样的数值。</p></li><li><p><strong>Thornbark (Thornling)</strong> - 重做刺棘树皮，使其在应对近战攻击或擒抱时运作更一致。</p></li><li><p><strong>Tyraphic Transformation (Altyra)</strong> - 添加主动效果，将伤害抗性和威吓优势应用到目标的角色卡上。澄清额外伤害如何施加到目标。</p></li><li><p>修复在 D&amp;D 系统中，使用未自定义原型棋子图像的角色无法被鉴定的问题。</p></li><li><p>修正 NPC 角色（安卡里斯特）和队伍商队的速度定义问题。</p></li><li><p>为洛里斯·特兹兰和惊惧者角色补充缺失的生命值数值与公式。</p></li><li><p>怪物猎人背景径原本只提供一项熟练而非两项。</p></li><li><p>Ember 游戏状态重置也需要将具有成长路径的 D&amp;D 角色恢复到其最低等级版本。</p></li></ul><h3 class=\"divider\">任务</h3><ul><li><p>扩大冗长的第 2 章任务所授予的里程碑数量，以提供稍快一些的里程碑进阶速度。第 2 章主线任务现在各授予 3 个里程碑。第 2 章支线任务现在各授予 2 个里程碑。</p></li><li><p>对新任务“意图信号”进行了大量编辑改进。</p></li><li><p>对“月上之旅”任务进行了大量编辑改进。</p></li><li><p>修复外交豁免权中“一名死去的信使”事件里的死去信使外观。</p></li><li><p>删除了一些错误遗留在附录部分中的过时或已移动任务事件。</p></li><li><p>修订了外交豁免权中的叙事文本，以改善各个场景的衔接流畅度。</p></li><li><p>修正了破法者监狱中缺失和配置错误的地图注记。</p></li><li><p>更新下层阿克图瑞尔中带有“该装置”的遭遇，加入新角色、新特性并澄清流程说明文本。</p></li><li><p>修复了外交豁免权中的错字、格式问题和技能 enricher 问题。</p></li><li><p>修正了日志中布琳娜·维罗科尔特名字出现拼写错误的各种情况。</p></li></ul><h3 class=\"divider\">区域地图</h3><ul><li><p>通过可配置的“Gazetteer Location Journal Entries”游戏设置，启用自定义配置的地名志地点来源。</p></li></ul><h3 class=\"divider\">棋子</h3><ul><li><p>加入新的“Vertical Hand”姿势，这对某些类型的武器握持方式以及一些相关的手部与前臂解剖改进将很重要。</p></li><li><p>修复尼尔艾前臂定位错误的问题。</p></li><li><p>修复阿什卡棋子制作器手部颜色分配问题。</p></li></ul><h3 class=\"divider\">用户界面</h3><ul><li><p>将事件结果显示在页面底部而非顶部，以便游戏主持人能够更快到达事件详情和 GM 摘要部分，同时不遗漏上下文。</p></li><li><p>在用于开始事件的提示中点击事件名称时，直接跳转到页面的事件详情部分，而不是跳到顶部重复显示相同概览信息的位置。</p></li></ul><h3 class=\"divider\">远景</h3><ul><li><p>为聚落布雷文添加一个全新的远景，它会在“棘手的困境”任务中显著出现。</p></li><li><p>远景初始视图默认改为居中，而不是使用定义的“initial”参数。</p></li><li><p>移除 Yakoshta 远景中错误的棋子视野需求。</p></li></ul><h3 class=\"divider\">其他</h3><ul><li><p>添加正式的 ember.api.actors.combineGroups 辅助函数，用于以可靠且无漏洞的方式将多个商队合并为单一队伍。</p></li><li><p>改进在启用“Preserve World State”时重新导入 Ember 冒险对队伍组的保留。</p></li></ul><h2 class=\"divider\">设定汇编</h2><p>本次更新对设定汇编及其中收录的各篇日志条目进行了大量具有重要影响的更新，整体重点放在诸神部分。</p><h3 class=\"divider\">寰宇</h3><ul><li><p>玛伊斯已被扩展和修订，现已完整撰写并可供试玩测试。</p></li></ul><h3 class=\"divider\">神祇</h3><ul><li><p>重写了神祇概览，并解释了四种神祇类型。</p></li><li><p>阿拉尔的条目经过大幅修订，现已与其他上古诸神保持一致。</p></li><li><p>上古诸神已精修。新增传说概要部分</p></li><li><p>外神已精修。新增传说概要部分</p></li><li><p>荒野诸神已撰写完成并可供试玩测试</p></li><li><p>碎片诸神已精修。新增传说概要部分</p></li><li><p>光谱已撰写完成并可供试玩测试。</p></li><li><p>维恩阿薇已撰写完成并可供试玩测试。</p></li><li><p>兰提尔已撰写完成并可供试玩测试。</p></li><li><p>萨克茨已撰写完成并可供试玩测试。</p></li><li><p>径行者已撰写完成并可供试玩测试。</p></li><li><p>菲诺尔已撰写完成并可供试玩测试。</p></li><li><p>维斯玛拉已撰写完成并可供试玩测试。</p></li><li><p>基亚西弗已撰写完成并可供试玩测试。</p></li><li><p>基纳拉西已撰写完成并可供试玩测试。</p></li><li><p>阿雷特尔已撰写完成并可供试玩测试。</p></li><li><p>斯林纳拉克已撰写完成并可供试玩测试。</p></li><li><p>菲亚拉已撰写完成并可供试玩测试。</p></li><li><p>洛尔吉已撰写完成并可供试玩测试。</p></li></ul>"
             },
             "Patch 0.4.4": {
               "name": "补丁 0.4.4 Patch 0.4.4",
@@ -39512,7 +39512,7 @@
             },
             "Central Room": {
               "name": "中央室 Central Room",
-              "text": "<section class=\"block readaloud\"><p>这片巨大的空间呈圆形，被分为上下两层，由宽大的阶梯连接。上层沿着弧形边缘悬着许多发光的宝石，装在青铜牢笼中，被无形的魔法托举在地面之上，但又以沉重的青铜锁链固定在原位。</p><p>这一区域的中央溅满了鲜血，到处都是多具人型生物被撕碎后的残骸。每一具躯体都被扯成碎块，四肢与躯干分离，头颅也与颈部断开；然而可怖的是，这些尸体依然在蠕动、挣扎，仿佛尚未真正死亡。</p><p>在这片空间的中央，立着一个巨大的有翼存在，翅膀上不断洒落发光的尘埃。它的眼中燃烧着怒火，而那怒火正对着你们。</p></section><h2 class=\"divider\">遇见守护者</h2><p>一旦队伍下到下层区域，他们就会遭遇守护者。在此之前，守护者会一直藏身于视线之外，观察队伍，并准备出手。这名守护者是一只瓦内克西斯，如@UUID[JournalEntry.7rsDfaBhJux44VQI.JournalEntryPage.ZjTkzkMwJiKTzbPc]{塔之下降}中所示。</p><p>@embed[Actor.aHW8ke4RHwx2uYsC]</p><section class=\"block readaloud\"><p>那存在开口说话了，它痛苦的声音暴露出创伤带给它的剧烈折磨。</p><blockquote><p>你们这些尸体早该知道，不该一次又一次爬起来。我到底还要把你们放倒多少次？</p></blockquote><p>它因疼痛而龇牙，甩了甩头。有那么一瞬间，它似乎显得混乱，但很快又重新镇定下来，怒意再次涌上心头。</p><blockquote><p>你们打着虚伪的幌子而来，谎称自己的意图。我闻得到谎言，闻得到虚假。你们不是申特，也不是阿纳克瑞纽姆，你们是擅闯者，是敌人！你们未经允许踏上圣地！这条通路将继续封闭，而你们的尸体也会和你们那些同伴一样，堆在我的脚下！</p></blockquote><p>那存在俯下身，准备发动攻击，却又突然被一阵剧烈的咳嗽和痛苦的颤抖所打断，显然是它身上的伤势所致。</p></section><section class=\"block gamemaster\"><h4>可选战斗遭遇</h4><p>这个遭遇可以通过尝试安抚守护者并说服它：队伍并非它的敌人，从而避免。在当前状态下，它多疑而易怒，很容易把并非敌人的对象也视作敌人，但它并非完全失去理智。</p></section><h2 class=\"divider\">安抚守护者</h2><p>这位远古的神话尖塔守护者显然状况很糟。它脸部与颈部的烧伤和疤痕上覆满了渗液的脓疱。它看起来神志不清、混乱，且极易被激怒。与它互动的队伍必须谨慎行事。</p><p>队伍可以尝试与守护者交谈，而不是立刻发动攻击。起初这并不困难，但会随着时间推移而变得越来越难。安抚守护者可能让他们与这生物建立友好关系，但任何失误都可能致命。</p><section class=\"block social\"><h4>危险的交谈</h4><p>安抚这生物是有可能的，但绝非易事。</p><p>一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill persuasion 12]] 或 [[/skill deception 12]]</sub> <sub data-system=\"crucible\">[[/skillCheck diplomacy 12]] 或 [[/skillCheck deception 12]]</sub></sup>检定，可以通过抚慰或欺骗守护者，让它相信队伍并无敌意，从而令它暂时停手。尝试使用威吓不会奏效，反而会立刻激起暴力冲突。</p><p>这种成功是短暂的，会让队伍有机会提问，或在没有风险的情况下检查这生物。不过这个窗口很短，守护者很快又会重新变得多疑和烦躁。</p><p>每一次新的安抚尝试，无论成功还是失败，DC都会累计提高+2；而在总共经历三次失败后，守护者就会攻击队伍。</p><p>可选地，在尝试安抚守护者时，重度失败可以由你酌情记作两次失败。我们只建议在你的队伍社交技能特别强、失败风险本就较低，或你想让这一遭遇更加摇摆不定时采用这一规则。</p></section><p>只要付出足够专注的努力，就有可能彻底平息守护者。</p><section class=\"block gamemaster\"><h4>成功化解</h4><p>如果队伍成功通过安抚守护者而将战斗延后4次，那么它就会平静到足以被说服：队伍根本不是威胁，并会开始彻底放松下来。</p></section><h2 class=\"divider\">检查守护者</h2><section class=\"block exploration\"><h4>远古守护者</h4><p>一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill insight 13]]</sub> <sub data-system=\"crucible\">[[/skillCheck awareness 13]]</sub></sup>检定会揭示：守护者病得很重，极易激动，而且似乎已经无法分辨朋友与敌人。它很可能将所有访客都视作潜在敌人，也许与那些袭击过它的人并无区别。</p><p>通过一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill medicine 13]]</sub> <sub data-system=\"crucible\">[[/skillCheck medicine 13]]</sub></sup>检定来检查守护者，会发现它遭受了某种炼金攻击所造成的创伤，并且很可能因接触毒素而中毒。然而，鉴于这生物并非陆生野兽，几乎不可能对它实施恰当的医疗救助。</p><ul><li><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\"><strong>Result of 16+</strong></sub> <sub data-system=\"crucible\"><strong>大成功</strong></sub></sup>（或进一步进行一次<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill medicine 16]] 或 [[/skill insight 17]]</sub> <sub data-system=\"crucible\">[[/skillCheck medicine 16]]</sub></sup>检定）会让你相信，这生物正因袭击者施加在它身上的某种东西而逐渐死去。它很可能一天比一天虚弱，已经活不了多久了。</p></li></ul><p>检查守护者是可行的，但前提是它已经被安抚。具体如何做到，请见下一节规则。若守护者被检查，队伍可以得知：</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><ul><li><p>@UUID[Compendium.dnd5e.spells.Item.2skfDtglk1mGrb3l]{侦测毒素与疾病}同样会揭示这生物体内存在一种强力的致命毒素。</p></li><li><p>像@UUID[Compendium.dnd5e.spells.Item.F0GsG0SJzsIOacwV]{次级恢复}、@UUID[Compendium.dnd5e.spells.Item.MAxM77CDUu8dgIRQ]{防护毒素}、@UUID[Compendium.dnd5e.spells.Item.XZhdgVK3cLoxNCQl]{破除诅咒}这类法术，以及类似的治疗或祛病法术，都无法有效对抗这种毒素。</p></li><li><p>不过，防护毒素确实能暂时削弱毒药的效力，让守护者恢复一部分神智。只要该效果持续，对安抚守护者的尝试（见下文）便获得@Advantage[2]。</p></li></ul></div><div data-system=\"crucible\"><ul><li><p>@Spell[life.sense]或@UUID[Compendium.crucible.talent.Item.runeLife00000000]会揭示这生物体内存在一种强力的致命毒素，并表明它的进程已推进到干预无法成功的地步。</p></li><li><p>像@UUID[Compendium.crucible.equipment.Item.antitoxin0000000]这样的解毒物品，以及类似的治疗或祛病法术，都无法有效对抗这种毒素。</p></li><li><p>不过，使用魔法<strong>可以削弱</strong>毒药的效力，持续足够长的时间，让守护者恢复一部分神智。只要该效果持续，对安抚守护者的尝试（见下文）便获得@Advantage[2]。</p></li></ul></div></div></section><section class=\"block gamemaster\"><h4>守护者的命运</h4><p>如果队伍没有杀死守护者，并且逗留得够久，它会在相对平静中休息一段时间，随后最终死去。当这一刻到来时，这生物的形态会崩解为明艳的红、粉、紫、蓝色光与能量的旋流。这些光带会渐渐消散殆尽，只留下几根守护者的羽毛。</p><p>如果队伍在这发生之前离开，那么他们回来时将见到一座空无一物的神话尖塔天文台，以及它最后停留之处留下的几根守护者羽毛。</p></section><h2 class=\"divider\">与守护者战斗</h2><section class=\"block hazard\"><h4>守护者战术</h4><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>如果@UUID[Actor.aHW8ke4RHwx2uYsC]{神话尖塔守护者}与队伍进入战斗，它会立刻施放@UUID[Actor.aHW8ke4RHwx2uYsC.Item.rL15aLoprdZh7WYp]{镜影术}来提升自身防御。</p><p>守护者偏好利用速度和近战能力，使用它的@UUID[Actor.aHW8ke4RHwx2uYsC.Item.RxdmByLFjVOk8K06]{狡诈动作}进行疾走或脱离接触，并借助@UUID[Actor.aHW8ke4RHwx2uYsC.Item.LJDe0C4mJNDwV4kR]{助跑起跳}来拉开移动空间，或逼近潜在敌人，并利用其@UUID[Actor.aHW8ke4RHwx2uYsC.Item.wQkln56L0P0ahtkt]{猛扑}能力扑倒对手。</p><p>一旦进入近战射程，它就会通过@UUID[Actor.aHW8ke4RHwx2uYsC.Item.B5yQZrkvCodscc5P]{多重攻击}，以@UUID[Actor.aHW8ke4RHwx2uYsC.Item.ocnwVK7ckLH0KAgM]{啃咬}和@UUID[Actor.aHW8ke4RHwx2uYsC.Item.nYfPTVPJayLEYdu0]{爪}残暴撕裂敌人。</p><p>在远距离时，守护者也可以动用它强力的@UUID[Actor.aHW8ke4RHwx2uYsC.Item.Ks2KKuWvHh4diKVP]{辉光刺击}，但只有在不得已时才会这样做。</p><p>若面对施法者，它会使用@UUID[Actor.aHW8ke4RHwx2uYsC.Item.Z4G7AYBpuYDUpavy]{沉默术}、@UUID[Actor.aHW8ke4RHwx2uYsC.Item.J86nb6jzjH5jldhu]{反制法术}和@UUID[Actor.aHW8ke4RHwx2uYsC.Item.uVPftgomfuPem9cL]{解除魔法}来限制对方法术的效果。</p><h4>宇宙宝石</h4><p>该区域中有七颗宇宙宝石，分别象征余烬寰宇中的重要天体：兰提尔、阿肯、奥比斯、拉根、玛伊斯、科拉和灵光。瓦内克西斯可以使用它的@UUID[Actor.aHW8ke4RHwx2uYsC.Item.YJrlVRbsV0T0ofIV]{宇宙宝石}巢穴动作（在先攻计数20时）来击打这些宝石，为其注入光亮。</p><p>一旦某颗宝石被充能，就将它的测量模板放入场景中（如果它有的话）。宝石的效果会在本轮结束时作为一次巢穴动作触发（在先攻计数0时）。当宝石效果触发后，该宝石便不再处于充能状态。</p><p>在其效果激活前，可以通过与石台互动，并以正确顺序按下地板上的符文，来解除一颗已充能宝石。这需要一个动作，以及一次成功的[[/skill perception 12]]检定，以发现并匹配符文脉动的顺序。此检定失败不会带来任何后果。</p><h4>无可逃避的命运</h4><p>瓦内克西斯已中了致命之毒，因此由于其@UUID[Actor.aHW8ke4RHwx2uYsC.Item.K2YkUlI9E0Qd60mT]特性，它会在自己每个回合开始时受到持续伤害。如果战斗持续得够久，这一效果最终会杀死它。</p></div><div data-system=\"crucible\"><p>如果神话尖塔守护者与队伍进入战斗，它会立刻施放@UUID[Actor.aHW8ke4RHwx2uYsC.Item.protectiveMirage]{护佑幻影}来提升自身防御。</p><p>守护者偏好利用速度与飞行来重新定位，并借助其@UUID[Actor.aHW8ke4RHwx2uYsC.Item.ferociousleap000]、@UUID[Actor.aHW8ke4RHwx2uYsC.Item.swoopingStrike00]和@UUID[Actor.aHW8ke4RHwx2uYsC.Item.pouncingStrike00]，在多个目标之间迅速机动。</p><p>一旦进入近战射程，它便会用@UUID[Actor.aHW8ke4RHwx2uYsC.Item.BOM6vsI9jOJWlGxi]{啃咬}和@UUID[Actor.aHW8ke4RHwx2uYsC.Item.vvugXHtoDV7KWPCl]{爪}残暴撕裂敌人，</p><p>在远距离时，守护者也可以动用它强力的@UUID[Actor.aHW8ke4RHwx2uYsC.Item.7oTO4kdEfLh4AKRh]{辉光刺击}，但只有在不得已时才会这样做。</p><p>若面对施法者，它会依靠反制法术来限制对方法术的效果。</p><h4>宇宙宝石</h4><p>该区域中有七颗宇宙宝石，分别象征余烬寰宇中的重要天体：兰提尔、阿肯、奥比斯、拉根、玛伊斯、科拉和灵光。瓦内克西斯可以使用它的@UUID[Actor.aHW8ke4RHwx2uYsC.Item.YJrlVRbsV0T0ofIV]{冲锋宝石}动作，将一道光束导入这些宝石之一，为其注入光亮。</p><p>一旦某颗宝石被充能，就将它的测量模板放入场景中（如果它有的话）。宝石的效果会在本轮结束时激活。当宝石效果激活后，该宝石便不再处于充能状态。</p><p>在其效果激活前，可以通过与石台互动，并以正确顺序按下地板上的符文，来解除一颗已充能宝石。这需要一个动作，以及一次成功的[[/skillCheck awareness 12]]检定，以发现并匹配符文脉动的顺序。此检定失败不会带来任何后果。</p><h4>无可逃避的命运</h4><p>瓦内克西斯已中了致命之毒，因此由于其@UUID[Actor.aHW8ke4RHwx2uYsC.Item.K2YkUlI9E0Qd60mT]天赋，它会在自己每个回合开始时受到持续伤害。如果战斗持续得够久，这一效果最终会杀死它。</p></div></div></section><h2 class=\"divider\">与守护者交谈</h2><section class=\"block social\"><h4>关于死去的冒险者</h4><p>瓦内克西斯将那些死去的冒险者视为倒下的敌手、敌人。如果被问及，它会这样说：</p><blockquote><p>散落在我脚边的尸体，都是试图开启通往通路的神圣通道的擅闯者。只有那些寻求了解巨人历史及其道路的访客才被允许进入。骗子、入侵者和杀人者不行！</p><p>他们说自己来自“阿纳克瑞纽姆”，但他们和我曾见过的那个组织中的其他人完全不同。他们威胁说，如果我不让他们通行，他们就要用强酸和工具把通往下方的道路强行凿开。当我出手驱逐他们时，他们就把那些法器对准了我。</p></blockquote><p>瓦内克西斯还可以解释，为何他们的尸骸会被毁坏得如此严重，以及为何它们仍在扭动挣扎：那些冒险者不断从死亡中爬起。</p><blockquote><p>在沉眠者的一次又一次召唤下，他们不断醒来。我也无数次将他们放倒。最后，他们的残骸被我摧残得太过彻底，以至于再也无法站起来……可你仍能看到，他们那些腐烂的形体还在蠕动、扭曲，还在试图爬起。</p></blockquote><p>如果问及沉眠者：</p><blockquote><p>沉眠者正在苏醒。它如今沉睡在余烬之中，但不会再沉睡太久了。它的声音在我耳中变得越来越响。它许诺我死后仍有生命，但它并不知道，我早已超出它的触及。只是……这个地方的光，已经愈发暗淡了。</p></blockquote><h4>关于神话尖塔与守护者</h4><p>如果被问及自身及职责，守护者会说很多。</p><blockquote><p>原初巨人在很久以前自通路中涌现时建造了这里。他们建造此地，是为了研究那片他们此前从未见过的天空。我被派到这里担任他们的引导者，教导他们许多关于魔法与寰宇的知识，并欢迎他们来到地表。</p></blockquote><p>守护者相信自己已被遗忘，但它对自己在世界中的位置并无不满。</p><blockquote><p>普里莫迪斯的卡西亚将我安置于此，以保护此地的知识，保存建造者的记忆，并守护这座天文台的安全。然而，卡西亚似乎已经把我遗忘了，而所有与这里有关联的人也都进入了历史。在这片崩塌的空间中，我一直守望至今。总有一天，这里会化为尘埃，再也没有什么需要保护，而我也将返回故乡。</p></blockquote><p>如果问及建造者，守护者见证过其中许多事，并能分享它所知晓的内容：</p><blockquote><p>我见证了申特的成长。不过，他们并不是真的成长，更像是在抵达地表之后发生了改变，变成了不同的模样。我看着这里从一座天文台，变成一处承载敬意与历史的场所，申特来到这里，与他们的文化传承建立联系。我也见证过他们在黑暗年代来到这里，那时深渊正在摧毁他们，他们凝望古老的镶嵌画，试图从中找到意义或慰藉。我记得我最后一次见到申特的时候，他们告诉我，他们很快就将不复存在。我怀念他们。</p></blockquote><h4>关于通路通道</h4><p>瓦内克西斯可以长篇讲述这条通道，若被问及，它甚至愿意解释该如何开启它！</p><blockquote><p>那条通道是一部巨大的升降机，会一路下降到这座高塔的底部。开启它要从兰提尔开始，但旅行者必须先抵达所有其他月亮，才能真正踏上通路。</p></blockquote><blockquote><p>在过去几千年里，这条通道曾被访客开启过几次，但并不频繁。它通往地表之下那些远古的通路。我只见过下方景象一两次，而那里似乎是一片蛮荒之地。</p></blockquote><p>如果要求它进一步说明开启通道的解法，瓦内克西斯会说得有些隐晦。</p><blockquote><p>这里墙上的远古镶嵌画，藏着你们所需的秘密。你们能在那里找到穿越寰宇的道路。追随远古者吧，他们会为你们引路。</p></blockquote></section><h2 class=\"divider\">检查墙壁</h2><section class=\"block exploration\"><h4>远古雕刻</h4><p>检查这片下层区域的远古雕刻，你很容易就能看出其中的进程，即便它们已经受损：很久以前，一支族群从余烬的躯体内部掘洞而出，穿越群山。他们抬头望向头顶的天空，并为之震撼。</p><p>他们在自己的涌现之地建起了一座伟大的建筑，很可能正是这座建筑，而其中坐镇着另一位猫科守护者。自这座建筑起，他们更多的同类登上了余烬的地表，每一个都对头顶的群星与月亮惊叹不已。</p><p>壁画还进一步描绘了这支族群如何遍布群山，并在高处与低处建造了许多居所。</p><h4>解读石刻</h4><p>一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill history 14]]</sub> <sub data-system=\"crucible\">[[/skillCheck history 14]]</sub> </sup>检定能将一些线索串联起来：这里缺乏明显的申特重型建筑标志，说明这座建筑很可能早于申特，因此它或许正是他们先祖的涌现之地。这位远古守护者可能已有数万年之久！此外，这些猫一般的生物，也许是在指涉具有魔法力量的卡西亚，他们可能为这些族群提供了魔法知识的基础。</p><p>一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill religion 14]]</sub> <sub data-system=\"crucible\">[[/skillCheck religion 14]]</sub> </sup>检定能将一些线索串联起来：对天空与月亮的崇敬，感觉像是申特的经典特征。这很可能是一处古老而重要的地点（对申特而言），并充当了他们崇拜天穹的起点。那些猫一般的生物可能是卡西亚，而众所周知卡西亚源自普里莫迪斯。他们可能曾担任早期申特的守护者与引路者。</p></section><h2 class=\"divider\">检查亡灵</h2><p>队伍可能会想检查那支冒险者队伍的遗骸。尽管它们的状态极其可怖，但仍然可以从中获取一些信息。</p><section class=\"block exploration\"><h4>亡灵残骸</h4><p>这里散落的死者残骸状况极其糟糕。肢体被从腐烂的躯干上砍下，头颅也被劈开，散落在石地上。可即便如此，它们身上仍残留着一种不体面的生命迹象：手指抽动，手臂蜷曲，试图抓住附近的任何东西。</p><p>这里的死者不得安息，而正因如此，对它们的检查也变得愈发令人不快。</p><p>通过一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill investigation 13]]</sub> <sub data-system=\"crucible\">[[/skillCheck awareness 13]]</sub> </sup>检定来检查遗骸，可以让角色发现一些值得注意的细节。</p><ul><li><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\"><strong>Result 13+</strong></sub> <sub data-system=\"crucible\"><strong>成功</strong></sub></sup> 这些尸体都带着看起来货真价实的阿纳克瑞纽姆徽章、别针或纹章，说明他们是公会正式承认的成员。这几乎可以肯定，就是莉耶斯特拉在天刷镇帮助过的那一队人。</p></li><li><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\"><strong>Result 15+</strong></sub> <sub data-system=\"crucible\"><strong>大成功</strong></sub></sup> 在死者的遗物中有数个破碎的罐体，它们先前都曾盛装有毒的炼金化合物。虽然无法确定那究竟是什么物质，但从残留来看，它呈绿色，且具有腐蚀性。</p></li></ul><p>在检查尸体时，一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill medicine 12]]</sub> <sub data-system=\"crucible\">[[/skillCheck medicine 12]]</sub> </sup>检定会让你对他们的死因与当前状态有所了解。</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><ul><li><p><strong>Result of 12+</strong> 这些尸体仍相对新鲜，被此地寒冷而干燥的空气保存了下来。你估计它们大约只有两到三周的时间。不过，皮肤与肌肉上有一种奇怪的变色，仿佛还有某种别的东西在污染它们。</p></li><li><p><strong>Result of 14+ </strong>这些伤口并非全都形成于同一时间，看来这些尸体曾被多次摧残，才变成如今这副模样。若要你猜，应该是这些尸体不断爬起来，而守护者则一次又一次将它们斩倒，直到它们再也无法起身。</p></li><li><p><strong>Result of 16+</strong> 数名死者身上有旧伤，类似烧伤，而从痕迹判断，你会猜测是接触腐蚀性化学物质所致。虽然这些伤都不致命，但他们生前显然经常接触危险的炼金物质。</p></li></ul></div><div data-system=\"crucible\"><ul><li><p><strong>成功</strong> 这些尸体仍相对新鲜，被此地寒冷而干燥的空气保存了下来。你估计它们大约只有两到三周的时间。不过，皮肤与肌肉上有一种奇怪的变色，仿佛还有某种别的东西在污染它们。</p></li><li><p><strong>Critical Success </strong>这些伤口并非全都形成于同一时间，看来这些尸体曾被多次摧残，才变成如今这副模样。若要你猜，应该是这些尸体不断爬起来，而守护者则一次又一次将它们斩倒，直到它们再也无法起身。数名死者身上有旧伤，类似烧伤，而从痕迹判断，你会猜测是接触腐蚀性化学物质所致。虽然这些伤都不致命，但他们生前显然经常接触危险的炼金物质。</p></li></ul></div></div><p>针对这些亡灵进行一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill arcana 15]]</sub> <sub data-system=\"crucible\">[[/skillCheck arcana 15]]</sub> </sup>检定，会得到如下信息：不死现象并不常见，而此地也没有明显迹象表明附近曾施展过此类魔法，因此导致死者复起的原因来自别处。而真正令人不安的是，你无法判断自己面对的究竟是多么强大的存在或魔法源头。它可能就在附近但力量微弱；或者在最糟的情况下，它可能远在数里之外，却依然强大无比。</p></section>"
+              "text": "<section class=\"block readaloud\"><p>这片巨大的空间呈圆形，被分为上下两层，由宽大的阶梯连接。上层沿着弧形边缘悬着许多发光的宝石，装在青铜牢笼中，被无形的魔法托举在地面之上，但又以沉重的青铜锁链固定在原位。</p><p>这一区域的中央溅满了鲜血，到处都是多具人型生物被撕碎后的残骸。每一具躯体都被扯成碎块，四肢与躯干分离，头颅也与颈部断开；然而可怖的是，这些尸体依然在蠕动、挣扎，仿佛尚未真正死亡。</p><p>在这片空间的中央，立着一个巨大的有翼存在，翅膀上不断洒落发光的尘埃。它的眼中燃烧着怒火，而那怒火正对着你们。</p></section><h2 class=\"divider\">遇见守护者</h2><p>一旦队伍下到下层区域，他们就会遭遇守护者。在此之前，守护者会一直藏身于视线之外，观察队伍，并准备出手。这名守护者是一只瓦内克西斯，如@UUID[JournalEntry.7rsDfaBhJux44VQI.JournalEntryPage.ZjTkzkMwJiKTzbPc]{塔之下降}中所示。</p><p>@embed[Actor.aHW8ke4RHwx2uYsC]</p><section class=\"block readaloud\"><p>那存在开口说话了，它痛苦的声音暴露出创伤带给它的剧烈折磨。</p><blockquote><p>你们这些尸体早该知道，不该一次又一次爬起来。我到底还要把你们放倒多少次？</p></blockquote><p>它因疼痛而龇牙，甩了甩头。有那么一瞬间，它似乎显得混乱，但很快又重新镇定下来，怒意再次涌上心头。</p><blockquote><p>你们打着虚伪的幌子而来，谎称自己的意图。我闻得到谎言，闻得到虚假。你们不是申特，也不是阿纳克瑞纽姆，你们是擅闯者，是敌人！你们未经允许踏上圣地！这条通路将继续封闭，而你们的尸体也会和你们那些同伴一样，堆在我的脚下！</p></blockquote><p>那存在俯下身，准备发动攻击，却又突然被一阵剧烈的咳嗽和痛苦的颤抖所打断，显然是它身上的伤势所致。</p></section><section class=\"block gamemaster\"><h4>可选战斗遭遇</h4><p>这个遭遇可以通过尝试安抚守护者并说服它：队伍并非它的敌人，从而避免。在当前状态下，它多疑而易怒，很容易把并非敌人的对象也视作敌人，但它并非完全失去理智。</p></section><h2 class=\"divider\">安抚守护者</h2><p>这位远古的神话尖塔守护者显然状况很糟。它脸部与颈部的烧伤和疤痕上覆满了渗液的脓疱。它看起来神志不清、混乱，且极易被激怒。与它互动的队伍必须谨慎行事。</p><p>队伍可以尝试与守护者交谈，而不是立刻发动攻击。起初这并不困难，但会随着时间推移而变得越来越难。安抚守护者可能让他们与这生物建立友好关系，但任何失误都可能致命。</p><section class=\"block social\"><h4>危险的交谈</h4><p>安抚这生物是有可能的，但绝非易事。</p><p>一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill persuasion 12]] 或 [[/skill deception 12]]</sub> <sub data-system=\"crucible\">[[/skillCheck diplomacy 12]] 或 [[/skillCheck deception 12]]</sub></sup>检定，可以通过抚慰或欺骗守护者，让它相信队伍并无敌意，从而令它暂时停手。尝试使用威吓不会奏效，反而会立刻激起暴力冲突。</p><p>这种成功是短暂的，会让队伍有机会提问，或在没有风险的情况下检查这生物。不过这个窗口很短，守护者很快又会重新变得多疑和烦躁。</p><p>每一次新的安抚尝试，无论成功还是失败，DC都会累计提高+2；而在总共经历三次失败后，守护者就会攻击队伍。</p><p>可选地，在尝试安抚守护者时，重度失败可以由你酌情记作两次失败。我们只建议在你的队伍社交技能特别强、失败风险本就较低，或你想让这一遭遇更加摇摆不定时采用这一规则。</p></section><p>只要付出足够专注的努力，就有可能彻底平息守护者。</p><section class=\"block gamemaster\"><h4>成功化解</h4><p>如果队伍成功通过安抚守护者而将战斗延后4次，那么它就会平静到足以被说服：队伍根本不是威胁，并会开始彻底放松下来。</p></section><h2 class=\"divider\">检查守护者</h2><section class=\"block exploration\"><h4>远古守护者</h4><p>一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill insight 13]]</sub> <sub data-system=\"crucible\">[[/skillCheck awareness 13]]</sub></sup>检定会揭示：守护者病得很重，极易激动，而且似乎已经无法分辨朋友与敌人。它很可能将所有访客都视作潜在敌人，也许与那些袭击过它的人并无区别。</p><p>通过一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill medicine 13]]</sub> <sub data-system=\"crucible\">[[/skillCheck medicine 13]]</sub></sup>检定来检查守护者，会发现它遭受了某种炼金攻击所造成的创伤，并且很可能因接触毒素而中毒。然而，鉴于这生物并非陆生野兽，几乎不可能对它实施恰当的医疗救助。</p><ul><li><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\"><strong>Result of 16+</strong></sub> <sub data-system=\"crucible\"><strong>大成功</strong></sub></sup>（或进一步进行一次<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill medicine 16]] 或 [[/skill insight 17]]</sub> <sub data-system=\"crucible\">[[/skillCheck medicine 16]]</sub></sup>检定）会让你相信，这生物正因袭击者施加在它身上的某种东西而逐渐死去。它很可能一天比一天虚弱，已经活不了多久了。</p></li></ul><p>检查守护者是可行的，但前提是它已经被安抚。具体如何做到，请见下一节规则。若守护者被检查，队伍可以得知：</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><ul><li><p>@UUID[Compendium.dnd5e.spells.Item.2skfDtglk1mGrb3l]{侦测毒素与疾病}同样会揭示这生物体内存在一种强力的致命毒素。</p></li><li><p>像@UUID[Compendium.dnd5e.spells.Item.F0GsG0SJzsIOacwV]{次级恢复}、@UUID[Compendium.dnd5e.spells.Item.MAxM77CDUu8dgIRQ]{防护毒素}、@UUID[Compendium.dnd5e.spells.Item.XZhdgVK3cLoxNCQl]{破除诅咒}这类法术，以及类似的治疗或祛病法术，都无法有效对抗这种毒素。</p></li><li><p>不过，防护毒素确实能暂时削弱毒药的效力，让守护者恢复一部分神智。只要该效果持续，对安抚守护者的尝试（见下文）便获得@Advantage[2]。</p></li></ul></div><div data-system=\"crucible\"><ul><li><p>@Spell[life.sense]或@UUID[Compendium.crucible.talent.Item.runeLife00000000]会揭示这生物体内存在一种强力的致命毒素，并表明它的进程已推进到干预无法成功的地步。</p></li><li><p>像@UUID[Compendium.crucible.equipment.Item.antitoxin0000000]这样的解毒物品，以及类似的治疗或祛病法术，都无法有效对抗这种毒素。</p></li><li><p>不过，使用魔法<strong>可以削弱</strong>毒药的效力，持续足够长的时间，让守护者恢复一部分神智。只要该效果持续，对安抚守护者的尝试（见下文）便获得@Advantage[2]。</p></li></ul></div></div></section><section class=\"block gamemaster\"><h4>守护者的命运</h4><p>如果队伍没有杀死守护者，并且逗留得够久，它会在相对平静中休息一段时间，随后最终死去。当这一刻到来时，这生物的形态会崩解为明艳的红、粉、紫、蓝色光与能量的旋流。这些光带会渐渐消散殆尽，只留下几根守护者的羽毛。</p><p>如果队伍在这发生之前离开，那么他们回来时将见到一座空无一物的神话尖塔天文台，以及它最后停留之处留下的几根守护者羽毛。</p></section><h2 class=\"divider\">与守护者战斗</h2><section class=\"block hazard\"><h4>守护者战术</h4><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>如果@UUID[Actor.aHW8ke4RHwx2uYsC]{神话尖塔守护者}与队伍进入战斗，它会立刻施放@UUID[Actor.aHW8ke4RHwx2uYsC.Item.rL15aLoprdZh7WYp]{镜影术}来提升自身防御。</p><p>守护者偏好利用速度和近战能力，使用它的@UUID[Actor.aHW8ke4RHwx2uYsC.Item.RxdmByLFjVOk8K06]{狡诈动作}进行疾走或脱离接触，并借助@UUID[Actor.aHW8ke4RHwx2uYsC.Item.LJDe0C4mJNDwV4kR]{助跑起跳}来拉开移动空间，或逼近潜在敌人，并利用其@UUID[Actor.aHW8ke4RHwx2uYsC.Item.wQkln56L0P0ahtkt]{猛扑}能力扑倒对手。</p><p>一旦进入近战射程，它就会通过@UUID[Actor.aHW8ke4RHwx2uYsC.Item.B5yQZrkvCodscc5P]{多重攻击}，以@UUID[Actor.aHW8ke4RHwx2uYsC.Item.ocnwVK7ckLH0KAgM]{啃咬}和@UUID[Actor.aHW8ke4RHwx2uYsC.Item.nYfPTVPJayLEYdu0]{爪}残暴撕裂敌人。</p><p>在远距离时，守护者也可以动用它强力的@UUID[Actor.aHW8ke4RHwx2uYsC.Item.Ks2KKuWvHh4diKVP]{辉光刺击}，但只有在不得已时才会这样做。</p><p>若面对施法者，它会使用@UUID[Actor.aHW8ke4RHwx2uYsC.Item.Z4G7AYBpuYDUpavy]{沉默术}、@UUID[Actor.aHW8ke4RHwx2uYsC.Item.J86nb6jzjH5jldhu]{反制法术}和@UUID[Actor.aHW8ke4RHwx2uYsC.Item.uVPftgomfuPem9cL]{解除魔法}来限制对方法术的效果。</p><h4>宇宙宝石</h4><p>该区域中有七颗宇宙宝石，分别象征余烬寰宇中的重要天体：兰提尔、阿肯、奥比斯、拉根、玛伊斯、科拉和灵光。瓦内克西斯可以使用它的@UUID[Actor.aHW8ke4RHwx2uYsC.Item.YJrlVRbsV0T0ofIV]{宇宙宝石}巢穴动作（在先攻计数20时）来击打这些宝石，为其注入光亮。</p><p>一旦某颗宝石被充能，就将它的测量模板放入场景中（如果它有的话）。宝石的效果会在本轮结束时作为一次巢穴动作触发（在先攻计数0时）。当宝石效果触发后，该宝石便不再处于充能状态。</p><p>在其效果激活前，可以通过与石台互动，并以正确顺序按下地板上的符文，来解除一颗已充能宝石。这需要一个动作，以及一次成功的[[/skill perception 12]]检定，以发现并匹配符文脉动的顺序。此检定失败不会带来任何后果。</p><h4>无可逃避的命运</h4><p>瓦内克西斯已中了致命之毒，因此由于其@UUID[Actor.aHW8ke4RHwx2uYsC.Item.K2YkUlI9E0Qd60mT]特性，它会在自己每个回合开始时受到持续伤害。如果战斗持续得够久，这一效果最终会杀死它。</p></div><div data-system=\"crucible\"><p>如果神话尖塔守护者与队伍进入战斗，它会立刻施放@UUID[Actor.aHW8ke4RHwx2uYsC.Item.protectiveMirage]{护佑幻影}来提升自身防御。</p><p>守护者偏好利用速度与飞行来重新定位，并借助其@UUID[Actor.aHW8ke4RHwx2uYsC.Item.ferociousleap000]、@UUID[Actor.aHW8ke4RHwx2uYsC.Item.swoopingStrike00]和@UUID[Actor.aHW8ke4RHwx2uYsC.Item.pouncingStrike00]，在多个目标之间迅速机动。</p><p>一旦进入近战射程，它便会用@UUID[Actor.aHW8ke4RHwx2uYsC.Item.BOM6vsI9jOJWlGxi]{啃咬}和@UUID[Actor.aHW8ke4RHwx2uYsC.Item.vvugXHtoDV7KWPCl]{爪}残暴撕裂敌人，</p><p>在远距离时，守护者也可以动用它强力的@UUID[Actor.aHW8ke4RHwx2uYsC.Item.7oTO4kdEfLh4AKRh]{辉光刺击}，但只有在不得已时才会这样做。</p><p>若面对施法者，它会依靠反制法术来限制对方法术的效果。</p><h4>宇宙宝石</h4><p>该区域中有七颗宇宙宝石，分别象征余烬寰宇中的重要天体：兰提尔、阿肯、奥比斯、拉根、玛伊斯、科拉和灵光。瓦内克西斯可以使用它的@UUID[Actor.aHW8ke4RHwx2uYsC.Item.YJrlVRbsV0T0ofIV]{冲锋宝石}动作，将一道光束导入这些宝石之一，为其注入光亮。</p><p>一旦某颗宝石被充能，就将它的测量模板放入场景中（如果它有的话）。宝石的效果会在本轮结束时激活。当宝石效果激活后，该宝石便不再处于充能状态。</p><p>在其效果激活前，可以通过与石台互动，并以正确顺序按下地板上的符文，来解除一颗已充能宝石。这需要一个动作，以及一次成功的[[/skillCheck awareness 12]]检定，以发现并匹配符文脉动的顺序。此检定失败不会带来任何后果。</p><h4>无可逃避的命运</h4><p>瓦内克西斯已中了致命之毒，因此由于其@UUID[Actor.aHW8ke4RHwx2uYsC.Item.K2YkUlI9E0Qd60mT]天赋，它会在自己每个回合开始时受到持续伤害。如果战斗持续得够久，这一效果最终会杀死它。</p></div></div></section><h2 class=\"divider\">与守护者交谈</h2><section class=\"block social\"><h4>关于死去的冒险者</h4><p>瓦内克西斯将那些死去的冒险者视为倒下的敌手、敌人。如果被问及，它会这样说：</p><blockquote><p>散落在我脚边的尸体，都是试图开启通往通路的神圣通道的擅闯者。只有那些寻求了解巨人历史及其道路的访客才被允许进入。骗子、入侵者和杀人者不行！</p><p>他们说自己来自“阿纳克瑞纽姆”，但他们和我曾见过的那个组织中的其他人完全不同。他们威胁说，如果我不让他们通行，他们就要用强酸和工具把通往下方的道路强行凿开。当我出手驱逐他们时，他们就把那些法器对准了我。</p></blockquote><p>瓦内克西斯还可以解释，为何他们的尸骸会被毁坏得如此严重，以及为何它们仍在扭动挣扎：那些冒险者不断从死亡中爬起。</p><blockquote><p>在沉眠者的一次又一次召唤下，他们不断醒来。我也无数次将他们放倒。最后，他们的残骸被我摧残得太过彻底，以至于再也无法站起来……可你仍能看到，他们那些腐烂的形体还在蠕动、扭曲，还在试图爬起。</p></blockquote><p>如果问及沉眠者：</p><blockquote><p>沉眠者正在苏醒。它如今沉睡在余烬之中，但不会再沉睡太久了。它的声音在我耳中变得越来越响。它许诺我死后仍有生命，但它并不知道，我早已超出它的触及。只是……这个地方的光，已经愈发暗淡了。</p></blockquote><h4>关于神话尖塔与守护者</h4><p>如果被问及自身及职责，守护者会说很多。</p><blockquote><p>原初巨人在很久以前自通路中涌现时建造了这里。他们建造此地，是为了研究那片他们此前从未见过的天空。我被派到这里担任他们的引导者，教导他们许多关于魔法与寰宇的知识，并欢迎他们来到地表。</p></blockquote><p>守护者相信自己已被遗忘，但它对自己在世界中的位置并无不满。</p><blockquote><p>普里莫迪斯的卡西亚将我安置于此，以保护此地的知识，保存建造者的记忆，并守护这座天文台的安全。然而，卡西亚似乎已经把我遗忘了，而所有与这里有关联的人也都进入了历史。在这片崩塌的空间中，我一直守望至今。总有一天，这里会化为尘埃，再也没有什么需要保护，而我也将返回故乡。</p></blockquote><p>如果问及建造者，守护者见证过其中许多事，并能分享它所知晓的内容：</p><blockquote><p>我见证了申特的成长。不过，他们并不是真的成长，更像是在抵达地表之后发生了改变，变成了不同的模样。我看着这里从一座天文台，变成一处承载敬意与历史的场所，申特来到这里，与他们的文化传承建立联系。我也见证过他们在黑暗年代来到这里，那时深渊正在摧毁他们，他们凝望古老的镶嵌画，试图从中找到意义或慰藉。我记得我最后一次见到申特的时候，他们告诉我，他们很快就将不复存在。我怀念他们。</p></blockquote><h4>关于通路通道</h4><p>瓦内克西斯可以长篇讲述这条通道，若被问及，它甚至愿意解释该如何开启它！</p><blockquote><p>那条通道是一部巨大的升降机，会一路下降到这座高塔的底部。开启它要从兰提尔开始，但旅行者必须先抵达所有其他月亮，才能真正踏上通路。</p></blockquote><blockquote><p>在过去几千年里，这条通道曾被访客开启过几次，但并不频繁。它通往地表之下那些远古的通路。我只见过下方景象一两次，而那里似乎是一片蛮荒之地。</p></blockquote><p>如果要求它进一步说明开启通道的解法，瓦内克西斯会说得有些隐晦。</p><blockquote><p>这里墙上的远古镶嵌画，藏着你们所需的秘密。你们能在那里找到穿越寰宇的道路。追随远古者吧，他们会为你们引路。</p></blockquote></section><h2 class=\"divider\">检查墙壁</h2><section class=\"block exploration\"><h4>远古雕刻</h4><p>检查这片下层区域的远古雕刻，你很容易就能看出其中的进程，即便它们已经受损：很久以前，一支族群从余烬的躯体内部掘洞而出，穿越群山。他们抬头望向头顶的天空，并为之震撼。</p><p>他们在自己的涌现之地建起了一座伟大的建筑，很可能正是这座建筑，而其中坐镇着另一位猫科守护者。自这座建筑起，他们更多的同类登上了余烬的地表，每一个都对头顶的群星与月亮惊叹不已。</p><p>壁画还进一步描绘了这支族群如何遍布群山，并在高处与低处建造了许多居所。</p><h4>解读石刻</h4><p>一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill history 14]]</sub> <sub data-system=\"crucible\">[[/skillCheck history 14]]</sub> </sup>检定能将一些线索串联起来：这里缺乏明显的申特重型建筑标志，说明这座建筑很可能早于申特，因此它或许正是他们先祖的涌现之地。这位远古守护者可能已有数万年之久！此外，这些猫一般的生物，也许是在指涉具有魔法力量的卡西亚，他们可能为这些族群提供了魔法知识的基础。</p><p>一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill religion 14]]</sub> <sub data-system=\"crucible\">[[/skillCheck religion 14]]</sub> </sup>检定能将一些线索串联起来：对天空与月亮的崇敬，感觉像是申特的经典特征。这很可能是一处古老而重要的地点（对申特而言），并充当了他们崇拜天穹的起点。那些猫一般的生物可能是卡西亚，而众所周知卡西亚源自普里莫迪斯。他们可能曾担任早期申特的守护者与引路者。</p></section><h2 class=\"divider\">检查亡灵</h2><p>队伍可能会想检查那支冒险者队伍的遗骸。尽管它们的状态极其可怖，但仍然可以从中获取一些信息。</p><section class=\"block exploration\"><h4>亡灵残骸</h4><p>这里散落的死者残骸状况极其糟糕。肢体被从腐烂的躯干上砍下，头颅也被劈开，散落在石地上。可即便如此，它们身上仍残留着一种不体面的生命迹象：手指抽动，手臂蜷曲，试图抓住附近的任何东西。</p><p>这里的死者不得安息，而正因如此，对它们的检查也变得愈发令人不快。</p><p>通过一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill investigation 13]]</sub> <sub data-system=\"crucible\">[[/skillCheck awareness 13]]</sub> </sup>检定来检查遗骸，可以让角色发现一些值得注意的细节。</p><ul><li><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\"><strong>Result 13+</strong></sub> <sub data-system=\"crucible\"><strong>成功</strong></sub></sup> 这些尸体都带着看起来货真价实的阿纳克瑞纽姆徽章、别针或纹章，说明他们是公会正式承认的成员。这几乎可以肯定，就是莉耶丝特拉在天刷镇帮助过的那一队人。</p></li><li><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\"><strong>Result 15+</strong></sub> <sub data-system=\"crucible\"><strong>大成功</strong></sub></sup> 在死者的遗物中有数个破碎的罐体，它们先前都曾盛装有毒的炼金化合物。虽然无法确定那究竟是什么物质，但从残留来看，它呈绿色，且具有腐蚀性。</p></li></ul><p>在检查尸体时，一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill medicine 12]]</sub> <sub data-system=\"crucible\">[[/skillCheck medicine 12]]</sub> </sup>检定会让你对他们的死因与当前状态有所了解。</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><ul><li><p><strong>Result of 12+</strong> 这些尸体仍相对新鲜，被此地寒冷而干燥的空气保存了下来。你估计它们大约只有两到三周的时间。不过，皮肤与肌肉上有一种奇怪的变色，仿佛还有某种别的东西在污染它们。</p></li><li><p><strong>Result of 14+ </strong>这些伤口并非全都形成于同一时间，看来这些尸体曾被多次摧残，才变成如今这副模样。若要你猜，应该是这些尸体不断爬起来，而守护者则一次又一次将它们斩倒，直到它们再也无法起身。</p></li><li><p><strong>Result of 16+</strong> 数名死者身上有旧伤，类似烧伤，而从痕迹判断，你会猜测是接触腐蚀性化学物质所致。虽然这些伤都不致命，但他们生前显然经常接触危险的炼金物质。</p></li></ul></div><div data-system=\"crucible\"><ul><li><p><strong>成功</strong> 这些尸体仍相对新鲜，被此地寒冷而干燥的空气保存了下来。你估计它们大约只有两到三周的时间。不过，皮肤与肌肉上有一种奇怪的变色，仿佛还有某种别的东西在污染它们。</p></li><li><p><strong>Critical Success </strong>这些伤口并非全都形成于同一时间，看来这些尸体曾被多次摧残，才变成如今这副模样。若要你猜，应该是这些尸体不断爬起来，而守护者则一次又一次将它们斩倒，直到它们再也无法起身。数名死者身上有旧伤，类似烧伤，而从痕迹判断，你会猜测是接触腐蚀性化学物质所致。虽然这些伤都不致命，但他们生前显然经常接触危险的炼金物质。</p></li></ul></div></div><p>针对这些亡灵进行一次成功的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill arcana 15]]</sub> <sub data-system=\"crucible\">[[/skillCheck arcana 15]]</sub> </sup>检定，会得到如下信息：不死现象并不常见，而此地也没有明显迹象表明附近曾施展过此类魔法，因此导致死者复起的原因来自别处。而真正令人不安的是，你无法判断自己面对的究竟是多么强大的存在或魔法源头。它可能就在附近但力量微弱；或者在最糟的情况下，它可能远在数里之外，却依然强大无比。</p></section>"
             },
             "Balcony Perimeter": {
               "name": "阳台边缘 Balcony Perimeter",
@@ -39585,7 +39585,7 @@
             },
             "The Old Barn": {
               "name": "旧谷仓 The Old Barn",
-              "text": "<section class=\"block readaloud\"><p>穿过一片被踩踏过的树篱，坐落着一座旧谷仓的残骸。它的屋顶有很大一部分已经消失，仿佛瓦片和木料被无情地一块块扯了下来，只留下碎裂的木片散落在地面一侧。</p></section><p>谷仓中布设有下文详述的荆棘树篱陷阱；虽然它有可能被侦测到，但除非队伍出于某种原因正小心行进，否则他们多半会在踏入谷仓时懵然将其触发。如果角色触发了该陷阱，请宣读或转述以下内容：</p><section class=\"block readaloud\"><p>当你踏入其中时，身后入口处那些被压平的藤蔓开始窸窣作响，从地面纠结着叶片与藤茎抬升起来，变得厚实而无法通行。前方原本的出口也同样被一道仿佛凭空生长出来的树篱堵住了，浓密、多刺，足有你头那么高。</p></section><section class=\"block gamemaster\"><h4>游戏主持人注记</h4><p>那些被踩踏过的藤蔓可以通过与其 <span class=\"reference fa-solid fa-cog\">​</span> 控制图标互动（使用 <span class=\"reference fa-solid fa-hand\">​</span> <strong>互动工具</strong>）来触发。请注意，该图标起初并不可见，但按下 <span class=\"reference\">ALT</span> 键即可将其显示出来。更多指引请查阅玩家指南的 @UUID[JournalEntry.emberPlayerGuide.JournalEntryPage.lNMkySfNYWS3EvIk#interactable-objects]{可交互物件} 部分。</p></section><section class=\"block hazard\"><h4>侦测陷阱</h4><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>角色可以用 @UUID[Actor.fuL7YqC7eENDtHeJ.Item.Momq8AedoWUozyDh]{寻获陷阱} 法术侦测到该陷阱。任何其他用于检查这些被踩踏藤蔓的检定，都无法将其与普通藤蔓区分开来。</p></div><div data-system=\"crucible\"><p>角色可以通过一次成功的 [[/skillCheck awareness 18 passive]] 或 [[/skillCheck wilderness 16 passive]] 检定侦测到这处树篱陷阱；若他们有先见之明，在跨过藤蔓之前使用 @Spell[earth.sense]，也能揭示出这些藤蔓绝非本地物种，与周围的植被相比显得格格不入。拥有大地感知的角色能辨认出，这些藤蔓与大地符文相关的魔法操纵痕迹产生共鸣。除此之外，这些被踩踏过的藤蔓与此处可能存在的其他任何藤蔓和根系都毫无分别。</p></div></div><h4>陷阱效果</h4><p>无论角色从哪个方向跨入谷仓，陷阱都会立刻在谷仓的两个出口处启动。一道无法通行的荆棘树篱会覆盖其路径上的所有可移动空间。树篱会阻止向前移动，但除非被触碰或被攻击，否则不会造成伤害。</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>若被触碰，其尖刺会迅速延展。任何位于树篱 5 尺内的角色都必须在 [[/save dexterity 17]] 豁免检定中成功，否则受到 [[/damage 1d10 piercing]] 伤害。</p></div><div data-system=\"crucible\"><p>若被触碰，其尖刺会迅速延展。任何位于树篱 5 尺内的角色都将面对 [[/hazard 6 reflex health piercing]]{穿刺荆棘}。</p></div></div><h4>检查陷阱</h4><p>陷阱一旦启动，任何角色只要成功通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill arcana 17]]</sub><sub data-system=\"crucible\">[[/skillCheck arcana 17]]</sub></sup> 检定，就能轻易将其鉴定为荆棘树篱陷阱。可以通过在树篱中找到一根看起来格格不入的枝条并按压它来解除该陷阱。</p><ul class=\"complex-check\"><li class=\"automatic-success\"><p><strong>相关知识</strong>：拥有 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/knowledge plants]]</sub><sub data-system=\"crucible\">[[/knowledge plants]] 或 [[/talent Compendium.crucible.talent.Item.runeEarth0000000]] </sub></sup>的角色自动成功。</p></li></ul><p>任何角色在检查这道多刺屏障时成功通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill investigation 17]]</sub><sub data-system=\"crucible\">[[/skillCheck wilderness 17]]</sub></sup> 检定，都会注意到它内部结构古怪，其中有几根枝条与周围的枝条看起来不同。</p><ul class=\"complex-check\"><li class=\"automatic-success\"><p><strong>先前的成功</strong>：已成功鉴定出该陷阱（如上）的角色自动成功。</p></li><li class=\"advantage\"><p><strong>相关知识</strong>：拥有 [[/knowledge plants]] 的角色获得 @Advantage[2]。</p></li></ul><h4>解除陷阱</h4><p>若角色以一次成功的 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill sleightofhand 18]]</sub><sub data-system=\"crucible\">[[/skillCheck athletics 18]]</sub></sup> 检定小心推动那根可解除陷阱的枝条，便能解除荆棘树篱陷阱。若失败，则该角色会触发树篱的物理攻击（见上文“陷阱效果”）<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">，并且在用于反制它的豁免检定上承受 @Advantage[-2]</sub></sup>。</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>虽然树篱会排斥物理攻击，但它可以被火焰摧毁。任何造成火焰伤害的二环或更高环阶法术（例如 @UUID[Compendium.dnd5e.spells.Item.7u2obDvuvtZBkTfq]{灼热射线}、@UUID[Compendium.dnd5e.spells.Item.ztgcdrWPshKRpFd0]{火球术}或类似法术）都能摧毁单独一面树篱。这道魔法树篱也可以通过 @UUID[Compendium.dnd5e.spells24.Item.phbsplDispelMagi]{解除魔法} 来反制，对抗该陷阱 DC 15。</p></div><div data-system=\"crucible\"><p>虽然树篱会排斥物理攻击，但它可以被火焰摧毁。任何对 [[/talent Compendium.crucible.talent.Item.runeFlame0000000]] 的运用，例如 @Spell[flame.arrow] 或 @Spell[flame.touch]，都能摧毁单独一面树篱。这道魔法树篱也可以用 [[/counterspell rune=earth gesture=influence inflection=negate dc=15]] 反制。</p></div></div><h4>自动重置的陷阱</h4><p>解除树篱陷阱只是暂时的——10分钟后，树篱会再次启动（如果队伍仍在谷仓内），或重置（准备在再次被跨越时重新触发）。如果树篱被魔法摧毁，它会在 24 小时内缓慢重新长回。</p></section><p>队伍一被树篱困在里面，立刻就会有一对血鸟发动攻击。</p><p>@Embed[Actor.ZuWduzUSGS6i4NZm inline count=2]</p><section class=\"block gamemaster\"><h4>血鸟</h4><p>血鸟经常成波次发动攻击，会在濒死时使用它们的 @UUID[Actor.EZso8riuETFlJQ8G.Item.UafhSUneNOqxQ1gj]{临终呼唤}，提醒附近其他血鸟加入战斗。</p></section><section class=\"block hazard\"><h4>搜索谷仓</h4><p>在血鸟被解决后，若队伍以一次成功的 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill investigation 16]]</sub><sub data-system=\"crucible\">[[/skillCheck awareness 16]]</sub></sup> 搜索谷仓，他们会在一堆干草下面发现一袋铜币和银币，<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">价值 [[/award 2gp]]</sub><sub data-system=\"crucible\">[[/award 2sp 4cp]]</sub></sup>。</p></section>"
+              "text": "<section class=\"block readaloud\"><p>穿过一片被踩踏过的树篱，坐落着一座旧谷仓的残骸。它的屋顶有很大一部分已经消失，仿佛瓦片和木料被无情地一块块扯了下来，只留下碎裂的木片散落在地面一侧。</p></section><p>谷仓中布设有下文详述的荆棘树篱陷阱；虽然它有可能被侦测到，但除非队伍出于某种原因正小心行进，否则他们多半会在踏入谷仓时懵然将其触发。如果角色触发了该陷阱，请宣读或转述以下内容：</p><section class=\"block readaloud\"><p>当你踏入其中时，身后入口处那些被压平的藤蔓开始窸窣作响，从地面纠结着叶片与藤茎抬升起来，变得厚实而无法通行。前方原本的出口也同样被一道仿佛凭空生长出来的树篱堵住了，浓密、多刺，足有你头那么高。</p></section><section class=\"block gamemaster\"><h4>游戏主持人注记</h4><p>那些被踩踏过的藤蔓可以通过与其 <span class=\"reference fa-solid fa-cog\">​</span> 控制图标互动（使用 <span class=\"reference fa-solid fa-hand\">​</span> <strong>互动工具</strong>）来触发。请注意，该图标起初并不可见，但按下 <span class=\"reference\">ALT</span> 键即可将其显示出来。更多指引请查阅玩家指南的 @UUID[JournalEntry.emberPlayerGuide.JournalEntryPage.lNMkySfNYWS3EvIk#interactable-objects]{可交互物件} 部分。</p></section><section class=\"block hazard\"><h4>侦测陷阱</h4><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>角色可以用 @UUID[Actor.fuL7YqC7eENDtHeJ.Item.Momq8AedoWUozyDh]{寻获陷阱} 法术侦测到该陷阱。任何其他用于检查这些被踩踏藤蔓的检定，都无法将其与普通藤蔓区分开来。</p></div><div data-system=\"crucible\"><p>角色可以通过一次成功的 [[/skillCheck awareness 18 passive]] 或 [[/skillCheck wilderness 16 passive]] 检定侦测到这处树篱陷阱；若他们有先见之明，在跨过藤蔓之前使用 @Spell[earth.sense]，也能揭示出这些藤蔓绝非本地物种，与周围的植被相比显得格格不入。拥有大地感知的角色能辨认出，这些藤蔓与大地符文相关的魔法操纵痕迹产生共鸣。除此之外，这些被踩踏过的藤蔓与此处可能存在的其他任何藤蔓和根系都毫无分别。</p></div></div><h4>陷阱效果</h4><p>无论角色从哪个方向跨入谷仓，陷阱都会立刻在谷仓的两个出口处启动。一道无法通行的荆棘树篱会覆盖其路径上的所有可移动空间。树篱会阻止向前移动，但除非被触碰或被攻击，否则不会造成伤害。</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>若被触碰，其尖刺会迅速延展。任何位于树篱 5 尺内的角色都必须在 [[/save dexterity 17]] 豁免检定中成功，否则受到 [[/damage 1d10 piercing]] 伤害。</p></div><div data-system=\"crucible\"><p>若被触碰，其尖刺会迅速延展。任何位于树篱 5 尺内的角色都将面对 [[/hazard 6 reflex health piercing]]{穿刺荆棘}。</p></div></div><h4>检查陷阱</h4><p>陷阱一旦启动，任何角色只要成功通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill arcana 17]]</sub><sub data-system=\"crucible\">[[/skillCheck arcana 17]]</sub></sup> 检定，就能轻易将其鉴定为荆棘树篱陷阱。可以通过在树篱中找到一根看起来格格不入的枝条并按压它来解除该陷阱。</p><ul class=\"complex-check\"><li class=\"automatic-success\"><p><strong>相关知识</strong>：拥有 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/knowledge plants]]</sub><sub data-system=\"crucible\">[[/knowledge plants]] 或 [[/talent Compendium.crucible.talent.Item.runeEarth0000000]] </sub></sup>的角色自动成功。</p></li></ul><p>任何角色在检查这道多刺屏障时成功通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill investigation 17]]</sub><sub data-system=\"crucible\">[[/skillCheck wilderness 17]]</sub></sup> 检定，都会注意到它内部结构古怪，其中有几根枝条与周围的枝条看起来不同。</p><ul class=\"complex-check\"><li class=\"automatic-success\"><p><strong>先前的成功</strong>：已成功鉴定出该陷阱（如上）的角色自动成功。</p></li><li class=\"advantage\"><p><strong>相关知识</strong>：拥有 [[/knowledge plants]] 的角色获得 @Advantage[2]。</p></li></ul><h4>解除陷阱</h4><p>若角色以一次成功的 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill sleightofhand 18]]</sub><sub data-system=\"crucible\">[[/skillCheck athletics 18]]</sub></sup> 检定小心推动那根可解除陷阱的枝条，便能解除荆棘树篱陷阱。若失败，则该角色会触发树篱的物理攻击（见上文“陷阱效果”）<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">，并且在用于反制它的豁免检定上承受 @Advantage[-2]</sub></sup>。</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>虽然树篱会排斥物理攻击，但它可以被火焰摧毁。任何造成火焰伤害的二环或更高环阶法术（例如 @UUID[Compendium.dnd5e.spells.Item.7u2obDvuvtZBkTfq]{灼热射线}、@UUID[Compendium.dnd5e.spells.Item.ztgcdrWPshKRpFd0]{火球术}或类似法术）都能摧毁单独一面树篱。这道魔法树篱也可以通过 @UUID[Compendium.dnd5e.spells24.Item.phbsplDispelMagi]{解除魔法} 来反制，对抗该陷阱 DC 15。</p></div><div data-system=\"crucible\"><p>虽然树篱会排斥物理攻击，但它可以被火焰摧毁。任何对 [[/talent Compendium.crucible.talent.Item.runeFlame0000000]] 的运用，例如 @Spell[flame.arrow] 或 @Spell[flame.touch]，都能摧毁单独一面树篱。这道魔法树篱也可以用 [[/counterspell rune=earth gesture=influence inflection=negate dc=15]] 反制。</p></div></div><h4>自动重置的陷阱</h4><p>解除树篱陷阱只是暂时的——10分钟后，树篱会再次启动（如果队伍仍在谷仓内），或重置（准备在再次被跨越时重新触发）。如果树篱被魔法摧毁，它会在 24 小时内缓慢重新长回。</p></section><p>队伍一被树篱困在里面，立刻就会有一对血鸟发动攻击。</p><p>@Embed[Actor.ZuWduzUSGS6i4NZm inline count=2]</p><section class=\"block gamemaster\"><h4>血鸟</h4><p>血鸟经常成波次发动攻击，会在濒死时使用它们的 @UUID[Actor.EZso8riuETFlJQ8G.Item.UafhSUneNOqxQ1gj]{垂死呼号}，提醒附近其他血鸟加入战斗。</p></section><section class=\"block hazard\"><h4>搜索谷仓</h4><p>在血鸟被解决后，若队伍以一次成功的 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill investigation 16]]</sub><sub data-system=\"crucible\">[[/skillCheck awareness 16]]</sub></sup> 搜索谷仓，他们会在一堆干草下面发现一袋铜币和银币，<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">价值 [[/award 2gp]]</sub><sub data-system=\"crucible\">[[/award 2sp 4cp]]</sub></sup>。</p></section>"
             },
             "Old Damaged Bridge": {
               "name": "旧的损坏桥梁 Old Damaged Bridge",
@@ -40249,7 +40249,7 @@
             },
             "Compound Lab": {
               "name": "化合实验室 Compound Lab",
-              "text": "<section class=\"block wip\"><p><strong>制作中！</strong> 虽然这场战斗应当已经为<strong>改造采石场 - 中层</strong>区域预先配置在场景中，但角色实体有可能已被清除。在抢先体验版本中，你可能需要为这场遭遇将角色实体添加到化合实验室中。</p><p>所需的角色实体列在下方的遭遇中。</p></section><section class=\"block readaloud\"><p>木制立柱直抵天花板，其间墙体的残余在一些地方仍然可见。这个仓促扩建的工作区里摆满了排列复杂的玻璃器皿，盛满了奇异的炼金混合物。四组彼此分开的装置正有条不紊地蒸馏、过滤、搅拌并转化各种化合物，原因不明。</p><p>在这一切后方有一张书桌，上面散乱堆放着各类书籍和纸张，似乎预示着能从中找到更多信息。书桌正右侧有一扇窗户，向外望去是一架翻腾转动的水轮，它的运动正在驱动别处某种看不见的装置。</p></section><p>@embed[Actor.FJFtoeSh014tPlJC]</p><p>@embed[Actor.kxOh8R1rpCls67e8 count=3]</p><section class=\"block hazard\"><h4>研究主管</h4><p>卡拉萨克是这间实验室的监督者与负责人，本身也是个危险人物。初次遭遇时，他会试图与闯入者讲道理，将他们诱导进一种安全感之中，或至少降低他们的警惕。他身边跟着三（3）名@UUID[Actor.kxOh8R1rpCls67e8]{突变派活体解剖师}，他们会遵从这位主管的指示。</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>然而，一旦他看到可乘之机，卡拉萨克就会试图对毫无防备的敌人使用他的@UUID[Actor.FJFtoeSh014tPlJC.Item.jUtdYUnWW6X2VTrr]{毒针}，然后再用他的@UUID[Actor.FJFtoeSh014tPlJC.Item.BhYnUUBoU3ESkl1B]{手术刀}对付其他敌人。</p><p>卡拉萨克还可以在邻近任一张炼金化合物桌时，使用他的@UUID[Actor.FJFtoeSh014tPlJC.Item.52wAxR0OWeXJg0JD]{准备药瓶}能力，准备一次用于对付敌人的特殊攻击。</p><p>他知道，若无法守住这间实验室并制服入侵者，等待他的必然是死亡，因此一旦眼看就要落败，他也就没什么可失去的了。他会凶狠作战，毫不留情。</p><p>如果卡拉萨克的生命值降至 0，他的@UUID[Actor.FJFtoeSh014tPlJC.Item.7H1pkhJqO2mmm8mQ]{致命应变}会立刻启动，使他无法被稳定伤势，也杜绝了通过魔法审问其尸体的任何可能。</p><h4>危险悬液</h4><p>这里有四张桌子，上面装载着不同的炼金化合物。卡拉萨克可以利用这些桌子抓起并投掷装有危险化学品的药瓶。这些桌子也可以被砸毁，导致危险化合物和玻璃碎片向四面八方喷射。</p><p>桌上的玻璃器皿 AC 为 10，生命值为 10。被摧毁时，所有 5 尺内的生物都必须在 [[/save dex 15]] 中成功，否则受到 [[/damage 1d4 piercing]]，并根据被摧毁装置的颜色承受额外伤害：</p><ul><li><p>黄色装置额外造成 [[/damage 1d6 lightning]] 伤害</p></li><li><p>绿色装置额外造成 [[/damage 1d6 acid]] 伤害</p></li><li><p>蓝色装置额外造成 [[/damage 1d6 cold]] 伤害</p></li><li><p>橙色装置额外造成 [[/damage 1d6 fire]] 伤害</p></li></ul><p>一旦某组装置被摧毁，卡拉萨克便无法再从中获益来调制炼金攻击。</p></div><div data-system=\"crucible\"><p>在战斗开始前，游戏主持人应使用“Apply Toxin”或“施加中毒”行动，表示卡拉萨克正秘密准备让未察觉的队伍中毒。</p><p>一旦他看到可乘之机，卡拉萨克就会试图用他那把已经淬毒的@UUID[Actor.FJFtoeSh014tPlJC.Item.g5d4FVRguB2bZY0A]{切割者}攻击毫无防备的敌人，然后再将刀刃转向其他近距离的敌人。</p><p>在整场战斗中，卡拉萨克会频繁利用小房间里的炼金工作台，将现成的炼金混合物投向队伍。他知道，若无法守住这间实验室并制服入侵者，等待他的必然是死亡，因此一旦眼看就要落败，他也就没什么可失去的了。他会凶狠作战，毫不留情。</p><p>如果卡拉萨克进入死亡状态，他的@UUID[Actor.FJFtoeSh014tPlJC.Item.7H1pkhJqO2mmm8mQ]{致命应变}会立刻启动，使他无法被稳定伤势，也杜绝了通过魔法审问其尸体的任何可能。</p><h4>危险悬液</h4><p>这里有四张桌子，上面装载着不同的炼金化合物。卡拉萨克可以利用这些桌子抓起并投掷装有危险化学品的药瓶。这些桌子也可以被砸毁，导致危险化合物和玻璃碎片向四面八方喷射。</p><p>游戏主持人可以使用卡拉萨克背包中的以下爆炸物，但这些物品旨在反映他从各自特定工作台附近将其投出的效果。</p><ul><li><p>@UUID[Actor.FJFtoeSh014tPlJC.Item.eM912khd1lngJdZB]{炼金火焰}</p></li><li><p>@UUID[Actor.FJFtoeSh014tPlJC.Item.JG96q4OK5arsfuLP]{腐蚀瓶}</p></li><li><p>@UUID[Actor.FJFtoeSh014tPlJC.Item.RP0MTlQoFArng2u9]{电荷安瓿瓶}</p></li><li><p>@UUID[Actor.FJFtoeSh014tPlJC.Item.XKhLmAYd7O8xMmhC]{霜滴小瓶}</p></li></ul><p>卡拉萨克和队伍都可以通过一次成功的 [[/skillCheck athletics 12]] 来摧毁这些桌子，方法是掀翻桌子，或将物体掷向桌子把它撞倒。这样做会使桌子在玻璃爆裂中爆炸，喷洒出的化合物形成一个 5 尺爆炸范围，受影响者会因玻璃碎片受到 [[/hazard 2 fortitude health piercing]]，并受到 [[/hazard 2 fortitude morale poison]] 伤害。一旦某组装置被摧毁，卡拉萨克便无法再从中获益来调制炼金攻击。</p><p>如果战斗结束后仍有工作台幸存，队伍可以搜刮每张工作台所提供的炸弹，最多 2 枚，其余的都已不处于可用状态。</p></div></div></section><section class=\"block exploration\"><h4>炼金清点</h4><p>只要这些桌子没有被摧毁，翻找其收集的各类药瓶与瓶罐，每张桌子都能产出一份@UUID[Item.zfv8g0NUFtDKpmWL]{稀有化学品}。</p><p>卡拉萨克的书桌上放着各种物品：</p><ul><li><p>一本私人日志，内含@UUID[Item.TGq3jsR9CvUuO2db]{卡拉萨克的观察}。</p></li><li><p>一摞@UUID[Item.b7tDeiRVqesPXrzC]{实验报告}。</p></li></ul></section><p></p>"
+              "text": "<section class=\"block wip\"><p><strong>制作中！</strong> 虽然这场战斗应当已经为<strong>改造采石场 - 中层</strong>区域预先配置在场景中，但角色实体有可能已被清除。在抢先体验版本中，你可能需要为这场遭遇将角色实体添加到化合实验室中。</p><p>所需的角色实体列在下方的遭遇中。</p></section><section class=\"block readaloud\"><p>木制立柱直抵天花板，其间墙体的残余在一些地方仍然可见。这个仓促扩建的工作区里摆满了排列复杂的玻璃器皿，盛满了奇异的炼金混合物。四组彼此分开的装置正有条不紊地蒸馏、过滤、搅拌并转化各种化合物，原因不明。</p><p>在这一切后方有一张书桌，上面散乱堆放着各类书籍和纸张，似乎预示着能从中找到更多信息。书桌正右侧有一扇窗户，向外望去是一架翻腾转动的水轮，它的运动正在驱动别处某种看不见的装置。</p></section><p>@embed[Actor.FJFtoeSh014tPlJC]</p><p>@embed[Actor.kxOh8R1rpCls67e8 count=3]</p><section class=\"block hazard\"><h4>研究主管</h4><p>卡拉萨克是这间实验室的监督者与负责人，本身也是个危险人物。初次遭遇时，他会试图与闯入者讲道理，将他们诱导进一种安全感之中，或至少降低他们的警惕。他身边跟着三（3）名@UUID[Actor.kxOh8R1rpCls67e8]{突变派活体解剖师}，他们会遵从这位主管的指示。</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>然而，一旦他看到可乘之机，卡拉萨克就会试图对毫无防备的敌人使用他的@UUID[Actor.FJFtoeSh014tPlJC.Item.jUtdYUnWW6X2VTrr]{毒针}，然后再用他的@UUID[Actor.FJFtoeSh014tPlJC.Item.BhYnUUBoU3ESkl1B]{手术刀}对付其他敌人。</p><p>卡拉萨克还可以在邻近任一张炼金化合物桌时，使用他的@UUID[Actor.FJFtoeSh014tPlJC.Item.52wAxR0OWeXJg0JD]{准备药瓶}能力，准备一次用于对付敌人的特殊攻击。</p><p>他知道，若无法守住这间实验室并制服入侵者，等待他的必然是死亡，因此一旦眼看就要落败，他也就没什么可失去的了。他会凶狠作战，毫不留情。</p><p>如果卡拉萨克的生命值降至 0，他的@UUID[Actor.FJFtoeSh014tPlJC.Item.7H1pkhJqO2mmm8mQ]{致命应变}会立刻启动，使他无法被稳定伤势，也杜绝了通过魔法审问其尸体的任何可能。</p><h4>危险悬液</h4><p>这里有四张桌子，上面装载着不同的炼金化合物。卡拉萨克可以利用这些桌子抓起并投掷装有危险化学品的药瓶。这些桌子也可以被砸毁，导致危险化合物和玻璃碎片向四面八方喷射。</p><p>桌上的玻璃器皿 AC 为 10，生命值为 10。被摧毁时，所有 5 尺内的生物都必须在 [[/save dex 15]] 中成功，否则受到 [[/damage 1d4 piercing]]，并根据被摧毁装置的颜色承受额外伤害：</p><ul><li><p>黄色装置额外造成 [[/damage 1d6 lightning]] 伤害</p></li><li><p>绿色装置额外造成 [[/damage 1d6 acid]] 伤害</p></li><li><p>蓝色装置额外造成 [[/damage 1d6 cold]] 伤害</p></li><li><p>橙色装置额外造成 [[/damage 1d6 fire]] 伤害</p></li></ul><p>一旦某组装置被摧毁，卡拉萨克便无法再从中获益来调制炼金攻击。</p></div><div data-system=\"crucible\"><p>在战斗开始前，游戏主持人应使用“Apply Toxin”或“施加中毒”行动，表示卡拉萨克正秘密准备让未察觉的队伍中毒。</p><p>一旦他看到可乘之机，卡拉萨克就会试图用他那把已经淬毒的@UUID[Actor.FJFtoeSh014tPlJC.Item.g5d4FVRguB2bZY0A]{切割者}攻击毫无防备的敌人，然后再将刀刃转向其他近距离的敌人。</p><p>在整场战斗中，卡拉萨克会频繁利用小房间里的炼金工作台，将现成的炼金混合物投向队伍。他知道，若无法守住这间实验室并制服入侵者，等待他的必然是死亡，因此一旦眼看就要落败，他也就没什么可失去的了。他会凶狠作战，毫不留情。</p><p>如果卡拉萨克进入死亡状态，他的@UUID[Actor.FJFtoeSh014tPlJC.Item.7H1pkhJqO2mmm8mQ]{致命应变}会立刻启动，使他无法被稳定伤势，也杜绝了通过魔法审问其尸体的任何可能。</p><h4>危险悬液</h4><p>这里有四张桌子，上面装载着不同的炼金化合物。卡拉萨克可以利用这些桌子抓起并投掷装有危险化学品的药瓶。这些桌子也可以被砸毁，导致危险化合物和玻璃碎片向四面八方喷射。</p><p>游戏主持人可以使用卡拉萨克背包中的以下爆炸物，但这些物品旨在反映他从各自特定工作台附近将其投出的效果。</p><ul><li><p>@UUID[Actor.FJFtoeSh014tPlJC.Item.eM912khd1lngJdZB]{炼金火焰}</p></li><li><p>@UUID[Actor.FJFtoeSh014tPlJC.Item.JG96q4OK5arsfuLP]{腐蚀瓶}</p></li><li><p>@UUID[Actor.FJFtoeSh014tPlJC.Item.RP0MTlQoFArng2u9]{电荷安瓿}</p></li><li><p>@UUID[Actor.FJFtoeSh014tPlJC.Item.XKhLmAYd7O8xMmhC]{霜滴小瓶}</p></li></ul><p>卡拉萨克和队伍都可以通过一次成功的 [[/skillCheck athletics 12]] 来摧毁这些桌子，方法是掀翻桌子，或将物体掷向桌子把它撞倒。这样做会使桌子在玻璃爆裂中爆炸，喷洒出的化合物形成一个 5 尺爆炸范围，受影响者会因玻璃碎片受到 [[/hazard 2 fortitude health piercing]]，并受到 [[/hazard 2 fortitude morale poison]] 伤害。一旦某组装置被摧毁，卡拉萨克便无法再从中获益来调制炼金攻击。</p><p>如果战斗结束后仍有工作台幸存，队伍可以搜刮每张工作台所提供的炸弹，最多 2 枚，其余的都已不处于可用状态。</p></div></div></section><section class=\"block exploration\"><h4>炼金清点</h4><p>只要这些桌子没有被摧毁，翻找其收集的各类药瓶与瓶罐，每张桌子都能产出一份@UUID[Item.zfv8g0NUFtDKpmWL]{稀有化学品}。</p><p>卡拉萨克的书桌上放着各种物品：</p><ul><li><p>一本私人日志，内含@UUID[Item.TGq3jsR9CvUuO2db]{卡拉萨克的观察}。</p></li><li><p>一摞@UUID[Item.b7tDeiRVqesPXrzC]{实验报告}。</p></li></ul></section><p></p>"
             },
             "Mixing Room": {
               "name": "混合室 Mixing Room",
@@ -41395,7 +41395,7 @@
             },
             "Collapsed Quarters": {
               "name": "坍塌的寝室 Collapsed Quarters",
-              "text": "<section class=\"block readaloud\"><p>狭窄的运河边走廊旁有几间房间，已经被瓦砾掩埋而坍塌，天花板也部分塌陷。瓦砾因潮湿而湿滑，其上长满了藤蔓和蘑菇，它们在水务工程潮湿的气候中生长旺盛。里面没有任何光或声音传出，显然碎牙者并不常来这一带。</p></section><section class=\"block exploration\"><h4>隐藏储藏</h4><p>北侧坍塌的房间只能从南侧穿过瓦砾进入。若进行探索，队伍会发现一个藏在瓦砾中的脚柜。脚柜内有以下财宝：</p><ul><li><p>[[/award 42gp 17sp]] 散币。</p></li><li><p>一套@UUID[Compendium.dnd5e.equipment24.Item.phbtulLeatherwor]{皮革工匠工具}</p></li><li><p>四码@UUID[Compendium.dnd5e.tradegoods.Item.jad5oFMDv21mPvJP]{丝绸}</p></li><li><p>一个皮制箭袋，内含10支@UUID[Compendium.dnd5e.equipment24.Item.dmgAmmunition12o]{+1箭矢}</p></li></ul><h4>安全休息</h4><p>这片区域是藏身处中少数几个可以进行不受打扰的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">短休</sub><sub data-system=\"crucible\">恢复</sub></sup>并从中受益的地方之一。</p></section><section class=\"block hazard\"><h4>撞进来！</h4><p>房间南侧那面虚弱的墙可以被打破；若成功通过一次<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill athletics 17]]</sub><sub data-system=\"crucible\">[[/skillCheck athletics 17]]</sub></sup>技能检定，便会开出一个洞口，并使碎石倾泻到@UUID[.LHzFS3kEmRrHwfh2]中。</p></section>"
+              "text": "<section class=\"block readaloud\"><p>狭窄的运河边走廊旁有几间房间，已经被瓦砾掩埋而坍塌，天花板也部分塌陷。瓦砾因潮湿而湿滑，其上长满了藤蔓和蘑菇，它们在水务工程潮湿的气候中生长旺盛。里面没有任何光或声音传出，显然碎牙者并不常来这一带。</p></section><section class=\"block exploration\"><h4>隐藏储藏</h4><p>北侧坍塌的房间只能从南侧穿过瓦砾进入。若进行探索，队伍会发现一个藏在瓦砾中的脚柜。脚柜内有以下财宝：</p><ul><li><p>[[/award 42gp 17sp]] 散币。</p></li><li><p>一套@UUID[Compendium.dnd5e.equipment24.Item.phbtulLeatherwor]{皮匠工具}</p></li><li><p>四码@UUID[Compendium.dnd5e.tradegoods.Item.jad5oFMDv21mPvJP]{丝绸}</p></li><li><p>一个皮制箭袋，内含10支@UUID[Compendium.dnd5e.equipment24.Item.dmgAmmunition12o]{+1箭矢}</p></li></ul><h4>安全休息</h4><p>这片区域是藏身处中少数几个可以进行不受打扰的<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">短休</sub><sub data-system=\"crucible\">恢复</sub></sup>并从中受益的地方之一。</p></section><section class=\"block hazard\"><h4>撞进来！</h4><p>房间南侧那面虚弱的墙可以被打破；若成功通过一次<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill athletics 17]]</sub><sub data-system=\"crucible\">[[/skillCheck athletics 17]]</sub></sup>技能检定，便会开出一个洞口，并使碎石倾泻到@UUID[.LHzFS3kEmRrHwfh2]中。</p></section>"
             },
             "Raster's Throne Room": {
               "name": "拉斯特的王座室 Raster's Throne Room",
@@ -44154,7 +44154,7 @@
             },
             "Everything & More": {
               "name": "一切及更多 Everything & More",
-              "text": "<section class=\"block readaloud\"><p>这间宽敞的木屋看起来是一家补给充足的常规商店。拥挤的货架上陈列着各式各样的小饰品、奇物、武器、护甲和冒险装备，看起来店主们根本来不及整理，货物比他们能打理的还要杂乱。</p></section><p>名字恰如其分的“一切及更多”是主甲板上的常规商店兼当铺，为顾客提供各种装备需求的便利解决方案——从寻常之物到非法货品，以及介于两者之间的一切。</p><p>这家杂乱铺子的主人是一位精明的商人，名叫<strong>格雷维安</strong> <strong>马科斯</strong>（守序邪恶，奥尔达尼人类，he/him），有传言称他与一个黑市网络有关，这个网络一路从“余烬的恩赐”号的甲板延伸到卡斯奇利亚共和国的港口。</p><p>格雷维安是@UUID[JournalEntry.3BGopMhQSx1DW6uT.JournalEntryPage.ura2nBkuotrLKse0]{卡丝塔的改衣铺}的卡丝塔·马科斯的哥哥。他故意装出几分对这个妹妹毫不在意的样子（尽管作为自己唯一的亲人，他实际上深爱着她）。</p><section class=\"block social\"><h4>格雷维安的货品</h4><p>一切及更多的货架上堆满了船上各色船员和访客通过正当或不正当手段得来的收获，新货和旧货数量相当，来自阿特里卡的各个角落。</p><p>由游戏主持人酌情决定，游戏规则中 @UUID[Compendium.dnd5e.content24.JournalEntry.phbEquipment0000] 章节列出的几乎任何物品，都可供与这艘船关系良好的顾客购买。额外物品包括以下几项：</p><ul><li><p>@UUID[Item.KdlUUFhAnpv6YIHT]{爆炸瓶}</p></li><li><p>@UUID[Item.pCl2T09DRBETkkbZ]{裂谷蜡烛}</p></li><li><p>@UUID[Item.Ivc8UplVymXNZTne]{锋利狩猎陷阱}</p></li><li><p>@UUID[Item.6f2sudRdy1XTrJqN]{钢髓}</p></li><li><p>@UUID[Item.KjpBoF2y1cl2Yptz]{白色因卡罗珍珠}</p></li></ul><p>格雷维安本人似乎对店里的每件物品都知道几分底细（至于其余那些，他就会现编谎话）。旧货按标价的 80% 出售，但每件旧货都有 1/[[/roll 1d2]] 的概率会在之后被先前的主人认出来——而那位主人无论是在“余烬的恩赐”号上，还是在奥尔丹的街道上某处，都会又愤怒又记仇。</p></section>"
+              "text": "<section class=\"block readaloud\"><p>这间宽敞的木屋看起来是一家补给充足的常规商店。拥挤的货架上陈列着各式各样的小饰品、奇物、武器、护甲和冒险装备，看起来店主们根本来不及整理，货物比他们能打理的还要杂乱。</p></section><p>名字恰如其分的“一切及更多”是主甲板上的常规商店兼当铺，为顾客提供各种装备需求的便利解决方案——从寻常之物到非法货品，以及介于两者之间的一切。</p><p>这家杂乱铺子的主人是一位精明的商人，名叫<strong>格雷维安</strong> <strong>马科斯</strong>（守序邪恶，奥尔达尼人类，he/him），有传言称他与一个黑市网络有关，这个网络一路从“余烬的恩赐”号的甲板延伸到卡斯奇利亚共和国的港口。</p><p>格雷维安是@UUID[JournalEntry.3BGopMhQSx1DW6uT.JournalEntryPage.ura2nBkuotrLKse0]{卡丝塔的改衣铺}的卡丝塔·马科斯的哥哥。他故意装出几分对这个妹妹毫不在意的样子（尽管作为自己唯一的亲人，他实际上深爱着她）。</p><section class=\"block social\"><h4>格雷维安的货品</h4><p>一切及更多的货架上堆满了船上各色船员和访客通过正当或不正当手段得来的收获，新货和旧货数量相当，来自阿特里卡的各个角落。</p><p>由游戏主持人酌情决定，游戏规则中 @UUID[Compendium.dnd5e.content24.JournalEntry.phbEquipment0000] 章节列出的几乎任何物品，都可供与这艘船关系良好的顾客购买。额外物品包括以下几项：</p><ul><li><p>@UUID[Item.KdlUUFhAnpv6YIHT]{爆炸瓶}</p></li><li><p>@UUID[Item.pCl2T09DRBETkkbZ]{裂隙蜡烛}</p></li><li><p>@UUID[Item.Ivc8UplVymXNZTne]{锋利狩猎陷阱}</p></li><li><p>@UUID[Item.6f2sudRdy1XTrJqN]{钢髓}</p></li><li><p>@UUID[Item.KjpBoF2y1cl2Yptz]{白色因卡罗珍珠}</p></li></ul><p>格雷维安本人似乎对店里的每件物品都知道几分底细（至于其余那些，他就会现编谎话）。旧货按标价的 80% 出售，但每件旧货都有 1/[[/roll 1d2]] 的概率会在之后被先前的主人认出来——而那位主人无论是在“余烬的恩赐”号上，还是在奥尔丹的街道上某处，都会又愤怒又记仇。</p></section>"
             },
             "Froot's Discount Produce": {
               "name": "弗鲁特折扣果蔬店 Froot's Discount Produce",
@@ -44927,7 +44927,7 @@
             },
             "Arcane Workshop": {
               "name": "奥术工坊 Arcane Workshop",
-              "text": "<section class=\"block readaloud\"><p>这片昏暗的区域弥漫着陈腐灰烬与化学烟气的恶臭，毫无疑问，这些气味来自密室中部那口架在冰冷炉膛上的坩埚。壁炉旁的一张小桌上摆满了各式炼金器具，四周的架子则堆满了各种奇异的试剂和法术材料。</p></section><p>这间房间是齐拉·赫斯提德罗的奥术工坊，她在这里准备仪式熏香，以及教团在@UUID[JournalEntry.slIRkmNoRi3qfYIl.JournalEntryPage.Hm9ku5muMPilfUuG]{交易之室}、她私人的@UUID[JournalEntry.slIRkmNoRi3qfYIl.JournalEntryPage.LfBDELBnhykIyPrg]{仪式之室}、@UUID[JournalEntry.slIRkmNoRi3qfYIl.JournalEntryPage.wWT2yqitYzTHNWaR]{神殿圣所}和地下工事外其他地点开展各种活动所需的其他秘奥材料。同样，这地方也在某种程度上兼作一间临时厨房，因此这里一些看似炼金补给品的东西其实是罐装食物。</p><section class=\"block exploration\"><h4>探索工坊</h4><p>只要简短地搜索一下这片区域，队伍就能找到几件值得注意的物品：</p><ul><li><p>32品脱（4加仑）的@UUID[Compendium.dnd5e.equipment24.Item.phbWaterpint0000]{水}</p></li><li><p>[[/roll 1d2]]瓶@UUID[Compendium.dnd5e.equipment24.Item.phbagAcid0000000]{强酸}</p></li><li><p>[[/roll 3d4]]罐腌制水果（每罐相当于2磅@UUID[Compendium.dnd5e.equipment24.Item.phbagRations0000]{口粮}）</p></li><li><p>[[/roll 1d2]]个@UUID[Compendium.dnd5e.equipment24.Item.phbagTinderbox00]{火绒盒}</p></li><li><p>@UUID[Compendium.dnd5e.equipment24.Item.phbtulAlchemists]{炼金术师工具}</p></li></ul><p>任何角色若拥有[[/skill perception 15 passive format=long]]，或在搜索房间时通过一次[[/skill perception 13]]检定，也还能找到以下物品：</p><ul><li><p>@UUID[Compendium.dnd5e.equipment24.Item.phbagAlchemistsF]{炼金火焰}</p></li><li><p>@UUID[Compendium.dnd5e.equipment24.Item.phbagComponentPo]{材料小袋}</p></li><li><p>@UUID[Item.9CmgPSRokA8ta3D1]{精制炼金术师工具}</p></li></ul><ul class=\"complex-check\"><li class=\"critical-success\"><p>@CriticalSuccess[13]：@UUID[Compendium.dnd5e.equipment24.Item.dmgPotionOfResis]{死灵抗性药剂}</p></li></ul><p>任何角色若在搜索这片区域时通过一次[[/skill arcana 12]]检定，便能辨认出这里容器中存放着数种用于奥术法术的材料成分，并可掠取[[/roll 1d3+1]]份其法术列表上、价值15 gp或以下的任意普通材料成分样本。</p></section>"
+              "text": "<section class=\"block readaloud\"><p>这片昏暗的区域弥漫着陈腐灰烬与化学烟气的恶臭，毫无疑问，这些气味来自密室中部那口架在冰冷炉膛上的坩埚。壁炉旁的一张小桌上摆满了各式炼金器具，四周的架子则堆满了各种奇异的试剂和法术材料。</p></section><p>这间房间是齐拉·赫斯提德罗的奥术工坊，她在这里准备仪式熏香，以及教团在@UUID[JournalEntry.slIRkmNoRi3qfYIl.JournalEntryPage.Hm9ku5muMPilfUuG]{交易之室}、她私人的@UUID[JournalEntry.slIRkmNoRi3qfYIl.JournalEntryPage.LfBDELBnhykIyPrg]{仪式之室}、@UUID[JournalEntry.slIRkmNoRi3qfYIl.JournalEntryPage.wWT2yqitYzTHNWaR]{神殿圣所}和地下工事外其他地点开展各种活动所需的其他秘奥材料。同样，这地方也在某种程度上兼作一间临时厨房，因此这里一些看似炼金补给品的东西其实是罐装食物。</p><section class=\"block exploration\"><h4>探索工坊</h4><p>只要简短地搜索一下这片区域，队伍就能找到几件值得注意的物品：</p><ul><li><p>32品脱（4加仑）的@UUID[Compendium.dnd5e.equipment24.Item.phbWaterpint0000]{水}</p></li><li><p>[[/roll 1d2]]瓶@UUID[Compendium.dnd5e.equipment24.Item.phbagAcid0000000]{强酸}</p></li><li><p>[[/roll 3d4]]罐腌制水果（每罐相当于2磅@UUID[Compendium.dnd5e.equipment24.Item.phbagRations0000]{口粮}）</p></li><li><p>[[/roll 1d2]]个@UUID[Compendium.dnd5e.equipment24.Item.phbagTinderbox00]{火绒盒}</p></li><li><p>@UUID[Compendium.dnd5e.equipment24.Item.phbtulAlchemists]{炼金术师工具}</p></li></ul><p>任何角色若拥有[[/skill perception 15 passive format=long]]，或在搜索房间时通过一次[[/skill perception 13]]检定，也还能找到以下物品：</p><ul><li><p>@UUID[Compendium.dnd5e.equipment24.Item.phbagAlchemistsF]{炼金火焰}</p></li><li><p>@UUID[Compendium.dnd5e.equipment24.Item.phbagComponentPo]{材料袋}</p></li><li><p>@UUID[Item.9CmgPSRokA8ta3D1]{精制炼金术师工具}</p></li></ul><ul class=\"complex-check\"><li class=\"critical-success\"><p>@CriticalSuccess[13]：@UUID[Compendium.dnd5e.equipment24.Item.dmgPotionOfResis]{死灵抗性药剂}</p></li></ul><p>任何角色若在搜索这片区域时通过一次[[/skill arcana 12]]检定，便能辨认出这里容器中存放着数种用于奥术法术的材料成分，并可掠取[[/roll 1d3+1]]份其法术列表上、价值15 gp或以下的任意普通材料成分样本。</p></section>"
             },
             "Gazetteer Reference": {
               "name": "地名志参考 Gazetteer Reference"
@@ -45422,7 +45422,7 @@
           },
           "pages": {
             "Area Overview": {
-              "name": "区域总览 Area Overview",
+              "name": "区域概览 Area Overview",
               "text": "<section class=\"block gamemaster\"><h4>区域地图背景</h4><p>@UUID[Scene.emberDredgerDock]{乌什纳疏浚船坞}区域地图描绘的是一座疏浚船坞，连同仓库与储料罐，属于更大的疏浚者海岸区域的一部分；它出现在@UUID[JournalEntry.emberDisturbedEa]{扰动之地}支线任务的 [[/eventState disturbedEarthDredging]] 阶段。</p><ul><li><p>该区域地图只有 1 个场景层级，涵盖整个船坞区域。</p></li><li><p>队伍从外侧的土路一端抵达。</p></li></ul></section><h2 class=\"divider\">玩法细节</h2><p>除非正文另有说明，乌什纳疏浚船坞的各处区域都具有以下特征。</p><h3 class=\"divider\">层级与高度</h3><p>乌什纳疏浚船坞场景只有一个层级，其区域沿湖岸分布为若干地点。</p><ul><li><p><strong>湖岸：</strong>船坞区域的绝大部分高度为 0，但此处湖水在离岸最远处深达 -6。</p></li></ul><h3 class=\"divider\">声响</h3><p>亚纳克干活的动静、头顶大型木吊车的转动，以及湖浪拍打码头的声音，汇成持续不断的嘈杂，但都不足以影响听觉。</p><h3 class=\"divider\">照明</h3><p>疏浚作业由自然光与提灯照明。</p><h3 class=\"divider\">地形</h3><p>只有湖水本身构成明显的困难地形：较深的水域需要游泳，其余部分只会拖慢穿行者的速度。</p><h3 class=\"divider\">居民</h3><p>船坞全天候由一班工人操作并占用，可用 @UUID[Actor.9plFRf3Hurd9r7ol]{阿克图里安人} 角色来表示。</p><h3 class=\"divider\">敌人</h3><p>在 @UUID[JournalEntry.emberDisturbedEa]{扰动之地} 的事件期间，此处会遭遇以下敌人：</p><ul><li><p>@UUID[Actor.wbAp4vmr2fica606]{泥浆格布林}</p></li><li><p>堕化晶巉巨像</p></li><li><p>@UUID[Actor.tOoLvpL31LmVGQnx]{堕化者斯莱斯}</p></li></ul><p></p>"
             },
             "Gazetteer Reference": {
@@ -45532,7 +45532,7 @@
               "text": "<section class=\"block readaloud\"><p>这家不大的药水铺，桌上挤满了瓶子、盆钵与罐子，里面装着形形色色的奇异物质。在这堆杂物之间，一位身形轻盈、穿着阿克图里安精致衣饰的阿什卡女子正俯身端详着一小把草药，透过一副金边放大镜研究这些材料。她一动未动，只是瞥了你们一眼，以一种温厚而慈和的口吻招呼你们。</p><blockquote><p>欢迎光临阿沃达的灵药铺——落水洞深处这一带最好的炼金方案都在这儿。说说看，在这样的乱世里，我能帮上你们什么？</p></blockquote></section><p>这座建筑既是水术师埃梅琳·阿沃达的工坊，也是她的店面，为阿克图瑞尔的居民提供好用（虽然价高）的炼金物资。</p><section class=\"block social\"><h4>与埃梅琳交谈</h4><dl><dt><p>埃梅琳·阿沃达（中立善良，阿克图里安人阿什卡，she/her）</p></dt><dd><p>这位精明而不失慈和的水术师，为无光深处的旅人制作卷轴、药水与其他魔法物品，但她的眼睛始终盯着账面。</p></dd></dl><p>埃梅琳是个和气（虽说有点唯利是图）的老板，总是乐意帮人——只要对方买点东西，或者为她的专业服务付钱。据说她偶尔会为那些投合她勤勉性情的人降价，但她不信“白给”这回事。</p><p>埃梅琳愿意随口聊的话题包括（但不限于）以下几项：</p><ul><li><p>她那些（定价过高的）存货与服务的细节。</p></li><li><p>她作为法师与药剂师的经历。</p></li><li><p>关于阿克图瑞尔的情况，包括矿渊及其形形色色的居民。</p></li><li><p>关于阿克图斯高原的传闻与时局。</p></li></ul><p>任何通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill insight 13]]</sub><sub data-system=\"crucible\">[[/skillCheck diplomacy 13]]</sub></sup> 检定的角色，都能轻易感受到埃梅琳日常处事中那种干脆利落的坦诚，也没有理由怀疑她对他们藏着什么（除了药剂行当里那些来之不易的秘方）。</p><h4>埃梅琳的货品</h4><p>阿沃达的灵药铺通常备有各种炼金物资、药水以及其他不同稀有度的消耗品——一律加价 20% 出售。这些货品包括以下各项若干：</p><ul><li><p>@UUID[Item.QwzYLBnZ1PjLFEuI]{炼金银}</p></li><li><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">@UUID[Compendium.dnd5e.items.Item.Fc6UfFNOnW80XMzi]{抗毒剂}</sub> <sub data-system=\"crucible\">@UUID[Compendium.crucible.equipment.Item.antitoxin0000000]</sub></sup></p></li><li><p>@UUID[Item.FXNnFGmbtvZrJEhq]{永绽花}</p></li><li><p>@UUID[Compendium.dnd5e.equipment24.Item.dmgOilOfSlipperi]{滑腻油}</p></li><li><p>@UUID[Item.H4HHgtfjPNU2dGlG]{警觉药水}</p></li><li><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">@UUID[Compendium.dnd5e.equipment24.Item.phbagPotionofHea]{治疗药水} <br></sub> <sub data-system=\"crucible\">@UUID[Compendium.crucible.equipment.Item.healingElixir000]</sub></sup></p></li><li><p>@UUID[Compendium.dnd5e.equipment24.Item.dmgPotionOfResis]{抗性药水}</p></li><li><p>@UUID[Compendium.dnd5e.equipment24.Item.dmgPotionOfWater]{水下呼吸药水}</p></li></ul><p><sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">角色还能在这里找到针对常见 @UUID[RollTable.cK0yaPfqWY4csCUx]{阿特里坎疾病} 的专门药方，例如 @UUID[Item.j6zuAbUyWDWLjBFg]{抗真菌药剂}、@UUID[Item.zYnZJXWZ2s2jKzEv]{抗凝药剂}、@UUID[Item.CZTzfRrJLOdxeS1n]{溶解药剂} 与 @UUID[Item.ohX47gu4PvpL7Go5]{护心灵药}。</sub></sup></p><p>任何通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill persuasion 17]]</sub> <sub data-system=\"crucible\">[[/skillCheck diplomacy 17]]</sub></sup> 检定的角色，都能说服埃梅琳把价格降到标准水平。</p></section><h3 class=\"divider\">[[/eventState otherhood1Arcturel2]]</h3><p>在 [[/eventState otherhood1Arcturel2]] 事件期间，队伍可以就近来接连发生的中毒事件与埃梅琳交谈。详见该事件正文。</p><h3 class=\"divider\">[[/eventState arcturelSideCrime]]</h3><p>在 [[/eventState arcturelSideCrime]] 事件期间，队伍可以找埃梅琳打听关于银光束财团的传闻。详见该事件正文。</p>"
             },
             "Area Overview": {
-              "name": "区域总览 Area Overview",
+              "name": "区域概览 Area Overview",
               "text": "<section class=\"block gamemaster\"><h4>区域地图背景</h4><p>@UUID[Scene.emberArcturelLow]{阿克图瑞尔矿渊}区域地图描绘的是@UUID[JournalEntry.emberArctusGazet.JournalEntryPage.Byemag1k6p66PynZ]{矿渊}的一小片区域。它出现在 @UUID[JournalEntry.CHLiPiU0Bx9Pdevu]{一位老朋友} 主线任务的 [[/eventState otherhood1Arcturel2]] 事件、@UUID[JournalEntry.emberNainSide000]{故事之书} 支线任务的 [[/eventState bookTalesQuarryman]] 事件，以及 @UUID[JournalEntry.m6P3pXWB3ssdG7o3]{黑暗中的微光} 支线任务的 [[/eventState arcturelSideCrime]] 事件之中。</p><ul><li><p>该地图只描绘一个场景层级，其区域分为两部分：矿渊与三层矿井。</p></li><li><p>在 [[/eventState otherhood1Arcturel2]] 与 [[/eventState bookTalesQuarryman]] 事件中，队伍从升降机内部开始，正对着 @UUID[JournalEntry.PWK8ADZy5RgbwBAu.JournalEntryPage.QpHwyxq7yJZGhjFY]{沃特伯恩酿酒坊}。</p></li><li><p>在 [[/eventState arcturelSideCrime]] 事件中，队伍从升降机内部开始，正对着 @UUID[JournalEntry.PWK8ADZy5RgbwBAu.JournalEntryPage.crgIhy7BVETKJYHN]{扳力修理行}。</p></li></ul></section><h2 class=\"divider\">玩法细节</h2><p>除非正文另有说明，阿克图瑞尔矿渊的各处区域都具有以下特征。</p><h3 class=\"divider\">层级与高度</h3><p>阿克图瑞尔矿渊场景只有一个层级，其区域分为两部分：矿渊与三层矿井。</p><ul><li><p><strong>矿渊：</strong>矿渊的高度设为 0，顶高 10 英尺。</p></li><li><p><strong>三层矿井：</strong>三层矿井的高度设为 0，顶高 20 英尺。</p></li></ul><h3 class=\"divider\">照明</h3><p>在落水洞的这一深度，传统的火焰没有帮助便无法维持——所有未加防护的蜡烛都会很快熄灭。因此本地人改用落水洞岩壁上发光的蘑菇、@UUID[Item.pCl2T09DRBETkkbZ]{裂隙蜡烛}，以及偶尔用到的因卡罗珍珠来照明。</p><ul><li><p><strong>矿渊：</strong>照明昏暗但稳定。</p></li><li><p><strong>三层矿井：</strong>照明明亮，主要来自因卡罗珍珠——它们像灯笼一样挂满整座矿井。矿井中央那台装置的动作会暂时影响这些因卡罗珍珠（见下文 @UUID[JournalEntry.PWK8ADZy5RgbwBAu.JournalEntryPage.djOYv32flHBv3LXK#the-device]{装置}）。</p></li></ul><h3 class=\"divider\">地形</h3><p>所有区域都应视为普通地形。</p><h3 class=\"divider\">居民</h3><p>以下角色与生物居住在此区域：</p><ul><li><p>@UUID[Actor.Rh7z2eruwwhFlG58]{佐迪·特拉斯克}</p></li><li><p>@UUID[Actor.9plFRf3Hurd9r7ol]{艾梅琳·阿沃达}</p></li><li><p>10 名 @UUID[Actor.9plFRf3Hurd9r7ol]{阿克图里安人}</p></li><li><p>3 只 @UUID[Actor.T6YcptpxcCLx4yLx]{乔布里}</p></li></ul><p>在 [[/eventState arcturelSideCrime]] 事件期间，以下角色与生物居住在此区域：</p><ul><li><p>@UUID[Actor.9plFRf3Hurd9r7ol]{埃奥拉斯·哈斯威克}</p></li><li><p>@UUID[Actor.9plFRf3Hurd9r7ol]{卡兰德拉}</p></li><li><p>@UUID[Actor.9plFRf3Hurd9r7ol]{霍布·科雷尔}</p></li></ul><h3 class=\"divider\">敌人</h3><p>在 [[/eventState otherhood1Arcturel2]] 事件期间，此处会遭遇以下敌人：</p><ul><li><p>5 只 @UUID[Actor.eOeEoqatnUz1TOVR]{沃格}</p></li><li><p>4 只 @UUID[Actor.ZMLyUZaK76soqKx0]{斯基瑟}</p></li><li><p>基尔纳，一名 @UUID[Actor.69yCeDhDktOWW5O0]{阿布里克斯}</p></li></ul><p>在 [[/eventState bookTalesQuarryman]] 事件期间，此处会遭遇以下敌人：</p><ul><li><p>5 只 @UUID[Actor.ZMLyUZaK76soqKx0]{斯基瑟}</p></li></ul><h3 class=\"divider\">装置</h3><p>装置是一台巨大的金属机器，位于矿井中央的 @UUID[JournalEntry.PWK8ADZy5RgbwBAu.JournalEntryPage.eApuNVjHrvwXGB8C]{枢纽厅}。它由如今盘踞在这座矿井里的提拉斐姆——@UUID[Actor.69yCeDhDktOWW5O0]{阿布里克斯} 基尔纳——建造，眼下由一群 @UUID[Actor.ZMLyUZaK76soqKx0]{斯基瑟} 悉心照料并守卫着。它若被完全启动，最终会让矿渊的部分隧道系统塌陷，酿成一场足以嫁祸给杰夫赫尔家族的大灾难。</p><section class=\"block hazard\"><h4>矿井效应</h4><p>当装置处于<strong>通电</strong>状态、且角色进入矿井的某些区域时，它会产生一次 @UUID[RollTable.XrY0Hys2AjCMJP8i]{矿井效应}。该表所有结果都被抽完之后，重置该表。</p><h4>让装置断电</h4><p>使用 @UUID[JournalEntry.PWK8ADZy5RgbwBAu.JournalEntryPage.byNiHbuGQAyGerNQ]{副储藏室} 里的隐藏开关，可以让装置<strong>断电</strong>。若要看到这个<strong>可交互物件</strong>，可以按住 <span class=\"reference\">左 Alt 键</span>。</p><h4>摧毁装置</h4><p>该装置的 AC 为 20，生命值 30，免疫毒素、灵能与光耀伤害，并具有 10 点 &amp;reference[damage threshold]。</p></section><h3 class=\"divider\">沃格滋生</h3><p>废弃的矿井隧道已被 @UUID[Actor.eOeEoqatnUz1TOVR]{沃格} 占据，它们潜伏在地下，伏击从头顶经过的生物。</p><p>@Embed[Actor.eOeEoqatnUz1TOVR]</p><section class=\"block hazard\"><h4>沃格伏击</h4><p>每当有角色经过某只沃格 10 英尺范围内时，它便破土而出发动攻击。</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>不具备 @UUID[Compendium.dnd5e.content24.JournalEntry.phbAppendixCRule.JournalEntryPage.r64UrNusMhwJVnxb]{震颤感知} 的生物处于 &amp;Reference[surprise]{突袭} 状态。</p></div></div><h4>沃格巢</h4><p>矿井中的某些区域被标为“沃格巢”。每当角色进入被标为“沃格巢”的区域，或在其中弄出很大动静时，掷 [[/gmroll 1d20]]。结果为 10 或更高时，区域地图上所有沃格都朝角色尽可能地移动。随后，若有一只或多只沃格处于某个角色 10 英尺内，它们便破土而出发动攻击。</p><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>不具备 @UUID[Compendium.dnd5e.content24.JournalEntry.phbAppendixCRule.JournalEntryPage.r64UrNusMhwJVnxb]{震颤感知} 的生物处于 &amp;Reference[surprise]{突袭} 状态。</p></div></div><h4>沃格战术</h4><div class=\"system-swap-block\"><div data-system=\"dnd5e\"><p>战斗开始时，沃格会对最近的可选敌人使用其 @UUID[Actor.eOeEoqatnUz1TOVR.Item.QwM0QfEeSuZ8437H] 攻击。</p><p>整场战斗中，沃格会优先使用以下动作与能力：</p><ul><li><p>近战时，沃格会使用其 @UUID[Actor.eOeEoqatnUz1TOVR.Item.H8Hd6YHdoSrjw8sS] 动作。</p></li><li><p>沃格会尽可能多地缠住敌人，以最大化其 @UUID[Actor.eOeEoqatnUz1TOVR.Item.64qGZX2Y4t7nVbi0] 特性的效果。</p></li></ul><p>当沃格被消灭，或生命值降到上限的一半以下时，战斗结束——此时它们会钻入地下逃走。</p></div><div data-system=\"crucible\"><p>战斗开始时，沃格会钻入地下，移动到能让其 @UUID[Actor.eOeEoqatnUz1TOVR.Item.burrower00000000] 动作效果最大化的位置。</p><p>整场战斗中，沃格会优先使用以下动作与能力：</p><ul><li><p>近战时，沃格会使用其 @UUID[Actor.eOeEoqatnUz1TOVR.Item.rakingTalons0000] 动作。</p></li><li><p>若被包围，沃格会试图攀爬到安全处，并在下一回合使用其 @UUID[Actor.eOeEoqatnUz1TOVR.Item.clingingGrip0000]。</p></li></ul><p>当沃格被消灭，或陷入 @Condition[weakened] 或 @Condition[broken] 时，战斗结束——此时它们会钻入地下逃走。若某只沃格无法逃脱，它会调整站位，使其 @UUID[Actor.eOeEoqatnUz1TOVR.Item.radiantDeathBurs] 特性影响尽可能多的敌人。</p></div></div></section>"
             },
             "The Last Pit": {
@@ -45554,7 +45554,7 @@
             },
             "Silver Beam Foyer": {
               "name": "银光束门厅 Silver Beam Foyer",
-              "text": "<section class=\"block readaloud\"><p>这座昏暗的建筑直接嵌建在深褐色的富矿石料之中，横跨裂隙与广场相接。那里，深色石料与弧形墙面，同贸易道温暖的金色棱角形成了鲜明对比。</p><p>通往这座建筑的台阶上立着一块牌子，上面写着：</p><blockquote><p>银光束财团</p><p>阿克图瑞尔分部</p></blockquote></section><section class=\"block exploration\"><h4>探索门厅</h4><p>拥有 [[/culture emberArcturian]] 或 [[/culture emberOrdani]] 文化的角色会认出，这座建筑的设计明显来自外地，缺少阿克图瑞尔标志性的传统 @UUID[JournalEntry.emberCultures000.JournalEntryPage.8cGPxMRewkagoIvc]{阿克图里安} 建筑风格。</p><p>任何通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill history 13]] </sub><sub data-system=\"crucible\">[[/skillCheck society 13]]</sub></sup> 检定的角色，都能认出这栋建筑在营造与设计的某些方面带有 @UUID[JournalEntry.emberCultures000.JournalEntryPage.y4WHE3TEr6Of13SL]{莱伦} 风格。</p><ul class=\"complex-check\"><li class=\"automatic-success\"><p>[[/culture emberRailen]]：该角色此次检定自动成功。</p></li><li class=\"advantage\"><p>[[/knowledge crafts]]：该角色在此次检定上获得 @Advantage[2]。</p></li></ul><h4>营业时间</h4><p>银光束的办公室在日落前开放，之后前门就会关闭并上锁。</p></section><p>双开门内是接待区，不过从这里再往建筑内部前进会受到限制。</p><section class=\"block readaloud\"><p>你发现自己身处一座宏伟的圆形大厅，这里是银光束财团在阿克图瑞尔设立的办公室。高大的窗户让光线穿过玻璃倾泻而入。再加上打磨得光洁发亮的白色大理石，让整个空间显得干净明亮得近乎不真实。</p><p>正中央摆着一张宽大的桌子，以精工打造的灰色金属制成，其表面的细丝纹饰随着每一个细微动作而反射光芒。接待员就坐在这里，姿态既正式又不失亲和。</p><p>桌子两侧，各有一台纤细的构装体立于抬高的石质台座之上；它们由闪亮的银色金属打造，涂饰着蓝色制服纹样，静止得一动不动。</p></section><p>银光束财团在阿克图瑞尔的办公室仅接受预约来访。接待员（一名@UUID[Actor.9plFRf3Hurd9r7ol]{阿克图里安人}）不会允许任何非雇员，或未获得内部人员授权的人进入。</p><section class=\"block social\"><h4>你知道我是谁吗？</h4><p>试图说服或欺骗接待员都会失败，因为比起放一个不在预约名单上的人进去，她更害怕惹恼自己的上司（@UUID[Actor.gGNpwLWttuHPZF1W]{拉丽莎·托斯}）。</p><p>想要进入这些办公室本就是刻意设定得很困难的事，角色在特定事件之外基本不可能做到。试图威吓接待员会导致她按下桌上的安保按钮呼叫警卫。</p><h4>穿成你想要的职位</h4><p>如果队伍设法把自己@UUID[JournalEntry.Exq8U5xEyk6B5JKv.JournalEntryPage.Xi8DSOxh18XVrkep#consortium-disguises]{伪装}成银光束员工，他们就能直接从前门走进去，而接待员甚至不会多看他们一眼。</p></section><section class=\"block exploration\"><h4>那是干什么的？</h4><p>拥有<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill perception 10 passive]] </sub><sub data-system=\"crucible\">[[/skillCheck awareness 10 passive]]</sub></sup>的角色会注意到，桌上有一个中等大小的红色按钮。它很容易够到，多半是用来召唤安保人员的按钮。</p><h4>只是陈设吗？</h4><p>一对@UUID[Actor.mGxrffI6CI7Dd5rU]{银光束仆役}站在桌子两侧的台座上。虽然它们没有携带武器，看起来也并未启动，但感觉并不只是装饰品。</p></section><section class=\"block hazard\"><h4>乱按按钮</h4><p>如果队伍表现出敌意、制造骚乱，或有犯罪行为，接待员会要求队伍离开。如果显然他们不会离开，或者他们构成的危险太大，接待员就会按下红色按钮通知安保人员。</p><p><strong>参见</strong>：@UUID[JournalEntry.Exq8U5xEyk6B5JKv.JournalEntryPage.Xi8DSOxh18XVrkep#activating-alerts]{启动警报}，位于@UUID[JournalEntry.Exq8U5xEyk6B5JKv.JournalEntryPage.Xi8DSOxh18XVrkep]{玩法细节}中，了解其运作方式。</p></section>"
+              "text": "<section class=\"block readaloud\"><p>这座昏暗的建筑直接嵌建在深褐色的富矿石料之中，横跨裂隙与广场相接。那里，深色石料与弧形墙面，同贸易道温暖的金色棱角形成了鲜明对比。</p><p>通往这座建筑的台阶上立着一块牌子，上面写着：</p><blockquote><p>银光束财团</p><p>阿克图瑞尔分部</p></blockquote></section><section class=\"block exploration\"><h4>探索门厅</h4><p>拥有 [[/culture emberArcturian]] 或 [[/culture emberOrdani]] 文化的角色会认出，这座建筑的设计明显来自外地，缺少阿克图瑞尔标志性的传统 @UUID[JournalEntry.emberCultures000.JournalEntryPage.8cGPxMRewkagoIvc]{阿克图里安} 建筑风格。</p><p>任何通过一次 <sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill history 13]] </sub><sub data-system=\"crucible\">[[/skillCheck society 13]]</sub></sup> 检定的角色，都能认出这栋建筑在营造与设计的某些方面带有 @UUID[JournalEntry.emberCultures000.JournalEntryPage.y4WHE3TEr6Of13SL]{莱伦} 风格。</p><ul class=\"complex-check\"><li class=\"automatic-success\"><p>[[/culture emberRailen]]：该角色此次检定自动成功。</p></li><li class=\"advantage\"><p>[[/knowledge crafts]]：该角色在此次检定上获得 @Advantage[2]。</p></li></ul><h4>营业时间</h4><p>银光束的办公室在日落前开放，之后前门就会关闭并上锁。</p></section><p>双开门内是接待区，不过从这里再往建筑内部前进会受到限制。</p><section class=\"block readaloud\"><p>你发现自己身处一座宏伟的圆形大厅，这里是银光束财团在阿克图瑞尔设立的办公室。高大的窗户让光线穿过玻璃倾泻而入。再加上打磨得光洁发亮的白色大理石，让整个空间显得干净明亮得近乎不真实。</p><p>正中央摆着一张宽大的桌子，以精工打造的灰色金属制成，其表面的细丝纹饰随着每一个细微动作而反射光芒。接待员就坐在这里，姿态既正式又不失亲和。</p><p>桌子两侧，各有一台纤细的构装体立于抬高的石质台座之上；它们由闪亮的银色金属打造，涂饰着蓝色制服纹样，静止得一动不动。</p></section><p>银光束财团在阿克图瑞尔的办公室仅接受预约来访。接待员（一名@UUID[Actor.9plFRf3Hurd9r7ol]{阿克图里安人}）不会允许任何非雇员，或未获得内部人员授权的人进入。</p><section class=\"block social\"><h4>你知道我是谁吗？</h4><p>试图说服或欺骗接待员都会失败，因为比起放一个不在预约名单上的人进去，她更害怕惹恼自己的上司（@UUID[Actor.gGNpwLWttuHPZF1W]{拉丽莎·托斯}）。</p><p>想要进入这些办公室本就是刻意设定得很困难的事，角色在特定事件之外基本不可能做到。试图威吓接待员会导致她按下桌上的安保按钮呼叫警卫。</p><h4>穿成你想要的职位</h4><p>如果队伍设法把自己@UUID[JournalEntry.Exq8U5xEyk6B5JKv.JournalEntryPage.Xi8DSOxh18XVrkep#consortium-disguises]{伪装}成银光束员工，他们就能直接从前门走进去，而接待员甚至不会多看他们一眼。</p></section><section class=\"block exploration\"><h4>那是干什么的？</h4><p>拥有<sup class=\"system-swap-inline\"><sub data-system=\"dnd5e\">[[/skill perception 10 passive]] </sub><sub data-system=\"crucible\">[[/skillCheck awareness 10 passive]]</sub></sup>的角色会注意到，桌上有一个中等大小的红色按钮。它很容易够到，多半是用来召唤安保人员的按钮。</p><h4>只是陈设吗？</h4><p>一对@UUID[Actor.mGxrffI6CI7Dd5rU]{银光束仆从}站在桌子两侧的台座上。虽然它们没有携带武器，看起来也并未启动，但感觉并不只是装饰品。</p></section><section class=\"block hazard\"><h4>乱按按钮</h4><p>如果队伍表现出敌意、制造骚乱，或有犯罪行为，接待员会要求队伍离开。如果显然他们不会离开，或者他们构成的危险太大，接待员就会按下红色按钮通知安保人员。</p><p><strong>参见</strong>：@UUID[JournalEntry.Exq8U5xEyk6B5JKv.JournalEntryPage.Xi8DSOxh18XVrkep#activating-alerts]{启动警报}，位于@UUID[JournalEntry.Exq8U5xEyk6B5JKv.JournalEntryPage.Xi8DSOxh18XVrkep]{玩法细节}中，了解其运作方式。</p></section>"
             },
             "Glimmer": {
               "name": "微光 Glimmer",
