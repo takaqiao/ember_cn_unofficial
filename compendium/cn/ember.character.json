@@ -706,7 +706,7 @@
       "name": "战术策划者 Tactical Planner"
     },
     "Lesser Soulmark": {
-      "name": "次级魂印 Lesser Soulmark",
+      "name": "次等魂印 Lesser Soulmark",
       "effects": {
         "Lesser Soulbound": {
           "name": "次级魂缚 Lesser Soulbound",
@@ -854,7 +854,7 @@
       "name": "暗影行者 Shadow Walker"
     },
     "Shard God Devotee": {
-      "name": "碎片神信徒 Shard God Devotee"
+      "name": "碎片之神信徒 Shard God Devotee"
     },
     "Sky Wanderer": {
       "name": "天际漫游者 Sky Wanderer"
