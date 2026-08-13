@@ -54,6 +54,8 @@ const ATTUNEMENTS = {
 
 /** 语言。Common / Sign 来自 crucible 本体，其余是 Ember 新增 */
 const LANGUAGES = {
+  // 2026-08-13 第十一轮补：这三个语言 [[/language …]] 有调用但表里缺键，缺了会渲染成英文
+  "Moiré": "莫伊雷语", "Borel": "博雷尔语", "Kost": "科斯特语",
   "Common": "通用语",
   "Sign": "手语",
   "Arcden": "奥克登语",
@@ -61,20 +63,20 @@ const LANGUAGES = {
   "Forest Speech": "森林语",
   "Hardac": "哈达克语",
   "Imperial": "帝国语",
-  "Solical": "索利卡语",
-  "Mithia": "密西亚语",
+  "Solical": "索利卡尔语",
+  "Mithia": "米西亚语",
   "Luma": "卢玛语",
   "Kaziric": "卡兹里克语",
-  "Scripta": "书文语",
+  "Scripta": "斯克里普塔语",
   "Wyrdic": "维尔迪克语",
   "Pathward": "径道语",
-  "Scor": "斯科尔语",
+  "Scor": "斯科语",
   "Towyr": "托维尔语",
   "Windclaw": "风爪语",
   "Abyssal": "深渊语",
   "Draconic": "龙语",
   "Druidic": "德鲁伊语",
-  "Lunix": "月语",
+  "Lunix": "卢尼克斯语",
   "Caligon": "卡利贡语",
   "Eonic": "永世语",
   "Harmos": "哈莫斯语",
@@ -93,17 +95,22 @@ const LANGUAGES = {
  *   - `Seafaring` 本表「航海」/ lang「航海的」→ 取**航海**。其余 30 条 KNOWLEDGE.* 全是
  *     不带「的」的名词，带「的」是机翻形容词残留（与 08-12 裁掉的 `Auditory` 听觉的→听觉
  *     同一类问题）。
+ * 2026-08-13 第九轮再裁 6 条（lang 与本表**同时**改过，两边现已逐条一致）：
+ *   Crime 罪行→犯罪(英文闸 60叶 : 40叶) · Forensics 法医学→法证学(151 处 [[/knowledge forensics]]
+ *   的语境是痕迹勘验不是尸检，且「法医学」全库 0 叶) · Intrigue 阴谋→权谋(「阴谋」已被 conspiracy
+ *   占用 22 叶) · Legends 传奇→传说(232叶 : 83叶) · Machines 机械装置→机械(84叶 : 13叶) ·
+ *   Undeath 亡灵化→不死(94叶 : 4叶)。Artifacts 保持「神器」（「遗物」已被 Relic 占死 182 叶）。
  * 末尾 4 条是 Ember 新增的领域，crucible lang 里没有对应键。
  */
 const KNOWLEDGE = {
   "Alchemy": "炼金术", "Ancients": "远古者", "Artifacts": "神器", "Arts": "艺术",
   "Beasts": "野兽", "Celestials": "天界生物", "Cosmology": "宇宙学", "Crafts": "工艺",
-  "Crime": "罪行", "Dragons": "巨龙", "Elementals": "元素生物", "Fey": "妖精",
-  "Fiends": "邪魔", "Forensics": "法医学", "Gods": "诸神", "Intrigue": "阴谋",
-  "Legends": "传奇", "Machines": "机械装置", "Monsters": "怪物", "Outsiders": "外来者",
+  "Crime": "犯罪", "Dragons": "巨龙", "Elementals": "元素生物", "Fey": "妖精",
+  "Fiends": "邪魔", "Forensics": "法证学", "Gods": "诸神", "Intrigue": "权谋",
+  "Legends": "传说", "Machines": "机械", "Monsters": "怪物", "Outsiders": "外来者",
   "Plants": "植物", "Politics": "政治", "Rituals": "仪式", "Seafaring": "航海",
   "Souls": "灵魂", "Subterranea": "地下世界", "Tracking": "追踪", "Trade": "贸易",
-  "Undeath": "亡灵化", "Warfare": "战争", "Weather": "天气",
+  "Undeath": "不死", "Warfare": "战争", "Weather": "天气",
   // 以下四条为 Ember 新增
   "Abyssals": "深渊裔", "Aedir": "艾迪尔", "Leviathans": "利维坦", "Shent": "申特"
 };

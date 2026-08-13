@@ -3,7 +3,7 @@
   "folders": {
     "Abyss": "深渊 Abyss",
     "Akon": "阿肯 Akon",
-    "Aura": "灵气 Aura",
+    "Aura": "奥拉 Aura",
     "Cora": "科拉 Cora",
     "Heart": "余烬之心 Heart",
     "Luxarum": "卢克萨鲁姆 Luxarum",
@@ -15,7 +15,7 @@
     "Ancestries": "血统 Ancestries",
     "Ancestry Features": "血统特性 Ancestry Features",
     "Attunements": "同调 Attunements",
-    "Culture Features": "文化特性 Culture Features",
+    "Culture Features": "文化特征 Culture Features",
     "Cultures": "文化 Cultures",
     "Paths": "道途 Paths",
     "Soulbound": "魂缚 Soulbound"
@@ -863,7 +863,7 @@
       "name": "星辰逐梦者 Star Dreamer"
     },
     "Sunfire Descendant": {
-      "name": "烈阳后裔 Sunfire Descendant"
+      "name": "阳炎后裔 Sunfire Descendant"
     },
     "Ritual Cooking": {
       "name": "仪式烹饪 Ritual Cooking",
