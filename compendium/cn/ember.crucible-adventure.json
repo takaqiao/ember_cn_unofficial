@@ -3992,7 +3992,7 @@
         },
         "Sin's Caravan": {
           "name": "辛的商队 Sin's Caravan",
-          "tokenName": "辛恩的商队"
+          "tokenName": "辛的商队"
         },
         "Fulgurite Blades": {
           "name": "雷纹刃 Fulgurite Blades",
@@ -5077,7 +5077,7 @@
         },
         "Chamberlain": {
           "name": "总管 Chamberlain",
-          "tokenName": "侍从官",
+          "tokenName": "总管",
           "items": {
             "Servitor": {
               "name": "仆从 Servitor",
@@ -9765,7 +9765,7 @@
         },
         "Gafto the Howler": {
           "name": "嚎叫者加夫托 Gafto the Howler",
-          "tokenName": "加夫托",
+          "tokenName": "嚎叫者加夫托",
           "items": {
             "Scale Mail": {
               "name": "鳞甲 Scale Mail",
@@ -9994,7 +9994,7 @@
         },
         "Shimz Shimring": {
           "name": "希姆兹·希姆林 Shimz Shimring",
-          "tokenName": "希姆兹",
+          "tokenName": "希姆兹·希姆林",
           "items": {
             "Shortsword": {
               "name": "短剑 Shortsword",
@@ -12441,7 +12441,7 @@
         },
         "Raster Thorn": {
           "name": "拉斯特·索恩 Raster Thorn",
-          "tokenName": "栅格棘刺",
+          "tokenName": "拉斯特·索恩",
           "items": {
             "Raster's Keyring": {
               "name": "拉斯特的钥匙串 Raster's Keyring",
@@ -14750,7 +14750,7 @@
         },
         "Sitherian": {
           "name": "西瑟里安 Sitherian",
-          "tokenName": "西希拉之子",
+          "tokenName": "西瑟里安",
           "items": {
             "Venomous Bite": {
               "name": "剧毒啃咬 Venomous Bite",
@@ -14873,7 +14873,7 @@
         },
         "Gore Bird": {
           "name": "血鸟 Gore Bird",
-          "tokenName": "血鸟群",
+          "tokenName": "血鸟",
           "items": {
             "Rot-Stained Beak": {
               "name": "腐渍鸟喙 Rot-Stained Beak",
@@ -15502,7 +15502,7 @@
         },
         "Swarm of Cave Wasps": {
           "name": "洞穴黄蜂虫群 Swarm of Cave Wasps",
-          "tokenName": "洞穴黄蜂群",
+          "tokenName": "洞穴黄蜂虫群",
           "items": {
             "Light Eater": {
               "name": "噬光者 Light Eater",
@@ -16561,7 +16561,7 @@
         },
         "Afflicted Pallid Drake": {
           "name": "受苦的苍白龙兽 Afflicted Pallid Drake",
-          "tokenName": "变异苍白龙兽",
+          "tokenName": "受苦的苍白龙兽",
           "items": {
             "Bite": {
               "name": "啃咬 Bite",
@@ -16654,7 +16654,7 @@
         },
         "Afflicted Pallid Drakeling": {
           "name": "受难苍白幼龙 Afflicted Pallid Drakeling",
-          "tokenName": "变异苍白幼龙",
+          "tokenName": "受难苍白幼龙",
           "items": {
             "Drakeling Scales": {
               "name": "幼龙鳞片 Drakeling Scales",
@@ -18261,7 +18261,7 @@
         },
         "Arcturian": {
           "name": "阿克图里安人 Arcturian",
-          "tokenName": "阿克图里安",
+          "tokenName": "阿克图里安人",
           "items": {
             "Human Lineage": {
               "name": "人类血统 Human Lineage",
@@ -19841,7 +19841,7 @@
         },
         "Sporix Host": {
           "name": "孢体宿主 Sporix Host",
-          "tokenName": "受折磨的荆棘幼体",
+          "tokenName": "孢体宿主",
           "items": {
             "Punch": {
               "name": "重拳 Punch",
@@ -23264,7 +23264,7 @@
         },
         "Ix'erax": {
           "name": "伊克斯埃拉克斯 Ix'erax",
-          "tokenName": "伊克斯艾拉克斯",
+          "tokenName": "伊克斯埃拉克斯",
           "items": {
             "Web Sense": {
               "name": "蛛网感知 Web Sense",
@@ -23687,7 +23687,7 @@
         },
         "Shade of Agaseros": {
           "name": "阿加瑟罗斯之影 Shade of Agaseros",
-          "tokenName": "阿加塞洛斯的幽影",
+          "tokenName": "阿加瑟罗斯之影",
           "items": {
             "Spellcasting": {
               "name": "施法 Spellcasting",
@@ -25314,7 +25314,7 @@
         },
         "Cindaric Sage": {
           "name": "辛达里克贤者 Cindaric Sage",
-          "tokenName": "辛达里克信徒",
+          "tokenName": "辛达里克贤者",
           "items": {
             "Human Lineage": {
               "name": "人类血统 Human Lineage",
@@ -26461,7 +26461,7 @@
         },
         "Cascillian Marine": {
           "name": "卡斯奇利亚海军 Cascillian Marine",
-          "tokenName": "卡斯奇利安海军陆战队员",
+          "tokenName": "卡斯奇利亚海军",
           "items": {
             "Chain Shirt": {
               "name": "锁子甲衬衫 Chain Shirt"
@@ -26510,7 +26510,7 @@
         },
         "Cascillian Marine Officer": {
           "name": "卡斯奇利安海军军官 Cascillian Marine Officer",
-          "tokenName": "卡斯奇利亚海军军官",
+          "tokenName": "卡斯奇利安海军军官",
           "items": {
             "Marine Trident": {
               "name": "海军三叉戟 Marine Trident",
@@ -26623,7 +26623,7 @@
         },
         "Spellbreaker Guard": {
           "name": "破咒守卫 Spellbreaker Guard",
-          "tokenName": "破法卫士",
+          "tokenName": "破咒守卫",
           "items": {
             "Pack Tactics": {
               "name": "群体战术 Pack Tactics",
@@ -28163,7 +28163,7 @@
         },
         "Thayloc Courser": {
           "name": "赛洛克疾奔兽 Thayloc Courser",
-          "tokenName": "非玩家角色",
+          "tokenName": "赛洛克疾奔兽",
           "items": {
             "Quiver": {
               "name": "箭袋 Quiver",
@@ -28887,7 +28887,7 @@
         },
         "Mistress Caberi": {
           "name": "卡贝丽夫人 Mistress Caberi",
-          "tokenName": "卡贝里夫人",
+          "tokenName": "卡贝丽夫人",
           "items": {
             "Shard God": {
               "name": "碎片之神 Shard God",
@@ -37172,7 +37172,7 @@
             },
             "Patch 0.4.7": {
               "name": "补丁 0.4.7 Patch 0.4.7",
-              "text": "<p>欢迎来到一次重大的 Ember 更新与内容发布，版本 <code>0.4.7</code>。这预计将是我们在抢先体验开始前的<strong>最终 Beta 版本</strong>。</p><p>这是一次重大内容更新，为 Ember Beta 增加了大量重要的新玩法和功能，但最重要的是，它正式确立了本版本专为 <strong>Foundry VTT 版本 14</strong> 设计。对我们来说，像这样在小版本号更新中进行重大版本跃迁并不常见（即 <code>0.4.6 -&gt; 0.4.7</code>），但这次更新很特殊，因为它是我们迈向版本 <code>0.5.0</code> 之前的最后一次起飞前检查。</p><section class=\"block hazard\"><h4>版本 14</h4><p>Foundry Virtual Tabletop 版本 14 <strong>尚未稳定</strong>，不过已经非常接近了。它目前正处于“用户测试”的最后阶段，最近一次发布为 <a href=\"https://foundryvtt.com/releases/14.358\">https://foundryvtt.com/releases/14.358</a>，与本次情况类似，也可能是稳定版前的最后一次测试。</p><p>你<strong>绝对不应该</strong>立即将你的主 Foundry VTT 环境更新到版本 14。相反，对版本 14 和此版本 Ember 的测试应当在单独的测试环境中进行。</p><h4>版本 13</h4><p>无法在版本 13 中测试 Ember 版本 <code>0.4.7</code>。如果你想继续在版本 13 中测试，那么你应当停留在 Ember 版本 <code>0.4.6</code> 或更早版本。</p></section><section class=\"block wip\"><h4>兼容性</h4><p>Ember 补丁 <code>0.4.7</code> 需要 Foundry VTT 核心版本 <code>14.358</code> 或更高，以及：</p><ul><li><p>D&amp;D5E 系统预发布版本 <code>5.3.0</code> 或更高。在本次发布时，这个 D&amp;D 系统预发布版目前还没有公开安装选项，但可以通过清单 URL 手动安装：<a href=\"https://github.com/foundryvtt/dnd5e/releases/download/release-5.3.0/system.json\">https://github.com/foundryvtt/dnd5e/releases/download/release-5.3.0/system.json</a></p></li><li><p>Crucible 系统版本 <code>0.9.0</code> 或更高，该版本已实现对版本 14 的支持。</p></li></ul></section><h2 class=\"divider\">团队消息</h2><p>在进入本次更新的全部精彩内容之前，我们想先分享一则令人振奋的团队消息。正如你们许多人所知，我们在今年早些时候进行了一次招聘流程，为 Ember 招募一位新的全职撰稿人兼设计师。我非常高兴地宣布这次招聘的结果，并欢迎 <strong>Jess Levine</strong> 加入。</p><p><a href=\"https://jessfrom.online/about\">Jess Levine</a> 是一位作家、TTRPG 设计师、幼儿园教师和共产主义组织者。她多样化的创作兴趣由一个主题贯穿统一：女同性恋。她居住在匹兹堡，这片土地属于被占领的 Shawandasse Tula、Osage 和 Monongahela 民族。她以 <a href=\"https://jumpgate.games/\">Jumpgate Games</a> 之名发行 TTRPG，其中包括获得 2023 年 CRIT Awards 最佳无 GM 年度游戏奖的 <a href=\"https://jessfromonline.itch.io/going-rogue\"><em>going rogue 2e</em></a>，这是一款关于战争、反抗与牺牲的游戏。她的桌上角色扮演游戏 <a href=\"https://jessfromonline.itch.io/ihthg\"><em>I Have the High Ground</em></a>——一款关于斗嘴、虚张声势与披风的游戏——以及她的讽刺性科幻小规模战斗叙事游戏 <a href=\"https://jumpgategames.itch.io/planetfist\"><em>PLANET FIST</em></a> 都获得了业界好评与玩家赞誉。你可以在 Bluesky 上通过 <a href=\"https://bsky.app/profile/jessfrom.online\">@jessfrom.online</a> 找到她。</p><p>Jess 本月已加入我们的团队，并且已经开始努力改进 Ember 玩家指南的结构、呈现方式和完整性。</p><h2 class=\"divider\">亮点</h2><p>Ember 已经过全面重构，以实现与 Foundry VTT 版本 14 的兼容性。其中最值得注意的一些变化包括：</p><ul><li><p>支持 V14 场景等级。并非所有场景都已完成转换。我们会优先处理新场景，并在因其他玩法原因重新访问旧场景时逐步完成转换。关于哪些场景已转换的说明，会在下方完整补丁说明中列出。</p></li><li><p>区域地图战争迷雾现在使用共享迷雾，使所有玩家都能共享同一份区域探索进度，即使有人错过了一次游戏会话也没关系。</p></li><li><p>Ember 新增了一个全新的冒险快速开始选项，可以轻松创建并直接进入新的 Ember 游戏，可选择使用 D&amp;D 或 Crucible。</p></li><li><p>Ember 现已同时整合 D&amp;D 与 Crucible 两个游戏系统，尤其值得一提的是，Crucible 已完全兼容 V14，并且已经将大量 V14 新功能整合进其玩法与自动化中。</p></li></ul><p>本次更新版本的其他主要亮点还包括：</p><ul><li><p>完成了对 Ember 动态令牌基础架构的大规模重做，将原本按各血统分别使用的 spritesheet 切换为单一的“超级 spritesheet”，其中包含所有血统的全部装备与身体部件。对于简单场景，这会带来少量额外的性能开销，但对于拥有大量令牌的复杂场景来说，则是<em>巨大的</em>性能提升。</p></li></ul><p>关于这些亮点的更多细节，请参阅下方完整说明。</p><section class=\"block gamemaster\"><h4>感谢你们！</h4><p>在进入完整补丁说明细节之前，我想最后由衷感谢每一位参与我们 Alpha 和 Beta 测试阶段的人。你们的交战、反馈与鼓励，成就了 Ember 的今天，也将继续为我们的团队提供动力，让我们在努力完成这款前所未有的游戏时不断前行。</p></section><h2 class=\"divider\">功能与修复</h2><p>本次更新包含的所有新功能，详见下列各节。</p><h3 class=\"divider\">Actors</h3><ul><li><p>引入若干新的对手，包括 Paint Globlin 和 Chiaroscuran Beast。</p></li><li><p>引入若干新的知名角色，包括 Mistress Caberi、Falar 和 切瑞什·艾勒里。</p></li><li><p>更新 Ember 中使用的语言标识符，采用新的、符合背景设定的语言标识符与名称。我们已提供自动迁移，应能自动修正你现有的试玩测试角色，但为了保险起见，仍请务必再次检查你的已知语言。你可以在玩家指南的“语言”页面找到更新后的信息。</p></li><li><p></p></li></ul><h3 class=\"divider\">区域地图</h3><ul><li><p>引入一张名为 Flotsam Canal Market 的大型多层区域地图。这是我们首批专门基于版本 14 等级系统制作的场景之一，包含 3 个玩法层级：Dockside、Stoneside 和 Promenade。该区域拥有精美动画，包括流动的水、摇晃的小船，以及通过将多个垂直切片划分为不同玩法等级后所解锁的全部优势。如果你是版本 14 的新用户，这是一个非常适合探索并理解场景等级如何实际运作的优秀场景。</p></li><li><p>为 红行漫步园 引入一张大型全新区域地图，描绘了 奥尔丹 同名城区中一处优美的户外公园空间。地图拥有精美动画，包括摇曳的树木、会响应全局风况的纷飞树叶、流动的水、喷泉等等。</p></li><li><p>为 Flotsam Market 创建了一份大型区域导览，主要会在 <em>Local Color</em> 任务期间体验到，但也可以独立探索。</p></li><li><p>新增一个水面漂浮摆动的精灵网格，可用于表现带有持续动画漂浮效果的精灵，通常用于船只或其他漂浮物体。</p></li><li><p>翠绿径 生物群系区域地图已转换为版本 14 场景等级。</p></li><li><p>奥尔丹平原 生物群系区域地图已转换为版本 14 场景等级。</p></li></ul><h3 class=\"divider\">音频</h3><ul><li><p>修复了一个 bug：由于场景切换过程中的工作流问题，可能会导致多个乐曲或环境编排在同一时间彼此叠加播放。</p></li></ul><h3 class=\"divider\">Crucible</h3><ul><li><p>实现与 Crucible 版本 0.9.0 的兼容性，重点适配 Foundry VTT 版本 14。</p></li></ul><h3 class=\"divider\">D&amp;D5E</h3><ul><li><p>在 D&amp;D NPC 卡的标题栏中显示通过 Ember Actor Flags 配置的代称。</p></li><li><p>为移动动作实现 D&amp;D 群组 actor 卡与 token HUD 之间（此前缺失的）双向同步。</p></li></ul><h3 class=\"divider\">指南</h3><ul><li><p>对玩家指南进行了大幅修订与重构，重新组织了其信息呈现方式。新的指南结构将信息展示拆分为“角色创建”、“游戏进行”和“探索设定”三个逻辑独立的类别。我们还修订了引言，并新增了一个“如何使用本指南”页面，帮助新玩家更容易找到方向。我们目前还没准备好以 PDF 格式发布玩家指南，但这已是朝该目标迈出的重要一步。</p></li></ul><h3 class=\"divider\">任务与事件</h3><ul><li><p>引入一个全新的任务 <em>Local Color</em>，发生于第 3 章的城市奥尔丹。关于这个任务及其叙事的更多信息，请参阅上方亮点部分。</p></li><li><p>第 2 章中的 <em>黑暗中的微光</em> 任务已完整转换为 Crucible，并已可在 Crucible 系统中进行试玩测试。</p></li><li><p>对第 2 章主线任务 <em>An Old Friend</em> 进行了重要优化与重写，以提升其玩法质量和一致性。</p></li><li><p>新增 9 个新的独立事件，横跨第 1 章至第 3 章，为世界各区域补充更为短小精悍的玩法内容，并强化玩法主题。这些事件具体为：<em>Pollen Storm</em>、<em>In the Behemoth's Wake</em>、<em>Arcane Maelstrom, Sanguinary Salutations, Dangerous Descent, Flash Flood, The Giants' Span, Shent Observatory</em> 和 <em>Voices in the Square</em>。</p></li><li><p>修复了一个会在无提示情况下阻止向独立事件添加追踪结果的 bug。</p></li><li><p>允许附加到任务和独立事件上的遭遇配置在场景的多个等级中生成 actors，从而完整填充多层环境，而不再需要依赖特殊情况逻辑。</p></li></ul><h3 class=\"divider\">区域地图</h3><ul><li><p>Ember 区域地图已转换为版本 14 场景等级！我们现在不再使用为“切片”——即地表与通路的垂直图层——专门定制的系统，而是改为使用原生等级系统。这改变了游戏主持人和玩家导航等级时的 UI/UX。你现在可以通过场景导航元素轻松切换所查看的等级。玩家可以看到其他人正在查看哪个等级。游戏主持人可以使用 Token HUD 在不同等级之间移动令牌。</p></li><li><p>场景区域和注记现在会关联到它们所对应的特定等级。这样做的好处是，在通路中，可以显示哪些兴趣点提供返回地表的机会。</p></li><li><p>修复了区域地图上由动态队伍令牌产生双重阴影的 bug；使用动态令牌作为队伍旗帜的群组现在将正确只产生单个阴影。</p></li></ul><h3 class=\"divider\">令牌</h3><ul><li><p>完成了对 Ember 动态令牌基础架构的大规模重做，将原本按各血统分别使用的 spritesheet 切换为单一的“超级 spritesheet”，其中包含所有血统的全部装备与身体部件。对于简单场景，这会带来少量额外的性能开销，但对于拥有大量令牌的复杂场景来说，则是<em>巨大的</em>性能提升。我们的新超级 spritesheet 纹理采用对 GPU 友好的 UASTC 格式进行优化，因此在包含大量动态令牌的场景中，将同时获得更好的渲染性能与更高的视觉质量。这带来的一个重要后果是，令牌制作器中部件名称的命名规则有了一些变化。我们会应用自动迁移，将旧令牌数据转换为新的规范，但你最好还是检查一下自己角色的动态令牌配置，以确保它们仍能正确渲染。</p></li><li><p>完成了为所有角色和人型生物重新分配手持令牌装备的流程。你所遇到的角色和面对的对手现在都应持有合理的物品。</p></li><li><p>动态队伍旗帜令牌现在支持地面与水上移动的不同“姿态”，并会根据其穿过的六边格地形，在地面底座与水上底座之间自动切换。</p></li><li><p>修复了一个 bug：队伍旗帜令牌的自定义设置会被错误保存到 Ember 模组目录，而不是用户自定义的世界资源路径中。</p></li></ul><h3 class=\"divider\">远景</h3><ul><li><p>为 辛达林神殿 实现了一个壮观的全新远景。它是 奥尔丹 的标志性地标之一，也是我们一条主线任务线（辛·旱獭）的关键地点。</p></li><li><p>为“Nain Outskirts”新增一个 金色平原 远景构图。</p></li><li><p>为“Dockside Street”新增一个 奥尔丹 Streets 远景构图。</p></li><li><p>为“Huge Mural”新增一个 奥尔丹 Streets 远景构图。</p></li><li><p>为“Cherish's Office”新增一个 奥尔丹 Interiors 远景构图。</p></li><li><p>重新设计远景构图的运作方式，使其改为基于版本 14 场景等级。每个构图都是远景场景中的不同等级（世界的平行切片，而非垂直堆叠的切片），并且自定义远景构图现在可以作为自定义等级来创建和调整。</p></li><li><p>将 翠绿径 远景转换为使用版本 14 等级，而非专用构图。</p></li><li><p>将 滴石笋 远景转换为使用版本 14 等级，而非专用构图。</p></li><li><p>重构并重新设计自定义远景配置工具，使其适配基于版本 14 等级的远景构图方案。</p></li></ul><h3 class=\"divider\">其他</h3><ul><li><p>执行了一次彻底的 HTML 清理，移除了内联 style 标签、裸露的 span 元素、不换行空格等内容。</p></li></ul><h2 class=\"divider\">设定汇编</h2><ul><li><p>已更新 文化 -&gt; 语言 页面，采用新的语言名称。</p></li></ul>"
+              "text": "<p>欢迎来到一次重大的 Ember 更新与内容发布，版本 <code>0.4.7</code>。这预计将是我们在抢先体验开始前的<strong>最终 Beta 版本</strong>。</p><p>这是一次重大内容更新，为 Ember Beta 增加了大量重要的新玩法和功能，但最重要的是，它正式确立了本版本专为 <strong>Foundry VTT 版本 14</strong> 设计。对我们来说，像这样在小版本号更新中进行重大版本跃迁并不常见（即 <code>0.4.6 -&gt; 0.4.7</code>），但这次更新很特殊，因为它是我们迈向版本 <code>0.5.0</code> 之前的最后一次起飞前检查。</p><section class=\"block hazard\"><h4>版本 14</h4><p>Foundry Virtual Tabletop 版本 14 <strong>尚未稳定</strong>，不过已经非常接近了。它目前正处于“用户测试”的最后阶段，最近一次发布为 <a href=\"https://foundryvtt.com/releases/14.358\">https://foundryvtt.com/releases/14.358</a>，与本次情况类似，也可能是稳定版前的最后一次测试。</p><p>你<strong>绝对不应该</strong>立即将你的主 Foundry VTT 环境更新到版本 14。相反，对版本 14 和此版本 Ember 的测试应当在单独的测试环境中进行。</p><h4>版本 13</h4><p>无法在版本 13 中测试 Ember 版本 <code>0.4.7</code>。如果你想继续在版本 13 中测试，那么你应当停留在 Ember 版本 <code>0.4.6</code> 或更早版本。</p></section><section class=\"block wip\"><h4>兼容性</h4><p>Ember 补丁 <code>0.4.7</code> 需要 Foundry VTT 核心版本 <code>14.358</code> 或更高，以及：</p><ul><li><p>D&amp;D5E 系统预发布版本 <code>5.3.0</code> 或更高。在本次发布时，这个 D&amp;D 系统预发布版目前还没有公开安装选项，但可以通过清单 URL 手动安装：<a href=\"https://github.com/foundryvtt/dnd5e/releases/download/release-5.3.0/system.json\">https://github.com/foundryvtt/dnd5e/releases/download/release-5.3.0/system.json</a></p></li><li><p>Crucible 系统版本 <code>0.9.0</code> 或更高，该版本已实现对版本 14 的支持。</p></li></ul></section><h2 class=\"divider\">团队消息</h2><p>在进入本次更新的全部精彩内容之前，我们想先分享一则令人振奋的团队消息。正如你们许多人所知，我们在今年早些时候进行了一次招聘流程，为 Ember 招募一位新的全职撰稿人兼设计师。我非常高兴地宣布这次招聘的结果，并欢迎 <strong>Jess Levine</strong> 加入。</p><p><a href=\"https://jessfrom.online/about\">Jess Levine</a> 是一位作家、TTRPG 设计师、幼儿园教师和共产主义组织者。她多样化的创作兴趣由一个主题贯穿统一：女同性恋。她居住在匹兹堡，这片土地属于被占领的 Shawandasse Tula、Osage 和 Monongahela 民族。她以 <a href=\"https://jumpgate.games/\">Jumpgate Games</a> 之名发行 TTRPG，其中包括获得 2023 年 CRIT Awards 最佳无 GM 年度游戏奖的 <a href=\"https://jessfromonline.itch.io/going-rogue\"><em>going rogue 2e</em></a>，这是一款关于战争、反抗与牺牲的游戏。她的桌上角色扮演游戏 <a href=\"https://jessfromonline.itch.io/ihthg\"><em>I Have the High Ground</em></a>——一款关于斗嘴、虚张声势与披风的游戏——以及她的讽刺性科幻小规模战斗叙事游戏 <a href=\"https://jumpgategames.itch.io/planetfist\"><em>PLANET FIST</em></a> 都获得了业界好评与玩家赞誉。你可以在 Bluesky 上通过 <a href=\"https://bsky.app/profile/jessfrom.online\">@jessfrom.online</a> 找到她。</p><p>Jess 本月已加入我们的团队，并且已经开始努力改进 Ember 玩家指南的结构、呈现方式和完整性。</p><h2 class=\"divider\">亮点</h2><p>Ember 已经过全面重构，以实现与 Foundry VTT 版本 14 的兼容性。其中最值得注意的一些变化包括：</p><ul><li><p>支持 V14 场景等级。并非所有场景都已完成转换。我们会优先处理新场景，并在因其他玩法原因重新访问旧场景时逐步完成转换。关于哪些场景已转换的说明，会在下方完整补丁说明中列出。</p></li><li><p>区域地图战争迷雾现在使用共享迷雾，使所有玩家都能共享同一份区域探索进度，即使有人错过了一次游戏会话也没关系。</p></li><li><p>Ember 新增了一个全新的冒险快速开始选项，可以轻松创建并直接进入新的 Ember 游戏，可选择使用 D&amp;D 或 Crucible。</p></li><li><p>Ember 现已同时整合 D&amp;D 与 Crucible 两个游戏系统，尤其值得一提的是，Crucible 已完全兼容 V14，并且已经将大量 V14 新功能整合进其玩法与自动化中。</p></li></ul><p>本次更新版本的其他主要亮点还包括：</p><ul><li><p>完成了对 Ember 动态令牌基础架构的大规模重做，将原本按各血统分别使用的 spritesheet 切换为单一的“超级 spritesheet”，其中包含所有血统的全部装备与身体部件。对于简单场景，这会带来少量额外的性能开销，但对于拥有大量令牌的复杂场景来说，则是<em>巨大的</em>性能提升。</p></li></ul><p>关于这些亮点的更多细节，请参阅下方完整说明。</p><section class=\"block gamemaster\"><h4>感谢你们！</h4><p>在进入完整补丁说明细节之前，我想最后由衷感谢每一位参与我们 Alpha 和 Beta 测试阶段的人。你们的交战、反馈与鼓励，成就了 Ember 的今天，也将继续为我们的团队提供动力，让我们在努力完成这款前所未有的游戏时不断前行。</p></section><h2 class=\"divider\">功能与修复</h2><p>本次更新包含的所有新功能，详见下列各节。</p><h3 class=\"divider\">Actors</h3><ul><li><p>引入若干新的对手，包括颜料格布林和明暗野兽。</p></li><li><p>引入若干新的知名角色，包括卡贝丽夫人、法拉尔和切瑞什·艾勒里。</p></li><li><p>更新 Ember 中使用的语言标识符，采用新的、符合背景设定的语言标识符与名称。我们已提供自动迁移，应能自动修正你现有的试玩测试角色，但为了保险起见，仍请务必再次检查你的已知语言。你可以在玩家指南的“语言”页面找到更新后的信息。</p></li><li><p></p></li></ul><h3 class=\"divider\">区域地图</h3><ul><li><p>引入一张名为 Flotsam Canal Market 的大型多层区域地图。这是我们首批专门基于版本 14 等级系统制作的场景之一，包含 3 个玩法层级：Dockside、Stoneside 和 Promenade。该区域拥有精美动画，包括流动的水、摇晃的小船，以及通过将多个垂直切片划分为不同玩法等级后所解锁的全部优势。如果你是版本 14 的新用户，这是一个非常适合探索并理解场景等级如何实际运作的优秀场景。</p></li><li><p>为 红行漫步园 引入一张大型全新区域地图，描绘了 奥尔丹 同名城区中一处优美的户外公园空间。地图拥有精美动画，包括摇曳的树木、会响应全局风况的纷飞树叶、流动的水、喷泉等等。</p></li><li><p>为 Flotsam Market 创建了一份大型区域导览，主要会在 <em>地方色彩</em> 任务期间体验到，但也可以独立探索。</p></li><li><p>新增一个水面漂浮摆动的精灵网格，可用于表现带有持续动画漂浮效果的精灵，通常用于船只或其他漂浮物体。</p></li><li><p>翠绿径 生物群系区域地图已转换为版本 14 场景等级。</p></li><li><p>奥尔丹平原 生物群系区域地图已转换为版本 14 场景等级。</p></li></ul><h3 class=\"divider\">音频</h3><ul><li><p>修复了一个 bug：由于场景切换过程中的工作流问题，可能会导致多个乐曲或环境编排在同一时间彼此叠加播放。</p></li></ul><h3 class=\"divider\">Crucible</h3><ul><li><p>实现与 Crucible 版本 0.9.0 的兼容性，重点适配 Foundry VTT 版本 14。</p></li></ul><h3 class=\"divider\">D&amp;D5E</h3><ul><li><p>在 D&amp;D NPC 卡的标题栏中显示通过 Ember Actor Flags 配置的代称。</p></li><li><p>为移动动作实现 D&amp;D 群组 actor 卡与 token HUD 之间（此前缺失的）双向同步。</p></li></ul><h3 class=\"divider\">指南</h3><ul><li><p>对玩家指南进行了大幅修订与重构，重新组织了其信息呈现方式。新的指南结构将信息展示拆分为“角色创建”、“游戏进行”和“探索设定”三个逻辑独立的类别。我们还修订了引言，并新增了一个“如何使用本指南”页面，帮助新玩家更容易找到方向。我们目前还没准备好以 PDF 格式发布玩家指南，但这已是朝该目标迈出的重要一步。</p></li></ul><h3 class=\"divider\">任务与事件</h3><ul><li><p>引入一个全新的任务 <em>地方色彩</em>，发生于第 3 章的城市奥尔丹。关于这个任务及其叙事的更多信息，请参阅上方亮点部分。</p></li><li><p>第 2 章中的 <em>黑暗中的微光</em> 任务已完整转换为 Crucible，并已可在 Crucible 系统中进行试玩测试。</p></li><li><p>对第 2 章主线任务 <em>一位老朋友</em> 进行了重要优化与重写，以提升其玩法质量和一致性。</p></li><li><p>新增 9 个新的独立事件，横跨第 1 章至第 3 章，为世界各区域补充更为短小精悍的玩法内容，并强化玩法主题。这些事件具体为：<em>花粉风暴</em>、<em>巨兽过境之后</em>、<em>奥术漩涡、赤血会的问候、危险下行、暴洪、巨人之越、申特天文台</em> 和 <em>广场上的声音</em>。</p></li><li><p>修复了一个会在无提示情况下阻止向独立事件添加追踪结果的 bug。</p></li><li><p>允许附加到任务和独立事件上的遭遇配置在场景的多个等级中生成 actors，从而完整填充多层环境，而不再需要依赖特殊情况逻辑。</p></li></ul><h3 class=\"divider\">区域地图</h3><ul><li><p>Ember 区域地图已转换为版本 14 场景等级！我们现在不再使用为“切片”——即地表与通路的垂直图层——专门定制的系统，而是改为使用原生等级系统。这改变了游戏主持人和玩家导航等级时的 UI/UX。你现在可以通过场景导航元素轻松切换所查看的等级。玩家可以看到其他人正在查看哪个等级。游戏主持人可以使用 Token HUD 在不同等级之间移动令牌。</p></li><li><p>场景区域和注记现在会关联到它们所对应的特定等级。这样做的好处是，在通路中，可以显示哪些兴趣点提供返回地表的机会。</p></li><li><p>修复了区域地图上由动态队伍令牌产生双重阴影的 bug；使用动态令牌作为队伍旗帜的群组现在将正确只产生单个阴影。</p></li></ul><h3 class=\"divider\">令牌</h3><ul><li><p>完成了对 Ember 动态令牌基础架构的大规模重做，将原本按各血统分别使用的 spritesheet 切换为单一的“超级 spritesheet”，其中包含所有血统的全部装备与身体部件。对于简单场景，这会带来少量额外的性能开销，但对于拥有大量令牌的复杂场景来说，则是<em>巨大的</em>性能提升。我们的新超级 spritesheet 纹理采用对 GPU 友好的 UASTC 格式进行优化，因此在包含大量动态令牌的场景中，将同时获得更好的渲染性能与更高的视觉质量。这带来的一个重要后果是，令牌制作器中部件名称的命名规则有了一些变化。我们会应用自动迁移，将旧令牌数据转换为新的规范，但你最好还是检查一下自己角色的动态令牌配置，以确保它们仍能正确渲染。</p></li><li><p>完成了为所有角色和人型生物重新分配手持令牌装备的流程。你所遇到的角色和面对的对手现在都应持有合理的物品。</p></li><li><p>动态队伍旗帜令牌现在支持地面与水上移动的不同“姿态”，并会根据其穿过的六边格地形，在地面底座与水上底座之间自动切换。</p></li><li><p>修复了一个 bug：队伍旗帜令牌的自定义设置会被错误保存到 Ember 模组目录，而不是用户自定义的世界资源路径中。</p></li></ul><h3 class=\"divider\">远景</h3><ul><li><p>为 辛达林神殿 实现了一个壮观的全新远景。它是 奥尔丹 的标志性地标之一，也是我们一条主线任务线（辛·旱獭）的关键地点。</p></li><li><p>为“奈因郊外”新增一个 金色平原 远景构图。</p></li><li><p>为“码头街道”新增一个 奥尔丹街道 远景构图。</p></li><li><p>为“巨幅壁画”新增一个 奥尔丹街道 远景构图。</p></li><li><p>为“切瑞什的办公室”新增一个 奥尔丹室内景 远景构图。</p></li><li><p>重新设计远景构图的运作方式，使其改为基于版本 14 场景等级。每个构图都是远景场景中的不同等级（世界的平行切片，而非垂直堆叠的切片），并且自定义远景构图现在可以作为自定义等级来创建和调整。</p></li><li><p>将 翠绿径 远景转换为使用版本 14 等级，而非专用构图。</p></li><li><p>将 滴石笋 远景转换为使用版本 14 等级，而非专用构图。</p></li><li><p>重构并重新设计自定义远景配置工具，使其适配基于版本 14 等级的远景构图方案。</p></li></ul><h3 class=\"divider\">其他</h3><ul><li><p>执行了一次彻底的 HTML 清理，移除了内联 style 标签、裸露的 span 元素、不换行空格等内容。</p></li></ul><h2 class=\"divider\">设定汇编</h2><ul><li><p>已更新 文化 -&gt; 语言 页面，采用新的语言名称。</p></li></ul>"
             },
             "Patch 0.5.0": {
               "name": "补丁 0.5.0 Patch 0.5.0",
