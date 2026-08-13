@@ -373,17 +373,22 @@ function patchActorUpdateDocuments() {
   const wrapped = async function safeActorUpdateDocuments(updates, ...args) {
     const sanitized = sanitizeActorDocumentUpdatesArray(updates);
     const importMode = isAdventureImportInvocation();
-    const initialPayload = importMode ? prepareSafeActorUpdatesForImport(sanitized) : sanitized;
 
+    // ⚠ 这里**必须**用完整载荷做第一次尝试。
+    // 原先写的是 `importMode ? prepareSafeActorUpdatesForImport(sanitized) : sanitized`，
+    // 即只要栈里有 Adventure.importContent 就**无条件**把每个 actor 的 items/effects 删掉再提交
+    // —— 降级被前置到了 happy path 上，而不是像注释说的那样只在出错时兜底。
+    // 后果：世界里已存在的 actor 在重导入时走 toUpdate，其内嵌 items/effects 永远不会被刷新。
+    // Ember 的怪物战斗块、天赋、装备全是内嵌 item，等于把上游推送更新的通道关死了一半，且无任何提示。
     try {
-      return await original.call(this, initialPayload, ...args);
+      return await original.call(this, sanitized, ...args);
     } catch (error) {
       if (!isKnownUpdateDiffError(error) || !importMode) throw error;
 
-      // Import-specific fallback: isolate updates so malformed embedded data
-      // from one actor does not abort the entire Adventure import.
+      // 导入专用兜底：逐个 actor 隔离，让某一个 actor 的畸形内嵌数据不至于中断整场导入。
       const results = [];
-      for (const update of initialPayload) {
+      for (const update of sanitized) {
+        // 先用完整载荷单独重试 —— 绝大多数 actor 在这一步就成功了，items/effects 完整保留
         try {
           const part = await original.call(this, [update], ...args);
           if (Array.isArray(part)) results.push(...part);
@@ -393,6 +398,21 @@ function patchActorUpdateDocuments() {
         }
 
         const actorId = update?._id ?? 'unknown';
+
+        // 最后手段：只对**确实失败的那一个** actor 降级（丢掉内嵌集合），并明确告警。
+        // 降级从「全体默认」收窄成「个别兜底」，是这次修复的要点。
+        try {
+          const part = await original.call(this, [degradeActorUpdatePayload(update)], ...args);
+          if (Array.isArray(part)) results.push(...part);
+          console.warn(
+            `${MODULE_ID} | 该 actor 的内嵌 items/effects 无法更新，已降级导入以免中断整场导入`,
+            actorId
+          );
+          continue;
+        } catch (degradedError) {
+          if (!isKnownUpdateDiffError(degradedError)) throw degradedError;
+        }
+
         console.error(`${MODULE_ID} | Skipped malformed actor update during import`, actorId);
       }
 
