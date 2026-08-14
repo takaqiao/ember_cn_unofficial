@@ -158,7 +158,16 @@ const LANGUAGE_CATEGORIES = {
  */
 const MISSING_LANGUAGES = {
   "borel": "博雷尔语",
-  "kost": "科斯特语"
+  "kost": "科斯特语",
+  // `moiré` 与上面两条成因不同，值得单记一笔：
+  // 上游增强器的 pattern 是 `/\[\[\/language (\w+)]]/g`（ember.mjs:129447）—— **没有 `u` 标志**，
+  // 而 `é` 不在 `\w` 里，所以这条标记**根本不会被增强器接管**，正文直接吐出字面量
+  // `[[/language moiré]]`。也就是说它不是「查不到 id」，是「压根没进增强器」。
+  // 曾经考虑过改 compendium 把标记删成纯文本，但那会让中英标记多重集不等 ——
+  // `apply_translations` 的标记闸必拒、`scan_markup_drift` 的 INLINE 从 0 变 4，
+  // 还要为此加一条永久豁免。改成在**我们自己这条兜底 PATTERN 上放宽字符类**，
+  // 一行解决，compendium 一个字都不用动，也不需要绕任何闸。
+  "moiré": "莫伊雷语"
 };
 
 /**
@@ -753,7 +762,10 @@ const PATTERNS = [
 
   // 上游没有 borel / kost 这两个语言 id，enrichLanguage 直接 `return new Text(match)`
   // （ember.mjs:126542），正文原样吐出裸标记 `[[/language borel]]`
-  { re: /^\[\[\/language (\w+)]]$/, cn: (m) => `语言：${MISSING_LANGUAGES[m[1]] ?? m[1]}` },
+  // 字符类必须比上游宽：上游用 `(\w+)` 且无 `u`，`[[/language moiré]]` 因此完全不进增强器，
+  // 我们这条兜底要是照抄 `\w` 就同样接不住它（实测 4 处一直漏在正文里）。用 `\p{L}` + `u`。
+  // ⚠ 加了 `u` 之后裸 `]` 是语法错误（Lone quantifier brackets），必须写成 `\]\]`。
+  { re: /^\[\[\/language ([\p{L}\w-]+)\]\]$/u, cn: (m) => `语言：${MISSING_LANGUAGES[m[1]] ?? m[1]}` },
 
   // 同一形状的知识领域裸标记：crucible 的 enrichKnowledge 查不到 id 时同样
   // `return new Text(match)`（crucible-compiled.mjs:46815）。文案与 crucible-cn 的
