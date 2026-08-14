@@ -266,7 +266,6 @@ export const DOCUMENT_MAPPINGS = {
       "path": "system.description",
       "converter": "crucibleDescription"
     },
-    "adjective": "system.adjective",
     "actions": {
       "path": "system.actions",
       "converter": "crucibleActions"
@@ -303,10 +302,6 @@ export const DOCUMENT_MAPPINGS = {
     "taxonomy": {
       "path": "system.details.taxonomy",
       "converter": "crucibleNested"
-    },
-    "actions": {
-      "path": "system.actions",
-      "converter": "crucibleActions"
     },
     "items": {
       "path": "items",
@@ -461,6 +456,18 @@ export const DOCUMENT_MAPPINGS = {
   "JournalEntryPage.ember.questFlowchart": {
     "name": "name"
   },
+  "RegionBehavior.ember.trapTrigger": {
+    "name": "name",
+    "message": "system.message"
+  },
+  "RegionBehavior.ember.areaEffect": {
+    "name": "name",
+    "description": "system.description",
+    "effects": {
+      "path": "system.effects",
+      "converter": "nameCollection"
+    }
+  },
   "Scene": {
     "levels": {
       "path": "levels",
@@ -470,6 +477,10 @@ export const DOCUMENT_MAPPINGS = {
       "path": "tokens",
       "converter": "nameCollection"
     },
-    "navName": "navName"
+    "navName": "navName",
+    "sounds": {
+      "path": "sounds",
+      "converter": "nameCollection"
+    }
   }
 };

@@ -37,6 +37,67 @@ const MIGRATION_SETTINGS = {
 };
 
 /**
+ * 上游 Ember 有一批界面串**没有 i18n 键**，直接把英文原文写进了
+ * `game.settings.register` 的 name/hint、`game.keybindings.register` 的 name/hint、
+ * SceneControl 的 title、以及 `element.dataset.tooltip`。
+ * （modules/ember/scripts/ember.mjs 的 lang/en.json 里 grep "SETTINGS|KEYBINDINGS" 命中 0。）
+ *
+ * 这些串走不了两条常规通道：
+ *  - **不能写进 lang/cn.json**：`Localization#loadTranslationFile` 对每份 lang JSON 跑
+ *    `expandObject(json)`，带句点的 hint 会被拆成嵌套键而查不到；且无点号的顶层键
+ *    会打破发版前 flatten_lang.py 的「cn 键数 == en 键数」三数相等。
+ *  - **走不了 DOM 兜底**：SettingsConfig / ControlsConfig / SceneControls 的根 class 既不含
+ *    `ember`、类名也不以 `Ember` 开头，被 scripts/ember-hardcoded-cn.mjs 的主闸直接放行掉。
+ *
+ * 可行的是 JS 侧直接往 `game.i18n.translations` 写**扁平顶层键**：
+ * `getProperty`（core common/utils/helpers.mjs:824）第一分支就是 `if (key in object) return object[key]`，
+ * 而 `Localization#has` / `#localize`（client/helpers/localization.mjs:391/436）都走 getProperty，
+ * 所以带空格、带句点的整句作为顶层键**可以**命中。
+ * 渲染点：设置 client/applications/settings/config.mjs:126-127 `_loc(setting.name/hint)`；
+ * 按键 client/applications/sidebar/apps/controls-config.mjs:154/158；
+ * 场景控件 templates/ui/scene-controls-tools.hbs 的 `{{localize tool.title}}`；
+ * data-tooltip 在 client/helpers/interaction/tooltip-manager.mjs:261-263 于**悬浮那一刻**
+ * 才 `if (game.i18n.has(text)) _loc(text)` —— 所以它能覆盖「播放/停止」这种渲染后才切换的场合，
+ * 反倒比 DOM 替换更稳。
+ *
+ * ⚠ 顶层键是**全局**的（i18n 表跨包合并），所以写入时一律「别人已定义就让给别人」。
+ * 唯一一个泛用词 "Remove" 已实测冲突面为 0（本机 modules/ + systems/ + core client/templates
+ * 内 `localize("Remove")` / `data-tooltip="Remove"` 只有 Ember 自己那两处），且它的中译
+ * 「移除」对任何调用方都成立，故一并收入。
+ */
+const EMBER_LITERAL_LABELS = {
+  // game.settings.register （ember.mjs:129274-129318，均为 config:true）
+  'Gazetteer Location Journal Entries': '地名志地点日志条目',
+  'Additional Journal Entries which provide custom gazetteer Location pages that should be added to the Ember environment.':
+    '额外的日志条目，为余烬环境提供应当加入的自定义地名志地点页面。',
+  'Standalone Event Journal Entries': '独立事件日志条目',
+  'Additional Journal Entries which contain Standalone Event pages which should be added to the Ember event engine.':
+    '额外的日志条目，其中包含应当加入余烬事件引擎的独立事件页面。',
+  'Clock Time Format': '时钟时间格式',
+  'The clock format used to display the in-world time of day.': '用于显示世界内当日时刻的时钟格式。',
+  'Custom Cursors': '自定义光标',
+  'Use custom Ember stylized mouse cursors instead of default browser cursors?':
+    '使用余烬风格的自定义鼠标光标，而非浏览器默认光标？',
+
+  // game.keybindings.register （ember.mjs:128565-128578）
+  'Flip Vista Placement': '翻转远景放置',
+  'When placing an asset in the Vista Configuration screen, flip it horizontally':
+    '在远景配置界面中放置素材时，将其水平翻转',
+  'Lock Vista Placement Elevation': '锁定远景放置高度',
+  'When placing an asset in the Vista Configuration screen, lock its elevation so it can be moved vertically.':
+    '在远景配置界面中放置素材时锁定其高度，使其可以垂直移动。',
+
+  // SceneControl tool title （ember.mjs:113456，YakoshtaMine 的矿车轨道图例）
+  'Show Tracks': '显示轨道',
+
+  // element.dataset.tooltip （ember.mjs:23743 / :51000 / :51003 / :107706 / :114171）
+  'Add Hex': '添加六边格',
+  'Stop Animation': '停止动画',
+  'Play Animation': '播放动画',
+  'Remove': '移除',
+};
+
+/**
  * ⚠ crucible 的 `system.description` 是**多态**的，不能靠「值是不是字符串」来判断形状。
  *
  * crucible 0.10.1 里只有 `CruciblePhysicalItem` 的 description 是
@@ -218,7 +279,12 @@ function sanitizeActionEffects(actions) {
     }
 
     if (!Object.keys(patch).length) return action;
-    return foundry.utils.mergeObject(action, patch);
+    // ⚠ mergeObject 的 `inplace` 默认是 **true**：原先写法会就地改掉传进来的那个对象。
+    // 这个函数同时服务三条链路 —— preUpdateItem 的 changes 载荷、冒险导入的 item 载荷、
+    // 以及世界迁移里读出来的 `_source.system.actions` —— 后者是文档的**落库原值对象**，
+    // 就地改它等于绕过 update 直接篡改内存里的源数据（且不落库、不触发任何钩子）。
+    // 一律返回新对象，让调用方通过 update / setProperty 显式写回。
+    return foundry.utils.mergeObject(action, patch, { inplace: false });
   });
 
   return changed ? patched : actions;
@@ -251,9 +317,22 @@ function degradeActorUpdatePayload(update) {
   return degraded;
 }
 
+/**
+ * 判断当前这次 Actor.updateDocuments 是否发生在冒险导入流程里。
+ *
+ * ⚠ 唯一有效的判据就是 `Adventure.importContent` 这一帧：
+ * core client/documents/adventure.mjs:165 的 `importContent()` **在自己的帧里**直接
+ * `await cls.updateDocuments(updateData, options)`（:195），所以栈里必然出现它。
+ * 上游若把那次 updateDocuments 挪进 helper，本兜底即失效 —— 那时要改判据，不是加分支。
+ *
+ * 原先还 `|| stack.includes('EmberAdventureImporter._processSubmitData')`，那是**恒假**：
+ * modules/ember/scripts/ember.mjs:24012 的 `class EmberAdventureImporter` 里根本没有
+ * `_processSubmitData`（该方法只出现在 :24005 与 :36801，分属另外两个类），
+ * V8 永远产不出这个帧名。留着只会让人误以为还有第二道备份，故删除。
+ */
 function isAdventureImportInvocation() {
   const stack = String(new Error().stack ?? '');
-  return stack.includes('Adventure.importContent') || stack.includes('EmberAdventureImporter._processSubmitData');
+  return stack.includes('Adventure.importContent');
 }
 
 function prepareSafeActorUpdatesForImport(updates) {
@@ -261,7 +340,20 @@ function prepareSafeActorUpdatesForImport(updates) {
   return updates.map((update) => degradeActorUpdatePayload(update));
 }
 
-async function syncCrucibleOwnedItems({ force = true, reload = false, talents = true, spells = true } = {}) {
+/**
+ * `globalThis.emberCN.syncOwnedItems()` 的实现，转发给 crucible 自己的同名 API。
+ *
+ * ⚠ 默认值**必须**与上游一致（crucible-compiled.mjs:48163
+ * `{force=false, reload=true, talents=true, spells=true, equipment=false}`）。
+ * 这里原先写的是 `force = true, reload = false`，两处都翻了：
+ *  - `force=true` 让 :48183 的 `force || isNewerVersion(...)` 恒真 ⇒ `game.actors` 全量进入同步；
+ *    而 :48211 的 updateItems 用的是 `{diff:false, recursive:false}`（**整体替换**语义），
+ *    等于把本来就是最新的 actor 的天赋 / 标志性法术的本地改动，用合集原版盖掉。
+ *  - `reload=false` 又跳过 :48227 的 `debouncedReload()`，而上游把 reload 默认设 true
+ *    正是因为整体替换之后客户端状态会不一致。两个翻转互相冲突。
+ * 需要强制重拉时由调用方显式传参：`emberCN.syncOwnedItems({ force: true })`。
+ */
+async function syncCrucibleOwnedItems({ force = false, reload = true, talents = true, spells = true } = {}) {
   const syncMethod = globalThis.crucible?.api?.methods?.syncOwnedItems;
   if (typeof syncMethod !== 'function') {
     throw new Error('Crucible syncOwnedItems API is unavailable.');
@@ -424,24 +516,49 @@ function patchActorUpdateDocuments() {
   ActorClass.updateDocuments = wrapped;
 }
 
+/**
+ * 读**落库原值**（`_source.system.actions`）而不是准备后的 `item.system.actions`。
+ * 与同文件 :120/:135/:151 的描述迁移口径一致。两个理由：
+ *
+ * 1) `system.actions` 是 `ArrayField(CrucibleActionField)`，而 `CrucibleActionField extends
+ *    EmbeddedDataField`（crucible module/models/fields.mjs:11），准备后拿到的是 CrucibleAction
+ *    **实例**；把实例塞回 `item.update()`，clean 阶段 `EmbeddedDataField._cast()` 会先
+ *    `value.toObject()`，我们打的补丁被丢掉、diff 恒空 —— 写不进去还照样计数成功。
+ * 2) 更要命的是 `CruciblePhysicalItem#prepareAffixActions()`（crucible module/models/item-physical.mjs:225-239）
+ *    在准备阶段把**词缀提供的 action** `this.actions.push(action)` 进了准备结果里。
+ *    把准备结果当源写回，等于把词缀 action 永久烙进物品的 `system.actions`；
+ *    下次准备时 :230-234 会以「与物品级 action 冲突」为由把词缀那份丢掉并告警。
+ */
 async function migrateLegacyCausticPhialEffects() {
   if (!game.user?.isGM) return;
+
+  // causticPhial 是 crucible 的 action。Ember 同时支持 crucible 与 dnd5e，
+  // 没有这道闸的话，dnd5e 世界每次开世界也要把 game.items + 每个 actor 的物品全遍历一遍。
+  if (game.system?.id !== 'crucible') return;
 
   // 同上：game.world 没有 flag API，原守卫恒空。改用 game.settings。
   if (game.settings.get(MODULE_ID, MIGRATION_SETTINGS.legacyCausticPhial)) return;
 
+  let scannedItems = 0;
   let updatedWorldItems = 0;
   let updatedEmbeddedItems = 0;
+  let failed = false;
 
   for (const item of game.items ?? []) {
-    const actions = foundry.utils.getProperty(item, 'system.actions');
+    const actions = foundry.utils.getProperty(item, '_source.system.actions');
+    if (!Array.isArray(actions)) continue;
+    scannedItems += 1;
+
     const sanitized = sanitizeActionEffects(actions);
     if (sanitized === actions) continue;
 
     try {
-      await item.update({ 'system.actions': sanitized });
-      updatedWorldItems += 1;
+      // update() 返回 undefined 表示这次没有任何文档真的落库（diff 为空）。
+      // 原先无条件 +1，写没写进去都会打印 "migration complete"，是谎报。
+      const updated = await item.update({ 'system.actions': sanitized });
+      if (updated) updatedWorldItems += 1;
     } catch (error) {
+      failed = true;
       console.warn(`${MODULE_ID} | Failed to migrate world item action effects`, item?.name, error);
     }
   }
@@ -449,7 +566,10 @@ async function migrateLegacyCausticPhialEffects() {
   for (const actor of game.actors ?? []) {
     const itemUpdates = [];
     for (const item of actor.items ?? []) {
-      const actions = foundry.utils.getProperty(item, 'system.actions');
+      const actions = foundry.utils.getProperty(item, '_source.system.actions');
+      if (!Array.isArray(actions)) continue;
+      scannedItems += 1;
+
       const sanitized = sanitizeActionEffects(actions);
       if (sanitized === actions) continue;
 
@@ -462,18 +582,32 @@ async function migrateLegacyCausticPhialEffects() {
     if (!itemUpdates.length) continue;
 
     try {
-      await actor.updateEmbeddedDocuments('Item', itemUpdates);
-      updatedEmbeddedItems += itemUpdates.length;
+      const updated = await actor.updateEmbeddedDocuments('Item', itemUpdates);
+      updatedEmbeddedItems += Array.isArray(updated) ? updated.length : 0;
     } catch (error) {
+      failed = true;
       console.warn(`${MODULE_ID} | Failed to migrate embedded action effects`, actor?.name, error);
     }
   }
+
+  // 无条件留一条计数日志：否则「跑没跑、扫了几条、改了几条」永远没有信号。
+  console.debug(
+    `${MODULE_ID} | causticPhial migration scan`,
+    { scannedItems, updatedWorldItems, updatedEmbeddedItems, failed }
+  );
 
   if (updatedWorldItems || updatedEmbeddedItems) {
     console.info(
       `${MODULE_ID} | Legacy causticPhial effects migration complete`,
       { updatedWorldItems, updatedEmbeddedItems }
     );
+  }
+
+  // 有任何一条失败就**不**置位，留着下次开世界重试；
+  // 否则一次偶发失败会把这张安全网永久关掉。
+  if (failed) {
+    console.warn(`${MODULE_ID} | causticPhial 迁移有条目失败，本次不置一次性标记，下次开世界会重试`);
+    return;
   }
 
   try {
@@ -483,10 +617,38 @@ async function migrateLegacyCausticPhialEffects() {
   }
 }
 
+/**
+ * 给 crucible 的 causticPhial `prepare` 钩子加一层防崩：上游
+ * crucible-compiled.mjs:8964-8975 直接 `mergeObject(this.effects[0], corroding)`，
+ * effects[0] 缺失就抛。
+ *
+ * ⚠ **必须在 `init` 阶段打**，不能等 `setup`：
+ *  - core client/game.mjs:718 `setupGame()` 的顺序是 :730 `initializeDocuments()`
+ *    → :740 `Hooks.callAll("setup")`，而 initializeDocuments() 里明写
+ *    「Prepare data for all world documents」并对每个文档跑 `_safePrepareData()`；
+ *  - CrucibleAction 在 `_initialize()`（crucible-compiled.mjs:19011-19024）里就把
+ *    `crucible.api.hooks.action[id]` 的函数拷进一个 `Object.freeze` 的快照
+ *    （`#prepareHooks`，:19047-19056），之后 `_callActionHooks` 取的一直是那份快照。
+ * 也就是说 setup 时所有 actor 上的 causticPhial action 早已构造并跑过**原始** prepare，
+ * 正是这个补丁想保护的那一轮。
+ *
+ * 在 init 里打是安全的：crucible 的 `crucible.api = {...}` 就建在它自己的 init 监听器里
+ * （crucible-compiled.mjs:47205 / :47219），而系统的 esmodule 先于模块的 esmodule 加载
+ * （core dist/server/views/view.mjs 里系统 module 优先级 6、普通模块 8），
+ * 所以系统的 init 监听器先注册、先触发。
+ */
 function patchCrucibleCausticPhialHook() {
   const hook = globalThis.crucible?.api?.hooks?.action?.causticPhial;
   const original = hook?.prepare;
-  if (!hook || typeof original !== 'function') return;
+  if (!hook || typeof original !== 'function') {
+    // 只在 crucible 世界里才算异常；dnd5e 世界下本来就没有这个钩子，不该刷告警。
+    if (game.system?.id === 'crucible') {
+      console.warn(
+        `${MODULE_ID} | 未能给 crucible 的 causticPhial prepare 钩子打补丁（钩子不存在或形状已变），运行时防崩未生效`
+      );
+    }
+    return;
+  }
   if (original.__emberSafePatched) return;
 
   const wrapped = function safeCausticPhialPrepare(...args) {
@@ -523,6 +685,20 @@ Hooks.on('preCreateItem', (item, data) => {
   if (effects !== data?.effects) item?.updateSource?.({ effects });
 });
 
+// i18nInit 由 Localization#initialize 在 `init` 钩子**之前**触发
+// （core client/helpers/localization.mjs:104），而设置 / 按键 / 场景控件的 name·hint·title
+// 都是**渲染时**才 localize 的，所以在这里补表足够早。
+Hooks.once('i18nInit', () => {
+  const translations = game.i18n?.translations;
+  if (!translations) return;
+
+  for (const [key, value] of Object.entries(EMBER_LITERAL_LABELS)) {
+    // 顶层键是全局的：别人已经定义过就让给别人，宁可露英文也不顶掉。
+    if (typeof translations[key] === 'string') continue;
+    translations[key] = value;
+  }
+});
+
 Hooks.once('babele.init', (babele) => {
   if (!game.modules.get('babele')?.active) return;
 
@@ -538,8 +714,13 @@ Hooks.once('babele.init', (babele) => {
   console.log(`${MODULE_ID} | 已注册 Babele 翻译源与文档映射`);
 });
 
-// Hook APIs are ready by setup and documents have not finished full preparation yet.
 // 两个迁移的「只跑一次」状态位。必须在 ready（迁移执行）之前注册，放 init 最稳。
+//
+// ⚠ 原先这里写着 "Hook APIs are ready by setup and documents have not finished full
+// preparation yet."，与 v14 源码**正相反**：client/game.mjs:718 `setupGame()` 里
+// :730 `initializeDocuments()`（内部对每个世界文档跑 `_safePrepareData()`）跑完之后
+// 才在 :740 `Hooks.callAll("setup")`。所以 causticPhial 的钩子补丁挪到了这里，
+// 详见 patchCrucibleCausticPhialHook 上方的说明。
 Hooks.once('init', () => {
   for (const key of Object.values(MIGRATION_SETTINGS)) {
     game.settings.register(MODULE_ID, key, {
@@ -549,10 +730,13 @@ Hooks.once('init', () => {
       default: false,
     });
   }
+
+  patchCrucibleCausticPhialHook();
 });
 
+// patchActorUpdateDocuments 依赖 CONFIG.Actor.documentClass 已被系统改写完毕，
+// exposeSyncApi 只是挂全局对象，两者留在 setup 不动。
 Hooks.once('setup', () => {
-  patchCrucibleCausticPhialHook();
   patchActorUpdateDocuments();
   exposeSyncApi();
 });
