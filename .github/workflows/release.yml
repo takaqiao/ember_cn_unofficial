@@ -78,7 +78,11 @@ jobs:
           # 用 `unzip -Z1`（只列成员名）而不是 `unzip -l`：后者带一行 `Archive:  module.zip`
           # 表头，任何匹配 `.zip` 的模式都会打在自己的表头上。crucible 侧补这条断言时
           # 就是这么挂的，这里一并换成只列名的形式，并把排除面补齐到与 -x 清单同步。
-          unzip -Z1 module.zip | grep -E "^compendium/en/|^lang/en\.json|lang_keep_english\.json|^scripts/|^release/|\.py$|\.zip$" && exit 1 || true
+          # ⚠ 这里**不能**照抄 crucible 侧的 `^scripts/`：本仓的 scripts/ 是**随包发**的
+          # （module.json 的 esmodules 就有 `scripts/ember-hardcoded-cn.mjs`），
+          # 而 crucible 仓的 scripts/ 全是维护脚本。同一条断言在两仓含义不同。
+          # 本仓要挡的是 scripts/ 下的维护脚本，那类一律是 .py，已由 `\.py$` 覆盖。
+          unzip -Z1 module.zip | grep -E "^compendium/en/|^lang/en\.json|lang_keep_english\.json|^release/|__pycache__|\.py$|\.zip$" && exit 1 || true
           unzip -l module.zip | tail -10
 
       - name: Create GitHub Release
