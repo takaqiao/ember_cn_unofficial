@@ -11,10 +11,28 @@ DELETE = object()
 LEAVE_ALONE = {"pronunciation"}
 
 
+# `notes` 底下住着两种截然不同的东西：
+#   scenes.<场景>.notes.<英文地名>      —— nameCollection，叶子的键就是地图注记名，
+#                                        属 name 类字段，按约定接双语；
+#   ....outcomes.notes.label / .summary —— 给玩家读的整段旁白散文。
+# 原判据是 `"notes" in path`，一锅端。带 --write 跑一遍当前库会给 287 个「path 含
+# notes」的非 name 叶接上英文原文，其中就有整段散文：
+#   entries.Ember Early Access.journals.Local Color.pages.A Sketchy Situation
+#     .outcomes.notes.summary
+#   -> 「我们找到了法拉尔关于引诱与束缚元素生物的笔记…We found Falar's notes on …」
+# 所以只有**不是散文字段名**的末段键才算 name 类。
+PROSE_UNDER_NOTES = {"label", "summary", "text", "description", "content",
+                     "public", "private", "gamemaster", "caption", "subtitle"}
+
+
 def should_keep_bilingual(path: tuple[str, ...], key: str) -> bool:
     if key in {"name", "prototypeToken"}:
         return True
-    return ("notes" in path) or ("folders" in path)
+    if len(path) >= 2 and path[-2] == "notes" and key not in PROSE_UNDER_NOTES:
+        return True
+    # folders 集合（顶层 `folders` 段与内嵌 `entries.X.folders`）的叶子键就是
+    # 文件夹英文名，属 name 类，维持原行为。
+    return "folders" in path
 
 
 def normalize_spaces(text: str) -> str:
@@ -30,12 +48,19 @@ def ensure_bilingual(cn_text: str, en_text: str) -> str:
         return cn_text
     if not cn_text:
         return en_text
-    # 逐字包含判断对上游拼写/空格差异是脆的：`folders.Marital Ranged`（上游把
-    # Martial 拼成 Marital）现译「军用远程武器 Martial Ranged」会被判成「没接过」，
-    # 于是接成「军用远程武器 Martial Ranged Marital Ranged」；`Altar of  Aura`
-    # （英文里两个空格）同理。先把连续空白折叠再比。
+    # 「接过没接过」不能靠**逐字包含**来判：那对上游的拼写差是脆的。折叠空白只
+    # 治得了空格差（`Altar of  Aura` 英文里两个空格），治不了拼写差 ——
+    # `folders.Marital Ranged`（上游把 Martial 拼成 Marital）现译
+    # 「军用远程武器 Martial Ranged」，包含判断照样为假，于是接成
+    # 「军用远程武器 Martial Ranged Marital Ranged」。实测过，确有其事。
+    #
+    # 判据改成形态：中文侧只要**已经有拉丁尾巴**就一律不再接。宁可漏接（缺尾巴
+    # 由 scan_bare_english_names / 双语尾巴判据去报），不可重复接。
+    # 中英拼写对不上属于上游漂移，是 scan_markup_drift / scan_en_drift 的辖区。
     squash = lambda s: re.sub(r"\s+", " ", s)
     if squash(en_text) in squash(cn_text):
+        return cn_text
+    if re.search(r"[A-Za-z]", cn_text):
         return cn_text
     return f"{cn_text} {en_text}"
 

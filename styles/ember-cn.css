@@ -13,6 +13,26 @@
  * 为什么不打包字体文件：一套中文字体动辄 10 MB 以上，会让模块体积翻好几倍；
  * 为什么不挂 Google Fonts：国内取不到，会静默失败并卡住页面加载。
  * 因此只用系统已有的字体，按 Windows / macOS / Linux 顺序排列。
+ *
+ * ------------------------------------------------------------------
+ * 级联层（@layer）备忘 —— 改 module.json 前必读
+ * ------------------------------------------------------------------
+ * Foundry v14 的层顺序（public/css/foundry2.css:5）是
+ *   reset, variables, elements, blocks, applications, compatibility,
+ *   layouts, system, modules, exceptions
+ * 本模块 module.json 把本文件声明为 {"src": …, "layer": "modules"}，
+ * 于是发出的是 `@import "styles/ember-cn.css" layer(modules);` —— 规则落在
+ * **modules 直接层**。
+ * 而上游 modules/ember 的 module.json 写的是 {"src": "styles/ember.css",
+ * "layer": null}（null 不补默认值，发的是裸 @import），文件自身第 1 行是
+ * `@layer modules.ember {`，末尾还有 `@layer exceptions.ember {`（:3510）。
+ * 结论：
+ *   · 对 modules.ember 里的规则，我们（modules 直接层）天然胜出 —— 子层排在
+ *     同层直接规则**之前**，后者优先级更高，且层级优先于特异性。
+ *   · 对 exceptions.ember 里的规则（如 :3521 的 prose-mirror 标题字距），
+ *     exceptions 排在 modules **之后**，我们会输 —— 这类必须靠 !important。
+ * 全机 270 个模块只有 ember 一家自建 @layer，纯读代码看不出来；下面凡是标了
+ * !important 的地方都是为了把胜负从「层级排布」上摘下来，别顺手删。
  */
 
 .ember {
@@ -32,16 +52,42 @@
 /*
  * Ember 的标题带 0.2em 字距，那是为拉丁文的小型大写效果设计的。
  * 中文本来就是等宽方块字，再加这么大的字距会散得读不成句。
+ *
+ * !important 的理由（不是偷懒）：上游写 0.2em 的四处里，
+ * ember.css:97 / :138 / :2535 在 modules.ember，:3526 在 **exceptions.ember**，
+ * 而 exceptions 层排在 modules 之后 —— 靠层级赢不了最后那处（prose-mirror
+ * 编辑器里的标题）。上游这四条都不带 !important，所以一个 !important 就能
+ * 跨所有层稳赢，同时把本规则从「我们恰好在 modules 直接层」这个隐形依赖上摘下来。
+ * 本模块特异性 0,1,1，上游最高 0,4,1，靠提特异性追不划算也追不干净。
  */
 .ember .ember-header,
 .ember h1,
 .ember h2,
 .ember h3 {
-  letter-spacing: 0.05em;
+  letter-spacing: 0.05em !important;
 }
 
-/* 中文没有词间空格，行高压得太紧会显得挤 */
+/*
+ * 中文没有词间空格，行高压得太紧会显得挤。
+ *
+ * 必须写在**正文容器自身**上：上游 ember.css:2515-2521 在
+ * `.ember.journal-entry .journal-entry-page .journal-page-content` 上直接声明了
+ * line-height: var(--font-size-20)（20px / 14px ≈ 1.43）。
+ * Foundry 核心的 DOM 是 templates/journal/pages.hbs:1 与 sheet.html:53 的
+ * <section class="journal-entry-content"> 里套 pages/text/view.hbs:9 的
+ * <section class="journal-page-content">，后者是前者的后代 —— 元素自身的声明
+ * 永远压过从祖先继承来的值，与特异性、与 cascade layer 都无关。
+ * 只写 .journal-entry-content 那一条对正文完全无效，故补上同元素的规则。
+ * （原先并排的 `.ember .ember-content` 已删：对 modules/ember 全目录扫
+ * `ember-content(?![-\w])` 命中 0，实际存在的只有 ember-content-link ×23 与
+ * ember-content-config ×8，CSS 类选择器按整个 token 匹配，永远匹配不上。）
+ *
+ * !important 同上一条的理由：我们的选择器与上游那条特异性完全相同（都是 0,4,0），
+ * 平手时由层级决胜负 —— 一旦有人给本文件起个子层名就会静默翻盘。
+ * 上游 ember.css 里在 .journal-page-content 上设 line-height 的规则只有那一条、
+ * 不带 !important；在 .journal-entry-content 上设 line-height 的规则 0 条。
+ */
 .ember .journal-entry-content,
-.ember .ember-content {
-  line-height: 1.7;
+.ember.journal-entry .journal-entry-page .journal-page-content {
+  line-height: 1.7 !important;
 }

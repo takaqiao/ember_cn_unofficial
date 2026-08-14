@@ -1,16 +1,16 @@
 {
   "id": "ember_cn_unofficial",
-  "title": "Translation:Ember[Unofficial]",
+  "title": "Ember - Chinese Translation [Unofficial]",
   "description": "Ember 战役模块的非官方简体中文翻译：合集正文经 Babele 加载，界面字符串走 Foundry 原生 i18n，同时覆盖 Crucible 与 dnd5e 两侧的包。需自行拥有 Ember 本体（付费模块）与 Babele。Unofficial Simplified Chinese translation for the Ember module.",
   "authors": [
     {
       "name": "Taka"
     }
   ],
-  "version": "1.1.10",
+  "version": "1.1.11",
   "url": "https://github.com/takaqiao/ember_cn_unofficial",
   "manifest": "https://github.com/takaqiao/ember_cn_unofficial/releases/latest/download/module.json",
-  "download": "https://github.com/takaqiao/ember_cn_unofficial/releases/download/v1.1.10/module.zip",
+  "download": "https://github.com/takaqiao/ember_cn_unofficial/releases/download/v1.1.11/module.zip",
   "compatibility": {
     "minimum": "14",
     "verified": "14",
@@ -47,6 +47,11 @@
     ]
   },
   "styles": [
-    "styles/ember-cn.css"
-  ]
+    {
+      "src": "styles/ember-cn.css",
+      "layer": "modules"
+    }
+  ],
+  "bugs": "https://github.com/takaqiao/ember_cn_unofficial/issues",
+  "changelog": "https://github.com/takaqiao/ember_cn_unofficial/releases/tag/v1.1.11"
 }

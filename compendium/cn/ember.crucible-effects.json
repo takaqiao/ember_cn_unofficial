@@ -58,7 +58,7 @@
     },
     "Blessing of Aura": {
       "name": "奥拉之祝福 Blessing of Aura",
-      "description": "<p>你受到奥拉之力的祝福。此祝福持续期间，你与灵气的同调得到增强，为你的有效阶位提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的奥拉同调提升到更高阶位。</p>"
+      "description": "<p>你受到奥拉之力的祝福。此祝福持续期间，你与奥拉的同调得到增强，为你的有效阶位提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的奥拉同调提升到更高阶位。</p>"
     },
     "Blessing of Cora": {
       "name": "科拉之祝福 Blessing of Cora",
