@@ -75,7 +75,10 @@ jobs:
             -x "Thumbs.db"
           ls -la module.zip
           echo "--- 确认英文基准没被打进去（应无输出）---"
-          unzip -l module.zip | grep -E "compendium/en/|lang/en\.json|\.py$" && exit 1 || true
+          # 用 `unzip -Z1`（只列成员名）而不是 `unzip -l`：后者带一行 `Archive:  module.zip`
+          # 表头，任何匹配 `.zip` 的模式都会打在自己的表头上。crucible 侧补这条断言时
+          # 就是这么挂的，这里一并换成只列名的形式，并把排除面补齐到与 -x 清单同步。
+          unzip -Z1 module.zip | grep -E "^compendium/en/|^lang/en\.json|lang_keep_english\.json|^scripts/|^release/|\.py$|\.zip$" && exit 1 || true
           unzip -l module.zip | tail -10
 
       - name: Create GitHub Release
