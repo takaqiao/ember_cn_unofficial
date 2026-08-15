@@ -33,8 +33,18 @@ const warn = (...a) => console.warn(`${MODULE} |`, ...a);
  *
  * 两套键都要有：合集页名（`Attunement: ${page.name}` 走这一套）与 `ember.CONST.ATTUNEMENTS[x].label`
  * 的短名（`Activate Attunement: ${label}` 走这一套，dnd5e-async.mjs:406 定义为 Abyss / Heart，不带 The / of Ember）。
+ *
+ * ⚠ 长名那两条（`The Abyss` / `Heart of Ember`）**只在「英文存量世界」里可命中**，别当活键去调译文
+ *   （2026-08-15 第十六轮查实，原注释说的「合集页名走这一套」会误导）：
+ *   `Attunement: ${attunement.name}` 里的 name 由 initializeAttunementOptions（ember.mjs:129701-129718）
+ *   从**世界里的** JournalEntry `emberCosmos00000` 取 page.name。装了本汉化之后那个页名已经是
+ *   babele 译好的「深渊 The Abyss」/「余烬之心 Heart of Ember」（双语），查表必然落空、叶子原样带回；
+ *   只有「先用英文导入过、之后才装汉化」的世界才会命中。保留是因为成本为零、且正是那种世界的兜底。
  * 2026-08-13 第三轮：`Aura` 原译「灵气」是错的 —— 它是月亮专名，Cosmos 页 name 字段即「奥拉 Aura」，
  * 同一份月亮清单里 Mayis/Cora/Ragen/Orbis/Akon 全是音译；「灵气」是 `Aura Spellcraft` 手势的 adjective，不是月名。
+ * ⚠ 由此，B 段拿 crucible lang 的 `SPELL.GESTURES.Aura` / `ACTION.TARGET_TYPES.Aura`＝灵气 来比本表的
+ *   「奥拉」必报 `MJS_LANG_DRIFT`，**是既定的 `Aura` 三分，不是缺陷**（PROJECT.md：Ember 月亮／同调／屈折
+ *   ＝奥拉、`Auric`＝奥拉的；Crucible 的手势与目标类型＝灵气；泛用 `Fear/Command Aura`＝灵气）。别统一。
  */
 const ATTUNEMENTS = {
   "The Abyss": "深渊",
@@ -63,6 +73,18 @@ const ATTUNEMENTS = {
  *      `item.name = \`Abyss Attunement (Rank ${ATTUNEMENT_RANK_NUMERALS[rank]})\``（ember.mjs:126104 等 11 处）
  *      把 babele 译名覆盖掉，合集里的译文根本留不住，只能在 DOM 上兜（见 HERO_ITEM_NAMES）；
  *   ② 同调奖励聊天卡的表头 `${config.label} 同调`（ember.mjs:2971，见 CHAT_UI）。
+ *
+ * ⚠ **`scan_cross_channel` B 段会为这 11 条各报两次，两次都是判据的定义域问题，不是缺陷**
+ *   （2026-08-15 第十六轮逐条判完，ember 侧 22 条 / crucible 侧 22 条，占两边 B 段报数的大半）：
+ *     · `MJS_LANG_DRIFT [ATTUNEMENTS]`：判据按**英文串**在整个 .mjs 里找同名键，于是
+ *       ATTUNEMENTS["Abyss"]＝深渊 与本表 ["Abyss"]＝「深渊同调 Abyss Attunement」被算成
+ *       「.mjs 内部同英文异译」。两张表喂的是**两种形状**：前者是 `ATTUNEMENTS[x].label` 那个短名，
+ *       后者是天赋物品的整名（带双语尾），键名撞在一起只是因为上游拿同一个词当 id。
+ *     · `MJS_LANG_DRIFT [ATTUNEMENT_ITEM_NAMES]`：拿本表的值去比 lang `SPELL.INFLECTIONS.<x>`
+ *       （en 就是 `Abyss` 这种裸词），比的同样是「整名 vs 短名」，不同域。
+ *   两条都别再统一 —— 统一任何一边都会让上面 ① ② 那两处上屏文本错位。
+ *   `Heart` 那条差得最远（短名「余烬之心」／整名「心之同调」），成因见上一段，合集英文闸下
+ *   「心之同调」57 叶有据，也不是笔误。
  */
 const ATTUNEMENT_ITEM_NAMES = {
   "Abyss": "深渊同调 Abyss Attunement",
@@ -103,6 +125,8 @@ const MOON_NAMES = {
  * （那边 Ember 自己拼英文 label）。其余 23 条是 ember.mjs:126693 起用裸英文 label 注册的，两边都活。
  */
 const LANGUAGES = {
+  // ⚠ `Common` 在本文件里**有意两译**：这里是语言名＝通用语，RARITIES 那张表里是稀有度＝常见。
+  //   同理 `Draconic`（语言＝龙语 / 术士起源＝龙脉）。B 段会报成「.mjs 内部同英文异译」，不是缺陷。
   "Common": "通用语",
   "Sign": "手语",
   "Arcden": "奥克登语",
@@ -120,6 +144,9 @@ const LANGUAGES = {
   "Scor": "斯科语",
   "Towyr": "托维尔语",
   "Windclaw": "风爪语",
+  // ⚠ `Abyssal` 与 ember lang 的 `SPELL.INFLECTIONS.AbyssAdj`（en 也是 `Abyssal`）＝深渊的 **不同域**：
+  //   那条是同调**屈折词**（法术名 `Abyssal Ray` 那一支，同族还有 Akonic/Coran/Emberite/Luxaran…），
+  //   这里是 crucible.CONFIG.languages 里的**语言名**。B 段按英文串比，会报成 MJS_LANG_DRIFT，不是缺陷。
   "Abyssal": "深渊语",
   "Draconic": "龙语",
   "Druidic": "德鲁伊语",
@@ -259,7 +286,13 @@ const MOODS = {
  * （5694 / 5787 / 12393 / 14064 / 14748 各 var 块），babele 与 i18n 两条通道都够不到。
  */
 const ARRANGEMENTS = {
-  "Reset": "默认",
+  // 2026-08-15：原译「默认」与 lang 的 `EMBER.CONTENT_CONFIG.RESET`＝重置 漂移（scan_cross_channel B 段第 1 条），
+  // 且英文闸下 compendium 的 `Reset` 8 叶全作「重置」、0 叶作「默认」。上游这一支的注释也是
+  // 「// Reset channel to default」（ember.mjs:16253），按动作译成「重置」两条通道即一致。
+  // ⚠ 记一笔方向：这一条把 B 段的 `Reset` 由 DRIFT 变成 AGREE（净收益 −1 条漂移），
+  //   与同一轮 `Usage` 那条 MJS_ORPHAN_CN +1 是两笔相反的变化，B 段总数 33 → 32 是两者相抵后的结果。
+  //   下一轮对 B 段计数时别把这两笔当成没发生。
+  "Reset": "重置",
   "Ancient Ruins": "远古遗迹",
   "Shent Ruins": "申特遗迹",
   "Shent Ruins Tension": "申特遗迹 · 紧张",
@@ -288,17 +321,25 @@ const ARRANGEMENTS = {
  * `Time` / `Other` 该页没有小节，取 glossary_ec 的「时间 / 其他」。
  * `Hexblade` 上游 Warlock 页已删该子职，合集里无对应译法，按 5e 通行译名暂定「咒刃」（与 Spellblade 撞名，待裁）。
  */
+// ⚠ `Light` 与 crucible lang 的 `WEAPON.CATEGORIES.Light`＝轻型 同英文不同域（神祇领域「光」
+//   vs 武器分类「轻型」）；B 段 2026-08-15 报过，已裁：不统一。
 const DIVINE_DOMAINS = {
   "Knowledge": "知识", "Life": "生命", "Light": "光", "Order": "秩序",
   "Peace": "和平", "Time": "时间", "Trickery": "诡术", "Twilight": "暮光",
   "War": "战争", "Other": "其他"
 };
+// ⚠ `Celestial` 与 crucible lang 的 `TAXONOMY.CATEGORIES.Celestial`＝天界生物 同英文不同域：
+//   这里是**邪术师宗主**（上屏拼作「天界宗主」，见上面的取名依据），那里是生物分类学的类别名。
+//   本文件 KNOWLEDGE 表里的 `Celestials`＝天界生物 才是与那条对应的。B 段报的这条不是缺陷。
 const WARLOCK_PATRONS = {
   "Archfae": "至高妖精", "Archfey": "至高妖精", "The Archfey": "至高妖精",
   "Celestial": "天界", "Fathomless": "深海", "Fiend": "邪魔", "The Fiend": "邪魔",
   "Genie": "巨灵", "Great Old One": "远古旧日支配者", "The Great Old One": "远古旧日支配者",
   "Hexblade": "咒刃", "The Undead": "不死", "Other": "其他"
 };
+// ⚠ `Draconic` 在本文件里**有意两译**：这里是术士起源＝龙脉（合集 Sorcerer 页的小节译法），
+//   LANGUAGES 那张表里是语言名＝龙语。`scan_cross_channel` B 段会把它报成「.mjs 内部同英文异译」，
+//   是判据的定义域问题（按英文串比，不看归属），**不是缺陷**，别再统一。
 const SORCEROUS_ORIGINS = {
   "Draconic": "龙脉", "Spellfire": "法术火焰", "Wild Magic": "狂野魔法"
 };
@@ -376,14 +417,8 @@ const PREFIXED = [
   { en: "Path", cn: "道途", table: MISSING_PATHS },
   { en: "Talent", cn: "天赋", table: {} },
 
-  // 音景增强器的**前两支**（S1 补）：`EmberSoundscape.enricherHTML`（ember.mjs:16250-16278）
-  // 有三个互斥分支，只有第三支是 `Music Mood: …`，前两支拼的是
-  //   16255  `${channel.capitalize()}: Reset`               → `Music: Reset`
-  //   16266  `${channel.capitalize()}: ${arrangement.label}` → `Music: Ankarist Theme`
-  // 已发布语料实测：每包 23 颗按钮里 21 颗落在前两支，`mood=` 只有 2 处。
-  // channel 只有 music / environment 两个（ember.mjs:15643）。
-  { en: "Music", cn: "音乐", table: ARRANGEMENTS },
-  { en: "Environment", cn: "环境音", table: ARRANGEMENTS },
+  // 音景增强器的前两支**不在这里**：它们的叶子可能带 ` (Calm)` / ` (Tension)` 尾巴，
+  // PREFIXED 是整串查表、接不住复合叶，已改成 PATTERNS 里那条 `^(Music|Environment): …` 正则。
 
   // 六边形 HUD 的四条 data-tooltip（templates/applications/hex-hud.hbs:13/47/50/52）。
   // 宿主 EmberHexHUD 的 classes 含 "ember"，闸放行、translateNode 也走到了，
@@ -406,7 +441,14 @@ const PREFIXED = [
 
   // 事件/地点页的标识符标签（ember.mjs:35842 `Identifier: ${identifier}`）。
   // 尾巴是数据 id，不译，故用空表。
-  { en: "Identifier", cn: "标识符", table: {} }
+  { en: "Identifier", cn: "标识符", table: {} },
+
+  // 法典日志给每条已完成事件挂的 context 串（ember.mjs:25236
+  // `const context = event.root ? \`Quest: ${event.root.label}\` : "Standalone Event"`，:25250 消费）。
+  // 同组的 "Standalone Event" 早就在 EXACT 里（→独立事件），只差这条前缀；EXACT 里那个裸
+  // `Quest`（codex/quests.hbs:7 的分类标题）是整串匹配，接不住 `Quest: 任务名` 这种形状。
+  // 叶子是 babele 已译的任务名，故用空表。
+  { en: "Quest", cn: "任务", table: {} }
 ];
 
 /**
@@ -430,13 +472,13 @@ const DIALOG_TITLES = {
   "Delete Saved Composition?": "删除已保存的构图？",                    // 34488
   "Clear Vista": "清空远景",                                         // 34723
   "Import Configuration": "导入配置",                                // 34750
-  "Summarize Token Maker Part Usage": "统计令牌制作器部件用量",          // 49532
+  "Summarize Token Maker Part Usage": "统计指示物制作器部件用量",          // 49532
   "Ember: Teleport Destination": "余烬：传送目的地",                    // 61789
   "Elevator Controls": "升降机控制",                                 // 67247
   "Toggle Corpuleth Damage": "切换尸团怪 Corpuleth 伤害状态",           // 73312
   "Aedir Signalpost Generator Room Switch": "艾迪尔信号哨站 Aedir Signalpost 发电机房开关", // 95126
   "Elevator Destination": "升降机目的地",                             // 95361
-  "Steam Cleansing Cutoff": "蒸汽净化切断",                           // 95691
+  "Steam Cleansing Cutoff": "蒸汽净化切断阀",                         // 95691（按钮是 Close/Open Valve，Cutoff 在这里是阀）
   "Machine": "机器",                                                // 96495
   "Bastion Apex: Orb of Lantyr": "堡垒顶点 Bastion Apex：兰提尔法珠 Orb of Lantyr", // 97170
   "Bastion Apex: Barrier Pillar": "堡垒顶点 Bastion Apex：屏障石柱",     // 97255
@@ -509,25 +551,51 @@ const DIALOG_UI = {
   "Raise Elevator": "升起升降机", "Spawn Construct": "生成构装体", "None": "无", // 65250 / 65253 / 65255
   "Clockwise": "顺时针旋转",                  // 95333，与日志里「左转→顺时针旋转」的说法对齐
   "Counter-Clockwise": "逆时针旋转",           // 95336
-  "Forwards": "前进方向", "Backwards": "后退方向", "Unreachable": "无法到达", // 112063-112065
+  // 112063-112065 这三个字段名 GM 指南**逐字写过**：Yakoshta Mine 的 Area Overview /
+  // Blue Track / Red Track 三页（两个孪生包共 6 叶）都是 `<li><p>后退</p></li><li><p>前进</p></li>
+  // <li><p>无法抵达</p></li>` —— 玩家照着日志找矿车对话框，原译「前进方向 / 后退方向 /
+  // 无法到达」三条全对不上（英文闸下「后退方向」全库 0 叶、「无法到达」2 叶且都是别处正文，
+  // 「无法抵达」15 叶）。2026-08-15 主控裁决批次落地时改到合集定稿。
+  "Forwards": "前进", "Backwards": "后退", "Unreachable": "无法抵达", // 112063-112065
   "Tradeway": "贸易道", "Underbelly": "底腹区", "Construct Assembly": "构装体装配区", // 114360-114362
   // 场景机关按钮
+  // ⚠ `Ring` 是**动词**：宿主框标题就是 `window: {title: "Ring Alarm Bell?"}`（ember.mjs:110323），
+  //   三个按钮 label 是 Ring / Ring / Destroy。B 段的 `MJS_ORPHAN_CN` 拿合集英文闸下的多数写法
+  //   「戒指」来比（30 叶全是名词义的 ring），是判据不分词性，不是缺陷；这里只能是「敲响」。
   "Ring": "敲响", "Destroy": "破坏",           // 110325-110327
   "Enable Flow": "开启流量", "Disable Flow": "关闭流量",                // 110378-110379
   "Close Valve": "关闭阀门", "Open Valve": "打开阀门",                  // 95692-95693
-  "Fill": "注满", "Purge": "排空", "Befoul": "污染", "Cleanse": "净化", // 100211-100213（疏浚阀门动词）
-  "Disable Generator": "关闭发电机", "Restore Power": "恢复供电",        // 95622-95623
-  "Restore or disable power to the Stealth Field Generator?": "恢复还是切断隐形力场发生器的供电？", // 95618
+  // 100211-100213（疏浚阀门动词）。`Befoul` 2026-08-15 由「污染」改「污化」：英文闸 `\bBefoul\b`
+  // 3 叶全作「污化」（斯莱思的动作名叶 `污化水域 Befoul Waters` + 传记里「污化土地、水域与生灵」），
+  // 「污染」在库内 196 叶全是 contamination / contaminant 的名词义（同一座塔的
+  // 「处理污染」「净化污染物」就在隔壁），拿它译 Befoul 会跟同场景的 Contamination 撞车。
+  "Fill": "注满", "Purge": "排空", "Befoul": "污化", "Cleanse": "净化",
+  // 「供电」全库 0 叶：合集一律作「供能」（31 叶），而且正是同一座塔的同一件事 ——
+  // Aedir Signalpost 的 Generator Room 页 `<h2>恢复供能</h2>`「为了恢复发电机的供能」，
+  // Signal of Intent 的 Traversing the Tower 页 `<h4>卢克萨鲁姆同调：恢复供能</h4>`。
+  // 2026-08-15 主控裁决批次落地时改齐。
+  "Disable Generator": "关闭发电机", "Restore Power": "恢复供能",        // 95622-95623
+  "Restore or disable power to the Stealth Field Generator?": "恢复还是切断隐形力场发生器的供能？", // 95618
   "Engage Lockdown": "启动封锁", "Lift Lockdown": "解除封锁",            // 113776
   // 银光束安保控制的两段正文：`<strong>lockdown</strong>` 把整段切成三个文本节点
+  // ⚠ 这三条是**句子碎片**，不是术语。B 段拿 crucible lang 的
+  //   `ACTOR.FIELDS.movement.engagement.labelShort`＝交战 来比这里的 `Engage`＝启动，比的是
+  //   「启动封锁」的动词与战斗中的「交战」状态，不同域；已裁：不统一。
   "Engage": "启动", "Lift the": "解除", "lockdown": "封锁",              // 113770-113774
   "? Security doors lock, the alarm sounds, and both construct elevators descend to the Construct Assembly.":
     "？安保门将上锁，警报鸣响，两台构装体升降机将下降至构装体装配区。",      // 113771-113772
   "? Security doors unlock, the alarm silences, and both construct elevators return to the Tradeway.":
     "？安保门将解锁，警报停止，两台构装体升降机将返回贸易道。",            // 113773-113774
   "Machine On": "机器开启", "Machine Off": "机器关闭", "Machine Destroyed": "机器损毁", // 96499-96501
-  "Defenses Inactive": "防御未激活", "Defenses Active": "防御已激活", "Orb Destroyed": "法珠已毁", // 97174-97176
-  "Broken": "破碎", "Damaged": "已受损", "Repaired": "已修复",          // 97259-97261
+  "Defenses Inactive": "防御未激活", "Defenses Active": "防御已激活", "Orb Destroyed": "法珠已摧毁", // 97174-97176
+  // 97256-97261 是同一个框里并排的三个按钮（贴图 TowerBroken/TowerDamaged/TowerRepaired），
+  // 原译「破碎」与另两条的体式不齐（那两条都带「已」），而且裸「破碎」正是 crucible 的状态名
+  // （crucible.rules 的 Conditions.pages.Broken＝破碎 Broken）—— 这里是石柱的受损档位，不是状态。
+  // 取「已破碎」：既与 已受损/已修复 同体式，又保住词根（英文闸 `\bBroken\b` 75 叶：破碎 53 /
+  // 破损 10 / **已破碎 2** / 损毁 2，「已破碎」在库内有据，不是新造）。
+  // ⚠ 正因如此，B 段拿 crucible lang 的 `ACTIVE_EFFECT.STATUSES.Broken` / `ITEM.FIELDS.broken.label`
+  //   ＝破碎 来比必报 `MJS_LANG_DRIFT` —— **那正是本条要避开的撞名**，已裁：不统一，别改回「破碎」。
+  "Broken": "已破碎", "Damaged": "已受损", "Repaired": "已修复",         // 97259-97261
   "Reset Vault": "重置宝库", "Activate Beams": "激活光束",              // 97562-97563
   "Reset Body": "重置躯体", "Awaken Vampyre": "唤醒吸血鬼",             // 115788-115789
   "Lock": "锁定", "Unlock": "解锁",                                   // 110891 / 110893
@@ -535,7 +603,12 @@ const DIALOG_UI = {
   // 表单字段标签。这几条只在**已认出归属**的框里查，不进全局 EXACT：
   // Type / Size / Speed / Strength 是通用词，Create Weather 那个框（22730-22734）虽然带
   // "ember-hex-selection-dialog" 类名走的是主闸，但主闸这一支现在也把 DIALOG_UI 一并传下去了。
-  "Origin Hex": "起始六角格", "Type": "类型", "Strength": "强度", "Size": "尺寸", "Speed": "速度", // 22729-22734
+  // `Hex` 取「六边格」：glossary_ec 的 `Hexes`＝六边格 / `Hex Attributes`＝六边格属性 / `Hex Key`＝六边格键值，
+  // compendium 英文闸 `\bhex(es)?\b` 下 六边格 62 : 六角格 38（name 叶 2 : 0）。原译「六角格」是少数派。
+  // ⚠ `Strength` / `Size` 在这个框里说的是**天气的强度**与**影响范围的尺寸**（Create Weather 表单），
+  //   与 crucible lang 的 `ABILITIES.Strength`＝力量、`ACTOR.FIELDS.movement.size.label`＝体型
+  //   不是一回事 —— 后两条是角色属性与角色体型。B 段 2026-08-15 报过这两条，已裁：不统一。
+  "Origin Hex": "起始六边格", "Type": "类型", "Strength": "强度", "Size": "尺寸", "Speed": "速度", // 22729-22734
   "Illusions": "幻象",                                                                     // 108562
   "Select which illusions are currently active": "选择当前处于激活状态的幻象",                  // 108562
   "Elemental Orbs": "元素法珠",                                                             // 109105
@@ -547,8 +620,19 @@ const DIALOG_UI = {
   "Document Types": "文档类型",                // 23282
   "Case Sensitive": "区分大小写",              // 23285
   "Journal Entry": "日志条目", "Actor": "角色", "Item": "物品", "Roll Table": "随机表", // 23277-23280
-  "Usage": "用途", "Static": "固定", "Randomization": "随机化",         // 49551-49552
-  "Token Maker Part": "令牌制作器部件",                                // 49527
+  // `Usage` 是结果表的**列头**（49551 `<th>Actor</th><th>Usage</th>`），单元格里填的是
+  // "Static, Randomization" —— 问的是「怎么用的」不是「有什么用」，原译「用途」是义项选错了。
+  // （compendium 英文闸 `\bUsage\b` 只有 5 叶、其中 3 叶作「用途」，全是正文里的一般义，
+  //   与这个列头不同域，不构成反证。）
+  // ⚠ **这一改是有意让 `scan_cross_channel` B 段 `MJS_ORPHAN_CN` 12 → 13 的**：新值「使用方式」
+  //   在 compendium 英文闸下 0 叶支持，判据必报孤儿。主控 2026-08-15 认过：`Usage` 在这里是
+  //   `<th>` 列头、compendium 那 5 叶是正文一般义，两者不同域，B 段这 +1 不是缺陷。
+  //   **下一轮不要把它当新漂移重查，也不要为了消掉 +1 把值改回「用途」。**
+  // ⚠ 同一条在 **crucible 侧** B 段还会报一次 `MJS_LANG_DRIFT`（对 `ACTION.TABS.usage`＝用法）：
+  //   那是 crucible 动作卡的**页签名**（这个动作怎么用），本条是 Ember 指示物制作器结果表的 `<th>`
+  //   列头（这个部件被怎么用着），两者不同域，一并裁为不统一。
+  "Usage": "使用方式", "Static": "固定", "Randomization": "随机化",       // 49551-49552
+  "Token Maker Part": "指示物制作器部件",                                // 49527
   "Enter a part id as template/layer/part, for example kiska/eyes/Fluffy2":
     "以 模板/层/部件 的形式输入部件 id，例如 kiska/eyes/Fluffy2",       // 49528
   "No world Actors use this part.": "世界中没有角色使用该部件。",         // 49554
@@ -590,7 +674,15 @@ const DIALOG_UI = {
   "to rank 3 (Deathly Soulmark)?": "身上升至阶位 3（死亡魂印）？",        // 同上（nextRank 只可能是 2 或 3）
   // `Make <strong>X</strong> the active attunement for Y.` 的首段（ember.mjs:3134）；
   // 其余部分是插值整句，走 PATTERNS
-  "Make": "将", "and gain": "并获得", "and lose": "并失去",              // 3134-3137
+  // 2026-08-15 第十六轮删掉了 `"and lose": "并失去"` —— **上游永远不会产出这个片段**：
+  // ember.mjs:3135-3138 是 `const clauses=[]; if(loseItem) clauses.push(\`lose @UUID…\`);
+  // if(gainItem) clauses.push(\`gain @UUID…\`); content += \` You will ${clauses.join(" and ")}.\`;`，
+  // 压栈顺序写死 lose 在前，所以两个 @UUID 锚点之间的那个文本节点只可能是 ` and gain `。
+  // （单独一条 lose 的情形走 PATTERNS 里 `You will (lose|gain)` 那条可选组，与本键无关。）
+  // ⚠ `Make` 是**句首碎片**（拼回去是「将 X 设为 Y 的当前同调。」），不是术语；B 段的
+  //   `MJS_ORPHAN_CN` 拿合集里 `\bmake\b` 的多数写法（「成功」，来自 make a check 之类）来比，
+  //   是判据不认碎片键，已裁：保持。
+  "Make": "将", "and gain": "并获得",                                   // 3134-3137
   ".": "。",                                  // 同上：@UUID 链接后面那个单独成节点的句号
   // 「未分配的属性点」框正文（ember.mjs:123311-123317，dnd5e 分支）。
   // 同样被 <strong>Class</strong> / <strong>Path</strong> 切碎；Path 走 EXACT 的「道途」。
@@ -612,16 +704,33 @@ const DIALOG_UI = {
 
 /** 完全匹配即可替换的字符串 */
 const EXACT = {
-  // 英雄创建向导顶栏的步骤标签。上游把 label 写成裸英文（crucible-async.mjs:25/34/44/63），
+  // 英雄创建向导顶栏的步骤标签。上游把 label 写成裸英文（crucible-async.mjs:24/34/43/63），
   // 经 crucible 的 templates/sheets/creation/header.hbs:7 `{{localize step.label}}` 上屏，
-  // 而 Foundry core 与两个插件的 lang 里都没有这四个裸键，localize 原样返回，所以能被这里接住。
-  // ⚠ 这三行**不是**「富文本增强器前缀单独出现」—— 那个场景不存在：三个增强器拼的永远是
+  // 而 Foundry core 与两个插件的 lang 里都没有这几个裸键，localize 原样返回，所以能被这里接住。
+  // ⚠ 这几行**不是**「富文本增强器前缀单独出现」—— 那个场景不存在：三个增强器拼的永远是
   //    `Ancestry: 名字` 整串，走的是 PREFIXED（见上）。原来的注释认错了来源，一直没人补 PREFIXED。
-  "Ancestry": "血统",
+  // ⚠ **`Ancestry` 不在这四条里，已于 2026-08-15 移进 EMBER_WINDOW_UI**（原注释把它和另四条
+  //    混为一谈，是错的）：crucible-compiled.mjs:16397-16405 的 `STEPS.ancestry.label` 是 i18n 键
+  //    `TYPES.Item.ancestry`，而 crucible-async.mjs:18-21 的 `ancestry: {...super.STEPS.ancestry,
+  //    template: …}` **只覆盖了 template、没覆盖 label** —— 对照 :24 culture / :34 path /
+  //    :43 attunement / :63 token 四条才是裸英文。也就是说 Crucible 世界里 localize 吐出的是
+  //    crucible-cn 的中文，这个裸键永远接不到自己人，却仍会去改任何第三方窗口里孤零零的
+  //    "Ancestry" 文本节点 —— 是越界风险而不只是死重量。它只在 dnd5e 世界活（ember.mjs:121864
+  //    `label: "Ancestry"`），那边宿主是 EmberHeroCreationSheet，作用域表照样够得到。
   "Culture": "文化",
   "Path": "道途",
   "Attunement": "同调",
-  "Token": "令牌",
+  // ⚠ `Token`＝**指示物**，2026-08-15 主控裁决，本文件内无例外（另有 15 处 Token 相关键
+  //   与 3 处通知模板同批改过）。依据是**宿主 UI 用词**而不是裸词频：Foundry 核心中文包
+  //   `modules/foundry_chn/cn.json` 的 TOKEN.* 相关键 指示物 53 : 令牌 0，玩家控件上写的
+  //   就是「指示物」；ember lang 侧 11/11 也是指示物（ACTOR.CONTROLS.EmberToken
+  //   ＝余烬动态指示物 / EMBER.CONTROLS.Teleport＝传送指示物 / …SHEET.TOKEN＝指示物）。
+  //   全库「令牌 212 : 指示物 32」那个多数派**不作数** —— 那 212 处几乎全挤在 GM 指南
+  //   更新日志一处，而 compendium 里凡指代 Foundry 对象的 32/32 都是指示物。
+  //   连带：Dynamic Token＝动态指示物 · Token Maker＝指示物制作器 · Teleport Token＝传送指示物；
+  //   「代币」是错译，不许出现。若某处 Token 是**故事内的实体信物**（青铜信物之类）
+  //   而不是 Foundry 对象，不在本裁决范围内，单独列出来别跟着改。
+  "Token": "指示物",
 
   // 恩惠 / 祸骰：原先这里硬列 ±1..±3 六个键，只盖住 18 个取值里的 6 个 ——
   // 上游 ember.mjs:129470 注册的 pattern 是 `@Advantage\[(-?\d)]`，enrichAdvantage(:22890) 拼
@@ -691,7 +800,7 @@ const EXACT = {
   // 但上游没给 i18n 键 —— ember.mjs:51613 那句 `_loc("Save Changes")` 更是把
   // 「这里就是 i18n 通道」写在脸上，只是没有键，localization.mjs 查不到就原样返回。
   "Ember Vista Configuration": "余烬远景配置",                        // ember.mjs:33836
-  "Ember Dynamic Token Randomization Configuration": "余烬动态令牌随机化配置", // ember.mjs:51486
+  "Ember Dynamic Token Randomization Configuration": "余烬动态指示物随机化配置", // ember.mjs:51486
   "Add Part": "添加部件",                                            // ember.mjs:51608
   "Add Color": "添加颜色",                                           // ember.mjs:51611
   "Save Changes": "保存更改",                                        // ember.mjs:51613
@@ -710,11 +819,24 @@ const EXACT = {
   "Select a biome or location from the left menu.": "请从左侧菜单选择一个生物群系或地点。", // codex/discoveries.hbs:46
   "Uncategorized": "未分类",                                         // ember.mjs:124593 的兜底分类名
   "Ability Scores": "属性值",                                        // creation/crucible-path.hbs:54
+  // 模板是 `<span class="points">{{pool}}</span> Points`，上屏就是「9 点」这种数量后缀，
+  // 所以不能取 lang `EMBER.MILESTONE.Dialog.Legend`＝点数（那条是 fieldset 的 legend）。
+  // B 段会报这一对，已裁：不统一。crucible 侧同理会报 `TALENT.LABELS.Points.*`＝点数 ——
+  // 那是天赋点余额的**独立名词**（「剩余 3 点数」不通，那条本来就该是名词），本条是数量后缀，不同形状。
   "Points": "点",                                                   // creation/crucible-path.hbs:55
-  "Increase Ability Score": "提升属性值",                             // creation/crucible-path.hbs:63
-  "Decrease Ability Score": "降低属性值",                             // creation/crucible-path.hbs:66
+  // 下面这三条**与 crucible 本体的 i18n 键逐字同英文**（crucible lang/en.json：
+  //   ACTOR.ACTIONS.IncreaseAbility = "Increase Ability Score"
+  //   ACTOR.ACTIONS.DecreaseAbility = "Decrease Ability Score"
+  //   ACTOR.CREATION.SpendAbilities = "Spend 9 points across 6 ability scores, allocating up to 3 points per ability."）
+  // —— Ember 的 creation/crucible-path.hbs 把这三句**硬编码成英文字面量**而没有走键，于是同一台
+  // 创角向导上「crucible 自己的按钮」与「Ember 抄过去的按钮」并排出现，两条通道必须一个字都不差。
+  // 2026-08-15 第十六轮 B 段查实：Decrease 两边本就同为「降低属性值」，Increase 与那句提示漂了。
+  // 方向取 **lang**（crucible-cn 的 ACTOR.ACTIONS.*／ACTOR.CREATION.*）：一来 lang 是整条通道的定本、
+  // 覆盖面远大于这一个模板，二来「提高／降低」成对，原值「提升」与隔壁「降低」不成对。
+  "Increase Ability Score": "提高属性值",                             // creation/crucible-path.hbs:63（＝ACTOR.ACTIONS.IncreaseAbility）
+  "Decrease Ability Score": "降低属性值",                             // creation/crucible-path.hbs:66（＝ACTOR.ACTIONS.DecreaseAbility）
   "Spend 9 points across 6 ability scores, allocating up to 3 points per ability.":
-    "在 6 项属性上分配 9 点，每项属性最多 3 点。",                       // creation/crucible-path.hbs:71
+    "将 9 点分配到 6 项属性值中，每项属性值最多可分配 3 点。",           // crucible-path.hbs:71（＝ACTOR.CREATION.SpendAbilities）
 
   // crucible 的 enrichSpell 给每个法术标签挂的 tooltip（crucible-compiled.mjs:46724，不走 _loc）。
   // 只有把 crucibleSpell 放进增强器包装的闸里才够得到，见 patchEnrichers。
@@ -752,6 +874,20 @@ const PATTERNS = [
     cn: (m) => m[2]
       ? `${DATE_AGES[m[1]]} · ${m[2].replace("-", "")} 年${m[3] === "Years Ago" ? "前" : "后"}`
       : `${DATE_AGES[m[1]]} · 本年` },
+  // 音景增强器的前两支（`EmberSoundscape.enricherHTML`，ember.mjs:16250-16278 三个互斥分支）。
+  //   16255  `${channel.capitalize()}: Reset`                → `Music: Reset`
+  //   16266  `${channel.capitalize()}: ${arrangement.label}` → `Music: Ankarist Theme`
+  //   16267-16268 **同一支**在 dataset.mood 存在时再拼一段：`label += \` (${mood.titleCase()})\``
+  //             → `Music: Shent Ruins (Tension)`
+  // 最后那种复合叶是原先 PREFIXED 两条接不住的（整串查表落空 → 前缀中文、叶子全英）。
+  // channel 只有 music / environment 两个（ember.mjs:15643），mood 只有 calm / tension（:15606），
+  // 所以尾巴写成穷举的可选组，不会把别的「…（X）」形状吃掉；叶子查不到照旧原样带回。
+  // 已发布语料里 46 个 `[[/soundscape …]]` 标记暂无一条同时带 soundscapeId 与 mood，
+  // 这条是给 GM 自己写的标记兜底的。
+  { re: /^(Music|Environment): (.+?)(?: \((Calm|Tension)\))?$/,
+    cn: (m) => `${m[1] === "Music" ? "音乐" : "环境音"}：${translateLeaf(m[2], ARRANGEMENTS)}`
+             + (m[3] ? `（${MOODS[m[3]]}）` : "") },
+
   { re: /^Award Attunement: (.+)$/, cn: (m) => `授予同调：${m[1]}` },
   { re: /^Revoke Attunement: (.+)$/, cn: (m) => `撤销同调：${m[1]}` },
   { re: /^Activate Attunement: (.+)$/, cn: (m) => `激活同调：${translateLeaf(m[1], ATTUNEMENTS)}` },
@@ -776,7 +912,7 @@ const PATTERNS = [
 
   // 动态拼出来的窗口标题
   { re: /^Interactable: (.+)$/, cn: (m) => `可交互物：${m[1]}` },          // ember.mjs:62795 兜底标题
-  { re: /^Token Maker Part Usage: (.+)$/, cn: (m) => `令牌制作器部件用量：${m[1]}` }, // ember.mjs:49557
+  { re: /^Token Maker Part Usage: (.+)$/, cn: (m) => `指示物制作器部件用量：${m[1]}` }, // ember.mjs:49557
 
   // 对话框正文里带插值的整句。都是长句，进全局表不会误伤别的模块。
   { re: /^Are you sure you wish to proceed and delete the "(.+)" composition\? This cannot be undone\.$/,
@@ -788,7 +924,9 @@ const PATTERNS = [
   { re: /^The (.+) event is not currently available because its prerequisites are not satisfied\.$/,
     cn: (m) => `${m[1]} 事件当前不可用，其前置条件尚未满足。` },                        // ember.mjs:36951
   { re: /^Do you want to (complete this event and )?transition the Party to the Pathways section of the Region map\?$/,
-    cn: (m) => `是否${m[1] ? "完成此事件并" : ""}将队伍转移到区域地图的通路 Pathways 区段？` }, // ember.mjs:99653
+    // ⚠ 英文是 `Region map`：按既定裁决 `Region Map`＝地区地图 / `Area Map`＝区域地图，
+    //   原译「区域地图」撞了 Area Map（同一批裁决见 DIALOG_UI 里升降机目的地那六条）。
+    cn: (m) => `是否${m[1] ? "完成此事件并" : ""}将队伍转移到地区地图的通路 Pathways 区段？` }, // ember.mjs:99653
 
   // 日志搜索框：标题与「无结果」两句
   { re: /^"(.+)" - (\d+) match(?:es)? in (\d+) location(?:s)?$/,
@@ -918,8 +1056,15 @@ const WEATHER = {
  */
 const ATTUNEMENT_TAB = {
   ...ATTUNEMENTS,
-  "Cosmological Attunements": "寰宇同调",  // tab-attunement.hbs:4；「寰宇」取 lang 的 TYPES.…ember.cosmos
+  // 2026-08-15 主控裁决 R-B：**按英文词分裂** —— `Cosmological`/`Cosmology`＝宇宙、`Cosmos`＝寰宇。
+  // 原值「寰宇同调」是照 lang 的 `TYPES.JournalEntryPage.ember.cosmos`＝余烬寰宇 取的，但那条英文是
+  // `Cosmos` 不是 `Cosmological`，取错了源。锚点是合集里 `Players' Guide.pages.Cosmology` 的中文 name
+  // 「宇宙观 Cosmology」，指向它的 `@UUID[…]{宇宙同调}` 标签也是「宇宙」—— 标签跟锚点走。
+  // `Cosmos` 那一支（TYPES.…ember.cosmos＝余烬寰宇 / EMBER.CALENDAR.COSMOS＝寰宇地图）保持不动。
+  "Cosmological Attunements": "宇宙同调",  // tab-attunement.hbs:4
   "Make Active": "设为激活",               // tab-attunement.hbs:38 的 aria-label
+  // `Active` 这里是**状态标签**（哪一个同调当前处于激活状态），所以带「中」；lang 的
+  // `EMBER.EVENTS.Active`＝激活 是事件列表的分类名，两者不同域。B 段会报这一条，已裁：不统一。
   "Active": "激活中"                       // ember.mjs:124757，拼进 tags 的那半截（另半截 Rank 已走 i18n）
 };
 
@@ -992,23 +1137,83 @@ const EMBER_WINDOW_UI = {
   "Outcome Summary": "结果摘要",                                          // tab-event-outcomes.hbs:33
   "Allow Retry?": "允许重试？",                                           // tab-event-outcomes.hbs:38
   "There are no hooks defined for this event.": "此事件未定义任何钩子。",     // tab-event-hooks.hbs:5
-  "Toggle Source": "切换源码",                                            // journal/partials/hook.hbs:5
+  // 与 crucible 的 `HOOKS.ToggleSource`（en＝"Toggle Source"）是**同一个按钮**：Ember 的
+  // templates/journal/partials/hook.hbs 是 crucible templates/sheets/partials/hook.hbs 的照抄，
+  // 连 `data-action="hookToggleSource"`、`fa-code` 图标、下面那个 `<code-mirror language="javascript">`
+  // 都一样，只是 tooltip 写成了英文字面量而没走键。2026-08-15 B 段报的这条漂移**方向在 lang 那边**：
+  // 按钮展开的是钩子的 JavaScript 源码，crucible-cn 原译「切换来源」把 source 当成了「来源」义项。
+  // 已出批次改 crucible lang（batches-seal/r16b-lang-crucible-toggle-source.json），本表保持「切换源码」。
+  "Toggle Source": "切换源码",                                            // journal/partials/hook.hbs:5（＝crucible HOOKS.ToggleSource）
   "Event Probabilities": "事件概率",                                      // applications/hex-hud.hbs:9
   // 创角向导
+  // `Ancestry` 2026-08-15 从全局 EXACT 挪进来（理由见 EXACT 的注释）：它在 Crucible 世界里
+  // 接不到自己人，放在全局表只会去改别人窗口里的裸 "Ancestry"；宿主 EmberHeroCreationSheet
+  // 过得了 `/^Ember/` 主闸，放作用域表里 dnd5e 世界照旧生效、Crucible 世界不再越界。
+  "Ancestry": "血统",                                                    // ember.mjs:121864（dnd5e 分支的步骤名）
   "Class": "职业",                                                       // ember.mjs:121870 的步骤名（dnd5e 分支）
   "Aster Progression": "阿斯特进阶",                                       // crucible-async.mjs:210
   "Soulbound Progression": "魂缚进阶",                                     // crucible-async.mjs:233
   "Character Name": "角色名称",                                           // creation/header.hbs:24 的 placeholder
-  // 远景配置 / 日历 / 令牌制作器（都要靠属性白名单里新加的 placeholder / alt 才够得到）
+  // 创角向导的属性分配步骤（**dnd5e 分支**的 creation/class.hbs 与 creation/path.hbs；
+  // Crucible 分支那份 crucible-path.hbs 的同类串已在 EXACT 里）
+  "Base Ability Scores": "基础属性值",                                     // creation/class.hbs:42
+  "Points Remaining": "剩余点数",                                         // creation/class.hbs:43
+  "Ability scores will be further boosted when choosing a Path.":
+    "选择道途时属性值还会进一步提升。",                                      // creation/class.hbs:60
+  "Ability Score Increases": "属性值提升",                                 // creation/path.hbs:46
+  "Increases Remaining": "剩余提升次数",                                   // creation/path.hbs:47
+  "Further increase ability scores with no more than two increases assigned to one ability.":
+    "继续提升属性值，单项属性最多分配两次提升。",                             // creation/path.hbs:63
+  // 远景配置 / 日历 / 指示物制作器（都要靠属性白名单里新加的 placeholder / alt 才够得到）
   "Unique Identifier": "唯一标识符",                                       // vista-config-scene.hbs:9
   "Displayed Label": "显示名称",                                          // vista-config-scene.hbs:10
   "Custom Level Name": "自定义层名",                                       // vista-config-scene.hbs:15
   "Wind Direction": "风向",                                              // calendar-visual.hbs:7 的 alt
-  // 令牌制作器的动画开关。模板里是 "Play Animation"（body.hbs:28），但 #refresh() 会在
+  // 指示物制作器的动画开关。模板里是 "Play Animation"（body.hbs:28），但 #refresh() 会在
   // 渲染钩子**之后**把 data-tooltip 写回英文（ember.mjs:50999/51002），
   // 所以除了补键还挂了一个 MutationObserver，见 patchRenderedApplications。
   "Play Animation": "播放动画",
   "Stop Animation": "停止动画",
+  // 指示物制作器 EmberDynamicTokenConfig（ember.mjs:50481，classes 含 "ember"，主闸放行）。
+  // 2026-08-15 第十六轮补：原先整个窗口只登记了上面这两条动画开关，其余按钮的 data-tooltip
+  // 与两根分栏标题全是裸英文。判据是把 templates/ 下的字面量与本文件的键集对差跑出来的。
+  "Ember Token Maker": "余烬指示物制作器",                                   // ember.mjs:50508 窗口标题
+  "Randomization Rules": "随机化规则",                                     // ember.mjs:50513 窗口头部控件
+  "Build": "体型",                                                       // ember.mjs:50742（layers.hbs 的 build.title）
+  "Stance": "姿态",                                                      // ember.mjs:50759（同上 stance.title）
+  "Layers": "层", "Colors": "颜色",                                       // layers.hbs:2 / colors.hbs:2 分栏标题
+  "Reset All": "全部重置",                                                // body.hbs:3
+  "Randomize": "随机生成",                                                // body.hbs:14
+  "Save Dynamic Token": "保存动态指示物",                                    // body.hbs:19
+  "Rotate Left": "向左旋转", "Rotate Right": "向右旋转",                    // body.hbs:20 / 27
+  "Shift Left": "向左平移", "Shift Right": "向右平移",                      // body.hbs:21 / 26
+  "Shift Up": "向上平移", "Shift Down": "向下平移",                         // body.hbs:23 / 24
+  "Previous": "上一个", "Next": "下一个",                                  // layers.hbs:6/12/17/23
+  "Previous Option": "上一个选项", "Next Option": "下一个选项",              // layers.hbs:29 / 40
+  "Randomize Layer": "随机该层", "Clear Layer": "清空该层",                 // layers.hbs:31 / 38
+  // 指示物随机化配置 EmberRandomTokenConfig（ember.mjs:51469，类名以 Ember 开头，主闸放行）
+  "Anatomy": "身体", "Equipment": "装备",                                  // token-randomization.hbs:11/28/55/69
+  "Copy options from the opposite side": "从对侧复制选项",                   // token-randomization.hbs:17（提示语见 NOTIFICATIONS「对侧…」）
+  "Import current selection from Token Maker": "从指示物制作器导入当前选择",     // token-randomization.hbs:19
+  "Remove Layer": "移除该层", "Remove Color": "移除该颜色",                  // token-randomization.hbs:21 / 62
+  "Choose templates to configure part restrictions.": "请先选择模板，再配置部件限制。",   // token-randomization.hbs:45
+  "Choose templates to configure color restrictions.": "请先选择模板，再配置颜色限制。", // token-randomization.hbs:83
+  // 远景配置 EmberVistaConfiguration 的另外三张模板（窗口标题早已在 EXACT 里）
+  "Place Assets": "放置素材",                                             // vista-config-assets.hbs:15
+  "Replace Placement": "替换摆放", "Delete Placement": "删除摆放",          // vista-config-assets.hbs:22 / 23
+  "Create Custom Vista": "创建自定义远景",                                  // vista-config-scene.hbs:5
+  // 下面这条模板里带换行 + 缩进，键写成折叠空白后的单行形态，靠 translateNode 的回退命中
+  "Create a new custom vista composition, starting from your currently viewed one, that will be used as the starting point from which you can make further changes.":
+    "以你当前查看的远景构图为起点，创建一个新的自定义远景构图，作为后续修改的基础。",       // vista-config-scene.hbs:6
+  "Level Name": "层名",                                                   // vista-config-scene.hbs:13（与「自定义层名」同族）
+  "Create": "创建",                                                       // vista-config-scene.hbs:21
+  "Token Scaling": "指示物缩放",                                            // vista-config-scene.hbs:27
+  // ⚠ `Sprites` 是远景图层里的**贴图精灵**（与 SFX / Special Effects 并列的一档美术资源），
+  //   B 段 `MJS_ORPHAN_CN` 拿合集英文闸下的「精灵」来比是把它当成了 fey/sprite 那个生物义；
+  //   带「图」正是为了跟生物撇清。已裁：保持「精灵图」。
+  "Special Effects": "特殊效果", "SFX": "特效", "Sprites": "精灵图",         // vista-config-scene.hbs:34/38/42
+  "Coordinates": "坐标", "Scale": "缩放", "Skew": "斜切",                   // vista-config-placement.hbs:5/21/36
+  "Precolorization": "预着色",                                            // vista-config-placement.hbs:66
   // 角色旗标配置：上游模板写的是 {{localize "Anchor"}}，而 modules/ember/lang/en.json 里
   // 根本没有这个键（自己 grep 计数 0），core 也没有，localize 原样返回英文。
   // 不塞 lang/cn.json：那是无点号顶层键，会打破发版前 flatten_lang.py 的三数相等，
@@ -1055,9 +1260,11 @@ const NOTE_TYPES = {
  * 也不会翻到别的模块或 core 自己的设置。
  */
 const SETTINGS_UI = {
-  "Gazetteer Location Journal Entries": "地名录地点日志条目",
+  // `Gazetteer`＝地名志：glossary_ec 定稿（`Gazetteer`＝地名志 Gazetteer、五本 X Gazetteer 同形），
+  // compendium 英文闸 98 叶全部作「地名志」，0 叶作「地名录」。原译「地名录」是本文件独有的孤例。
+  "Gazetteer Location Journal Entries": "地名志地点日志条目",
   "Additional Journal Entries which provide custom gazetteer Location pages that should be added to the Ember environment.":
-    "为余烬环境额外提供自定义地名录「地点」页面的日志条目。",
+    "为余烬环境额外提供自定义地名志「地点」页面的日志条目。",
   "Standalone Event Journal Entries": "独立事件日志条目",
   "Additional Journal Entries which contain Standalone Event pages which should be added to the Ember event engine.":
     "为余烬事件引擎额外提供「独立事件」页面的日志条目。",
@@ -1143,9 +1350,9 @@ const NOTIFICATIONS = {
     "正在重置余烬的战役状态数据，请耐心等待几秒。",                                               // 129502
   "Ember game state successfully reset!": "余烬战役状态已重置！",                                // 129519
   "You may only use this macro with a Corpuleth token controlled.":
-    "只有在控制着尸团怪 Corpuleth 令牌时才能使用该宏。",                                          // 73303
+    "只有在控制着尸团怪 Corpuleth 指示物时才能使用该宏。",                                          // 73303
   "This Corpuleth token does not have an Ember Dynamic Token configured!":
-    "该尸团怪 Corpuleth 令牌没有配置余烬动态令牌！",                                             // 73308
+    "该尸团怪 Corpuleth 指示物没有配置余烬动态指示物！",                                             // 73308
   "This macro may only be used in the Bronze Rask Theater.":
     "该宏只能在青铜拉斯克剧院 Bronze Rask Theater 中使用。",                                     // 73349
   "Changed Wandren and Ruffian adversaries in the Bronze Rask Theater to hostile!":
@@ -1168,7 +1375,7 @@ const NOTIFICATION_PATTERNS = [
   { re: /^Attunement activation is not yet implemented for system "(.+)"\.$/,
     cn: (m) => `系统「${m[1]}」尚未实现同调激活。` },                                            // 3149
   { re: /^The (.+) Vista is not yet configured to support the placement of Tokens\.$/,
-    cn: (m) => `远景「${m[1]}」尚未配置为支持放置令牌。` },                                       // 33205
+    cn: (m) => `远景「${m[1]}」尚未配置为支持放置指示物。` },                                       // 33205
   { re: /^Deleted saved Vista composition "(.+)"\.$/, cn: (m) => `已删除保存的远景构图「${m[1]}」。` }, // 34509
   { re: /^Updated composition for Level "(.+)"\.$/, cn: (m) => `已更新层「${m[1]}」的构图。` },     // 34557
   { re: /^Saved composition to Scene with identifier "(.+)"\.$/,
@@ -1186,9 +1393,9 @@ const NOTIFICATION_PATTERNS = [
   { re: /^Your long rest has been interrupted after (\d+) hours!$/,
     cn: (m) => `长休在 ${m[1]} 小时后被打断！` },                                                // 120627
   { re: /^Saved Ember Dynamic Token configuration for (.+)$/,
-    cn: (m) => `已保存 ${m[1]} 的余烬动态令牌配置` },                                            // 51386
+    cn: (m) => `已保存 ${m[1]} 的余烬动态指示物配置` },                                            // 51386
   { re: /^Saved Ember Dynamic Token randomization parameters to Actor (.+)$/,
-    cn: (m) => `已将余烬动态令牌的随机化参数保存到角色 ${m[1]}` },                                 // 51839
+    cn: (m) => `已将余烬动态指示物的随机化参数保存到角色 ${m[1]}` },                                 // 51839
   { re: /^Applied fog exploration from the (.+) vantage point!$/,
     cn: (m) => `已应用来自制高点「${m[1]}」的迷雾探索！` },                                       // 61882
   { re: /^Discovered vantage point, (.+)!$/, cn: (m) => `发现了制高点：${m[1]}！` },              // 67418
@@ -1204,18 +1411,19 @@ const NOTIFICATION_PATTERNS = [
   { re: /^Event (.+) is not a recognized gameplay event\. This likely indicates some issue with the Ember module installation\.$/,
     cn: (m) => `事件 ${m[1]} 不是可识别的游戏事件。这多半说明余烬模块的安装有问题。` },              // 36922
   { re: /^Ember \| "(.+)" is not a known Token Maker part in any template layer\.$/,
-    cn: (m) => `Ember | 「${m[1]}」不是任何模板层里已知的令牌制作器部件。` },                       // 49480
+    cn: (m) => `Ember | 「${m[1]}」不是任何模板层里已知的指示物制作器部件。` },                       // 49480
   // kind 只可能是 "layer" / "color"（ember.mjs:51903 / 51938 两个调用点写死）
   { re: /^This (layer|color) is not available in the Token Maker's current template preview\.$/,
-    cn: (m) => `该${m[1] === "layer" ? "层" : "颜色"}在令牌制作器当前的模板预览中不可用。` },        // 51760
+    cn: (m) => `该${m[1] === "layer" ? "层" : "颜色"}在指示物制作器当前的模板预览中不可用。` },        // 51760
   { re: /^"(.+)" is already registered for this (layer|color)\.$/,
     cn: (m) => `「${m[1]}」已在该${m[2] === "layer" ? "层" : "颜色"}上注册过了。` },                // 51766
   { re: /^You cannot create multiple tokens for the "(.+)" group actor\.$/,
-    cn: (m) => `不能为群组角色「${m[1]}」创建多个令牌。` },                                        // 60902
+    cn: (m) => `不能为群组角色「${m[1]}」创建多个指示物。` },                                        // 60902
   { re: /^Adjacent hex (.+) is not directly reachable from current hex (.+)\.$/,
-    cn: (m) => `相邻六角格 ${m[1]} 无法从当前六角格 ${m[2]} 直达。` },                             // 61049
+    cn: (m) => `相邻六边格 ${m[1]} 无法从当前六边格 ${m[2]} 直达。` },                             // 61049
+  // ⚠ `Region Map`＝地区地图（既定裁决），原译「区域地图」是 Area Map 的译名
   { re: /^You are not allowed to delete the (.+) Token from the Region Map\.$/,
-    cn: (m) => `你无权从区域地图上删除令牌 ${m[1]}。` },                                          // 61232
+    cn: (m) => `你无权从地区地图上删除指示物 ${m[1]}。` },                                          // 61232
   { re: /^The Scene "(.+)" does not have compositions defined\.$/,
     cn: (m) => `场景「${m[1]}」没有定义任何构图。` },                                             // 63556
   { re: /^User "(.+)" wants to modify interactable "(.+)" in Scene (.+)\. You must be present in this Scene to acknowledge this operation\.$/,
@@ -1369,7 +1577,7 @@ function translateNotification(text) {
  * 盯住一棵**渲染钩子之后还会被上游改写**的子树，改一次翻一次。
  *
  * 两个用例：音景面板的两个 `<select>`（`#updateSoundscapeForm()` 在 change 之后 **异步**
- * 整段重写 innerHTML，不发任何渲染钩子）、令牌制作器的动画按钮
+ * 整段重写 innerHTML，不发任何渲染钩子）、指示物制作器的动画按钮
  * （`#refresh()` 在 `await this.render()` 之后才写回 data-tooltip，比渲染钩子晚一步）。
  *
  * 不会自激：我们自己只改 nodeValue 与属性值，`childList` 不会因此变动；
@@ -1410,7 +1618,9 @@ function applyOnce(target, flag, fn, label) {
 
 /**
  * 允许包装的富文本增强器 id 白名单。
- * Ember 侧：ember.mjs:129421-129476 的十条 + dnd5e 专用的 emberKnowledge（ember.mjs:123658）。
+ * Ember 侧：ember.mjs:129421-129476 的十条 + dnd5e 专用的 emberKnowledge。
+ * ⚠ `emberKnowledge` 的出处 2026-08-15 订正为 **ember.mjs:123659**（旧注释写 dnd5e-async.mjs，是错的；
+ *   它注册在 dnd5e 专用的 registerEnrichers$1 里，但那段代码在 ember.mjs 内）。
  */
 const EMBER_ENRICHER_IDS = new Set([
   "emberAncestry", "emberCulture", "emberPath", "emberAttunement", "emberLanguage",
@@ -1842,7 +2052,7 @@ function patchRenderedApplications() {
       // 顺带把 DIALOG_UI 一起带上 —— 归属已经确定，那张表里的按钮词在这里同样安全。
       const isDialog = id === "DialogV2" || /(^|\s)dialog(\s|$)/.test(cls);
       translateNode(root, isDialog ? EMBER_DIALOG_UI : EMBER_WINDOW_UI);
-      // 令牌制作器的动画开关：#refresh()（ember.mjs:50994-51004）在 `await this.render()`
+      // 指示物制作器的动画开关：#refresh()（ember.mjs:50994-51004）在 `await this.render()`
       // **之后**才把 data-tooltip 写回英文，也就是比渲染钩子晚一步，而且它只重画
       // parts:["layers","colors"]、不重画 body，模板里那句译了也会被覆盖。挂 observer 盯着。
       if (id === "EmberDynamicTokenConfig") {
