@@ -314,10 +314,116 @@ const MOODS = {
 };
 
 /**
+ * 音景「组名」＝播放列表侧栏音景面板两个 `<select>` 里的 `<optgroup label>`。
+ * `#updateSoundscapeForm()` 把 `{value, label: 编排名, group: 音景 label}` 交给
+ * createSelectInput（ember.mjs:15916-15922），`group` 取的就是音景对象自己的 `label`。
+ *
+ * 全集是**实测**的，不是估计：`var soundscapes = Object.freeze({…})`（ember.mjs:15260）
+ * 注册 44 个音景，其中 `type` 为 music(41) / environment(1) 的 **42 个**才进这两个下拉
+ * （落选的两个是 `Ember Events` / `Ember Weather`），42 个 label 互不重样。
+ * 探针 `4-临时脚本/2026-08-15-round21/probe_groups.mjs` 用**两套互不相干的方法**各抠一遍
+ * —— (A) 手写大括号配对 + 正则取 label/type；(B) 按顶层 `var <名> = {…}` 切片交给 **node:vm**，
+ * 让真正的 JS 解析器把对象建出来、并要求每个对象自己的 `id` 等于注册表里的键 ——
+ * 自报 `resolved: A=44 B=44 BAD=0` 且两套结果逐条相同；任一条对不上就退出而不是给半份结果。
+ * **本表 42 条＝全部组名**（第二十一轮补齐：组名恒英文 37 → 0）。
+ *
+ * ⚠ 与 ARRANGEMENTS **各自查重**：实测有 **7 条**字符串既是组名又是编排名 ——
+ * `Ancient Ruins` / `Ankarist Theme` / `Lyla Theme` / `Marlstone Gala` / `Ordain` /
+ * `Sin Theme` / `The Pit Trap`（`Shent Ruins` 则只是编排名，不在本表）。
+ * 一张扁平表分不出 optgroup 与 option，同一个英文串只可能有一个译文，所以这 7 条
+ * **只在本表里定义一次**，ARRANGEMENTS 不再重复写；编排名那一路要用时由
+ * ARRANGEMENT_LEAVES 按键取回（见其表内注）。
+ *   ↳ 副作用记一笔：组名补齐之后，`Marlstone Gala` / `Ordain` / `The Pit Trap` 这 3 条
+ *     **编排名**也跟着被翻了，编排名恒英文 **204 → 201**。这是同串同译的必然结果，
+ *     不是对「204 条编排名暂不补」那条裁决的翻案，下一轮别把它当成偷补。
+ *
+ * 译名依据（专名一律先过 compendium 英文闸，大小写逐条单独判；括号内为命中的英文串）：
+ *   · 生物类取 crucible lang `TAXONOMY.CATEGORIES.*`（最权威的一档）：`Beast`野兽 /
+ *     `Celestial`天界生物 / `Construct`构装体 / `Monstrosity`畸怪 / `Ooze`软泥怪 /
+ *     `Undead`不死生物 / `ElementalEarth`土元素 · `ElementalFire`火元素 · `ElementalFrost`冰霜元素。
+ *     `Abyssal` 不在该表，取合集英文闸的压倒性写法「深渊」（`Abyssal Monster`深渊怪物 26 叶级）；
+ *     注意不是 KNOWLEDGE 里那条 `Abyssals`＝深渊裔（那是族名，这里是形容词）。
+ *   · 地名 / 专名走合集英文闸：`Arctus Plateau`阿克图斯高原、`House Bastilla`巴斯蒂拉家族、
+ *     `Marlstone Gala`马尔石晚会、`Ordain`奥尔丹、`Ordani`奥尔达尼、`Seawall`海堤、
+ *     `Forest of Stone`石之森林、`Kadisos`卡迪索斯、`Inner Realms`内界（Cosmos 页分类名）、
+ *     `Cosmos`寰宇、`The Pit Trap`陷坑、`Arcturian`阿克图里安、`Aedir`艾迪尔、
+ *     `Graven's Rest`格雷文之憩（`Graven's Rest Refresher`＝格雷文之憩提神饮）。
+ *   · `Cindaric Temple`＝辛达里克神殿：合集正文 3 处逐字如此。**别写成「辛达林神殿」**——
+ *     那是另一个英文串 `Cindarin Temple` 的既定译名（上游对同一栋楼有两种写法），
+ *     英文闸按键判，本表的键是 `Cindaric Temple`。
+ *   · `Water Temple`＝水之神殿：石之森林地名志正文「然而，水之神殿要古老得多」。
+ *   · `Solemn Folk`＝肃穆民谣：GM 指南补丁 0.4.5 **逐字点名过这个音景**
+ *     （「加入了名为“肃穆民谣”的新乐曲音景」）；同一段还给出 `Dungeon`＝地下城、
+ *     `The Pit Trap`＝“陷坑”。`Seydiri Theme`＝塞迪里主题：另一版补丁说明作「塞迪里主题乐曲」。
+ *   · `Music`＝乐曲：glossary_ec 定稿 `Ember Music`＝余烬乐曲，GM 指南同作「…乐曲」。
+ *   · `X Theme` 的「的」字看是不是人名：合集正文写人物主题用的是所有格
+ *     （`Music: Ankarist's Theme` / `Lyla's Theme` / `Sin's Theme`），故人名三条作「X的主题」；
+ *     族名 / 概念（Aedir / Seydiri / Arcane）上游不带所有格，作「X主题」。
+ *   · 合集查不到的只有 3 条，依据只到「同族词 + 构词」这一档，写明以免下轮误当定稿：
+ *     `Bard Troupe`吟游诗人剧团（`Bard`＝吟游诗人 7 叶）、`Mystical Dungeon`神秘地下城、
+ *     `Arcturian Town`阿克图里安城镇。
+ */
+const SOUNDSCAPE_GROUPS = {
+  "Abyssal Combat": "深渊战斗",
+  "Aedir Theme": "艾迪尔主题",
+  "Ancient Ruins": "远古遗迹",                    // 也是编排名（7 条同串之一）
+  "Ankarist Theme": "安卡里斯特的主题",             // 也是编排名
+  "Arcane Theme": "奥术主题",
+  "Arcturian Folk": "阿克图里安民谣",
+  "Arcturian Town": "阿克图里安城镇",
+  "Arctus Plateau Music": "阿克图斯高原乐曲",
+  "Bard Troupe": "吟游诗人剧团",
+  "Beast Combat": "野兽战斗",
+  "Celestial Combat": "天界生物战斗",
+  "Cindaric Temple": "辛达里克神殿",
+  "Construct Combat": "构装体战斗",
+  "Cosmos Music": "寰宇乐曲",
+  "Elemental Combat - Combined": "元素战斗 · 综合",
+  "Elemental Combat - Earth": "元素战斗 · 土",
+  "Elemental Combat - Fire": "元素战斗 · 火",
+  "Elemental Combat - Frost": "元素战斗 · 冰霜",
+  // `Ember Environment` 同时是 :15892 那条 `<header>` 的文案，一个键盖两处，
+  // 所以 MOOD_PANEL 里不再单独写它。译名取 glossary_ec 定稿。
+  "Ember Environment": "余烬环境",
+  "Forest of Stone Exploration": "石之森林探索",
+  "Graven's Rest Music": "格雷文之憩乐曲",
+  "House Bastilla": "巴斯蒂拉家族",
+  "Illusory Combat": "幻象战斗",                  // `IllusionAdj: Illusory`＝幻象的（crucible lang）
+  "Inner Realms Music": "内界乐曲",
+  "Kadisos Exploration": "卡迪索斯探索",
+  "Lyla Theme": "莱拉的主题",                      // 也是编排名
+  "Marlstone Gala": "马尔石晚会",                  // 也是编排名
+  "Monstrosity Combat": "畸怪战斗",
+  "Mutagenic Combat": "诱变战斗",                  // `Mutagenic Affliction`＝诱变病症
+  "Mystical Dungeon": "神秘地下城",
+  "Ooze Combat": "软泥怪战斗",
+  "Ordain": "奥尔丹",                             // 也是编排名
+  "Ordani Folk": "奥尔达尼民谣",
+  "Pirate Combat": "海盗战斗",
+  "Raider Combat": "劫掠者战斗",                   // `Raider`＝劫掠者、`Otherhood Raider`＝异姊会劫掠者
+  "Seawall": "海堤",
+  "Seydiri Theme": "塞迪里主题",
+  "Sin Theme": "辛的主题",                         // 也是编排名
+  "Solemn Folk": "肃穆民谣",
+  "The Pit Trap": "陷坑",                          // 也是编排名
+  "Undead Combat": "不死生物战斗",
+  "Water Temple": "水之神殿"
+};
+
+/**
  * 音景「编排」名。arrangement.label 是 ember.mjs 里的硬编码常量
  * （5694 / 5787 / 12393 / 14064 / 14748 各 var 块），babele 与 i18n 两条通道都够不到。
+ *
+ * ⚠ 这张表**只装编排名**（外加 `Reset`，理由见下）。第二十一轮以前它一张表同时兜两档
+ * （9 键里 4 个其实是 optgroup 组名），混着长下去迟早出误命中，已拆开：组名一律进
+ * SOUNDSCAPE_GROUPS。实测 42 个组名 / 212 个去重编排名里有 **7 条同串**，同串只写一次、
+ * 写在组名表；本表现在的 4 条编排名（`Shent Ruins` / `Shent Ruins Tension` /
+ * `The Pit Trap - Intense` / `The Pit Trap - Relaxed`）都**只是编排名、不是组名**，与组名表零重叠。
+ * 覆盖面没变：编排名 212 条里翻了 11 条（本表 4 ＋ 组名表里同串的 7），恒英文 201 条。
  */
 const ARRANGEMENTS = {
+  // `Reset` 既不是组名也不是编排名：它是 ember.mjs:16255 `${channel.capitalize()}: Reset`
+  // 那一支增强器的叶子（通道重置），因为与编排名走同一个叶子位置，故放在本表。
   // 2026-08-15：原译「默认」与 lang 的 `EMBER.CONTENT_CONFIG.RESET`＝重置 漂移（scan_cross_channel B 段第 1 条），
   // 且英文闸下 compendium 的 `Reset` 8 叶全作「重置」、0 叶作「默认」。上游这一支的注释也是
   // 「// Reset channel to default」（ember.mjs:16253），按动作译成「重置」两条通道即一致。
@@ -325,14 +431,29 @@ const ARRANGEMENTS = {
   //   与同一轮 `Usage` 那条 MJS_ORPHAN_CN +1 是两笔相反的变化，B 段总数 33 → 32 是两者相抵后的结果。
   //   下一轮对 B 段计数时别把这两笔当成没发生。
   "Reset": "重置",
-  "Ancient Ruins": "远古遗迹",
   "Shent Ruins": "申特遗迹",
   "Shent Ruins Tension": "申特遗迹 · 紧张",
-  "Ankarist Theme": "安卡里斯特的主题",
-  "Lyla Theme": "莱拉的主题",
-  "Sin Theme": "辛的主题",
   "The Pit Trap - Intense": "陷坑 · 激烈",
   "The Pit Trap - Relaxed": "陷坑 · 舒缓"
+};
+
+/**
+ * 增强器那一路要查的「编排名叶子」表：本表 = ARRANGEMENTS ＋ 组名表里那 7 条同串。
+ *
+ * `EmberSoundscape.enricherHTML` 拼出来的叶子只可能是 `arrangement.label` 或 `Reset`
+ * （ember.mjs:16255 / 16266），其中 7 个 label 与组名同串、译文写在 SOUNDSCAPE_GROUPS 里，
+ * 所以这里**按键取回**而不是重抄一遍 —— 一个英文串在本文件里只有一个定义处。
+ * ⚠ 别图省事写成 `{...SOUNDSCAPE_GROUPS, ...ARRANGEMENTS}`：那会把 35 条**不是编排名**的
+ * 组名也塞进增强器的查表面，属于无谓放宽。
+ */
+const ARRANGEMENT_LEAVES = {
+  ...ARRANGEMENTS,
+  ...Object.fromEntries(
+    ["Ancient Ruins", "Ankarist Theme", "Lyla Theme", "Marlstone Gala",
+     "Ordain", "Sin Theme", "The Pit Trap"]
+      .filter((k) => k in SOUNDSCAPE_GROUPS)
+      .map((k) => [k, SOUNDSCAPE_GROUPS[k]])
+  )
 };
 
 /**
@@ -983,7 +1104,7 @@ const PATTERNS = [
   // 已发布语料里 46 个 `[[/soundscape …]]` 标记暂无一条同时带 soundscapeId 与 mood，
   // 这条是给 GM 自己写的标记兜底的。
   { re: /^(Music|Environment): (.+?)(?: \((Calm|Tension)\))?$/,
-    cn: (m) => `${m[1] === "Music" ? "音乐" : "环境音"}：${translateLeaf(m[2], ARRANGEMENTS)}`
+    cn: (m) => `${m[1] === "Music" ? "音乐" : "环境音"}：${translateLeaf(m[2], ARRANGEMENT_LEAVES)}`
              + (m[3] ? `（${MOODS[m[3]]}）` : "") },
 
   { re: /^Award Attunement: (.+)$/, cn: (m) => `授予同调：${m[1]}` },
@@ -1352,15 +1473,21 @@ const EMBER_DIALOG_UI = {...DIALOG_UI, ...EMBER_WINDOW_UI};
 /**
  * 播放列表侧栏里 Ember 注入的音景面板（`<form id="ember-mood">`，ember.mjs:15874-15898）。
  * 宿主是 core 的 PlaylistDirectory，主闸两个判据都不成立，靠 INJECTED_SUBTREES 放行子树。
+ * 本表 **50 键 = SOUNDSCAPE_GROUPS(42) ＋ ARRANGEMENTS(5) ＋ 下面 3 条面板自有文案**，三部分零重叠
+ * （`Ember Environment` 既是组名又是 :15892 的 `<header>` 文案，只在组名表里定义一次，
+ * 所以这里不再重写它 —— 别看着 header 没登记就往回加，那会造出第二个定义处）。
  * 译名取 glossary_ec 的定稿（Ember Music 余烬乐曲 / Ember Environment 余烬环境）。
- * ARRANGEMENTS 带进来是为了两个 `<select>` 里的编排名（顺带盖住 4 条同名的 optgroup 组名，见下）。
+ *
+ * 组名的 `<optgroup label>` 是**属性**不是文本节点，走得通全靠 translateNode 的属性白名单里
+ * 有 `label` 那一条（见该函数）—— 把 `label` 从白名单里删掉，这 42 条会整体失效。
  *
  * ⚠ 覆盖率是 2026-08-15 **实测值，不是估计**，并在第二十一轮**换一套方法复算过**
  * （原探针 `4-临时脚本/2026-08-15-round20/probe_soundscapes.mjs` 是手写大括号配对 + 按固定缩进
  * 正则抠 `label`；复算不用正则碰内容：从冻结注册表 `var soundscapes=Object.freeze({…})`
  * （ember.mjs:15260）取 44 个变量名，按打包器「顶层声明以行首 `}` 收尾」的排版切片，交给
  * **node:vm** 让真正的 JS 解析器把对象建出来，再要求每个对象自己的 `id` 等于注册表里的键 ——
- * 自报 `resolved=44 / BAD=0`，任一条不成立就退出而不是给半份结果。两套方法数字逐条相同）。
+ * 自报 `resolved=44 / BAD=0`，任一条不成立就退出而不是给半份结果。两套方法数字逐条相同。
+ * 第二十一轮的复算脚本落在 `4-临时脚本/2026-08-15-round21/probe_groups.mjs`，两法同时跑并互校）。
  * 上屏的两档东西**要分开数**（`#updateSoundscapeForm()`，ember.mjs:15916-15922：
  * `{value, label: 编排名, group: 音景 label}` 交给 createSelectInput）：
  *   ① **optgroup 组名** = 音景对象的 `label`。上游 44 个音景里 42 个 `type` 是 music(41)/environment(1)
@@ -1369,32 +1496,27 @@ const EMBER_DIALOG_UI = {...DIALOG_UI, ...EMBER_WINDOW_UI};
  *   ② **option 编排名** = `s.arrangements[*].label`。这 42 个音景合计 **267 条**，去重 **212 条**。
  *
  * ⚠ **「上屏留不留英」必须按这棵子树真正注册的那张表判** —— 不是按 `ARRANGEMENTS`，
- * 更不是按不带 extra 的全局 `translateText`。三点都是实测：
- *   · INJECTED_SUBTREES 里 `form#ember-mood` 注册的是 **MOOD_PANEL（13 键）**，不是 ARRANGEMENTS（9 键）；
- *   · MOOD_PANEL 比 ARRANGEMENTS 多出来的 4 键里，`Ember Environment` **本身就是那 42 个组名之一**
- *     （唯一那个 environment 音景的 `label`，恰好与 :15892 的 `<header>` 同串，一个键盖两处）；
+ * 更不是按不带 extra 的全局 `translateText`。两点都是实测：
+ *   · INJECTED_SUBTREES 里 `form#ember-mood` 注册的是 **MOOD_PANEL**，不是 ARRANGEMENTS；
  *   · 拿真 `translateText` 复核时，**不传作用域表则 42 个组名一条都不翻**（212 个编排名同样一条不翻）——
  *     MOOD_PANEL 是作用域表，键**不在全局 `EXACT` 里**。拿全局通道去量这块覆盖率只会量出假的「0 覆盖」。
- * 按 MOOD_PANEL 判，13 个键里：对得上组名的 **5** 个（Ancient Ruins / Ankarist Theme / Lyla Theme /
- * Sin Theme / Ember Environment）、对得上编排名的 **8** 个、两边都对得上的 **4** 个
- * （Ancient Ruins / Ankarist Theme / Lyla Theme / Sin Theme —— 所以 5＋8−4＋4＝13，对得上）、
- * 两边都对不上的 **4** 个：`Reset`（:16253 那条通道重置，见 ARRANGEMENTS 表内注）、
- * `Ember Music`（:15886 的 `<header>`，上游**没有**同名音景）、`Rearrange Music`（tooltip）、
- * `Ember Default`（两个 select 的 blank 选项）。
- * → **恒英文：组名 37 条 ＋ 编排名 204 条（去重后）**。
- *   ⚠ 组名这个数**一度写成 38，是错的**：那是拿 ARRANGEMENTS（9 键）当面板表算的，漏掉了
- *     `Ember Environment` 这条组名；更糟的是同一段注释还把 `Ember Environment` 列进了「恒英文」
- *     的例子里，与本表里 `"Ember Environment": "余烬环境"` 那行**自相矛盾**。编排名的 204 不受影响
- *     （MOOD_PANEL 多出的 4 键没有一个是编排名，两种算法一致）。
- *   组名里那 37 条例如 Abyssal Combat / Aedir Theme / Arcane Theme / Arcturian Folk / Arcturian Town /
- *   Cosmos Music / House Bastilla / Marlstone Gala / Ordain / Seawall / The Pit Trap / Water Temple …
- * 旧注释写的「约 42 条组名 / 约 200 条编排名」量级没错，但那是估计；上面是实测。
- * 排期时**别把两档并成一档**：37 和 204 差一个量级，补哪一档是两件事。补不补不在本文件裁。
+ *
+ * 按 MOOD_PANEL 判的当前账（第二十一轮实测，探针 `probe_moodpanel.mjs`，
+ * 它是**在 vm 里跑本文件真源码**取到的 MOOD_PANEL，再喂给本文件导出的真 `translateText`）：
+ *   · 组名 42 条 → 覆盖 **42**、**恒英文 0**（本轮把 37 条补齐了）。
+ *   · 编排名去重 212 条 → 覆盖 **11**、**恒英文 201**（上一轮是覆盖 8 / 恒英文 204；
+ *     多出来的 3 条是 `Marlstone Gala` / `Ordain` / `The Pit Trap`，它们与组名同串，
+ *     是补组名的**必然副作用**，不是偷偷补了编排名，见 SOUNDSCAPE_GROUPS 表内注）。
+ *   · 三条面板自有文案（`Ember Music` / `Rearrange Music` / `Ember Default`）与 `Reset`
+ *     两边都对不上，它们不是音景名。
+ * 排期时**别把两档并成一档**：组名已清零，剩下的 201 条编排名是另一件事，
+ * 多为「Bandit Fight Chorus / Celestial Combat Section 3」这类内部段落编号，
+ * 主控第二十一轮裁的是**暂不补**。补不补不在本文件裁。
  */
 const MOOD_PANEL = {
+  ...SOUNDSCAPE_GROUPS,
   ...ARRANGEMENTS,
   "Ember Music": "余烬乐曲",          // 15886
-  "Ember Environment": "余烬环境",     // 15892
   "Rearrange Music": "重新编排音乐",   // 15889 的 data-tooltip
   "Ember Default": "余烬默认"         // 15929 / 15934 两个 select 的 blank 选项
 };
