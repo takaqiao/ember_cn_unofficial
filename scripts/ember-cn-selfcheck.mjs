@@ -168,17 +168,32 @@ function checkBabele() {
   const babele = game.babele;
   if (!babele) return [Check.skip(S, "整档", "`game.babele` 不存在（Babele 尚未初始化？）")];
 
-  // 已注册的译文文件
-  const trans = babele.translations ?? [];
-  out.push(trans.length
-    ? Check.ok(S, "已注册译文文件", trans.length, `Babele 认到 ${trans.length} 份译文`)
-    : Check.fail(S, "已注册译文文件", 0, "**一份都没认到** —— 合集全是英文"));
-
-  // 逐包看：有译文文件的合集，索引里的名字是不是中文
   const packs = [...game.packs].filter(p => {
     const src = p.metadata?.packageName ?? p.metadata?.package;
     return src === "ember" || src === "crucible";
   });
+
+  // 已认到译文的合集数。
+  // ⚠⚠ **别读 `babele.translations`** —— 那个属性根本不存在，读到 undefined 就会报
+  //   「一份都没认到」。2026-08-16 首次真实世界自检当场撞到这个自相矛盾：
+  //   同一份报告里「合集索引抽样 137/137 全中文」明摆着说明 babele 在工作，
+  //   而这一行却是红的 —— **判据自己错了，不是库错了**。
+  //   Babele 的公开 API 是 `isTranslated(pack)`（babele.js:557）。
+  //   教训：**写「检查 X 有没有生效」的判据时，先确认自己读的属性真的存在** ——
+  //   一个读了 undefined 就报红的检查，制造的是假警报，比不检查更糟。
+  if (typeof babele.isTranslated !== "function") {
+    out.push(Check.skip(S, "已认到译文的合集",
+      "这个版本的 Babele 没有 `isTranslated()` —— API 变了，本项无从查起"));
+  } else if (!packs.length) {
+    out.push(Check.skip(S, "已认到译文的合集", "当前世界里没有 ember / crucible 的合集"));
+  } else {
+    const yes = packs.filter(p => { try { return babele.isTranslated(p); } catch (_) { return false; } });
+    out.push(yes.length
+      ? Check.ok(S, "已认到译文的合集", packs.length, `${yes.length}/${packs.length} 个合集有对应译文文件`)
+      : Check.fail(S, "已认到译文的合集", packs.length,
+          `**${packs.length} 个合集一个都没认到译文** —— 合集会全是英文`));
+  }
+
   if (!packs.length) {
     out.push(Check.skip(S, "合集索引抽样", "当前世界里没有 ember / crucible 的合集"));
     return out;
@@ -285,16 +300,24 @@ function checkPatches() {
   let spotChecked = 0;
 
   // 区域行为 schema
+  // ⚠⚠ 两条边界，2026-08-16 首次真实世界自检时这里报了 5 条**假警报**，两条都踩了：
+  //   ① **只查 Ember 自己的子类型（`ember.*`）**。core 的 `executeMacro` / `executeScript` /
+  //      `toggleBehavior` / `displayScrollingText` 不归我们翻，它们是英文**本来就对**。
+  //   ② **i18n 键不算「仍是英文」**。core 的字段 label 常常是 `BEHAVIOR.TYPES.base.FIELDS.events.label`
+  //      这种键，Foundry 渲染时才本地化 —— 把它判成「没翻译」是**看错了对象**。
+  const I18N_KEY = /^[A-Z][A-Za-z0-9]*(\.[A-Za-z0-9_]+)+$/;
   try {
     const dm = CONFIG.RegionBehavior?.dataModels ?? {};
     for (const [type, cls] of Object.entries(dm)) {
+      if (!type.startsWith("ember.")) continue;          // ← 边界 ①
       const fields = cls?.schema?.fields ?? {};
       for (const f of Object.values(fields)) {
-        if (typeof f?.label === "string" && f.label) {
-          spotChecked++;
-          if (!hasCJK(f.label)) spot.push(`区域行为 \`${type}\` 的字段标签仍是英文：「${f.label}」`);
-          break;                       // 每个类型抽一个字段就够
-        }
+        const lab = f?.label;
+        if (typeof lab !== "string" || !lab) continue;
+        if (I18N_KEY.test(lab)) continue;                // ← 边界 ②
+        spotChecked++;
+        if (!hasCJK(lab)) spot.push(`区域行为 \`${type}\` 的字段标签仍是英文：「${lab}」`);
+        break;                         // 每个类型抽一个字段就够
       }
     }
   } catch (_) { /* 结构变了就当查不到，下面统一按 checked 判 */ }
@@ -647,6 +670,18 @@ export async function keyLiveness(tables) {
 /* -------------------------------------------- */
 
 const PANEL_CSS = `
+/* ⚠ 报告很长（首次真实世界自检 4000+ 项、五十多行），**必须自己能滚** ——
+   DialogV2 的内容区默认不给滚动条，不加这段就只能看到开头一截、也没法拖着复制。
+   dialog 的 window-content 由 core 控制高度，这里让内容区自己溢出滚动。
+   ⚠ 这段注释里**不许出现反引号** —— 它整个活在一个模板字符串里，一个反引号就把 CSS 截断。 */
+.ecn-selfcheck {
+  max-height: min(72vh, 640px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: .4em;          /* 给滚动条留位，别压住文字 */
+  overscroll-behavior: contain;  /* 滚到底不要把整个窗口带着滚 */
+  user-select: text;             /* 明确允许框选复制 */
+}
 .ecn-selfcheck { font-size: 13px; }
 .ecn-selfcheck .ecn-sc-sum { font-size: 15px; margin: 0 0 .3em; }
 .ecn-selfcheck .ecn-sc-note,
