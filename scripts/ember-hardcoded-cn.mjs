@@ -351,7 +351,25 @@ const ARRANGEMENTS = {
  * 译名取合集里《Character Classes》页已有的小标题译法（en/cn 逐条对齐）：
  *   Cleric 页 X Domain→X 领域、Warlock 页 X Patron→X 宗主、Sorcerer 页 Draconic→龙脉/Spellfire→法术火焰。
  * `Time` / `Other` 该页没有小节，取 glossary_ec 的「时间 / 其他」。
- * `Hexblade` 上游 Warlock 页已删该子职，合集里无对应译法，按 5e 通行译名暂定「咒刃」（与 Spellblade 撞名，待裁）。
+ *
+ * ⚠ `Hexblade` **故意不在下面的 WARLOCK_PATRONS 表里** —— 已裁，不是漏了，别再补回来。
+ *   裁决：PROJECT.md §8 `2026-08-14d`「`Hexblade` 从表里删掉（不译）」，原始记录见
+ *   `4-临时脚本/2026-08-14-round14/RESOLUTIONS.md` R5。全库只此一处裁决，无翻案记录。
+ *   理由：`Spellblade` 在合集里**已定稿**为「咒刃 Spellblade」（`1-Ember汉化插件/compendium/cn/
+ *   ember.crucible-adventure.json` 以及 crucible 侧 archetype / talent / playtest / pregens 四份），
+ *   再把 `Hexblade` 也译成「咒刃」就是 **1:2 撞名**：同一个中文「咒刃」指两样东西
+ *   （Crucible 的战士**原型** vs dnd5e 的邪术师**宗主**），而后者是 dnd5e 侧附带项、
+ *   上游 Warlock 类页面**已删该子职**、合集里也没有对应译法。为它制造一处主线撞名不划算。
+ *   ⚠ 撞名判据是「同一个中文串在库里指两样东西」，**不是**「两者会同屏」—— 2026-08-15 实测
+ *   两者根本不同屏：`Hexblade` 只在**神祇日志页**的表头标签区，`Spellblade` 在 crucible-adventure
+ *   的角色 `Veiled Chain Investigator` 身上（及 crucible 系统的原型/天赋表），落在角色卡一侧。
+ *   引用这条裁决时别把理由写成「同屏」，那是可证伪的、且实测为假。
+ *   ⚠ 它**不是死键**（删的是有效键，不是清死代码）：2026-08-15 探针
+ *   `4-临时脚本/2026-08-15-round20/probe_patrons2.mjs` 只读打开两个孪生包的 LevelDB，
+ *   `Hexblade` 仍在 `system.warlocks` 里、**2 叶**，两包各 1 叶，都在神祇页 **`Ku'arta`**；
+ *   同一次跑出 148 页 / 130 叶 / 26 唯一值，与上面那份值集清单逐字相符（探针自证没空转）。
+ *   所以后果是确定的：`Ku'arta` 页的标签恒显示「邪术师宗主：Hexblade」，共 2 处，**故意留英**。
+ *   下一轮的英文残留 / 覆盖率扫描若报到这 2 处，属**预期内**，按本条驳回，别当缺陷补。
  */
 // ⚠ `Light` 与 crucible lang 的 `WEAPON.CATEGORIES.Light`＝轻型 同英文不同域（神祇领域「光」
 //   vs 武器分类「轻型」）；B 段 2026-08-15 报过，已裁：不统一。
@@ -367,7 +385,8 @@ const WARLOCK_PATRONS = {
   "Archfae": "至高妖精", "Archfey": "至高妖精", "The Archfey": "至高妖精",
   "Celestial": "天界", "Fathomless": "深海", "Fiend": "邪魔", "The Fiend": "邪魔",
   "Genie": "巨灵", "Great Old One": "远古旧日支配者", "The Great Old One": "远古旧日支配者",
-  "Hexblade": "咒刃", "The Undead": "不死", "Other": "其他"
+  // `Hexblade` 有意缺席（§8 2026-08-14d 已裁：不译）。理由与实测后果见本表上方的注释块。
+  "The Undead": "不死", "Other": "其他"
 };
 // ⚠ `Draconic` 在本文件里**有意两译**：这里是术士起源＝龙脉（合集 Sorcerer 页的小节译法），
 //   LANGUAGES 那张表里是语言名＝龙语。`scan_cross_channel` B 段会把它报成「.mjs 内部同英文异译」，
@@ -1334,8 +1353,43 @@ const EMBER_DIALOG_UI = {...DIALOG_UI, ...EMBER_WINDOW_UI};
  * 播放列表侧栏里 Ember 注入的音景面板（`<form id="ember-mood">`，ember.mjs:15874-15898）。
  * 宿主是 core 的 PlaylistDirectory，主闸两个判据都不成立，靠 INJECTED_SUBTREES 放行子树。
  * 译名取 glossary_ec 的定稿（Ember Music 余烬乐曲 / Ember Environment 余烬环境）。
- * ARRANGEMENTS 带进来是为了两个 `<select>` 里的编排名；音景组名（optgroup 的 label 属性，
- * 约 42 条）与其余约 200 条编排名还没有译文，暂时露英文。
+ * ARRANGEMENTS 带进来是为了两个 `<select>` 里的编排名（顺带盖住 4 条同名的 optgroup 组名，见下）。
+ *
+ * ⚠ 覆盖率是 2026-08-15 **实测值，不是估计**，并在第二十一轮**换一套方法复算过**
+ * （原探针 `4-临时脚本/2026-08-15-round20/probe_soundscapes.mjs` 是手写大括号配对 + 按固定缩进
+ * 正则抠 `label`；复算不用正则碰内容：从冻结注册表 `var soundscapes=Object.freeze({…})`
+ * （ember.mjs:15260）取 44 个变量名，按打包器「顶层声明以行首 `}` 收尾」的排版切片，交给
+ * **node:vm** 让真正的 JS 解析器把对象建出来，再要求每个对象自己的 `id` 等于注册表里的键 ——
+ * 自报 `resolved=44 / BAD=0`，任一条不成立就退出而不是给半份结果。两套方法数字逐条相同）。
+ * 上屏的两档东西**要分开数**（`#updateSoundscapeForm()`，ember.mjs:15916-15922：
+ * `{value, label: 编排名, group: 音景 label}` 交给 createSelectInput）：
+ *   ① **optgroup 组名** = 音景对象的 `label`。上游 44 个音景里 42 个 `type` 是 music(41)/environment(1)
+ *      才进这两个下拉（落选的两个是 `Ember Events` / `Ember Weather`），42 个 label 全不重样
+ *      → **42 条**上屏组名。
+ *   ② **option 编排名** = `s.arrangements[*].label`。这 42 个音景合计 **267 条**，去重 **212 条**。
+ *
+ * ⚠ **「上屏留不留英」必须按这棵子树真正注册的那张表判** —— 不是按 `ARRANGEMENTS`，
+ * 更不是按不带 extra 的全局 `translateText`。三点都是实测：
+ *   · INJECTED_SUBTREES 里 `form#ember-mood` 注册的是 **MOOD_PANEL（13 键）**，不是 ARRANGEMENTS（9 键）；
+ *   · MOOD_PANEL 比 ARRANGEMENTS 多出来的 4 键里，`Ember Environment` **本身就是那 42 个组名之一**
+ *     （唯一那个 environment 音景的 `label`，恰好与 :15892 的 `<header>` 同串，一个键盖两处）；
+ *   · 拿真 `translateText` 复核时，**不传作用域表则 42 个组名一条都不翻**（212 个编排名同样一条不翻）——
+ *     MOOD_PANEL 是作用域表，键**不在全局 `EXACT` 里**。拿全局通道去量这块覆盖率只会量出假的「0 覆盖」。
+ * 按 MOOD_PANEL 判，13 个键里：对得上组名的 **5** 个（Ancient Ruins / Ankarist Theme / Lyla Theme /
+ * Sin Theme / Ember Environment）、对得上编排名的 **8** 个、两边都对得上的 **4** 个
+ * （Ancient Ruins / Ankarist Theme / Lyla Theme / Sin Theme —— 所以 5＋8−4＋4＝13，对得上）、
+ * 两边都对不上的 **4** 个：`Reset`（:16253 那条通道重置，见 ARRANGEMENTS 表内注）、
+ * `Ember Music`（:15886 的 `<header>`，上游**没有**同名音景）、`Rearrange Music`（tooltip）、
+ * `Ember Default`（两个 select 的 blank 选项）。
+ * → **恒英文：组名 37 条 ＋ 编排名 204 条（去重后）**。
+ *   ⚠ 组名这个数**一度写成 38，是错的**：那是拿 ARRANGEMENTS（9 键）当面板表算的，漏掉了
+ *     `Ember Environment` 这条组名；更糟的是同一段注释还把 `Ember Environment` 列进了「恒英文」
+ *     的例子里，与本表里 `"Ember Environment": "余烬环境"` 那行**自相矛盾**。编排名的 204 不受影响
+ *     （MOOD_PANEL 多出的 4 键没有一个是编排名，两种算法一致）。
+ *   组名里那 37 条例如 Abyssal Combat / Aedir Theme / Arcane Theme / Arcturian Folk / Arcturian Town /
+ *   Cosmos Music / House Bastilla / Marlstone Gala / Ordain / Seawall / The Pit Trap / Water Temple …
+ * 旧注释写的「约 42 条组名 / 约 200 条编排名」量级没错，但那是估计；上面是实测。
+ * 排期时**别把两档并成一档**：37 和 204 差一个量级，补哪一档是两件事。补不补不在本文件裁。
  */
 const MOOD_PANEL = {
   ...ARRANGEMENTS,
