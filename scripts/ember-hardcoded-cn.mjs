@@ -18,6 +18,31 @@
  *
  * 注意：`AC / AB / AT / AS` 这几个纪年缩写有意不译 —— 它们是 Ember 历法的
  * 纪元代号，和 DC 一样属于约定俗成的记号，译开反而认不出来。
+ *
+ * ------------------------------------------------------------------
+ * `scan_cross_channel` B 段 `MJS_ORPHAN_CN` 的裁决索引（2026-08-15 第十七轮逐条判完）
+ * ------------------------------------------------------------------
+ * 这一档从没被登记过（§1 那张收口表只列了 `MJS_LANG_DRIFT`），第十七轮实跑
+ * ember 10 条 / crucible 4 条、去重 14 条，**全部判完**，理由都写在各自的表旁边：
+ *
+ *   改 .mjs（合集有 GM 指南级的同域证据，判据这次是对的）—— 3 条，改完该档 14 → 11：
+ *     `DIALOG_UI.Ascend`  上行 → 上升    ┐ Aedir Signalpost「Rotating Elevator」页逐字写过
+ *     `DIALOG_UI.Descend` 下行 → 下降    ┘（与 Forwards/Backwards/Unreachable 同一先例）
+ *     `DIALOG_UI.Seal`    封闭 → 封堵      Disturbed Earth「操作焦油坑」一节逐条列过按钮
+ *       ↳ 顺带补 `Open`/`Spawn` 两个按钮，与 DIALOG_TITLES 的 `Tar Pit`（先前是**死键**，
+ *         该框认不出来、标题与三个按钮全英）
+ *
+ *   保持 .mjs、compendium 也不动（判据的多数写法是共现噪声或另一个义项）—— 8 条：
+ *     `DIALOG_UI.Close` / `DIALOG_UI.Usage` / `DIALOG_UI.Make` / `DIALOG_UI.Ring` /
+ *     `EXACT.Exit` / `LANGUAGES.Sign` / `EMBER_WINDOW_UI.Sprites` / `ATTUNEMENT_TAB.Active`
+ *
+ *   保持 .mjs、**合集那边错**，只有 **1 条**：`WEATHER.Tempest`
+ *     —— 已出批次 `4-临时脚本/2026-08-15-round17/batches/r17-weather-tiers-*.json` 并已落盘。
+ *     ⚠ 上一版这里写「3 条：Dust / Kindling / Tempest」是**说大了**：WEATHER 表上方的注释
+ *     自己写明 `Dust` 与 `Kindling` 的天气义在合集里 **0 叶**、两边都不该动，本不需要批次。
+ *
+ * ⚠ 剩下的 11 条**已全部裁为「保持」，下一轮不要再当新缺陷重查**，也不要为了把计数清零
+ *   去改任何一边 —— 它们是判据的定义域问题（枚举名 / UI 按钮 / 句首碎片 vs 散文里的同形词）。
  */
 
 const MODULE = "ember_cn_unofficial";
@@ -128,6 +153,13 @@ const LANGUAGES = {
   // ⚠ `Common` 在本文件里**有意两译**：这里是语言名＝通用语，RARITIES 那张表里是稀有度＝常见。
   //   同理 `Draconic`（语言＝龙语 / 术士起源＝龙脉）。B 段会报成「.mjs 内部同英文异译」，不是缺陷。
   "Common": "通用语",
+  // ⚠ `Sign` 是 crucible 本体那门**手语**（crucible-compiled.mjs:1007-1012 的 languages 表）。
+  //   B 段 `MJS_ORPHAN_CN` 报的多数写法「荆棘」（6/10）纯属共现（同叶有 brambles/thorny）；
+  //   英文闸 `\bSign\b` 的 10 叶是 `The Clever Fox (Engraved Sign)` 那件雕刻招牌、
+  //   「Sign on the wall? 墙上的招牌」、「a single, obscure Sign 一个晦涩的符号」、
+  //   「Sign your party's name 签上队伍的名字」—— 招牌 / 符号 / 签名三个义项，无一是语言名。
+  //   2026-08-15 第十七轮已裁：保持「手语」，compendium 一叶不动。
+  //   （另注：本条与上面的 `Common` 在 **Crucible 世界里是死键**，见上一段。）
   "Sign": "手语",
   "Arcden": "奥克登语",
   "Cascal": "卡斯卡尔语",
@@ -502,7 +534,14 @@ const DIALOG_TITLES = {
   "Select Destination": "选择目的地",                                 // 96220
   "Arcturel Elevator": "阿克图瑞尔 Arcturel 升降机",                   // 96401
   "Arcturel Lift": "阿克图瑞尔 Arcturel 升降台",                       // 96462
-  "Silver Beam Security Control": "银光束 Silver Beam 安保控制"        // 113769
+  "Silver Beam Security Control": "银光束 Silver Beam 安保控制",       // 113769
+  // 2026-08-15 第十七轮补：裁 `Seal` 那条 `MJS_ORPHAN_CN` 时顺带查出来的**死键**。
+  // `EmberTarPit#_configureDialog`（ember.mjs:107610）是在方法体里写 `config.window.title = "Tar Pit"`，
+  // 不是 DEFAULT_CONFIG 里的静态标题，先前几轮枚举 `window: {title:` 时整类漏掉。
+  // 结果这个框一直认不出来，标题与三个按钮（Open / Spawn / Seal，:107606-107608）全是英文，
+  // 而 DIALOG_UI 里那条 `Seal` 只对 CorpinSanctuaryElevator 生效（它继承基类标题
+  // `Elevator Controls`，在本表里）。补上标题，三个按钮跟着解锁。
+  "Tar Pit": "焦油坑"                                                 // 107610
   // 缺席说明：ember.mjs:95615 那个 `dialog:{title,icon,description}` 少写了 window 这一层，
   // DialogV2 读不到，标题实际落到基类兜底的 `Interactable: ${id}`（62795），
   // 所以 "Aedir Signalpost Stealth Field Generator" 不在本表，由 DIALOG_TITLE_PATTERNS 认。
@@ -537,6 +576,12 @@ const DIALOG_UI = {
   "Interact": "交互",                        // 62794，EmberInteractable 无显式按钮时的兜底 OK
   "Cancel": "取消",                          // 113780
   "Observe": "观察",                         // 67415
+  // ⚠ `Close` 是**关掉这个框**的 OK 按钮（49559 `ok:{label:"Close"}` 指示物制作器部件用量框、
+  //   112049 同形状的矿车目的地框），不是任何游戏术语。B 段 `MJS_ORPHAN_CN` 报的多数写法「解除」
+  //   （6/10）纯属共现：英文闸 `\bClose\b` 全库 10 叶里没有一叶是 UI 按钮 —— 是「Close ties 密切
+  //   关系」「Close by 附近」「Up Close and Dangerous 近身而危险」，以及那条追踪距离档
+  //   「In Reach – In View – Nearby – Close – Distant」。判据不分词性也不分域。
+  //   2026-08-15 第十七轮已裁：保持「关闭」，compendium 一叶不动。
   "Close": "关闭",                           // 49558 / 112049
   "Confirm": "确认",                         // 112074
   "Change": "更改",                          // 32946 / 63640
@@ -544,8 +589,36 @@ const DIALOG_UI = {
   "Search": "搜索",                          // 23301 / 49533
   "Activate": "激活",                        // 110866
   // 升降机 / 矿车 / 转运
-  "Move": "移动", "Ascend": "上行", "Descend": "下行", "Call": "呼叫",  // 67273-67274 / 95344-95355
-  "Seal": "封闭",                             // 99592，CorpinSanctuaryElevator 的第三个按钮
+  // ⚠ `Ascend` / `Descend` 2026-08-15 第十七轮由「上行 / 下行」改为「**上升 / 下降**」——
+  //   与 `Forwards/Backwards/Unreachable`（下面 112063-112065 那三条）**同一类依据、同一个先例**：
+  //   GM 指南把这台升降机的按钮**逐字写过**。`Aedir Signalpost` 的 `Rotating Elevator` 页
+  //   （孪生包各一份）正文里那张符文表就是 `Top / Sky / Ascend` →「上方 / 天空 / **上升**」，
+  //   同页还有「升降机**上升**一层」「**上升**到顶部层级」「你会看到一个**下降**选项提示」
+  //   （英文原句 `you will be prompted with an option to descend`，说的正是这个对话框）
+  //   「识别其含义为『**下降**』」。玩家/GM 照着日志去按按钮，「上行 / 下行」两条对不上。
+  //   B 段 `MJS_ORPHAN_CN` 给的多数写法（Ascend→「触碰」4/6、Descend→「荆棘」8/12）是共现噪声：
+  //   Descend 的 12 叶里 8 叶来自 `The Expedition Challenge` 那首谜语（同叶有 thorny/brambles），
+  //   Ascend 的 6 叶里 2 叶是 `Cosmos.Ascendancy`（飞升，另一个域）、2 叶是「攀登山路」的散文义。
+  //   真正同域的证据只有 Rotating Elevator 那 2 叶，取它。
+  "Move": "移动", "Ascend": "上升", "Descend": "下降", "Call": "呼叫",  // 67273-67274 / 95344-95355
+  // ⚠ `Seal` 有**两个**宿主，取的是有 GM 指南背书的那一个：
+  //     · 107606-107608 焦油坑（`Tar Pit`）菜单：closed 时是 `Open`，否则 `Spawn` / `Seal`；
+  //     · 99592 CorpinSanctuaryElevator 的第三个按钮。
+  //   `Disturbed Earth` 的 `Muddy Waters` / `Death on the Vine` 两页（孪生包共 4 叶）在
+  //   「操作焦油坑」一节把这三个按钮**逐条列过**：「**打开**：此按钮会播放一段动画…」
+  //   「**封堵**：此按钮会播放一段动画…」「**生成**：把 Actor 拖进…」。
+  //   所以 2026-08-15 第十七轮把「封闭」改成「**封堵**」，并按同一段补上 Open / Spawn / Tar Pit
+  //   （补之前那个菜单是「打开(英) / 封闭 / 生成(英)」三选二半英半中）。
+  //   B 段报的「保护」（8/12）是共现：`\bSeal\b` 的 12 叶是 `Burnished Seal` 烫金印记、
+  //   `Jade Seal` 玉印、Ordain 的铜币面额 `Seal`，全是名词义，与按钮动词不同域。
+  "Seal": "封堵",                             // 107608（焦油坑）/ 99592（CorpinSanctuaryElevator）
+  "Open": "打开",                             // 107606，焦油坑关闭状态下的唯一按钮
+  "Spawn": "生成",                            // 107607，焦油坑的生成按钮
+  // （窗口标题 `Tar Pit` 在 DIALOG_TITLES 里 —— 那张表兼管**认框**，不加进去这三个按钮
+  //   连解锁的机会都没有，见 DIALOG_TITLES 的注释。）
+  // `Unseal` 只出现在 CorpinSanctuaryElevator 的 state=2（99689），此时按钮**只有它一个**，
+  // 与上面的「封堵」永不同屏（state 0/1 才出 Ascend/Descend/Seal），GM 指南也没写过它。
+  // 故不为了配对硬改成「解除封堵」，保持「解封」。
   "Unseal": "解封",                           // 99689，同一台升降机「已封闭」状态下的唯一按钮
   "Repair": "修复",                           // 110357，警钟被破坏后 state=2 时替换掉的按钮
   "Raise Elevator": "升起升降机", "Spawn Construct": "生成构装体", "None": "无", // 65250 / 65253 / 65255
@@ -804,6 +877,12 @@ const EXACT = {
   "Add Part": "添加部件",                                            // ember.mjs:51608
   "Add Color": "添加颜色",                                           // ember.mjs:51611
   "Save Changes": "保存更改",                                        // ember.mjs:51613
+  // ⚠ `Exit` 是创角向导页脚那个 `{action:"close", label:"Exit", tooltip:"Exit Creation"}`
+  //   （122292）的**动词**按钮。B 段 `MJS_ORPHAN_CN` 报的多数写法「失败」（12/28）是共现噪声
+  //   （同叶有 Failed Save / failed check）；英文闸 `\bExit\b` 的 28 叶**全部**是名词义的出口
+  //   或事件标题 —— `Secret Exit` / `Culvert Exit` / `A Misty Exit` / `A Promised Exit` /
+  //   `Meandering Exit` / `Forced Exit` / `Clearing the Exit`，一叶也不是 UI 按钮。
+  //   动词「退出」与名词「出口」不同域，2026-08-15 第十七轮已裁：保持，compendium 一叶不动。
   "Exit": "退出", "Exit Creation": "退出创建",                        // ember.mjs:122292
   "Complete": "完成", "Complete Creation": "完成创建",                // ember.mjs:122293-122294
   "Create Weather": "创建天气",                                      // ember.mjs:22744（带 ember class，过得了主闸）
@@ -1030,6 +1109,33 @@ const PATTERNS = [
  *     Kindling/Wildfire/Inferno 取 起火/野火/烈焰，Calm/Breeze/Windy/Gale/Squall 取 无风/微风/有风/疾风/狂风。
  *   - `Calm` 这里是**风力 0 级**，与 MOODS 里那个音乐氛围的 `Calm`「平静」不是一回事；
  *     两张表作用域不同（本表只喂 weather 配置对象），不会互相污染。
+ *
+ * ⚠ **本表的 `Dust` / `Kindling` / `Tempest` 三条会被 `scan_cross_channel` B 段报
+ *   `MJS_ORPHAN_CN`，2026-08-15 第十七轮逐条查过英文闸，三条全部保持，理由如下**
+ *   （档位名是**枚举**，判据拿全库多数写法来比，比的却是同一串的其它义项，属于定义域问题）：
+ *
+ *     · `Dust`（判据：合集多数「尘土」10/52）——「尘土」那 10 叶的最强一叶是
+ *       `scenes.The World of Ember.notes.Dust` 的 name「尘土 Dust」，但那是**世界地图上的
+ *       一个地名**（同一批 notes 里全是 Crown 王冠 / Mordant 莫丹特 / Red Rhuin 红鲁因 这种
+ *       聚落名），不是天气类型；其余是 `Concentrated Ore Dust` 浓缩矿尘 / `Choking Fog Dust`
+ *       窒息迷雾粉尘 / `Slowing Dust` 滞缓之尘 / `Dust Mote` 尘埃微粒 / `Dust Devil` 尘卷风
+ *       这类复合专名，以及散文里的「灰尘 / 尘埃」。天气义的**自由词** `Dust` 全库 0 叶。
+ *       本族要能分强弱（扬尘 / 尘云 / 沙尘暴 / 哈布沙暴），「尘土」既非气象词也压不住档位差。
+ *
+ *     · `Kindling`（判据：合集多数「神圣」6/8）—— 英文闸 8 叶**全部**是同一件物品
+ *       `Divine Kindling`「神圣引火物」；判据取的「神圣」只是那个复合名的前两字，
+ *       是子串artifact不是译名。天气义 0 叶。起火 / 野火 / 烈焰 三档保持。
+ *
+ *     · `Tempest`（判据：合集多数「风暴」20/21，且带 name/uuid 证据，看着最像该改的一条）——
+ *       实查那 20 叶：13 叶是玛伊斯的月亮尊号 `The Tempest Moon`「风暴之月」，
+ *       5 叶是 `Geography.pages.Tempest` 那座**城市**（`the great city of Tempest`）的
+ *       name「风暴 Tempest」及正文提及，只有 **2 叶**（孪生包各一份）真在天气域里。
+ *       前两类都不是天气档位，且本表 `Storm` 已占「风暴」，改过去会让四档里有两档同名。
+ *       而那 2 叶同域证据本身（`Players' Guide.pages.Weather`：“the weakest strength is a
+ *       Drizzle while the greatest strength is a Tempest”）现译「最弱…毛毛雨…最强…风暴」，
+ *       **是合集那边错**（毛毛雨↔本表细雨、风暴↔本表狂风暴雨，而且「最强」写成了中间档的名字）。
+ *       已出 compendium 批次 `4-临时脚本/2026-08-15-round17/batches/r17-weather-tiers-*.json`（两包各一份），
+ *       .mjs 侧不动。
  */
 const WEATHER = {
   "Clear": "晴朗",
@@ -1858,6 +1964,156 @@ function patchRegionBehaviorSchemas() {
   log(`区域行为配置表单：改写 ${patched} 个字段${missed ? `，${missed} 处对不上已告警` : ""}。`);
 }
 
+/**
+ * 远景摆放页（`Ember Vista Configuration` 的 placement 页签）的裸英文 field label。
+ *
+ * 与上面 `REGION_BEHAVIOR_FIELDS` **完全同一个机制**：`EmberVistaConfiguration.PLACEMENT_SCHEMA`
+ * （ember.mjs:33925-33944，外加 :33918-33923 的 `ILLUMINATION_SCHEMA`）是一个 `SchemaField`，
+ * 每个子字段的 `label` 直接写着英文原文；模板 `templates/applications/vista-config-placement.hbs`
+ * 一半靠 `{{fields.x.label}}` 直接吐、一半靠 `{{formGroup fields.sort …}}` 吐，
+ * 而 `_prepareContext` 把 `fields: EmberVistaConfiguration.PLACEMENT_SCHEMA.fields`
+ * 原样塞进上下文（:34141）—— 也就是说模板读的就是**这一批对象**，改 schema 三处一起变。
+ *
+ * ⚠ **不能按 i18n 键修，也不该走 EXACT / EMBER_WINDOW_UI 补键**：
+ *   `Sort` / `Angle` / `Alpha` / `Tint` / `Only` 全是通用词，进全局 i18n 表会越界改别的模块
+ *   （PROJECT.md §8 `2026-08-14c` 已否决过），进 EMBER_WINDOW_UI 则会作用到**所有** Ember
+ *   窗口的同名文本节点上 —— 那张表现在有 90 多条、宿主是整个 Ember UI，`Only` 这种词放进去
+ *   风险不对等。改 schema 的作用域精确到这一张表单，且不依赖 DOM 结构。
+ *
+ * ⚠ **`x` / `y` / `scaleX` / `scaleY` / `skewX` / `skewY` 这 6 条有意不动**：它们的 label
+ *   就是单个字母 `X` / `Y`（坐标轴记号，和 DC / AC 一样属于不译的记号），译了反而认不出。
+ *   模板里包着它们的三个小标题 `Coordinates` / `Scale` / `Skew` 是**模板里的裸串**、
+ *   不是 schema label，已在 EMBER_WINDOW_UI 里（坐标 / 缩放 / 斜切），DOM 遍历接得住。
+ *
+ * `Elevation`＝高度 与本文件既有的 `Lock Vista Placement Elevation`「锁定远景摆放高度」
+ * （按键绑定名，同一个远景摆放域）对齐。`Colorization`＝着色 与模板裸串
+ * `Precolorization`「预着色」对齐。
+ * `Illumination.only` 上游没给 hint，按它在 `Illumination` 分组里、与 Luminosity /
+ * Blur Strength 并列的位置读作「只渲染照明层」，故译「仅照明」——**这一条是推断，不是实证**，
+ * 哪天能进游戏看到实际效果再复核。
+ */
+const VISTA_PLACEMENT_FIELDS = {
+  elevation: { label: "高度" },                     // ember.mjs:33928
+  sort: { label: "排序" },                          // :33929
+  angle: { label: "角度" },                         // :33934
+  alpha: { label: "不透明度" },                     // :33935
+  tint: { label: "染色" },                          // :33936
+  illumination: { label: "照明" },                  // :33923
+  "illumination.luminosity": { label: "亮度" },     // :33920
+  "illumination.only": { label: "仅照明" },         // :33921
+  "illumination.blurStrength": { label: "模糊强度" }, // :33922
+  colorize: { label: "着色" },                      // :33943
+  "colorize.texture": { label: "自定义颜色贴图" },   // :33939
+  "colorize.r": { label: "红色通道" },              // :33940
+  "colorize.g": { label: "绿色通道" },              // :33941
+  "colorize.b": { label: "蓝色通道" }               // :33942
+};
+
+/**
+ * 改写 `EmberVistaConfiguration.PLACEMENT_SCHEMA` 上那 14 个 field 的 label（见上）。
+ *
+ * 类从 `ember.api.applications` 取（ember.mjs:128987-129001 在 init 里挂上，51969 那个
+ * 命名空间对象虽然 `Object.freeze` 过，但冻的是命名空间本身，类与 schema 字段都没冻）。
+ * 走 `schema.getField(path)`，与 patchRegionBehaviorSchemas 一致，认 `a.b` 点号路径。
+ * 只在 label **还是英文原串**时才改，所以重复执行、上游改文案都不会误伤；
+ * 字段名对不上就跳过那一条并告警，不静默。
+ */
+const VISTA_PLACEMENT_EN = {
+  elevation: "Elevation", sort: "Sort", angle: "Angle", alpha: "Alpha", tint: "Tint",
+  illumination: "Illumination",
+  "illumination.luminosity": "Luminosity",
+  "illumination.only": "Only",
+  "illumination.blurStrength": "Blur Strength",
+  colorize: "Colorization",
+  "colorize.texture": "Custom Color Texture",
+  "colorize.r": "Red Channel",
+  "colorize.g": "Green Channel",
+  "colorize.b": "Blue Channel"
+};
+
+function patchVistaPlacementSchema() {
+  const schema = globalThis.ember?.api?.applications?.EmberVistaConfiguration?.PLACEMENT_SCHEMA;
+  if (!schema) return warn("找不到 EmberVistaConfiguration.PLACEMENT_SCHEMA，远景摆放表单补丁跳过。");
+
+  let patched = 0;
+  let missed = 0;
+  for (const [path, spec] of Object.entries(VISTA_PLACEMENT_FIELDS)) {
+    const field = schema.getField?.(path) ?? schema.fields?.[path];
+    if (!field) {
+      missed += 1;
+      warn(`远景摆放字段「${path}」不存在（上游改过 schema？），跳过。`);
+      continue;
+    }
+    const en = VISTA_PLACEMENT_EN[path];
+    if (field.label !== en && field.label !== spec.label) {
+      missed += 1;
+      warn(`远景摆放字段「${path}」的 label 是「${field.label}」而非「${en}」（上游改过文案？），跳过。`);
+      continue;
+    }
+    field.label = spec.label;
+    patched += 1;
+  }
+  log(`远景摆放配置表单：改写 ${patched} 个字段${missed ? `，${missed} 处对不上已告警` : ""}。`);
+}
+
+/**
+ * CDT（content-development-toolkit）的 ProseMirror 插入菜单里，Ember 注册的 15 个模板块标题。
+ *
+ * 上游在 `registerProseMirrorBlocks()`（ember.mjs:128719-128737）里往
+ * `CONFIG.CDT.PROSEMIRROR.blocks` push 15 条 `{action, title, html}`，`title` 是裸英文。
+ * 只在 `ember.developmentMode`（= `game.data.options.debug`）且 CDT 模块启用时才注册
+ * （:129140-129143 / :128709），所以这是**内容作者侧**的界面，普通开世界看不到。
+ *
+ * ⚠ **不走 `INJECTED_SUBTREES` 选择器**（第十六轮的升级建议原本提的是这条路）：
+ *   ① 宿主确实过不了主闸（CDT 的菜单根既不含 `ember` 类名、类名也不以 `Ember` 开头），
+ *      但**这里根本不需要 DOM** —— `blocks` 是一个我们够得到的运行时数组，CDT 每次建菜单
+ *      时现读它，跟 WEATHER / REGION_BEHAVIOR 一样属于「改数据」那一档，比 DOM 稳。
+ *   ② CDT 未安装在本机（`modules/` 下没有 content-development-toolkit），
+ *      写一条**无法实测**的选择器等于埋一条恒不命中或误命中的规则；而 `title` 很可能被 CDT
+ *      渲染成 `title=` / `data-tooltip=` 属性，那样 DOM 文本遍历本来就够不到。
+ *   ③ 按 `action`（稳定 id）认条目、不按标题文本认，上游改英文文案也不会误改。
+ *
+ * 译名取法：`Block`＝区块（glossary_ec 的 `Hazard block`＝危害区块）；
+ * `WIP`＝制作中（合集里 `Work In Progress!`＝制作中！）；`Gamemaster`＝游戏主持人（glossary_ec）；
+ * `divider` 是 `<h2 class="divider">` 那种分隔标题，不是横线，故作「分隔标题」。
+ */
+const PROSEMIRROR_BLOCK_TITLES = {
+  "insert-block-readaloud": "朗读区块",
+  "insert-block-hazard": "危害区块",
+  "insert-block-exploration": "探索区块",
+  "insert-block-social": "社交区块",
+  "insert-block-complex-skill": "复合技能检定",
+  "insert-block-qna": "问答区块",
+  "insert-block-gamemaster": "游戏主持人区块",
+  "insert-block-attunement": "同调区块",
+  "insert-block-wip": "制作中区块",
+  "insert-h2-divider": "H2 分隔标题",
+  "insert-h3-divider": "H3 分隔标题",
+  "insert-definition-list": "定义列表",
+  "insert-block-system": "系统切换区块",
+  "insert-inline-system": "系统切换内联",
+  "insert-skill-check": "技能检定内联"
+};
+
+function patchProseMirrorBlocks() {
+  // CDT 没装 / 世界不在 debug 模式时上游根本不会注册，这不是异常，静默返回。
+  const blocks = globalThis.CONFIG?.CDT?.PROSEMIRROR?.blocks;
+  if (!Array.isArray(blocks)) return;
+
+  let patched = 0;
+  for (const block of blocks) {
+    const cn = PROSEMIRROR_BLOCK_TITLES[block?.action];
+    // 只认 Ember 自己注册的 action，且只在 title 还是英文时改（幂等）
+    if (cn && typeof block.title === "string" && block.title !== cn) {
+      block.title = cn;
+      patched += 1;
+    }
+  }
+  const total = Object.keys(PROSEMIRROR_BLOCK_TITLES).length;
+  if (patched) log(`ProseMirror 模板块菜单：改写 ${patched}/${total} 条标题。`);
+  else warn(`CONFIG.CDT.PROSEMIRROR.blocks 在，但没认出 Ember 的 ${total} 条模板块（上游改过 action？）。`);
+}
+
 function patchScrollingText() {
   const proto = foundry.canvas?.groups?.InterfaceCanvasGroup?.prototype;
   if (typeof proto?.createScrollingText !== "function") {
@@ -2128,6 +2384,8 @@ Hooks.once("ready", () => {
   applyOnce(CONFIG, "__emberCnNotifications", patchNotifications, "通知提示语");
   applyOnce(CONFIG, "__emberCnScrollingText", patchScrollingText, "画布滚动文字");
   applyOnce(CONFIG, "__emberCnRegionBehaviors", patchRegionBehaviorSchemas, "区域行为配置表单");
+  applyOnce(CONFIG, "__emberCnVistaPlacement", patchVistaPlacementSchema, "远景摆放配置表单");
+  applyOnce(CONFIG, "__emberCnProseMirror", patchProseMirrorBlocks, "ProseMirror 模板块菜单");
   applyOnce(CONFIG, "__emberCnChatKeys", buildChatKeys, "聊天卡复合键");
   applyOnce(CONFIG, "__emberCnRender", patchRenderedApplications, "界面渲染");
   // 上面三条改的都是日历条读的数据（月亮名 / 天气档位名 / 日期格式），改完统一重画一次。
