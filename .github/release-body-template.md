@@ -16,6 +16,29 @@ https://github.com/takaqiao/ember_cn_unofficial/releases/latest/download/module.
 
 ## 变更 / Changes
 
+### v1.1.19 — 块级判据抓出的四类错，加两处名称订正
+
+上一版新建了一族「**按 HTML 标签切块、逐块对齐**」的检查，比整叶比对细一个量级。
+它一上线就报出四类**整叶检查永远看不见**的错，本版全部修好：
+
+- **「阿克图里安高原」→「阿克图斯高原」**。`Arctus Plateau` 是地名，与族名 `Arcturian` 串了行。
+  全库「阿克图斯高原」1048 处 : 「阿克图里安高原」1 处 —— 就是这一处孤例。
+- **木构造体的来历漏译**：英文写「著名的**阿克图瑞尔**工匠瓦索洛缪·切斯」，
+  中文只剩「名匠」。已补齐，并与同族条目对齐。
+- **`Rank N Soulmark` 的「N 级魂印」→「阶位 N 魂印」**。本项目里
+  `Tier`＝阶 / `Rank`＝阶位 / `level`＝等级 是三样东西，写「级」把 Rank 和 Level 混到了一起。
+- **正文里两处裸露的 `Rank 1` / `Rank 2` 没译**，已译出。
+
+### 名称订正
+
+- **`Arcturelian`（阿克图瑞尔的）不再与 `Arcturian`（阿克图里安）混用** ——
+  前者派生自城名 `Arcturel`（阿克图瑞尔），后者是高原上的族名，是两个词。
+- **邪术师宗主 `Hexblade` 恢复英文原名**：它此前译作「咒刃」，与已定稿的
+  `Spellblade`＝咒刃 撞名，同一个中文指两样东西。
+
+完整改动请见本次发布对应的提交记录。
+See the commits associated with this tag for the full change list.
+
 ### v1.1.18 — 三个月亮尊号成组归一
 
 Ember 的三颗月亮各有一个英文尊号，中文此前三个都在分叉，而且**分叉横跨同一本 journal 的不同页**
