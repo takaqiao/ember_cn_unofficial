@@ -266,6 +266,32 @@ function checkEnvironment() {
 /*  B · Babele 通道                              */
 /* -------------------------------------------- */
 
+/**
+ * 一个合集的**索引里有多少条**。
+ *
+ * ⚠ 用途只有一个：区分「**上游这个包本身就是空的**」与「**有内容却没有译文**」。
+ *   `crucible.crafting` 在 `system.json` 里声明了，而 `systems/crucible/packs/` 下**连目录都不存在**
+ *   （2026-08-17 实测：声明 16 个包、目录里 15 个，差的就是它）—— 它永远不会有译文，
+ *   报成「没有译文」会让人一直去追一个不存在的缺口。
+ * ⚠⚠ 但**绝不许**因此把它从分母里摘掉：把项挪出视野换一个好看的数，正是本项目第二十四轮
+ *   那个假 0 的同型动作。**分母一条不动，改的只是报文说不说得清。**
+ * ⚠ `pack.index` 在 Foundry 里是 `Collection`（有 `.size`），桩环境常给数组 —— 两种都接。
+ */
+function packIndexSize(p) {
+  const idx = p?.index;
+  if (idx == null) return 0;
+  if (typeof idx.size === "number") return idx.size;
+  if (typeof idx.length === "number") return idx.length;
+  try { return [...idx].length; } catch (_) { return 0; }
+}
+
+/** 点名清单的截断上限（截断本身也要说出来，不许静静少列）。 */
+const NAME_LIST_CAP = 24;
+function cappedList(a, unit = "条") {
+  return a.slice(0, NAME_LIST_CAP)
+    .concat(a.length > NAME_LIST_CAP ? [`…另 ${a.length - NAME_LIST_CAP} ${unit}没有列出（列表上限 ${NAME_LIST_CAP}）`] : []);
+}
+
 function checkBabele() {
   const S = "B Babele 通道";
   if (!modActive("babele")) return [Check.skip(S, "整档", "Babele 未启用，合集译文通道无从查起")];
@@ -303,12 +329,19 @@ function checkBabele() {
   //   **它们互相矛盾时，先怀疑判据**（2026-08-16 与 08-17 两次都是判据错）。
   let sampled = 0, cn = 0;
   const badPacks = [];
+  // ⚠ 抽样里**没有中文**的条目要逐条留名 —— 只报一个「中文 130/137」的百分比，
+  //   与「某个包真的漏译了」在报文上**长得一模一样**，读者无从下手（见本档下面那条 ok 分支）。
+  const enNames = [];
   for (const p of packs) {
     const idx = [...(p.index ?? [])];
     if (!idx.length) continue;
     const take = idx.slice(0, 8);
     let packCn = 0;
-    for (const e of take) { sampled++; if (hasCJK(e.name)) { cn++; packCn++; } }
+    for (const e of take) {
+      sampled++;
+      if (hasCJK(e.name)) { cn++; packCn++; }
+      else enNames.push(`${p.collection ?? p.metadata?.name} :: ${e.name}`);
+    }
     if (take.length && packCn === 0) badPacks.push(`${p.metadata?.label ?? p.collection}（抽 ${take.length} 条无一中文）`);
   }
 
@@ -318,14 +351,66 @@ function checkBabele() {
   } else if (!packs.length) {
     out.push(Check.skip(S, "已认到译文的合集", "当前世界里没有 ember / crucible 的合集"));
   } else {
-    const yes = packs.filter(p => {
+    const yes = [], noTrans = [];
+    for (const p of packs) {
       // ⚠ 必须是 collection **字符串**，不是 pack 对象（见上面那段）
       const id = p.collection ?? `${p.metadata?.packageName ?? p.metadata?.package}.${p.metadata?.id ?? p.metadata?.name}`;
-      try { return babele.isTranslated(id); } catch (_) { return false; }
-    });
+      let t = false;
+      try { t = !!babele.isTranslated(id); } catch (_) { t = false; }
+      (t ? yes : noTrans).push({ p, id });
+    }
     if (yes.length) {
-      out.push(Check.ok(S, "已认到译文的合集", packs.length,
-        `${yes.length}/${packs.length} 个合集有对应译文文件`));
+      /* ⚠⚠ **聚合数必须点名到具体项。**（2026-08-17 第二次真实世界冒烟验证的产物）
+         这一行从前报的是一句光秃秃的「**21/22** 个合集有对应译文文件」—— 那个「1」是谁，
+         报文里一个字都没有。今天它是良性的（差的是 `crucible.crafting`：`system.json` 里
+         声明了 16 个包，而 `systems/crucible/packs/` 下**只有 15 个目录**，它连目录都不存在），
+         **问题不在于它今天良性，而在于明天某个真包丢了译文，报出来长得一模一样。**
+
+         所以这里做两件事，缺一不可：
+           ① **逐个点名**没认到译文的合集（点名之外还要给出它的 index 条数）；
+           ② 把点名出来的分成**良性 / 可疑**两类 —— 上游包自己就是空的（index 0 条）报「预期」，
+              上游有内容却没译文才是要提醒的（升成 ⚠️ 注意）。
+         ⚠⚠ **不许把「没有译文」的包从分母里摘掉**去换一个好看的 22/22 —— 那是本项目
+         第二十四轮那个假 0 的同型动作（把 117 个键挪出视野换来一个假 0）。**分母一条不动。**
+         ⚠ 「空包」是拿 `pack.index.size` 判的，而**索引还没加载时与空包长得一样** ——
+           所以只有本次**别处确实抽到过索引**（`sampled > 0`）才敢判「预期」，否则老实说分不清。 */
+      const emptyOnes = [], suspectOnes = [];
+      for (const o of noTrans) {
+        const n = packIndexSize(o.p);
+        ((n === 0 && sampled > 0) ? emptyOnes : suspectOnes).push({ ...o, n });
+      }
+      const label = (o) => `\`${o.id}\`（${o.p?.metadata?.label ?? "无标题"}）`;
+      const items = [
+        ...suspectOnes.map(o => `${label(o)} —— ` + (o.n > 0
+          ? `⚠️ **上游此包有 ${o.n} 条内容，却没有对应译文文件** —— **这一条要看**：` +
+            `多半是译文文件漏发、或 babele mapping 没登记上，装了也不会有中文。`
+          : `⚠️ index 0 条，**但本次一条索引都没抽到** —— 「上游空包」与「索引还没加载」` +
+            `在 \`pack.index.size\` 上长得一样，**这次分不出来，不敢判良性**。`)),
+        ...emptyOnes.map(o => `${label(o)} —— **预期**：上游此包为空（\`pack.index\` 0 条），` +
+          `**没有可译内容**，本来就不该有译文文件（例：\`crucible.crafting\` 在 \`system.json\` 里` +
+          `声明了，\`systems/crucible/packs/\` 下却连目录都没有）。`)
+      ];
+      // ⚠ 这段说明里**不许出现 `N/N` 那种满分比例的字面写法** —— 报文里的比例是给人读的判据，
+      //   在解释文字里写一个假的满分，读者（和拿报文做回测的用例）都会当真。
+      const tail = `　⚠ **分母一条没动**：${packs.length} 个合集全在分母里，没有任何包被摘出视野` +
+        `（摘掉一个换来「全部齐活」的满分，正是本项目第二十四轮那个假 0 的同型动作）。` +
+        `　⚠ 「空包」判据是 \`pack.index.size\`，索引没加载时与空包长得一样 —— ` +
+        `本次别处抽到 ${sampled} 条索引，只有在这个前提下才敢把 index 0 条判成「预期」。`;
+      if (!noTrans.length) {
+        out.push(Check.ok(S, "已认到译文的合集", packs.length,
+          `${yes.length}/${packs.length} 个合集**全部**有对应译文文件（没有差额可点名）。`));
+      } else if (!suspectOnes.length) {
+        out.push(Check.ok(S, "已认到译文的合集", packs.length,
+          `${yes.length}/${packs.length} 个合集有对应译文文件。**差的 ${noTrans.length} 个逐个点名如下**，` +
+          `**全部是上游自己的空包**（index 0 条，没有可译内容）—— 这是**预期**，不是缺陷。` + tail,
+          items));
+      } else {
+        out.push(Check.warn(S, "已认到译文的合集", packs.length,
+          `${yes.length}/${packs.length} 个合集有对应译文文件。**差的 ${noTrans.length} 个逐个点名如下**，` +
+          `其中 **${suspectOnes.length} 个不是空包 —— 这几个要看**` +
+          (emptyOnes.length ? `（另 ${emptyOnes.length} 个是上游空包，属预期）` : "") + "。" + tail,
+          items));
+      }
     } else if (cn > 0) {
       // ⚠⚠ 交叉印证：这一行说「一个都没认到」，而索引抽样说屏上是中文 —— **两者不可能同时为真**。
       //   本行**两次**在真实世界里制造过这种自相矛盾的假警报（2026-08-16 读了不存在的
@@ -352,12 +437,26 @@ function checkBabele() {
   if (!sampled) {
     out.push(Check.skip(S, "合集索引抽样", "所有合集的索引都是空的（还没加载？）"));
   } else if (badPacks.length) {
+    // ⚠ 同一条聚合数的点名要求：`badPacks` 只点到「整包无一中文」那一级，
+    //   而 `sampled - cn` 这个差额里**还有别的包里零星的英文条目** —— 一并逐条点名。
     out.push(Check.fail(S, "合集索引抽样", sampled,
-      `抽 ${sampled} 条、中文 ${cn} 条。**下列合集一条中文都没有**：`, badPacks));
+      `抽 ${sampled} 条、中文 ${cn} 条。**下列合集一条中文都没有**：`,
+      badPacks.concat(enNames.length
+        ? [`（差额逐条点名 · 抽样里没有中文的 ${enNames.length} 条条目名）`, ...cappedList(enNames)]
+        : [])));
+  } else if (!enNames.length) {
+    out.push(Check.ok(S, "合集索引抽样", sampled,
+      `抽 ${sampled} 条，**全部是中文**（100%），没有差额可点名。`));
   } else {
+    // ⚠⚠ 与上面「已认到译文的合集」同一类缺陷：`cn/sampled` 分子小于分母时，
+    //   光报百分比等于把差额藏起来 —— **「按约定保留英文」与「真的漏译了」在报文上一模一样**。
+    //   所以百分比照报，差额**逐条点名**。
     out.push(Check.ok(S, "合集索引抽样", sampled,
       `抽 ${sampled} 条，中文 ${cn} 条（${Math.round(cn / sampled * 100)}%）。` +
-      `⚠ 非 100% 不一定是缺陷 —— 有些条目按约定保留英文原名。`));
+      `**其余 ${enNames.length} 条抽样条目名里没有中文，逐条点名如下**：` +
+      `⚠ 非 100% 不一定是缺陷 —— 有些条目按约定保留英文原名（见 H 档豁免）；` +
+      `**但真的漏译时报出来长得一模一样，所以不许只报一个百分比。**`,
+      cappedList(enNames)));
   }
   return out;
 }
@@ -383,18 +482,36 @@ function checkI18n() {
 
   let checked = 0;
   const bad = [];
+  // ⚠⚠ **分母会自己缩水的那一类聚合数。** 取不到的键从前是静静 `continue` 掉的：
+  //   报文只写「查 1 条，全部符合既定裁决」，而探针明明有 ${I18N_PROBES.length} 条 ——
+  //   少查的那几条**在报文里不留一点痕迹**。「把项挪出视野换一个好看的数」正是本项目
+  //   第二十四轮那个假 0 的形态。⇒ 分母（探针总数）照报，**取不到的逐条点名**。
+  const absent = [];
   for (const [key, want, why] of I18N_PROBES) {
     const got = game.i18n.localize(key);
-    if (got === key) continue;          // 该键在当前世界不存在（例如没装 ember），不算错
+    if (got === key) {                  // 该键在当前世界取不到（例如没装 ember），不算错 ——
+      absent.push(`\`${key}\` —— **本次没查**（\`localize()\` 原样吐回了键名：相关模块没装，` +
+        `或上游把这个键改名/删了）。裁决内容：${why}`);
+      continue;                         // …但**必须留名**，不许静静缩小分母
+    }
     checked++;
     if (!got.includes(want)) bad.push(`\`${key}\` = 「${got}」，应含「${want}」 —— ${why}`);
   }
+  const absentNote = absent.length
+    ? `　⚠ 探针共 ${I18N_PROBES.length} 条，**另有 ${absent.length} 条这次取不到、根本没查**` +
+      `（**不是通过**），逐条点名见下。`
+    : `（探针 ${I18N_PROBES.length} 条**全部**取到了，没有静默少查的。）`;
   if (!checked) {
-    out.push(Check.skip(S, "裁决键抽验", "探针里的键在当前世界一个都不存在（相关模块没装？）"));
+    out.push(Check.skip(S, "裁决键抽验",
+      `探针里的 ${I18N_PROBES.length} 个键在当前世界**一个都取不到**（相关模块没装？）：` +
+      absent.map(a => a.split(" —— ")[0]).join(" · ")));
   } else {
     out.push(bad.length
-      ? Check.fail(S, "裁决键抽验", checked, `查 ${checked} 条，**${bad.length} 条与裁决不符**：`, bad)
-      : Check.ok(S, "裁决键抽验", checked, `查 ${checked} 条，全部符合既定裁决`));
+      ? Check.fail(S, "裁决键抽验", checked,
+          `查 ${checked}/${I18N_PROBES.length} 条，**${bad.length} 条与裁决不符**：` + absentNote,
+          bad.concat(absent))
+      : Check.ok(S, "裁决键抽验", checked,
+          `查 ${checked}/${I18N_PROBES.length} 条，全部符合既定裁决。` + absentNote, absent));
   }
   return out;
 }
