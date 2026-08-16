@@ -287,24 +287,20 @@ function checkBabele() {
   //   Babele 的公开 API 是 `isTranslated(pack)`（babele.js:557）。
   //   教训：**写「检查 X 有没有生效」的判据时，先确认自己读的属性真的存在** ——
   //   一个读了 undefined 就报红的检查，制造的是假警报，比不检查更糟。
-  if (typeof babele.isTranslated !== "function") {
-    out.push(Check.skip(S, "已认到译文的合集",
-      "这个版本的 Babele 没有 `isTranslated()` —— API 变了，本项无从查起"));
-  } else if (!packs.length) {
-    out.push(Check.skip(S, "已认到译文的合集", "当前世界里没有 ember / crucible 的合集"));
-  } else {
-    const yes = packs.filter(p => { try { return babele.isTranslated(p); } catch (_) { return false; } });
-    out.push(yes.length
-      ? Check.ok(S, "已认到译文的合集", packs.length, `${yes.length}/${packs.length} 个合集有对应译文文件`)
-      : Check.fail(S, "已认到译文的合集", packs.length,
-          `**${packs.length} 个合集一个都没认到译文** —— 合集会全是英文`));
-  }
-
-  if (!packs.length) {
-    out.push(Check.skip(S, "合集索引抽样", "当前世界里没有 ember / crucible 的合集"));
-    return out;
-  }
-
+  //
+  // ⚠⚠⚠ 2026-08-17 第二次真实世界自检：**同一行又报了一次假警报，同样的自相矛盾**
+  //   （❌ 22 个一个都没认到 / ✅ 索引抽样 137 条全中文）。上面那条教训只改对了一半 ——
+  //   **函数名是对的，参数形态是错的**：
+  //     babele.js:557                 isTranslated(pack)  @param {string} ex. "dnd5e.classes"
+  //     translation-session.js:111    → !!translatedCompendiumFor(collection)
+  //     mapped-compendiums.js:60/49   → this.packs.get(pack)   ← 以**字符串**为键的 Map
+  //   传 `CompendiumCollection` **对象**进去必然 miss、**永远返回 false**，与有没有译文无关。
+  //   所以要传 `p.collection`（`"ember.crucible-adventure"` 这种）。
+  //   ⇒ 教训要补一句：**「这个 API 存在」不等于「我喂给它的东西是它要的」** ——
+  //     照着 JSDoc 的 `@param` 类型核一遍，别只核函数名。
+  // ⚠ 抽样**先算**，因为下面那条「已认到译文的合集」要拿它做交叉印证 ——
+  //   这一档的两条检查测的是同一件事的两端（译文文件认没认到 / 屏上是不是中文），
+  //   **它们互相矛盾时，先怀疑判据**（2026-08-16 与 08-17 两次都是判据错）。
   let sampled = 0, cn = 0;
   const badPacks = [];
   for (const p of packs) {
@@ -314,6 +310,43 @@ function checkBabele() {
     let packCn = 0;
     for (const e of take) { sampled++; if (hasCJK(e.name)) { cn++; packCn++; } }
     if (take.length && packCn === 0) badPacks.push(`${p.metadata?.label ?? p.collection}（抽 ${take.length} 条无一中文）`);
+  }
+
+  if (typeof babele.isTranslated !== "function") {
+    out.push(Check.skip(S, "已认到译文的合集",
+      "这个版本的 Babele 没有 `isTranslated()` —— API 变了，本项无从查起"));
+  } else if (!packs.length) {
+    out.push(Check.skip(S, "已认到译文的合集", "当前世界里没有 ember / crucible 的合集"));
+  } else {
+    const yes = packs.filter(p => {
+      // ⚠ 必须是 collection **字符串**，不是 pack 对象（见上面那段）
+      const id = p.collection ?? `${p.metadata?.packageName ?? p.metadata?.package}.${p.metadata?.id ?? p.metadata?.name}`;
+      try { return babele.isTranslated(id); } catch (_) { return false; }
+    });
+    if (yes.length) {
+      out.push(Check.ok(S, "已认到译文的合集", packs.length,
+        `${yes.length}/${packs.length} 个合集有对应译文文件`));
+    } else if (cn > 0) {
+      // ⚠⚠ 交叉印证：这一行说「一个都没认到」，而索引抽样说屏上是中文 —— **两者不可能同时为真**。
+      //   本行**两次**在真实世界里制造过这种自相矛盾的假警报（2026-08-16 读了不存在的
+      //   `babele.translations`；2026-08-17 把 `CompendiumCollection` 对象喂给了要字符串的
+      //   `isTranslated`）。所以这里**不许再报自信的失败** —— 报矛盾本身，并把矛头指向判据。
+      out.push(Check.warn(S, "已认到译文的合集", packs.length,
+        `**本行与下一行自相矛盾，先别信本行**：本行算出「${packs.length} 个合集一个都没认到译文」，` +
+        `而「合集索引抽样」在同一次运行里抽到 ${cn}/${sampled} 条中文 —— ` +
+        `屏上有中文就说明 babele 认到了译文，**两者不可能同时为真**。` +
+        `⚠ 本行历史上两次都是**判据自己错**（2026-08-16 读了不存在的属性；2026-08-17 参数类型喂错），` +
+        `没有一次是译文真的没生效。**先去核这行代码，别去核译文。**`));
+    } else {
+      out.push(Check.fail(S, "已认到译文的合集", packs.length,
+        `**${packs.length} 个合集一个都没认到译文** —— 合集会全是英文` +
+        `（索引抽样这一侧同样没抽到中文，两条互相印证，这次多半是真的）`));
+    }
+  }
+
+  if (!sampled && !packs.length) {
+    out.push(Check.skip(S, "合集索引抽样", "当前世界里没有 ember / crucible 的合集"));
+    return out;
   }
 
   if (!sampled) {
