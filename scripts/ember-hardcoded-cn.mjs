@@ -2132,11 +2132,42 @@ const NOTIFICATION_PATTERNS = [
   { re: /^Imported composition to Level "(.+)"\.$/, cn: (m) => `已将构图导入到层「${m[1]}」。` },   // 34779
   { re: /^Awarded attunement progression points to Actors: (.+)$/,
     cn: (m) => `已向以下角色授予同调进阶点数：${m[1]}` },                                         // 36885
+  // ═══ 2026-08-16 第二十九轮｜V9 裁决：本表挂在**全局** `ui.notifications.notify` 上 ═══
+  // 判据（主控拍板）：本表每一条正则必须满足其一 ——
+  //   ① **句内自带厂商锚点**（"Ember" / "Token Maker" / "Soulbound" / "Vista" / "Attunement" 等
+  //      Ember 专有词，别的模块不会原样发），或
+  //   ② **插值位的定义域封闭且形状足够特异**（回上游数得出来是哪几个，且形状不像自然语言）。
+  // 两者都没有的 ⇒ **删掉**。代价不对称：少翻我们自己一条通知 = 用户看到一句英文；
+  // 把别人的通知重写成错的中文 = 用户看到一句语义完全错的中文，**且查不出是谁干的**。
+  // 现场证据（第二十八轮实测）：旧的 `^Mirror (.+) does not exist!$` 把别的模块的
+  // 'Mirror Image does not exist!'（Mirror Image = 镜影术）重构成「镜子 Image 不存在！」。
+  //
+  // ── 为什么 MED 那 4 条**可以先不动**（:37966 · :120582 · :120627 · 已收紧的 Mirror :98432）──
+  // 休息那三条（:37966 / :120582 / :120627）同样没有厂商锚点，但**唯一的插值位是 `(\d+)`**
+  // —— 形状封闭（整数），且这个位置上的
+  // 内容**不携带语义**：句子讲的事情与谁发的无关，即便别的模块逐字发出同一句，
+  // 译出来的中文对它**也是对的**（「短休在 10 分钟后被打断！」= 原句的意思，一字不多一字不少）。
+  // 被删的那四条不是这样：它们的插值位是**名字**（事件名 / 角色名 / partId / 颜色串），
+  // 「错的中文框 + 真的专名」= 一句关于某个具名事物的**错误陈述**，正是 Mirror Image 那种伤害。
+  // 第 4 条 MED（Mirror :98432）走的是判据②：第二十八轮已把它收成 `([ab]\d{1,2})`，
+  // 定义域是 `BleakArchiveAreaMap.#MIRRORS` 的键（a1…a23 / b1…b23，:97859 / :98130 / :98430
+  // 三处互相印证），**已经封闭**，不在本轮的处理范围里。
+  // ⇒ 判 HIGH / MED 的分界不是「有没有锚点」，是「**插值位上是不是专名**」。
   { re: /^Completed resting for (\d+) hours without incident!$/,
     cn: (m) => `顺利完成了 ${m[1]} 小时的休息！` },                                              // 37966
-  { re: /^Your rest was interrupted after (\d+) hours by the (.+) event!$/,
-    cn: (m) => `休息在 ${m[1]} 小时后被「${m[2]}」事件打断！` },                                  // 37970
-  { re: /^Your rest was interrupted by the (.+) event!$/, cn: (m) => `休息被「${m[1]}」事件打断！` }, // 38009
+  // ⛔ 已删（第二十九轮）：`^Your rest was interrupted after (\d+) hours by the (.+) event!$`（:37970）
+  //    与 `^Your rest was interrupted by the (.+) event!$`（:38009）。
+  //    回上游查了第二个插值位的定义域，**封不住**：ember.mjs:37970/38009 里那个位是
+  //    `restEvent.label`；`restEvent` 来自 `ember.events.nextEvent()`（:4713 → :4731
+  //    `getHexOutcomes` 遍历 `ember.region.events`），而事件对象的 `label` 由
+  //    `_prepareEventData()`（ember.mjs:2483）赋成 **`this.parent.name`** —— 事件所在
+  //    JournalEntryPage 的**页名**。页名是战役数据/GM 自建内容，是任意英文标题
+  //    （EmberNarrativeNode 构造器 :19042 的默认值是空串，391 处 addChildEvent 一个 label 都没写死）。
+  //    ⇒ 开放集合 + 自然语言形状，收紧无从下手；句内也没有一个 Ember 专有词。
+  //    而「休息被 X 打断」是通用措辞，dnd5e 系的休息模块发近似句子完全可能。⇒ 按裁决删。
+  //    **损失**：Ember 自己的队伍休息被事件打断时，那一句通知留英文
+  //    （"Your rest was interrupted by the Ambush event!"）。事件名本来就不翻（是页名），
+  //    所以中英两版给用户的信息量差别只有「打断了」这半句 —— 且同一时刻队伍卡上会弹出事件本身。
   { re: /^Your short rest has been interrupted after (\d+) minutes!$/,
     cn: (m) => `短休在 ${m[1]} 分钟后被打断！` },                                                // 120582
   { re: /^Your long rest has been interrupted after (\d+) hours!$/,
@@ -2164,11 +2195,41 @@ const NOTIFICATION_PATTERNS = [
   // kind 只可能是 "layer" / "color"（ember.mjs:51903 / 51938 两个调用点写死）
   { re: /^This (layer|color) is not available in the Token Maker's current template preview\.$/,
     cn: (m) => `该${m[1] === "layer" ? "层" : "颜色"}在指示物制作器当前的模板预览中不可用。` },        // 51760
-  { re: /^"(.+)" is already registered for this (layer|color)\.$/,
-    cn: (m) => `「${m[1]}」已在该${m[2] === "layer" ? "层" : "颜色"}上注册过了。` },                // 51766
-  { re: /^You cannot create multiple tokens for the "(.+)" group actor\.$/,
-    cn: (m) => `不能为群组角色「${m[1]}」创建多个指示物。` },                                        // 60902
-  { re: /^Adjacent hex (.+) is not directly reachable from current hex (.+)\.$/,
+  // ⛔ 已删（第二十九轮）：`^"(.+)" is already registered for this (layer|color)\.$`（:51766）。
+  //    ⚠ 这条与紧邻上面那条 :51760 **出自同一个函数**（`#importValue`，ember.mjs:51757-51771），
+  //      对照本身就是证据：:51760 那句里有 "Token Maker"，是厂商锚点，留；:51766 这句
+  //      **整句一个 Ember 专有词都没有**，而 `layer` 恰恰是 Foundry 的通用概念
+  //      （canvas layer / sheet layer）。任何做注册去重的模块发一句
+  //      `"myLayer" is already registered for this layer.` 都会被整句重写成
+  //      「「myLayer」已在该层上注册过了。」—— 现网越界已实跑坐实（`"crimson" … color.` 同理）。
+  //    收紧插值位帮不上忙：`value` 来自 `#getImportValue`（ember.mjs:51742-51746），是
+  //    partId 串（`makeParts` :38165 拼的 `namespace/layerId/partName`）/ 颜色串
+  //    （`Color#toString()`）/ 字面量 "unused" 三选一 —— 就算把它收成这三种形状，
+  //    **句子仍然没有锚点**，只是把误伤面从「所有第三方注册去重通知」缩到
+  //    「id 里带斜杠或写成 #rrggbb 的那些」，性质不变。⇒ 按裁决删。
+  //    **损失**：动态指示物「约束导入」里重复添加同一个 partId / 颜色时的那句去重提示留英文。
+  //    这是 GM 配置动态指示物模板时才走到的路径，且提示本身只是「这个值已经在列表里了」，
+  //    界面上那一行值就摆在眼前，留英代价极小。
+  // ⛔ 已删（第二十九轮）：`^You cannot create multiple tokens for the "(.+)" group actor\.$`（:60902）。
+  //    上游 ember.mjs:60902 里插值位是 `document.actor.name` —— **任意角色名**，彻底开放；
+  //    句内零厂商锚点，而 "group actor" 在 dnd5e 里是**核心角色类型**（type: "group"），
+  //    别的模块/系统对同一概念发近似句子完全可能。收紧无从下手 ⇒ 按裁决删。
+  //    **损失**：在地区地图上重复拖入同一个队伍（group）角色时的那句阻止提示留英文。
+  //    该提示只在 `#preCreateToken` 拒绝创建时出现一次，动作本身也当场失败（指示物没放上去），
+  //    用户拿得到反馈，不靠这句中文。
+  // ✅ 收紧（第二十九轮）：hex 那条原为 `^Adjacent hex (.+) is not directly reachable from current hex (.+)\.$`，
+  //    两个 `(.+)` 会把任意「Adjacent hex X is not directly reachable from current hex Y.」吃掉。
+  //    上游定义域可封（回源核过，三处互相印证）：
+  //      · ember.mjs:61049 两个位分别是 `h1.key` / `h0.key`；
+  //      · `get key()`（:738）→ `EmberHex.getKey(this.#slice.prefix, this.offset)`；
+  //      · `getKey()`（:908）恒返回 `` `${prefix}.${offset.i}.${offset.j}` ``，而
+  //        `validateString()`（:955-956）要求 i / j 都是 `Number.isInteger`。
+  //    slice 前缀现有且仅有两个字面量：`"s"`（:119780 surface）与 `"p"`（:120120），
+  //    这里写成 `[a-z]{1,2}` 留出上游加 slice 的余量。
+  //    ⇒ 形状是 `前缀.整数.整数`，不像自然语言，别的模块不会撞上。**这是便宜的加固，不是删除。**
+  //    ⚠ 顺带订正一条用例：旧的通知正例写的是「Adjacent hex 12.4 …」（**没有前缀**），
+  //      而 `getKey` 恒带前缀 —— 那是个上游根本产不出的形状，本轮改成 `s.12.4` / `s.12.3`。
+  { re: /^Adjacent hex ([a-z]{1,2}\.-?\d+\.-?\d+) is not directly reachable from current hex ([a-z]{1,2}\.-?\d+\.-?\d+)\.$/,
     cn: (m) => `相邻六边格 ${m[1]} 无法从当前六边格 ${m[2]} 直达。` },                             // 61049
   // ⚠ `Region Map`＝地区地图（既定裁决），原译「区域地图」是 Area Map 的译名
   { re: /^You are not allowed to delete the (.+) Token from the Region Map\.$/,

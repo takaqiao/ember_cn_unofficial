@@ -1093,6 +1093,23 @@ export async function keyLiveness(tables) {
       `「查无此串」上，**那是本档的边界，不是缺陷**。`));
   }
 
+  /* ── 记账台账（第三十一轮 · V14 归因的产物）──────────────────────────────
+        为什么要有这一份：面板自报的 `checkedDistinct` 长期**没有分母**。外面的人拿
+        「表里一共多少个键」去对 719，对不上就只能当成「面板悄悄少核了一批」——
+        V14 那条「面板 719/1273 vs 表侧 721/1304」挂了三轮，最后查出来差的
+        **2 个 distinct / 31 条 raw 根本不是键**：外面那份计数器直接 `Object.keys(spec)`，
+        把 `{ table, kind, onlyOn, packs, corpus }` 这五个**元数据属性名**当成了翻译键
+        （34 条伪键），再减去它反而没看见的 `MISSING_LANGUAGES` 那 3 个真键
+        （它们藏在 `spec.table` 里面），34 − 3 = 31 / 5 − 3 = 2，一分不差。
+        ⇒ 治本的办法不是去改哪一侧的数，而是**让面板自己把账列平**：
+          登记的真实键 = 已核 + 按设计没核（逐表点名 + 逐条写明为什么）。
+        ⚠ 这份台账只增加信息，**不参与 `checkedDistinct` 的计算** —— 被核键数一个不减。 */
+  const regDistinct = new Set();       // 登记的真实键（穿过 `{table,…}` 包装看里面那张表）
+  let regRawLiteral = 0, regRawRegex = 0, regArrTables = 0, wrappedTables = 0;
+  const realKeysOf = new Map();        // 表名 → 真实键数组
+  const skipWhyOf = new Map();         // 表名 → 这张表（这一批键）没进计数的原因
+  const contributed = new Map();       // 表名 → 实际计进 rawChecked 的条数
+
   /* ── 第一趟：决定每张表怎么核（不产出报文），顺便把要 grep 的键收集起来做去重 ── */
   const plan = [];
   for (const [name, spec] of Object.entries(tables)) {
@@ -1101,21 +1118,35 @@ export async function keyLiveness(tables) {
     const kind = spec?.kind ?? "literal";
     const keyKinds = spec?.keyKinds ?? {};
 
-    if (onlyOn && game.system?.id !== onlyOn) { plan.push({ name, mode: "skip", why: `按设计只在 \`${onlyOn}\` 系统下生效，当前是 \`${game.system?.id}\`` }); continue; }
+    // 台账登记：**在任何 continue 之前**，先把这张表里的真实键记下来。
+    //   放到后面记就会跟着 continue 一起漏掉 —— 那正是本项目登记的「摘出视野」老毛病。
+    if (spec && !Array.isArray(spec) && typeof spec === "object"
+        && Object.prototype.hasOwnProperty.call(spec, "table")) wrappedTables++;
+    if (Array.isArray(table)) { regArrTables++; regRawRegex += table.length; }
+    else {
+      const rk = Object.keys(table ?? {});
+      realKeysOf.set(name, rk);
+      regRawLiteral += rk.length;
+      for (const k of rk) regDistinct.add(k);
+    }
+
+    if (onlyOn && game.system?.id !== onlyOn) { skipWhyOf.set(name, `\`onlyOn: ${onlyOn}\`，当前世界是 \`${game.system?.id}\``); plan.push({ name, mode: "skip", why: `按设计只在 \`${onlyOn}\` 系统下生效，当前是 \`${game.system?.id}\`` }); continue; }
     if (Array.isArray(table)) { plan.push({ name, mode: "skip", why: "正则表，无法用字面量核对（要核得跑真实输入）" }); continue; }
     const allKeys = Object.keys(table ?? {});
-    if (!allKeys.length) { plan.push({ name, mode: "skip", why: "空表" }); continue; }
+    if (!allKeys.length) { skipWhyOf.set(name, "空表"); plan.push({ name, mode: "skip", why: "空表" }); continue; }
 
     // 键级分流：同一张表里个别键来路不同（如 `The Abyss` / `Heart of Ember` 是合集页名）
     const diverted = allKeys.filter(k => keyKinds[k]);
     const keys = allKeys.filter(k => !keyKinds[k]);
 
-    if (kind === "composed") { plan.push({ name, mode: "skip", n: allKeys.length, why: `${allKeys.length} 键是**运行时拼出来**的（如 \`\${月亮} Attunement (Rank \${N})\`），上游文本里本来就不会有这个字面量 —— 字面量核对对它无效，不是失效。` }); continue; }
-    if (kind === "data") { plan.push({ name, mode: "skip", n: allKeys.length, why: `${allKeys.length} 键来自**数据文件**（${spec?.corpus ?? "合集 / JSON"}）而不是脚本或模板 —— 拿当前语料核不出来，不是失效。` }); continue; }
-    if (kind === "field-path") { plan.push({ name, mode: "skip", n: allKeys.length, why: `${allKeys.length} 键是**字段路径**（\`schema.getField()\` 的实参，如 \`illumination.blurStrength\`），不是上屏的显示串 —— 上游文本里当然没有整串。该核的是**配对的英文 label 表**（如 \`VISTA_PLACEMENT_EN\`），把那张表另行登记即可。` }); continue; }
+    if (kind === "composed") { skipWhyOf.set(name, "`kind: composed` —— 运行时拼出来的串，上游文本里本来就没有这个字面量"); plan.push({ name, mode: "skip", n: allKeys.length, why: `${allKeys.length} 键是**运行时拼出来**的（如 \`\${月亮} Attunement (Rank \${N})\`），上游文本里本来就不会有这个字面量 —— 字面量核对对它无效，不是失效。` }); continue; }
+    if (kind === "data") { skipWhyOf.set(name, `\`kind: data\` —— 键来自数据文件（${spec?.corpus ?? "合集 / JSON"}），不在本档的语料里`); plan.push({ name, mode: "skip", n: allKeys.length, why: `${allKeys.length} 键来自**数据文件**（${spec?.corpus ?? "合集 / JSON"}）而不是脚本或模板 —— 拿当前语料核不出来，不是失效。` }); continue; }
+    if (kind === "field-path") { skipWhyOf.set(name, "`kind: field-path` —— 键是 `schema.getField()` 的实参，不是上屏显示串（该核的是配对的英文 label 表）"); plan.push({ name, mode: "skip", n: allKeys.length, why: `${allKeys.length} 键是**字段路径**（\`schema.getField()\` 的实参，如 \`illumination.blurStrength\`），不是上屏的显示串 —— 上游文本里当然没有整串。该核的是**配对的英文 label 表**（如 \`VISTA_PLACEMENT_EN\`），把那张表另行登记即可。` }); continue; }
     // ⚠ 键级分流把整张表都分流光了 → 这一档对它**一个键都没核**，报 skip。
     //   放任它走下去会得到一条「0 键全部仍能找到」的绿 —— 那正是本项目最忌的「0 项报绿」。
-    if (!keys.length) { plan.push({ name, mode: "skip", why: `${allKeys.length} 个键全部按 \`keyKinds\` 分流出去了，本表这一档**一个键都没核**` }); continue; }
+    if (!keys.length) { skipWhyOf.set(name, "键全部被 `keyKinds` 分流出去了，本表这一档一个键都没核"); plan.push({ name, mode: "skip", why: `${allKeys.length} 个键全部按 \`keyKinds\` 分流出去了，本表这一档**一个键都没核**` }); continue; }
+    // 部分键被 `keyKinds` 分流：整表仍然核，但那几个键不进计数 —— 台账里要说得出是哪一批。
+    if (diverted.length) skipWhyOf.set(name, `其中 ${diverted.length} 个键按 \`keyKinds\` 分流（${[...new Set(diverted.map(k => keyKinds[k]))].join(" / ")}），不走本表的语料`);
     if (kind === "pack-identifier") { plan.push({ name, mode: "packid", keys, diverted, keyKinds, spec }); continue; }
     if (kind === "absent-by-design") { plan.push({ name, mode: "absent", keys, diverted, keyKinds }); continue; }
     plan.push({ name, mode: "literal", keys, diverted, keyKinds });
@@ -1154,6 +1185,7 @@ export async function keyLiveness(tables) {
     if (p.mode === "packid") {
       const { ids, scanned, packs } = packIdentifiers(p.spec?.packs);
       if (!scanned || !ids.size) {
+        skipWhyOf.set(p.name, `\`kind: pack-identifier\`，但这次扫了 ${packs} 个合集 / ${scanned} 条索引只取到 ${ids.size} 个 identifier —— **无从查起**（离线跑必然如此）`);
         out.push(Check.skip(S, p.name,
           `键是合集文档的 \`system.identifier\`。扫了 ${packs} 个合集 / ${scanned} 条索引，` +
           `**取到 ${ids.size} 个 identifier** —— 合集没加载、或 index 里没有 \`system.identifier\` 字段，` +
@@ -1163,6 +1195,7 @@ export async function keyLiveness(tables) {
       const found = p.keys.filter(k => ids.has(k));
       for (const k of p.keys) checkedDistinct.add(k);
       rawChecked += p.keys.length;
+      contributed.set(p.name, (contributed.get(p.name) ?? 0) + p.keys.length);
       out.push(found.length
         ? Check.warn(S, p.name, p.keys.length,
             `${p.keys.length} 键（合集 identifier），在 ${packs} 个合集 / ${ids.size} 个 identifier 里` +
@@ -1179,6 +1212,7 @@ export async function keyLiveness(tables) {
       const found = p.keys.filter(k => corpus.has(k));
       for (const k of p.keys) checkedDistinct.add(k);
       rawChecked += p.keys.length;
+      contributed.set(p.name, (contributed.get(p.name) ?? 0) + p.keys.length);
       out.push(found.length
         ? Check.warn(S, p.name, p.keys.length,
             `${p.keys.length} 键，**${found.length} 个上游现在提供了** —— 本表是为「上游缺这些」而建的，` +
@@ -1193,6 +1227,7 @@ export async function keyLiveness(tables) {
     // literal
     const miss = [];
     const weakHere = [], derivedHere = [], packIdxHere = [];
+    contributed.set(p.name, (contributed.get(p.name) ?? 0) + p.keys.length);
     for (const k of p.keys) {
       checkedDistinct.add(k);
       rawChecked++;
@@ -1260,6 +1295,53 @@ export async function keyLiveness(tables) {
   evidence.push(D_BOUNDARY_SUBSTRING);
   evidence.push(D_BOUNDARY_ADVENTURE);
 
+  /* ── 记账口径：把 719 这个数**对上账** ──────────────────────────────────
+        登记的真实键（穿过 `{table,…}` 包装）＝ 本档核了的 ＋ 本档按设计没核的。
+        逐表点名 + 逐条写明为什么没核 —— 读者不必再去猜「差的那几条是不是被吞了」。
+        ⚠ 这里只做**加法**：`checkedDistinct` 一个键都没动。 */
+  const ledger = [];
+  let uncheckedRaw = 0;
+  for (const [name, rk] of realKeysOf) {
+    const n = rk.length - (contributed.get(name) ?? 0);
+    if (n <= 0) continue;
+    uncheckedRaw += n;
+    ledger.push({ name, n, why: skipWhyOf.get(name) ?? "（无登记原因 —— 这本身就是个洞，见下）" });
+  }
+  const uncheckedDistinct = [...regDistinct].filter(k => !checkedDistinct.has(k));
+  ledger.sort((a, b) => b.n - a.n || a.name.localeCompare(b.name));
+  // 交叉记账：登记 = 已核 + 没核。对不上就是本函数自己的记账坏了，**当场说出来**，
+  // 不许让一个自洽但错的数流出去（本项目吃过「数字变好但没有覆盖数」的亏）。
+  const ledgerBalanced = (rawChecked + uncheckedRaw === regRawLiteral);
+  const noReason = ledger.filter(r => !skipWhyOf.has(r.name));
+
+  const ledgerLines = [
+    `**记账口径（登记 → 已核）**：表里登记的字面量键 **raw ${regRawLiteral} / distinct ${regDistinct.size}**` +
+    `（另有 ${regArrTables} 张正则表共 ${regRawRegex} 条，键不是字面量，本档结构上核不了）。` +
+    `其中本档**实际核了 raw ${rawChecked} / distinct ${checkedDistinct.size}**，` +
+    `**按设计没核 raw ${uncheckedRaw} / distinct ${uncheckedDistinct.length}**。` +
+    (ledgerBalanced ? `（${rawChecked} + ${uncheckedRaw} = ${regRawLiteral}，账是平的。）`
+                    : `　⚠⚠ **账没平**：${rawChecked} + ${uncheckedRaw} ≠ ${regRawLiteral} —— 本函数自己的记账坏了，这一档的数**全部不可信**。`),
+    `⚠ **拿外面的数来对账之前先看这一条**：`
+    + `\`SELFCHECK_TABLES\` 里有 ${wrappedTables} 张表是 \`{ table, kind, onlyOn, packs, corpus }\` 的**包装**形态。`
+    + `直接对包装对象取 \`Object.keys()\` 数出来的是那几个**元数据属性名**，不是翻译键 ——`
+    + `V14 那条挂了三轮的「面板 719/1273 vs 表侧 721/1304」，查到底就是这个：`
+    + `多出来的 34 条 raw / 5 个 distinct 全是 \`table\`/\`kind\`/\`onlyOn\`/\`packs\`/\`corpus\` 这五个词，`
+    + `再减去外面那份计数器**反而没看见**的 \`MISSING_LANGUAGES\` 3 个真键（藏在 \`spec.table\` 里），`
+    + `34−3=31 条、5−3=2 个，一分不差。**差在数表那一侧，面板一个键都没漏核。**`
+    + `要对账请用上面这行的 \`登记 raw/distinct\`（它是穿过包装数的）。`
+  ];
+  if (ledger.length) {
+    ledgerLines.push(`按设计没核的逐表清单（共 ${ledger.length} 张表 / ${uncheckedRaw} 条）：`);
+    for (const r of ledger) ledgerLines.push(`　· \`${r.name}\` ${r.n} 键 —— ${r.why}`);
+  } else {
+    ledgerLines.push("按设计没核的：0 张表（登记的字面量键**全部**进了本档的计数）。");
+  }
+  if (noReason.length) {
+    ledgerLines.push(`⚠⚠ **有 ${noReason.length} 张表没核却登记不出原因**（${noReason.map(r => `\`${r.name}\``).join(" · ")}）——`
+      + `「没核」必须说得出为什么，说不出就是被静默吞了，**按缺陷处理**。`);
+  }
+  evidence.push(...ledgerLines);
+
   const dupTotal = rawChecked - checkedDistinct.size;
   // ⚠ 这几个数**同时挂在对象上**（`.stats`），好让离线探针读**面板自己算的数**，
   //   而不是自己再抄一份判据去算 —— 探针抄一份就等于测了个副本，测不着真身。
@@ -1270,11 +1352,23 @@ export async function keyLiveness(tables) {
     `（**证据力分档见下面的清单** —— 绿和绿不一样重）。` +
     D_BOUNDARY +
     `⚠ 「查无此串」还要看表的类型：运行时拼接的、来自数据文件的、字段路径、合集 identifier、` +
-    `以及**本来就为「上游缺这些」而建的**表，找不到都是正常的 —— 那几类已按 \`kind\` 分开报，不计进这个数。`,
+    `以及**本来就为「上游缺这些」而建的**表，找不到都是正常的 —— 那几类已按 \`kind\` 分开报，不计进这个数。` +
+    `　⚠ **这个数有分母**：表里登记的字面量键是 **raw ${regRawLiteral} / distinct ${regDistinct.size}**，` +
+    `本档按设计没核其中 **raw ${uncheckedRaw} / distinct ${uncheckedDistinct.length}**` +
+    `（${ledgerBalanced ? "账已对平" : "⚠ **账没对平**"}，逐表点名见下面的「记账口径」）——` +
+    `拿外面数出来的键数直接对 ${checkedDistinct.size} 是对不上的，**先读那一条再对账**。`,
     evidence);
   total.stats = {
     checkedDistinct: checkedDistinct.size, missDistinct: missDistinct.size,
     rawChecked, rawMiss, dupTotal,
+    // ── 记账口径（第三十一轮 · V14 归因）：给 `checkedDistinct` 配上分母，
+    //    好让离线探针 / 复核直接读**面板自己算的登记数**，不必再自己去数一遍表
+    //    （自己数就会数成 721/1304 —— 那正是 V14 挂了三轮的成因）。
+    registeredRaw: regRawLiteral, registeredDistinct: regDistinct.size,
+    regexTables: regArrTables, regexEntries: regRawRegex, wrappedTables,
+    uncheckedRaw, uncheckedDistinct: uncheckedDistinct.length,
+    ledgerBalanced, ledgerNoReason: noReason.map(r => r.name),
+    ledger: ledger.map(r => ({ name: r.name, n: r.n })),
     corpora: corpus.corpora.map(c => c.label), tried, failed: failed.length, dynamic,
     tpl, advPacks: advPacks?.length ?? 0,
     tierCounts: [1, 2, 3].map(t => [...foundWhere].filter(([lab]) => corpus.tierOf(lab) === t)
