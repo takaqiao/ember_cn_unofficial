@@ -69,6 +69,40 @@ const warn = (...a) => console.warn(`${MODULE} |`, ...a);
  *   从**世界里的** JournalEntry `emberCosmos00000` 取 page.name。装了本汉化之后那个页名已经是
  *   babele 译好的「深渊 The Abyss」/「余烬之心 Heart of Ember」（双语），查表必然落空、叶子原样带回；
  *   只有「先用英文导入过、之后才装汉化」的世界才会命中。保留是因为成本为零、且正是那种世界的兜底。
+ *   2026-08-16 第二十四轮补实了这两条键的**物理出处**：它们是合集里 JournalEntryPage 的 `name`
+ *   （`packs/adventure` 的 LevelDB；仓内英文基准 `compendium/en/ember.adventure.json` 与
+ *   `ember.crucible-adventure.json` 的 `/entries/Ember Early Access/journals/Cosmos/pages/…/name`），
+ *   **原理上不会出现在任何 .mjs / .hbs / lang 里**（四份脚本 + lang/en.json 实测命中 0）。
+ *   ⚠ 因此这一档（拿 .mjs / .hbs / lang 当语料的字面量核对）对它们**永远**查无此串。
+ *   ⚠⚠ 2026-08-16 第二十五轮曾在这里写「判据语料加了『合集索引条目名（含 JournalEntry 的 pages 名）』
+ *   这一路，所以真实 Foundry 世界里这两条会被真数据接住 —— 那叫查过了」，**第二十七轮已证伪，作废**：
+ *     · 运行时 `pack.index` 上有哪些字段，由 `<Document>.metadata.compendiumIndexFields`
+ *       加 `CONFIG.<Document>.compendiumIndexFields` 决定。核心 `common/documents/adventure.mjs:26`
+ *       的 `Adventure` 只有 `_id/name/caption/description/img/sort/folder/flags.core.sheetClass`
+ *       —— **没有 `journal`，更没有 `pages`**；
+ *     · crucible 只给 ActiveEffect（`crucible-compiled.mjs:47317`）与 Item（`:47359`）追加过索引字段；
+ *       ember 全仓 `grep compendiumIndexFields` = **0 命中**，且 `module.json` 那 10 个包全是
+ *       Item / Adventure / ActiveEffect，**没有 JournalEntry 包**（JournalEntry 的索引字段本身
+ *       也只有 `_id/name/sort/folder`）。
+ *   ⇒ 这两条键躺在 **Adventure 文档内层**的 `journal[].pages[].name`（见上一段的物理出处），
+ *     运行时 `pack.index` **结构性拿不到**。装了合集的真实 Foundry 世界与离线探针**一模一样**，
+ *     都是 4 键 / 7 报文；「届时归零」不会发生，它们**永远**挂在「查无此串」上。那是本档的
+ *     **结构性边界**，不是缺陷、也不是待办。
+ *   ⚠ 那为什么不 `getDocuments()` 去读内层？因为那**不是「真查」**：babele 包住了读文档那条路，
+ *     读回来的是**我们自己译过**的文本，而本项目的条目名约定是双语并列（`深渊 The Abyss`），
+ *     于是「找到了 The Abyss」找到的是我们自己译文里那半截英文 —— 自证循环，比一条老实的边界更糟。
+ *   第二十五轮判据还做了**展开表去重**：本表被 `...ATTUNEMENTS` 展开进 MOON_NAMES / DIALOG_UI /
+ *   ATTUNEMENT_TAB / CHAT_UI，第二十四轮一个源键会被报成 4 条独立线索、很容易读成
+ *   「四张表同时失效」，现在按键去重只算一条。
+ *   ⚠ **故意不给它们加 `keyKinds`**：把键标成 data 只是又一次「挪出视野」，报文数从 7 掉到 5
+ *   **不代表任何东西变好**。它挂在榜上，是如实报「这一档对它没查成、也查不成」—— 那是应该看见的。
+ *   ⚠⚠ **跨文件成对约束**：本段结论与 `ember-cn-selfcheck.mjs` 的 `D_BOUNDARY_ADVENTURE`
+ *   （及其 ⑥「合集索引里的条目名」那段注释）是**同一条结论的两处写法，改一处必须改另一处**。
+ *   目前**没有任何闸看着这一对**（`R-selfcheck-twin` 只钉两份面板 `.mjs` 逐字节相同，管不到本文件），
+ *   所以只能靠这行明写的依赖 —— 别把它删了。
+ *   ⚠ 反过来 `Heart of Ember` 从来不上榜，是**假阴性**：它在 ember.mjs 里唯一那次命中是
+ *   :74871 远景 Vista 精灵素材目录的 `label: "Heart of Ember"`，与同调页毫无关系 ——
+ *   同一批键一条报一条不报，纯看有没有撞上无关字面量，这一档「搜得到」不构成任何证据。
  * 2026-08-13 第三轮：`Aura` 原译「灵气」是错的 —— 它是月亮专名，Cosmos 页 name 字段即「奥拉 Aura」，
  * 同一份月亮清单里 Mayis/Cora/Ragen/Orbis/Akon 全是音译；「灵气」是 `Aura Spellcraft` 手势的 adjective，不是月名。
  * ⚠ 由此，B 段拿 crucible lang 的 `SPELL.GESTURES.Aura` / `ACTION.TARGET_TYPES.Aura`＝灵气 来比本表的
@@ -130,14 +164,24 @@ const ATTUNEMENT_ITEM_NAMES = {
 };
 
 /**
- * Ember 的十个月亮名（ember.mjs:52821 起 `cosmos.moons[]` 的 `name` 字段，裸英文）。
+ * 日历面板上的天体名（裸英文；= ATTUNEMENTS 那张表 ＋ `Ember` 一条）。
  *
  * 日历面板的月亮 tooltip 由 `#refreshMoons()` 每帧写成 `${moon.name} ${moon.phaseLabel}`
  * （ember.mjs:24628），相位那半截走 i18n 已是中文、月名那半截是数据 —— 三张查表都是整串匹配，
  * 接不住这种「英文名 + 空格 + 中文相位」的复合串，而 #refreshMoons 由 animate() 每帧调用、
  * 不发渲染钩子，DOM 层就算翻了下一帧也会被写回。所以改数据（patchMoonNames）。
  * `moon.name` 全上游只有 24628 这一处消费点（查找一律用 `moon.id`，如 :125773 / :125958），改名安全。
- * 第十个 `Ember` 不是同调月，按 PROJECT.md 既定 Ember(世界)=余烬。
+ *
+ * ⚠ 2026-08-16 第二十四轮**逐行核过上游，原注释「Ember 的十个月亮名（ember.mjs:52821 起
+ *   cosmos.moons[]）」不准**，照它去数会得出错误结论：
+ *     · `cosmos.moons[]`（:52821）只有 **6** 条 —— Aura(52824) / Cora(52842) / Ragen(52864) /
+ *       Mayis(52883) / Orbis(52902) / Akon(52927)；
+ *     · Signara(52956) / Luxarum(52974) / Primordis(52992) 在**同级的 `realms[]`**（:52953）里；
+ *     · `Ember`(53037) 是 `sprites.Ember`（:53009）的 name —— 世界本体，根本不是天体。
+ *   patchMoonNames 只作用于 `ember.calendar.moons`，而上游 :3772 只把 `cosmos.moons` 灌进去，
+ *   所以本表里那 8 个非月亮的键**永远命不中，也永远不会误伤**（:2334 用 `MOON_NAMES[moon.name]`
+ *   守卫，查不到就原样跳过）—— 保留成本为零，但别把它们当「活的月亮名」去调译文。
+ *   `Ember` 按 PROJECT.md 既定 Ember(世界)=余烬。
  */
 const MOON_NAMES = {
   ...ATTUNEMENTS,
@@ -840,6 +884,20 @@ const RARITIES = {
  * `Kavir` 全库（含英文基线）只有这 8 处悬空引用、无任何定稿，音译作「卡维尔」暂定。
  *
  * ⚠ 只登记这些**悬空 id**。真实 id 的叶子已经是 babele 译好的中文，查表落空原样返回，不会被改。
+ *
+ * ⚠ 本表（连同 MISSING_CULTURES / MISSING_PATHS）的键是**合集文档的 `system.identifier`，不是显示串**。
+ *   要证明某条兜底已经多余，唯一有意义的证据是「合集 index 里出现了 identifier 等于该键的文档」：
+ *     `game.packs.get(ember.CONST.CHARACTER_OPTIONS_PACK).index.some(i => i.system?.identifier === key)`
+ *   —— 拿 .mjs 当语料 grep **两个方向都证不了**。2026-08-16 第二十四轮把面板报的 11 条
+ *   「上游现在提供了」逐条看了上下文，**11/11 全是误报**：
+ *     · `Arcturian`(187 次) / `Ordani`(291 次) 的独立成词全是**形容词**（Arcturian Folk 曲目名、
+ *       Ordani Tree 场景素材…），没有一处是血统/文化条目；
+ *     · `Human` / `Keth` / `Kivahr` / `Wirrun` 命中的是 **TokenMaker 纸娃娃模板**（`id: "human"` 小写，
+ *       与合集 identifier 不同源）；`Lumek` 唯一的独立成词是注释横幅 :127412；
+ *     · `Oaken` / `Bejak` / `Waerd` 独立成词 **0 次** —— 全是 `PlateHeavyWaerd` 这类部件 id 的尾巴，
+ *       判据的 `has()` 是裸 `includes` 没有词边界（ember-cn-selfcheck.mjs:99-104）。
+ *   旁证：真实 id 一律带 `ember` 前缀（`HOOKS.emberKethLineage` :125902、合集里 `[[/culture emberOrdani`），
+ *   我们兜的正是正文里**漏写前缀**的那批，两者并存、不冲突。**兜底一条都不能撤。**
  */
 const MISSING_ANCESTRIES = {
   "Arcturian": "阿克图里安 Arcturian",
@@ -1088,6 +1146,13 @@ const DIALOG_UI = {
   "Restore or disable power to the Stealth Field Generator?": "恢复还是切断隐形力场发生器的供能？", // 95618
   "Engage Lockdown": "启动封锁", "Lift Lockdown": "解除封锁",            // 113776
   // 银光束安保控制的两段正文：`<strong>lockdown</strong>` 把整段切成三个文本节点
+  // ⚠ 下面两条长键开头那个 `?` **不是我们把前缀吃掉留下的残渣**（2026-08-16 第二十四轮证伪了
+  //   这个猜测）：上游把问号写在 `<strong>lockdown</strong>` 的**外面**（`…</strong>? Security doors…`），
+  //   所以第三个文本节点天然以 `?` 开头，键的形态是对的，一个字符都不能删。
+  //   同段前两个碎片 `Engage` / `lockdown` 早在表里且从没报过，正说明切分点认得没错。
+  // ⚠ 这两条在自检面板「上游字面量存在性」那一档必报「查无此串」：源码 113771 / 113773 用跨行
+  //   `+` 把整句劈成两半（`…construct elevators` ｜ ` descend to the Construct Assembly.</p>`），
+  //   完整字面量在源码里根本不存在。判据没做「相邻字面量相加先合成」，是假阳性，不是失效。
   // ⚠ 这三条是**句子碎片**，不是术语。B 段拿 crucible lang 的
   //   `ACTOR.FIELDS.movement.engagement.labelShort`＝交战 来比这里的 `Engage`＝启动，比的是
   //   「启动封锁」的动词与战斗中的「交战」状态，不同域；已裁：不统一。
@@ -1175,6 +1240,13 @@ const DIALOG_UI = {
     "升降台将下降至深处。请为队伍选择一个目的地。",                        // 96462-96463
   // 魂缚进阶确认框（126639 / 126660）的正文同样被 <strong> 切碎，按碎片建键；
   // 尾段源码里带换行缩进，靠 translateNode 的空白折叠回退命中。
+  // ⚠ 2026-08-16 第二十四轮回源码复核，两条既有判断都成立：`rank 1 (Lesser Soulmark)` 是死字面量
+  //   但与前面的 `at` 之间隔着真实换行 + 19 空格（所以源码里没有 `at rank 1 (…` 这个子串）；
+  //   `rank ${nextRank} (${nextLabel})?` 是双插值，取值域由 :126657 的 `{2:"Greater Soulmark",
+  //   3:"Deathly Soulmark"}` 写死、:126650 的 `if (nextRank > 3) return` 兜住，只可能是 2 或 3。
+  //   三条都会被「上游字面量存在性」那一档报「查无此串」（空白差异 + 模板插值两个盲区），是假阳性。
+  //   ⚠ 也**不要因此挪进 PATTERNS**：变量位是闭枚举、且它们是**碎片**，DIALOG_UI 是作用域表
+  //   （只在认出归属的框里查），挪进全局 PATTERNS 会把 `to rank N (…)?` 这种通用形状暴露到别的模块。
   // 拼回去是「将 <天赋> 天赋添加给 <角色> ，阶位 1（次等魂印）？」/
   //         「将 <天赋> 天赋于 <角色> 身上升至阶位 2（高等魂印）？」
   "Add the": "将", "talent to": "天赋添加给",                           // 126639
@@ -1206,10 +1278,13 @@ const DIALOG_UI = {
   "No destinations are currently reachable. Adjust the track levers and try again.":
     "当前没有可到达的目的地。请调整轨道拉杆后重试。",                      // 112042
   "Activate this mine cart with no passenger?": "在无乘客的情况下启动这辆矿车？", // 112066
+  // ⚠ 下面两条串在 0.6.0 里逐字未改，只是被换行缩进劈开（源码里 `game state. ` 与 `Are you sure`
+  //   之间是换行 + 12 空格），所以「上游字面量存在性」那一档必报「查无此串」—— 判据没做空白折叠，
+  //   而运行时靠 translateNode 的折叠回退命中。2026-08-16 第二十四轮复核，两条注释均准确。
   "Resetting the event step for this event may introduce critical errors into your Ember game state. Are you sure you wish to proceed?":
-    "重置该事件的步骤可能给你的余烬战役状态引入严重错误。确定要继续吗？",    // 36935（模板串跨行，靠折叠空白后命中）
+    "重置该事件的步骤可能给你的余烬战役状态引入严重错误。确定要继续吗？",    // 36934-36936（模板串跨行，靠折叠空白后命中）
   "Beginning this event may introduce critical errors into your Ember game state. Are you sure you wish to proceed?":
-    "开始该事件可能给你的余烬战役状态引入严重错误。确定要继续吗？"         // 36952（同上）
+    "开始该事件可能给你的余烬战役状态引入严重错误。确定要继续吗？"         // 36952-36954（同上）
 };
 
 /** 完全匹配即可替换的字符串 */
@@ -1226,7 +1301,13 @@ const EXACT = {
   //    :43 attunement / :63 token 四条才是裸英文。也就是说 Crucible 世界里 localize 吐出的是
   //    crucible-cn 的中文，这个裸键永远接不到自己人，却仍会去改任何第三方窗口里孤零零的
   //    "Ancestry" 文本节点 —— 是越界风险而不只是死重量。它只在 dnd5e 世界活（ember.mjs:121864
-  //    `label: "Ancestry"`），那边宿主是 EmberHeroCreationSheet，作用域表照样够得到。
+  //    `label: "Ancestry"`），那边宿主是 **EmberCharacterCreationSheet**（ember.mjs:121801
+  //    `class EmberCharacterCreationSheet extends HandlebarsApplicationMixin(ActorSheetV2)`，
+  //    #STEPS 就在 :121861 起），作用域表照样够得到。
+  //    ⚠ 2026-08-16 第二十五轮订正：原注释写的 `EmberHeroCreationSheet` 是**另一个类**
+  //    （crucible-async.mjs:4，Crucible 分支的创角向导），ember.mjs:121864 不在它里面。
+  //    两个类名都以 `Ember` 开头，`/^Ember/` 主闸对二者都放行，所以这处笔误不影响行为、
+  //    只会误导下一个查上游的人 —— 别再把 dnd5e 分支的证据挂到 crucible 分支那个类上。
   "Culture": "文化",
   "Path": "道途",
   "Attunement": "同调",
@@ -1250,11 +1331,20 @@ const EXACT = {
   "Critical Success": "大成功",
   "Critical Failure": "严重失败",
 
-  // 事件状态提示
-  "Event Completed": "事件已完成",
-  "Event Not Completed": "事件未完成",
-  "Event Outcome Completed": "事件结果已完成",
-  "Event Outcome Not Completed": "事件结果未完成",
+  // 事件状态提示。上游是**模板串三元**：
+  //   ember.mjs:23047 `tooltipText: \`Event ${event.complete ? "Completed" : "Not Completed"}\``
+  //   ember.mjs:23042 `tooltipText: \`Event Outcome ${outcome.complete ? "Completed" : "Not Completed"}\``
+  // 落点是 `dataset.tooltipText` → DOM 的 `data-tooltip-text`，被 translateNode 的属性白名单接住。
+  // ⚠ 两个变量位都是**闭枚举**（complete 只能 true/false），下面四条键已经把取值域枚举完 ——
+  //   2026-08-16 第二十四轮复核后裁定：**不要挪进 PATTERNS**，宽正则命中面一点没多、误伤面反而变大。
+  // ⚠ 源码里只有 `Event ` / `Event Outcome ` 与两个三元分支共三段独立字面量，拼不出完整字面量。
+  //   第二十四轮的自检面板必报这四条；2026-08-16 第二十五轮判据加了**三元插值展开**
+  //   （`${x ? "A" : "B"}` 展开成两支再入「拼接展开（推导）」语料），这四条已不再挂榜。
+  //   命中在推导语料上，证据力比直接命中弱一档 —— 这是预期的，别当成硬证据。
+  "Event Completed": "事件已完成",                  // ember.mjs:23047（模板串三元拼接）
+  "Event Not Completed": "事件未完成",              // 同上
+  "Event Outcome Completed": "事件结果已完成",       // ember.mjs:23042（模板串三元拼接）
+  "Event Outcome Not Completed": "事件结果未完成",   // 同上
 
   // 角色卡 / 日志分节标题
   "Gamemaster Information": "游戏主持人信息",
@@ -1327,6 +1417,20 @@ const EXACT = {
 
   // 法典（EmberCodex，ember.mjs:24810）与创角向导（EmberHeroCreationSheet）的模板裸串。
   // 两个宿主都命中 patchRenderedApplications 的 `/^Ember/` 闸，纯粹是原先表里没有这些键。
+  //
+  // ⚠ 这一整批的出处是 `.hbs`。第二十四轮的判据只 fetch 两份 .mjs，于是这批键年年上
+  //   「上游查无此串」的榜；那一轮逐条回源码核过：八条（Entry Date / 四条 Select a … /
+  //   Increase|Decrease Ability Score / Spend 9 points…）在 0.6.0 里**一个字都没改**、
+  //   行号也一处没漂 —— 判据是假阳性，键全部有效。
+  //   2026-08-16 第二十五轮判据把 `templates/**` 的 .hbs 补进语料，这批键已不再挂榜。
+  //   同一批里的 `Quest`(mjs 命中 75 处) / `Points`(70) / `Ability Scores`(3) / `Uncategorized`(1)
+  //   之所以当时没上榜，纯粹是这些词在 ember.mjs 里**巧合出现**，与它们活不活没有任何因果关系
+  //   —— 「搜得到」不构成证据，这一档只能证伪不能证实（判据现在给短键加了词边界，
+  //   巧合命中少了一批，但这条结论不变：通过不是证据，只有失败才是线索）。
+  // ⚠ 四条 `Select a … from the left menu.` **不是同一模板的四个实例**，是四个 .hbs 文件里
+  //   四条互相独立的死字面量（quests:40 / bestiary:46 / characters:48 / discoveries:46），
+  //   其中 `a biome or location` 是并列名词、结构上就套不进单占位模板 ——
+  //   已裁：**不要挪进 PATTERNS**，挪了等于拿宽正则换掉精确键，只增大误伤面。
   "Entry Date": "条目日期",                                          // codex/journal.hbs:7
   "Quest": "任务",                                                  // codex/quests.hbs:7
   "Select a quest from the left menu.": "请从左侧菜单选择一个任务。",      // codex/quests.hbs:40
@@ -1380,8 +1484,15 @@ const DATE_AGES = {
 const PATTERNS = [
   // `Result of X` **只在 dnd5e 分支产出**（ember.mjs:22909/22912，crucible 分支走
   // 22910/22913 直接输出 Critical Failure / Critical Success，那两串在 EXACT 里）。
-  // 叶子只可能是 `18+` / `8-` 这类 DC 数字串，所以不查表，原样带回。
-  { re: /^Result of (.+)$/, cn: (m) => `结果：${m[1]}` },
+  // 上游 enrichCriticalResult（:22905-22913）先 `dc = Number(dc)` 再 `if (!Number.isInteger(dc)) return match`，
+  // 然后只可能拼出 `Result of ${dc - 5}-` 或 `Result of ${dc + 5}+` —— 叶子**必然**是
+  // 「可选负号 + 数字 + 一个 `+`/`-` 后缀」，别的形状上游一个都产不出来。
+  // ⚠ 2026-08-16 第二十五轮收紧：原来写的是 `^Result of (.+)$`，会把任何以 "Result of " 开头的
+  //   英文句子吃掉 —— 复核造的反例 `Result of the investigation was inconclusive` 当场被译成
+  //   「结果：the investigation was inconclusive」。PATTERNS 只在 Ember 自己的窗口 / 认出归属的框 /
+  //   注入子树 / 聊天卡上跑，爆炸半径有限，但 Ember 窗口内的日志正文是真会咬到的。
+  //   收紧后正例（Result of 13+ / Result of 3- / Result of -2-）逐条实测仍然翻得动。
+  { re: /^Result of (-?\d+[+-])$/, cn: (m) => `结果：${m[1]}` },
   // 恩惠骰 / 祸骰。上游 enrichAdvantage(ember.mjs:22890) 拼 `+${n} Boons` / `${n} Banes`，
   // n 自带负号，故符号位写成可选。取代原先 EXACT 里 ±1..±3 那六个枚举键。
   { re: /^([+-]?\d+) (Boons|Banes)$/, cn: (m) => `${m[1]} ${m[2] === "Boons" ? "恩惠骰" : "祸骰"}` },
@@ -1397,12 +1508,33 @@ const PATTERNS = [
   //             → `Music: Shent Ruins (Tension)`
   // 最后那种复合叶是原先 PREFIXED 两条接不住的（整串查表落空 → 前缀中文、叶子全英）。
   // channel 只有 music / environment 两个（ember.mjs:15643），mood 只有 calm / tension（:15606），
-  // 所以尾巴写成穷举的可选组，不会把别的「…（X）」形状吃掉；叶子查不到照旧原样带回。
+  // 所以尾巴写成穷举的可选组，不会把别的「…（X）」形状吃掉。
   // 已发布语料里 46 个 `[[/soundscape …]]` 标记暂无一条同时带 soundscapeId 与 mood，
   // 这条是给 GM 自己写的标记兜底的。
+  // ⚠ 2026-08-16 第二十五轮收紧：**叶子必须在 ARRANGEMENT_LEAVES 里查得到才翻**，查不到整串不动。
+  //   原来的写法是「叶子查不到就原样带回、前缀照翻」，于是任何 `Music: …` / `Environment: …`
+  //   形状的英文句子都会被改成「音乐：…」/「环境音：…」—— 复核造的两条反例
+  //   `Music: my custom playlist` 与 `Environment: Rain` 当场被误翻（`Rain` 只在 WEATHER 里，
+  //   不是编排名）。上游这一支的叶子只可能是 `arrangement.label` 或 `Reset`，两者都在本表里，
+  //   上游哪天新增编排名，退化成整串留英（不误翻），而那条新编排名会由自检面板的
+  //   ARRANGEMENTS 那一档另行报出来，不会静默。
+  // ⚠ **代价如实记一笔**（探针 `4-临时脚本/2026-08-16-round25/probe_patterns_c.mjs`
+  //   从 ember.mjs 现抠全部 219 条编排名逐条过 translateText，双向验）：收紧后翻不动的
+  //   **恰好 8 条**，逐条有据、且它们本来就只有前缀是中文、叶子照旧英文：
+  //     · `Seven Sails` —— 第二十二轮裁定**故意留英**（见 ARRANGEMENTS 表注释）；
+  //     · `Events` 一条属音景 `events`（"Ember Events"，type `events`）；
+  //     · `Clear`/`Drizzle`/`Rain`/`Thunderstorm`/`Arcane Fog`/`Mayis Storm` 六条属音景
+  //       `weather`（"Ember Weather"，type `weather`）。这两个音景的 type 不是 music/environment，
+  //       **不进播放列表侧栏那两个下拉**（ember.mjs:15916-15922 只取 music 41 + environment 1
+  //       共 42 个），所以第二十一/二十二轮建表时它们本来就不在全集里（212 vs 219）。
+  //   其中 `Rain` / `Clear` / `Drizzle` 正是把它们放回查表面就会重新咬到散文的那几个常用词
+  //   —— 复核的反例 `Environment: Rain` 就是它。所以**不要**为了这 8 条把闸放宽回去。
+  //   探针断言写成「翻不动的恰好等于这 8 条」，多一条少一条都失败。
   { re: /^(Music|Environment): (.+?)(?: \((Calm|Tension)\))?$/,
-    cn: (m) => `${m[1] === "Music" ? "音乐" : "环境音"}：${translateLeaf(m[2], ARRANGEMENT_LEAVES)}`
-             + (m[3] ? `（${MOODS[m[3]]}）` : "") },
+    cn: (m) => (ARRANGEMENT_LEAVES[m[2]]
+      ? `${m[1] === "Music" ? "音乐" : "环境音"}：${ARRANGEMENT_LEAVES[m[2]]}`
+        + (m[3] ? `（${MOODS[m[3]]}）` : "")
+      : m[0]) },
 
   { re: /^Award Attunement: (.+)$/, cn: (m) => `授予同调：${m[1]}` },
   { re: /^Revoke Attunement: (.+)$/, cn: (m) => `撤销同调：${m[1]}` },
@@ -1604,6 +1736,12 @@ const ATTUNEMENT_TAB = {
   // `Cosmos` 不是 `Cosmological`，取错了源。锚点是合集里 `Players' Guide.pages.Cosmology` 的中文 name
   // 「宇宙观 Cosmology」，指向它的 `@UUID[…]{宇宙同调}` 标签也是「宇宙」—— 标签跟锚点走。
   // `Cosmos` 那一支（TYPES.…ember.cosmos＝余烬寰宇 / EMBER.CALENDAR.COSMOS＝寰宇地图）保持不动。
+  // ⚠ 下面两条的出处都是 `.hbs`，不在自检面板那一档的语料（两份 .mjs）里。2026-08-16 第二十四轮
+  //   核实：`Make Active` 在 0.6.0 里一字未改，仍写在 tab-attunement.hbs:38 与它的 dnd5e 孪生版
+  //   `applications/dnd5e/actor/tabs/attunement.hbs:38`（逐字相同），ember.mjs / crucible-compiled.mjs
+  //   命中均为 0 —— 判据的假阳性。而 `Cosmological Attunements` 之所以**没**上榜，是因为
+  //   ember.mjs:124711 有一条**注释横幅** `/*  Cosmological Attunements  */` 撞上了 ——
+  //   两条键来源相同（同一张模板），一条报失效一条报正常，纯属巧合，别据此下结论。
   "Cosmological Attunements": "宇宙同调",  // tab-attunement.hbs:4
   "Make Active": "设为激活",               // tab-attunement.hbs:38 的 aria-label
   // `Active` 这里是**状态标签**（哪一个同调当前处于激活状态），所以带「中」；lang 的
@@ -1662,6 +1800,23 @@ const CHAT_UI = {
  * 这些词单独看都太通用（Overview / Class / Type / Anchor / Points…），进全局 EXACT 会顺手
  * 改掉别的模块的窗口，甚至被 DialogV2 认框失败那一支拿去改别人的标题；但在 Ember 自己的
  * 窗口里含义是确定的。行末是上游出处。
+ *
+ * ⚠ **本表按设计就是为 `.hbs` 模板裸串而建的** —— 行末出处写 `xxx.hbs:NN` 的占绝大多数，
+ *   只有 11 条另有 `ember.mjs:NNNN` 出处、2 条来自 `scripts/crucible-async.mjs`。
+ *   第二十四轮自检面板那一档的语料只有 `scripts/ember.mjs` ＋ `<sys>-compiled.mjs` 两份 .mjs，
+ *   **表的性质与判据的语料从一开始就对不上**，所以这张表的报数天然最高（76 键报 48 条）。
+ *   那 48 条已逐条回模板核过：**REWORDED 0 / REMOVED 0**，16 个模板全部仍被 ember.mjs 以
+ *   `template: "modules/ember/…"` 注册（孤儿 0），表注释里的 hbs 行号与当前上游**逐条一致、
+ *   0 处漂移**，`{{localize}}` 形态命中 0 处，lang/en.json 里也没有任何一条以这些串为值 ——
+ *   也就是说 DOM 注入仍是唯一可行通道，通道不用改。
+ *   剩下 28 条「找得到」里有 17 条同样是 .hbs 来源、纯属巧合子串命中（Create / Scale / Skew /
+ *   Anchor / Next…）—— **这一档的通过与失败都没有证据力，别拿它当键活性用**（这条结论不因
+ *   语料补全而改变）。
+ *
+ * ⚠ 2026-08-16 第二十五轮：判据把 `templates/**` 补进语料之后，本表**整张**交给它核，
+ *   不再像第二十四轮那样只挑 11 条 ember.mjs 来源的键（那等于把另外 65 个键挪出视野，
+ *   而那 65 条里至少 17 条 —— `Anatomy` ember.mjs:50854 / `Equipment` :51681 等 ——
+ *   本来就在 .mjs 里、是被判据实实在在盖着的）。现在 76 键 0 条挂榜。
  */
 const EMBER_WINDOW_UI = {
   // 日志页的次级内容页签（EmberPageSheet.secondaryContentTabs，ember.mjs:35987/35989/36094 等，
@@ -1690,7 +1845,10 @@ const EMBER_WINDOW_UI = {
   "Event Probabilities": "事件概率",                                      // applications/hex-hud.hbs:9
   // 创角向导
   // `Ancestry` 2026-08-15 从全局 EXACT 挪进来（理由见 EXACT 的注释）：它在 Crucible 世界里
-  // 接不到自己人，放在全局表只会去改别人窗口里的裸 "Ancestry"；宿主 EmberHeroCreationSheet
+  // 接不到自己人，放在全局表只会去改别人窗口里的裸 "Ancestry"；宿主是
+  // **EmberCharacterCreationSheet**（ember.mjs:121801，dnd5e 分支的创角向导；
+  // 2026-08-16 第二十五轮订正 —— 原注释写的 `EmberHeroCreationSheet` 是 crucible-async.mjs:4
+  // 那个 Crucible 分支的类，与 :121864 无关），类名同样以 `Ember` 开头、
   // 过得了 `/^Ember/` 主闸，放作用域表里 dnd5e 世界照旧生效、Crucible 世界不再越界。
   "Ancestry": "血统",                                                    // ember.mjs:121864（dnd5e 分支的步骤名）
   "Class": "职业",                                                       // ember.mjs:121870 的步骤名（dnd5e 分支）
@@ -1945,6 +2103,11 @@ const NOTIFICATIONS = {
     "已将青铜拉斯克剧院 Bronze Rask Theater 里的万德伦与恶棍敌人切换为敌对！",                     // 73366
   // 61461 是 `"…which will" + " automatically…"` 两段字符串相加，运行时是一整行；
   // 源码里的 \" 到了运行时就是普通的半角引号。任务名取合集定稿「有遮蔽的营地 Sheltered Campsite」。
+  // ⚠ 下面这三条（61461 / 126622 / 126626）是本表 26 条里**仅有的三条跨行相加**，也正是
+  //   「上游字面量存在性」那一档报出来的三条 —— 报数与「相加」这个形态**完全重合**，这条相关性
+  //   本身就是判据缺陷的指纹（它没做「相邻字面量相加先合成」）。2026-08-16 第二十四轮回源码逐条核过：
+  //   三条全是普通双引号字面量相加、一个 `${}` 都没有（真正带插值的通知在 NOTIFICATION_PATTERNS 里），
+  //   运行时值与本表键**逐字节相同** —— 假阳性，键有效，不要动。
   "When you are ready to begin the Ember game, activate this Scene which will automatically begin the first quest event, \"The Sheltered Campsite\".":
     "准备好开始余烬战役时，激活本场景即可自动开启第一个任务事件「有遮蔽的营地 The Sheltered Campsite」。", // 61461
   // 魂缚进阶宏的三条前置检查（126622 / 126626 同样是两段相加）
@@ -2016,7 +2179,19 @@ const NOTIFICATION_PATTERNS = [
     cn: (m) => `用户「${m[1]}」想要修改场景 ${m[3]} 中的可交互物「${m[2]}」。你必须身处该场景才能确认此操作。` }, // 63865
   { re: /^Ember \| Transit destination scene "(.+)" was not found\.$/,
     cn: (m) => `Ember | 找不到转运目的地场景「${m[1]}」。` },                                     // 96361
-  { re: /^Mirror (.+) does not exist!$/, cn: (m) => `镜子 ${m[1]} 不存在！` },                    // 98432
+  // ⚠ 2026-08-16 第二十八轮收紧定义域。原来写的是 `^Mirror (.+) does not exist!$` ——
+  //   本表挂在 translateNotification 上，而它包的是**所有模块共用**的 `ui.notifications.notify`，
+  //   `(.+)` 于是把别人的句子也吃掉并**整句重构**成一句错的中文，实测：
+  //     'Mirror Image does not exist!'    -> '镜子 Image 不存在！'（Mirror Image = 镜影术，标准法术名）
+  //     'Mirror Universe does not exist!' -> '镜子 Universe 不存在！'
+  //   这不是「标签变中文、信息一字不丢」的前缀替换，是破坏性改写，必须收到上游真会产出的形状上。
+  //   上游定义域（回源核过，三处互相印证）：
+  //     · ember.mjs:97859 `BleakArchiveAreaMap.#MIRRORS` 静态表，键恰好是 a1…a23 / b1…b23；
+  //     · ember.mjs:98130 `#initializeMirrors()` 用 `Object.keys(#MIRRORS)` 填 `#mirrors`；
+  //     · ember.mjs:98430 的 `targetId` 来自 `mirror.config.path` 的键，同表内的 id
+  //       （:97908 那段 static 反向补边也只往 path 里写同表的键）。
+  //   ⇒ 是个闭合集合，绝不会是任意英文词。这里写成 [ab]\d{1,2}（留出上游加到 a99/b99 的余量）。
+  { re: /^Mirror ([ab]\d{1,2}) does not exist!$/, cn: (m) => `镜子 ${m[1]} 不存在！` },            // 98432
   { re: /^Attunement feat for (.+) rank (\d+) could not be resolved\.$/,
     cn: (m) => `无法解析 ${m[1]} 阶位 ${m[2]} 的同调专长。` },                                    // 121323（dnd5e 分支）
   { re: /^(.+) cannot progress their Soulbound rank further as they already bear a Deathly Soulmark\.$/,
@@ -2472,6 +2647,13 @@ function patchRegionBehaviorSchemas() {
  * Blur Strength 并列的位置读作「只渲染照明层」，故译「仅照明」——**这一条是推断，不是实证**，
  * 哪天能进游戏看到实际效果再复核。
  */
+// ⚠ 本表的**键是 schema 的字段路径**（`schema.getField(path)` 的实参），不是上屏文本 ——
+//   要核的显示串在下面配对的 VISTA_PLACEMENT_EN 里。自检面板那一档拿路径当字面量去源码里找，
+//   报出来的 `illumination.blurStrength`「查无此串」是必然的：`illumination` 与 `blurStrength`
+//   分处两级嵌套（ember.mjs:33919-33923 / :33937），源码里不存在这个拼接串，而字段本身好好地在。
+//   2026-08-16 第二十四轮已把这一档改成核 VISTA_PLACEMENT_EN 的 14 个英文 label（见文件末尾）。
+//   ⚠ 真正硬的自检是下面 patchVistaPlacementSchema 自己那两条 warn（字段不存在 / label 对不上），
+//   它直接对着运行时的 schema 跑，比任何字面量核对都准 —— 别用面板的绿去替代它。
 const VISTA_PLACEMENT_FIELDS = {
   elevation: { label: "高度" },                     // ember.mjs:33928
   sort: { label: "排序" },                          // :33929
@@ -2889,19 +3071,139 @@ Hooks.once("ready", () => {
  *
  * ⚠ 传表时用 `{table, onlyOn}` 形态标注**按设计只在某系统下生效**的表 ——
  *   否则在别的系统里跑，那些键在源码里找不到会被误报成失效。
+ *
+ * ------------------------------------------------------------------
+ * 2026-08-16 第二十四轮：这一档报的 77 条，**真阳性 0 条**
+ * ------------------------------------------------------------------
+ * 面板在真实世界跑出「1292 键 / 77 条上游查无此串」。三条工作面把这 77 条逐条回上游源码
+ * （本机 `modules/ember/scripts/*.mjs` + `templates/**` + `lang/en.json` + `packs/`）核完：
+ *   **REWORDED 0 · REMOVED 0 · STILL_LIVE 8 · FALSE_POSITIVE 69**，改键 0 条、删键 0 条。
+ * 也就是说「上游改了措辞」「上游删了功能」这两类**一条都没有**，77 条全部是判据自身的边界：
+ *   ① 语料不全（最大的一块）—— 判据只 fetch `scripts/ember.mjs` ＋ `<sys>-compiled.mjs` 两份 .mjs，
+ *      而 Ember 大量上屏串写在 `templates/` 下的 `.hbs` 里，另有 `scripts/crucible-async.mjs`
+ *      与 `scripts/dnd5e-async.mjs` 两个脚本、`lang/en.json`、以及合集 `packs/` 的文档字段；
+ *   ② 拼接 —— 跨行 `"a" + "b"` 相加、模板串 `${…}` 插值（含三元）、`join(" and ")`；
+ *   ③ 空白差异 —— 模板串里的换行 + 缩进，运行时靠 translateNode 折叠命中，判据没折叠；
+ *   ④ 碎片键 —— 被 `<strong>` / `@UUID[]` 切开的文本节点，宿主串完整地在源码里、碎片不在；
+ *   ⑤ 键不是显示串 —— schema 字段路径、合集 `system.identifier`，原理上不该拿字面量核；
+ *   ⑥ 展开表重复计数 —— 一个源键经 `...ATTUNEMENTS` 被四张表继承，报成四条独立线索。
+ *
+ * ⚠ **反过来「找得到」同样不构成证据** —— 这一档是**子串匹配**，与键活性没有因果关系。硬证据：
+ *   `Heart of Ember` 唯一那次命中是远景精灵素材名（ember.mjs:74871），`Cosmological Attunements`
+ *   唯一那次是注释横幅（:124711），`Human`/`Keth` 命中的是 TokenMaker 纸娃娃模板，
+ *   `Oaken`/`Bejak`/`Waerd` **独立成词 0 次**（全是复合 id 的尾巴，`has()` 是裸 includes 没有词边界）；
+ *   而 `Entry Date` 在 .mjs 里 0 处、却是完全有效的活键。
+ *   所以这一档更准确的名字是「**上游字面量存在性（仅供人工复核）**」，
+ *   在下面 D1-D6 补完之前，77/1292 这个数字**不应被当作「键失效」的证据引用**。
+ *
+ * ------------------------------------------------------------------
+ * 2026-08-16 第二十五轮：**撤掉第二十四轮那份反向白名单**（DETECTOR_BLIND）
+ * ------------------------------------------------------------------
+ * 第二十四轮在本文件这一侧的处置是「按来源分流」：加一份 `DETECTOR_BLIND` 名单，把 117 个键
+ * 用 `dropKeys()` 从统计里摘出去、再用 `pickKeys()` 单列成 `… · 判据够不着` 那几行报 skip。
+ * 面板上的「上游查无此串」因此变成 0 —— **但那个 0 是把 117 个键挪出视野换来的**，
+ * 复核给的定性是「封口费」。而且那份名单本身有**事实性错误**：被摘走的键里至少 17 条
+ * （点名的有 `Anatomy`（ember.mjs:50854 `label:"Anatomy"`）与 `Equipment`（:51681 分组名））
+ * 确实来自 `ember.mjs`，本来是被判据实实在在盖着的，加了名单反而**静默跳过**了。
+ *
+ * 本轮判据那一侧（ember-cn-selfcheck.mjs）已经把语料与匹配口径补齐：
+ *   D1 语料补 `modules/ember/templates/**`（.hbs/.html）、`scripts/` 下**全部** .mjs、`lang/en.json`、
+ *      合集索引条目名（含 JournalEntry 的 pages 名）；
+ *      ⚠ 脚注（第二十七轮补，**不改上面这行历史记述**）：括号里那句「含 JournalEntry 的 pages 名」
+ *        当时就是错的 —— 那条 `e.pages` 分支**一次都没跑过**，第二十六轮已把它从判据里删掉，
+ *        理由见下面 `The Abyss` 那条与 `ember-cn-selfcheck.mjs` 的 `D_BOUNDARY_ADVENTURE`。
+ *   D2 语料与键**双侧** `\s+ → 单空格` 折叠，与运行时 translateNode 同口径；
+ *   D3 跨行 `"a" + "b"` 相加 / 解转义 / 三元插值展开，另建一份「拼接展开（推导）」语料；
+ *   D4 展开表去重：一个源键经 `...ATTUNEMENTS` 被四张表继承时只算一个键；
+ *   D5 新 kind：`field-path` / `pack-identifier`，外加键级 `keyKinds`；
+ *   D6 `has()` 对 ASCII 短键加**词边界**（CJK 键不加）。
+ * 实测（离线探针 `4-临时脚本/2026-08-16-round25/probe_liveness.mjs`，驱动判据真身、不抄副本）：
+ * 拿**第二十四轮加白名单之前的原表**跑新判据 —— 报文条数 77 → 7，按键去重后 **4**；
+ * 5 个构造的不存在串对照 5/5 仍报出，没有引入假阴性。
+ * ⇒ 白名单已经没有存在理由，本轮整块删掉，`SELFCHECK_TABLES` 恢复成**直接登记原表**。
+ *
+ * 剩下那 4 个键**不是**上游改了措辞，逐条有确认过的成因，故意留在榜上（报文里写明「这是线索不是结论」）：
+ *   · `The Abyss` —— **Adventure 文档内层**的 `journal[].pages[].name`。
+ *     ⚠⚠ 这里第二十五轮写的「离线探针 `game.packs` 是空的所以还挂着；真实 Foundry 世界里会被
+ *     『合集索引条目名』那一路语料接住，届时归零」，**第二十七轮已证伪，作废**：运行时 `pack.index`
+ *     的字段由 `compendiumIndexFields` 决定，`Adventure` 那份（核心 `common/documents/adventure.mjs:26`）
+ *     只有 `_id/name/caption/description/img/sort/folder/flags.core.sheetClass`，**没有 journal/pages**；
+ *     crucible 只给 ActiveEffect（`crucible-compiled.mjs:47317`）与 Item（`:47359`）追加过索引字段，
+ *     ember 全仓 `grep compendiumIndexFields` = 0 命中，10 个包里也没有 JournalEntry 包。
+ *     ⇒ 运行时**结构性拿不到**内层页名，**装了合集的真实世界与离线一模一样，都是 4 键 / 7 报文**，
+ *     不会归零。这是本档的**结构性边界**（判据那侧登记为 `D_BOUNDARY_ADVENTURE`），不是待办。
+ *     **仍然故意不加 keyKinds** —— 理由换成正确的那条：把键标成 data 只是又一次「挪出视野」，
+ *     报文数从 7 掉到 5 不代表任何东西变好；挂在榜上才是如实报「这一路查不成」。
+ *     ⚠⚠ **跨文件成对**：本条与 `ember-cn-selfcheck.mjs` 的 `D_BOUNDARY_ADVENTURE` 及其
+ *     ⑥「合集索引里的条目名」注释是同一条结论的两处写法，**改一处必须改另一处**；没有闸看着这一对。
+ *     （`Heart of Ember` 同源同理，只是它撞上无关字面量所以不上榜 —— 见文件开头 ATTUNEMENTS 那段。）
+ *   · `to rank 2 (Greater Soulmark)?` / `to rank 3 (Deathly Soulmark)?` —— ember.mjs:126657-126660
+ *     `` `rank ${nextRank} (${nextLabel})?` ``，**插值的值本身参与构串**，静态语料补不出来。
+ *   · `and gain` —— ember.mjs:3138 `clauses.join(" and ")` 拼出来的碎片，这两个字在源码里从没挨着出现过。
+ *   要消掉这三条只能执行上游代码，那已经不是静态判据的活儿。
+ *
+ * ⚠ **一处「无从查起」，判据那一侧已登记**：上游 `templates/journal/pages/${this.pageClass}-edit.hbs`
+ *   是拼路径，面板只能 fetch 不能列目录，因此 15 个 `.hbs` 抓不进语料。本文件这边不必处理，
+ *   但若某个键的唯一出处正是那 15 份之一，它会以「查无此串」的形式挂榜 —— 属预期，别当缺陷。
+ *
+ * ⚠ 落地正则时注意本项目登记的空转形态 (f)：正则里的 `\b` / `\s` **不要经改写脚本传**
+ *   （Python 字符串会把 `\b` 当退格符写进文件，正则当场失效而闸照样全绿），直接编辑文件写。
  */
 
+/**
+ * ⛔ 已删除：`DETECTOR_BLIND` + `checkNames()` / `dropKeys()` / `pickKeys()`（2026-08-16 第二十五轮）
+ *
+ * 原样：一份按「来源文件」登记的反向名单（PAGE_NAMES / EXACT / DIALOG_UI / NOTIFICATIONS /
+ * ATTUNEMENT_TAB 各一组，外加 EMBER_WINDOW_UI_MJS 那组方向相反的白名单），配三个辅助函数
+ * 把 117 个键从「上游字面量存在性」这一档摘出去、再单列成 `… · 判据够不着` 报 skip。
+ *
+ * 删除理由（三条，任一条都足够）：
+ *   ① 判据侧已补齐（见上面那段 D1-D6），原表跑新判据只剩 7 条报文 / 4 个键，名单没有存在理由；
+ *   ② 名单有**事实性错误**：被摘走的 65 条 EMBER_WINDOW_UI 里至少 17 条确实出自 `ember.mjs`
+ *      （`Anatomy` ember.mjs:50854、`Equipment` :51681 等），本来盖着，加名单后反而静默跳过；
+ *   ③ 名单是**按串**登记的，天生会烂 —— 上游真删一条它就留个死条目，只能靠额外的死名单告警补救。
+ *      改用按表标 `kind` / `onlyOn` 分流之后，分流依据是「这类键本来该去哪里查」，不是「哪几条报过」。
+ *
+ * 如果哪天又想加名单，先回答这个问题：**要摘掉的那几条，是判据够不着，还是我不想看见它红？**
+ * 前者的正解是给判据补语料或补一种 kind（本轮做的），后者叫封口费。
+ */
+
+/**
+ * 远景摆放表单**该核的是这 14 个英文 label**，不是 VISTA_PLACEMENT_FIELDS 那 14 条字段路径
+ * （路径是 `schema.getField()` 的实参，`illumination.blurStrength` 这种拼接串源码里当然没有）。
+ * 这里把 VISTA_PLACEMENT_EN 翻过来，让键＝英文显示串。实测 14/14 全部能在 ember.mjs 里找到。
+ * ⚠ 其中 `Sort` / `Only` / `Tint` / `Angle` / `Alpha` 是极短词，在几 MB 源码里必然巧合命中 ——
+ *   在判据加上词边界之前，这几条的「通过」证据力约等于零。真正硬的自检是
+ *   patchVistaPlacementSchema 自己那两条 warn（字段不存在 / label 对不上）。
+ */
+const VISTA_PLACEMENT_LABELS_EN = Object.fromEntries(
+  Object.entries(VISTA_PLACEMENT_EN).map(([path, en]) => [en, path])
+);
+
 const SELFCHECK_TABLES = {
-  // ── 普通字面量表：键应当能在上游源码里找到，找不到多半是上游改了措辞 ──
-  EXACT, PREFIXED, PATTERNS,
-  DIALOG_TITLES, DIALOG_UI, EMBER_WINDOW_UI,
-  NOTIFICATIONS, SCROLLING_TEXT,
-  ATTUNEMENTS, ATTUNEMENT_ITEM_NAMES, ATTUNEMENT_TAB,
-  MOON_NAMES, WEATHER,
+  // ── 普通字面量表：整表直接交给判据核，**一个键都不摘**。
+  //    判据侧的语料现在含 `scripts/` 下全部 .mjs、`templates/**` 的 .hbs/.html、`lang/en.json`、
+  //    合集索引条目名，外加一份「拼接展开（推导）」，短键还加了词边界 ——
+  //    第二十四轮那份把 117 个键摘出视野的 DETECTOR_BLIND 已整块删除，见上面那段。
+  PREFIXED, PATTERNS,
+  DIALOG_TITLES, SCROLLING_TEXT,
+  ATTUNEMENT_ITEM_NAMES, WEATHER,
   LANGUAGES, LANGUAGE_CATEGORIES,
   SOUNDSCAPE_GROUPS, ARRANGEMENTS, ARRANGEMENT_LEAVES, MOODS, MOOD_PANEL,
   NOTE_TYPES, SETTINGS_UI, SCENE_CONTROL_UI,
-  REGION_BEHAVIOR_FIELDS, VISTA_PLACEMENT_FIELDS, PROSEMIRROR_BLOCK_TITLES,
+  PROSEMIRROR_BLOCK_TITLES,
+  // REGION_BEHAVIOR_FIELDS 的键是三个**行为子类型 id**（`ember.trapTrigger` 等），它们确实以
+  // 字面量写在 ember.mjs 里，上游改名这一档能接住 —— 所以照旧核（与 VISTA 那张不同，别一起挪走）。
+  REGION_BEHAVIOR_FIELDS,
+
+  // ── 下面这六张第二十四轮被 dropKeys/pickKeys 拆成过两行，现在恢复成**整表一行** ──
+  //   `.hbs` 出处的键（EMBER_WINDOW_UI 那 65 条是大头）现在被 `templates/**` 语料接住；
+  //   跨行 `+` 相加、模板串 ${…} 插值、换行缩进分别被拼接展开语料与空白折叠接住。
+  //   仍然挂榜的只剩 4 个键（`The Abyss` / 两条 `to rank N (…)?` / `and gain`），
+  //   成因逐条写在上面那段里 —— **故意留在榜上**，报文里已写明这是线索不是结论。
+  EXACT, DIALOG_UI, NOTIFICATIONS,
+  ATTUNEMENTS, MOON_NAMES, ATTUNEMENT_TAB,
+  EMBER_WINDOW_UI,
 
   // ── 运行时拼出来的：字面量核对对它**无效**，报「查无此串」是判据的假阳性 ──
   //   CHAT_UI 的复合键由 buildChatKeys() 在 ready 时按当前 lang 的实际译文拼出
@@ -2909,16 +3211,45 @@ const SELFCHECK_TABLES = {
   CHAT_UI: { table: CHAT_UI, kind: 'composed' },
 
   // ── 键来自数据文件而不是脚本：拿 .mjs 当语料核不出来 ──
-  DATE_AGES: { table: DATE_AGES, kind: 'data' },
+  DATE_AGES: { table: DATE_AGES, kind: 'data', corpus: 'async-script' },
+
+  // ── 远景摆放：两张表**两个方向都登记**，别只留一张 ──
+  //   · VISTA_PLACEMENT_FIELDS 的键是 `schema.getField()` 的**字段路径**（`illumination.blurStrength`
+  //     这种拼接串源码里当然没有），标 `kind:'field-path'`，面板报 skip 并指向配对的英文 label 表；
+  //     第二十四轮把它整张换成 LABELS_EN 之后，字段路径那一侧就再没人看守了 —— 这里补回来。
+  //   · VISTA_PLACEMENT_LABELS_EN 是真正该核的 14 个英文 label，当普通表核（实测 14/14 通过）。
+  //   ⚠ 真正硬的自检仍然是 patchVistaPlacementSchema 自己那两条 warn（字段不存在 / label 对不上）。
+  VISTA_PLACEMENT_FIELDS: { table: VISTA_PLACEMENT_FIELDS, kind: 'field-path' },
+  VISTA_PLACEMENT_LABELS_EN,
 
   // ── 反向判据：这几张表**正是因为上游缺这些**才建的。
   //   所以「上游查无此串」是**预期状态**；反过来哪天找到了，说明上游补上了，
   //   我们的兜底可能变成多余甚至冲突 —— 那才是要复核的信号。
+  //   ⚠ 只有下面两张的键是**上游在 .mjs 里注册的 id**（语言表 ember.mjs:126693 起 / 知识领域
+  //     crucible-compiled.mjs:586 起 + ember.mjs:126683），拿 .mjs 当语料才立得住，
+  //     所以这两张**留在 absent-by-design**，别跟着下面三张一起挪走。
   MISSING_LANGUAGES:  { table: MISSING_LANGUAGES,  kind: 'absent-by-design' },
   MISSING_KNOWLEDGE:  { table: MISSING_KNOWLEDGE,  kind: 'absent-by-design', onlyOn: 'dnd5e' },
-  MISSING_ANCESTRIES: { table: MISSING_ANCESTRIES, kind: 'absent-by-design', onlyOn: 'crucible' },
-  MISSING_CULTURES:   { table: MISSING_CULTURES,   kind: 'absent-by-design', onlyOn: 'crucible' },
-  MISSING_PATHS:      { table: MISSING_PATHS,      kind: 'absent-by-design', onlyOn: 'crucible' },
+
+  // ⚠ 下面三张的键是**合集文档的 `system.identifier`**，不是 .mjs 里的 id，也不是显示串 ——
+  //   上游三个增强器（ember.mjs:22927/22947/22979）拿它去
+  //   `game.packs.get(ember.CONST.CHARACTER_OPTIONS_PACK).index.find(i => i.system?.identifier === id)`，
+  //   查不到就把 id 当名字渲染，合集里有 78 处这种悬空引用，我们按 id 兜底。
+  //   拿源码 grep 两个方向都证不了（第二十四轮：11 条「上游现在提供了」11/11 是误报，成因是
+  //   形容词同形、TokenMaker 纸娃娃模板名、注释横幅、以及裸 `includes` 没有词边界）。
+  //   ⚠ 第二十四轮把它们改成 `kind:'data'`，结果是**正向反向都没人看守**：19 个键完全不进统计。
+  //     本轮改用判据新实现的 `kind:'pack-identifier'` —— 它在 Foundry 里直接查合集 index 的
+  //     identifier，找到了才报 warn（说明上游补上了，我们的兜底该复核），
+  //     **取不到 index 时如实报「无从查起」而不是假绿**。
+  //   `packs` 限定到 crucible 世界的 CHARACTER_OPTIONS_PACK（ember.mjs:123964
+  //   `const CHARACTER_OPTIONS_PACK = "ember.crucible-character"`），与上游查表的范围一致；
+  //   dnd5e 世界那份是 `ember.character`（dnd5e-async.mjs:522），但这三张表本来就 onlyOn crucible。
+  MISSING_ANCESTRIES: { table: MISSING_ANCESTRIES, kind: 'pack-identifier', onlyOn: 'crucible',
+                        packs: ['ember.crucible-character'] },
+  MISSING_CULTURES:   { table: MISSING_CULTURES,   kind: 'pack-identifier', onlyOn: 'crucible',
+                        packs: ['ember.crucible-character'] },
+  MISSING_PATHS:      { table: MISSING_PATHS,      kind: 'pack-identifier', onlyOn: 'crucible',
+                        packs: ['ember.crucible-character'] },
 
   // ── 按设计只在 dnd5e 世界生效：串在 dnd5e 系统源码里，
   //   不标 onlyOn 的话在 crucible 世界跑会把它们全部误报成失效。

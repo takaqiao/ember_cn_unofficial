@@ -13,10 +13,16 @@
  *   ⚠⚠ **「0 个问题」和「没查到东西」必须分开显示。**
  *
  * 每一档都会报「本次查了多少项」。查不到东西就明说「无从查起」，绝不显示成绿色。
- * 这条原则是从本项目**六种判据空转形态**里换来的：
+ * 这条原则是从本项目**八种判据空转形态**里换来的：
  *   (a) 判据自己的正则被转义吃掉  (b) 判据压根不读库  (c) 判据读的是旧报告快照
  *   (d) 闸在跑但豁免表已经空了    (e) 输入缺失但判据照跑  (f) 正则失效而主闸照样全绿
- * 六种的共同点都是**报绿**，所以「绿」这个信号本身必须带上「我查了多少」才有意义。
+ *   (g) 输入不缺但被静默换成了另一份
+ *   (h) **空转的是给判据喂输入的那个探针** —— 判据本身没毛病，它验的输入是探针自己捏的
+ * 八种的共同点都是**报绿**，所以「绿」这个信号本身必须带上「我查了多少」才有意义。
+ *
+ * 第二十六轮又补了两条同族的教训，写在 D 档里：
+ *   · **一条永远拿不到东西的分支**，跑得再勤也等于没跑（旧版 `e.pages` 那一路）；
+ *   · **「没抓到」和「面板说了我没抓到」是两回事** —— 无声缺口不比报错好。
  *
  * 怎么用
  * ------
@@ -28,7 +34,9 @@
  *  A 环境      两个汉化模块与其上游的版本、Babele、以及 foundry_chn（它决定 Token 的定译）
  *  B Babele    译文文件有没有真的被 babele 认到；**并抽样看合集索引里的名字是不是中文**
  *  C i18n      lang/cn.json 的键在 game.i18n 里取不取得到
- *  D 键活性 ⭐  把硬编码表的每个键拿去**当前安装的上游源码**里核 —— 上游一改措辞就能立刻看出来
+ *  D 字面量存在性  把硬编码表的每个键拿去**当前安装的上游文本**（脚本 / 模板 / lang / 合集索引）
+ *                  里核一遍**在不在**。⚠ 它做的是**子串存在性**，不是「键还生不生效」——
+ *                  两者没有因果关系，结论**仅供人工复核**（详见该档自己的注释）
  *  E 补丁      运行时补丁装没装上（读 CONFIG 上的幂等标记 + 抽查被改对象的真实值）
  *  F 注入子树  DOM 选择器现在选不选得到（界面没开时报「当前不可见」，不算失败）
  *  G 译文体检  抽样查已废写法有没有回潮（令牌 / 六角格 / 空心之月 …）
@@ -82,7 +90,7 @@ function versionOf(id, kind = "module") {
 }
 
 /**
- * 抓取当前安装的上游源码，用来做键活性检查。
+ * 抓取当前安装的上游文本，用来做 D 档的字面量存在性核对。
  * ⚠ 抓不到时返回 null —— 调用方必须据此报 skip（无从查起），**不能当成「键都还在」**。
  */
 async function fetchText(url) {
@@ -95,13 +103,111 @@ async function fetchText(url) {
   }
 }
 
-/** 把一段文本编成「出现过哪些字面量」的快速查询集合。上游源码几 MB，逐键 indexOf 太慢。 */
-function makeCorpus(text) {
+/* -------------------------------------------- */
+/*  语料：文本 +「这个字面量在不在里面」           */
+/* -------------------------------------------- */
+
+/**
+ * 与运行时 `translateNode` 同口径的空白折叠。
+ * 模板里的换行 + 缩进上屏之后塌成一个空格，源码里的字面量却带着原样的换行 ——
+ * 不折叠就必然对不上。第二十四轮 77 条误报里有一批栽在这。
+ */
+function foldWS(s) { return String(s).replace(/\s+/g, " "); }
+
+const WORD_CHAR = /[A-Za-z0-9_]/;
+const ASCII_ONLY = /^[\x20-\x7E]+$/;
+
+/**
+ * 把一段文本编成「出现过哪些字面量」的查询对象。
+ *
+ * ⚠ 两条**必须**有的处理，少一条这一档就会大批误报：
+ *
+ *   ① **双侧空白折叠**（见 `foldWS`）。
+ *
+ *   ② **纯 ASCII 键加词边界**。裸 `includes` 在几 MB 源码里必然巧合命中：
+ *      实测 `Abyss` 在 ember.mjs 里 327 次命中**只有 5 次独立成词**；
+ *      `Oaken` / `Bejak` / `Waerd` 独立成词 **0 次**（全部来自 `Oakenshield` 之类）。
+ *      ⚠⚠ **不许拿长度阈值代替词边界** —— 旧版那句「≤8 字符可能是偶然命中」是**无效免责**：
+ *      `Arcturian`（9 字符）越过阈值照样是纯误报。要么词边界，要么别声称。
+ *      非纯 ASCII 的键（含 CJK / 重音字母）不加词边界 —— `\w` 式的边界对它们没有意义。
+ *
+ * `tier` 是这份语料的**证据力档位**（见 `CORPUS_TIER`）。同样是「找到了」，
+ * 命中在脚本里和命中在推导语料里根本不是一回事，报文里必须分开显示。
+ */
+function makeCorpus(text, label = "?", tier = 1) {
   return {
-    text,
-    has(s) { return typeof s === "string" && s.length > 0 && this.text.includes(s); }
+    label,
+    tier,
+    bytes: text.length,
+    text: foldWS(text),
+    has(s) {
+      if (typeof s !== "string") return false;
+      const needle = foldWS(s).trim();
+      if (!needle) return false;
+      if (!ASCII_ONLY.test(needle)) return this.text.includes(needle);
+      const lWord = WORD_CHAR.test(needle[0]);
+      const rWord = WORD_CHAR.test(needle[needle.length - 1]);
+      let i = this.text.indexOf(needle);
+      while (i !== -1) {
+        const before = i > 0 ? this.text[i - 1] : "";
+        const after = this.text[i + needle.length] ?? "";
+        if ((!lWord || !WORD_CHAR.test(before)) && (!rWord || !WORD_CHAR.test(after))) return true;
+        i = this.text.indexOf(needle, i + 1);
+      }
+      return false;
+    }
   };
 }
+
+/**
+ * 一组语料。
+ * ⚠ `find()` 返回的是**命中在哪一份**而不是布尔 —— 「只在合集索引里找到」与
+ *   「在脚本里找到」证据力天差地别，把它们压成同一个 true 就等于自己蒙住眼睛。
+ */
+function makeCorpusSet(corpora) {
+  return {
+    corpora,
+    find(s) { for (const c of corpora) if (c.has(s)) return c.label; return null; },
+    has(s) { return this.find(s) !== null; },
+    /** 命中在这份语料上算第几档证据（找不到该标签就当最弱档，宁可低估不许高估）。 */
+    tierOf(label) { return corpora.find(c => c.label === label)?.tier ?? 3; }
+  };
+}
+
+/**
+ * 证据力档位。**这四档不是修辞，是本档报绿时唯一有意义的信息。**
+ *   1 直接命中：串就写在上游的脚本 / 模板 / lang / 系统源码里 —— 最强。
+ *   2 合集索引：串来自 `pack.index` 的条目名。⚠ 这一路是 **babele 译完之后**的文本
+ *     （babele 包了 `CONFIG.DatabaseBackend._getDocuments` 与 `indexDocument`），
+ *     而本项目的条目名约定里有一批是**双语并列**（`深渊 The Abyss`）——
+ *     于是「在合集索引里找到了这个英文串」很可能找到的是**我们自己译文里那半截英文**，
+ *     拿它证「上游还有这个串」是**自证循环**。所以它比直接命中弱一档。
+ *   3 拼接展开（推导）：语料本身是我们从源码**推**出来的，不是上游真有的文本。
+ *   —— 另有一条**正交**的减分项：**短词命中**（见 `isWeakShortWord`），
+ *      它可以叠加在任何一档上，且叠上之后那条绿基本等于没有。
+ */
+const CORPUS_TIER = { direct: 1, packIndex: 2, derived: 3 };
+const TIER_LABEL = {
+  1: "直接命中（脚本 / 模板 / lang / 系统源码）",
+  2: "合集索引（⚠ babele 译后文本，双语条目名会造成自证循环）",
+  3: "拼接展开（推导 · 不是上游真有的文本）"
+};
+
+/**
+ * 「短词命中」：证据力约等于零的那种绿。
+ *
+ * ⚠ 加了词边界也救不了它 —— `Sort` / `Only` / `Tint` / `Angle` / `Alpha` 这类词在几 MB
+ *   源码里**必然**独立成词地巧合出现，命中说明不了「这个键还是上游那个标签」。
+ *   本档不因此判它错（那会变成误报），但**必须在报文里标出来**，不许让它冒充证据。
+ */
+const SHORT_WORD_MAX = 8;
+function isWeakShortWord(k) {
+  const s = foldWS(k).trim();
+  return ASCII_ONLY.test(s) && !s.includes(" ") && s.length <= SHORT_WORD_MAX;
+}
+
+/** 只给离线探针用（面板本身不调）。**探针必须用这里的实现，不许自己再抄一份。** */
+export const __corpusInternals = { foldWS, makeCorpus, makeCorpusSet };
 
 /* -------------------------------------------- */
 /*  A · 环境                                     */
@@ -485,8 +591,8 @@ function renderMarkdown(checks, meta) {
 
 /**
  * @param {object} [opts]
- * @param {Function} [opts.extra] 额外的异步检查（键活性那一档由 ember-hardcoded-cn.mjs 提供，
- *   因为只有它拿得到那些表；拿不到时这一档会报 skip 而不是静静跳过）。
+ * @param {Function} [opts.extra] 额外的异步检查（字面量存在性那一档由 ember-hardcoded-cn.mjs
+ *   提供，因为只有它拿得到那些表；拿不到时这一档会报 skip 而不是静静跳过）。
  */
 export async function runSelfCheck(opts = {}) {
   const checks = [];
@@ -494,18 +600,18 @@ export async function runSelfCheck(opts = {}) {
   checks.push(...checkBabele());
   checks.push(...checkI18n());
 
-  // D 键活性：由硬编码表那个模块注入。**拿不到就明说无从查起。**
+  // D 字面量存在性：由硬编码表那个模块注入。**拿不到就明说无从查起。**
   if (typeof opts.extra === "function") {
     try {
       const more = await opts.extra();
       if (Array.isArray(more) && more.length) checks.push(...more);
-      else checks.push(Check.skip("D 键活性", "整档", "键活性检查没有返回任何结果"));
+      else checks.push(Check.skip(D_SECTION, "整档", "这一档没有返回任何结果"));
     } catch (err) {
-      checks.push(Check.fail("D 键活性", "整档", 0, `检查本身抛异常：${err?.message ?? err}`));
+      checks.push(Check.fail(D_SECTION, "整档", 0, `检查本身抛异常：${err?.message ?? err}`));
     }
   } else {
-    checks.push(Check.skip("D 键活性", "整档",
-      "硬编码表模块没有注册键活性检查（`ember-hardcoded-cn.mjs` 没加载？）"));
+    checks.push(Check.skip(D_SECTION, "整档",
+      "硬编码表模块没有注册这一档（`ember-hardcoded-cn.mjs` 没加载？）"));
   }
 
   checks.push(...checkPatches());
@@ -539,129 +645,648 @@ function checkSubtrees() {
 }
 
 /* -------------------------------------------- */
-/*  D · 键活性 ⭐ 本面板最值钱的一档              */
+/*  D · 上游字面量存在性（仅供人工复核）          */
 /* -------------------------------------------- */
 
+/** 这一档的档名。**别叫「键活性」** —— 理由见下面 `keyLiveness` 的文档注释。 */
+const D_SECTION = "D 上游字面量存在性（仅供人工复核）";
+
 /**
- * 把硬编码表里的每个**英文键**，拿去当前安装的上游源码里核一遍还在不在。
+ * 这一档的**边界**，写进每一条报文里，免得读的人把「查无此串」当成「键失效」。
+ * ⚠ 这句话是硬证据换来的，不许删：
+ *   · `Entry Date` 在 `.mjs` 语料里 0 次命中，而它**完全有效**（出处是 codex/journal.hbs）；
+ *   · `Cosmological Attunements` 被判「正常」，只因为源码里有个**同名的注释横幅**。
+ * 「串在不在文本里」与「键生不生效」之间**没有因果关系**，两个方向都不成立。
+ */
+const D_BOUNDARY =
+  "⚠ 本档核的是**「这个英文串还在不在上游的文本里」**，**不是**「这个键还生不生效」——" +
+  "两者没有因果关系（`Entry Date` 源码里 0 次命中却完全有效；`Cosmological Attunements` " +
+  "判「正常」只因为源码里有个**同名注释横幅**）。结论**仅供人工复核**，不能直接当缺陷。";
+
+/**
+ * 边界之二：**一串是另一串子串的那类改词，本档看不见。**
+ * ⚠ 这条是第二十六轮拿 8 条模拟改措辞打出来的：报出 7 条，漏的那条是
+ *   `Increase Ability Score` → `Increase Ability` —— 新串完整落在旧串里、两端还都在词边界上。
+ *   方向反过来一样漏：上游把 `Increase Ability` 加长成 `Increase Ability Score`，
+ *   旧键仍是新串的子串，本档照样报绿。
+ *   **所以「8 条改措辞报出 7 条」不能读成「改措辞都接得住」。**
+ */
+const D_BOUNDARY_SUBSTRING =
+  "⚠ **边界之二：一串是另一串子串的那类改词，本档看不见。**" +
+  "模拟上游改措辞 8 条只报出 7 条 —— 漏的是 `Increase Ability Score` → `Increase Ability`，" +
+  "新串完整落在旧串里、两端仍在词边界上，于是「查得到」；反方向（旧串被加长）同样漏。" +
+  "**「7/8 报出」不等于「改措辞都接得住」。**";
+
+/**
+ * 边界之三：**Adventure 文档内层的页名，本档结构性查不了。**
+ * ⚠⚠ 这条推翻了第二十五轮写在这里的旧说法（「真实 Foundry 里会被合集索引那份语料接住」）。
+ *   实证：`Adventure.metadata.compendiumIndexFields` 只有
+ *   `_id / name / caption / description / img / sort / folder / flags.core.sheetClass`
+ *   （核心 `common/documents/adventure.mjs`）；crucible 只给 **Item**（`crucible-compiled.mjs`
+ *   `CONFIG.Item.compendiumIndexFields`）与 **ActiveEffect**（`CONFIG.ActiveEffect` 那处
+ *   `Object.assign`）追加过索引字段，ember 一个都没加。⇒ 运行时 `pack.index` 的条目上
+ *   **永远没有 `journal`、更没有 `pages`**。
+ *   而 `The Abyss` / `Heart of Ember` 恰恰躺在 `journal[].pages[].name`（离线读真 LevelDB 核过：
+ *   `ember.crucible-adventure` 只有 1 个文档、75 个 journal、1488 个 page）。
+ */
+const D_BOUNDARY_ADVENTURE =
+  "⚠ **边界之三：来自 Adventure 文档内层页名（`journal[].pages[].name`）的键，本档就是查不了。**" +
+  "运行时 `pack.index` 上没有 `pages` 字段（`Adventure.metadata.compendiumIndexFields` 只有 " +
+  "`_id/name/caption/description/img/sort/folder/flags.core.sheetClass`；crucible 只给 Item / " +
+  "ActiveEffect 追加过索引字段）。这类键会**永远**挂在「查无此串」上 —— 那是本档的**结构性边界**，不是缺陷。";
+
+const EMBER_ROOT = "modules/ember";
+/** 源码 / 模板里写死的模板路径。 */
+const TPL_LITERAL = /modules\/ember\/templates\/[A-Za-z0-9_./-]+\.(?:hbs|html)/g;
+/**
+ * **拼出来**的模板路径（`…/${this.pageClass}-edit.hbs`）。
+ * ⚠ 连**前缀、插值表达式、后缀**一起抓 —— 旧版只抓到 `…templates/…${` 就完事，
+ *   于是只能报一个「另有 1 处」，读者根本不知道那 1 处背后是十几个文件。
+ *   抓全了才能按源码里的取值把它**展开成具体候选文件**去试。
+ */
+const TPL_DYNAMIC = /modules\/ember\/templates\/[A-Za-z0-9_./-]*\$\{([^{}]*)\}[A-Za-z0-9_./-]*\.(?:hbs|html)/g;
+
+/**
+ * 上游有一批模板**没有任何脚本 / 模板引用**（死模板）。面板跑在浏览器里、**列不了目录**，
+ * 靠「谁引用了它」这条路推**永远推不出它们**。
  *
- * 为什么这一档最值钱
- * ------------------
- * 硬编码表是「按字面匹配上游产出的字符串」。上游一改措辞，键就再也匹配不上，
- * 界面照旧显示英文，而**控制台一声不响** —— 这是本项目最典型的静默失效。
- * 第十六轮离线做过一次同样的核对，当时查出 **31 个键根本不生效**。
- * 放进面板的好处是：它对着**你此刻实际装的那个版本**跑，上游一升级就能立刻看出来。
+ * 下面是第二十六轮离线拿磁盘目录比对出来的快照：当时 `modules/ember/templates` 下 67 份
+ * .hbs/.html，靠引用（含拼路径展开）能推出 64 份，差的就是这 3 份，被引用次数 **0**。
  *
- * ⚠ 判据的边界（必须知道，否则会误读结果）
- * ----------------------------------------
- * 「键在源码里出现」**不等于**「键一定会被匹配上」。反例本项目都撞过：
- *   · 上游是**拼接**产生的（模板串 / 跨行相加）—— 字面量在，但运行时拼出来的串不一样；
- *   · 形态不对 —— 裸词键接不住 `前缀: 名字` 这种复合串（那种要进 PREFIXED）；
- *   · 正则字符类太窄 —— `\w` 接不住 `moiré` 这类非 ASCII。
- * 所以这一档**只能证伪不能证实**：报出来的「上游查无此串」是硬线索，
- * 而「全都找得到」只说明**没有被上游删掉**，不代表运行时一定命中。
+ * ⚠⚠ **这份清单会过期，而且它过期的时候面板不会知道。** 上游再加一个没人引用的模板，
+ *   本档照样推不出、也照样不会报 —— 所以这一路的覆盖率**无法自证完备**，
+ *   报文里必须照实写「推不出来的推不出来」，不许拿「都抓到了」蒙过去。
+ */
+const TPL_UNREFERENCED_SNAPSHOT = [
+  "applications/area-effect-config.hbs",
+  "applications/storyline-inspector.html",
+  "journal/partials/gameplay-features.hbs",
+];
+/** ember.mjs 里的动态 import：`await import('./crucible-async.mjs')`。 */
+const REL_IMPORT = /import\(\s*["'`]\.\/([A-Za-z0-9_.-]+\.mjs)["'`]\s*\)/g;
+
+function addAll(set, text, re) { for (const m of String(text).matchAll(re)) set.add(m[0]); }
+
+/**
+ * 从源码里收「`<ident> = "值"`」形式的**取值集合**，用来把拼出来的模板路径展开成具体文件。
  *
- * ⚠ 另一条边界：有些表**按设计只在特定系统下生效**（例如 KNOWLEDGE 的大部分只在 dnd5e 世界），
- * 当前系统不匹配时那些键在源码里找不到是**正常的**，不是缺陷 —— 所以传表时可以标 `onlyOn`。
+ * 例：`…/templates/journal/pages/${this.pageClass}-edit.hbs` 里的 `pageClass`，
+ * 取值就明明白白写在同一份 `ember.mjs` 里（`static pageClass = "cosmos"` 之类十几处）。
+ *
+ * ⚠ 这是**从上游源码本身**读出来的取值，不是我们编的 —— 展开出来的候选路径**逐个真去 fetch**，
+ *   抓到才进语料、抓不到照实报。这与「拿数据文件里有某字段去推运行时拿得到该字段」
+ *   （本项目登记的空转形态 (h)）不是一回事：那种是伪造输入，这里是**先猜后验**。
+ */
+function harvestAssignedStrings(text, ident) {
+  const out = new Set();
+  // 左侧排掉 `.`：`foo.pageClass = "x"` 也算；但 `xpageClass = "x"` 不算（词边界）。
+  // ⚠ `$` 是 JS 合法标识符字符**也是**正则元字符，不转义会当场把模式改掉。
+  const safe = String(ident).replace(/\$/g, "\\$");
+  const re = new RegExp("(?:^|[^A-Za-z0-9_$])" + safe + "\\s*=\\s*[\"']([A-Za-z0-9_.-]+)[\"']", "g");
+  for (const m of String(text).matchAll(re)) out.add(m[1]);
+  return [...out];
+}
+
+/** 相邻字面量相加的胶水：`"a" + "b"`（**折叠空白之后**跨行相加也长这样）。 */
+const CONCAT_GLUE = /(["'`])\s*\+\s*\1/g;
+/** 模板串里的三元插值：`${x ? "A" : "B"}` —— 要展成两支，不然 `Event ${…}` 两个分支都找不到。 */
+const TERNARY_INTERP = /\$\{[^{}"'`]*\?\s*"([^"]*)"\s*:\s*"([^"]*)"\s*\}/g;
+/** 其余插值：`${…}` 直接去掉，让插值两侧的固定文字重新挨在一起。 */
+const ANY_INTERP = /\$\{[^{}]*\}/g;
+
+/**
+ * 从脚本文本**推导**一份「拼接展开」语料。
+ *
+ * ⚠⚠ 这份语料是**推导**出来的，不是上游真有的文本。所以它单列一份、命中时报文里会写明
+ *   「命中在 拼接展开（推导）」—— 证据力比直接命中弱一档。
+ *   但它比把这些键误报成「上游删了」强得多：第二十四轮 77 条误报里，
+ *   跨行 `+` 相加 5 条、三元插值 4 条，全部栽在没做这一步。
+ *
+ * 三条变换（都在折叠空白**之后**做，跨行相加因此塌成同一行）：
+ *   ① `"a" + "b"` → `"ab"`（上游大量跨行 `+`，例：ember.mjs:61461 / :113771）
+ *   ② `${x ? "A" : "B"}` → 各展一支（例：`Event ${event.complete ? "Completed" : "Not Completed"}`）
+ *   ③ 其余 `${…}` 去掉
+ * ⚠ 做不到的仍然做不到，别指望它包治百病：`clauses.join(" and ")` 拼出来的 `and gain`、
+ *   以及插值**值本身**参与构串的（`to rank ${n} (${label})?`）都推不出来 —— 那几条会继续上榜。
+ */
+function deriveConcatCorpus(text) {
+  let s = foldWS(text);
+  for (let i = 0; i < 4; i++) {                 // `"a" + "b" + "c"` 要多跑几遍才并完
+    const next = s.replace(CONCAT_GLUE, "");
+    if (next === s) break;
+    s = next;
+  }
+  // 字面量里的转义引号：`\"The Sheltered Campsite\"` → `"The Sheltered Campsite"`。
+  // ⚠ 必须**在合并之后**做 —— 先解转义会把「字面量内部的引号」错当成拼接胶水并进去。
+  s = s.replace(/\\(["'`\\])/g, "$1");
+  const a = s.replace(TERNARY_INTERP, "$1").replace(ANY_INTERP, "");
+  const b = s.replace(TERNARY_INTERP, "$2").replace(ANY_INTERP, "");
+  return a + "\n\n" + b;
+}
+
+/**
+ * 把当前安装的上游**全部**可读文本抓成语料。
+ *
+ * ⚠⚠ 面板跑在 Foundry 里，**只能 fetch，不能列目录**。所以文件清单只能靠「谁引用了它」推：
+ *   ① `module.json` 的 `esmodules` / `languages`；
+ *   ② ember.mjs 里的动态 `import('./xxx-async.mjs')`（`crucible-async` / `dnd5e-async`
+ *      就是这么进来的 —— 旧版只抓 `ember.mjs`，把它们整整漏在语料外面）；
+ *   ③ 已抓到的脚本 / `.hbs` 里出现的 `modules/ember/templates/….hbs` 字面量（递归一层 partial）；
+ *   ④ **拼出来的路径按源码里的取值展开**（`${this.pageClass}` → 源码里那十几个 `pageClass = "…"`）；
+ *   ⑤ 运行时 `Handlebars.partials` 里已注册的路径（开过的界面才有，只多不少）；
+ *   ⑥ `TPL_UNREFERENCED_SNAPSHOT` —— **没人引用的死模板**，上面四路一律推不出，只能靠快照。
+ *
+ * ⚠ 推不出来的、展不开的、抓失败的，**全部必须报出来**。静默当成「已经全抓到了」正是本项目
+ *   登记的空转形态 (e)「输入缺失但判据照跑」；而「没抓到」与「面板说了我没抓到」是两回事。
+ *
+ * @returns {Promise<{set:object|null, rows:string[], tried:number, failed:string[], dynamic:number,
+ *                    tpl:object, advPacks:string[]}>}
+ */
+async function collectUpstreamCorpora() {
+  const rows = [], failed = [];
+  const corpora = [];
+  let tried = 0, dynamic = 0;
+
+  const grabAll = async (paths, label, tier = CORPUS_TIER.direct) => {
+    const texts = [];
+    for (const p of paths) {
+      tried++;
+      const t = await fetchText(p);
+      if (t === null) { failed.push(p); continue; }
+      texts.push(t);
+    }
+    if (!texts.length) return null;
+    const joined = texts.join("\n");
+    corpora.push(makeCorpus(joined, label, tier));
+    rows.push(`${label}：${texts.length}/${paths.length} 份，共 ${Math.round(joined.length / 1024)} KB`);
+    return joined;
+  };
+
+  // ── ① module.json：脚本与语言文件的**声明**出处 ──
+  tried++;
+  const manifestText = await fetchText(`${EMBER_ROOT}/module.json`);
+  let manifest = null;
+  if (manifestText === null) failed.push(`${EMBER_ROOT}/module.json`);
+  else { try { manifest = JSON.parse(manifestText); } catch (_) { failed.push(`${EMBER_ROOT}/module.json（不是合法 JSON）`); } }
+
+  // ── ② 脚本：声明的 esmodules ＋ 它们动态 import 的兄弟文件 ──
+  const scriptPaths = new Set();
+  for (const rel of (manifest?.esmodules ?? [])) scriptPaths.add(`${EMBER_ROOT}/${rel}`);
+  if (!scriptPaths.size) scriptPaths.add(`${EMBER_ROOT}/scripts/ember.mjs`);   // manifest 读不到时的兜底
+
+  const scriptTexts = [];
+  for (let round = 0; round < 2; round++) {           // 一轮抓、一轮把新发现的兄弟文件补上
+    for (const p of [...scriptPaths]) {
+      if (scriptTexts.some(([q]) => q === p)) continue;
+      tried++;
+      const t = await fetchText(p);
+      if (t === null) { failed.push(p); continue; }
+      scriptTexts.push([p, t]);
+      const dir = p.slice(0, p.lastIndexOf("/") + 1);
+      for (const m of t.matchAll(REL_IMPORT)) scriptPaths.add(dir + m[1]);
+    }
+  }
+  if (scriptTexts.length) {
+    const joined = scriptTexts.map(([, t]) => t).join("\n");
+    corpora.push(makeCorpus(joined, "ember 脚本", CORPUS_TIER.direct));
+    rows.push(`ember 脚本：${scriptTexts.map(([p]) => p.split("/").pop()).join(" · ")}` +
+              `（共 ${Math.round(joined.length / 1024)} KB）`);
+  }
+
+  // ── ③ 语言文件 ──
+  const langPaths = (manifest?.languages ?? []).map(l => `${EMBER_ROOT}/${l.path}`);
+  if (langPaths.length) await grabAll(langPaths, "ember lang");
+
+  // ── ④ 模板 ──
+  //   ⚠ 面板列不了目录，模板清单只能靠「谁引用了它」推。这里把能走的路都走一遍，
+  //     并且**每一路各自记账**，最后如实报「哪一路推出了多少、哪一路根本推不出来」。
+  const scriptAll = scriptTexts.map(([, t]) => t).join("\n");
+  const tplPaths = new Set();
+  const dynExprs = [];
+  for (const [, t] of scriptTexts) {
+    addAll(tplPaths, t, TPL_LITERAL);
+    for (const m of t.matchAll(TPL_DYNAMIC)) dynExprs.push({ whole: m[0], expr: m[1] });
+  }
+  dynamic = dynExprs.length;                    // ⚠ 这是**路径表达式**个数，不是文件数
+  try {
+    for (const k of Object.keys(globalThis.Handlebars?.partials ?? {})) {
+      if (typeof k === "string" && k.startsWith(`${EMBER_ROOT}/templates/`)) tplPaths.add(k);
+    }
+  } catch (_) { /* 没有 Handlebars 就只靠字面量推 */ }
+
+  const tplTexts = [];
+  const seenTpl = new Set();
+  /** @returns {"ok"|"fail"|"dup"} 抓一份模板并入语料。**每一路自己拿 bucket 记账。** */
+  const grabTpl = async (p, bucket) => {
+    if (seenTpl.has(p)) return "dup";
+    seenTpl.add(p);
+    tried++;
+    const t = await fetchText(p);
+    if (t === null) { bucket.push(p); return "fail"; }
+    tplTexts.push(t);
+    addAll(tplPaths, t, TPL_LITERAL);           // .hbs 里写全路径的 partial 引用
+    return "ok";
+  };
+
+  // ④a 字面量 / 运行时 partial 推出来的（第二轮把 .hbs 里引到的 partial 补上）
+  let litOk = 0;
+  for (let round = 0; round < 2; round++) {
+    for (const p of [...tplPaths]) if (await grabTpl(p, failed) === "ok") litOk++;
+  }
+
+  // ④b **拼路径展开**：`…/${this.pageClass}-edit.hbs` 里的 `pageClass`，
+  //     取值就写在同一份源码里（`static pageClass = "cosmos"` 之类），逐个代进去试。
+  //     ⚠ 展开出来的候选**抓不到是正常的**（基类那个占位取值本来就没有对应文件），
+  //       所以单独记账、不混进 `failed`，但**必须报出来是哪几个没抓到**。
+  const dynCandidates = [], dynMiss = [], dynUnexpandable = [];
+  for (const { whole, expr } of dynExprs) {
+    const ident = (expr.match(/[A-Za-z_$][A-Za-z0-9_$]*/g) ?? []).pop();
+    const vals = ident ? harvestAssignedStrings(scriptAll, ident) : [];
+    if (!vals.length) { dynUnexpandable.push(whole); continue; }
+    for (const v of vals) dynCandidates.push(whole.replace(ANY_INTERP, v));
+  }
+  let dynOk = 0;
+  for (const p of dynCandidates) if (await grabTpl(p, dynMiss) === "ok") dynOk++;
+
+  // ④c **没人引用的死模板** —— 上面三路一律推不出来，只能靠快照清单（见其文档注释）。
+  const unrefMiss = [];
+  let unrefOk = 0;
+  for (const rel of TPL_UNREFERENCED_SNAPSHOT) {
+    if (await grabTpl(`${EMBER_ROOT}/templates/${rel}`, unrefMiss) === "ok") unrefOk++;
+  }
+
+  const tpl = {
+    dynExprs: dynExprs.length, dynCandidates: dynCandidates.length, dynOk,
+    dynMiss: dynMiss.map(p => p.split("/").pop()), dynUnexpandable: dynUnexpandable.length,
+    unrefTried: TPL_UNREFERENCED_SNAPSHOT.length, unrefOk,
+    unrefMiss: unrefMiss.map(p => p.split("/").pop()),
+    litOk, files: tplTexts.length
+  };
+
+  if (tplTexts.length) {
+    const joined = tplTexts.join("\n");
+    corpora.push(makeCorpus(joined, "ember 模板", CORPUS_TIER.direct));
+    rows.push(`ember 模板：抓到 **${tplTexts.length} 份** .hbs/.html，共 ${Math.round(joined.length / 1024)} KB` +
+      `（引用推导 ${litOk} 份 · 拼路径展开 ${dynOk} 份 · 无引用快照 ${unrefOk} 份）`);
+  }
+  rows.push(
+    `⚠ 模板这一路**列不了目录**，清单只能靠引用推，三路各自的账：` +
+    `① 拼出来的模板路径 **${dynExprs.length} 处路径表达式**（⚠ 这个数**不是文件数** —— ` +
+    `旧版只报「另有 1 处」，读者无从知道背后是十几个文件），已按源码里的取值展开成 ` +
+    `**${dynCandidates.length} 个候选文件**，抓到 ${dynOk} 份、${dynMiss.length} 份不存在` +
+    `（${tpl.dynMiss.join(" · ") || "无"}）；另有 ${dynUnexpandable.length} 处展不开。` +
+    `② 无引用死模板靠快照清单兜 ${TPL_UNREFERENCED_SNAPSHOT.length} 条，抓到 ${unrefOk} 份` +
+    `${unrefMiss.length ? `、${unrefMiss.length} 份已不在上游（${tpl.unrefMiss.join(" · ")}）` : ""}。` +
+    `③ ⚠⚠ **从未被任何脚本 / 模板引用的模板，本档推不出来，而且推不出来的时候它不会知道** —— ` +
+    `快照清单会过期，这一路的覆盖率**无法自证完备**。别把「模板都抓到了」当成已经成立的事。`);
+
+  // ── ⑤ 当前系统的源码（dnd5e 侧的表全靠它，只抓 ember 会把它们整批误报成失效）──
+  let sysText = "";
+  const sys = game.system?.id;
+  if (sys === "crucible" || sys === "dnd5e") {
+    for (const path of [`systems/${sys}/${sys}-compiled.mjs`, `systems/${sys}/${sys}.mjs`]) {
+      tried++;
+      const t = await fetchText(path);
+      if (t === null) { failed.push(path); continue; }
+      corpora.push(makeCorpus(t, `${sys} 系统源码`, CORPUS_TIER.direct));
+      rows.push(`${sys} 系统源码：${Math.round(t.length / 1024)} KB`);
+      sysText = t;
+      break;
+    }
+  }
+
+  // ── ⑥ 合集索引里的条目名 ──
+  //
+  // ⚠⚠ 这里**删掉了一条永远空转的分支**（第二十六轮）。旧版写的是：
+  //       for (const e of (p.index ?? [])) {
+  //         if (typeof e.name === "string") names.push(e.name);
+  //         for (const pg of (e.pages ?? [])) …          // ← 这一行**永远拿不到东西**
+  //       }
+  //   `pack.index` 上有哪些字段，由 `<Document>.metadata.compendiumIndexFields` 加上
+  //   `CONFIG.<Document>.compendiumIndexFields` 决定。核对过当前安装的这三处：
+  //     · `Adventure.metadata.compendiumIndexFields` =
+  //       `_id / name / caption / description / img / sort / folder / flags.core.sheetClass`
+  //       （核心 `common/documents/adventure.mjs`）—— **没有 `journal`，更没有 `pages`**；
+  //     · crucible 只追加过 `CONFIG.Item.compendiumIndexFields = ["system.identifier"]`
+  //       和 `CONFIG.ActiveEffect` 那处 `["system.identifier","system.affixType"]`；
+  //     · ember 一处都没追加；且 ember 的 10 个合集全是 Item / Adventure / ActiveEffect，
+  //       没有 JournalEntry 合集（JournalEntry 的索引字段也只有 `_id/name/sort/folder`）。
+  //   ⇒ `e.pages` 恒为 undefined，那一路**一次都没跑过**。
+  //
+  // ⚠ 第二十五轮写在这里的「真实 Foundry 里 `The Abyss` 会被这一路接住」**已被证伪**，
+  //   不许再出现。`The Abyss` / `Heart of Ember` 躺在 Adventure 文档**内层**的
+  //   `journal[].pages[].name`（离线读真 LevelDB 核过：`ember.crucible-adventure` 1 个文档、
+  //   75 个 journal、1488 个 page），运行时 index 拿不到 —— 见 `D_BOUNDARY_ADVENTURE`。
+  //
+  // ⚠ 那为什么不干脆 `getDocuments()` 去读内层？因为**那不是「真查」**：babele 包住了
+  //   `CONFIG.DatabaseBackend._getDocuments`，读回来的是**我们自己译过**的文本，
+  //   而本项目的条目名约定是双语并列（`深渊 The Abyss`）—— 于是「找到了 The Abyss」
+  //   找到的是**我们自己译文里那半截英文**。那是自证循环，比一条老实的 ⛔ 更糟。
+  const advPacks = [];
+  try {
+    const names = [];
+    for (const p of (game.packs ?? [])) {
+      const src = p.metadata?.packageName ?? p.metadata?.package;
+      if (src !== "ember" && src !== "crucible") continue;
+      const docType = p.documentName ?? p.metadata?.type;
+      if (docType === "Adventure") advPacks.push(p.collection ?? p.metadata?.name ?? "?");
+      for (const e of (p.index ?? [])) if (typeof e.name === "string") names.push(e.name);
+    }
+    if (names.length) {
+      corpora.push(makeCorpus(names.join("\n"), "合集索引条目名", CORPUS_TIER.packIndex));
+      rows.push(`合集索引条目名：${names.length} 条。⚠ 这一路是 **babele 译后**的文本，` +
+        `命中它的键要按第 2 档证据看（双语条目名会让「找到英文串」变成自证循环）。`);
+    } else {
+      rows.push("合集索引条目名：**0 条**（合集没加载或世界里没有 ember/crucible 合集）—— 这一路没查成");
+    }
+  } catch (_) { rows.push("合集索引条目名：读不到 `game.packs`，这一路没查成"); }
+
+  // ── ⑦ 拼接展开（**推导**语料，放在最后一份 —— 直接命中优先，命中它说明证据弱一档）──
+  const rawJs = scriptTexts.map(([, t]) => t).join("\n") + (sysText ? "\n" + sysText : "");
+  if (rawJs) {
+    const derived = deriveConcatCorpus(rawJs);
+    corpora.push(makeCorpus(derived, "拼接展开（推导）", CORPUS_TIER.derived));
+    rows.push(`拼接展开（推导）：由脚本推导，${Math.round(derived.length / 1024)} KB。` +
+      `⚠ 这份**不是上游真有的文本**（相邻字面量相加 / 三元插值展开 / 去掉 \`\${…}\`）——` +
+      `命中在这一份上的键，证据力比直接命中弱一档，报文里会**逐键点名**。`);
+  }
+
+  return { set: corpora.length ? makeCorpusSet(corpora) : null, rows, tried, failed, dynamic, tpl, advPacks };
+}
+
+/**
+ * 合集文档的 `system.identifier` 集合。`MISSING_ANCESTRIES` 那几张表的键是 identifier，
+ * **不是显示串也不是 .mjs 里的 id** —— 拿源码 grep 两个方向都证不了（第二十四轮：
+ * 11 条「上游现在提供了」11/11 是误报）。面板本来就跑在 Foundry 里，index 是现成的。
+ */
+function packIdentifiers(only) {
+  const ids = new Set();
+  let scanned = 0, packs = 0;
+  for (const p of (game.packs ?? [])) {
+    const src = p.metadata?.packageName ?? p.metadata?.package;
+    if (src !== "ember" && src !== "crucible") continue;
+    if (only?.length && !only.includes(p.collection) && !only.includes(p.metadata?.name)) continue;
+    packs++;
+    for (const e of (p.index ?? [])) {
+      scanned++;
+      const id = e?.system?.identifier;
+      if (typeof id === "string" && id) ids.add(id);
+    }
+  }
+  return { ids, scanned, packs };
+}
+
+/**
+ * 把硬编码表里的每个**英文键**，拿去当前安装的上游文本里核一遍**在不在**。
+ *
+ * ⚠⚠ 档名从「键活性」改成了「上游字面量存在性」，这不是措辞洁癖 ——
+ * 旧名把「串在文本里」说成了「键还活着」，而这一档做的只是**子串存在性**，
+ * 两者之间没有因果关系（两个方向都有硬反例，见 `D_BOUNDARY`）。
+ * 叫错名字的直接后果就是第二十四轮那 77 条「上游查无此串」被当成了真缺陷去追。
+ *
+ * 它仍然有用，用法是：**「查无此串」是一条值得人去看一眼的线索**，仅此而已。
+ *
+ * 支持的 `kind`（表按「串本来该出现在哪」分流，而不是靠白名单把键挪出视野）：
+ *   · `literal`（默认）  串应当写在脚本 / 模板 / lang 里，拿语料核
+ *   · `composed`         运行时拼出来的，字面量核对无效
+ *   · `data`             键来自数据文件；`spec.corpus` 写明是哪一路
+ *   · `field-path`       键是**字段路径**（`schema.getField()` 的实参）不是显示串
+ *   · `pack-identifier`  键是合集文档的 `system.identifier`，查 `game.packs` 的 index
+ *   · `absent-by-design` 反向判据：本表正因「上游缺这些」而建，**找到了**才是信号
+ * 另有键级 `spec.keyKinds = { "The Abyss": "data" }` —— 同一张表里个别键来路不同时用它，
+ * 不必为了一个键把整张表标成 data。
  */
 export async function keyLiveness(tables) {
-  const S = "D 键活性";
+  const S = D_SECTION;
   if (!tables || !Object.keys(tables).length) {
     return [Check.skip(S, "整档", "没拿到任何硬编码表")];
   }
 
-  // 抓当前安装的上游源码。抓不到 → 无从查起，**不能当成「键都还在」**。
-  // ⚠ 语料不全就会把「我没去那儿找」误报成「上游删了」—— dnd5e 侧的表
-  //   （WARLOCK_PATRONS / RARITIES / DIVINE_DOMAINS …）的串在 dnd5e 系统源码里，
-  //   只抓 ember + crucible 会把它们全部误判成失效。2026-08-16 首跑就撞到了这个。
-  const sources = [];
-  const emberSrc = await fetchText("modules/ember/scripts/ember.mjs");
-  if (emberSrc) sources.push(["ember", emberSrc]);
-  for (const sys of ["crucible", "dnd5e"]) {
-    if (game.system?.id !== sys) continue;
-    for (const path of [`systems/${sys}/${sys}-compiled.mjs`, `systems/${sys}/${sys}.mjs`]) {
-      const t = await fetchText(path);
-      if (t) { sources.push([sys, t]); break; }
-    }
-  }
-
-  if (!sources.length) {
+  const { set: corpus, rows, tried, failed, dynamic, tpl, advPacks } = await collectUpstreamCorpora();
+  if (!corpus) {
     return [Check.skip(S, "整档",
-      "抓不到上游源码（`modules/ember/scripts/ember.mjs` 取不到）—— **这一档这次什么都没查**。" +
-      "常见原因：上游没装、路径变了、或浏览器拦了 fetch。")];
+      `抓不到任何上游文本（试了 ${tried} 个路径，全部失败）—— **这一档这次什么都没查**。` +
+      `常见原因：上游没装、路径变了、或浏览器拦了 fetch。`)];
   }
 
-  const corpus = makeCorpus(sources.map(([, t]) => t).join("\n"));
-  const out = [Check.ok(S, "上游源码", sources.length,
-    `抓到 ${sources.map(([n, t]) => `${n}（${Math.round(t.length / 1024)} KB）`).join(" · ")}`)];
+  const srcNote = [...rows];
+  if (failed.length) srcNote.push(`⚠ 抓失败 ${failed.length} 个：${failed.slice(0, 12).join(" · ")}${failed.length > 12 ? " …" : ""}`);
 
-  let grand = 0, grandMiss = 0;
-  for (const [tableName, spec] of Object.entries(tables)) {
+  const out = [Check.ok(S, "上游语料", tried,
+    `试抓 ${tried} 个路径，成功建成 ${corpus.corpora.length} 份语料` +
+    `（模板 ${tpl?.files ?? 0} 份，其中拼路径展开来的 ${tpl?.dynOk ?? 0} 份、` +
+    `无引用快照捞回来的 ${tpl?.unrefOk ?? 0} 份）。` + D_BOUNDARY, srcNote)];
+
+  // ⛔ Adventure 内层页名：**结构性查不了**，如实标死，绝不报绿。
+  //   （离线跑时 `game.packs` 是空的、认不出 Adventure 合集，那就不出这一条 ——
+  //     宁可不说，也不许编一条「已经查过了」。永久边界另有一条写在合计里。）
+  if (advPacks?.length) {
+    out.push(Check.skip(S, "Adventure 内层页名",
+      `世界里有 ${advPacks.length} 个 Adventure 合集（${advPacks.join(" · ")}）。` +
+      `它们内层 \`journal[].pages[].name\` 上的串，**本档查不了、也不打算假装查得了**：` +
+      `运行时 \`pack.index\` 的条目上没有 \`pages\` 字段（\`Adventure.metadata.compendiumIndexFields\` ` +
+      `只有 \`_id/name/caption/description/img/sort/folder/flags.core.sheetClass\`；` +
+      `crucible 只给 Item / ActiveEffect 追加过索引字段，ember 一处都没加）。` +
+      `⚠ 也**不走 \`getDocuments()\`**：babele 包住了 \`CONFIG.DatabaseBackend._getDocuments\`，` +
+      `读回来的是我们自己译过的双语文本（\`深渊 The Abyss\`），拿它证「上游还有这个英文串」` +
+      `是**自证循环** —— 那种绿比这条 ⛔ 更糟。出处在这一层的键（如同调页名）会永远挂在` +
+      `「查无此串」上，**那是本档的边界，不是缺陷**。`));
+  }
+
+  /* ── 第一趟：决定每张表怎么核（不产出报文），顺便把要 grep 的键收集起来做去重 ── */
+  const plan = [];
+  for (const [name, spec] of Object.entries(tables)) {
     const table = spec?.table ?? spec;
     const onlyOn = spec?.onlyOn ?? null;
     const kind = spec?.kind ?? "literal";
+    const keyKinds = spec?.keyKinds ?? {};
 
-    if (onlyOn && game.system?.id !== onlyOn) {
-      out.push(Check.skip(S, tableName, `按设计只在 \`${onlyOn}\` 系统下生效，当前是 \`${game.system?.id}\``));
-      continue;
-    }
-    // 表可能是对象（键=英文）或数组（正则条目，跳过 —— 正则没法这样核）
-    if (Array.isArray(table)) {
-      out.push(Check.skip(S, tableName, "正则表，无法用字面量核对（要核得跑真实输入）"));
-      continue;
-    }
-    const keys = Object.keys(table ?? {});
-    if (!keys.length) { out.push(Check.skip(S, tableName, "空表")); continue; }
+    if (onlyOn && game.system?.id !== onlyOn) { plan.push({ name, mode: "skip", why: `按设计只在 \`${onlyOn}\` 系统下生效，当前是 \`${game.system?.id}\`` }); continue; }
+    if (Array.isArray(table)) { plan.push({ name, mode: "skip", why: "正则表，无法用字面量核对（要核得跑真实输入）" }); continue; }
+    const allKeys = Object.keys(table ?? {});
+    if (!allKeys.length) { plan.push({ name, mode: "skip", why: "空表" }); continue; }
 
-    // ── 运行时拼出来的键：字面量核对**没有意义**，报 skip 而不是 warn ──
-    if (kind === "composed") {
-      out.push(Check.skip(S, tableName,
-        `${keys.length} 键是**运行时拼出来**的（如 \`\${月亮} Attunement (Rank \${N})\`），` +
-        `上游源码里本来就不会有这个字面量 —— 字面量核对对它无效，不是失效。`));
-      continue;
-    }
-    // ── 键来自数据文件（合集 / JSON）而不是脚本：拿脚本当语料核不准 ──
-    if (kind === "data") {
-      out.push(Check.skip(S, tableName,
-        `${keys.length} 键来自**数据文件**（合集 / JSON）而不是 \`.mjs\`，` +
-        `拿脚本源码当语料核不出来 —— 不是失效。要核得另抓数据文件。`));
-      continue;
-    }
-    // ── 反向判据：我们建这张表**正因为上游缺这些**。「找到了」才是信号 ──
-    if (kind === "absent-by-design") {
-      const found = keys.filter(k => corpus.has(k));
-      const shortOnes = found.filter(k => k.length <= 8);
-      grand += keys.length;
-      out.push(found.length
-        ? Check.warn(S, tableName, keys.length,
-            `${keys.length} 键，**${found.length} 个上游现在提供了** —— 本表是为「上游缺这些」而建的，` +
-            `上游补上之后我们的兜底可能变成多余甚至冲突，**该复核了**。` +
-            (shortOnes.length
-              ? `⚠ 但其中 ${shortOnes.length} 个是**短词**（≤8 字符），` +
-                `短词在几 MB 的源码里很容易因别的原因偶然出现 —— **这一档是线索不是结论**，` +
-                `要确认得去看它出现的**上下文**是不是真的当作该类别的标签在用。`
-              : ""),
-            found.map(k => `\`${k}\`${k.length <= 8 ? "（短词，可能是偶然命中）" : ""}`))
-        : Check.ok(S, tableName, keys.length,
-            `${keys.length} 键上游仍然没有 —— 本表是为此而建的，**这才是预期状态**（找不到＝正常）`));
-      continue;
-    }
+    // 键级分流：同一张表里个别键来路不同（如 `The Abyss` / `Heart of Ember` 是合集页名）
+    const diverted = allKeys.filter(k => keyKinds[k]);
+    const keys = allKeys.filter(k => !keyKinds[k]);
 
-    const miss = keys.filter(k => !corpus.has(k));
-    grand += keys.length; grandMiss += miss.length;
-    out.push(miss.length
-      ? Check.warn(S, tableName, keys.length,
-          `${keys.length} 键，**${miss.length} 个在上游源码里查无此串** —— 多半是上游改了措辞，该键已失效：`,
-          miss.slice(0, 40).map(k => `\`${k}\``).concat(miss.length > 40 ? [`…另 ${miss.length - 40} 个`] : []))
-      : Check.ok(S, tableName, keys.length, `${keys.length} 键全部仍能在上游源码里找到`));
+    if (kind === "composed") { plan.push({ name, mode: "skip", n: allKeys.length, why: `${allKeys.length} 键是**运行时拼出来**的（如 \`\${月亮} Attunement (Rank \${N})\`），上游文本里本来就不会有这个字面量 —— 字面量核对对它无效，不是失效。` }); continue; }
+    if (kind === "data") { plan.push({ name, mode: "skip", n: allKeys.length, why: `${allKeys.length} 键来自**数据文件**（${spec?.corpus ?? "合集 / JSON"}）而不是脚本或模板 —— 拿当前语料核不出来，不是失效。` }); continue; }
+    if (kind === "field-path") { plan.push({ name, mode: "skip", n: allKeys.length, why: `${allKeys.length} 键是**字段路径**（\`schema.getField()\` 的实参，如 \`illumination.blurStrength\`），不是上屏的显示串 —— 上游文本里当然没有整串。该核的是**配对的英文 label 表**（如 \`VISTA_PLACEMENT_EN\`），把那张表另行登记即可。` }); continue; }
+    // ⚠ 键级分流把整张表都分流光了 → 这一档对它**一个键都没核**，报 skip。
+    //   放任它走下去会得到一条「0 键全部仍能找到」的绿 —— 那正是本项目最忌的「0 项报绿」。
+    if (!keys.length) { plan.push({ name, mode: "skip", why: `${allKeys.length} 个键全部按 \`keyKinds\` 分流出去了，本表这一档**一个键都没核**` }); continue; }
+    if (kind === "pack-identifier") { plan.push({ name, mode: "packid", keys, diverted, keyKinds, spec }); continue; }
+    if (kind === "absent-by-design") { plan.push({ name, mode: "absent", keys, diverted, keyKinds }); continue; }
+    plan.push({ name, mode: "literal", keys, diverted, keyKinds });
   }
 
-  out.unshift(Check.ok(S, "合计", grand,
-    `共核 ${grand} 个键，其中 ${grandMiss} 个在上游查无此串。` +
-    `⚠ **本档只能证伪不能证实** —— 「找得到」只说明没被上游删掉，不代表运行时一定命中` +
-    `（拼接串 / 形态不对 / 正则字符类太窄 都会让键在源码里在、运行时却匹配不上）。` +
-    `⚠ 反过来「查无此串」也要看表的类型：运行时拼接的、来自数据文件的、以及` +
-    `**本来就为「上游缺这些」而建的**表，找不到都是正常的 —— 那几类已按类型分开报，不计进这个数。`));
+  /* ── D4 展开表去重：`{...ATTUNEMENTS}` 被四张表各继承一份，同一个源键会在面板上
+        变成 4 条独立线索，制造「四表同时失效不可能是巧合」的错觉（主控上一轮就被带偏了）。
+        这里按键归并：报文里标出「另 N 张表重复登记」，合计只算**去重后**的条数。 ── */
+  const ownersF = new Map(), ownersR = new Map();
+  for (const p of plan) {
+    const m = p.mode === "literal" ? ownersF : (p.mode === "absent" || p.mode === "packid") ? ownersR : null;
+    if (!m) continue;
+    for (const k of p.keys) { if (!m.has(k)) m.set(k, []); m.get(k).push(p.name); }
+  }
+  const dupNote = (m, k, self) => {
+    const others = (m.get(k) ?? []).filter(n => n !== self);
+    return others.length ? `（同一个源键另在 ${others.length} 张表重复登记：${others.slice(0, 4).join("、")}${others.length > 4 ? " …" : ""}）` : "";
+  };
+
+  /* ── 第二趟：出报文 ── */
+  const missDistinct = new Set(), checkedDistinct = new Set();
+  const foundWhere = new Map();          // 语料标签 → 命中数，用来说明「证据是哪一路给的」
+  const foundKeys = new Map();           // 语料标签 → 命中的键（弱档要**逐键点名**，不许只进总数）
+  const weakShort = new Set();           // 短词命中：证据力≈0，必须单独标出来
+  let rawChecked = 0, rawMiss = 0;
+
+  for (const p of plan) {
+    if (p.mode === "skip") { out.push(Check.skip(S, p.name, p.why)); continue; }
+
+    if (p.diverted?.length) {
+      out.push(Check.skip(S, `${p.name} · 键级分流`,
+        `${p.diverted.length} 个键按 \`keyKinds\` 另行归类（${[...new Set(p.diverted.map(k => p.keyKinds[k]))].join(" / ")}），` +
+        `不走本表的语料：${p.diverted.map(k => `\`${k}\``).join(" · ")}`));
+    }
+
+    if (p.mode === "packid") {
+      const { ids, scanned, packs } = packIdentifiers(p.spec?.packs);
+      if (!scanned || !ids.size) {
+        out.push(Check.skip(S, p.name,
+          `键是合集文档的 \`system.identifier\`。扫了 ${packs} 个合集 / ${scanned} 条索引，` +
+          `**取到 ${ids.size} 个 identifier** —— 合集没加载、或 index 里没有 \`system.identifier\` 字段，` +
+          `本表这次**无从查起**（⚠ 不是「键都还在」）。`));
+        continue;
+      }
+      const found = p.keys.filter(k => ids.has(k));
+      for (const k of p.keys) checkedDistinct.add(k);
+      rawChecked += p.keys.length;
+      out.push(found.length
+        ? Check.warn(S, p.name, p.keys.length,
+            `${p.keys.length} 键（合集 identifier），在 ${packs} 个合集 / ${ids.size} 个 identifier 里` +
+            `**找到 ${found.length} 个** —— 本表是为「上游缺这些」而建的，上游补上之后我们的兜底` +
+            `可能变成多余甚至冲突，**该复核了**。`,
+            found.map(k => `\`${k}\`${dupNote(ownersR, k, p.name)}`))
+        : Check.ok(S, p.name, p.keys.length,
+            `${p.keys.length} 键在 ${packs} 个合集 / ${ids.size} 个 identifier 里一个都没有 ——` +
+            `本表是为此而建的，**这才是预期状态**。（这一条是**真的查了数据**，不是拿源码 grep 猜。）`));
+      continue;
+    }
+
+    if (p.mode === "absent") {
+      const found = p.keys.filter(k => corpus.has(k));
+      for (const k of p.keys) checkedDistinct.add(k);
+      rawChecked += p.keys.length;
+      out.push(found.length
+        ? Check.warn(S, p.name, p.keys.length,
+            `${p.keys.length} 键，**${found.length} 个上游现在提供了** —— 本表是为「上游缺这些」而建的，` +
+            `上游补上之后我们的兜底可能变成多余甚至冲突，**该复核了**。` +
+            "（命中已按**词边界**判定，Oaken / Bejak 那种嵌在长词里的偶然命中不再算数。）",
+            found.map(k => `\`${k}\`（命中在${corpus.find(k)}）${dupNote(ownersR, k, p.name)}`))
+        : Check.ok(S, p.name, p.keys.length,
+            `${p.keys.length} 键上游仍然没有 —— 本表是为此而建的，**这才是预期状态**（找不到＝正常）`));
+      continue;
+    }
+
+    // literal
+    const miss = [];
+    const weakHere = [], derivedHere = [], packIdxHere = [];
+    for (const k of p.keys) {
+      checkedDistinct.add(k);
+      rawChecked++;
+      const where = corpus.find(k);
+      if (where === null) { miss.push(k); missDistinct.add(k); rawMiss++; }
+      else {
+        foundWhere.set(where, (foundWhere.get(where) ?? 0) + 1);
+        if (!foundKeys.has(where)) foundKeys.set(where, new Set());
+        foundKeys.get(where).add(k);
+        const tier = corpus.tierOf(where);
+        if (tier === 3) derivedHere.push(k);
+        if (tier === 2) packIdxHere.push(k);
+        if (isWeakShortWord(k)) { weakShort.add(k); weakHere.push(k); }
+      }
+    }
+    // ⚠ **这张表这一行自己的证据力**。`VISTA_PLACEMENT_LABELS_EN` 那条「14/14 通过」里
+    //   有 `Sort` / `Only` / `Tint` / `Angle` / `Alpha` 这种短词 —— 不在本行标出来，
+    //   读者看到的就是一条满分的绿。弱证据必须**贴着那条绿**写，写在总表末尾没人会翻回来对。
+    const shortList = (a) => a.slice(0, 12).map(k => `\`${k}\``).join(" · ") + (a.length > 12 ? ` …另 ${a.length - 12} 个` : "");
+    let weakNote = "";
+    if (weakHere.length) weakNote += `　⚠ 其中 **${weakHere.length} 键是短词**（${shortList(weakHere)}）——` +
+      `这类词在几 MB 源码里**必然**独立成词地巧合出现，**它们的「通过」证据力≈0**，别当证据用。`;
+    if (derivedHere.length) weakNote += `　⚠ 另有 **${derivedHere.length} 键只命中在「拼接展开（推导）」语料**` +
+      `（${shortList(derivedHere)}）—— 那份语料是我们推出来的，不是上游真有的文本，证据弱一档。`;
+    if (packIdxHere.length) weakNote += `　⚠ 另有 **${packIdxHere.length} 键只命中在「合集索引条目名」**` +
+      `（${shortList(packIdxHere)}）—— 那是 babele **译后**的文本，双语条目名会让这条绿变成自证循环。`;
+
+    out.push(miss.length
+      ? Check.warn(S, p.name, p.keys.length,
+          `${p.keys.length} 键，**${miss.length} 个在上游文本里查无此串**。` +
+          `⚠ 这是**线索不是结论** —— 出处若是拼接串 / 拼路径的模板 / 数据文件，查不到都是正常的：` + weakNote,
+          miss.slice(0, 40).map(k => `\`${k}\`${dupNote(ownersF, k, p.name)}`).concat(miss.length > 40 ? [`…另 ${miss.length - 40} 个`] : []))
+      : Check.ok(S, p.name, p.keys.length, `${p.keys.length} 键全部仍能在上游文本里找到。` + weakNote));
+  }
+
+  /* ── 证据力分档：同样是绿，强弱天差地别，报文里必须显示出来 ──
+        · 第 2 / 3 档（合集索引 / 拼接展开）**逐键点名** —— 只进总数等于把弱证据藏进大数里；
+        · 短词命中是**正交**的减分项，可以叠在任何一档上，叠上之后那条绿约等于零。 */
+  const NAME_CAP = 24;
+  const nameList = (keys) => {
+    const a = [...keys];
+    return a.slice(0, NAME_CAP).map(k => `\`${k}\``).join(" · ") + (a.length > NAME_CAP ? ` …另 ${a.length - NAME_CAP} 个` : "");
+  };
+  const evidence = ["**证据力分档**：直接命中 ＞ 合集索引 ＞ 拼接展开（推导） ＞ 短词命中（≈0）。"];
+  for (const t of [1, 2, 3]) {
+    const labels = [...foundWhere].filter(([lab]) => corpus.tierOf(lab) === t);
+    if (!labels.length) continue;
+    const n = labels.reduce((a, [, v]) => a + v, 0);
+    let line = `第 ${t} 档 · ${TIER_LABEL[t]}：**${n} 键**（${labels.map(([lab, v]) => `${lab} ${v}`).join(" · ")}）`;
+    if (t !== 1) {
+      const ks = new Set();
+      for (const [lab] of labels) for (const k of (foundKeys.get(lab) ?? [])) ks.add(k);
+      line += `。逐键：${nameList(ks)}`;
+    }
+    evidence.push(line);
+  }
+  // ⚠ **按长度从短到长排** —— 最短的就是最不可信的，截断时先给读者看最该怀疑的那几个
+  //   （`Sort` / `Only` / `Tint` 这种四字母词要是被截到列表外面，等于没标）。
+  const weakSorted = [...weakShort].sort((a, b) => a.length - b.length || a.localeCompare(b));
+  evidence.push(weakShort.size
+    ? `⚠ **短词命中 ${weakShort.size} 键，证据力≈0**（这一项与上面的档位**叠加**，不是另一批键；按长度从短到长排）：` +
+      `${nameList(weakSorted)}。这些键短到几 MB 源码里**必然**独立成词地巧合出现 —— ` +
+      `加了词边界也一样。它们的「通过」**不要当证据用**，要验只能人工到界面上看那个标签。`
+    : "短词命中：0 键（本次没有短到证据力可疑的键命中）。");
+  evidence.push(D_BOUNDARY_SUBSTRING);
+  evidence.push(D_BOUNDARY_ADVENTURE);
+
+  const dupTotal = rawChecked - checkedDistinct.size;
+  // ⚠ 这几个数**同时挂在对象上**（`.stats`），好让离线探针读**面板自己算的数**，
+  //   而不是自己再抄一份判据去算 —— 探针抄一份就等于测了个副本，测不着真身。
+  const total = Check.ok(S, "合计", checkedDistinct.size,
+    `去重后共核 **${checkedDistinct.size}** 个键（表里登记 ${rawChecked} 条，其中 ${dupTotal} 条是` +
+    `多张表继承同一个源键的**重复登记**），查无此串 **${missDistinct.size}** 个（报文条数 ${rawMiss}）。` +
+    `命中来源分布：${[...foundWhere].map(([k, v]) => `${k} ${v}`).join(" · ") || "（无）"}` +
+    `（**证据力分档见下面的清单** —— 绿和绿不一样重）。` +
+    D_BOUNDARY +
+    `⚠ 「查无此串」还要看表的类型：运行时拼接的、来自数据文件的、字段路径、合集 identifier、` +
+    `以及**本来就为「上游缺这些」而建的**表，找不到都是正常的 —— 那几类已按 \`kind\` 分开报，不计进这个数。`,
+    evidence);
+  total.stats = {
+    checkedDistinct: checkedDistinct.size, missDistinct: missDistinct.size,
+    rawChecked, rawMiss, dupTotal,
+    corpora: corpus.corpora.map(c => c.label), tried, failed: failed.length, dynamic,
+    tpl, advPacks: advPacks?.length ?? 0,
+    tierCounts: [1, 2, 3].map(t => [...foundWhere].filter(([lab]) => corpus.tierOf(lab) === t)
+      .reduce((a, [, v]) => a + v, 0)),
+    derivedKeys: [...new Set([...foundKeys].filter(([lab]) => corpus.tierOf(lab) === 3)
+      .flatMap(([, ks]) => [...ks]))],
+    packIndexKeys: [...new Set([...foundKeys].filter(([lab]) => corpus.tierOf(lab) === 2)
+      .flatMap(([, ks]) => [...ks]))],
+    weakShort: [...weakShort],
+    miss: [...missDistinct]
+  };
+  out.unshift(total);
   return out;
 }
 
@@ -757,8 +1382,8 @@ export async function openSelfCheckPanel(extra) {
  * 注册设置项与面板入口。
  *
  * @param {Function|null} extra
- *   键活性检查。**只有拿得到硬编码表的模块才传** —— crucible-cn 没有那些表，
- *   传 null，于是「D 键活性」那一档会如实报**「无从查起」**而不是伪装成通过。
+ *   D 档（上游字面量存在性）。**只有拿得到硬编码表的模块才传** —— crucible-cn 没有那些表，
+ *   传 null，于是那一档会如实报**「无从查起」**而不是伪装成通过。
  * @param {object} [opts]
  * @param {string} [opts.modId] 注册到哪个模块的设置命名空间。默认 ember 汉化。
  *   ⚠ 两个模块共用这一份文件（见文件头），所以命名空间必须由调用方给。
