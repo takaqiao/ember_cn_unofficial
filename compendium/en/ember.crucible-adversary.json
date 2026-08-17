@@ -323,7 +323,7 @@
       "actions": {
         "oozeElectrifiedPseudopod": {
           "name": "Electrified Pseudopod",
-          "description": "<p>A Strike which targets <strong>Fortitude</strong> and arcs between up to three targets that are within 3 feet of each other. This attack deals <strong>Electricity</strong> damage to <strong>Morale</strong>.</p><p>On a Critical Hit it inflicts the <strong>Shocked</strong> condition for 2 Turns.</p>"
+          "description": "<p>A Strike which targets <strong>Fortitude</strong> and arcs between up to three targets that are within 3 feet of each other. This <strong>Weakened</strong> attack deals <strong>Electricity</strong> damage to <strong>Morale</strong>.</p><p>On a Critical Hit it inflicts the <strong>Shocked</strong> condition for 2 Turns.</p>"
         }
       }
     },
@@ -434,6 +434,10 @@
           ]
         }
       }
+    },
+    "Shard God": {
+      "name": "Shard God",
+      "description": "<p>Shard Gods are mortal ascendants, having communed with a Heart Crystal to ascend. Some Shard Gods are ancient, while others are far younger and have arisen recently. All are distinct personalities with complex goals, motivations, and flaws. Shard Gods embody mortal concepts (War, Love, Trade)</p><p>@UUID[JournalEntry.emberDeities0000.JournalEntryPage.39KjcVdySqOz1oSU]{The Deities}</p>"
     },
     "Sight Without": {
       "name": "Sight Without",

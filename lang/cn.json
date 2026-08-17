@@ -484,5 +484,19 @@
   "SPELL.INFLECTIONS.Ragen": "拉根",
   "SPELL.INFLECTIONS.RagenAdj": "拉根的",
   "SPELL.INFLECTIONS.Signara": "西格纳拉",
-  "SPELL.INFLECTIONS.SignaraAdj": "西格纳拉的"
+  "SPELL.INFLECTIONS.SignaraAdj": "西格纳拉的",
+  "TYPES": {
+    "RegionBehavior": {
+      "ember": {
+        "suppressEnvironmentFilter": "抑制环境滤镜"
+      }
+    }
+  },
+  "EMBER": {
+    "VISTA": {
+      "TABS": {
+        "vignettes": "效果"
+      }
+    }
+  }
 }
