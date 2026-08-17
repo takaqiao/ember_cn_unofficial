@@ -561,6 +561,14 @@ const SOUNDSCAPE_GROUPS = {
  *   （酒馆？船？曲名？）。宁可露英文也不猜 —— 下一轮的英文残留扫描若报到这 1 条，
  *   属**预期内**，按本条驳回；等上游正文出现这个名字再补。
  */
+// ⚠ 上游 ember 0.6.1 改版 Vista 配置工具，下列 4 条串已从上游移除，故本表删除
+//   （删而不是留：留着会让面板 D 档的 miss 数长期高于记录值，而把 miss 上限往上调
+//    正是第二十八轮堵过的作弊路径 B）。上游若恢复，照抄下面几行即可：
+//   "Are you sure you want to completely clear this vista composition?": "确定要彻底清空该远景构图吗？", // 34730
+//   "Clear Vista": "清空远景",                                         // 34723
+//   "Copied vista configuration to clipboard as JSON data": "已将远景配置以 JSON 数据复制到剪贴板", // 34537
+//   "Invalid Vista Configuration JSON provided.": "提供的远景配置 JSON 无效。",                    // 34768
+//   "Special Effects": "特殊效果",   ← 页签改名为 Effects，已由 lang 键 EMBER.VISTA.TABS.vignettes 接手
 const ARRANGEMENTS = {
   // `Reset` 既不是组名也不是编排名：它是 ember.mjs:16255 `${channel.capitalize()}: Reset`
   // 那一支增强器的叶子（通道重置），因为与编排名走同一个叶子位置，故放在本表。
@@ -570,8 +578,6 @@ const ARRANGEMENTS = {
   // ⚠ 记一笔方向：这一条把 B 段的 `Reset` 由 DRIFT 变成 AGREE（净收益 −1 条漂移），
   //   与同一轮 `Usage` 那条 MJS_ORPHAN_CN +1 是两笔相反的变化，B 段总数 33 → 32 是两者相抵后的结果。
   //   下一轮对 B 段计数时别把这两笔当成没发生。
-  "Reset": "重置",
-
   "Abyssal Fight Interlude":          "深渊战斗 · 间奏",
   "Abyssal Fight Main":               "深渊战斗 · 主段",
   "Abyssal Fight Rises":              "深渊战斗 · 渐强",
@@ -581,6 +587,8 @@ const ARRANGEMENTS = {
   "Ancient Giants":                   "远古巨人",
   "Ancient Giants Tension":           "远古巨人 · 紧张",
   "Ancient Ruins Magic Depths":       "远古遗迹 · 魔法深处",
+  "Arbore Sanctorus Day":            "圣树庇护所 · 白天",
+  "Arbore Sanctorus Night":          "圣树庇护所 · 夜晚",
   "Arcane Theme Calm":                "奥术主题 · 平静",
   "Arcane Theme Tension":             "奥术主题 · 紧张",
   "Arcturel Day":                     "阿克图瑞尔 · 白天",
@@ -624,6 +632,8 @@ const ARRANGEMENTS = {
   "Dungeon Tension":                  "地下城 · 紧张",
   "Earth Elemental Combat Section 1": "土元素战斗 · 第一段",
   "Earth Elemental Combat Section 2": "土元素战斗 · 第二段",
+  "Earthen Henge Day":               "土石环阵 · 白天",
+  "Earthen Henge Night":             "土石环阵 · 夜晚",
   "Ember Cosmos":                     "余烬寰宇",
   "Ember's Bounty Calm":              "余烬的恩赐 · 平静",
   "Ember's Bounty Day":               "余烬的恩赐 · 白天",
@@ -706,6 +716,8 @@ const ARRANGEMENTS = {
   "Pathways":                         "通路",
   "Pathways Tension":                 "通路 · 紧张",
   "Primordial Bastion":               "原初堡垒",
+  "Primordis Fight Section 1":       "普里莫迪斯战斗 · 第一段",
+  "Primordis Fight Section 2":       "普里莫迪斯战斗 · 第二段",
   "Raider Fight - Intense":           "劫掠者战斗 · 激烈",
   "Raider Fight - Main":              "劫掠者战斗 · 主段",
   "Raiders' Hideout Day":             "劫掠者藏身处 · 白天",
@@ -713,9 +725,12 @@ const ARRANGEMENTS = {
   "Redrak Fields Day":                "雷德拉克原野 · 白天",
   "Redrak Fields Night":              "雷德拉克原野 · 夜晚",
   "Redrak Fields Tension":            "雷德拉克原野 · 紧张",
+  "Reset": "重置",
   "Rock Spires Day":                  "岩石尖塔 · 白天",
   "Rock Spires Night":                "岩石尖塔 · 夜晚",
   "Rock Spires Tension":              "岩石尖塔 · 紧张",
+  "Rortwark Day":                    "罗特瓦克 · 白天",
+  "Rortwark Night":                  "罗特瓦克 · 夜晚",
   "Rustvar Valley Day":               "鲁斯特瓦尔山谷 · 白天",
   "Rustvar Valley Night":             "鲁斯特瓦尔山谷 · 夜晚",
   "Rustvar Valley Tension":           "鲁斯特瓦尔山谷 · 紧张",
@@ -749,7 +764,11 @@ const ARRANGEMENTS = {
   "Splinter Canyons Tension":         "碎裂峡谷 · 紧张",
   "Stadium Underworks":               "竞技场地下工事",
   "Steed's Point Day":                "斯蒂德角 · 白天",
+  "Stonework Hollow Day":            "石工谷地 · 白天",
+  "Stonework Hollow Night":          "石工谷地 · 夜晚",
   "Sunken Rejarh":                    "沉没的雷贾尔",
+  "Talei Day":                       "塔莱 · 白天",
+  "Talei Night":                     "塔莱 · 夜晚",
   "Teeth Day":                        "卡迪索斯之牙 · 白天",
   "Teeth Night":                      "卡迪索斯之牙 · 夜晚",
   "Teeth Tension":                    "卡迪索斯之牙 · 紧张",
@@ -766,6 +785,8 @@ const ARRANGEMENTS = {
   "Undead Fight - Spooky":            "不死生物战斗 · 阴森",
   "Upper Arcturel Day":               "上层阿克图瑞尔 · 白天",
   "Upper Arcturel Night":             "上层阿克图瑞尔 · 夜晚",
+  "Ushna Dredging Day":              "乌什纳疏浚 · 白天",
+  "Ushna Dredging Night":            "乌什纳疏浚 · 夜晚",
   "Verdant Paths Day":                "翠绿径 · 白天",
   "Verdant Paths Night":              "翠绿径 · 夜晚",
   "Verdant Paths Tension":            "翠绿径 · 紧张",
@@ -997,7 +1018,6 @@ const DIALOG_TITLES = {
   "Initiate Event": "启动事件",                                      // 36956
   "Select Outcome": "选择结果",                                      // 36842
   "Delete Saved Composition?": "删除已保存的构图？",                    // 34488
-  "Clear Vista": "清空远景",                                         // 34723
   "Import Configuration": "导入配置",                                // 34750
   "Summarize Token Maker Part Usage": "统计指示物制作器部件用量",          // 49532
   "Ember: Teleport Destination": "余烬：传送目的地",                    // 61789
@@ -1274,7 +1294,6 @@ const DIALOG_UI = {
   "Activate the hidden Generator Room switch?": "启动隐藏的发电机房开关？", // 95131
   "Set the machine's operating state.": "设置该机器的运行状态。",         // 96497
   "The junction wheel is missing. Install a replacement?": "枢纽轮盘缺失。是否安装替换件？", // 112218
-  "Are you sure you want to completely clear this vista composition?": "确定要彻底清空该远景构图吗？", // 34730
   "No destinations are currently reachable. Adjust the track levers and try again.":
     "当前没有可到达的目的地。请调整轨道拉杆后重试。",                      // 112042
   "Activate this mine cart with no passenger?": "在无乘客的情况下启动这辆矿车？", // 112066
@@ -1909,10 +1928,10 @@ const EMBER_WINDOW_UI = {
   "Level Name": "层名",                                                   // vista-config-scene.hbs:13（与「自定义层名」同族）
   "Create": "创建",                                                       // vista-config-scene.hbs:21
   "Token Scaling": "指示物缩放",                                            // vista-config-scene.hbs:27
+  "SFX": "特效", "Sprites": "精灵图",                                     // vista-config-scene.hbs:38/42（"Special Effects" 已随 0.6.1 页签改名移除，见文件上方注释）
   // ⚠ `Sprites` 是远景图层里的**贴图精灵**（与 SFX / Special Effects 并列的一档美术资源），
   //   B 段 `MJS_ORPHAN_CN` 拿合集英文闸下的「精灵」来比是把它当成了 fey/sprite 那个生物义；
   //   带「图」正是为了跟生物撇清。已裁：保持「精灵图」。
-  "Special Effects": "特殊效果", "SFX": "特效", "Sprites": "精灵图",         // vista-config-scene.hbs:34/38/42
   "Coordinates": "坐标", "Scale": "缩放", "Skew": "斜切",                   // vista-config-placement.hbs:5/21/36
   "Precolorization": "预着色",                                            // vista-config-placement.hbs:66
   // 角色旗标配置：上游模板写的是 {{localize "Anchor"}}，而 modules/ember/lang/en.json 里
@@ -2074,9 +2093,7 @@ const INJECTED_SUBTREES = [
 const NOTIFICATIONS = {
   "No other events are available at the moment.": "目前没有其他可用的事件。",                    // 24767
   "This event does not configure a Scene to preload.": "该事件没有配置需要预加载的场景。",         // 24782
-  "Copied vista configuration to clipboard as JSON data": "已将远景配置以 JSON 数据复制到剪贴板", // 34537
   "You must provide a name to create a new custom composition.": "创建新的自定义构图需要先填写名称。", // 34586
-  "Invalid Vista Configuration JSON provided.": "提供的远景配置 JSON 无效。",                    // 34768
   "No current page detected": "未检测到当前页面",                                              // 35339
   "Only a Gamemaster user may initiate a group rest from the Party Sheet.":
     "只有游戏主持人才能从队伍卡发起集体休息。",                                                  // 37929 / 37984

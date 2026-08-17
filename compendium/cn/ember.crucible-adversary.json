@@ -280,7 +280,7 @@
       "actions": {
         "oozeElectrifiedPseudopod": {
           "name": "带电拟足 Electrified Pseudopod",
-          "description": "<p>一次针对<strong>强韧</strong>的打击，可在彼此相距 3 英尺内的至多三个目标之间跳跃。此次攻击对<strong>士气</strong>造成<strong>电击</strong>伤害。</p><p>造成暴击时，施加<strong>感电</strong>状态，持续 2 个回合。</p>"
+          "description": "<p>一次针对<strong>强韧</strong>的打击，可在彼此相距 3 英尺内的至多三个目标之间跳跃。此次<strong>虚弱</strong>攻击对<strong>士气</strong>造成<strong>电击</strong>伤害。</p><p>造成暴击时，施加<strong>感电</strong>状态，持续 2 个回合。</p>"
         }
       }
     },
