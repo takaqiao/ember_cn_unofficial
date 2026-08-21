@@ -509,6 +509,10 @@
     "Yarnac": {
       "name": "亚纳克 Yarnac",
       "description": "<p>被称为亚纳克的巨大冠角生物，是阿克图斯高原上最可靠的驮兽之一。</p>"
+    },
+    "Shard God": {
+      "name": "碎片之神 Shard God",
+      "description": "<p>碎片之神是凡人升格者，她们通过与心之水晶交感而飞升。有些碎片之神极为古老，另一些则年轻得多，是近来才崛起的。她们全都拥有鲜明的个性，怀有复杂的目标、动机与缺陷。碎片之神体现着凡世的种种概念（战争、爱、贸易）</p><p>@UUID[JournalEntry.emberDeities0000.JournalEntryPage.39KjcVdySqOz1oSU]{诸神}</p>"
     }
   }
 }

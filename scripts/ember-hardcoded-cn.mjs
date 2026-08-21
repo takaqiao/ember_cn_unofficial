@@ -1145,6 +1145,48 @@ const DIALOG_UI = {
   // 无法到达」三条全对不上（英文闸下「后退方向」全库 0 叶、「无法到达」2 叶且都是别处正文，
   // 「无法抵达」15 叶）。2026-08-15 主控裁决批次落地时改到合集定稿。
   "Forwards": "前进", "Backwards": "后退", "Unreachable": "无法抵达", // 112063-112065
+  // ── 矿车目的地框里那一排**地点名**（项目所有者 2026-08-21 在 Yakoshta Mine 实地点出来的）──
+  // 上屏点：`#presentDestinationDialog()`（ember.mjs 0.6.1 :127683-127732）
+  //   `label.append(input, " ", d.label)`（:127683）—— `d` 来自
+  //   `ember.scene.getReachableDestinations(cart)`，最终取的是轨道 `nodes[x].label`。
+  //   上面那三条 `Forwards/Backwards/Unreachable` 是**分组的 legend**，这十条是**组里的单选项**；
+  //   补了组名没补选项，框里就是「前进：Loading Zone / Ooze Farm」这种半中半英 —— 正是所报现象。
+  // 口径：与升降机目的地那六条（`Tradeway (Region Map)` 等，就在下面几行）**同一体式** ——
+  //   目的地选单里只写中文，不带英文尾巴。中文取 glossary_ec 的定译中文段：
+  //   `Loading Zone`＝装载区 · `Excavation Pit`＝挖掘坑 · `Supply Cache`＝补给储藏处 ·
+  //   `Junction`＝枢纽（R-junction-wheel 已裁 Junction Wheel＝枢纽轮盘，同词根）· `Elevator`＝升降机。
+  //   glossary 没有的四条按同域词根拼：Ooze＝软泥（全库 31 条一致）· Ore Pit＝矿坑
+  //   （`Glowing Ore Pit`＝发光矿坑 / `Old Ore Pit`＝旧矿坑）· Barricade＝路障
+  //   （`Makeshift Barricade`＝临时路障）· Waterfall＝瀑布（`Waterfall Crossing`＝瀑布渡口）·
+  //   `(Broken)` 取「已损毁」，与本表 `Broken`＝已破碎 分开：那条说的是石柱受损档位，
+  //   这里说的是矿车轨道上**塌掉、过不去**的节点，两处不同域（同域撞名的坑见 `Broken` 那条注释）。
+  // ⚠ 十条是**全集**：`static #RED_TRACK` / `static #BLUE_TRACK` 两段（:128090 / :128189）里
+  //   带 label 的节点，用括号配平与「两段行区间内 8 空格缩进 label 行」两条互不依赖的路子各数一遍，
+  //   都是 10 条（探针 4-临时脚本/2026-08-18-ui-gaps/track_nodes.py，自证 OK）。
+  "Loading Zone": "装载区",                   // :128094
+  "Ooze Farm": "软泥养殖场",                  // :128139
+  "Excavation Pit": "挖掘坑",                 // :128159 / :128314
+  "Southern Ore Pit": "南部矿坑",             // :128169
+  "Elevator": "升降机",                       // :128193
+  "Loading Zone (Broken)": "装载区（已损毁）",  // :128220
+  "Waterfall (Broken)": "瀑布（已损毁）",      // :128231
+  "Excavation Barricade": "挖掘区路障",        // :128294
+  "Supply Cache": "补给储藏处",               // :128332
+  "Junction": "枢纽",                         // :128348
+  // ── 焦油坑 / 阿克图瑞尔升降机这两个框里 GM 那半张表单 ──
+  // 两处形状一模一样（`<fieldset><legend>标题 <button aria-label="添加…">`＋一行 Actor UUID + 数量）：
+  //   焦油坑     ember.mjs:123272-123277（框标题 `Tar Pit` 已在 DIALOG_TITLES，框认得出）
+  //   升降机增援 ember.mjs:129583-129587（框标题继承基类 `Elevator Controls`，:81343，同样在表里）
+  // `Actor` 一词早在本表里（:23277 那批），不重复登记。
+  // ⚠ 已知边界：这两个表单的「+」按钮**再加出来的行**是 `insertAdjacentHTML` 塞进去的
+  //   （:123283 / :129599），发生在渲染钩子之后、也不发新钩子，那些行里的 `Remove` 仍是英文。
+  //   初始那一行（写在 `config.content` 里，随框一起渲染）是好的。要全覆盖得给这两个 fieldset
+  //   挂 observeSubtree —— 但那要动 patchRenderedApplications 的认框分支，本轮不做，登记在此。
+  "Spawn Actors": "生成角色",                 // :123274 焦油坑 <legend>
+  "Add Actor": "添加角色",                    // :123276 同上，「+」按钮的 aria-label
+  "Reinforcements": "增援",                   // :129584 升降机 <legend>
+  "Add Reinforcements": "添加增援",            // :129586 同上，「+」按钮的 aria-label
+  "Remove": "移除",                           // :123363 / :129828 两处行尾「×」按钮的 data-tooltip
   "Tradeway": "贸易道", "Underbelly": "底腹区", "Construct Assembly": "构装体装配区", // 114360-114362
   // 场景机关按钮
   // ⚠ `Ring` 是**动词**：宿主框标题就是 `window: {title: "Ring Alarm Bell?"}`（ember.mjs:110323），
@@ -1941,8 +1983,222 @@ const EMBER_WINDOW_UI = {
   "Anchor": "锚点"                                                       // applications/actor-flags.hbs:29
 };
 
+/**
+ * 指示物制作器**数据层**的标签：颜色槽 / 图层名 / 体格 / 站姿 / 模板名。
+ *
+ * 为什么单独一张表，而不是并进 EMBER_WINDOW_UI
+ * -------------------------------------------
+ * 这张表里全是 `Head` / `Face` / `Base` / `Front` / `Skin` / `Stone` / `Wood` / `Water` /
+ * `Land` / `Standard` / `Human` / `Construct` 这种**极通用**的词。EMBER_WINDOW_UI 是给
+ * **所有** Ember 窗口用的（日志页、法典、日历、远景配置、创角向导都在里面），把这些词放进去
+ * 等于在那些窗口的正文里做全局替换 —— 远景配置里真有「Base」「Front」这种图层档位，
+ * 生物页里真有「Water」「Land」。⇒ 只在**认出是指示物制作器**的那两个窗口里才查这张表。
+ *
+ * 上屏点逐条对到源码（templates/applications/token-maker/*.hbs ← ember.mjs）：
+ *   · 颜色槽   colors.hbs:6 `<label>{{color.label}}</label>`
+ *              ← `#prepareColors()` ember.mjs:66638 取 `template.colors[c].label`
+ *   · 图层名   layers.hbs:34 `<span class="layer">{{layer.label}}</span>`
+ *              ← `#prepareLayers()` ember.mjs:66607 `templateLayer.set?.label ?? templateLayer.label`
+ *   · 体格/站姿 layers.hbs:16/26 `{{build.label}}` / `{{stance.label}}`
+ *              ← `#prepareBuild()` :66552 / `#prepareStance()` :66571，取 `template.builds|stances[x].label`
+ *              （两个**栏目名** `Build` / `Stance` 是字面量，早在 EMBER_WINDOW_UI 里）
+ *   · 模板名   body.hbs:10 `<select name="template">{{selectOptions … labelAttr="label"}}`
+ *              ← 每个模板对象顶层的 `label`
+ *   · `None`   layers.hbs:35 `{{layer.partLabel}}` 的兜底值（ember.mjs:64468）
+ *
+ * ⚠ **`{{layer.partLabel}}` 的非兜底取值不在本表、也补不进来**：`getLayerChoicesV2()`
+ *   （ember.mjs:64457）是 `partId.split("/").at(-1).replace(/(?<!^)([A-Z1-9])/g, " $1")` ——
+ *   把部件 id 在**运行时**拆成词（`BeardWizard` → `Beard Wizard`）。它不是字面量、数量在
+ *   四千条量级，靠查表接不住。本轮判为**留英**，理由与量级记在本轮报告里。
+ *
+ * ⚠ 模板名用的是**合集里那条条目名的原样**（「凯思 Keth」这种中英并列式），不是裸中文：
+ *   玩家在创角向导里选血统时看到的就是合集给的那个名字，下拉里换个写法两边对不上。
+ *   `Construct` 取 glossary_ec 的「构装体 Construct」；`Party Banner` / `Undead Monster` /
+ *   `Human (Abyssal)` / `Human (Undead)` 合集里没有条目，按 glossary 的词根拼
+ *   （Abyssal＝深渊裔 / Undead＝不死生物）。
+ *
+ * ⚠ `Eyes` 与 `Horns` 既是颜色槽名也是图层名（两侧译文相同），本表里**只写一次**，
+ *   写在颜色槽那一段；别看着图层段里没有就往回加，那会造出第二个定义处。
+ *
+ * 行末是 modules/ember/scripts/ember.mjs 的行号（ember 0.6.1）。
+ */
+const TOKEN_MAKER_UI = {
+  // ── 颜色槽 76 条 ──（`Eyes` / `Horns` 与图层名共用，见表头注释）
+  "Alloy": "合金",                    // :55755
+  "Bark Accent": "树皮点缀色",         // :58476
+  "Bark Base": "树皮基色",            // :58472
+  "Birthmark Base": "胎记基色",        // :57917
+  "Birthmark Shimmer": "胎记微光",     // :57922
+  "Bloodstains": "血迹",              // :60123
+  "Bone": "骨色",                     // :55351
+  "Claws": "爪",                      // :55976
+  "Clay": "陶土",                     // :59207
+  "Cloth 1": "布料 1",                // :60803
+  "Cloth 2": "布料 2",                // :60808
+  "Crystal": "水晶",                  // :61198
+  "Embellishments": "缀饰",           // :55337
+  "Ethereal": "以太",                 // :58126
+  "Eye Glow": "眼部辉光",             // :56857
+  "Eye Iris": "眼部虹膜",             // :55967
+  "Eye Sclera": "眼白",               // :55971
+  "Eyes": "眼睛",                     // :54132（同时是图层名）
+  "Eyes Iris": "眼部虹膜",            // :55332（与 Eye Iris 是两个模板各自的写法，同义同译）
+  "Eyes Sclera": "眼白",              // :57698（同上）
+  "Fabric Accent": "织物点缀色",       // :55292
+  "Fabric Base": "织物基色",          // :55302
+  "Flame": "火焰",                    // :55378
+  "Flora Detail": "草木细节",          // :58492
+  "Fur": "毛皮",                      // :55360
+  "Fur Accent": "毛皮点缀色",          // :58702
+  "Fur Base": "毛皮基色",             // :58698
+  // ⚠ `Glow` 与 `Radiance` **同屏可能**（都是颜色槽），不能都叫「辉光」。
+  //   glossary_ec 已定 `Radiance`＝辉光，所以 `Glow` 让位取「光晕」。
+  "Glow": "光晕",                     // :55342
+  "Radiance": "辉光",                 // :55760（glossary_ec 定译）
+  // ── 0.6.1 改了头发系颜色槽的命名约定，这一层我们的表**从来没覆盖过** ──
+  //   槽 id 仍是 hair1/hair2，但 label 从 `Hair1`/`Hair2` 改成了 `Hair Roots`/`Hair Highlights`；
+  //   另有三个模板各自覆写成 `Hair Base`(:57515) / `Hair Glow`(:57519) / `Hair Sparkle`(:57274)，
+  //   而 party banner 那张表里还留着旧形态 `Hair 1`(:60767)。六条**全部**登记，缺一条就半英半中。
+  "Hair 1": "头发 1",                 // :60767（遗留写法，仅 partyBanner）
+  "Hair Base": "头发基色",            // :57515
+  "Hair Glow": "头发辉光",            // :57519
+  "Hair Highlights": "头发挑染",       // :55260
+  "Hair Roots": "发根",               // :55249（另有 hairGlow 槽也叫这个名，:57523）
+  "Hair Sparkle": "头发闪光",          // :57274
+  "Heraldry 1": "纹章 1",             // :61163
+  "Heraldry 2": "纹章 2",             // :61175
+  "Heraldry 3": "纹章 3",             // :61187
+  "Horns": "角",                      // :56214（同时是图层名）
+  "Keratin": "角质",                  // :56203
+  "Keratin Accent": "角质点缀色",      // :56396
+  "Keratin Base": "角质基色",          // :56385
+  "Keratin Detail": "角质细节",        // :56380
+  "Leather 1": "皮革 1",              // :60812
+  "Leather 2": "皮革 2",              // :60817
+  "Leather Accent": "皮革点缀色",      // :55307
+  "Leather Base": "皮革基色",          // :55312
+  "Leaves Accent": "叶片点缀色",       // :58484
+  "Leaves Base": "叶片基色",          // :58480
+  "Mask Base": "面具基色",            // :59047
+  "Mask Pattern A": "面具纹样 A",      // :59052
+  "Mask Pattern B": "面具纹样 B",      // :59057
+  "Metal 1": "金属 1",                // :60822
+  "Metal 2": "金属 2",                // :61125
+  "Metal Accent": "金属点缀色",        // :55238
+  "Metal Base": "金属基色",           // :55233
+  "Pyre Core": "焚焰核心",            // :56838
+  "Pyre Heat": "焚焰热光",            // :56895
+  "Scales Accent": "鳞片点缀色",       // :55985
+  "Scales Base": "鳞片基色",          // :55981
+  "Skin": "皮肤",                     // :56885
+  "Skin 1": "皮肤 1",                 // :59656
+  "Skin 2": "皮肤 2",                 // :59666
+  "Skin Accent": "皮肤点缀色",         // :55282
+  "Skin Base": "皮肤基色",            // :55271
+  "Skin Plates": "皮甲片",            // :56219
+  "Stone": "石料",                    // :55383
+  "Straw": "干草",                    // :59222
+  "Symbol 1": "徽记 1",               // :61210
+  "Tattoo": "刺青",                   // :55321
+  "Teeth": "牙齿",                    // :58851
+  "Wisps Base": "幽芒基色",           // :59039
+  "Wisps Glow": "幽芒辉光",           // :59043
+  "Wood": "木材",                     // :55369（glossary_ec 定译）
+  "Wood 1": "木材 1",                 // :61134
+  "Wood 2": "木材 2",                 // :59217
+
+  // ── 图层名 36 条（另加两条只在模板里覆写的 Pauldron Left/Right） ──
+  "Arms": "手臂",                     // :54123（set.label）
+  "Back Apparel": "背部衣饰",          // :54400
+  "Back Item": "背部物品",            // :54652
+  "Base": "基底",                     // :60911（partyBanner 的根图层）
+  "Chest": "胸部",                    // :54433
+  "Eyebrows": "眉毛",                 // :54148
+  "Eyewear": "眼饰",                  // :54514
+  "Face": "面部",                     // :54159
+  "Feet": "脚",                       // :54218
+  "Footwear": "鞋履",                 // :54548
+  "Forearms": "前臂",                 // :54231
+  "Front": "正面",                    // :60954
+  "Hair": "头发",                     // :54247
+  "Hand": "手",                       // :54290
+  "Head": "头部",                     // :54309
+  "Header": "顶饰",                   // :60941
+  "Helm": "头盔",                     // :54563（glossary_ec 定译）
+  "Helm Lower": "头盔下部",            // :54640
+  "Item Hand (Left Lower)": "手持物（左下）",   // :55733
+  "Item Hand (Right Lower)": "手持物（右下）",  // :55734
+  "Item Waist": "腰间物品",           // :54808
+  "Leg": "腿",                        // :54338
+  "Legs": "双腿",                     // :54345
+  "Neck": "颈部",                     // :54831
+  "Nipples": "乳首",                  // :54380
+  "Pants": "裤装",                    // :54892
+  "Pauldron": "护肩",                 // :59889
+  "Pauldron Left": "左护肩",           // :55697
+  "Pauldron Right": "右护肩",          // :55700
+  "Pole": "旗杆",                     // :60926
+  "Sleeve": "袖",                     // :54993
+  "Sleeves": "双袖",                  // :54994
+  "Symbol": "徽记",                   // :61008（partyBanner 的徽记图层；glossary 的「象征」是抽象义，不是这个）
+  "Torso": "躯干",                    // :54356
+  "Waist": "腰部",                    // :55027
+  "Wrist": "腕部",                    // :59936
+
+  // ── 体格 3 条 ──
+  "Lithe": "纤瘦",                    // :54035
+  "Standard": "标准",                 // :54042
+  "Heavy": "壮硕",                    // :54045
+  // ── 站姿 6 条 ──
+  "Standing": "站立",                 // :54060
+  "Action": "动作",                   // :54067（glossary_ec 定译）
+  "Sitting": "坐姿",                  // :54077
+  "Walking": "行走",                  // :54084
+  "Land": "陆上",                     // :61224
+  "Water": "水中",                    // :61228（此处是站姿「水中形态」，不是地区义的「水域」）
+
+  // ── 模板名 18 条（＝血统名，取合集条目名原样，见表头注释） ──
+  "Altyra": "阿尔提拉 Altyra",         // :55778
+  "Ashka": "阿什卡 Ashka",             // :56002
+  "Construct": "构装体 Construct",     // :59267
+  "Cor'ak": "科拉克 Cor'ak",           // :56267
+  "Drakon": "龙裔 Drakon",             // :56427
+  "Fej": "费伊杰 Fej",                 // :56916
+  "Hulg'run": "赫尔格伦 Hulg'run",     // :57135
+  "Human": "人类 Human",               // :56658
+  "Human (Abyssal)": "人类 Human（深渊裔）", // :60014
+  "Human (Undead)": "人类 Human（不死）",    // :60177
+  "Jurtak": "尤尔塔克 Jurtak",         // :59995
+  "Keth": "凯思 Keth",                 // :57356
+  "Kiska": "基斯卡 Kiska",             // :57547
+  "Kivahr": "基瓦尔 Kivahr",           // :57754
+  "Nir'ae": "尼尔艾 Nir'ae",           // :57938
+  "Party Banner": "队伍旗帜",          // :61243
+  "Undead Monster": "不死怪物",        // :60891
+  "Zeph": "泽夫 Zeph",                 // :59082
+
+  // ── 窗口头部控件 / 随机化配置表单 ──
+  "None": "无",                       // :64468，`{{layer.partLabel}}` 的兜底值
+  "Clear Custom Offsets": "清除自定义偏移",   // :66331 窗口头部控件
+  "Allow Restricted Parts": "允许受限部件",   // :66340 同上
+  "Body Type": "身体类型",             // :67334 EmberRandomTokenConfig 的页签
+  "Part Restrictions": "部件限制",     // :67335 同上
+  "Color Restrictions": "颜色限制",    // :67336 同上
+  "Choose Layer": "选择层",            // :67521 「选择层」对话框标题
+  "Select the anatomy or equipment layer to constrain.": "选择要约束的身体或装备层。", // :67522
+  "Choose Color": "选择颜色",          // :67588 「选择颜色」对话框标题
+  "Select the color type to constrain.": "选择要约束的颜色类型。"                     // :67589
+};
+
 /** Ember 自己弹的框：作用域表要把「对话框专用」和「Ember 窗口通用」两张合起来用 */
 const EMBER_DIALOG_UI = {...DIALOG_UI, ...EMBER_WINDOW_UI};
+
+/**
+ * 指示物制作器那两个窗口用的表：Ember 窗口通用表 ＋ 上面那张只在这里生效的数据层表。
+ * 预先合好，别在渲染钩子里每次现拼（`#refresh()` 每改一个部件就重渲一次 layers/colors）。
+ */
+const TOKEN_MAKER_APPS = new Set(["EmberDynamicTokenConfig", "EmberRandomTokenConfig"]);
+const TOKEN_MAKER_WINDOW_UI = {...EMBER_WINDOW_UI, ...TOKEN_MAKER_UI};
 
 /**
  * 播放列表侧栏里 Ember 注入的音景面板（`<form id="ember-mood">`，ember.mjs:15874-15898）。
@@ -3047,7 +3303,13 @@ function patchRenderedApplications() {
       // 带 dialog 类名的（如 Create Weather 那个 classes 含 "ember-hex-selection-dialog" 的框）
       // 顺带把 DIALOG_UI 一起带上 —— 归属已经确定，那张表里的按钮词在这里同样安全。
       const isDialog = id === "DialogV2" || /(^|\s)dialog(\s|$)/.test(cls);
-      translateNode(root, isDialog ? EMBER_DIALOG_UI : EMBER_WINDOW_UI);
+      // 指示物制作器那两个窗口额外带上 TOKEN_MAKER_UI —— 那张表里全是 Head / Base / Water /
+      // Human 这类极通用词，只有认出是这两个窗口才敢查，理由见该表的表头注释。
+      // 判据用**类名**而不是 root.id：`EmberDynamicTokenConfig` 嵌进创角向导时
+      // （templates/applications/creation/{token,crucible-token}.hbs 的 `<div id="ember-token-maker">`）
+      // 根元素 id 仍是 `ember-token-maker`，但类名判据两种形态都成立，且不会误认别的窗口。
+      translateNode(root, TOKEN_MAKER_APPS.has(id) ? TOKEN_MAKER_WINDOW_UI
+        : (isDialog ? EMBER_DIALOG_UI : EMBER_WINDOW_UI));
       // 指示物制作器的动画开关：#refresh()（ember.mjs:50994-51004）在 `await this.render()`
       // **之后**才把 data-tooltip 写回英文，也就是比渲染钩子晚一步，而且它只重画
       // parts:["layers","colors"]、不重画 body，模板里那句译了也会被覆盖。挂 observer 盯着。
@@ -3282,6 +3544,23 @@ const SELFCHECK_TABLES = {
   EXACT, DIALOG_UI, NOTIFICATIONS,
   ATTUNEMENTS, MOON_NAMES, ATTUNEMENT_TAB,
   EMBER_WINDOW_UI,
+  // 指示物制作器数据层（2026-08-21 新增）。149 键**全部**是 ember.mjs 里的 `label: "…"`
+  // 等字面量，进表前已用 `4-临时脚本/2026-08-18-ui-gaps/gen_token_maker_table.py` 逐条自查过
+  // 「上游有这个 "…" 字面量」149/149 —— 所以本档只抬覆盖侧的数，miss 侧一条不添。
+  //
+  // ⚠⚠ **加这张表（以及本轮给 DIALOG_UI 加的 15 键）必须连着改另外两份文件**，否则
+  //   `--selftest` 357→356、主闸随之红在 `<main 的固定检查> —— --selftest 没过`：
+  //   `assert_resolutions.py:5739` 的灵敏度用例做的是 `min.registeredRaw + 1` 再要求报违规，
+  //   它**要求记录值与实测值相等**；表里一加键实测就往上走，记录值不跟着抬那条用例就空转。
+  //   （实测过：把本表摘出登记也没用 —— 光那 15 条 DIALOG_UI 键就把 registeredRaw
+  //     1495→1510 顶过了 1496，同一条照样红。⇒ 这是「往任何登记表加键」的固有代价，
+  //     与三张正则表「加条目必须同时补用例」是同一条纪律，不是本表的特例。）
+  //   要改的两处（**都不归本文件的作者**，已把补丁验到底后升报）：
+  //     · `5-其他内容/RESOLUTIONS.assertions.json` 的 `R-selfcheck-d-liveness` min/max 7 个值
+  //     · `3-常用脚本/qa/assert_resolutions.py` 的 PAYLOAD_FLOORS 对应 7 个 `("eq", N)`
+  //   逐条数字、实跑证据与「为什么 `--rules <副本>` 对这一条无效」写在
+  //   `4-临时脚本/2026-08-18-ui-gaps/patch/PATCH.md`。
+  TOKEN_MAKER_UI,
 
   // ── 运行时拼出来的：字面量核对对它**无效**，报「查无此串」是判据的假阳性 ──
   //   CHAT_UI 的复合键由 buildChatKeys() 在 ready 时按当前 lang 的实际译文拼出
