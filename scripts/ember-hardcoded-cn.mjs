@@ -2006,10 +2006,33 @@ const EMBER_WINDOW_UI = {
  *              ← 每个模板对象顶层的 `label`
  *   · `None`   layers.hbs:35 `{{layer.partLabel}}` 的兜底值（ember.mjs:64468）
  *
- * ⚠ **`{{layer.partLabel}}` 的非兜底取值不在本表、也补不进来**：`getLayerChoicesV2()`
- *   （ember.mjs:64457）是 `partId.split("/").at(-1).replace(/(?<!^)([A-Z1-9])/g, " $1")` ——
- *   把部件 id 在**运行时**拆成词（`BeardWizard` → `Beard Wizard`）。它不是字面量、数量在
- *   四千条量级，靠查表接不住。本轮判为**留英**，理由与量级记在本轮报告里。
+ * ⚠⚠ **上一轮这里写的「`{{layer.partLabel}}` 的非兜底取值不在本表、也补不进来 …… 数量在四千条
+ *   量级」经 2026-08-22 复算是错的，两个论断都推翻，本段照实改写**（原文保留在 git 历史里）：
+ *   · 拆词规则确实是 `getLayerChoicesV2()`（ember.mjs:64457）在**运行时**算的：
+ *     `partId.split("/").at(-1).replace(/(?<!^)([A-Z1-9])/g, " $1")`。
+ *     ⚠ 字符类是 `[A-Z1-9]`，**不含 `0`** —— 所以 `Beard1`→`Beard 1` 而 `Beard10`→`Beard 10`、
+ *       `Beard11`→`Beard 1 1`。这条怪癖是实测出来的，不是推的（见下面那份推导脚本）。
+ *   · **「补不进来」是错的**：部件 id 全是 `{id: "X", …}` 形态的字面量，**可以枚举再算显示名**。
+ *     `4-临时脚本/2026-08-22-ui-round2/unit2/probe_tokenmaker.py` +
+ *     `derive_partnames.py` 已把全集算出来并自证到底：区间内 `{id:"…"}` 命中 2558 条 / 去重 1387，
+ *     扣掉 31 个模板 id 与 set id ⇒ **部件 id 1356 条**，一一映射出 **1356 个唯一显示名**。
+ *     推导侧的自证有三道：① Python 推导与**上游原样那条正则**（交给 node 跑）逐条相同；
+ *     ② 阳性对照 `BeardWizard`→`Beard Wizard` / `Cheeks`→`Cheeks` / `Beard1`→`Beard 1`；
+ *     ③ 与 4 份图集清单（`assets/tokens/maker/*.json`，5649 帧）交叉验算，1356 条里 **1351 条**
+ *        能在图集里找到同名帧（或同名的 `…Color` 掩码帧），只剩 5 条例外。
+ *   · **「四千条量级」也是错的**，真值 1356。四千那个数来自把全库
+ *     `label:` 等属性字面量（5474 条 / 去重 3988）整片算了进来 —— 那里的大头是
+ *     ember.mjs 86000–107000 行的**场景装饰精灵目录**（`{label: "Grey Tall Basket, Lid",
+ *     category: "Containers,Baskets"}` 那一片），是 GM 建场景用的资源选择器，
+ *     **与指示物制作器无关**，别再把两件事算成一堆。
+ *   ⚠ **但它仍然不能直接加进本表**，理由变了：本表整表登记在自检面板 D 档下，那一档核的是
+ *     「这个英文串还在不在上游文本里」。`Beard Wizard` 是运行时拼出来的，上游只有 `BeardWizard`
+ *     ⇒ 直接加会让 `missDistinct` 整片上涨、**主闸当场红**。正确的落法是另起一张表并按
+ *     `{ table: …, kind: "composed" }` 登记（面板对这一档的原话就是「运行时拼出来的串，
+ *     上游文本里本来就没有这个字面量」），但那会把 `uncheckedRaw` 顶过 `max` —— 那两个数
+ *     住在**不归本文件作者**的 `5-其他内容/RESOLUTIONS.assertions.json` 与
+ *     `3-常用脚本/qa/assert_resolutions.py`。⇒ 2026-08-22 本轮判为**已备好补丁、等拍板**，
+ *     不是「做不到」。备好的东西在 `4-临时脚本/2026-08-22-ui-round2/unit2/`。
  *
  * ⚠ 模板名用的是**合集里那条条目名的原样**（「凯思 Keth」这种中英并列式），不是裸中文：
  *   玩家在创角向导里选血统时看到的就是合集给的那个名字，下拉里换个写法两边对不上。
@@ -2023,7 +2046,7 @@ const EMBER_WINDOW_UI = {
  * 行末是 modules/ember/scripts/ember.mjs 的行号（ember 0.6.1）。
  */
 const TOKEN_MAKER_UI = {
-  // ── 颜色槽 76 条 ──（`Eyes` / `Horns` 与图层名共用，见表头注释）
+  // ── 颜色槽 81 条 ──（`Eyes` / `Horns` 与图层名共用，见表头注释；末尾 5 条是 2026-08-22 补的构装体专属槽）
   "Alloy": "合金",                    // :55755
   "Bark Accent": "树皮点缀色",         // :58476
   "Bark Base": "树皮基色",            // :58472
@@ -2106,8 +2129,18 @@ const TOKEN_MAKER_UI = {
   "Wood": "木材",                     // :55369（glossary_ec 定译）
   "Wood 1": "木材 1",                 // :61134
   "Wood 2": "木材 2",                 // :59217
+  // ── 构装体（construct）自己那张颜色表 `COLORS$3`（ember.mjs:59647）的 5 个专属槽 ──
+  //   上一轮的抽取器只认「整句英文」形态，`label: "Spines"` 这种**属性型字面量**整类漏掉，
+  //   所以这 5 条与下面那 40 条图层名、4 条模板名一样，从来没进过表。
+  //   `Stone 1/2` 沿用本表既有的 `Stone`＝石料；`Mushroom` 是构装体身上长出来的菌类，不是食材义。
+  "Mushroom 1": "蘑菇 1",             // :59710
+  "Mushroom 2": "蘑菇 2",             // :59721
+  "Spines": "棘刺",                   // :59676
+  "Stone 1": "石料 1",                // :59688
+  "Stone 2": "石料 2",                // :59699
 
-  // ── 图层名 36 条（另加两条只在模板里覆写的 Pauldron Left/Right） ──
+  // ── 图层名 76 条（另加两条只在模板里覆写的 Pauldron Left/Right）──
+  //   前 36 条是 2026-08-21 首轮，后 40 条是 2026-08-22 第二轮补的（见下面那段分隔注释）
   "Arms": "手臂",                     // :54123（set.label）
   "Back Apparel": "背部衣饰",          // :54400
   "Back Item": "背部物品",            // :54652
@@ -2145,6 +2178,72 @@ const TOKEN_MAKER_UI = {
   "Waist": "腰部",                    // :55027
   "Wrist": "腕部",                    // :59936
 
+  // ══ 2026-08-22 第二轮 UI 缺口｜图层名 +40 条 ══════════════════════════════
+  // 项目所有者在真实游戏里点名报缺的 `Cheeks` / `Hand Left` / `Hand Right` / `Tail` / `Ears`
+  // **全部在这一批里**。成因不是「漏译」，是**抽取器漏了一整种形态**：上面那 36 条都写成
+  // 对象字面量里的 `label: "X"`，而左右成对的图层是
+  //   `Object.assign(cloneLayer(LAYERS$3.HAND, {...}), {label: "Hand Left"})`（ember.mjs:55715）
+  // 这种**参数位上的属性字面量**，上一轮的抽取器整类没抓。
+  // 本轮重抽的口径与自证写在 `4-临时脚本/2026-08-22-ui-round2/unit2/probe_tokenmaker.py`：
+  //   · 区间锚点取 `function makeParts(`（:53789）到 `const VERSION_1_PART_MIGRATIONS`（:61264），
+  //     **两种独立切法逐条比对相同**（切对条数），共 298 条 `label:` 字面量 / 去重 188 个值；
+  //   · 已知真值 `Hand Left`/`Hand Right`/`Tail`/`Ears`/`Cheeks`/`Arms`/`Face` 7/7 抓到（切对对象）。
+  // 拿**发布中的** translateText + TOKEN_MAKER_WINDOW_UI 实测：188 个值里已覆盖 139、缺 49，
+  // 这 49 条＝本批 40（图层名）＋ 上面 5（构装体颜色槽）＋ 下面 4（模板名）。
+  // ⚠ 左右成对的一律按本表既有写法「左/右 + 基名」（先例：`Pauldron`→`Pauldron Left`＝左护肩）。
+  //   `Pants Left/Right` 是**单条裤腿**的图层（每条腿各一层，见 :55720 与 LEG 的 connections），
+  //   所以取「左/右裤腿」而不是把 `Pants`＝裤装 直接套上去。
+  "Arm Left": "左臂",                 // :55703（另 :59960 / :60844 两处同名覆写）
+  "Arm Right": "右臂",                // :55704
+  "Sleeve Left": "左袖",              // :55705
+  "Sleeve Right": "右袖",             // :55706
+  "Forearm Left": "左前臂",           // :55707
+  "Forearm Right": "右前臂",          // :55709
+  "Wrist Left": "左腕部",             // :55711
+  "Wrist Right": "右腕部",            // :55713
+  "Hand Left": "左手",                // :55715 ← 项目所有者点名
+  "Hand Right": "右手",               // :55716 ← 项目所有者点名
+  "Leg Left": "左腿",                 // :55718
+  "Leg Right": "右腿",                // :55719
+  "Pants Left": "左裤腿",             // :55720
+  "Pants Right": "右裤腿",            // :55721
+  "Foot Left": "左脚",                // :55722
+  "Foot Right": "右脚",               // :55723
+  "Item Back (Left)": "背部物品（左）",   // :55727（与既有 `Back Item`＝背部物品 同名同译）
+  "Item Back (Right)": "背部物品（右）",  // :55728
+  "Item Waist (Left)": "腰间物品（左）",  // :55729（与既有 `Item Waist`＝腰间物品 同名同译）
+  "Item Waist (Right)": "腰间物品（右）", // :55730
+  "Item Hand (Left)": "手持物（左）",     // :55731（既有 `Item Hand (Left Lower)`＝手持物（左下）的上层）
+  "Item Hand (Right)": "手持物（右）",    // :55732
+  // ── 印记裔（signborn）的以太肢体：既有颜色槽 `Ethereal`＝以太，图层名沿用同一个词根 ──
+  "Ethereal Arms": "以太手臂",         // :58199（set.label）
+  "Ethereal Forearms": "以太前臂",      // :58218（set.label）
+  "Ethereal Hand Left": "以太左手",     // :58231
+  "Ethereal Hand Right": "以太右手",    // :58247
+  // ── 各血统自带的专属图层（每条只在一个模板里出现，已逐条回源核过归属） ──
+  "Facial Markings": "面部纹记",       // :55790 altyra（`ALTYRA.layers.marks`，天生纹样，不是 Tattoo＝刺青）
+  "Hood": "颈冠",                     // :56018 ashka —— ⚠ 不是装备的兜帽。ashka 是蛇形血统
+  //                                     （合集原文「纤细、蛇形的血统」），该层 type: "anatomy"、
+  //                                     挂在 head 上、zIndex 比头部高一格，是眼镜蛇式的颈部皮褶。
+  //                                     全库 `label: "Hood"` 只此一处，装备侧没有同名图层，不会撞义。
+  "Jaw": "下颌",                      // :56030 ashka
+  "Tail": "尾巴",                     // :56042 ashka（另 drakon :56459 / kiska :57590）← 项目所有者点名
+  //                                     ⚠ glossary_ec 的 `Tail`＝「尾巴 Tail」是**散文里的双语并列式**；
+  //                                     本表是界面图层名，与 `Arms`＝手臂 / `Legs`＝双腿 同档，取裸中文。
+  "Cheeks": "颊鳞",                   // :56449 drakon ← 项目所有者点名
+  //                                     ⚠ 上游把 `DRAKON.layers.scales` 的 label 写成了 `Cheeks`，
+  //                                     源码里那一行的注释是 `// Facial Scales`，画的是面颊鳞片。
+  //                                     译「面颊」会把「这层是鳞片」这个信息丢掉，所以取「颊鳞」。
+  "Neck Hair": "颈毛",                // :57368 keth（`KETH.layers.collar`，取 hair 系颜色）
+  "Ears": "耳朵",                     // :57558 kiska（另 nirae :57950）← 项目所有者点名
+  "Back Fur": "背毛",                 // :57574 kiska
+  "Mouth": "嘴部",                    // :58515 thornling
+  "Neck Growth": "颈部生长物",         // :58531 thornling（荆芽灵是植物系血统，collar 层长的是枝叶）
+  "Mane Hair": "鬃毛",                // :58875 wirrun
+  "Beard": "胡须",                    // :58888 wirrun（独立的胡须图层，与 face 层里的 Beard* 部件不同层）
+  "Mask Shape": "面具形状",            // :59105 zeph（覆写 HEAD 层）
+  "Mask Pattern": "面具纹样",          // :59111 zeph（覆写 FACE 层；与颜色槽 `Mask Pattern A/B` 是两回事）
+
   // ── 体格 3 条 ──
   "Lithe": "纤瘦",                    // :54035
   "Standard": "标准",                 // :54042
@@ -2157,7 +2256,7 @@ const TOKEN_MAKER_UI = {
   "Land": "陆上",                     // :61224
   "Water": "水中",                    // :61228（此处是站姿「水中形态」，不是地区义的「水域」）
 
-  // ── 模板名 18 条（＝血统名，取合集条目名原样，见表头注释） ──
+  // ── 模板名 22 条（＝血统名，取合集条目名原样，见表头注释）──＝上游注册表里的全部 22 个模板
   "Altyra": "阿尔提拉 Altyra",         // :55778
   "Ashka": "阿什卡 Ashka",             // :56002
   "Construct": "构装体 Construct",     // :59267
@@ -2176,6 +2275,14 @@ const TOKEN_MAKER_UI = {
   "Party Banner": "队伍旗帜",          // :61243
   "Undead Monster": "不死怪物",        // :60891
   "Zeph": "泽夫 Zeph",                 // :59082
+  // ── 2026-08-22 补齐的 4 个模板名 ──
+  //   上游 `var templates=Object.freeze({…})`（ember.mjs:61259）注册 22 个模板，本表原先只有 18 个。
+  //   这 4 个的 label 写在 `Object.assign(deepClone(TEMPLATE$7), {id:…, label:…})` 里，
+  //   与上面那 40 条图层名同属被上一轮抽取器漏掉的那种形态。译名取 glossary_ec 定稿原样。
+  "Signborn": "印记裔 Signborn",       // :58165
+  "Thornling": "荆芽灵 Thornling",     // :58504
+  "Vrjnhar": "弗尔金哈尔 Vrjnhar",     // :58721
+  "Wirrun": "威伦 Wirrun",             // :58863
 
   // ── 窗口头部控件 / 随机化配置表单 ──
   "None": "无",                       // :64468，`{{layer.partLabel}}` 的兜底值
@@ -3544,9 +3651,16 @@ const SELFCHECK_TABLES = {
   EXACT, DIALOG_UI, NOTIFICATIONS,
   ATTUNEMENTS, MOON_NAMES, ATTUNEMENT_TAB,
   EMBER_WINDOW_UI,
-  // 指示物制作器数据层（2026-08-21 新增）。149 键**全部**是 ember.mjs 里的 `label: "…"`
-  // 等字面量，进表前已用 `4-临时脚本/2026-08-18-ui-gaps/gen_token_maker_table.py` 逐条自查过
-  // 「上游有这个 "…" 字面量」149/149 —— 所以本档只抬覆盖侧的数，miss 侧一条不添。
+  // 指示物制作器数据层（2026-08-21 新增 149 键 → 2026-08-22 第二轮补到 **198 键**）。
+  // 198 键**全部**是 ember.mjs 里的 `label: "…"` 等字面量 —— 所以本档只抬覆盖侧的数，
+  // miss 侧一条不添（实跑印证：`missDistinct` / `rawMiss` 补完前后都是 4 / 7，**没动**）。
+  //
+  // ── 2026-08-22 第二轮补的 49 键的口径 ──
+  //   全集：`function makeParts(`（ember.mjs:53789）到 `const VERSION_1_PART_MIGRATIONS`（:61264）
+  //   之间的 `label: "…"` 字面量 298 条 / 去重 **188 个值**（两种独立切法逐条比对相同）。
+  //   拿**发布中的** translateText + TOKEN_MAKER_WINDOW_UI 实测：补前覆盖 139 / 缺 49，
+  //   补后 **188 / 188，缺 0**。项目所有者点名的 `Cheeks` / `Hand Left` / `Hand Right` /
+  //   `Tail` / `Ears` 全在这 49 条里。探针与验收脚本在 `4-临时脚本/2026-08-22-ui-round2/unit2/`。
   //
   // ⚠⚠ **加这张表（以及本轮给 DIALOG_UI 加的 15 键）必须连着改另外两份文件**，否则
   //   `--selftest` 357→356、主闸随之红在 `<main 的固定检查> —— --selftest 没过`：
@@ -3560,6 +3674,19 @@ const SELFCHECK_TABLES = {
   //     · `3-常用脚本/qa/assert_resolutions.py` 的 PAYLOAD_FLOORS 对应 7 个 `("eq", N)`
   //   逐条数字、实跑证据与「为什么 `--rules <副本>` 对这一条无效」写在
   //   `4-临时脚本/2026-08-18-ui-gaps/patch/PATCH.md`。
+  //
+  //   ⚠ 2026-08-22 第二轮同型复发（本轮加的 49 键），**同样两份文件、同样六/七个数**。
+  //     本轮实测：主闸 **68 / 0 / 0 绿**（49 键上游全有字面量，miss 侧没动），
+  //     只有 `--selftest` **356 / 357**，掉的仍是那条
+  //     `把 min.registeredRaw 抬高一格 → 覆盖侧分母必须响`。
+  //     本轮要改的六个值（面板现跑实测，`selfcheck_panel_runner.mjs`）：
+  //       min.checkedDistinct    891 → 940      min.rawChecked        1473 → 1522
+  //       min.registeredRaw     1659 → 1708     min.registeredDistinct 1056 → 1104
+  //       max.uncheckedDistinct  165 → 164      min.fetchOk            219 → 222 ⚠
+  //     ⚠ `min.fetchOk` 那一条**不是本轮造成的**：基线实测就已经是 222（记录值 219 停在旧值），
+  //       顺手一并抬平，本轮没有改动任何语料抓取路径。
+  //     已按上一轮的镜像树办法验到底：镜像未打补丁 **356/357**、打完两份 **357/357（rc=0）**。
+  //     备好的整份文件与逐条替换清单在 `4-临时脚本/2026-08-22-ui-round2/unit2/patch/`。
   TOKEN_MAKER_UI,
 
   // ── 运行时拼出来的：字面量核对对它**无效**，报「查无此串」是判据的假阳性 ──
