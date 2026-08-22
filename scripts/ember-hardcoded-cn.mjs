@@ -1020,7 +1020,9 @@ const DIALOG_TITLES = {
   "Delete Saved Composition?": "删除已保存的构图？",                    // 34488
   "Import Configuration": "导入配置",                                // 34750
   "Summarize Token Maker Part Usage": "统计指示物制作器部件用量",          // 49532
-  "Ember: Teleport Destination": "余烬：传送目的地",                    // 61789
+  "Ember: Teleport Destination": "余烬：传送目的地",
+  // ember.mjs:108743 的 DialogV2 标题；`Aedir Signalpost`＝艾迪尔信号哨站 取自 glossary_ec
+  "Aedir Signalpost Stealth Field Generator": "艾迪尔信号哨站隐形立场发生器",                    // 61789
   "Elevator Controls": "升降机控制",                                 // 67247
   "Toggle Corpuleth Damage": "切换尸团怪 Corpuleth 伤害状态",           // 73312
   "Aedir Signalpost Generator Room Switch": "艾迪尔信号哨站 Aedir Signalpost 发电机房开关", // 95126
@@ -1898,6 +1900,33 @@ const HERO_ITEM_NAMES = (() => {
  * 会在别人改了 EMBER.ATTUNEMENT.Attunement 之后失效）。
  * 聊天面只对 `msg.flags.ember` 的消息开放，绝不无条件翻整个聊天栏。
  */
+/**
+ * **crucible 掷骰卡**上的加值 / 减值**来源名** —— ember 往 `usage.boons` / `usage.banes`
+ * 里塞的那几条（`ember.mjs:140804` 屠龙 / `:141167` 余烬之火花 / `:142148-142149` 混沌折射 …）。
+ *
+ * ⚠ 为什么不能靠下面那道 `flags.ember` 旗标闸：渲染它们的是 **crucible 的**
+ *   `templates/dice/partials/standard-check-details.hbs:6/18`（`{{localize boon.label}}`），
+ *   那是 crucible 自己的掷骰卡，**不带 ember 旗标** —— 旗标闸一条都接不住。
+ *   所以改按**结构选择器**认：`.boon-details .boon > .label` 是 crucible 模板独有的形状，
+ *   命中即归属。
+ *
+ * ⚠ 与 `crucible-cn 0.9.18` 的 `BOON_BANE_LABELS` **不重叠**：那边收的是 crucible 自己的
+ *   11 条（Special / Elite / Boss / Bulky Armor …），这边只收 ember 加的 7 条。
+ *   两个模块各翻各的串，同一棵 DOM 上跑两遍互不影响（查不到的原样返回）。
+ *
+ * 译名一律取 glossary_ec 已定的中文段（合集里角色卡上就是这些字），不另造：
+ *   混沌折射 / 混沌继承者 / 湮解印记 / 钻研反制 / 余烬之火花 已在词表；
+ *   `Nir'ae`＝尼尔艾、`Drakonbane Poison`＝屠龙毒药 是词表里的既定词根。
+ */
+const BOON_BANE_LABELS = {
+  "Chaotic Refraction": "混沌折射",     // ember.mjs:142148 / :142149（加值与减值同名）
+  "Inheritors of Chaos": "混沌继承者",   // 词表 Inheritors of Chaos
+  "Mark of Unmaking": "湮解印记",       // 词表 Mark of Unmaking
+  "Nir'ae Resistance": "尼尔艾抗性",    // 词表 Nir'ae＝尼尔艾
+  "Studious Counter": "钻研反制",       // 词表 Studious Counter
+  "Drakonbane": "屠龙",                // ember.mjs:140804；词表 Drakonbane Poison＝屠龙毒药
+  "Spark of Ember": "余烬之火花",        // ember.mjs:141167；词表 Spark of Ember
+};
 const CHAT_UI = {
   ...ATTUNEMENTS,
   ...HERO_ITEM_NAMES
@@ -2044,7 +2073,69 @@ const EMBER_WINDOW_UI = {
     "在世界加入界面上添加冒险的基本信息与余烬风格的背景美术。",                  // :25245
   "Preserve World State": "保留世界状态",                                   // :25250
   "Retain current game state data that would otherwise be overwritten when importing the adventure.":
-    "保留当前的游戏状态数据 —— 不勾选的话，这些数据会在导入冒险时被覆盖。"        // :25251
+    "保留当前的游戏状态数据 —— 不勾选的话，这些数据会在导入冒险时被覆盖。",       // :25251
+
+  // ══ 2026-08-22 第七轮｜硬编码全量审计挑出来的**玩家可见**缺口 ══════════════
+  // 来源：`4-临时脚本/2026-08-22-hardcoded-audit/`。审计扫五个通道，ember 侧剩 3401 条未覆盖，
+  // 其中约 3080 条是 Vista 建图器的资产/图层名（只在 vista-config-assets.hbs 渲染、
+  // 由场景控件打开＝GM 建图工具，项目所有者已裁**不做**），199 条是区域地图场景定义、
+  // 40 条是 GM 配置/编辑器 ⇒ 真正玩家可见的就下面这些。
+  // ⚠ 这些窗口的类名全部以 `Ember` 开头，过得了本文件那道 `/^Ember/.test(id)` 闸，
+  //   所以放在本表（Ember 窗口作用域）就够得着；不需要另开注入点。
+
+  // ── 独立事件页（EmberStandaloneEventPage，ember.mjs 内）
+  "Not Completed": "未完成", "Repeating": "可重复", "Scene and Level": "场景与层",
+  "Specific Hexes": "指定六边格", "Unique": "唯一",
+
+  // ── 生物群系页（EmberBiomePageSheet）；`Biome`＝生物群系 / `Vista`＝远景 取自 glossary_ec
+  "Area Map": "区域地图", "Misconfigured Area": "区域配置有误",
+  "Misconfigured Vista": "远景配置有误", "Not Discovered": "未发现", "Vista": "远景",
+
+  // ── 血统页（EmberAncestryPageSheet）
+  "Not Playable": "不可选用", "Playable": "可选用",
+
+  // ── 创角向导（EmberCharacterCreationSheet）；`Aster`＝阿斯特 / `Soulbound`＝魂缚 取自 glossary_ec
+  "Aster Features": "阿斯特特性", "Soulbound Features": "魂缚特性",
+
+  // ── 日历条（EmberCalendarNavigation）的两个分类
+  "Discovery": "发现", "Event": "事件",
+
+  // ── 派系名（ember.mjs:142616 起）。`Anachraenum`＝阿纳克瑞纽姆 与 `Trading House`＝商会
+  //    取自 glossary_ec；`Graven's Rest` 取词表 `Graven's Rest Refresher`＝格雷文之憩提神饮 的词根；
+  //    `Cerulean` 取 `The Cerulean Bloom`＝蔚蓝绽放 的词根；`Ashka`＝阿什卡。
+  "Cerulean Sails Company": "蔚蓝之帆商会", "Graven's Rest": "格雷文之憩",
+  "Rejarh Ashka": "雷雅尔·阿什卡", "The Anachraenum": "阿纳克瑞纽姆", "Trading Houses": "商会",
+
+  // ── 旅行事件（ember.mjs 的 events 表）
+  "Combat Encounter": "战斗遭遇", "Harvesting Opportunity": "采集机会",
+  "No Event": "无事件", "Wandering Merchant": "游商",
+
+  // ── 区域地图：两个切片名与地形图例。切片名是玩家在地区地图上直接看到的分区。
+  "Surface of Ember": "余烬地表", "The Pathways": "通路", "Barrier": "屏障",
+
+  // ── 区域地图**层名的兜底**（`s.levels.get(id)?.name ?? cfg.compositions[id]?.label`，:2376）。
+  //    正常情况下玩家看到的是 Scene 文档那一份（已由 Babele 的 SCENE_LEVELS 翻成双语），
+  //    这里只在那一份取不到时才上屏 —— 所以**照抄双语形式**，免得两条路显示不一致。
+  "Repurposed Quarry - Upper Level": "改造采石场 - 上层 Repurposed Quarry - Upper",
+  "Repurposed Quarry - Middle Level": "改造采石场 - 中层 Repurposed Quarry - Middle",
+  "Repurposed Quarry - Lower Level": "改造采石场 - 下层 Repurposed Quarry - Lower",
+  "Chamber of Agaseros - Reservoir": "阿加瑟罗斯之室 - 蓄水池 Chamber of Agaseros - Reservoir",
+
+  // ── 第二批：第一版扫描的字段名清单里漏了 `header` / `prompt` 这一族，补扫又捞出 24 条
+  //    （日志页的分节标题等），其中 22 条已被现有表盖住，只剩下面两条。
+  "Terrain": "地形",                    // EmberTerrainLegend 的图例标题
+  // ⚠ glossary_ec 给的是「调谐特性」，**是陈旧值**：项目 2026-08-06 已裁 `Attunement`＝同调，
+  //   `unify_rules.2026-08-06c` 把「调谐」明确列为已废变体（当时 UI 与角色卡都已改成同调，
+  //   战役包里还剩 418 处旧译）。这里取**裁决**而不是词表。
+  "Attunement Features": "同调特性",     // ember.mjs:138591 创角向导的分节标题
+
+  // ── 那句 hint 是**运行时拼接**的（ember.mjs:138592-138593 两段字面量 `+` 起来），
+  //    所以键必须写拼完的全串 —— 只登记前半截的话上屏那一整句一个字都不会变。
+  "You will begin your journey at Rank 1 of this attunement. You may further progress this and other attunements during the course of your adventure.":
+    "你将从该同调的阶位 1 开始你的旅程。在冒险过程中，你可以继续提升这一同调以及其他同调。",
+
+  // ── 观景点名（ember.mjs:135282 `vantagePoints.aedirSignalpost.label`）
+  "Aedir Signalpost Telescope": "艾迪尔信号哨站望远镜",
 };
 
 /**
@@ -4056,8 +4147,19 @@ function patchRenderedApplications() {
   //    绝不无条件翻整个聊天栏 —— 那会把别的模块的卡也一起改了。
   Hooks.on("renderChatMessageHTML", (msg, html) => {
     try {
+      const chatRoot = html instanceof HTMLElement ? html : html?.[0];
+      if (!chatRoot) return;
+      // ① 结构规则，跑在旗标闸**之前**：crucible 掷骰卡上的加值/减值来源名。
+      //    它们不带 ember 旗标（卡是 crucible 弹的），只能按结构认。见 BOON_BANE_LABELS。
+      for (const el of chatRoot.querySelectorAll?.(".boon-details .boon > .label, .bane-details .bane > .label") ?? []) {
+        if (el.children.length) continue;
+        const raw = el.textContent.trim();
+        const cn = BOON_BANE_LABELS[raw];
+        if (cn && cn !== raw) el.textContent = cn;
+      }
+      // ② 旗标闸：其余只翻**打了 ember 旗标**的卡（那张卡是 :2982 造的）。
       if (!msg?.flags?.ember) return;
-      translateNode(html instanceof HTMLElement ? html : html?.[0], CHAT_UI);
+      translateNode(chatRoot, CHAT_UI);
     } catch (err) {
       warn("聊天卡文本翻译失败：", err);
     }
@@ -4255,6 +4357,9 @@ const SELFCHECK_TABLES = {
   //   跨行 `+` 相加、模板串 ${…} 插值、换行缩进分别被拼接展开语料与空白折叠接住。
   //   仍然挂榜的只剩 4 个键（`The Abyss` / 两条 `to rank N (…)?` / `and gain`），
   //   成因逐条写在上面那段里 —— **故意留在榜上**，报文里已写明这是线索不是结论。
+  // 2026-08-22 第七轮新增：crucible 掷骰卡上的加值/减值来源名（ember 塞进去的 7 条）。
+  // 7 个键全部是 ember.mjs 里的 `label: "…"` 字面量，所以只抬覆盖侧的数、miss 侧不添。
+  BOON_BANE_LABELS,
   EXACT, DIALOG_UI, NOTIFICATIONS,
   ATTUNEMENTS, MOON_NAMES, ATTUNEMENT_TAB,
   EMBER_WINDOW_UI,
