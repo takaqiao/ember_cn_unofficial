@@ -1334,6 +1334,32 @@ const DIALOG_UI = {
   "Do you wish to proceed and forego these increases?": "确定要继续并放弃这些提升吗？", // 123317
   "Activate the force-field control orb?": "激活力场控制法珠？",         // 110871
   "Activate the hidden Generator Room switch?": "启动隐藏的发电机房开关？", // 95131
+
+  // ══ 2026-08-22 第三轮｜互动面板 6 条真缺口（第 7 条是插值整句，走 PATTERNS）══════════
+  // 项目所有者在真实游戏里连报两轮「点了机关，框还是英文」。上一轮的侦查把这几条定位到行号，
+  // 本轮**逐条回 ember 0.6.1 源码复核过**（不照抄上一轮那份只列了 3 条 GAP 的 panel_sites.json）。
+  //
+  // ⚠ 这 6 条一条都不进全局 EXACT：`Location` / `Hex` / `Transport` 是**极通用短词**，
+  //   面板 D 档对短词的定性是「证据力≈0」，进全局表会去改别的模块窗口里的同名标签。
+  //   DIALOG_UI 是**认框之后**才传下去的作用域表 —— 三个框的标题都已在 DIALOG_TITLES 里
+  //   （`Ember: Teleport Destination` :1023 / `Aedir Signalpost Generator Room Switch` /
+  //     `Vortest Tower Transporter`），认框必定成功，够得着且只够得着这三个框。
+  //
+  // ① 传送目的地框（ember.mjs:76025-76046，`DialogV2.prompt`，classes 含 ember-hex-selection-dialog）
+  //    正文是两个 form-group：`<label>` 与 `<p class="hint">` 各自独立成文本节点。
+  //    `Hex` 取「六边格」，与本表既有的 `Origin Hex`＝起始六边格 同一条 glossary_ec 依据；
+  //    `Location` 取「地点」，与 PREFIXED 那条 `Location: `＝「地点：」同词（hex-hud.hbs:47）。
+  "Location": "地点",                                                    // 76035
+  "Hex": "六边格",                                                       // 76041
+  "Teleport to a specific location?": "传送到指定地点？",                  // 76038
+  "Teleport to a destination hex?": "传送到目标六边格？",                  // 76043
+  // ② 秘密房间拉杆的「已经拉过了」态（ember.mjs:108270 `_configureDialog` 里覆写 config.content）。
+  //    源码是 `"<p>This lever has already been activated.</p>"`，DOM 里 `<p>` 内是单个文本节点。
+  "This lever has already been activated.": "该拉杆已经启动过了。",         // 108270
+  // ③ 沃特斯特塔传送装置的 OK 按钮（ember.mjs:126653 `config.ok.label`）。
+  //    取「传送」：同框标题 DIALOG_TITLES 里已定「沃特斯特塔 Vortest Tower 传送装置」，
+  //    glossary_ec 的 `Tower Transporter`＝塔楼传送装置 亦同词根。正文那句带插值，在 PATTERNS。
+  "Transport": "传送",                                                   // 126653
   "Set the machine's operating state.": "设置该机器的运行状态。",         // 96497
   "The junction wheel is missing. Install a replacement?": "枢纽轮盘缺失。是否安装替换件？", // 112218
   "No destinations are currently reachable. Adjust the track levers and try again.":
@@ -1672,7 +1698,18 @@ const PATTERNS = [
   // 前半截的档位名已经由 patchWeatherLabels 在数据侧换成中文了，这里只处理拼死在模板串里的
   // 单位 `mph` —— 它不是数据，改配置碰不到。写成宽正则不怕误伤：PATTERNS 只在 Ember 自己的
   // 窗口、放行过的注入子树和增强器结果上跑，够不到别的模块的界面。
-  { re: /^(.+) \(([\d.]+) mph\)$/, cn: (m) => `${m[1]}（${m[2]} 英里/时）` }
+  { re: /^(.+) \(([\d.]+) mph\)$/, cn: (m) => `${m[1]}（${m[2]} 英里/时）` },
+
+  // 沃特斯特塔传送装置的确认正文（ember.mjs:126652 `_configureDialog`）：
+  //   `` config.content = `<p>Transport everyone inside the tower to ${destination}?</p>` ``
+  // 变量位是 `canvas.scene.levels.get(toLevelId)?.name`（:126651），取的是**场景层名**，
+  // 是开放集合（世界数据里可改），所以只能走 PATTERNS，不能像 DIALOG_UI 那样枚举。
+  // ⚠ 定义域收得很死：整句锚定串首串尾 + 固定的 9 个英文词，只有中间那个层名是自由位。
+  //   降级是安全的（层名查不到就原样带出，句子结构完整），与 PREFIXED 那 19 条同一口径。
+  // ⚠⚠ 加这一条**必须同时**给 `R-patterns-translate-cases` 补一条正例与一条**属于它自己的**
+  //   近似反例（规则文件不归本文件作者，补丁与实跑证据在
+  //   `4-临时脚本/2026-08-22-ui-round3/patch/`，已用 `--rules <副本>` 验到回绿再升报）。
+  { re: /^Transport everyone inside the tower to (.+)\?$/, cn: (m) => `将塔内所有人传送至 ${m[1]}？` }
 ];
 
 /* ------------------------------------------------------------------ *
@@ -1980,7 +2017,23 @@ const EMBER_WINDOW_UI = {
   // 根本没有这个键（自己 grep 计数 0），core 也没有，localize 原样返回英文。
   // 不塞 lang/cn.json：那是无点号顶层键，会打破发版前 flatten_lang.py 的三数相等，
   // 且 Anchor 太通用，顶层键是全局生效的。
-  "Anchor": "锚点"                                                       // applications/actor-flags.hbs:29
+  "Anchor": "锚点",                                                      // applications/actor-flags.hbs:29
+
+  // ══ 2026-08-22 第三轮｜冒险导入器自己的 4 条 ═══════════════════════════════
+  // 宿主是 `EmberAdventureImporter`（ember.mjs:24966，`extends AdventureImporter`），
+  // 类名以 `Ember` 开头 ⇒ 过得了主闸 `/^Ember/` ⇒ 进 EMBER_WINDOW_UI，
+  // **不碰 PREFIXED / PATTERNS / NOTIFICATION_PATTERNS 那三张高危表**。
+  // 上屏点：`_prepareImportOptionsSchema`（:25241-25254）用 `fields.BooleanField({label, hint})`
+  // 造两个复选框，核心的 formGroup 把 label 渲成 `<label>`、hint 渲成 `<p class="hint">`，
+  // 两者都是独立文本节点，DOM 遍历接得住。
+  // ⚠ `preserveState` 那一条只在**已经导入过一次**时才出现（:25249 `if (alreadyImported)`）——
+  //   也就是「让他重新导入冒险」时必然会撞上的那个框，本轮补齐正是为了那一步。
+  "Customize World Details": "自定义世界信息",                              // ember.mjs:25244
+  "Add basic adventure information and stylized Ember background artwork to the World join screen.":
+    "在世界加入界面上添加冒险的基本信息与余烬风格的背景美术。",                  // :25245
+  "Preserve World State": "保留世界状态",                                   // :25250
+  "Retain current game state data that would otherwise be overwritten when importing the adventure.":
+    "保留当前的游戏状态数据 —— 不勾选的话，这些数据会在导入冒险时被覆盖。"        // :25251
 };
 
 /**
@@ -2296,6 +2349,293 @@ const TOKEN_MAKER_UI = {
   "Choose Color": "选择颜色",          // :67588 「选择颜色」对话框标题
   "Select the color type to constrain.": "选择要约束的颜色类型。"                     // :67589
 };
+
+
+/**
+ * 指示物制作器的**部件显示名**（`<span class="part">` 那一行）。
+ *
+ * ── 为什么键是 `BeardWizard` 而不是 `Beard Wizard` ─────────────────────────
+ * 上屏的串是**运行时拼出来**的：`getLayerChoicesV2()`（ember.mjs:64457）在 `labels:true` 时算
+ *   `partId.split("/").at(-1).replace(/(?<!^)([A-Z1-9])/g, " $1")`
+ * ⇒ 上游文本里只有 `BeardWizard` 这个 id，**没有** `Beard Wizard` 这个字面量。
+ * 所以本表登记的是 **id**（上游真有的字面量），显示名在下面由**同一条正则**现算。
+ * 上一轮备好的那份是按显示名建键、按 `kind:"composed"` 登记的 —— 那会把面板 D 档的
+ * `uncheckedRaw` 顶过 `max`（186），**主闸当场红**，而那两个数不归本文件的作者。
+ * 换成 id 建键之后：671 个键**逐条**在 ember.mjs 里查得到字面量 ⇒ 走 `literal` 正常核，
+ * miss 侧一条不添、没核侧一条不添，**主闸不动**（实跑印证见本轮报告）。
+ *
+ * ── 覆盖账（2026-08-22 第三轮实测，探针在 4-临时脚本/2026-08-22-ui-round3/recon/）──
+ * 枚举**以随包图集为准**（`assets/tokens/maker/{Character0,Character1,Monster0,Party0}.json`，
+ * 5649 帧，前置自证逐份对上已知真值），不是只扫字面量 —— 上一轮只扫字面量得 1356，
+ * 漏掉了 `makeLegPoseParts()` 与 `Marbled/Chiseled` 那两族运行时拼出来的 id。
+ *   · 图集里的唯一末段 id **1535** 条；
+ *   · 扣掉 23 条**上游未使用的图集残留**（既不在任何 `id: "…"` 声明里、也拼不出来，
+ *     如 `Prosthetic` / `Metal4` / `Head1` / `Flag1` —— 结构上进不了 templateLayer.parts，
+ *     不会上屏）⇒ **玩家真会看到的唯一显示名 1512 条**；
+ *   · 本表直接覆盖 **671** 条 + 下面两族拼串 **107** 条 = **778** 条；
+ *   · **仍缺 741 条**，全部在装备族（handItem 144 / helm 86 / chest 83 / symbol 80 /
+ *     pants 41 / wrist 36 / backItem 31 / sleeve 22 / eyewear 16 / footwear 10 …
+ *     外加 54 条 `…Lower` 手持物下半段）。按「玩家真会看到的」排序，本轮先做身体族。
+ *
+ * ── 两条既有问题，本轮一并修掉 ─────────────────────────────────────────────
+ * ① `Heavy` / `Lithe` **被错译成体格词**（v1.1.27 就有，不是本轮引入）：
+ *    TOKEN_MAKER_UI 里 `Heavy`＝壮硕 / `Lithe`＝纤瘦 是 layers.hbs:9 那行**体格**（build）的值，
+ *    而 tail/arm/foot/head/torso 里也有叫 `Heavy` 的**部件**（该译「粗壮」）、torso 有 `Lithe`（该译「柔韧」）。
+ *    同一张扁平表一个键只能有一个值 ⇒ 本表**不并进 `TOKEN_MAKER_WINDOW_UI`**，
+ *    改由 `translateTokenMakerParts()` 只对 `.choice.layer .part` 这个选择器跑一遍，
+ *    跑在通用遍历**之前**。体格行是 `.choice.build .part`、姿态行是 `.choice.stance .part`，
+ *    选择器天然把它们排除在外 ⇒ 「壮硕 / 纤瘦」原样保留，部件那一侧拿到「粗壮 / 柔韧」。
+ * ② 行尾的 `3 of 12`：`of` 写死在 `templates/applications/token-maker/layers.hbs:35`
+ *    （`{{layer.chosenLabel}} of {{layer.choices.length}}`），整行是**一个**文本节点，
+ *    查表接不住。同样在那个函数里就地改成 `3 / 12`，**只认 `^\d+ of \d+$` 这一种形状**。
+ *
+ * ⚠ 作用域：这两件事只在 `TOKEN_MAKER_APPS` 那两个窗口的根元素下做，
+ *   不进 EXACT / PATTERNS / 任何全局通道 —— 本表里 `Down` / `Up` / `Fine` / `Bob` / `Claw`
+ *   这种短词一旦漏到全局，会去吃别的模块的文本。
+ */
+const TOKEN_MAKER_PART_IDS = {
+  "1Pattern1": "1 纹样 1", "1Pattern2": "1 纹样 2", "1Pattern3": "1 纹样 3", "1Tongue": "吐舌 1",
+  "2Pattern1": "2 纹样 1", "2Pattern2": "2 纹样 2", "2Pattern3": "2 纹样 3", "Abyssal": "深渊",
+  "Abyssal1": "深渊 1", "Abyssal2": "深渊 2", "Abyssal3": "深渊 3", "Abyssal4": "深渊 4",
+  "AbyssalBackward": "深渊后撤", "AbyssalCasual": "深渊随意", "AbyssalDown": "深渊向下",
+  "AbyssalEyeless": "深渊无目", "AbyssalFist": "深渊握拳", "AbyssalForward": "深渊前跨",
+  "AbyssalHalf": "半深渊", "AbyssalNeutral": "深渊常态", "AbyssalSitting": "深渊坐姿",
+  "AbyssalSpell": "深渊施法", "AbyssalUp": "深渊向上", "AbyssalVertical": "深渊竖直",
+  "AbyssalWeapon": "深渊持械", "Adult1": "成年 1", "Adult2": "成年 2", "Adult3": "成年 3",
+  "Adult4": "成年 4", "Adult5": "成年 5", "AedirHeavy": "艾迪尔重型", "AedirHeavyBlade": "艾迪尔重型刃",
+  "AedirLight": "艾迪尔轻型", "AedirLong": "艾迪尔长型", "AedirMedium": "艾迪尔中型", "AedirRapier": "艾迪尔刺剑",
+  "Aged": "苍老", "Alert": "警觉", "Angered": "愠怒", "Angled1": "棱角 1", "Angled2": "棱角 2",
+  "Angry": "愤怒", "Armored": "装甲", "Attentive": "专注", "Backward": "后撤", "Balanced": "齐整",
+  "Baldspot": "秃斑", "Ball": "球体", "Bare": "裸足", "Bare1": "裸露 1", "Bare1Old": "裸露 1 老年",
+  "Bare1Pattern1": "裸露 1 纹样 1", "Bare1Pattern2": "裸露 1 纹样 2", "Bare1Pattern3": "裸露 1 纹样 3",
+  "Bare1Young": "裸露 1 少年", "Bare1a": "裸露 1a", "Bare1b": "裸露 1b", "Bare1c": "裸露 1c",
+  "Bare2": "裸露 2", "Bare2Old": "裸露 2 老年", "Bare2Pattern1": "裸露 2 纹样 1",
+  "Bare2Pattern2": "裸露 2 纹样 2", "Bare2Pattern3": "裸露 2 纹样 3", "Bare2Young": "裸露 2 少年",
+  "Bare2a": "裸露 2a", "Bare2b": "裸露 2b", "Bare2c": "裸露 2c", "Bare3": "裸露 3",
+  "Bare3Old": "裸露 3 老年", "Bare3Pattern1": "裸露 3 纹样 1", "Bare3Pattern2": "裸露 3 纹样 2",
+  "Bare3Pattern3": "裸露 3 纹样 3", "Bare3Young": "裸露 3 少年", "Bare3a": "裸露 3a", "Bare3b": "裸露 3b",
+  "Bare3c": "裸露 3c", "Bare4": "裸露 4", "Bare4Old": "裸露 4 老年", "Bare4Pattern1": "裸露 4 纹样 1",
+  "Bare4Pattern2": "裸露 4 纹样 2", "Bare4Pattern3": "裸露 4 纹样 3", "Bare4Young": "裸露 4 少年",
+  "Bare4a": "裸露 4a", "Bare4b": "裸露 4b", "Bare4c": "裸露 4c", "BareBackward": "裸露后撤",
+  "BareForward": "裸露前跨", "BareNeutral": "裸露常态", "BareSitting": "裸露坐姿", "Beady": "豆眼",
+  "Beard": "胡须", "Beard1": "胡须 1", "Beard2": "胡须 2", "Beard3": "胡须 3", "BeardBrows": "胡须连眉",
+  "BeardChin": "下巴胡", "BeardFancy": "华丽胡须", "BeardLeafy": "叶状胡须", "BeardLittle": "小胡须",
+  "BeardLittle2": "小胡须 2", "BeardMarbled": "胡须大理石纹", "BeardMedium": "中胡须", "BeardPointed": "尖胡须",
+  "BeardPointy": "尖翘胡须", "BeardSmall": "短胡须", "BeardWild": "狂野胡须", "BeardWizard": "法师长须",
+  "Beefy": "魁梧", "BigStacheBraids": "大髭编辫", "Biter": "利齿", "Blade1": "刃 1", "Blade2": "刃 2",
+  "BladeBroken1": "断刃 1", "BladeBroken2": "断刃 2", "Bladed": "刃状", "Blank": "空洞", "Block": "方块",
+  "Bloody1": "血污 1", "Bloody2": "血污 2", "Bloody3": "血污 3", "Bloody4": "血污 4",
+  "BloodyBackward": "血污后撤", "BloodyBare1": "血污裸足 1", "BloodyCasual": "血污随意",
+  "BloodyDown": "血污向下", "BloodyFist": "血污握拳", "BloodyForward": "血污前跨", "BloodyHeavy": "血污粗壮",
+  "BloodyNeutral": "血污常态", "BloodySitting": "血污坐姿", "BloodySpell": "血污施法", "BloodyThin": "血污瘦削",
+  "BloodyUp": "血污向上", "BloodyVertical": "血污竖直", "BloodyWeapon": "血污持械", "Bob": "波波头",
+  "Boot": "长靴", "Braided": "编辫", "BraidedCombed1": "编辫梳理 1", "BraidedCombed2": "编辫梳理 2",
+  "BraidsMany": "多股辫", "BraidsThick": "粗辫", "BraidsTwo": "双辫", "Branchy": "枝杈", "Brash": "张扬",
+  "Bright": "明亮", "Broad": "宽阔", "Broken": "破损", "BrokenAedirBlade": "破损艾迪尔刃",
+  "BrokenAedirHeavy": "破损艾迪尔重型", "BrokenAedirLight": "破损艾迪尔轻型", "BrokenAedirLong": "破损艾迪尔长型",
+  "BrokenAedirMedium": "破损艾迪尔中型", "BrokenAedirRapier": "破损艾迪尔刺剑", "BrokenArmored": "破损装甲",
+  "BrokenHeavy": "破损粗壮", "BrokenMetal1": "破损金属 1", "BrokenPointed": "破损尖端",
+  "BrokenSmooth1": "破损光滑 1", "BrokenSmooth2": "破损光滑 2", "Brooding": "沉郁", "Buds": "芽苞",
+  "BulgingLeft": "左凸", "BulgingRight": "右凸", "Buzzed": "寸头", "Calm": "平静", "Canopy": "树冠",
+  "Capped": "覆顶", "Carved": "雕凿", "CarvedMarbled": "雕凿大理石纹", "Cascade": "垂瀑", "Casual": "随意",
+  "CasualClawed": "随意利爪", "Cautious": "警惕", "Center": "居中", "CenterEye": "中央之眼",
+  "Centered": "对中", "Champion": "勇者", "Charming1": "迷人 1", "Charming2": "迷人 2", "Chatty": "多话",
+  "Cheeks": "颊鳞", "Chiseled": "凿刻", "ChiseledFeminine": "凿刻阴柔",
+  "ChiseledFeminineMarbled": "凿刻阴柔大理石纹", "ChiseledMarbled": "凿刻大理石纹",
+  "ChiseledMasculine": "凿刻阳刚", "ChiseledMasculineMarbled": "凿刻阳刚大理石纹", "Chops": "颊须",
+  "Chops1": "颊须 1", "Chops2": "颊须 2", "ChopsMarbled": "颊须大理石纹", "Chopstache": "颊须连髭",
+  "ChopstacheMarbled": "颊须连髭大理石纹", "Circlet": "环冠", "Claw": "利爪", "Clawed": "利爪",
+  "ClawedCasual": "利爪随意", "ClawedDown": "利爪向下", "ClawedFist": "利爪握拳", "ClawedSpell": "利爪施法",
+  "ClawedUp": "利爪向上", "ClawedVertical": "利爪竖直", "ClawedWeapon": "利爪持械", "Clean": "整洁",
+  "Cleaved": "劈痕", "Clever": "机敏", "Cloth1": "布料 1", "Combed": "梳理", "Combined": "复合",
+  "Combo1": "组合 1", "Combo2": "组合 2", "Comforting": "温和", "Complex": "繁复", "Contemplative": "沉思",
+  "Contour": "弧线", "Controller": "驯服", "Corners": "折角", "Corpuleth": "尸团怪",
+  "CorpulethTentacles": "尸团怪触须", "Crazy": "狂乱", "Crowded": "密簇", "Crown": "冠状", "Crowned": "戴冠",
+  "Cumulus": "积云", "CumulusStarry": "积云星纹", "Cunning": "狡黠", "Curious": "好奇", "Curly": "卷发",
+  "CurlyMohawk": "卷莫西干", "Determined": "坚毅", "Divergent": "分岔", "Dollop": "团簇",
+  "DollopStarry": "团簇星纹", "Dots": "点状", "Down": "向下", "Droopy": "耷拉", "Elder1": "长者 1",
+  "Elder2": "长者 2", "Elder3": "长者 3", "Elder4": "长者 4", "EnergyBlade": "能量刃", "Expansive": "蓬张",
+  "FancyWaves": "华丽波浪", "FangsLarge": "大尖牙", "FangsSmall": "小尖牙", "Feminine": "阴柔",
+  "FeminineMarbled": "阴柔大理石纹", "Feral": "野性", "Ferny": "蕨叶", "Fine": "细致", "Fine2": "细致 2",
+  "Fist": "握拳", "Fit": "健美", "FitNips": "健美（乳首）", "Flowing1": "飘逸 1", "Flowing2": "飘逸 2",
+  "Fluffy": "绒睫", "Fluffy2": "绒睫 2", "Formed": "成形", "FormedMarbled": "成形大理石纹", "Forward": "前跨",
+  "Frayed": "毛糙", "Friendly": "亲和", "Frizzy": "蓬乱", "Fungal1": "菌丝 1", "Fungal2": "菌丝 2",
+  "Fungi": "菌类", "Gentle": "柔和", "Gilled": "鳃裂", "Glowing": "发光", "Glowing1": "发光 1",
+  "Glowing2": "发光 2", "Gnarly": "虬结", "Goatee": "山羊胡", "GoateeMarbled": "山羊胡大理石纹",
+  "Grainy": "糙纹", "Grinning": "含笑", "Hackles": "竖立", "Hairy": "多毛", "Half": "半剃",
+  "Hanging": "垂落", "Hard": "刚硬", "Harrower": "惊惧者", "Haunted": "阴魅", "Heavy": "粗壮",
+  "HeavyMarbled": "粗壮大理石纹", "HoldItem": "持物", "HoldItemClawed": "持物利爪", "HoldSpell": "持法",
+  "HoldSpellClawed": "持法利爪", "HoldStaff": "持杖", "HoldStaffClawed": "持杖利爪", "HoldWeapon": "持握武器",
+  "HoldWeaponClawed": "持械利爪", "Hoof": "蹄", "Horned": "有角", "Horns": "角",
+  "HorrendorDistorted": "霍伦多尔扭曲", "HorrendorGrinning": "霍伦多尔狞笑", "HorrendorMean": "霍伦多尔凶恶",
+  "Humanoid1": "类人 1", "Humanoid2": "类人 2", "Intense": "锐峻", "Intricate": "精巧", "Jagged": "锯齿",
+  "Keen": "敏锐", "Kind": "和善", "Kingly": "王者", "Kinky": "卷曲", "Knotted": "打结", "Large": "大型",
+  "LargeCombo": "大型组合", "LargeMarked": "大型斑纹", "LargeRidges": "大型棱脊", "LargeScales": "大型鳞片",
+  "LargeSmooth": "大型光滑", "Lashy": "长睫", "Layered": "层叠", "Leafy": "叶状", "Lean": "精瘦",
+  "Lines": "线纹", "Lips": "厚唇", "Listening": "倾听", "Lithe": "柔韧", "LitheNips": "柔韧（乳首）",
+  "Long": "长发", "Long1": "长发 1", "Long2": "长发 2", "LongChin": "长下巴", "LongCurled": "长卷",
+  "LongMarbled": "长发大理石纹", "LongTwirled": "长螺旋", "LongWhippy": "长鞭", "Longchops": "长颊须",
+  "LongchopsMarbled": "长颊须大理石纹", "Look1": "眼神 1", "Look2": "眼神 2", "Lower": "下段",
+  "Majestic": "威仪", "Marbled": "大理石纹", "Masculine": "阳刚", "MasculineMarbled": "阳刚大理石纹",
+  "Maw": "巨口", "Mean": "凶狠", "Medium": "中等", "MediumCombo": "中型组合", "MediumMarked": "中型斑纹",
+  "MediumRidges": "中型棱脊", "MediumScales": "中型鳞片", "MediumSmooth": "中型光滑", "Membrane": "膜翼",
+  "Mesmerizing": "摄魂", "Messy": "凌乱", "Metal1": "金属 1", "Metal2": "金属 2", "Metal3": "金属 3",
+  "Mitosis": "分裂", "Mohawk": "莫西干", "MohawkMarbled": "莫西干大理石纹", "MohawkStarry": "莫西干星纹",
+  "Mustache": "髭须", "Mustache1": "髭须 1", "MustacheMarbled": "髭须大理石纹", "Mutated": "变异",
+  "Narrow": "细长", "Neutral": "常态", "NeutralLunarTattoo1": "常态月纹刺青 1",
+  "NeutralLunarTattoo2": "常态月纹刺青 2", "NeutralPattern1": "常态纹样 1", "NeutralPattern2": "常态纹样 2",
+  "NeutralPattern3": "常态纹样 3", "NeutralTattoo1": "常态刺青 1", "NeutralTattoo2": "常态刺青 2",
+  "NeutralTattoo3": "常态刺青 3", "Nice": "齐整", "NiceMarbled": "齐整大理石纹", "NoStacheBraids": "无髭编辫",
+  "Normal": "普通", "Nubbins": "细突角", "Nubs": "短突角", "Nubs1": "短突 1", "Nubs2": "短突 2", "Old": "年老",
+  "Older": "更年老", "Open": "张口", "Ornate": "华丽", "Out": "外张", "Oval1": "椭圆 1", "Oval2": "椭圆 2",
+  "Overgrown1": "蔓生 1", "Overgrowth": "蔓生", "PalmDown": "掌心向下", "PalmDownClawed": "掌心向下利爪",
+  "PalmUp": "掌心向上", "PalmUpClawed": "掌心向上利爪", "Parted": "分缝", "PartedStarry": "分缝星纹",
+  "Pattern1": "纹样 1", "Pattern2": "纹样 2", "Pattern3": "纹样 3", "Perky": "精神", "Petite": "纤巧",
+  "Piercing": "锐利", "Plated": "甲片", "Plated1": "甲片 1", "Plated2": "甲片 2", "Plated3": "甲片 3",
+  "Plated4": "甲片 4", "Pointed": "尖端", "PointedStarry": "尖端星纹", "Ponytail": "马尾",
+  "Ponytail1": "马尾 1", "PonytailMarbled": "马尾大理石纹", "Prying": "窥探", "Pulled": "束紧",
+  "Quiet": "沉静", "Raised": "隆起", "Ram": "盘羊角", "Rattletrap": "拉特尔特拉普", "ReceedingFlow": "后退飘发",
+  "Refined": "精致", "Regal": "雍容", "Relaxed": "放松", "Reptilian": "爬行类", "Restrained": "收敛",
+  "Ridged": "棱脊", "Ridges": "棱脊", "Ripped": "撕裂", "Rotated": "旋转",
+  "RotatedLunarTattoo1": "旋转月纹刺青 1", "RotatedLunarTattoo2": "旋转月纹刺青 2",
+  "RotatedPattern1": "旋转纹样 1", "RotatedPattern2": "旋转纹样 2", "RotatedPattern3": "旋转纹样 3",
+  "Rough": "粗砺", "RoughMarbled": "粗砺大理石纹", "Round": "浑圆", "RoundStarry": "浑圆星纹", "Rows": "排辫",
+  "Sage": "贤者", "Sandal": "凉鞋", "Scaled": "覆鳞", "Scaled1": "覆鳞 1", "Scaled2": "覆鳞 2",
+  "Scaled3": "覆鳞 3", "Scaled4": "覆鳞 4", "ScaledBackward": "覆鳞后撤", "ScaledForward": "覆鳞前跨",
+  "ScaledNeutral": "覆鳞常态", "ScaledSitting": "覆鳞坐姿", "ScaledSpiked": "覆鳞尖刺", "Scar1": "疤痕 1",
+  "Scar2": "疤痕 2", "Scar3": "疤痕 3", "Scrap1": "废料 1", "Seeking": "探寻", "Senses": "感知",
+  "Serious": "严肃", "Sharp": "锐利", "Shiny": "锃亮", "Short": "短", "Short1": "短发 1",
+  "Short3": "短发 3", "ShortCurved": "短弯", "ShortTight": "短紧", "ShortWild": "短乱", "Shredded": "撕裂",
+  "Sideburns": "鬓角", "Sideburns2": "鬓角 2", "Sidester": "偏分", "Sideswept": "侧掠",
+  "SidesweptStarry": "侧掠星纹", "Sightless": "无光", "Simple": "简约", "Simple1": "简约 1",
+  "Sinister1": "阴森 1", "Sinister2": "阴森 2", "Sitting": "坐姿", "Sixer": "六撮",
+  "SkallithCasual": "斯卡利斯随意", "SkallithDown": "斯卡利斯向下", "SkallithFist": "斯卡利斯握拳",
+  "SkallithSpell": "斯卡利斯施法", "SkallithUp": "斯卡利斯向上", "SkallithVertical": "斯卡利斯竖直",
+  "SkallithWeapon": "斯卡利斯持械", "Skeletal": "骸骨", "SkeletalDamaged": "骸骨残损",
+  "SkeletalFull": "骸骨完整", "SkeletalJawless": "骸骨无颌", "Skull": "颅骨", "Sleek": "流线",
+  "Slicked": "背梳", "SlickedMarbled": "背梳大理石纹", "Slim": "修长", "SlimAction": "修长动作", "Small": "小型",
+  "SmallCombo": "小型组合", "SmallMarked": "小型斑纹", "SmallRidges": "小型棱脊", "SmallScales": "小型鳞片",
+  "SmallSmooth": "小型光滑", "Smaller": "偏小", "Smooth": "光滑", "Smooth1": "光滑 1", "Smooth2": "光滑 2",
+  "Smooth3": "光滑 3", "Smooth4": "光滑 4", "Smooth5": "光滑 5", "SmoothMarbled": "光滑大理石纹",
+  "SmoothWeapon": "光滑持械", "Snarling": "咆哮", "Sodden": "浸水", "SoddenBloated": "浸水肿胀",
+  "SoddenCasual": "浸水随意", "SoddenDecayed": "浸水腐败", "SoddenDecayedPalmDown": "浸水腐败掌心向下",
+  "SoddenTorn": "浸水撕裂", "Soft": "柔软", "Soft1": "柔和 1", "Soft2": "柔和 2", "Solemn": "肃穆",
+  "Sparse": "稀疏", "Spell": "施法", "Spiked": "尖刺", "Spiked1": "尖刺 1", "Spiked2": "尖刺 2",
+  "Spiked3": "尖刺 3", "Spiked4": "尖刺 4", "SpikesLarge1": "大棘刺 1", "SpikesLarge2": "大棘刺 2",
+  "SpikesSmall1": "小棘刺 1", "SpikesSmall2": "小棘刺 2", "Spikey": "尖刺状", "Spiky": "多刺",
+  "Spillover": "外溢", "SpilloverStarry": "外溢星纹", "Spined": "带棘", "SplitChin": "裂下巴",
+  "Sprout": "新芽", "Squint": "眯眼", "Staring": "凝视", "Stern": "严厉", "Stone1": "石料 1",
+  "Straw": "干草", "Straw1": "干草 1", "Straw2": "干草 2", "Streaks": "挑染", "Striking": "醒目",
+  "Stringy": "缕状", "Strong": "强健", "Strong1": "强健 1", "Strong2": "强健 2", "Strong3": "强健 3",
+  "StrongBackward": "强健后撤", "StrongForward": "强健前跨", "StrongNeutral": "强健常态",
+  "StrongNips": "强健（乳首）", "StrongSitting": "强健坐姿", "StrongSpiked": "强健尖刺", "Stubs": "残角",
+  "Styled": "修饰", "StyledMarbled": "修饰大理石纹", "Suave": "雅致", "Surprised": "惊讶", "Sweep": "横掠",
+  "Sweeper": "扫须", "Sweet": "甜美", "Swept": "后掠", "Swirl": "旋涡", "SwirlStarry": "旋涡星纹",
+  "Swirled": "旋纹", "SwirledFeminine": "旋纹阴柔", "SwirledFeminineMarbled": "旋纹阴柔大理石纹",
+  "SwirledMarbled": "旋纹大理石纹", "SwirledMasculine": "旋纹阳刚", "SwirledMasculineMarbled": "旋纹阳刚大理石纹",
+  "Sword": "剑", "SwordDamaged": "剑刃受损", "Taffel": "塔弗尔", "TaffelStarry": "塔弗尔星纹", "Tall": "竖长",
+  "Tattoo1": "刺青 1", "Tattoo2": "刺青 2", "Taut": "紧绷", "TendrilsLarge1": "大触须 1",
+  "TendrilsLarge2": "大触须 2", "TendrilsSmall1": "小触须 1", "TendrilsSmall2": "小触须 2", "Thick": "浓密",
+  "Thin": "瘦削", "Thin1": "瘦削 1", "Thin2": "瘦削 2", "Thin3": "瘦削 3", "ThinMarbled": "瘦削大理石纹",
+  "ThinPale": "瘦削苍白", "ThinPaleClawed": "瘦削苍白利爪", "ThinRotten": "瘦削腐烂",
+  "ThinRottenClawed": "瘦削腐烂利爪", "Thoughtful": "沉思", "ThreeBraids": "三股辫", "Tickler": "细髭",
+  "TiedUp": "束起", "Tiered": "分层", "Tiny": "细小", "TinyStarry": "细小星纹", "Tired": "疲惫",
+  "Toned": "结实", "TonedBackward": "结实后撤", "TonedForward": "结实前跨", "TonedNeutral": "结实常态",
+  "TonedNips": "结实（乳首）", "TonedSitting": "结实坐姿", "Toothy": "满口牙", "Tough": "粗犷", "Trim": "修短",
+  "Trimmed": "修剪", "TrimmedStarry": "修剪星纹", "Trio": "三叉", "Tufty": "簇发", "TuftyStarry": "簇发星纹",
+  "Tusked": "獠牙", "Tusked1": "獠牙 1", "Tusked2": "獠牙 2", "Twisted": "扭曲", "TwoBraids": "双股辫",
+  "Unbound": "松散", "Uneven": "参差", "UnevenStarry": "参差星纹", "Unformed": "未成形", "Unkempt": "不修边幅",
+  "UnkemptMarbled": "不修边幅大理石纹", "Up": "向上", "Upper": "上部", "Vertical": "竖直", "Vigilant": "戒备",
+  "Vine": "藤蔓", "Void": "虚空", "Waterfall": "瀑须", "Weapon": "持械", "WhiskersDown1": "下垂须 1",
+  "WhiskersDown2": "下垂须 2", "WhiskersFlat1": "平展须 1", "WhiskersFlat2": "平展须 2",
+  "WhiskersUp1": "上翘须 1", "WhiskersUp2": "上翘须 2", "Wide": "宽阔", "WideStarry": "宽阔星纹",
+  "Wild": "狂野", "WildFungal": "狂野菌丝", "Wise": "睿智", "Withered": "枯槁", "Wood": "木材",
+  "Wood1": "木材 1", "Wood2": "木材 2", "Wood3": "木材 3", "WoodFingers1": "木指 1",
+  "WoodFingers2": "木指 2", "Wooden": "木制", "Woody": "木质", "Wrinkly": "多皱", "Yeasty": "菌酵",
+  "Young1": "年轻 1", "Young2": "年轻 2", "Young3": "年轻 3", "Young4": "年轻 4", "Youngling": "幼体",
+  "Youthful": "少年感", "Youthful1": "少年感 1", "Youthful2": "少年感 2"
+};
+
+/**
+ * 腿部四姿势的基名。上游 `makeLegPoseParts()`（ember.mjs:59435）把 `${baseId}${suffix}` 拼成
+ * 部件 id（19 个调用点 × 4 姿势），hulgrun 的腿另有 `id.replace("Bare", "Chiseled"|"Marbled")`
+ * （:57251-57252）—— 拼出来的整串在上游文本里**没有字面量**，所以不进登记表，
+ * 由下面 `deriveParts()` 用**同一条拼法**现拼。
+ * ⚠ 这 25 个基名与 4 个姿势名**本身**都是上游字面量（`makeLegPoseParts("Smooth1", …)` /
+ *   `LEG_POSES = {backward:"Backward", …}` :59421-59425），都在上面那张表里。
+ * ⚠ 拼串**只**在这两族上做。对全表做笛卡尔积会造出几千个上游根本不产出的键 ——
+ *   那是「建一张永远命不中的表」，比不建更糟（面板报绿而实际零效果）。
+ */
+const LEG_POSE_BASES = ["AedirHeavy", "AedirLight", "Armored", "BrokenAedirHeavy", "BrokenAedirLight",
+  "BrokenArmored", "BrokenHeavy", "BrokenMetal1", "BrokenPointed", "BrokenSmooth1", "BrokenSmooth2",
+  "Chiseled", "Hairy", "Heavy", "Marbled", "Metal1", "Pointed", "Smooth1", "Smooth2", "Spiky",
+  "Straw", "Swirled", "Wood", "Wood1", "Woody"];
+const LEG_POSE_SUFFIXES = ["Backward", "Forward", "Neutral", "Sitting"];
+/** hulgrun 手部：`id.replace(/([^/]+)$/, "Marbled$1")`（ember.mjs:57239），前缀式 */
+const MARBLED_HAND_BASES = ["Casual", "Down", "Fist", "Spell", "Up", "Vertical", "Weapon"];
+
+/**
+ * 把 id 拆成上屏显示名 —— **逐字符照抄** ember.mjs:64457 那一行，别改。
+ * ⚠ 字符类是 `[A-Z1-9]`，**不含 `0`**：`Beard1`→`Beard 1` 而 `Beard10`→`Beard 10`、
+ *   `Beard11`→`Beard 1 1`。这条怪癖是实测出来的，不是推的。
+ */
+const splitPartId = (id) => id.replace(/(?<!^)([A-Z1-9])/g, " $1");
+
+/** 拼中文：基名译文以 ASCII 字母/数字收尾时补一个空格（「光滑 1」+「后撤」→「光滑 1 后撤」） */
+const joinCn = (a, b) => (/[0-9A-Za-z]$/.test(a) ? `${a} ${b}` : `${a}${b}`);
+
+/**
+ * id 表 → 显示名表。表里 671 个 id 各算一次，再补上两族拼串（共 107 条）。
+ * 拼不出来（基名不在表里）就跳过并 warn —— 静默跳过等于给自己留一个查不出的洞。
+ */
+const TOKEN_MAKER_PARTS = (() => {
+  const out = {};
+  for (const [id, cn] of Object.entries(TOKEN_MAKER_PART_IDS)) out[splitPartId(id)] = cn;
+  let composed = 0, missing = 0;
+  const add = (id, cn) => { const d = splitPartId(id); if (!(d in out)) { out[d] = cn; composed++; } };
+  for (const base of LEG_POSE_BASES) {
+    const b = TOKEN_MAKER_PART_IDS[base];
+    if (!b) { missing++; continue; }
+    for (const pose of LEG_POSE_SUFFIXES) {
+      const p = TOKEN_MAKER_PART_IDS[pose];
+      if (!p) { missing++; continue; }
+      add(base + pose, joinCn(b, p));
+    }
+  }
+  for (const base of MARBLED_HAND_BASES) {
+    const b = TOKEN_MAKER_PART_IDS[base], m = TOKEN_MAKER_PART_IDS.Marbled;
+    if (!b || !m) { missing++; continue; }
+    add("Marbled" + base, joinCn(m, b));
+  }
+  if (missing) warn(`部件显示名拼串有 ${missing} 条缺基名，没拼出来。`);
+  if (composed !== 107) warn(`部件显示名拼串实得 ${composed} 条，登记的是 107 条 —— 上游的部件族变了，去核一遍。`);
+  return out;
+})();
+
+/**
+ * 指示物制作器的**部件名行**与**计数行**。只对 `.choice.layer` 这一族选择器动手：
+ * `.choice.build` / `.choice.stance` 是体格与姿态，那两行的 `Heavy` / `Lithe` 归 TOKEN_MAKER_UI
+ * （壮硕 / 纤瘦），不能被本表的「粗壮 / 柔韧」改掉 —— 这正是本轮要修的那处错译。
+ * 幂等：已经是中文的节点查不到键，原样返回。
+ * @param {HTMLElement} root  指示物制作器窗口的根元素
+ */
+function translateTokenMakerParts(root) {
+  let n = 0;
+  for (const el of root.querySelectorAll?.(".token-maker-layers .choice.layer .part") ?? []) {
+    if (el.children.length) continue;
+    const raw = el.textContent.trim();
+    const cn = TOKEN_MAKER_PARTS[raw];
+    if (cn && cn !== raw) { el.textContent = cn; n++; }
+  }
+  // layers.hbs:35 `{{layer.chosenLabel}} of {{layer.choices.length}}` —— 整行一个文本节点，
+  // `of` 是拼在模板里的，查表接不住。只认 `数字 of 数字` 这一种形状。
+  for (const el of root.querySelectorAll?.(".token-maker-layers .choice.layer .count") ?? []) {
+    if (el.children.length) continue;
+    const m = /^(\d+) of (\d+)$/.exec(el.textContent.trim());
+    if (m) { el.textContent = `${m[1]} / ${m[2]}`; n++; }
+  }
+  return n;
+}
 
 /** Ember 自己弹的框：作用域表要把「对话框专用」和「Ember 窗口通用」两张合起来用 */
 const EMBER_DIALOG_UI = {...DIALOG_UI, ...EMBER_WINDOW_UI};
@@ -3415,6 +3755,11 @@ function patchRenderedApplications() {
       // 判据用**类名**而不是 root.id：`EmberDynamicTokenConfig` 嵌进创角向导时
       // （templates/applications/creation/{token,crucible-token}.hbs 的 `<div id="ember-token-maker">`）
       // 根元素 id 仍是 `ember-token-maker`，但类名判据两种形态都成立，且不会误认别的窗口。
+      // 部件名行与计数行**先**单独走一遍作用域更窄的表：`.choice.layer .part` 里的
+      // `Heavy` / `Lithe` 是**部件**（粗壮 / 柔韧），与 `.choice.build .part` 那行的**体格**
+      // （壮硕 / 纤瘦）同串异义。跑在通用遍历之前，通用遍历再看到的就已经是中文了。
+      // ⚠ 只在这两个窗口里做，绝不进全局通道 —— 见 TOKEN_MAKER_PART_IDS 表头。
+      if (TOKEN_MAKER_APPS.has(id)) translateTokenMakerParts(root);
       translateNode(root, TOKEN_MAKER_APPS.has(id) ? TOKEN_MAKER_WINDOW_UI
         : (isDialog ? EMBER_DIALOG_UI : EMBER_WINDOW_UI));
       // 指示物制作器的动画开关：#refresh()（ember.mjs:50994-51004）在 `await this.render()`
@@ -3688,6 +4033,28 @@ const SELFCHECK_TABLES = {
   //     已按上一轮的镜像树办法验到底：镜像未打补丁 **356/357**、打完两份 **357/357（rc=0）**。
   //     备好的整份文件与逐条替换清单在 `4-临时脚本/2026-08-22-ui-round2/unit2/patch/`。
   TOKEN_MAKER_UI,
+  // 指示物制作器的**部件 id**（2026-08-22 第三轮新增 671 键）。
+  // ⚠ 这张表**按 `literal` 登记，不是 `composed`** —— 键是 `BeardWizard` 这种**上游 id**，
+  //   ember.mjs 里逐条查得到字面量（落表前用 build_table.py 的自证 B 段逐条核过，671/671）。
+  //   上屏的 `Beard Wizard` 是运行时由 `splitPartId()` 现算的，不进任何登记表。
+  //   ⇒ 本表只抬覆盖侧的数，`missDistinct` / `rawMiss` / `uncheckedRaw` 三个数**一个都不动**，
+  //     主闸不会因为它变红。（按显示名建键 + `kind:"composed"` 才会顶破 `max.uncheckedRaw`，
+  //     那是上一轮备好又搁置的方案，本轮换掉了。）
+  // ⚠⚠ 与三张正则表同一条纪律：**加键要连着抬记录值**，出处见**上面** TOKEN_MAKER_UI 那段⚠⚠。
+  //   2026-08-22 第三轮同型复发（本表 671 键 + PATTERNS 那 1 条），实跑实测：
+  //     主闸 R-selfcheck-d-liveness **仍绿**（miss 4/7、没核 186/164 三个数原地未动），
+  //     红的是 R-patterns-translate-cases（PATTERNS 28→29，要补正例 + 专属反例 + 三个记录值）
+  //     与 `--selftest` 那条「把 min.registeredRaw 抬高一格 → 覆盖侧分母必须响」。
+  //   要改的两处（**都不归本文件的作者**，补丁已按镜像树验到底：未打补丁 354/357、
+  //   打完两份 **357/357 且主闸 68/0/0 rc=0**）：
+  //     · `5-其他内容/RESOLUTIONS.assertions.json`：R-patterns 加 1 正例 + 1 反例、
+  //       recorded 三个数；R-selfcheck-d-liveness.min 八个数抬到现跑实测值
+  //       （checkedDistinct 940→1609 · rawChecked 1522→2203 · registeredRaw 1708→2389 ·
+  //        registeredDistinct 1104→1773 · tableRegexEntries 47→48 · tableRows 40→41 ·
+  //        tablesFedIn 40→41 · fetchOk 219→222），**max 五个值一个不动**；
+  //     · `3-常用脚本/qa/assert_resolutions.py` 的 PAYLOAD_FLOORS 对应 14 个记录值。
+  //   现成的补丁副本与一键生成器在 `4-临时脚本/2026-08-22-ui-round3/patch/`。
+  TOKEN_MAKER_PART_IDS,
 
   // ── 运行时拼出来的：字面量核对对它**无效**，报「查无此串」是判据的假阳性 ──
   //   CHAT_UI 的复合键由 buildChatKeys() 在 ready 时按当前 lang 的实际译文拼出
