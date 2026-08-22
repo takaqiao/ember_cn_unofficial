@@ -1353,6 +1353,17 @@ const DIALOG_UI = {
   "Hex": "六边格",                                                       // 76041
   "Teleport to a specific location?": "传送到指定地点？",                  // 76038
   "Teleport to a destination hex?": "传送到目标六边格？",                  // 76043
+  //    ⚑ 2026-08-22 第四轮补：下拉里的两个**分组名**。上一轮记成「未登记」，
+  //      但原因不是够不到 —— `createSelectInput({groups:["Surface","Pathways"]})`（76014）
+  //      渲染成 `<optgroup label="Surface">`，而 translateNode 的属性白名单第十四轮就已经
+  //      收了 `label`（:3077，当初正是为语言下拉与音景面板的 optgroup 加的）。
+  //      纯粹是这两个词没进表。字面量在 ember.mjs 76001 / 76010（`group:`）与 76021（`groups:`）。
+  //      译法对齐既有的：`Pathways`＝通路，与 ARRANGEMENTS :716 同词（上游 slice 全称是
+  //      `The Pathways`，135778）；`Surface`＝地表，取 slice 全称 `Surface of Ember`（135412）
+  //      的中心词，也与 lang/cn.json:198 `sounds.environment.surface`＝地表物质 同词根。
+  //      ⚠ 两个都是通用短词，只进 DIALOG_UI（认框之后才用），一律不进 EXACT。
+  "Surface": "地表",                                                     // 76001 / 76021
+  "Pathways": "通路",                                                    // 76010 / 76021
   // ② 秘密房间拉杆的「已经拉过了」态（ember.mjs:108270 `_configureDialog` 里覆写 config.content）。
   //    源码是 `"<p>This lever has already been activated.</p>"`，DOM 里 `<p>` 内是单个文本节点。
   "This lever has already been activated.": "该拉杆已经启动过了。",         // 108270
@@ -2553,7 +2564,258 @@ const TOKEN_MAKER_PART_IDS = {
   "Wood1": "木材 1", "Wood2": "木材 2", "Wood3": "木材 3", "WoodFingers1": "木指 1",
   "WoodFingers2": "木指 2", "Wooden": "木制", "Woody": "木质", "Wrinkly": "多皱", "Yeasty": "菌酵",
   "Young1": "年轻 1", "Young2": "年轻 2", "Young3": "年轻 3", "Young4": "年轻 4", "Youngling": "幼体",
-  "Youthful": "少年感", "Youthful1": "少年感 1", "Youthful2": "少年感 2"
+  "Youthful": "少年感", "Youthful1": "少年感 1", "Youthful2": "少年感 2",
+
+  // ══ 2026-08-22 第四轮｜装备族 611 条 ══════════════════════════════════════════
+  // 上一轮把这块记成「仍缺 687，基本在装备族」。本轮把**分母重算了一遍**，因为那个数是
+  // 拿图集当全集算的：图集是贴图，`templateLayer.parts` 才决定「这个部件会不会进选择器」。
+  // 重算走的是**切片求值**（`4-临时脚本/2026-08-22-ui-round4/recon/slice_templates.mjs`）——
+  // 整份 ember.mjs 装不进 Node（六层 stub 之后卡在 `HEXES[...].terrain`，与部件毫无关系），
+  // 于是只把 53648~61260 行那一段（CHARACTER_ATLAS → cloneLayer → LAYERS$3 → 22 个模板
+  // → `var templates=Object.freeze({...})`）切出来，用**真身** foundry.utils 求值。
+  //   自证 A：切片首尾行逐字符等于写死的那两行（上游改行号会当场报错，不会静默切错段）
+  //   自证 B：模板 id 集合 = 写死的 22 个，逐个相等
+  //   自证 C：2579 个 id 全是 `<ns>/<layer>/<Part>` 三段，且逐个回**随包图集**（另一份文件、
+  //           5649 帧、逐份对上已知真值）交叉核 —— 两个独立上游来源互校，不是自己验自己
+  // ⇒ 真显示名全集 **1458** 条（末段去重），不是上一轮的 1512，也不是图集的 1535。
+  //   本轮之前盖住 767（53%），缺 691；其中 **80 条是纯数字**（symbol 族的 10..82，
+  //   上屏就是「10」，本来就不用翻）⇒ 真正要翻的 **611** 条，本块全部补齐。
+  //   ⇒ 补完 1458/1458，装备族不再有英文。
+  //
+  // 译法怎么定的（三层，从严到宽，逐条核过语境）：
+  //   ① **系统定译最高**：品质四档直接取 crucible-cn 的 `ITEM.Quality*` ——
+  //      Shoddy 粗糙 / Standard 标准 / Fine 精良 / Superior 卓越。这四个词在本块出现 87 次，
+  //      是最不该自己拍脑袋的一处（上游 `crucible/lang/en.json:1834` 那一族）。
+  //   ② 其次是本表里已定过的同名段（48 个形态素）。
+  //   ③ 再次是 glossary_ec（94 个命中）—— 但**六条套了就错**，逐条改判：
+  //      `Shield`词表给「护盾术」那是**法术**（这里是盾牌）· `Point`给「岬」那是**地名裁决**
+  //      R-point-cape（这里是帽子的尖顶）· `Split`给「分裂」（这里是开衩）·
+  //      `Sticks`给「斯蒂克斯」专名（这里是一捆木棍）· `Water`给「水域」（这里是碗里的水）·
+  //      `Alchemist`给「阿克图里安」（一眼串行的脏数据，这里是炼金术士）。
+  //      ⇒ **「词表里有」不等于「这条能用」**，同一个英文词在不同语域本来就该分裂。
+  //
+  // ⚠ 拼串只出初稿，611 条**逐行读过一遍**才定稿（改动记在
+  //   `4-临时脚本/2026-08-22-ui-round4/overrides.py`，连理由一起）。三类是规则必错的：
+  //   两个中心词叠在一起（`ShieldKiteSteelStandard` 拼出「…盾牌鸢形盾」）·
+  //   族名省了中心词（sleeve/pants/pauldron 三族靠图层兜底补「袖/裤/肩甲」，
+  //   但末尾已是护甲名的 8 条不能再补，否则成「板甲肩甲」）·
+  //   同一个词在这一族另有形制义（`HammerPole`＝长柄锤不是旗杆、`RingMail`＝环甲不是戒指、
+  //   `Kettle`＝壶盔不是水壶、`Low`＝低领不是低帮）。
+  // ⚠ 上表前三道机器核（`recon/collide.mjs`）：新键显示名互撞 0 · 撞发布中的表 0 ·
+  //   同图层两个部件拿到同一个中文 0（唯一一处跨图层撞名是同一件长袍的上下段，已分开写）。
+  // ⚠ 611 个键**逐个**回当前安装的上游语料查过字面量（`recon/litcheck.py`，529 份 / 10.2M 字符，
+  //   纯 ASCII 加词边界，与面板 D 档同口径）：**查不到的 0 个** ⇒ 面板 miss 侧一条不涨。
+  "ApronClothPatternedHeavy": "厚重纹样布围裙", "ApronClothPatternedLight": "轻薄纹样布围裙",
+  "ApronLeatherLower": "下段皮革围裙", "ApronLeatherLowerPotions": "药水下段皮革围裙",
+  "ApronLeatherLowerTools": "工具下段皮革围裙", "ApronLeatherTools": "工具皮革围裙", "Arm": "臂",
+  "ArmorBoneMandible": "颚骨护甲", "ArmorFurWolfFancy": "华丽狼毛皮护甲", "ArmorLeatherStrapped": "绑带皮革护甲",
+  "ArmorLeatherStuddedLarge": "大镶钉皮革护甲", "ArmorLeatherStuddedSmall": "小镶钉皮革护甲",
+  "AxeBattleSteelShoddy": "粗糙钢战斧", "AxeBattleSteelStandard": "标准钢战斧", "AxeBattleSuperior": "卓越战斧",
+  "AxeGreatSteelStandard": "标准钢巨斧", "AxeHandStandard": "标准手斧", "AxeHandSuperior": "卓越手斧",
+  "AxeLongSteelSuperior": "卓越钢长斧", "AxeSteelHeavyFine": "精良重型钢斧", "AxeStoneStandard": "标准石斧",
+  "BackpackLeatherBedroll": "铺盖卷皮革背包", "BagCloth": "布袋", "BandageClothFull": "全布绷带",
+  "BandageClothHalf": "半布绷带", "BandedLeatherStudded": "镶钉束带皮甲", "BandedMetalPlated": "镀面束带金属甲",
+  "BandolierLeatherPotions": "药水皮革弹药带", "Basic": "基础腰饰", "BasketWovenEmpty": "空编织篮",
+  "BasketWovenPlants": "草木编织篮", "BeltClothChainedFancy": "华丽缀链布腰带",
+  "BeltClothFrayedShort": "短毛边布腰带", "BeltClothGathered": "抽褶布腰带", "BeltClothSash": "布饰带腰带",
+  "BeltLeatherPotions": "药水皮革腰带", "BeltLeatherTools": "工具皮革腰带", "BeltRopePouch": "带小袋绳腰带",
+  "BeltRopeSimple": "简约绳腰带", "Blade": "臂刃", "BladeArm": "刃臂", "BlindfoldCloth": "布蒙眼罩",
+  "BlindfoldClothFancy": "华丽布蒙眼罩", "BlindfoldClothThin": "薄布蒙眼罩", "BlouseClothNecklace": "项链布罩衫",
+  "Bone": "骨肩甲", "BoneBracer": "骨护腕", "BoneHeavy": "重型骨肩甲", "Bony": "嶙峋骨盔",
+  "BookLeatherTome": "皮革典籍", "BootClothWrapped": "缠绕布长靴", "BootLeatherCuffed": "翻边皮革长靴",
+  "BootLeatherFurLined": "毛皮内衬皮革长靴", "BootMetalPlate": "金属板甲长靴", "BowLongFancy": "华丽长弓",
+  "BowLongFancyQuiver": "华丽长弓配箭袋", "BowLongOrnateFine": "精良华饰长弓", "BowLongStandard": "标准长弓",
+  "BowLongSuperior": "卓越长弓", "BowShortSuperior": "卓越短弓", "BowShortWoodenStandard": "标准木制短弓",
+  "BowlWoodenEmpty": "空木碗", "BowlWoodenGrain": "盛谷木碗", "BowlWoodenWater": "盛水木碗",
+  "BracerClothFlamesFancy": "华丽火焰布护腕", "BracerCoralHeavy": "重型珊瑚护腕",
+  "BracerHeavyJeweled": "宝石镶嵌重型护腕", "BracerHeavyLayered": "层叠重型护腕", "BracerLeatherBanded": "束带皮革护腕",
+  "BracerLeatherLayered": "层叠皮革护腕", "BracerMailLayered": "层叠锁甲护腕",
+  "BracerMetalFurLined": "毛皮内衬金属护腕", "BracerMetalPatterned1": "纹样金属护腕 1",
+  "BracerMetalPatterned2": "纹样金属护腕 2", "BracerMetalPlate1": "金属板甲护腕 1",
+  "BracerMetalPointed": "尖头金属护腕", "BreastplateMetalCorpuleth": "尸团怪金属胸甲",
+  "BreastplateMetalFeminineFancy": "华丽阴柔金属胸甲", "BrigandineFine": "精良布面甲", "BrokenBone": "断骨",
+  "BundleSticks": "柴捆", "BundleStraw": "干草捆", "CapClothSun": "遮阳布便帽", "CapeClothBirch": "桦木布短披风",
+  "CapeClothBirchLower": "下段桦木布短披风", "CapeClothOrnate": "华饰布短披风", "ChainHeavySuperior": "卓越重型锁子甲",
+  "ChainMetalHeavy1": "重型金属锁子甲 1", "ChainmailMetalShort": "短金属锁子甲袖", "Cloak": "斗篷",
+  "CloakClothCindaric": "辛达里克布斗篷", "CloakClothFlared": "外张布斗篷", "CloakClothLong": "长布斗篷",
+  "CloakClothLongFancy": "华丽长布斗篷", "CloakClothRagged": "破烂布斗篷", "CloakClothShort": "短布斗篷",
+  "CloakClothShortSimple": "简约短布斗篷", "CloakClothShoulder": "布斗篷肩片", "CloakClothShoulders": "及肩布斗篷",
+  "CloakClothSimple": "简约布斗篷", "CloakClothTwotailed": "双尾布斗篷", "CloakDoomsayer": "末日预言者斗篷",
+  "CloakFurLined": "毛皮内衬斗篷", "CloakLeatherScaled": "覆鳞皮革斗篷", "CloakLeatherScalemaw": "鳞颚兽皮革斗篷",
+  "CloakSoftTrimmedStrider": "疾行者镶饰柔软斗篷", "CloakSweeping": "曳地斗篷", "CloakSweepingOrnate": "华饰曳地斗篷",
+  "ClothAgrimageShort": "短农艺法师布袖", "ClothBandedShort": "短束带布袖", "ClothLayeredShirts": "层叠布衬衫",
+  "ClothLayeredTrimmed": "镶饰层叠布衣", "ClothPatternedThinShort": "短薄纹样布袖",
+  "ClothPatternedWavyShort": "短波浪纹样布袖", "ClothRags": "破布衣", "ClothRobeLarge": "大布长袍袖",
+  "ClothRobeShort": "短布长袍袖", "ClothSimpleLong": "长简约布袖", "ClothSimpleShort": "短简约布袖",
+  "ClothThinShort": "短薄布袖", "ClothTornShirt": "破洞布衬衫", "ClothTornStrappedShirt": "绑带破洞布衬衫",
+  "ClothWarden": "守林者布袖", "ClubBoneCudgel": "骨短棒", "ClubBoneMace": "骨硬头锤",
+  "ClubGreatStandard": "标准巨棒", "ClubGreatSuperior": "卓越巨棒", "ClubSpikedShoddy": "粗糙尖刺棍棒",
+  "ClubSteelStandard": "标准钢棍棒", "ClubStoneStandard": "标准石棍棒", "ClubStuddedStandard": "标准镶钉棍棒",
+  "ClubToothedStandard": "标准带齿棍棒", "CoatLeatherLower": "下段皮革外套", "CoatLeatherUpper": "上段皮革外套",
+  "CollarClothAgrimage": "农艺法师布领饰", "CollarClothOtherhood": "幸运异姊会布领饰", "CollarClothRound": "圆布领饰",
+  "CollarClothSerrated": "锯齿布领饰", "CollarFurDense": "厚密毛皮领饰", "CollarFurLined": "毛皮内衬领饰",
+  "CollarMetalChainmail": "锁子甲金属领饰", "CollarPadded": "衬垫领饰", "CordClothDraped": "垂坠布束绳",
+  "CrossbowHandStandard": "标准手弩", "CrossbowHeavyStandard": "标准重型弩", "Crystal": "水晶",
+  "CuttersSteelStandard": "标准钢剪钳", "DaggerSteelStandard": "标准钢匕首", "DaggerSuperior": "卓越匕首",
+  "Default": "默认", "DressClothStola": "布斯托拉长裙", "DressClothStolaSleeveless": "无袖布斯托拉长裙",
+  "EyepatchLeatherLeft": "左皮革眼罩", "EyepatchLeatherRight": "右皮革眼罩", "FeatheredMantle": "羽饰披氅",
+  "Feathers": "羽饰", "Flag1A": "旗 1A", "Flag1B": "旗 1B", "Flag1C": "旗 1C", "Flag1D": "旗 1D",
+  "Flag1E": "旗 1E", "Flag2A": "旗 2A", "Flag2B": "旗 2B", "Flag2C": "旗 2C", "Flag2D": "旗 2D",
+  "Flag2E": "旗 2E", "Flag2F": "旗 2F", "Flag3A": "旗 3A", "Flag3B": "旗 3B", "Flag3C": "旗 3C",
+  "Flag3D": "旗 3D", "Flag3E": "旗 3E", "Flag3F": "旗 3F", "FlailSteelStandard": "标准钢链枷",
+  "FlameThrower": "火焰喷射器", "Fungal": "菌质覆体", "FungalHorns": "菌质角", "Fungi1": "菌类肩饰 1",
+  "Fungi2": "菌类肩饰 2", "FurCloak": "毛皮斗篷", "FurFullBejak": "贝雅克全毛皮肩甲",
+  "FurPartialBejak": "贝雅克半覆毛皮肩甲", "FurRimmedBejak": "贝雅克镶边毛皮肩甲", "GambesonPadded": "衬垫缉甲衣",
+  "GambesonPaddedReinforced": "加固衬垫缉甲衣", "GauntletLeatherRinged": "环箍皮革臂铠",
+  "GauntletLeatherSimple": "简约皮革臂铠", "GauntletMetalHeavy1": "重型金属臂铠 1",
+  "GauntletMetalHeavy2": "重型金属臂铠 2", "GauntletMetalPlate1": "金属板甲臂铠 1", "GlaiveMetal1": "金属长柄刀 1",
+  "GlaiveStandard": "标准长柄刀", "GlassesMetalInspection1": "检视金属眼镜 1",
+  "GlassesMetalInspection2": "检视金属眼镜 2", "GlassesMetalOval": "椭圆金属眼镜", "GloveClothUpper": "上段布手套",
+  "GloveLeatherLow": "低帮皮革手套", "GogglesLeatherRound": "圆皮革护目镜", "Gothic": "哥特",
+  "GreatclubBoneSpiked": "尖刺骨巨棒", "GreatswordMetal1": "金属巨剑 1", "GreavesSteelBackward": "钢胫甲后撤",
+  "GreavesSteelForward": "钢胫甲前跨", "GreavesSteelNeutral": "钢胫甲常态", "GreavesSteelSitting": "钢胫甲坐姿",
+  "HalberdStandard": "标准戟", "HalberdSteelShoddy": "粗糙钢戟", "HaloGlow": "辉光光环",
+  "HammerCrystaline": "晶质锤", "HammerPoleSteelFine": "精良钢长柄锤", "HammerSteelSmithing": "锻造钢锤",
+  "HammerWarLightStandard": "标准轻战锤", "HammerWarStandard": "标准战锤", "HatAgrimage": "农艺法师帽",
+  "HatArcturian": "阿克图里安帽", "HatBambooRound": "竹斗笠", "HatClothCircular": "圆形布帽",
+  "HatClothDrapedFlat": "平顶垂坠布帽", "HatClothDrapedPoint": "尖顶垂坠布帽", "HatClothDrapedTail": "垂尾布帽",
+  "HatFurredBejak": "贝雅克覆毛帽", "HatLeatherFurLined": "毛皮内衬皮革帽", "HatMetalMiner": "矿工金属帽",
+  "HatMetalMinerLamp": "带灯矿工金属帽", "HatTravel": "旅行帽", "HatchetMetal1": "金属手斧 1",
+  "HeadbandClothFancy": "华丽布头带", "HeadbandClothSimple": "简约布头带", "HeadbandSailor": "水手头带",
+  "HeadbandSailor2": "水手头带 2", "HeadwrapCloth": "布头巾", "HeadwrapClothBandaged": "包扎布头巾",
+  "Heavy1": "重型肩甲 1", "HeavyBoneArmor": "重型骨护甲", "HeavySuperiorTayan": "塔扬卓越重型肩甲",
+  "HelmCoral": "珊瑚头盔", "HelmFullTayan": "塔扬全罩头盔", "HelmOpenTayan": "塔扬敞开头盔",
+  "HelmOtherhood": "幸运异姊会头盔", "HelmOtherhoodMasked": "覆面幸运异姊会头盔", "HelmSpikdedWaerd": "瓦尔德尖刺头盔",
+  "HelmSteelBoarFancy": "华丽野猪钢头盔", "HelmSteelDomed": "穹顶钢头盔", "HelmSteelFullClosed": "闭合全罩钢头盔",
+  "HelmSteelFullHorned": "有角全罩钢头盔", "HelmSteelFullOpen": "敞开全罩钢头盔", "HelmSteelKettle": "壶形钢头盔",
+  "HelmSteelLayered": "层叠钢头盔", "HelmSteelLumek": "卢梅克钢头盔", "HelmSteelNosed": "尖鼻钢头盔",
+  "HelmSteelNosedFancy": "华丽尖鼻钢头盔", "HelmSteelWinged": "带翼钢头盔", "HelmSteelWingedFancy": "华丽带翼钢头盔",
+  "HideHeavyCollared": "带领重型兽皮甲", "HoodClothDown1": "垂下布兜帽 1", "HoodClothDown2": "垂下布兜帽 2",
+  "HoodClothLower": "下段布兜帽", "HoodClothOpen1": "敞开布兜帽 1", "HoodClothOpen2": "敞开布兜帽 2",
+  "HoodClothRound": "圆布兜帽", "HoodDomino": "多米诺兜帽", "HoodDoomsayer": "末日预言者兜帽",
+  "HoodFurredBejak": "贝雅克覆毛兜帽", "HoodJeweledFullKithil": "基希尔全覆宝石兜帽",
+  "HoodJeweledKithil": "基希尔宝石镶嵌兜帽", "HoodOrnateKithil": "基希尔华饰兜帽", "HoodOrnateStrider": "疾行者华饰兜帽",
+  "HoodStarmage": "星法师兜帽", "HornedSkull": "有角颅骨", "Intricate1": "精巧肩甲 1",
+  "JacketLeatherTattered": "褴褛皮革夹克", "JavelinSuperior": "卓越标枪", "JerkinLeatherEmbossed": "压纹皮革皮外衣",
+  "JugClay": "陶壶", "KatanaStandard": "标准武士刀", "Lantern": "提灯", "LeatherBejak": "贝雅克皮革肩甲",
+  "LeatherEmbossedShort": "短压纹皮革袖", "LeatherRingedShort": "短环箍皮革袖",
+  "LeatherStitchedShort": "短缝线皮革袖", "LightBoneArmor": "轻型骨护甲", "LizardSkull": "蜥颅骨",
+  "LongswordMetal1": "金属长剑 1", "LyreMetalFancy": "华丽金属里拉琴", "MaceFlangedFine": "精良凸棱硬头锤",
+  "MaceLightStandard": "标准轻型硬头锤", "MaceSuperior": "卓越硬头锤", "MaceWickedShoddy": "粗糙邪祟硬头锤",
+  "MandolinWoodenFancy": "华丽木制曼陀林", "MantleClothAgrimage": "农艺法师布披氅",
+  "MantleClothCindaric": "辛达里克布披氅", "MantleClothDraped": "垂坠布披氅", "MantleClothFrayed": "毛边布披氅",
+  "MantleClothLined1": "内衬布披氅 1", "MantleClothLined2": "内衬布披氅 2",
+  "MantleFeatheredStrider": "疾行者羽饰披氅", "MantleJeweledSerethus": "塞雷苏斯宝石镶嵌披氅",
+  "MantleLeatherScaled": "覆鳞皮革披氅", "MantleLeatherScalemaw": "鳞颚兽皮革披氅",
+  "MantleSilkFlowingEthereal": "以太飘垂丝披氅", "MantleSilkFlowingFancy": "华丽飘垂丝披氅",
+  "MantleStarmage": "星法师披氅", "MaskClothDiamond": "钻石布面具", "MaskClothLower": "下段布面具",
+  "MaskDoomsayer": "末日预言者面具", "MaskFeline": "猫形面具", "MaskFullDoomsayer": "末日预言者全罩面具",
+  "MaskLeatherAlchemist": "炼金术士皮革面具", "MaskLeatherBreather": "呼吸器皮革面具",
+  "MaskLeatherDiamond": "钻石皮革面具", "MaskLeatherDiamondStripe": "条纹钻石皮革面具",
+  "MaskLeatherVigilante": "义警皮革面具", "MaulBronzeShoddy": "粗糙青铜巨槌", "MaulStandard": "标准巨槌",
+  "Metal": "金属", "MetalBattered": "打损金属盔", "MetalCoif": "金属锁甲头罩", "MetalCoifDirtied": "污渍金属锁甲头罩",
+  "MetalLayeredDirtied": "污渍层叠金属盔", "MetalLayeredLarge": "大层叠金属肩甲", "MetalRoundSpiked": "尖刺圆金属盔",
+  "MetalScallopedLarge": "大扇贝纹金属肩甲", "MetalSpikedAction": "尖刺金属裤（动作）", "MetalWater": "金属（水面）",
+  "MissilePod": "导弹发射巢", "MorningstarSteelStandard": "标准钢钉头锤", "MorningstarSuperior": "卓越钉头锤",
+  "Mushrooms": "蘑菇肩饰", "NecklaceBeaded": "串珠项链", "NecklaceBeadedBejak": "贝雅克串珠项链",
+  "NecklaceBoneTeethSmall": "小骨齿项链", "NecklaceClothDraped": "垂坠布项链",
+  "NecklaceMetalChainsHeavy": "重型锁链金属项链", "NecklaceMetalCircles": "圆环金属项链",
+  "NecklaceMetalIntricateHeavy": "重型精巧金属项链", "NecklaceMetalOval": "椭圆金属项链",
+  "NecklaceMetalRingedThin": "细环金属项链", "NecklaceStoneAmulet": "石护符项链", "None": "无", "Orb": "法珠",
+  "PaddedBackward": "衬垫裤后撤", "PaddedClothQuilted": "绗缝衬垫布", "PaddedForward": "衬垫裤前跨",
+  "PaddedNeutral": "衬垫裤常态", "PaddedSitting": "衬垫裤坐姿", "PauldronBoneWaerd": "瓦尔德骨肩甲",
+  "PauldronScaleOaken": "橡木鳞片肩甲", "PeltFurThick": "厚毛皮", "PickMetalMiner": "矿工金属镐",
+  "PickMetalMining": "采矿金属镐", "PickSteelStandard": "标准钢镐", "PickStoneSuperior": "卓越石镐",
+  "Plain": "素面", "PlateBackward": "板甲裤后撤", "PlateCoral": "珊瑚板甲", "PlateCoralHeavy": "重型珊瑚板甲",
+  "PlateCoralLight": "轻型珊瑚板甲", "PlateForward": "板甲裤前跨", "PlateHalfFine": "精良半板甲",
+  "PlateHeavyDecorated": "装饰重型板甲", "PlateHeavyFine": "精良重型板甲", "PlateHeavyLumek": "卢梅克重型板甲",
+  "PlateHeavySuperior": "卓越重型板甲", "PlateHeavyTayan": "塔扬重型板甲", "PlateHeavyWaerd": "瓦尔德重型板甲",
+  "PlateMetalBanded": "束带金属板甲袖", "PlateMetalBurnishedHand": "手工抛光金属板甲",
+  "PlateMetalHeavy1": "重型金属板甲 1", "PlateMetalHeavy2": "重型金属板甲 2", "PlateMetalHeavy3": "重型金属板甲 3",
+  "PlateMetalHeavy4": "重型金属板甲 4", "PlateMetalHeavy5": "重型金属板甲 5", "PlateMetalHeavy6": "重型金属板甲 6",
+  "PlateMetalHeavyFurLined": "毛皮内衬重型金属板甲", "PlateMetalHeavyOrnate": "华饰重型金属板甲",
+  "PlateMetalLayered": "层叠金属板甲袖", "PlateMetalLong": "长金属板甲袖",
+  "PlateMetalPatternedShort": "短纹样金属板甲袖", "PlateMetalRinged": "环箍金属板甲袖", "PlateNeutral": "板甲裤常态",
+  "PlateSitting": "板甲裤坐姿", "PouchLeatherRound": "圆皮革小袋", "Quiver": "箭袋",
+  "QuiverLeatherArrows": "带箭皮革箭袋", "QuiverLeatherLong": "长皮革箭袋", "QuiverLeatherShort": "短皮革箭袋",
+  "RapierSteelStandard": "标准钢细剑", "Resting": "静置", "RingMailFine": "精良环甲",
+  "RippedClothBackward": "撕裂布裤后撤", "RippedClothForward": "撕裂布裤前跨", "RippedClothNeutral": "撕裂布裤常态",
+  "RippedClothSitting": "撕裂布裤坐姿", "Robe": "长袍", "RobeClothAgrimage": "农艺法师布长袍",
+  "RobesClothAgrimage": "农艺法师布长袍下摆", "RobesClothCindaric": "辛达里克布长袍", "RobesClothFlowing": "飘垂布长袍",
+  "RobesClothLayered": "层叠布长袍", "RobesLowerWarden": "守林者下段长袍", "RobesWarden": "守林者长袍",
+  "RodSteelOrnateFine": "精良华饰钢短杖", "RopesBloated": "臃肿绳索", "RopesSodden": "浸水绳索",
+  "SandalClothFancy": "华丽布凉鞋", "SandalOpen": "露趾凉鞋", "SashClothCindaric": "辛达里克布饰带",
+  "SashCommon": "寻常饰带", "SashOrnate": "华饰饰带", "ScalemailSuperior": "卓越鳞甲",
+  "ScarfClothOtherhood": "幸运异姊会布围巾", "ScarfClothTied": "系结布围巾", "ScarfClothTorn": "破洞布围巾",
+  "ScimitarOrnateStandard": "标准华饰弯刀", "ScimitarWickedShoddy": "粗糙邪祟弯刀",
+  "ScimitarWickedStandard": "标准邪祟弯刀", "ScrollRolled": "卷起卷轴", "ScrollUnrolled": "展开卷轴",
+  "ScytheMetal1": "金属长柄镰 1", "ShawlClothButton": "纽扣布披肩", "ShawlClothCindaric": "辛达里克布披肩",
+  "ShawlClothCindaricFancy": "华丽辛达里克布披肩", "ShawlClothHalfRays": "半幅光芒布披肩",
+  "ShawlClothNecklace": "项链布披肩", "ShawlClothRays": "光芒布披肩", "ShawlClothStrider": "疾行者布披肩",
+  "Shield1A": "盾牌 1A", "Shield1B": "盾牌 1B", "Shield1C": "盾牌 1C", "Shield1D": "盾牌 1D",
+  "Shield1E": "盾牌 1E", "Shield2A": "盾牌 2A", "Shield2B": "盾牌 2B", "Shield2C": "盾牌 2C",
+  "Shield2D": "盾牌 2D", "Shield2E": "盾牌 2E", "Shield3A": "盾牌 3A", "Shield3B": "盾牌 3B",
+  "Shield3C": "盾牌 3C", "Shield3D": "盾牌 3D", "Shield3E": "盾牌 3E", "Shield4A": "盾牌 4A",
+  "Shield4B": "盾牌 4B", "Shield4C": "盾牌 4C", "Shield4D": "盾牌 4D", "Shield4E": "盾牌 4E",
+  "ShieldBucklerBronzeStandard": "标准青铜小圆盾", "ShieldBucklerSteelStandard": "标准钢小圆盾",
+  "ShieldHeaterSteelStandard": "标准钢熨斗盾", "ShieldKiteSteelStandard": "标准钢鸢形盾",
+  "ShieldLightSteelStandard": "标准钢轻盾", "ShieldMetalHeater": "金属熨斗盾", "ShieldRoundMetal": "金属圆盾",
+  "ShieldRoundOrnateFine": "精良华饰圆盾", "ShieldWoodenRound": "木制圆盾", "ShirtClothAgrimage": "农艺法师布衬衫",
+  "ShirtClothDraped": "垂坠布衬衫", "ShirtClothLaced": "系带布衬衫", "ShirtClothOpen": "敞开布衬衫",
+  "ShirtClothPatternedWavy": "波浪纹样布衬衫", "ShirtClothSimple": "简约布衬衫", "ShirtClothSimple1": "简约布衬衫 1",
+  "ShirtClothSimple2": "简约布衬衫 2", "ShirtClothSplit": "开衩布衬衫", "ShirtDoubleBreasted": "双排扣衬衫",
+  "ShirtDoubleBreastedLower": "双排扣衬衫下段", "ShirtLeatherOaken": "橡木皮革衬衫",
+  "ShirtLeatherStrapped": "绑带皮革衬衫", "ShirtReinforcedOaken": "橡木加固衬衫", "ShirtSilkFrilled": "褶边丝衬衫",
+  "ShirtStuddedReinforced": "加固镶钉衬衫", "ShoeClothPlain": "素面布鞋", "ShortsBackward": "短裤后撤",
+  "ShortsForward": "短裤前跨", "ShortsNeutral": "短裤常态", "ShortsSitting": "短裤坐姿",
+  "ShortswordMetal1": "金属短剑 1", "ShoulderFurInner": "毛皮内衬肩饰", "ShoulderStrapped": "绑带披肩",
+  "ShouldersMetalOaken": "橡木金属护肩", "ShovelSteelShoddy": "粗糙钢铲", "SickleMetal1": "金属镰刀 1",
+  "SickleSteelStandard": "标准钢镰刀", "SickleWarBronzeShoddy": "粗糙青铜战镰",
+  "SilkFlowingEthereal": "以太飘垂丝袖", "SkirtBandedMetal": "金属束带裙", "SkirtClothAgrimage": "农艺法师布裙",
+  "SkirtClothDivided": "分片布裙", "SkirtClothFlowingFancy": "华丽飘垂布裙", "SkirtClothFrayed": "毛边布裙",
+  "SkirtClothHalf": "半布裙", "SkirtClothLayeredFancy": "华丽层叠布裙", "SkirtClothLayeredTrimmed": "镶饰层叠布裙",
+  "SkirtClothQuilted": "绗缝布裙", "SkirtClothRingedFancy": "华丽环箍布裙",
+  "SkirtClothRippledFancy": "华丽波纹布裙", "SkirtClothRuffledFancy": "华丽荷叶边布裙",
+  "SkirtMetalChainmail": "锁子甲金属裙", "SkirtMetalFaulds1": "金属腰甲裙 1", "SkirtMetalFaulds2": "金属腰甲裙 2",
+  "SkirtMetalFaulds3": "金属腰甲裙 3", "SkirtMetalFaulds4": "金属腰甲裙 4", "SkirtStuddedLeather": "镶钉皮革裙",
+  "Skirted": "带裙摆", "SkullBoneLion": "狮骨颅骨", "SkullBoneLionMutated": "变异狮骨颅骨",
+  "SkullBoneScalemawBroken": "断裂鳞颚兽骨颅骨", "SkullBoneScalemawFull": "完整鳞颚兽骨颅骨",
+  "SleeveClothBillowing": "鼓风布袖", "SleeveClothBracer1": "带护腕布袖 1", "SleeveClothBracer2": "带护腕布袖 2",
+  "SleeveClothBracer3": "带护腕布袖 3", "SleeveClothCuffed": "翻边布袖", "SleeveClothLong": "长布袖",
+  "SleeveClothTrimmed": "镶饰布袖", "SleeveLeatherCuffed": "翻边皮革袖", "SleeveLeatherStudded": "镶钉皮革袖",
+  "SlingStandard": "标准投石索", "SlipperClothFancy": "华丽布便鞋", "SpearSteelStandard": "标准钢矛",
+  "SpearStoneStandard": "标准石矛", "SpellSimpleGlow": "简约施法辉光", "SpellSmallFlame": "小型施法火焰",
+  "SpellbookClosed": "闭合法术书", "SpellbookOpen1": "敞开法术书 1", "SpellbookOpen2": "敞开法术书 2",
+  "SpikedBackbones": "尖刺脊骨", "SplintMetalCommon": "寻常金属夹板甲", "SplintMetalFancy": "华丽金属夹板甲",
+  "SplintRiveted": "铆钉夹板甲", "StaffBranchStandard": "标准枝条长杖", "StaffCappedFine": "精良覆顶长杖",
+  "StaffHookedStandard": "标准带钩长杖", "StaffOrbStandard": "标准法珠长杖", "StaffSteelOrbSuperior": "卓越法珠钢长杖",
+  "StaffWarden": "守林者长杖", "StaffWoodenCindaric": "辛达里克木制长杖", "StaffWoodenNatural": "原生木制长杖",
+  "Stone": "石质", "StrapsLeatherRagged": "破烂皮革束带", "StuddedBackward": "镶钉裤后撤",
+  "StuddedForward": "镶钉裤前跨", "StuddedLeatherStrapped": "绑带镶钉皮甲", "StuddedNeutral": "镶钉裤常态",
+  "StuddedSitting": "镶钉裤坐姿", "SuspendersLeatherBoth": "双侧皮革背带", "SwordLongSteelShoddy": "粗糙钢长剑",
+  "SwordLongSteelStandard": "标准钢长剑", "SwordLongSuperior": "卓越长剑",
+  "SwordShortBronzeStandard": "标准青铜短剑", "SwordShortStandard": "标准短剑",
+  "SwordShortSteelFine": "精良钢短剑", "SwordShortSteelShoddy": "粗糙钢短剑", "SwordStandard": "标准剑",
+  "TartanClothDraped": "垂坠格纹布巾", "TatteredLayeredMail": "褴褛层叠锁甲", "TogaClothBloused": "束口布托加袍",
+  "TogaClothFull": "全布托加袍", "TogaClothGathered": "抽褶布托加袍", "TogaClothHalf": "半布托加袍",
+  "TogaClothLeft": "左布托加袍", "TogaClothRight": "右布托加袍", "TogaClothRightNecklace": "右布托加袍配项链",
+  "TopSilkLooped": "环扣丝上装", "TopSilkLow": "低领丝上装", "TorchLargeLit": "点燃大火把",
+  "TorchLitPlain": "素面点燃火把", "TorchUnlitPlain": "素面未燃火把", "TridentMetalCommon": "寻常金属三叉戟",
+  "TridentMetalOrnate": "华饰金属三叉戟", "TridentOrnateFine": "精良华饰三叉戟", "TridentSteelStandard": "标准钢三叉戟",
+  "TridentSuperior": "卓越三叉戟", "TrousersClothBackward": "布长裤后撤", "TrousersClothForward": "布长裤前跨",
+  "TrousersClothNeutral": "布长裤常态", "TrousersClothSitting": "布长裤坐姿",
+  "TrousersLeatherBackward": "皮革长裤后撤", "TrousersLeatherForward": "皮革长裤前跨",
+  "TrousersLeatherNeutral": "皮革长裤常态", "TrousersLeatherSitting": "皮革长裤坐姿",
+  "TunicBreastplateSpikedLeft": "左尖刺胸甲束腰衣", "TunicSilkFull": "全丝束腰衣", "TunicSilkLeft": "左丝束腰衣",
+  "TunicSilkRight": "右丝束腰衣", "TurbanClothBeadsFancy": "华丽串珠布缠头巾",
+  "TurbanClothOtherhood": "幸运异姊会布缠头巾", "TurbanClothPlain": "素面布缠头巾", "VeilClothFancy": "华丽布面纱",
+  "VeilClothPlain": "素面布面纱", "VeilClothTorn": "破洞布面纱", "VeilClothTornOpaque": "不透光破洞布面纱",
+  "VestClothSailor": "水手布背心", "VestClothSimple1": "简约布背心 1", "VestLeatherFeminineFancy": "华丽阴柔皮革背心",
+  "VestSilkFeminine": "阴柔丝背心", "VestSilkMasculine": "阳刚丝背心", "WandDoomsayer": "末日预言者魔杖",
+  "WhipStandard": "标准长鞭", "WingsBoneLeatherTattered": "褴褛皮革骨翼", "WoodWater": "木（水面）",
+  "Wooden1": "木制肩甲 1", "WorkClothBackward": "工作布裤后撤", "WorkClothForward": "工作布裤前跨",
+  "WorkClothNeutral": "工作布裤常态", "WorkClothSitting": "工作布裤坐姿", "WrapCloth1": "布缠裹 1",
+  "WrapCloth2": "布缠裹 2", "WrapClothBurned": "烧焦布缠裹", "WrapClothFull": "全布缠裹", "WrapLeather": "皮革缠裹"
 };
 
 /**
