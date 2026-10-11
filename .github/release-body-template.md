@@ -1,15 +1,13 @@
-## 变更
+# Ember 中文翻译 1.1.33
 
-### 1.1.32
+适配 Ember 0.6.2。需要 Foundry VTT 14.368 或更新版本、Babele 2.9.1 或更新版本。
 
-移除 Foundry 核心版本的 `compatibility.maximum` 限制，保留 minimum 14、verified 14。译文、运行脚本及模块依赖关系保持不变。
+- 补齐新版冒险日志、角色背景、内嵌物品、效果及日历界面；沿用原有术语和未变化译文。
+- 按原始文档 ID 核对两个规则分支，保留 UUID 与 HTML 上下文，并补齐新版四处日志跳转锚点。
+- 补充背景重建通知、音景及指示物制作器等新增界面文字。
 
-## 安装
+已在 Foundry 14.368 / Crucible 0.11.1 中完成 Ember 导入、重载、界面与四处锚点实点验证。dnd5e 分支完成静态和孪生对齐检查，未做原生世界导入；CDT 原生界面未测。
 
-在 Foundry 的「附加模块 → 安装模块」中使用：
+旧版 QA 主闸为 67 通过 / 7 失败；剩余项经逐项复核属于历史数量门槛、旧规则与记录、测试载荷快照及隔离检查路径，不代表全部检查已通过。未降低旧断言门槛。
 
-```text
-https://github.com/takaqiao/ember_cn_unofficial/releases/latest/download/module.json
-```
-
-需要 Babele 2.9.1+ 和 Ember 0.6.0+（付费模块，需自行拥有）。Ember 依赖的 verified 仍为 0.6.1，同时保留 Crucible 与 dnd5e 的译文内容。
+安装包只包含汉化运行文件；仍需自行拥有 Ember 本体。

@@ -236,6 +236,9 @@
     "Primordis 3: Hidden": {
       "name": "Primordis 3: Hidden",
       "effects": {
+        "Minor Toxin": {
+          "name": "Minor Toxin"
+        },
         "Hidden": {
           "name": "Hidden"
         }
@@ -302,7 +305,12 @@
       }
     },
     "Preeminent Survivalist": {
-      "name": "Preeminent Survivalist"
+      "name": "Preeminent Survivalist",
+      "effects": {
+        "Preeminent Survivalist": {
+          "name": "Preeminent Survivalist"
+        }
+      }
     },
     "Cora 2: Hardened": {
       "name": "Cora 2: Hardened",
@@ -390,7 +398,12 @@
       "name": "Focused Reactivity"
     },
     "Exceptional Taste": {
-      "name": "Exceptional Taste"
+      "name": "Exceptional Taste",
+      "effects": {
+        "Exceptional Taste": {
+          "name": "Exceptional Taste"
+        }
+      }
     },
     "Caravanner": {
       "name": "Caravanner"
@@ -633,7 +646,12 @@
       "name": "Windborn Spellcraft"
     },
     "Intrepid Sailor": {
-      "name": "Intrepid Sailor"
+      "name": "Intrepid Sailor",
+      "effects": {
+        "Intrepid Sailor": {
+          "name": "Intrepid Sailor"
+        }
+      }
     },
     "Ragen 4: Combustion": {
       "name": "Ragen 4: Combustion",
@@ -669,6 +687,9 @@
       "effects": {
         "Devious": {
           "name": "Devious"
+        },
+        "Minor Toxin": {
+          "name": "Minor Toxin"
         }
       }
     },
@@ -703,6 +724,9 @@
     "Primordis 5: Predatory": {
       "name": "Primordis 5: Predatory",
       "effects": {
+        "Minor Toxin": {
+          "name": "Minor Toxin"
+        },
         "Predatory": {
           "name": "Predatory"
         }
@@ -829,7 +853,12 @@
       "name": "Imperial Ambition"
     },
     "Thermal Vision": {
-      "name": "Thermal Vision"
+      "name": "Thermal Vision",
+      "effects": {
+        "Thermal Vision": {
+          "name": "Thermal Vision"
+        }
+      }
     },
     "Abyss 5: Torment": {
       "name": "Abyss 5: Torment",

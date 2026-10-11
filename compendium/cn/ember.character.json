@@ -365,6 +365,9 @@
       "effects": {
         "Hidden": {
           "name": "隐匿 Hidden"
+        },
+        "Minor Toxin": {
+          "name": "轻微毒素 Minor Toxin"
         }
       }
     },
@@ -373,6 +376,9 @@
       "effects": {
         "Devious": {
           "name": "狡诈 Devious"
+        },
+        "Minor Toxin": {
+          "name": "轻微毒素 Minor Toxin"
         }
       }
     },
@@ -381,6 +387,9 @@
       "effects": {
         "Predatory": {
           "name": "掠食 Predatory"
+        },
+        "Minor Toxin": {
+          "name": "轻微毒素 Minor Toxin"
         }
       }
     },
@@ -641,7 +650,12 @@
       }
     },
     "Preeminent Survivalist": {
-      "name": "卓越求生者 Preeminent Survivalist"
+      "name": "卓越求生者 Preeminent Survivalist",
+      "effects": {
+        "Preeminent Survivalist": {
+          "name": "卓越求生者 Preeminent Survivalist"
+        }
+      }
     },
     "Implacable Hunter": {
       "name": "无情猎手 Implacable Hunter",
@@ -685,7 +699,12 @@
       "name": "专注反应 Focused Reactivity"
     },
     "Exceptional Taste": {
-      "name": "非凡品味 Exceptional Taste"
+      "name": "非凡品味 Exceptional Taste",
+      "effects": {
+        "Exceptional Taste": {
+          "name": "非凡品味 Exceptional Taste"
+        }
+      }
     },
     "Caravanner": {
       "name": "商队旅人 Caravanner"
@@ -776,7 +795,12 @@
       "name": "御风施法 Windborn Spellcraft"
     },
     "Intrepid Sailor": {
-      "name": "无畏水手 Intrepid Sailor"
+      "name": "无畏水手 Intrepid Sailor",
+      "effects": {
+        "Intrepid Sailor": {
+          "name": "无畏水手 Intrepid Sailor"
+        }
+      }
     },
     "Muscle Machinery": {
       "name": "肌肉机械装置 Muscle Machinery",
@@ -880,7 +904,12 @@
       "name": "帝国野心 Imperial Ambition"
     },
     "Thermal Vision": {
-      "name": "热视觉 Thermal Vision"
+      "name": "热视觉 Thermal Vision",
+      "effects": {
+        "Thermal Vision": {
+          "name": "热视觉 Thermal Vision"
+        }
+      }
     },
     "Fibrous Resilience": {
       "name": "纤维韧性 Fibrous Resilience",

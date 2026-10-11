@@ -10,7 +10,7 @@
 [![Unofficial](https://img.shields.io/badge/%E9%9D%9E%E5%AE%98%E6%96%B9-unofficial-lightgrey?style=flat-square)](https://github.com/takaqiao/ember_cn_unofficial)
 
 为 Foundry VTT 的 **Ember** 战役模块提供简体中文翻译，合集内容经 Babele 加载，界面字符串走 Foundry 原生 i18n。
-**当前版本 1.1.2。**
+**当前版本 1.1.33，对应 Ember 0.6.2。**
 
 Ember 同时支持 **Crucible** 与 **dnd5e** 两套规则，本模块把两侧的合集包都翻了；
 主线以 Crucible 侧（`ember.crucible-*`）为准，dnd5e 侧（`ember.adventure`）一并提供。
@@ -30,7 +30,7 @@ https://github.com/takaqiao/ember_cn_unofficial/releases/latest/download/module.
 | 路径 | 作用 |
 |---|---|
 | `lang/cn.json` | Ember 自己的界面字符串（Foundry 原生 i18n，扁平点号键） |
-| `compendium/cn/*.json` | 9 个合集包的 Babele 译文：战役正文、地名志、设定集、角色/敌人/词缀/效果 |
+| `compendium/cn/*.json` | 9 个非空合集包的 Babele 译文：战役正文、地名志、设定集、角色/敌人/物品/词缀/效果 |
 | `register.js` | Babele 注册入口 |
 | `babele-mappings.js` | 声明式 mapping（含 Ember 的 13 种日志页子类型），由抽取器生成 |
 | `scripts/ember-hardcoded-cn.mjs` | 运行时补丁：Ember 写死在 JS 里、两条汉化通道都够不到的字符串（增强器标签、分节标题、按钮、对话框，以及历法月名与星期名） |
@@ -40,16 +40,16 @@ https://github.com/takaqiao/ember_cn_unofficial/releases/latest/download/module.
 
 ## 依赖 / Requires
 
-- **Foundry VTT v14**（`compatibility`：minimum 14 / verified 14 / maximum 14.999）
-- **[Ember](https://foundryvtt.com/ember) v0.6.0+** —— 付费模块，**需自行在 Foundry 官方商店购买并安装**，本模块只提供译文，不含 Ember 本体的任何素材
+- **Foundry VTT v14.368+**（`compatibility`：minimum 14.368 / verified 14.368）
+- **[Ember](https://foundryvtt.com/ember) v0.6.2+** —— 付费模块，**需自行在 Foundry 官方商店购买并安装**，本模块只提供译文，不含 Ember 本体的任何素材
 - **[Babele](https://foundryvtt.com/packages/babele) v2.9.1+** —— 合集译文的加载框架，必须启用
 
-Ember 本体 v0.6.0 自身要求 Foundry ≥ 14.364，因此低于 v14 的 Foundry 无法使用本模块。
+Ember 本体 v0.6.2 要求 Foundry ≥ 14.368，本模块采用相同的核心版本下限。
 
 ## 说明 / Notes
 
 - 这是**非官方**的爱好者翻译，与 Foundry Gaming LLC 及 Ember 作者没有任何隶属关系，也未经其审核。
-- 译文按 Ember **0.6.0** 抽取的英文基准逐条对照。Ember 升级后若有正文改动，需要重新追平，届时旧译文可能与新英文不符。
+- 译文按 Ember **0.6.2** 抽取的英文基准逐条对照。Ember 升级后若有正文改动，需要重新追平，届时旧译文可能与新英文不符。
 - Crucible 系统本体的汉化是另一个模块：[crucible-cn](https://github.com/takaqiao/crucible-cn)。两者可同时启用。
 
 ## 致谢 / Credits

@@ -1,9 +1,9 @@
 {
   "packageId": "ember",
-  "packageVersion": "0.6.1",
+  "packageVersion": "0.6.2",
   "packageType": "module",
   "mappingTarget": "ember",
-  "extractedAt": "2026-08-17T18:19:30.569Z",
+  "extractedAt": "2026-10-11T10:28:32.754Z",
   "extractedBy": "Ember-Crucible Translation Project / 3-常用脚本/extract/extract_en.mjs",
   "declaredPacks": 10,
   "extractedPacks": 10,

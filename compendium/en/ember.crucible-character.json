@@ -277,7 +277,7 @@
     },
     "Cor'ak Lineage": {
       "name": "Cor'ak Lineage",
-      "description": "<p>Your thick and partially-metallic hide provides natural protection from blows. While you are unarmored, you gain an <strong>Armor</strong> bonus equal to your <strong>Toughness </strong>ability score.</p>",
+      "description": "<p>Your thick and partially-metallic hide provides natural protection from blows. While you are unarmored, you gain an <strong>Armor</strong> bonus equal to half your <strong>Toughness</strong> ability score.</p>",
       "actions": {
         "crystalizeWounds": {
           "name": "Crystalize Wounds",

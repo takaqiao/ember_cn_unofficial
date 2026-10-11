@@ -486,5 +486,20 @@
   "SPELL.INFLECTIONS.Signara": "西格纳拉",
   "SPELL.INFLECTIONS.SignaraAdj": "西格纳拉的",
   "TYPES.RegionBehavior.ember.suppressEnvironmentFilter": "抑制环境滤镜",
-  "EMBER.VISTA.TABS.vignettes": "效果"
+  "EMBER.VISTA.TABS.vignettes": "效果",
+  "ACTOR.CONTROLS.EmberRebuildBackground": "重建背景",
+  "EMBER.BACKGROUND.Rebuild": "重建背景",
+  "EMBER.BACKGROUND.FIELDS.cultureId.label": "文化",
+  "EMBER.BACKGROUND.FIELDS.cultureId.hint": "构成此角色背景一半内容的成长文化。",
+  "EMBER.BACKGROUND.FIELDS.pathId.label": "道途",
+  "EMBER.BACKGROUND.FIELDS.pathId.hint": "构成背景另一半内容的职业或使命，并授予熟练度训练。",
+  "EMBER.CALENDAR.TRAVEL.SinceRest": "距上次休息",
+  "EMBER.CALENDAR.TRAVEL.Traveled": "旅行时长",
+  "EMBER.CALENDAR.TRAVEL.Hexes": "经过的六边格数",
+  "EMBER.CALENDAR.TRAVEL.RestedAt": "休息时间",
+  "EMBER.CALENDAR.TRAVEL.Unknown": "未记录",
+  "EMBER.CALENDAR.TRAVEL.Hours": "{hours}小时",
+  "EMBER.CALENDAR.TRAVEL.DaysHours": "{days}天 {hours}小时",
+  "DND5E.REST.Interrupted": "继续完成被打断的休息：还需{hours}小时。",
+  "DND5E.TRAVEL.Exertion.Prompt": "队伍已经旅行了{hours}小时，开始感到疲惫。"
 }

@@ -277,7 +277,7 @@
     },
     "Cor'ak Lineage": {
       "name": "科拉克血统 Cor'ak Lineage",
-      "description": "<p>你厚实且部分金属化的外皮为你提供了抵御打击的天然保护。当你处于无甲状态时，你获得等同于你的<strong>坚韧 </strong>属性值的<strong>护甲</strong>加值。</p>",
+      "description": "<p>你厚实且部分金属化的外皮为你提供了抵御打击的天然保护。当你处于无甲状态时，你获得等同于你的<strong>坚韧</strong>属性值一半的<strong>护甲</strong>加值。</p>",
       "actions": {
         "crystalizeWounds": {
           "name": "结晶化创伤 Crystalize Wounds",

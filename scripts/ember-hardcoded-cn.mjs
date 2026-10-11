@@ -423,6 +423,7 @@ const SOUNDSCAPE_GROUPS = {
   "Arcturian Folk": "阿克图里安民谣",
   "Arcturian Town": "阿克图里安城镇",
   "Arctus Plateau Music": "阿克图斯高原乐曲",
+  "Arctus Plateau South Music": "阿克图斯高原南部乐曲",
   "Bard Troupe": "吟游诗人剧团",
   "Beast Combat": "野兽战斗",
   "Celestial Combat": "天界生物战斗",
@@ -570,6 +571,11 @@ const SOUNDSCAPE_GROUPS = {
 //   "Invalid Vista Configuration JSON provided.": "提供的远景配置 JSON 无效。",                    // 34768
 //   "Special Effects": "特殊效果",   ← 页签改名为 Effects，已由 lang 键 EMBER.VISTA.TABS.vignettes 接手
 const ARRANGEMENTS = {
+  "Underwater Dungeon": "水下地下城",
+  "Citadel of Fire": "烈火堡垒",
+  "Caryx Savanna Day": "卡里克斯稀树草原 · 白天",
+  "Caryx Savanna Night": "卡里克斯稀树草原 · 夜晚",
+  "Caryx Savanna Tension": "卡里克斯稀树草原 · 紧张",
   // `Reset` 既不是组名也不是编排名：它是 ember.mjs:16255 `${channel.capitalize()}: Reset`
   // 那一支增强器的叶子（通道重置），因为与编排名走同一个叶子位置，故放在本表。
   // 2026-08-15：原译「默认」与 lang 的 `EMBER.CONTENT_CONFIG.RESET`＝重置 漂移（scan_cross_channel B 段第 1 条），
@@ -3194,6 +3200,10 @@ const NOTIFICATIONS = {
 
 /** 带插值的提示语。同样只在 translateNotification 里查，不进全局 PATTERNS。 */
 const NOTIFICATION_PATTERNS = [
+  { re: /^Actor "(.+)" records no Culture and Path to rebuild from\.$/s,
+    cn: (m) => `角色「${m[1]}」没有可用于重建背景的文化和道途记录。` },
+  { re: /^Background components "(.+)" could not be resolved\.$/s,
+    cn: (m) => `无法解析背景组件「${m[1]}」。` },
   { re: /^Attunement activation is not yet implemented for system "(.+)"\.$/,
     cn: (m) => `系统「${m[1]}」尚未实现同调激活。` },                                            // 3149
   { re: /^The (.+) Vista is not yet configured to support the placement of Tokens\.$/,
@@ -3789,14 +3799,14 @@ function patchRegionBehaviorSchemas() {
 //   ⚠ 真正硬的自检是下面 patchVistaPlacementSchema 自己那两条 warn（字段不存在 / label 对不上），
 //   它直接对着运行时的 schema 跑，比任何字面量核对都准 —— 别用面板的绿去替代它。
 const VISTA_PLACEMENT_FIELDS = {
-  elevation: { label: "高度" },                     // ember.mjs:33928
+  elevation: { label: "高度", labels: { "Layering Elevation": "图层高度" } },                     // ember.mjs:33928
   sort: { label: "排序" },                          // :33929
   angle: { label: "角度" },                         // :33934
   alpha: { label: "不透明度" },                     // :33935
   tint: { label: "染色" },                          // :33936
   illumination: { label: "照明" },                  // :33923
-  "illumination.luminosity": { label: "亮度" },     // :33920
-  "illumination.only": { label: "仅照明" },         // :33921
+  "illumination.luminosity": { label: "亮度", labels: { Strength: "强度" } },     // :33920
+  "illumination.only": { label: "仅照明", labels: { "Illumination Only": "仅照明" } },         // :33921
   "illumination.blurStrength": { label: "模糊强度" }, // :33922
   colorize: { label: "着色" },                      // :33943
   "colorize.texture": { label: "自定义颜色贴图" },   // :33939
@@ -3841,12 +3851,13 @@ function patchVistaPlacementSchema() {
       continue;
     }
     const en = VISTA_PLACEMENT_EN[path];
-    if (field.label !== en && field.label !== spec.label) {
+    const labels = {[en]: spec.label, ...spec.labels};
+    if (Object.hasOwn(labels, field.label)) field.label = labels[field.label];
+    else if (!Object.values(labels).includes(field.label)) {
       missed += 1;
-      warn(`远景摆放字段「${path}」的 label 是「${field.label}」而非「${en}」（上游改过文案？），跳过。`);
+      warn(`远景摆放字段「${path}」的 label 是「${field.label}」而非「${Object.keys(labels).join(" / ")}」（上游改过文案？），跳过。`);
       continue;
     }
-    field.label = spec.label;
     patched += 1;
   }
   log(`远景摆放配置表单：改写 ${patched} 个字段${missed ? `，${missed} 处对不上已告警` : ""}。`);
@@ -3883,6 +3894,7 @@ const PROSEMIRROR_BLOCK_TITLES = {
   "insert-block-gamemaster": "游戏主持人区块",
   "insert-block-attunement": "同调区块",
   "insert-block-wip": "制作中区块",
+  "insert-block-collapsible": "可折叠区块",
   "insert-h2-divider": "H2 分隔标题",
   "insert-h3-divider": "H3 分隔标题",
   "insert-definition-list": "定义列表",
@@ -3898,6 +3910,12 @@ function patchProseMirrorBlocks() {
 
   let patched = 0;
   for (const block of blocks) {
+    // 只改 Ember 折叠模板的默认文本，保留 data-sync、class 与 open。
+    if (block?.action === "insert-block-collapsible" && typeof block.html === "string") {
+      block.html = block.html
+        .replace("<summary>Collapsible Section Title</summary>", "<summary>可折叠区块标题</summary>")
+        .replace("<p>Collapsible section content.</p>", "<p>可折叠区块内容。</p>");
+    }
     const cn = PROSEMIRROR_BLOCK_TITLES[block?.action];
     // 只认 Ember 自己注册的 action，且只在 title 还是英文时改（幂等）
     if (cn && typeof block.title === "string" && block.title !== cn) {
@@ -3908,6 +3926,128 @@ function patchProseMirrorBlocks() {
   const total = Object.keys(PROSEMIRROR_BLOCK_TITLES).length;
   if (patched) log(`ProseMirror 模板块菜单：改写 ${patched}/${total} 条标题。`);
   else warn(`CONFIG.CDT.PROSEMIRROR.blocks 在，但没认出 Ember 的 ${total} 条模板块（上游改过 action？）。`);
+}
+
+
+// 仅供 Ember 的系数校验返回值使用；动态键、参数和建议格式保持原样。
+const COEFFICIENT_ERROR_PATTERNS = [
+  {re: /^A coefficient key may not be empty\.$/, cn: () => "系数键不能为空。"},
+  {re: /^"(.+)" is missing an event id\.$/s,
+    cn: m => `「${m[1]}」缺少事件 ID。`},
+  {re: /^"(.+)" uses unknown event parameter "(.*)"\.$/s,
+    cn: m => `「${m[1]}」使用了未知的事件参数「${m[2]}」。`},
+  {re: /^"(.+)" has (\d+) segments but "(.+)" requires (\d+)\.$/s,
+    cn: m => `「${m[1]}」有 ${m[2]} 段，但「${m[3]}」要求 ${m[4]} 段。`},
+  {re: /^"(.+)" gives invalid argument "(.*)" to "(.+)"\.$/s,
+    cn: m => `「${m[1]}」向「${m[3]}」传入了无效参数「${m[2]}」。`},
+  {re: /^"(.+)" is malformed\.$/s,
+    cn: m => `「${m[1]}」格式不正确。`},
+  {re: /^"(.+)" does not begin with a recognized coefficient family \("(.*)"\)\.$/s,
+    cn: m => `「${m[1]}」未以可识别的系数类别开头（「${m[2]}」）。`},
+];
+
+function translateCoefficientError(text) {
+  if (typeof text !== "string") return text;
+  const suggestion = text.match(/ You might have meant one of: (.+)\.$/s);
+  const message = suggestion ? text.slice(0, suggestion.index) : text;
+  for (const {re, cn} of COEFFICIENT_ERROR_PATTERNS) {
+    const match = message.match(re);
+    if (match) return cn(match) + (suggestion ? `你可能需要以下格式之一：${suggestion[1]}。` : "");
+  }
+  return text;
+}
+
+function patchCoefficientValidation() {
+  const events = globalThis.ember?.api?.systems?.EmberEvents;
+  const original = events?.validateCoefficientKey;
+  if (typeof original !== "function" || original.__emberCnWrapped) return;
+  events.validateCoefficientKey = function (...args) {
+    const result = original.apply(this, args);
+    try {
+      return translateCoefficientError(result);
+    } catch (err) {
+      warn("系数校验提示翻译失败：", err);
+      return result;
+    }
+  };
+  events.validateCoefficientKey.__emberCnWrapped = true;
+}
+
+
+const SCENE_CONFIG_LABELS = {
+  emberAllFableKee: ["Vista: All Fable Keep", "远景：万寓堡"],
+  emberTempleTides: ["Temple of the Tides", "潮汐神殿"],
+  emberTombUnifier: ["Tomb of the Unifiers", "统合者之墓"],
+};
+
+// 同名素材在其他远景中可能含义不同，因此同时限定场景、素材 ID 和原标签。
+const VISTA_ASSET_LABELS = {
+  emberAllFableKee: {
+    BackgroundWalls: ["Background Walls", "背景墙壁"],
+    BackgroundWindows: ["Background Windows", "背景窗户"],
+    FloorFront: ["Floor Front", "前部地板"],
+    FloorFull: ["Floor Full", "完整地板"],
+    Skeleton: ["Hanging Skeleton", "悬挂骨架"],
+    FGCentralShelf: ["Central Shelf", "中央搁架"],
+    FGTable1: ["Table 1", "桌子 1"],
+    FGTable1Chairs: ["Table 1 Chairs", "桌子 1 的椅子"],
+    FGTable2: ["Table 2", "桌子 2"],
+    FGTable2ChairsBack: ["Table 2 Chairs Back", "桌子 2 的后侧椅子"],
+    FGTable2ChairsFront: ["Table 2 Chairs Front", "桌子 2 的前侧椅子"],
+    FGTable3: ["Table 3", "桌子 3"],
+    FGTable3ChairsBack: ["Table 3 Chairs Back", "桌子 3 的后侧椅子"],
+    FGTable3ChairsFront: ["Table 3 Chairs Front", "桌子 3 的前侧椅子"],
+    ForegroundShelves: ["Shelves", "搁架"],
+    LowerArmorCase: ["Armor Case", "护甲陈列柜"],
+    LowerBookshelf: ["Bookshelf", "书架"],
+    LowerPillarBackL: ["Pillar Back L", "后柱 · 左"],
+    LowerPillarBackR: ["Pillar Back R", "后柱 · 右"],
+    LowerPillarFrontL: ["Pillar Front L", "前柱 · 左"],
+    LowerPillarFrontR: ["Pillar Front R", "前柱 · 右"],
+    LowerPillarShelfL: ["Pillar Shelf L", "柱边搁架 · 左"],
+    LowerPillarShelfR: ["Pillar Shelf R", "柱边搁架 · 右"],
+    LowerPillarSupport: ["Pillar Center", "中央立柱"],
+    LowerSideTable: ["Side Table", "边桌"],
+    LowerStairsCenter: ["Stairs Center", "中央阶梯"],
+    LowerStairsStatues: ["Statues", "雕像"],
+    LowerStairsUpper: ["Stairs Upper", "上部阶梯"],
+    LowerTablesBack: ["Tables Back", "后侧桌子"],
+    LowerTablesFrontL: ["Table Front L", "前侧桌子 · 左"],
+    LowerTablesFrontR: ["Table Front R", "前侧桌子 · 右"],
+    LowerWall: ["Lower Wall", "下层墙壁"],
+    UpperBookshelves: ["Shelves", "书架"],
+    UpperPillarBackL: ["Pillar Back L", "后柱 · 左"],
+    UpperPillarBackR: ["Pillar Back R", "后柱 · 右"],
+    UpperPillarFrontL: ["Pillar Front L", "前柱 · 左"],
+    UpperPillarFrontR: ["Pillar Front R", "前柱 · 右"],
+    CandleLamp: ["Ornate Candle Stand", "华饰烛台"],
+    CandleFlame3: ["Candle Flame, Curved", "烛焰 · 弯曲"],
+    CandleFlame4: ["Candle Flame, Straight", "烛焰 · 笔直"],
+    CandleStraightThinL: ["Thin Candle, L", "细蜡烛 · 大"],
+    CandleStraightThinM: ["Thin Candle, M", "细蜡烛 · 中"],
+    CandleStraightThinS: ["Thin Candle, S", "细蜡烛 · 小"],
+    CandleStraightWideM: ["Thick Candle", "粗蜡烛"],
+    CandleWallMounted: ["Wall Candle", "壁挂蜡烛"],
+  },
+};
+
+function patchSceneConfigLabels() {
+  const scenes = globalThis.ember?.scenes;
+  for (const [id, [en, cn]] of Object.entries(SCENE_CONFIG_LABELS)) {
+    const config = scenes?.all?.[id];
+    if (config?.label === en) config.label = cn;
+  }
+  for (const [sceneId, labels] of Object.entries(VISTA_ASSET_LABELS)) {
+    const assets = [scenes?.vistas?.[sceneId]?.spriteOptions];
+    // 已绘制的远景可能在 ready 前复制过默认标签；只更新其内存构图中的同一批素材。
+    const manager = globalThis.ember?.scene;
+    if (manager?.scene?.id === sceneId) assets.push(manager.composition?.sprites);
+    for (const config of assets) {
+      for (const [assetId, [en, cn]] of Object.entries(labels)) {
+        if (config?.[assetId]?.label === en) config[assetId].label = cn;
+      }
+    }
+  }
 }
 
 function patchScrollingText() {
@@ -4200,10 +4340,12 @@ Hooks.once("ready", () => {
   applyOnce(CONFIG, "__emberCnWeather", patchWeatherLabels, "天气档位名");
   applyOnce(CONFIG, "__emberCnDayFormat", patchCalendarFormatters, "历法日期格式");
   applyOnce(CONFIG, "__emberCnNotifications", patchNotifications, "通知提示语");
+  applyOnce(CONFIG, "__emberCnCoefficientValidation", patchCoefficientValidation, "系数校验提示语");
   applyOnce(CONFIG, "__emberCnScrollingText", patchScrollingText, "画布滚动文字");
   applyOnce(CONFIG, "__emberCnRegionBehaviors", patchRegionBehaviorSchemas, "区域行为配置表单");
   applyOnce(CONFIG, "__emberCnVistaPlacement", patchVistaPlacementSchema, "远景摆放配置表单");
   applyOnce(CONFIG, "__emberCnProseMirror", patchProseMirrorBlocks, "ProseMirror 模板块菜单");
+  applyOnce(CONFIG, "__emberCnSceneLabels", patchSceneConfigLabels, "新增场景与远景素材标签");
   applyOnce(CONFIG, "__emberCnChatKeys", buildChatKeys, "聊天卡复合键");
   applyOnce(CONFIG, "__emberCnRender", patchRenderedApplications, "界面渲染");
   // 上面三条改的都是日历条读的数据（月亮名 / 天气档位名 / 日期格式），改完统一重画一次。

@@ -16,13 +16,15 @@
 "TYPES.RegionBehavior.ember.trapTrigger": "Trap Trigger",
 "TYPES.RegionBehavior.ember.areaEffect": "Area Effect",
 "TYPES.RegionBehavior.ember.footstepSurface": "Footstep Surface",
+"TYPES.RegionBehavior.ember.suppressEnvironmentFilter": "Suppress Environment Filter",
 
 "TABLE.ACTIONS.Draw": "Result",
 
 "ACTOR": {
   "CONTROLS": {
     "EmberToken": "Ember Dynamic Token",
-    "EmberFlags": "Ember Actor Flags "
+    "EmberFlags": "Ember Actor Flags ",
+    "EmberRebuildBackground": "Rebuild Background"
   }
 },
 
@@ -104,6 +106,20 @@
   }
 },
 
+"EMBER.BACKGROUND": {
+  "Rebuild": "Rebuild Background",
+  "FIELDS": {
+    "cultureId": {
+      "label": "Culture",
+      "hint": "The cultural upbringing which forms half of this character's Background."
+    },
+    "pathId": {
+      "label": "Path",
+      "hint": "The vocation or calling which forms the other half, and which grants Proficiency training."
+    }
+  }
+},
+
 "EMBER.ATTUNEMENT": {
   "Attunement": "Attunement",
   "Amount": "Amount",
@@ -131,6 +147,15 @@
   "CODEX": "Codex",
   "TIME_FORMAT_12": "12-Hour (e.g. 4:00pm)",
   "TIME_FORMAT_24": "24-Hour (e.g. 16:00)",
+  "TRAVEL": {
+    "SinceRest": "Since Last Rest",
+    "Traveled": "Time Traveled",
+    "Hexes": "Hexes Crossed",
+    "RestedAt": "Rested At",
+    "Unknown": "Not Recorded",
+    "Hours": "{hours}h",
+    "DaysHours": "{days}d {hours}h"
+  },
   "SEASONS": {
     "STILLING": "Stilling",
     "SEEDING": "Seeding",
@@ -948,6 +973,7 @@
   },
   "TABS": {
     "placements": "Assets",
+    "vignettes": "Effects",
     "scene": "Scene"
   }
 },
@@ -960,6 +986,14 @@
       "Configure": "Configure Knowledge",
       "Hint": "Gain knowledge based on origin.",
       "Title": "Knowledge"
+    }
+  },
+  "REST": {
+    "Interrupted": "Completing interrupted rest: {hours} hours remaining."
+  },
+  "TRAVEL": {
+    "Exertion": {
+      "Prompt": "The party has been travelling for {hours} hours and is becoming fatigued."
     }
   }
 },
