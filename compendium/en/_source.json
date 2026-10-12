@@ -1,9 +1,9 @@
 {
   "packageId": "ember",
-  "packageVersion": "0.6.2",
+  "packageVersion": "0.6.3",
   "packageType": "module",
   "mappingTarget": "ember",
-  "extractedAt": "2026-10-11T10:28:32.754Z",
+  "extractedAt": "2026-10-12T10:10:38.558Z",
   "extractedBy": "Ember-Crucible Translation Project / 3-常用脚本/extract/extract_en.mjs",
   "declaredPacks": 10,
   "extractedPacks": 10,
@@ -28,9 +28,9 @@
     {
       "pack": "crucible-adversary",
       "documentType": "Item",
-      "documents": 63,
+      "documents": 65,
       "mergedDuplicates": 0,
-      "entries": 63,
+      "entries": 65,
       "folders": 22
     },
     {
@@ -68,25 +68,25 @@
     {
       "pack": "dnd5e-effects",
       "documentType": "ActiveEffect",
-      "documents": 21,
+      "documents": 23,
       "mergedDuplicates": 0,
-      "entries": 21,
-      "folders": 5
+      "entries": 23,
+      "folders": 7
     },
     {
       "pack": "crucible-items",
       "documentType": "Item",
-      "documents": 0,
+      "documents": 1,
       "mergedDuplicates": 0,
-      "entries": 0,
+      "entries": 1,
       "folders": 8
     },
     {
       "pack": "dnd5e-items",
       "documentType": "Item",
-      "documents": 0,
+      "documents": 1,
       "mergedDuplicates": 0,
-      "entries": 0,
+      "entries": 1,
       "folders": 0
     }
   ]

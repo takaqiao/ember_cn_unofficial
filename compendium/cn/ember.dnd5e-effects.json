@@ -5,7 +5,9 @@
     "Blessings": "祝福",
     "Curses": "诅咒",
     "Kaleidoscope Caverns": "万花筒洞窟",
-    "Wards": "守护"
+    "Wards": "守护",
+    "Caryx Savanna": "卡里克斯稀树草原",
+    "Gods": "诸神"
   },
   "entries": {
     "Kaleidoscopic Confusion": {
@@ -91,6 +93,14 @@
     "Blessing of Signara": {
       "name": "西格纳拉之祝福 Blessing of Signara",
       "description": "<p>你受到西格纳拉之力的祝福。此祝福持续期间，你与西格纳拉的同调得到增强，为你的有效阶位提供 <strong>+5</strong> 点同调点数，这可能会暂时把你的西格纳拉同调提升到更高阶位。</p>"
+    },
+    "Blessing of Katu": {
+      "name": "卡图之祝福 Blessing of Katu",
+      "description": "<p>处于此祝福的效果之下时，你在水中呼吸就像呼吸空气一样轻松，拥有30英尺的游泳速度，并且可以与一英里内同样受此祝福且完全浸没在水下的任何人以心灵感应交谈。</p><p>如果它在你完成对塞迪里水神殿的探索之前失效，你可以前往西塔拉山上的城塞脚下拜访风暴之心索拉克，重新领受祝福。</p>"
+    },
+    "Savanna Beast Training": {
+      "name": "稀树草原驯兽训练 Savanna Beast Training",
+      "description": "<p>野外生存者琳恩·佩拉塔向你传授了安抚卡里克斯稀树草原上的野兽并与之沟通的基本技巧。在进行驯兽检定、与在卡里克斯稀树草原遇到的生物类型为动物或野兽的生物互动时，你获得@Advantage[2]。</p>"
     }
   }
 }

@@ -403,9 +403,11 @@ const MOODS = {
  *     那是另一个英文串 `Cindarin Temple` 的既定译名（上游对同一栋楼有两种写法），
  *     英文闸按键判，本表的键是 `Cindaric Temple`。
  *   · `Water Temple`＝水之神殿：石之森林地名志正文「然而，水之神殿要古老得多」。
+ *     （这条组名 0.6.3 起改成了 `Shrine`，见表前注；`Shent Water Temple …` 两条编排名仍用「水之神殿」。）
  *   · `Solemn Folk`＝肃穆民谣：GM 指南补丁 0.4.5 **逐字点名过这个音景**
  *     （「加入了名为“肃穆民谣”的新乐曲音景」）；同一段还给出 `Dungeon`＝地下城、
- *     `The Pit Trap`＝“陷坑”。`Seydiri Theme`＝塞迪里主题：另一版补丁说明作「塞迪里主题乐曲」。
+ *     `The Pit Trap`＝“陷坑”。`Seydiri Theme`＝塞迪里主题：另一版补丁说明作「塞迪里主题乐曲」
+ *     （0.6.3 起上游拼作 `Sedyri Theme`，见表前注）。
  *   · `Music`＝乐曲：glossary_ec 定稿 `Ember Music`＝余烬乐曲，GM 指南同作「…乐曲」。
  *   · `X Theme` 的「的」字看是不是人名：合集正文写人物主题用的是所有格
  *     （`Music: Ankarist's Theme` / `Lyla's Theme` / `Sin's Theme`），故人名三条作「X的主题」；
@@ -414,6 +416,14 @@ const MOODS = {
  *     `Bard Troupe`吟游诗人剧团（`Bard`＝吟游诗人 7 叶）、`Mystical Dungeon`神秘地下城、
  *     `Arcturian Town`阿克图里安城镇。
  */
+// Ember 0.6.3：组名变了四处，本表 43 → 45 条（行号为 0.6.3 的 ember.mjs）。
+//   · `Sedyri Theme`（:16285）：上游把 `Seydiri Theme` 的拼写改了，旧键删除。它名下的两条编排名
+//     `Seydiri Calm` / `Seydiri Tension`（:16354 / :16381）没跟着改，ARRANGEMENTS 里照旧。
+//   · `Shrine`（:16621）：原 `Water Temple`（音景 id `templeWater` → `shrine`），旧键删除。
+//     作「神龛」而不是「神殿」：它名下的编排名是 `Storm and Water Shrine …`，合集正文把
+//     `storm shrine` 译作「风暴神龛」，新场景 `Katino Shrine` 也是「卡提诺神龛」。
+//   · `Citadel of Fire`（:17147）：新音景，与 :12566 那条编排名同串，按上面的约定只在本表定义。
+//   · `Primordis Combat`（:16870）：0.6.2 就有的组名，此前漏登。
 const SOUNDSCAPE_GROUPS = {
   "Abyssal Combat": "深渊战斗",
   "Aedir Theme": "艾迪尔主题",
@@ -428,6 +438,7 @@ const SOUNDSCAPE_GROUPS = {
   "Beast Combat": "野兽战斗",
   "Celestial Combat": "天界生物战斗",
   "Cindaric Temple": "辛达里克神殿",
+  "Citadel of Fire": "烈火城塞",                   // 也是编排名
   "Construct Combat": "构装体战斗",
   "Cosmos Music": "寰宇乐曲",
   "Elemental Combat - Combined": "元素战斗 · 综合",
@@ -452,14 +463,15 @@ const SOUNDSCAPE_GROUPS = {
   "Ordain": "奥尔丹",                             // 也是编排名
   "Ordani Folk": "奥尔达尼民谣",
   "Pirate Combat": "海盗战斗",
+  "Primordis Combat": "普里莫迪斯战斗",
   "Raider Combat": "劫掠者战斗",                   // `Raider`＝劫掠者、`Otherhood Raider`＝异姊会劫掠者
   "Seawall": "海堤",
-  "Seydiri Theme": "塞迪里主题",
+  "Sedyri Theme": "塞迪里主题",
+  "Shrine": "神龛",
   "Sin Theme": "辛的主题",                         // 也是编排名
   "Solemn Folk": "肃穆民谣",
   "The Pit Trap": "陷坑",                          // 也是编排名
-  "Undead Combat": "不死生物战斗",
-  "Water Temple": "水之神殿"
+  "Undead Combat": "不死生物战斗"
 };
 
 /**
@@ -572,10 +584,27 @@ const SOUNDSCAPE_GROUPS = {
 //   "Special Effects": "特殊效果",   ← 页签改名为 Effects，已由 lang 键 EMBER.VISTA.TABS.vignettes 接手
 const ARRANGEMENTS = {
   "Underwater Dungeon": "水下地下城",
-  "Citadel of Fire": "烈火堡垒",
   "Caryx Savanna Day": "卡里克斯稀树草原 · 白天",
   "Caryx Savanna Night": "卡里克斯稀树草原 · 夜晚",
   "Caryx Savanna Tension": "卡里克斯稀树草原 · 紧张",
+  // Ember 0.6.3 新增的 14 条编排名（行号为 0.6.3 的 ember.mjs）。
+  // `Citadel of Fire` 这条 0.6.3 起同时是组名（:17147），已挪到 SOUNDSCAPE_GROUPS，并由「烈火堡垒」
+  // 改作「烈火城塞」，与本轮场景名、日志名的定名一致（`Citadel` 取城塞，让开 `Bastion`＝堡垒）。
+  "Citadel of Fire Section 1": "烈火城塞 · 第一段",          // :17187
+  "Citadel of Fire Section 2": "烈火城塞 · 第二段",          // :17203
+  "Steed's Point Night": "斯蒂德角 · 夜晚",                  // :11519
+  // 上游把 `Shrine of Nite Calm` / `Shrine of Nite Tension` 改成了下面两条，旧键已删。
+  "Storm and Water Shrine Calm": "风暴与水之神龛 · 平静",     // :16659
+  "Storm and Water Shrine Tension": "风暴与水之神龛 · 紧张",  // :16675
+  "Tajar Communal Quarter Day": "塔贾尔共居区 · 白天",       // :12739
+  "Tajar Communal Quarter Night": "塔贾尔共居区 · 夜晚",     // :12767
+  "Tajar Day": "塔贾尔 · 白天",                             // :7284
+  "Tajar Flooded Quarter Day": "塔贾尔水淹区 · 白天",        // :12689
+  "Tajar Flooded Quarter Night": "塔贾尔水淹区 · 夜晚",      // :12717
+  "Tajar Historic Quarter Day": "塔贾尔历史区 · 白天",       // :12646
+  "Tajar Historic Quarter Night": "塔贾尔历史区 · 夜晚",     // :12669
+  "Tajar Night": "塔贾尔 · 夜晚",                           // :7320
+  "Tajar Tension": "塔贾尔 · 紧张",                         // :7341
   // `Reset` 既不是组名也不是编排名：它是 ember.mjs:16255 `${channel.capitalize()}: Reset`
   // 那一支增强器的叶子（通道重置），因为与编排名走同一个叶子位置，故放在本表。
   // 2026-08-15：原译「默认」与 lang 的 `EMBER.CONTENT_CONFIG.RESET`＝重置 漂移（scan_cross_channel B 段第 1 条），
@@ -757,8 +786,6 @@ const ARRANGEMENTS = {
   "Shent Water Temple Night":         "申特水之神殿 · 夜晚",
   "Shipwreck Day":                    "沉船 · 白天",
   "Shipwreck Night":                  "沉船 · 夜晚",
-  "Shrine of Nite Calm":              "奈特圣祠 · 平静",
-  "Shrine of Nite Tension":           "奈特圣祠 · 紧张",
   "Signara":                          "西格纳拉",
   "Signara Calm":                     "西格纳拉 · 平静",
   "Signara Tension":                  "西格纳拉 · 紧张",
@@ -806,18 +833,19 @@ const ARRANGEMENTS = {
 };
 
 /**
- * 增强器那一路要查的「编排名叶子」表：本表 = ARRANGEMENTS ＋ 组名表里那 7 条同串。
+ * 增强器那一路要查的「编排名叶子」表：本表 = ARRANGEMENTS ＋ 组名表里那 8 条同串
+ * （Ember 0.6.3 多了 `Citadel of Fire`，原先是 7 条）。
  *
  * `EmberSoundscape.enricherHTML` 拼出来的叶子只可能是 `arrangement.label` 或 `Reset`
- * （ember.mjs:16255 / 16266），其中 7 个 label 与组名同串、译文写在 SOUNDSCAPE_GROUPS 里，
+ * （ember.mjs:16255 / 16266），其中 8 个 label 与组名同串、译文写在 SOUNDSCAPE_GROUPS 里，
  * 所以这里**按键取回**而不是重抄一遍 —— 一个英文串在本文件里只有一个定义处。
- * ⚠ 别图省事写成 `{...SOUNDSCAPE_GROUPS, ...ARRANGEMENTS}`：那会把 35 条**不是编排名**的
+ * ⚠ 别图省事写成 `{...SOUNDSCAPE_GROUPS, ...ARRANGEMENTS}`：那会把 37 条**不是编排名**的
  * 组名也塞进增强器的查表面，属于无谓放宽。
  */
 const ARRANGEMENT_LEAVES = {
   ...ARRANGEMENTS,
   ...Object.fromEntries(
-    ["Ancient Ruins", "Ankarist Theme", "Lyla Theme", "Marlstone Gala",
+    ["Ancient Ruins", "Ankarist Theme", "Citadel of Fire", "Lyla Theme", "Marlstone Gala",
      "Ordain", "Sin Theme", "The Pit Trap"]
       .filter((k) => k in SOUNDSCAPE_GROUPS)
       .map((k) => [k, SOUNDSCAPE_GROUPS[k]])
@@ -1064,7 +1092,13 @@ const DIALOG_TITLES = {
   // 结果这个框一直认不出来，标题与三个按钮（Open / Spawn / Seal，:107606-107608）全是英文，
   // 而 DIALOG_UI 里那条 `Seal` 只对 CorpinSanctuaryElevator 生效（它继承基类标题
   // `Elevator Controls`，在本表里）。补上标题，三个按钮跟着解锁。
-  "Tar Pit": "焦油坑"                                                 // 107610
+  "Tar Pit": "焦油坑",                                                // 107610
+  // Ember 0.6.3 新增的四个机关框（行号为 0.6.3 的 ember.mjs）。前两个是神话尖塔天文台的水晶谜题
+  // 升降机（`MythspireLowerElevator#setState`），后两个是统合者之墓的石棺盖与温度控制柱。
+  "Ancient Lift Locked": "远古升降机已锁定",                           // :131218
+  "Ancient Lift": "远古升降机",                                       // :131231
+  "Sealed Sarcophagus": "被封印的石棺",                                // :137866
+  "Temperature Control": "温度控制"                                   // :137897
   // 缺席说明：ember.mjs:95615 那个 `dialog:{title,icon,description}` 少写了 window 这一层，
   // DialogV2 读不到，标题实际落到基类兜底的 `Interactable: ${id}`（62795），
   // 所以 "Aedir Signalpost Stealth Field Generator" 不在本表，由 DIALOG_TITLE_PATTERNS 认。
@@ -1124,6 +1158,19 @@ const DIALOG_UI = {
   //   Ascend 的 6 叶里 2 叶是 `Cosmos.Ascendancy`（飞升，另一个域）、2 叶是「攀登山路」的散文义。
   //   真正同域的证据只有 Rotating Elevator 那 2 叶，取它。
   "Move": "移动", "Ascend": "上升", "Descend": "下降", "Call": "呼叫",  // 67273-67274 / 95344-95355
+  // Ember 0.6.3：神话尖塔天文台的远古升降机（ember.mjs:131218-131239）。三个按钮里的 `Descend`
+  // 用上面那条；谜底那一行（`Lantyr → 奥拉 → …`）和带插值的第二句正文在 PATTERNS 里。
+  "The crystals must be lit in the order Lantyr and the moons next reach their zenith. Right now:":
+    "必须按兰提尔与诸月下一次抵达天顶的先后顺序点亮水晶。当前顺序：",       // :131220
+  "Solve the Puzzle": "解开谜题",                                     // :131222
+  "The crystals are aligned and the Ancient Lift is ready to descend.":
+    "水晶已排列就位，远古升降机可以下降了。",                             // :131233
+  "Descend to the Pathways": "下降至通路",                             // :131236
+  "Lock Elevator": "锁定升降机",                                      // :131238
+  // Ember 0.6.3：统合者之墓的石棺盖确认框（:137867）与温度控制柱的三个档位（:137899-137901）。
+  "The temperature puzzle is not solved. Force the seal and open the sarcophagus?":
+    "温度谜题尚未解开。要强行破开封印、打开石棺吗？",                      // :137867
+  "Heated": "加热", "Neutral": "常温", "Cooled": "冷却",               // :137899-137901
   // ⚠ `Seal` 有**两个**宿主，取的是有 GM 指南背书的那一个：
   //     · 107606-107608 焦油坑（`Tar Pit`）菜单：closed 时是 `Open`，否则 `Spawn` / `Seal`；
   //     · 99592 CorpinSanctuaryElevator 的第三个按钮。
@@ -1586,6 +1633,18 @@ const DATE_AGES = {
   "After Shattering": "大破裂之后"
 };
 
+/**
+ * Ember 0.6.3：神话尖塔天文台水晶谜题的七个天体 —— 太阳兰提尔加六个月亮
+ * （七块水晶在 ember.mjs:131578-131584，谜底由 `MythspireAreaMap.getSolution()` :131484 排出）。
+ * 月名按键取自 ATTUNEMENTS，不另抄一份。
+ */
+const CRYSTAL_BODIES = {
+  "Lantyr": "兰提尔",
+  ...Object.fromEntries(["Akon", "Aura", "Cora", "Mayis", "Orbis", "Ragen"].map((k) => [k, ATTUNEMENTS[k]]))
+};
+// 月名多半已被 patchMoonNames 换成中文，所以谜底那一行的每一段既认英文名也认译名。
+const CRYSTAL_BODY_NAMES = [...Object.keys(CRYSTAL_BODIES), ...Object.values(CRYSTAL_BODIES)].join("|");
+
 /** 需要按模式改写的（保留其中的动态部分） */
 const PATTERNS = [
   // `Result of X` **只在 dnd5e 分支产出**（ember.mjs:22909/22912，crucible 分支走
@@ -1728,7 +1787,20 @@ const PATTERNS = [
   // ⚠⚠ 加这一条**必须同时**给 `R-patterns-translate-cases` 补一条正例与一条**属于它自己的**
   //   近似反例（规则文件不归本文件作者，补丁与实跑证据在
   //   `4-临时脚本/2026-08-22-ui-round3/patch/`，已用 `--rules <副本>` 验到回绿再升报）。
-  { re: /^Transport everyone inside the tower to (.+)\?$/, cn: (m) => `将塔内所有人传送至 ${m[1]}？` }
+  { re: /^Transport everyone inside the tower to (.+)\?$/, cn: (m) => `将塔内所有人传送至 ${m[1]}？` },
+
+  // Ember 0.6.3：远古升降机「已解锁」框的第二句正文（ember.mjs:131234）。
+  //   `Descending to the Pathways will ${steps} the Party to the Pathways section of the Region map.`
+  // steps 只有两种取值（:131229，事件进行中多一段 `complete this event and`），写成可选组。
+  // 措辞与上面 :99653 那条问句对齐（`Region map`＝地区地图，「通路 Pathways 区段」）。
+  { re: /^Descending to the Pathways will (complete this event and )?transition the Party to the Pathways section of the Region map\.$/,
+    cn: (m) => `下降至通路将${m[1] ? "完成此事件并" : ""}把队伍转移到地区地图的通路 Pathways 区段。` },
+  // Ember 0.6.3：远古升降机「已锁定」框里的谜底（ember.mjs:131215-131216），`<strong>` 里一个文本节点：
+  //   getSolution().map(name).join(" &rarr; ")，七个天体各出现一次，顺序随世界时间变，枚举不了。
+  // 上游把太阳写死成 `Lantyr`，月名取 `ember.calendar.moons[id].name`（已被 patchMoonNames 换成中文）。
+  // 定义域是封闭的：必须恰好七段、每段都是 CRYSTAL_BODIES 里的名字，否则整串不动。
+  { re: new RegExp(`^(?:${CRYSTAL_BODY_NAMES})(?: → (?:${CRYSTAL_BODY_NAMES})){6}$`),
+    cn: (m) => m[0].split(" → ").map((name) => CRYSTAL_BODIES[name] ?? name).join(" → ") }
 ];
 
 /* ------------------------------------------------------------------ *
@@ -2122,9 +2194,8 @@ const EMBER_WINDOW_UI = {
   // ── 区域地图**层名的兜底**（`s.levels.get(id)?.name ?? cfg.compositions[id]?.label`，:2376）。
   //    正常情况下玩家看到的是 Scene 文档那一份（已由 Babele 的 SCENE_LEVELS 翻成双语），
   //    这里只在那一份取不到时才上屏 —— 所以**照抄双语形式**，免得两条路显示不一致。
-  "Repurposed Quarry - Upper Level": "改造采石场 - 上层 Repurposed Quarry - Upper",
-  "Repurposed Quarry - Middle Level": "改造采石场 - 中层 Repurposed Quarry - Middle",
-  "Repurposed Quarry - Lower Level": "改造采石场 - 下层 Repurposed Quarry - Lower",
+  //    Ember 0.6.3 把改造采石场的三个场景并成了一个 `emberRepurQuarry`（ember.mjs:145727），
+  //    `Repurposed Quarry - Upper / Middle / Lower Level` 三条兜底已无出处，删掉了。
   "Chamber of Agaseros - Reservoir": "阿加瑟罗斯之室 - 蓄水池 Chamber of Agaseros - Reservoir",
 
   // ── 第二批：第一版扫描的字段名清单里漏了 `header` / `prompt` 这一族，补扫又捞出 24 条
@@ -2142,6 +2213,19 @@ const EMBER_WINDOW_UI = {
 
   // ── 观景点名（ember.mjs:135282 `vantagePoints.aedirSignalpost.label`）
   "Aedir Signalpost Telescope": "艾迪尔信号哨站望远镜",
+
+  // ── Ember 0.6.3｜建卡向导「道途」步骤的起源故事。两个建卡窗口各有一个标题
+  //    （creation/crucible-path.hbs:52 的 <h4>、creation/path.hbs:45 的 <h3>），共用一句提示。
+  //    故事卡片的标题和正文来自合集（道途描述里的 section.origin-stories），不在这里；
+  //    标题句末的句号由 trimOriginStoryTitles 处理。
+  "Origin Stories": "起源故事",
+  "Choosing an origin story is optional. Select one to inspire your character, or leave them all unchecked.":
+    "起源故事可选可不选。可以挑一个作为角色的灵感，也可以全部不勾。",            // creation/origin-stories.hbs:1
+
+  // ── Ember 0.6.3｜远景配置素材列表里的「程序化火焰」（ember.mjs:46832）。它是 EmberVista 在
+  //    运行时塞进每个远景 spriteOptions 的，VISTA_ASSET_LABELS 那种按场景改数据的办法够不到。
+  //    用词取 lang 的 EMBER.VISTA.FIRE.ModeHint「程序化火焰」。
+  "Procedural Fire": "程序化火焰",
 };
 
 /**
@@ -2207,7 +2291,8 @@ const EMBER_WINDOW_UI = {
  * 行末是 modules/ember/scripts/ember.mjs 的行号（ember 0.6.1）。
  */
 const TOKEN_MAKER_UI = {
-  // ── 颜色槽 81 条 ──（`Eyes` / `Horns` 与图层名共用，见表头注释；末尾 5 条是 2026-08-22 补的构装体专属槽）
+  // ── 颜色槽 82 条 ──（`Eyes` / `Horns` 与图层名共用，见表头注释；末尾 5 条是 2026-08-22 补的构装体专属槽；
+  //    `Markings` 是 Ember 0.6.3 新增的）
   "Alloy": "合金",                    // :55755
   "Bark Accent": "树皮点缀色",         // :58476
   "Bark Base": "树皮基色",            // :58472
@@ -2263,6 +2348,8 @@ const TOKEN_MAKER_UI = {
   "Leather Base": "皮革基色",          // :55312
   "Leaves Accent": "叶片点缀色",       // :58484
   "Leaves Base": "叶片基色",          // :58480
+  // Ember 0.6.3：印记裔模板新增的颜色槽（0.6.3 的 ember.mjs:62785）。不用「印记」，免得与族名撞词。
+  "Markings": "纹路",
   "Mask Base": "面具基色",            // :59047
   "Mask Pattern A": "面具纹样 A",      // :59052
   "Mask Pattern B": "面具纹样 B",      // :59057
@@ -3006,10 +3093,73 @@ const EMBER_DIALOG_UI = {...DIALOG_UI, ...EMBER_WINDOW_UI};
 const TOKEN_MAKER_APPS = new Set(["EmberDynamicTokenConfig", "EmberRandomTokenConfig"]);
 const TOKEN_MAKER_WINDOW_UI = {...EMBER_WINDOW_UI, ...TOKEN_MAKER_UI};
 
+/** 两个建卡向导：crucible 世界的 EmberHeroCreationSheet 与 dnd5e 世界的 EmberCharacterCreationSheet。 */
+const CHARACTER_CREATION_APPS = new Set(["EmberHeroCreationSheet", "EmberCharacterCreationSheet"]);
+
+/**
+ * Ember 0.6.3：建卡向导里起源故事卡片的标题（creation/origin-stories.hbs:6 `<h4>{{story.title}}</h4>`）。
+ *
+ * 标题是上游从道途描述里现抠的：取每个 `.origin-story` 首段开头那个 `<strong>` 的文字，再用
+ * `.replace(/\.$/, "")` 去掉句末的英文句点（ember.mjs:26018 `_parseOriginStory`）。译文的
+ * `<strong>` 里是「标题。」，全角句号上游不认，会原样留在卡片标题上，这里补去一次。
+ * 只动两个建卡窗口里的 `.origin-story-content > h4`；写进背景描述的 `<strong>标题。</strong>` 不碰。
+ * 勾选故事走的是 `render({parts: ["path"]})`（crucible-async.mjs:732 / ember.mjs:151749），
+ * 每次都会再派发渲染钩子，所以挂在渲染钩子里就够，不用另挂观察者。
+ * @param {HTMLElement} root  建卡窗口的根元素
+ */
+function trimOriginStoryTitles(root) {
+  for (const el of root.querySelectorAll?.(".origin-story-content > h4") ?? []) {
+    if (el.children.length) continue;
+    const title = el.textContent.trim();
+    if (title.endsWith("。")) el.textContent = title.slice(0, -1);
+  }
+}
+
+/**
+ * Ember 0.6.3：合成背景的描述里那条 `Origin Stories` 分节标题
+ * （ember.mjs:26005 `renderOriginStories`，由 :154052 `composeDynamicBackground` 拼进背景物品的描述）。
+ *
+ * 它存在角色数据里，显示在 crucible 的背景物品卡上（`CrucibleBackgroundItemSheet`，根元素
+ * `.crucible.item.background`，描述在 `.editor-content` 里）。那是 crucible 的窗口，过不了主闸，
+ * 靠 INJECTED_SUBTREES 按选择器放行这几条 `h3.divider`。
+ * ⚠ 同一段描述里另两条标题 `Culture: 名字` / `Path: 名字`（:154048 / :154050，0.6.2 就有）
+ *   也是 `h3.divider`，会顺着全局 PREFIXED 变成「文化：名字」「道途：名字」。
+ * 译文按键取自 EMBER_WINDOW_UI，一个英文串只定义一次。
+ */
+const BACKGROUND_DESCRIPTION_UI = {
+  "Origin Stories": EMBER_WINDOW_UI["Origin Stories"]
+};
+
+/**
+ * Ember 0.6.3：Ember 借 crucible 的环境危害动作发出的聊天卡上的**危害名**。
+ *
+ * 神话尖塔天文台的绊线陷阱（ember.mjs:131291 `crucible: {name: "Poison Gas", …}`）经
+ * `CrucibleAction.createHazard`（crucible-compiled.mjs:25983）出卡，模板是 crucible 的
+ * `templates/dice/partials/action-use-header.hbs`：名字在 `.action-header .title > h4` 和图标的 alt 里。
+ * 这张卡不带 ember 旗标，与 BOON_BANE_LABELS 一样只能按结构认：
+ * 限定 `data-action-id="environmentAttack"`（危害动作的固定 id），并且名字要在本表里。
+ */
+const HAZARD_NAMES = {
+  "Poison Gas": "毒气"                 // ember.mjs:131291
+};
+
+function translateHazardNames(chatRoot) {
+  const header = '.action-roll[data-action-id="environmentAttack"] .action-header';
+  for (const el of chatRoot.querySelectorAll?.(`${header} .title > h4`) ?? []) {
+    if (el.children.length) continue;
+    const cn = HAZARD_NAMES[el.textContent.trim()];
+    if (cn) el.textContent = cn;
+  }
+  for (const img of chatRoot.querySelectorAll?.(`${header} > img[alt]`) ?? []) {
+    const cn = HAZARD_NAMES[img.getAttribute("alt")];
+    if (cn) img.setAttribute("alt", cn);
+  }
+}
+
 /**
  * 播放列表侧栏里 Ember 注入的音景面板（`<form id="ember-mood">`，ember.mjs:15874-15898）。
  * 宿主是 core 的 PlaylistDirectory，主闸两个判据都不成立，靠 INJECTED_SUBTREES 放行子树。
- * 本表 **250 键 = SOUNDSCAPE_GROUPS(42) ＋ ARRANGEMENTS(205) ＋ 下面 3 条面板自有文案**，三部分零重叠
+ * 本表 **283 键 = SOUNDSCAPE_GROUPS(45) ＋ ARRANGEMENTS(235) ＋ 下面 3 条面板自有文案**（Ember 0.6.3 现值），三部分零重叠
  * （`Ember Environment` 既是组名又是 :15892 的 `<header>` 文案，只在组名表里定义一次，
  * 所以这里不再重写它 —— 别看着 header 没登记就往回加，那会造出第二个定义处）。
  * 译名取 glossary_ec 的定稿（Ember Music 余烬乐曲 / Ember Environment 余烬环境）。
@@ -3136,7 +3286,10 @@ const INJECTED_SUBTREES = [
   // 设置面板 / 按键绑定面板里 ember 命名空间那一段
   ['section[data-category="ember"]', SETTINGS_UI],
   // 场景控制栏上 Ember 那一个工具按钮
-  ['button.tool[data-tool="tracks"]', SCENE_CONTROL_UI]
+  ['button.tool[data-tool="tracks"]', SCENE_CONTROL_UI],
+  // Ember 0.6.3：crucible 背景物品卡描述里的分节标题，见 BACKGROUND_DESCRIPTION_UI。
+  // `:not(.ProseMirror)` 让开正在编辑的编辑器：那里的文本节点会被存回文档，不能改。
+  [".crucible.item.background .editor-content:not(.ProseMirror) h3.divider", BACKGROUND_DESCRIPTION_UI]
 ];
 
 /**
@@ -3195,7 +3348,9 @@ const NOTIFICATIONS = {
   "The Soulbound Progression macro must be used while viewing a specific character sheet for a Hero or Adversary.":
     "使用魂缚进阶宏时必须正在查看某个英雄或敌人的角色卡。",                                        // 126626
   "Source compendium data for the Soulbound talent was not found!":
-    "找不到魂缚 Soulbound 天赋的合集源数据！"                                                    // 126635
+    "找不到魂缚 Soulbound 天赋的合集源数据！",                                                   // 126635
+  // Ember 0.6.3：统合者之墓的石棺盖，玩家在封印未解时去开它（0.6.3 的 ember.mjs:137864）
+  "The sarcophagus is held shut by an elemental seal.": "石棺被一道元素封印牢牢封住。"
 };
 
 /** 带插值的提示语。同样只在 translateNotification 里查，不进全局 PATTERNS。 */
@@ -3705,7 +3860,12 @@ const REGION_BEHAVIOR_FIELDS = {
     locked: { label: "已锁定", hint: "触发器能否被解除？若已锁定，则无法解除该触发机关。" },
     discovered: { label: "已发现", hint: "该陷阱是否已被发现？" },
     behaviors: { label: "被触发的行为", hint: "填写本区域或其他区域中应由此陷阱触发的行为的 UUID。" },
-    script: { label: "脚本", hint: "陷阱被触发时执行的自定义 JavaScript。" },
+    // Ember 0.6.3 改了这条 hint 的说明（ember.mjs:3091-3092）：脚本改由每个客户端各跑一遍。
+    script: {
+      label: "脚本",
+      hint: "陷阱被触发时，每个客户端都会执行的自定义 JavaScript。只需做一次的操作（例如更新文档）"
+        + "要放在 game.users.activeGM?.isSelf 的判断之后。"
+    },
     message: { label: "触发文本", hint: "陷阱被触发时显示的滚动消息文本。" },
     pause: { label: "暂停游戏", hint: "陷阱被触发时是否自动暂停游戏？" }
   },
@@ -3978,6 +4138,13 @@ const SCENE_CONFIG_LABELS = {
   emberAllFableKee: ["Vista: All Fable Keep", "远景：万寓堡"],
   emberTempleTides: ["Temple of the Tides", "潮汐神殿"],
   emberTombUnifier: ["Tomb of the Unifiers", "统合者之墓"],
+  // Ember 0.6.3：五个新场景，外加改造采石场三层并成一个场景后改掉的标签（行号为 0.6.3 的 ember.mjs）。
+  emberVistaCaryxS: ["Vista: Caryx Savanna", "远景：卡里克斯稀树草原"],  // :101215
+  emberVistaTajar0: ["Vista: Tajar", "远景：塔贾尔"],                    // :111744
+  emberCaryxSavann: ["Caryx Savanna", "卡里克斯稀树草原"],               // :124000
+  emberCitadelFire: ["Citadel of Fire", "烈火城塞"],                    // :125057
+  emberMythspireOb: ["Mythspire Observatory", "神话尖塔天文台"],         // :131605
+  emberRepurQuarry: ["Repurposed Quarry", "改造采石场"],                 // :145727
 };
 
 // 同名素材在其他远景中可能含义不同，因此同时限定场景、素材 ID 和原标签。
@@ -4029,6 +4196,226 @@ const VISTA_ASSET_LABELS = {
     CandleStraightWideM: ["Thick Candle", "粗蜡烛"],
     CandleWallMounted: ["Wall Candle", "壁挂蜡烛"],
   },
+  // Ember 0.6.3｜Vista: Caryx Savanna：素材表 SPRITES$j（0.6.3 的 ember.mjs:100278 起），195 个素材。
+  emberVistaCaryxS: {
+    CSForegroundLedge1: ["Rocky Foreground Ledge, Large", "前景岩架 · 大"],
+    CSForegroundLedge2: ["Rocky Foreground Ledge, Small", "前景岩架 · 小"],
+    CSGroundFront: ["Caryx Groundplane, Front", "卡里克斯地面 · 前"],
+    CSGroundMid: ["Caryx Groundplane, Mid", "卡里克斯地面 · 中"],
+    CSGroundRear: ["Caryx Groundplane, Rear", "卡里克斯地面 · 后"],
+    PathAcrossDry: ["Path Across", "横向小径"],
+    PathClearingDry: ["Path Clearing", "小径空地"],
+    PathCobblestonePlazaDry: ["Cobblestone Plaza", "鹅卵石广场"],
+    PathCurveDry: ["Path Curve", "弯曲小径"],
+    PathForkDry: ["Path Fork", "岔路"],
+    PathUpDry: ["Path Up", "上行小径"],
+    ScorchClearingCharred: ["Charred Clearing", "焦黑空地"],
+    ScorchClearingSmoldering: ["Smoldering Clearing", "阴燃空地"],
+    ScorchPatchCharred: ["Charred Patch", "焦黑斑块"],
+    ScorchPatchSmoldering: ["Smoldering Patch", "阴燃斑块"],
+    ScorchSparseCharred: ["Charred Spatter", "焦黑溅痕"],
+    ScorchSparseSmoldering: ["Smoldering Spatter", "阴燃溅痕"],
+    ScorchSpotCharred: ["Charred Bits", "焦黑碎屑"],
+    ScorchSpotSmoldering: ["Smoldering Bits", "阴燃碎屑"],
+    CliffInclineDry: ["Cliff Incline", "悬崖斜坡"],
+    RockyOutcropDry: ["Rocky Outcrop", "岩石露头"],
+    RockyRidge1Dry: ["Rocky Ridge 1", "岩脊 1"],
+    RockyRidge2Dry: ["Rocky Ridge 2", "岩脊 2"],
+    RockyRidge3Dry: ["Rocky Ridge 3", "岩脊 3"],
+    RockySlopeDry: ["Rocky Slope", "岩坡"],
+    WindmillHillDry: ["Windmill Hill", "风车山丘"],
+    DistantCliffBroadDry: ["Cliff, Broad", "悬崖 · 宽阔"],
+    DistantCliffPeakedDry: ["Cliff, Peaked", "悬崖 · 尖顶"],
+    DistantCliffSlopedDry: ["Cliff, Sloped", "悬崖 · 倾斜"],
+    DistantCliffSmallDry: ["Cliff, Small", "悬崖 · 小"],
+    CairnWideBrownWarm: ["Cairn, Wide", "石冢 · 宽"],
+    RockPileGrassyLDry: ["Grassy Rock Pile, Large", "长草的石堆 · 大"],
+    RockPileGrassyMDry: ["Grassy Rock Pile, Medium", "长草的石堆 · 中"],
+    RockPileGrassySDry: ["Grassy Rock Pile, Small", "长草的石堆 · 小"],
+    RockPebbles1BrownWarm: ["Pebble Cluster 1", "卵石堆 1"],
+    RockPebbles2BrownWarm: ["Pebble Cluster 2", "卵石堆 2"],
+    RockSmall1BrownWarm: ["Small Rock 1", "小石块 1"],
+    RockSmall2BrownWarm: ["Small Rock 2", "小石块 2"],
+    RockSmall3BrownWarm: ["Small Rock 3", "小石块 3"],
+    RocksPebbleCluster: ["Pebble Cluster 3", "卵石堆 3"],
+    RocksPebbleFlat: ["Pebble, Flat", "卵石 · 扁平"],
+    RocksPebbleSharp: ["Pebble, Sharp", "卵石 · 尖锐"],
+    RocksPebbleUneven: ["Pebble, Uneven", "卵石 · 不规则"],
+    RocksSmEven: ["Small Rocks, Even", "小石块 · 平整"],
+    RocksSmLayered: ["Small Rock, Layered", "小石块 · 层叠"],
+    RocksSmRounded: ["Small Rocks, Rounded", "小石块 · 圆润"],
+    RocksSmSharp: ["Small Rocks, Sharp", "小石块 · 尖锐"],
+    StormShrineBack: ["Storm Shrine, Back", "风暴神龛 · 后"],
+    StormShrineFront: ["Storm Shrine, Front", "风暴神龛 · 前"],
+    StormShrinePillar: ["Storm Pillar", "风暴石柱"],
+    ArcturianHouseLarge1CS: ["Large House 1, Grass", "大房屋 1 · 草顶"],
+    ArcturianHouseLarge2CS: ["Large House 2, Slate", "大房屋 2 · 石板顶"],
+    ArcturianHouseSmall1CS: ["Small House 1, Grass", "小房屋 1 · 草顶"],
+    ArcturianHouseSmall4CS: ["Small House 4, Grass", "小房屋 4 · 草顶"],
+    ArcturianHouseSmall5CS: ["Small House 5, Slate", "小房屋 5 · 石板顶"],
+    FenceWoodSimpleAcross: ["Simple Wood Fence, Across", "简易木栅栏 · 横向"],
+    FenceWoodSimpleBack: ["Simple Wood Fence, Back", "简易木栅栏 · 后侧"],
+    FenceWoodSimplePost: ["Simple Wood Fence, Post", "简易木栅栏 · 立柱"],
+    GrassFillerLDry: ["Grass Filler L", "填充草丛 · 大"],
+    GrassFillerLShadedDry: ["Grass Filler L (shaded)", "填充草丛 · 大（阴影）"],
+    GrassFillerMDry: ["Grass Filler M", "填充草丛 · 中"],
+    GrassFillerMShadedDry: ["Grass Filler M (shaded)", "填充草丛 · 中（阴影）"],
+    GrassFillerSDry: ["Grass Filler S", "填充草丛 · 小"],
+    GrassFillerSShadedDry: ["Grass Filler S (shaded)", "填充草丛 · 小（阴影）"],
+    GrassShortDry: ["Grass Short", "短草"],
+    GrassShortShadedDry: ["Grass Short (shaded)", "短草（阴影）"],
+    GrassTallDry: ["Grass Tall", "高草"],
+    GrassTallShadedDry: ["Grass Tall (shaded)", "高草（阴影）"],
+    GrassWindsweptDry: ["Grass Windswept", "风吹草"],
+    GrassWindsweptShadedDry: ["Grass Windswept (shaded)", "风吹草（阴影）"],
+    GrassTuftedL1Dry: ["Tufted Grass, Large", "丛生草 · 大"],
+    GrassTuftedL2Dry: ["Tufted Grass, Windswept", "丛生草 · 风吹"],
+    GrassTuftedSDry: ["Tufted Grass, Small", "丛生草 · 小"],
+    GrassTuftRockyLDry: ["Rocky Grass Tuft L", "岩间草丛 · 大"],
+    GrassTuftRockyMDry: ["Rocky Grass Tuft M", "岩间草丛 · 中"],
+    GrassTuftRockySDry: ["Rocky Grass Tuft S", "岩间草丛 · 小"],
+    GrassTuftRockyXLDry: ["Rocky Grass Tuft XL", "岩间草丛 · 特大"],
+    GrassTuftRockyXSDry: ["Rocky Grass Tuft XS", "岩间草丛 · 特小"],
+    IllulipsLRed: ["Red Illulips, Large", "红色伊露利普花 · 大"],
+    IllulipsMRed: ["Red Illulips, Medium", "红色伊露利普花 · 中"],
+    IllulipsSRed: ["Red Illulips, Small", "红色伊露利普花 · 小"],
+    IllulipsXLRed: ["Red Illulips, Huge", "红色伊露利普花 · 巨大"],
+    PufflowerDry: ["Pufflower", "蓬蓬花"],
+    MuscariPatchDry: ["Muscari Flower", "葡萄风信子"],
+    ReedThicketDry: ["Reed Thicket", "芦苇丛"],
+    Thornbriar: ["Thornbriar", "荆棘丛"],
+    CoralrootBranched: ["Coralroot, Branched", "珊瑚根 · 分枝"],
+    CoralrootBroken: ["Coralroot, Broken", "珊瑚根 · 断裂"],
+    CoralrootCluster: ["Coralroot, Cluster", "珊瑚根 · 簇生"],
+    CoralrootCurved: ["Coralroot, Curved", "珊瑚根 · 弯曲"],
+    CoralrootLong: ["Coralroot, Long", "珊瑚根 · 修长"],
+    CoralrootNub: ["Coralroot, Nub", "珊瑚根 · 短桩"],
+    CoralrootSapling: ["Coralroot, Sapling", "珊瑚根 · 幼株"],
+    CoralrootShoot: ["Coralroot, Shoot", "珊瑚根 · 嫩芽"],
+    CoralrootThick: ["Coralroot, Thick", "珊瑚根 · 粗壮"],
+    CoralrootThicket: ["Coralroot, Thicket", "珊瑚根 · 密丛"],
+    CoralrootTwisting: ["Coralroot, Twisting", "珊瑚根 · 扭曲"],
+    PottedHangingGroup1: ["Hanging Plant Cluster 1 (WIP)", "悬挂植物丛 1（制作中）"],
+    PottedBroadtongueGreen: ["Broadtongue Plant, Green", "阔舌草 · 绿"],
+    PottedSwirlscalePink: ["Swirlscale Plant, Pink", "旋鳞草 · 粉"],
+    ShrubDenseLFlowersDry: ["Dense Shrub L, Flowers", "茂密灌木 · 大 · 带花"],
+    ShrubDenseLDry: ["Dense Shrub L", "茂密灌木 · 大"],
+    ShrubDenseMFlowersDry: ["Dense Shrub M, Flowers", "茂密灌木 · 中 · 带花"],
+    ShrubDenseMDry: ["Dense Shrub M", "茂密灌木 · 中"],
+    ShrubDenseSFlowersDry: ["Dense Shrub S, Flowers", "茂密灌木 · 小 · 带花"],
+    ShrubDenseSDry: ["Dense Shrub S", "茂密灌木 · 小"],
+    ShrubScrubbyL: ["Scrubby Shrub, Large", "矮灌木 · 大"],
+    ShrubScrubbyS: ["Scrubby Shrub, Small", "矮灌木 · 小"],
+    XylanthusBracketedL: ["Bracket Xylanthus, Large", "檐状木花树 · 大"],
+    XylanthusBracketedS: ["Bracket Xylanthus, Small", "檐状木花树 · 小"],
+    XylanthusPetalsL: ["Petal Xylanthus, Large", "瓣状木花树 · 大"],
+    XylanthusPetalsS: ["Petal Xylanthus, Small", "瓣状木花树 · 小"],
+    AcaciaCurved: ["Acacia, Curved", "金合欢 · 弯曲"],
+    AcaciaTiered: ["Acacia, Tiered", "金合欢 · 分层"],
+    AcaciaZigzag: ["Acacia, Thin", "金合欢 · 纤细"],
+    BaobabTwinned: ["Baobab, Twinned", "猴面包树 · 双生"],
+    BaobabLonely: ["Baobab, Single", "猴面包树 · 单株"],
+    PricklePalmBallLarge: ["Prickle Palm Orb, L", "刺棕球 · 大"],
+    PricklePalmBallMedium: ["Prickle Palm Orb, M", "刺棕球 · 中"],
+    PricklePalmShrubMedium: ["Prickle Palm Shrub, M", "刺棕灌木 · 中"],
+    PricklePalmShrubSmall: ["Prickle Palm Shrub, S", "刺棕灌木 · 小"],
+    PricklePalmShrubTiny: ["Prickle Palm Shrub, XS", "刺棕灌木 · 特小"],
+    PricklePalmTreeDuo: ["Prickle Palm Tree, Duo", "刺棕树 · 双株"],
+    PricklePalmTreeShort: ["Prickle Palm Tree, Short", "刺棕树 · 矮株"],
+    PricklePalmTreeTrio: ["Prickle Palm Tree, Trio", "刺棕树 · 三株"],
+    TwigPlantLPale: ["Twiggy Plant, Large", "多枝植物 · 大"],
+    TwigPlantMPale: ["Twiggy Plant, Medium", "多枝植物 · 中"],
+    TwigPlantSPale: ["Twiggy Plant, Small", "多枝植物 · 小"],
+    TwigsBundleTan: ["Twig Bundle", "树枝束"],
+    TwigsLongTan: ["Twig Long", "长树枝"],
+    TwigsShortTan: ["Twig Short", "短树枝"],
+    TwigsStackTan: ["Twig Stack", "树枝堆"],
+    TwigsThickTan: ["Twig Thick", "粗树枝"],
+    TwigsThinTan: ["Twig Thin", "细树枝"],
+    AloeFloweringL: ["Flowering Aloe, Large", "开花芦荟 · 大"],
+    AloeFloweringS: ["Flowering Aloe, Small", "开花芦荟 · 小"],
+    AloeSimpleL: ["Aloe", "芦荟"],
+    CactusBranching: ["Branching Cactus", "分枝仙人掌"],
+    CactusCluster: ["Cactus Cluster", "仙人掌丛"],
+    CactusThornyL: ["Thorny Cactus, Large", "多刺仙人掌 · 大"],
+    CactusThornyM: ["Thorny Cactus, Medium", "多刺仙人掌 · 中"],
+    CactusThornyS: ["Thorny Cactus, Small", "多刺仙人掌 · 小"],
+    SucculentBroadleafSDry: ["Leafy Succulent, Dry", "多叶多肉 · 干枯"],
+    SucculentBroadleafSWarm: ["Leafy Succulent, Warm", "多叶多肉 · 暖色"],
+    SucculentBroadleafSYellow: ["Leafy Succulent, Yellow", "多叶多肉 · 黄色"],
+    SucculentFloweringSCool: ["Flowering Succulent, Cool", "开花多肉 · 冷色"],
+    SucculentFloweringSWarm: ["Flowering Succulent, Warm", "开花多肉 · 暖色"],
+    BannerAcross: ["Banner Across, Opaque", "横挂旗帜 · 不透明"],
+    BannerAcrossTranslucent: ["Banner Across, Translucent", "横挂旗帜 · 半透明"],
+    BannerCurtained: ["Banner Curtained", "帘式旗帜"],
+    BannerDrapeLarge: ["Banner Drape, Large", "垂挂旗帜 · 大"],
+    BannerFactionHalf: ["Faction Banner, Side", "派系旗帜 · 侧面"],
+    BannerFactionTall: ["Faction Banner, Center", "派系旗帜 · 中央"],
+    BannerTallFlat: ["Banner Tall, Flat", "竖幅旗帜 · 平展"],
+    BannerWideFlat: ["Banner Wide, Flat", "宽幅旗帜 · 平展"],
+    CanopyDraped: ["Canopy Draped, Plain", "垂挂天篷 · 素面"],
+    CanopyDrapedAngled: ["Canopy Draped, Angled", "垂挂天篷 · 倾斜"],
+    CanopyDrapedLong: ["Canopy Draped, Long", "垂挂天篷 · 长"],
+    FeaviarAdult: ["Feaviar, Adult", "费维亚 · 成年"],
+    FeaviarHatchling: ["Feaviar, Hatchling", "费维亚 · 幼雏"],
+    FeaviarEgg: ["Feaviar Egg", "费维亚蛋"],
+    FeaviarEggBottom: ["Feaviar Eggshell, Bottom", "费维亚蛋壳 · 下半"],
+    FeaviarEggTop: ["Feaviar Eggshell, Top", "费维亚蛋壳 · 上半"],
+    GradientBeamSharp: ["Beam, Sharp", "光束 · 锐利"],
+    GradientBeamWide: ["Beam, Wide", "光束 · 宽"],
+    GradientRaysNarrow: ["Rays, Narrow", "光线 · 窄"],
+    SmokeClimbing: ["Climbing Smoke", "升腾的烟"],
+    SmokeDissipating: ["Dissapating Smoke", "消散的烟"],
+    SmokeRaging: ["Raging Smoke", "翻腾的浓烟"],
+    SmokeWispy: ["Wispy Smoke", "缕缕轻烟"],
+    FlamesBeneath: ["Beneath", "底部火焰"],
+    FlamesBonfire: ["Bonfire", "篝火"],
+    FlamesCeilingA: ["Ceiling Edge Burning A", "天花板边缘 · 燃烧 A"],
+    FlamesCeilingB: ["Ceiling Edge Burning B", "天花板边缘 · 燃烧 B"],
+    FlamesCeilingC: ["Ceiling Edge Smoldering", "天花板边缘 · 阴燃"],
+    FlamesCeilingCut: ["Ceiling Edge Corner", "天花板边缘 · 转角"],
+    FlamesClimbing: ["Climbing", "攀升火焰"],
+    FlamesCorner: ["Growing", "渐旺火焰"],
+    FlamesEmerging: ["Pointed", "尖形火焰"],
+    FlamesEngulfed: ["Engulfing", "吞没火焰"],
+    FlamesSlanted: ["Slanted", "倾斜火焰"],
+    FlamesSpreading: ["Beneath Windswept", "底部火焰 · 风吹"],
+    FlamesTorch: ["Torch", "火把"],
+    FlamesWallLeaning: ["Flamewall Leaning", "焰墙 · 倾斜"],
+    FlamesWallLow: ["Flamewall Low", "焰墙 · 低"],
+    FlamesWallTall: ["Flamewall Tall", "焰墙 · 高"],
+    FlamesWallWide: ["Flamewall Wide", "焰墙 · 宽"],
+    FlamesWindy: ["Windswept", "风吹火焰"],
+    CoalSmolderingHandful: ["Coal Cluster", "炭块簇"],
+    CoalSmolderingHeap: ["Coal Pile", "炭堆"],
+    CoalSmolderingPebbles: ["Loose Coals", "松散炭块"],
+    CoalSmolderingScatter: ["Scattered Coals", "零散炭块"],
+    FireFissureA: ["Fire Fissure, Splitting", "火焰裂缝 · 分叉"],
+    FireFissureB: ["Fire Fissure, Crossed", "火焰裂缝 · 交叉"],
+    FireFissureC: ["Fire Fissure, Small", "火焰裂缝 · 小"],
+  },
+  // Ember 0.6.3｜Vista: Tajar：素材表 SPRITES$6（0.6.3 的 ember.mjs:111679 起），19 个素材。
+  emberVistaTajar0: {
+    Baobab1: ["MG Baobab, R", "中景猴面包树 · 右"],
+    Baobab2: ["BG Baobab, R", "背景猴面包树 · 右"],
+    Baobab3: ["BG Baobab, L", "背景猴面包树 · 左"],
+    BGBuilding1: ["BG Awning", "背景遮篷"],
+    BGBuilding2: ["BG Buildings", "背景建筑"],
+    BGBuilding3: ["Distant BG Buildings", "远处背景建筑"],
+    BGCliffs: ["Distant BG Cliffs", "远处背景悬崖"],
+    BGGround: ["Ground, Back", "地面 · 后"],
+    BGStructures: ["BG Structures", "背景构筑物"],
+    FGStructures: ["FG Structures", "前景构筑物"],
+    Garden: ["MG Garden", "中景花园"],
+    GroundFront: ["Ground, Front", "地面 · 前"],
+    GroundMid: ["Ground, Middle", "地面 · 中"],
+    MGBuildingL: ["MG Buildings, Left", "中景建筑 · 左"],
+    MGBuildingR: ["MG Buildings, Right", "中景建筑 · 右"],
+    PagodaBack: ["Pagoda, Back", "宝塔 · 后"],
+    PagodaFront: ["Pagoda, Front", "宝塔 · 前"],
+    PagodaTable: ["Pagoda Table", "宝塔桌子"],
+    Ocean: ["Ocean", "海洋"],
+  },
 };
 
 function patchSceneConfigLabels() {
@@ -4046,6 +4433,90 @@ function patchSceneConfigLabels() {
       for (const [assetId, [en, cn]] of Object.entries(labels)) {
         if (config?.[assetId]?.label === en) config[assetId].label = cn;
       }
+    }
+  }
+}
+
+/**
+ * Ember 0.6.3：地区地图上的**地图标记**名（新功能；配置在 ember.mjs:147698 起的地表 51 个、
+ * :148831 起的通路 6 个，`label: {text: "…"}`）。
+ *
+ * 标记是画在画布上的 PIXI 文本（`EmberMapMarker`，:77523 `new PreciseText(game.i18n.localize(text), …)`），
+ * 不在 DOM 里。上游这里调了 localize，但 lang/en.json 里没有这些键，localize 原样返回英文。
+ * ⚠ 不往全局 i18n 表里塞：键就是 `Ordain` / `Ancient Temple` 这种英文原文，写进去以后任何模块
+ *   localize 同一个串都会拿到我们的译文（PROJECT.md §8 `2026-08-14c` 否决过的做法）。
+ *   改的是 Ember 自己的数据：`ember.region.slices[*].mapMarkers` 里每个标记的 `label.text`。
+ * 键是英文原文（同一个地名会挂在两个标记上，如 `Nain` / `Arcturel`），值是纯中文；
+ * 已发布语料里有的地名照抄，问号是上游原文带的。
+ */
+const MAP_MARKER_LABELS = {
+  // 地表切片
+  "Helkas": "赫尔卡斯",
+  "Ordain": "奥尔丹",
+  "Dry Outpost": "干旱前哨站",
+  "Yakoshta": "雅科什塔",
+  "Flickering Tower": "闪烁的高塔",
+  "Tauric's Trail": "陶里克的踪迹",
+  "Ancient Temple": "远古神殿",
+  "Abyssal Creature": "深渊生物",
+  "Ooze Island": "软泥岛",
+  "Oldcraft Lodge": "老工艺旅舍",
+  "Arcturel": "阿克图瑞尔",
+  "Nain": "奈因",
+  "Seawall": "海堤",
+  "Meet Lyla": "与莱拉会合",
+  "Corpin Sanctuary": "科尔平庇护所",
+  "Smoke On the Horizon": "地平线上的烟雾",
+  "Meet Sin": "与辛会合",
+  "Skybrush": "天刷镇",
+  "Ruined Observatory": "天文台废墟",
+  "Meet Ankarist": "与安卡里斯特会合",
+  "Lonely House": "孤屋",
+  "Remote Grotto": "偏远洞窟",
+  "Lost Archive": "失落秘库",
+  "Storsa's Strand": "斯托尔萨河滩",
+  "Shrouded Borehole": "隐蔽钻孔",
+  "Abyssal Expert": "深渊专家",
+  "Steed's Point": "斯蒂德角",
+  "Vortest Tower": "沃特斯特塔",
+  "Brevin": "布雷文",
+  "Expedition Challenge": "远征挑战",
+  "The First Challenge?": "第一项挑战？",
+  "The Second Challenge?": "第二项挑战？",
+  "The Third Challenge?": "第三项挑战？",
+  "Talei": "塔莱",
+  "Doomsayer Stronghold": "末日预言者要塞",
+  "Rortwark": "罗特瓦克",
+  "Lilifeld Vineyard": "莉莉菲尔德葡萄园",
+  "Ushna Dredging": "乌什纳疏浚",
+  "Tomb of the Unifiers": "统合者之墓",
+  "Fiery Citadel": "烈火城塞",
+  "Tajar": "塔贾尔",
+  "Shrine to Katu": "卡图神龛",
+  "Sunken Temple": "沉没的神殿",
+  "Embassy Rise": "使馆高地",
+  "Coinwealth Heights": "铸币财富高地",
+  "Ember's Bounty": "余烬的恩赐",
+  "Trident's Point": "三叉戟尖端",
+  "Spellbreaker Tower": "破法者之塔",
+  // 通路切片
+  "Old Tombs": "古老墓穴",
+  "Scout Camp?": "侦察兵营地？",
+  "Creepies": "瘆人的东西",
+  "Abandoned Site": "废弃场地",
+  "Inkaro Pools": "因卡罗水潭",
+  "Colossal Structure": "巨型建筑"
+};
+
+/**
+ * 把地图标记名换成中文。标记的文字在地区地图绘制时就定死了（`#drawMapMarkers`，ember.mjs:80485），
+ * 所以要赶在绘制之前改，见文末的 canvasInit 钩子。改过的标记查不到英文键，重复跑是空操作。
+ */
+function patchMapMarkerLabels() {
+  for (const slice of Object.values(globalThis.ember?.region?.slices ?? {})) {
+    for (const marker of slice?.mapMarkers?.values?.() ?? []) {
+      const cn = MAP_MARKER_LABELS[marker?.label?.text];
+      if (cn) marker.label.text = cn;
     }
   }
 }
@@ -4255,6 +4726,8 @@ function patchRenderedApplications() {
       if (TOKEN_MAKER_APPS.has(id)) translateTokenMakerParts(root);
       translateNode(root, TOKEN_MAKER_APPS.has(id) ? TOKEN_MAKER_WINDOW_UI
         : (isDialog ? EMBER_DIALOG_UI : EMBER_WINDOW_UI));
+      // Ember 0.6.3：起源故事卡片标题句末的全角句号，见 trimOriginStoryTitles。
+      if (CHARACTER_CREATION_APPS.has(id)) trimOriginStoryTitles(root);
       // 指示物制作器的动画开关：#refresh()（ember.mjs:50994-51004）在 `await this.render()`
       // **之后**才把 data-tooltip 写回英文，也就是比渲染钩子晚一步，而且它只重画
       // parts:["layers","colors"]、不重画 body，模板里那句译了也会被覆盖。挂 observer 盯着。
@@ -4297,6 +4770,8 @@ function patchRenderedApplications() {
         const cn = BOON_BANE_LABELS[raw];
         if (cn && cn !== raw) el.textContent = cn;
       }
+      // ①b Ember 0.6.3：环境危害卡上的危害名，同样不带旗标、按结构认。见 HAZARD_NAMES。
+      translateHazardNames(chatRoot);
       // ② 旗标闸：其余只翻**打了 ember 旗标**的卡（那张卡是 :2982 造的）。
       if (!msg?.flags?.ember) return;
       translateNode(chatRoot, CHAT_UI);
@@ -4352,6 +4827,18 @@ Hooks.once("ready", () => {
   // 已经开着才刷新，没开就是空操作，见 refreshCalendarUI。
   refreshCalendarUI();
   log("Ember 硬编码字符串补丁已就绪。");
+});
+
+// Ember 0.6.3：地图标记名不能等到 ready 再改。地区地图若是开场场景，首次绘制早于 ready；
+// 冒险是进世界之后才导入的话，`ember.region` 又建得比 ready 晚（emberSetup，ember.mjs:159210）。
+// canvasInit 在每次画布绘制的开头派发，早于各图层绘制，两种情况都赶得上。
+Hooks.on("canvasInit", () => {
+  if (!game.modules.get("ember")?.active) return;
+  try {
+    patchMapMarkerLabels();
+  } catch (err) {
+    warn("地图标记名补丁失败，已跳过：", err);
+  }
 });
 
 /* ============================================================
@@ -4502,6 +4989,9 @@ const SELFCHECK_TABLES = {
   // 2026-08-22 第七轮新增：crucible 掷骰卡上的加值/减值来源名（ember 塞进去的 7 条）。
   // 7 个键全部是 ember.mjs 里的 `label: "…"` 字面量，所以只抬覆盖侧的数、miss 侧不添。
   BOON_BANE_LABELS,
+  // Ember 0.6.3 新增的四张表。键全是 ember.mjs 里的字面量（地图标记的 `text`、背景描述的分节标题、
+  // 危害动作的 `name`、谜底里的天体名），当普通字面量表核，只抬覆盖侧的数。
+  MAP_MARKER_LABELS, BACKGROUND_DESCRIPTION_UI, HAZARD_NAMES, CRYSTAL_BODIES,
   EXACT, DIALOG_UI, NOTIFICATIONS,
   ATTUNEMENTS, MOON_NAMES, ATTUNEMENT_TAB,
   EMBER_WINDOW_UI,

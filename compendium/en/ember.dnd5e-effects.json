@@ -1,13 +1,23 @@
 {
   "label": "Ember Effects",
   "folders": {
+    "Caryx Savanna": "Caryx Savanna",
     "Attunement": "Attunement",
     "Blessings": "Blessings",
     "Curses": "Curses",
     "Kaleidoscope Caverns": "Kaleidoscope Caverns",
+    "Gods": "Gods",
     "Wards": "Wards"
   },
   "entries": {
+    "Savanna Beast Training": {
+      "name": "Savanna Beast Training",
+      "description": "<p>You were trained by the survivalist Rinn Perata in basic techniques for calming and communicating with the beasts of the Caryx Savanna. You gain @Advantage[2] on Animal Handling checks to interact with creatures of the Animal or Beast creature type encountered in the Caryx Savanna.</p>"
+    },
+    "Blessing of Katu": {
+      "name": "Blessing of Katu",
+      "description": "<p>While under the effect of this blessing, you may breathe water as easily as air, you have a Swim Speed of 30 ft., and you may speak telepathically with anyone within a mile who shares this blessing and is fully submerged underwater.</p><p>If it expires before you finish exploration of the Sedyri water temple, you may visit Sorak the Stormheart at the base of the citadel on Mount Sitara to renew the blessing.</p>"
+    },
     "The Bewilderment": {
       "name": "The Bewilderment",
       "description": "<p>The afflicted creature's mind is gripped by @UUID[JournalEntry.pod4PApXHuZgXwHo.JournalEntryPage.jw0mOUcqhJPRajUY]{The Bewilderment}, a creeping arcane confusion that does not relent.</p><ul><li><p>As its mind unravels, the afflicted has Disadvantage on Intelligence, Wisdom, and Charisma ability checks.</p></li><li><p>The curse erodes body and spirit alike, leaving the afflicted Vulnerable to Necrotic damage.</p></li></ul>"

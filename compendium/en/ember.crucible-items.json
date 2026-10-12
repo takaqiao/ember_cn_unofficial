@@ -10,5 +10,12 @@
     "Treasure": "Treasure",
     "Weapons": "Weapons"
   },
-  "entries": {}
+  "entries": {
+    "V'mar Antlers": {
+      "name": "V'mar Antlers",
+      "description": {
+        "public": "<p>The hardened antlers of a V'mar, infused with magical energy that makes them resistant to physical harm.</p>"
+      }
+    }
+  }
 }

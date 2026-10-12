@@ -10,5 +10,12 @@
     "Treasure": "宝藏",
     "Weapons": "武器"
   },
-  "entries": {}
+  "entries": {
+    "V'mar Antlers": {
+      "name": "弗玛尔鹿角 V'mar Antlers",
+      "description": {
+        "public": "<p>弗玛尔的硬化鹿角，其中灌注的魔法能量使它们能够抵御物理伤害。</p>"
+      }
+    }
+  }
 }

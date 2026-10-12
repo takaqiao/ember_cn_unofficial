@@ -250,6 +250,10 @@
         }
       }
     },
+    "Gumtoad": {
+      "name": "Gumtoad",
+      "description": "<p>Brightly-colored large amphibians that use their tongues to reach out and attach themselves to larger or flying prey, forcing it down with their weight or by impeding its movement.</p>"
+    },
     "Horrendor": {
       "name": "Horrendor",
       "description": "<p>Horrendor, a type of @UUID[Compendium.crucible.taxonomy.Item.ghoul00000000000]{Ghoul}, are cruel undying creatures brought to life by wicked abstruse magic. No mere animated skeleton or shambling zombie, a Horrendor is driven by a ceaseless desire to wreak fearful havoc, and its very existence seems like an affront to life on Ember. Indeed, a Horrendor's malicious words can often be as deadly as its toothy bite or prodigious claws.</p>"
@@ -501,6 +505,10 @@
     "Vanexis": {
       "name": "Vanexis",
       "description": "<p>Offshoots of the Casia of Primordis, these guardians were created to be the ultimate protectors of knowledge. Among the beings of Primordis, they are broadly considered to have the keenest minds, sharpest senses, and most sound of judgement. While less openly inquisitive and prone to flights of fancy as other Casia, they are no less hungry for knowledge, and often learn all they can about whatever place they are asked to protect, becoming an expert in the site's layout and history.</p>"
+    },
+    "V'mar": {
+      "name": "V'mar",
+      "description": "<p>Permanently warped by an unending curse, V'mar exist in near-perpetual rage and pain. Trapped between humanoid intellect and predatory thirst, they keep their distance from civilized lands, trying to resist their uncontrollable bloodlust. When they do encounter ordinary mortals, however, they stalk their prey from above before striking with brutal, frenzied malice.</p>"
     },
     "Vorg": {
       "name": "Vorg",
